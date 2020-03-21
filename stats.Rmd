@@ -1,0 +1,34 @@
+---
+title: "COVID-19 statistics"
+output: github_document
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(tidyr)
+tt <- read_csv("total/lt-covid19-total.csv") 
+```
+
+
+```{r, echo = FALSE}
+stt <- tt %>% select(day, confirmed, deaths, recovered) %>% pivot_longer(confirmed:recovered, "type")
+ggplot(aes(x = day, y = value, group = type, colour = type), data =stt) + geom_point()+geom_line()+labs(title = paste("Cumulative cases:",max(tt$day)))
+```
+
+```{r, echo = FALSE}
+ag <- function(x)c(x[1],diff(x))
+ntt <- stt %>% arrange(type, day) %>% group_by(type) %>%  mutate(value = ag(value)) %>% ungroup
+ggplot(aes(x = day, y = value, group = type), data =ntt) + geom_col(aes(fill=type),position = "dodge",)+labs(title = paste("New cases:",max(tt$day)))
+```
+
+
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = tested), data = tt) +geom_point() + geom_line() + labs(title = paste("Cumulative tests:",max(tt$day)),  x = "tested")
+```
+
+
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = ag(tested)), data = tt) +geom_col() + labs(title = paste("Daily tests: ", max(tt$day)), y="tested")
+```
