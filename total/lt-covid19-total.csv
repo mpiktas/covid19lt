@@ -1,9 +1,9 @@
 "country","day","confirmed","deaths","recovered","tested","under_observation","intensive_therapy","hospitalized","quarantined"
-"Lithuania","2020-02-28",1,0,0,116,33003,NA,NA,NA
-"Lithuania","2020-02-29",1,0,0,142,33003,NA,NA,NA
-"Lithuania","2020-03-01",1,0,0,165,33003,NA,NA,NA
-"Lithuania","2020-03-02",1,0,0,191,33003,NA,NA,NA
-"Lithuania","2020-03-03",1,0,0,215,33003,NA,NA,NA
+"Lithuania","2020-02-28",1,0,0,116,3303,NA,NA,NA
+"Lithuania","2020-02-29",1,0,0,142,3303,NA,NA,NA
+"Lithuania","2020-03-01",1,0,0,165,3303,NA,NA,NA
+"Lithuania","2020-03-02",1,0,0,191,3303,NA,NA,NA
+"Lithuania","2020-03-03",1,0,0,215,3303,NA,NA,NA
 "Lithuania","2020-03-04",1,0,0,231,4981,NA,NA,NA
 "Lithuania","2020-03-05",1,0,0,247,4981,NA,NA,NA
 "Lithuania","2020-03-06",1,0,0,254,4981,NA,NA,NA
