@@ -1,0 +1,115 @@
+---
+title: "Simple forecasts"
+output: github_document
+---
+Modelis paremtas šituo [straipsniu](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1406-6).  Modeliuojamas užsikrėtusių per dieną skaičius.
+
+
+```{r, echo = FALSE, message=FALSE}
+library(dplyr)
+library(lubridate)
+library(deSolve)
+library(ggplot2)
+library(tidyr)
+options(max.print = 100000)
+glmde <- function(t, state, parameters) {
+    with(as.list(c(state, parameters)), {
+        list(r*C^p*(1 - C/K))
+    })
+}
+
+incidence_glmde <-  function(times, p) {
+    out <- cases_glmde(times ,p )
+    c(out[1], diff(out))
+}
+
+cases_glmde <- function(times, p) {
+    state <- c(C = p[1])
+    parms <- c(r = p[2], p = p[3], K = p[4])
+    out <- ode(y = state, time = times, func = glmde, parms = parms)
+    out[,2]
+}
+
+fit_incidence <- function(p , times, y) {
+    if (p[1] > 0 & p[2] > 0 & p[2] <= 1) {
+        sum((y - incidence_glmde(times, c(y[1], p)))^2)
+    } else NA
+}
+
+grid_search <- function(times, y, start_r, start_p, start_K) {
+    pp <- expand.grid(start_r,start_p,start_K)
+    pp <- as.matrix(pp)
+    colnames(pp) <- NULL
+    grid_p <- apply(pp, 1, function(p) {
+        out <- optim(p, fit_incidence, times = times, y = y)
+        c(out$par, out$value)
+    }) 
+    grid_p <- t(grid_p)
+    list(p = grid_p[which.min(grid_p[,4]),1:3], grid = grid_p)
+}
+
+forecast_glmde <- function(dt, p, ahead) {
+    tm <- min(dt$times):(max(dt$times) + ahead)
+   
+    out_days <- dt$day[dt$times == min(tm)] + days(1:length(tm) - 1)
+  
+    out_f <- incidence_glmde(tm, c(dt$incidence[1], p))
+    
+    data.frame(day = out_days, incidence = out_f)
+    
+}
+
+plot_f <- function(dt, fr) {
+    plot(fr$day, fr$incidence, type = "l", xlab = "day", ylab = "incidence", main = paste(max(dt$day)))
+    points(dt$day, dt$incidence)
+}
+```
+
+Duomenys modeliavimui
+```{r,  echo = FALSE}
+dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
+ag <- function(x)(c(x[1],diff(x)))
+dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, confirmed, incidence, times) %>% mutate(day = ymd(day)) %>% filter(day >= "2020-03-13")
+dt
+```
+
+```{r echo = FALSE}
+
+TT <- dt$day[dt$day >= max(dt$day) - days(2)]
+
+one_day <- lapply(TT, function(end) { 
+    dt19 <- dt %>% filter(day <= end)
+    r19 <- grid_search(dt19$times, dt19$incidence, c(0.3, 0.9), c(0.3, 0.9), c(200, 300, 400, 500, 600, 1000, 10000, 5e4, 1e5, 3*1e5))
+    p19 <- r19$p
+    fr19 <- forecast_glmde(dt19, p19, ahead = 20) 
+    list(dt = dt19, grid = r19, p = p19, forecast = fr19)
+}
+)
+
+```
+
+```{r, echo = FALSE}
+odf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
+odf <- odf %>% mutate(end = as.character(end)) %>% filter(day <= max(dt$day)+days(10))
+```
+
+
+Sugeneruoti trys modeliai, numetant po vieną dieną nuo visos imties. Kiekvienam modeliui suskaičiuota 10 dienų prognozė.
+
+Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = incidence, group = end, colour = end), data = odf %>%  filter(end >= max(dt$day) - days(2), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
+
+```
+
+Prognozių lentelė. 
+```{r, echo = FALSE}
+odf %>% mutate(incidence = round(incidence)) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day")
+```
+
+Modelių koeficentai. Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.
+```{r, echo = FALSE}
+df <- as.data.frame(one_day %>% sapply("[[", "p") %>% t %>% round(3))
+colnames(df) <- c("r", "p", "K")
+df %>% mutate(K = round(K))
+```
