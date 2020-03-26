@@ -94,22 +94,24 @@ Daryta pagal šitą
 [straipsnį](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/) su R
 paketu
 [EpiEstim](https://cran.r-project.org/web/packages/EpiEstim/index.html).
+Daryta pagal pavyzdį iš šio
+[blogo](https://timchurches.github.io/blog/posts/2020-02-18-analysing-covid-19-2019-ncov-outbreak-data-with-r-part-1/#fitting-an-sir-model-to-the-hubei-province-data).
 
 ![](ggm_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 Ta pati informacija lentelėje
 
     ##   t_start t_end  Mean(R)   Std(R)
-    ## 1       2     8 5.123139 3.590617
-    ## 2       3     9 4.792148 3.011037
-    ## 3       4    10 4.490573 2.566181
-    ## 4       5    11 4.790799 2.541427
-    ## 5       6    12 4.417596 2.291866
-    ## 6       7    13 3.999792 2.040469
-    ## 7       8    14 3.825689 1.882344
-    ## 8       9    15 3.079594 1.454952
+    ## 1       2     8 5.012818 3.555581
+    ## 2       3     9 4.696936 2.981451
+    ## 3       4    10 4.404239 2.554642
+    ## 4       5    11 4.698566 2.533153
+    ## 5       6    12 4.330686 2.295299
+    ## 6       7    13 3.925522 2.043279
+    ## 7       8    14 3.757929 1.885073
+    ## 8       9    15 3.025173 1.456956
 
 [Serijiniai intervalai](https://en.wikipedia.org/wiki/Serial_interval)
-(intervalai tarp sėkmingų užkrėtimų)
+(intervalai tarp užsikrėtimų)
 
 ![](ggm_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->

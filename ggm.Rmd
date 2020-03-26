@@ -196,7 +196,7 @@ ltR <-  estimate_R(incidence_data,
                                   n1 = 1000, n2 = 1000)))
 ```
 
-Savaitinis R įvertis. R<1 reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą [straipsnį](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/) su R paketu [EpiEstim](https://cran.r-project.org/web/packages/EpiEstim/index.html).
+Savaitinis R įvertis. R<1 reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą [straipsnį](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/) su R paketu [EpiEstim](https://cran.r-project.org/web/packages/EpiEstim/index.html). Daryta pagal pavyzdį iš šio [blogo](https://timchurches.github.io/blog/posts/2020-02-18-analysing-covid-19-2019-ncov-outbreak-data-with-r-part-1/#fitting-an-sir-model-to-the-hubei-province-data).
 
 ```{r, echo = FALSE}
 plot(ltR,what = "R")
@@ -209,7 +209,7 @@ ltR$R[,1:4]
 ```
 
 
-[Serijiniai intervalai](https://en.wikipedia.org/wiki/Serial_interval) (intervalai tarp sėkmingų užkrėtimų)
+[Serijiniai intervalai](https://en.wikipedia.org/wiki/Serial_interval) (intervalai tarp užsikrėtimų)
 
 ```{r, echo = FALSE}
 plot(ltR, what = "SI")
