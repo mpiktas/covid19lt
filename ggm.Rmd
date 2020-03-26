@@ -1,0 +1,216 @@
+---
+title: "Apibendrintas augimo modelis"
+output: github_document
+---
+Modelis paremtas šituo [straipsniu](https://www.sciencedirect.com/science/article/pii/S1755436516000037).  Modeliuojamas užsikrėtusių per dieną skaičius.
+
+
+```{r, echo = FALSE, message=FALSE}
+library(dplyr)
+library(lubridate)
+library(deSolve)
+library(ggplot2)
+library(tidyr)
+options(max.print = 100000)
+
+ggm <- function(t, state, parameters) {
+    with(as.list(c(state, parameters)), {
+        list(r*C^p)
+    })
+}
+
+incidence_ggm <-  function(times, p) {
+    out <- cases_ggm(times ,p )
+    c(out[1], diff(out))
+}
+
+cases_ggm <- function(times, p) {
+    state <- c(C = p[1])
+    parms <- c(r = p[2], p = p[3])
+    out <- ode(y = state, time = times, func = ggm, parms = parms)
+    out[,2]
+}
+
+
+
+glmde <- function(t, state, parameters) {
+    with(as.list(c(state, parameters)), {
+        list(r*C^p*(1 - C/K))
+    })
+}
+
+incidence_glmde <-  function(times, p) {
+    out <- cases_glmde(times ,p )
+    c(out[1], diff(out))
+}
+
+cases_glmde <- function(times, p) {
+    state <- c(C = p[1])
+    parms <- c(r = p[2], p = p[3], K = p[4])
+    out <- ode(y = state, time = times, func = glmde, parms = parms)
+    out[,2]
+}
+
+fit_incidence <- function(p , times, y) {
+    if (p[1] > 0 & p[2] > 0 & p[2] <= 1) {
+        sum((y - incidence_glmde(times, c(y[1], p)))^2)
+    } else NA
+}
+
+fit_incidence_ggm <- function(p , times, y, w) {
+    if (p[1] > 0 & p[2] > 0 & p[2] <= 1) {
+        sum(w*(y - incidence_ggm(times, c(y[1], p)))^2)
+    } else NA
+}
+
+
+grid_search <- function(times, y, start_r, start_p, start_K) {
+    pp <- expand.grid(start_r,start_p,start_K)
+    pp <- as.matrix(pp)
+    colnames(pp) <- NULL
+    grid_p <- apply(pp, 1, function(p) {
+        out <- optim(p, fit_incidence, times = times, y = y)
+        c(out$par, out$value)
+    }) 
+    grid_p <- t(grid_p)
+    list(p = grid_p[which.min(grid_p[,4]),1:3], grid = grid_p)
+}
+
+grid_search_ggm <- function(times, y, w, start_r, start_p) {
+    pp <- expand.grid(start_r,start_p)
+    pp <- as.matrix(pp)
+    colnames(pp) <- NULL
+    grid_p <- apply(pp, 1, function(p) {
+        out <- optim(p, fit_incidence_ggm, times = times, y = y, w = w)
+        c(out$par, out$value)
+    }) 
+    grid_p <- t(grid_p)
+    list(p = grid_p[which.min(grid_p[,3]),1:2], grid = grid_p)
+}
+
+
+forecast_glmde <- function(dt, p, ahead) {
+    tm <- min(dt$times):(max(dt$times) + ahead)
+   
+    out_days <- dt$day[dt$times == min(tm)] + days(1:length(tm) - 1)
+  
+    out_f <- incidence_glmde(tm, c(dt$incidence[1], p))
+    
+    data.frame(day = out_days, incidence = out_f)
+    
+}
+
+forecast_ggm <- function(dt, p, ahead) {
+    tm <- min(dt$times):(max(dt$times) + ahead)
+   
+    out_days <- dt$day[dt$times == min(tm)] + days(1:length(tm) - 1)
+  
+    out_f <- incidence_ggm(tm, c(dt$incidence[1], p))
+    
+    data.frame(day = out_days, incidence = out_f)
+    
+}
+
+
+plot_f <- function(dt, fr) {
+    plot(fr$day, fr$incidence, type = "l", xlab = "day", ylab = "incidence", main = paste(max(dt$day)))
+    points(dt$day, dt$incidence)
+}
+```
+
+Duomenys modeliavimui
+```{r,  echo = FALSE}
+dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
+ag <- function(x)(c(x[1],diff(x)))
+dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, confirmed, incidence, times) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
+dtf <- dt
+dt <- dt %>% filter(day >= "2020-03-11")
+dt
+```
+
+
+```{r echo = FALSE}
+
+TT <- dt$day[dt$day >= max(dt$day) - days(3)]
+
+one_day <- lapply(TT, function(end) { 
+    dt19 <- dt %>% filter(day <= end)
+    r19 <- grid_search_ggm(dt19$times, dt19$incidence, dt19$w, c(0.3, 0.6, 0.9), c(0.3, 0.6, 0.9))
+    p19 <- r19$p
+    fr19 <- forecast_ggm(dt19, p19, ahead = 20) 
+    list(dt = dt19, grid = r19, p = p19, forecast = fr19)
+}
+)
+```
+
+```{r, echo = FALSE}
+odf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
+odf <- odf %>% mutate(end = as.character(end)) %>% filter(day <= max(dt$day)+days(10)) %>% mutate(incidence = round(incidence))
+
+codf <- odf %>% arrange(end, day) %>% group_by(end) %>% mutate(confirmed = cumsum(incidence)) %>% select(-incidence) %>% ungroup
+```
+
+
+Sugeneruoti keturi modeliai, numetant po vieną dieną nuo visos imties. Kiekvienam modeliui suskaičiuota 10 dienų prognozė.
+
+Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = incidence, group = end, colour = end), data = odf %>%  filter(end >= max(dt$day) - days(3), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
+
+```
+
+Viso atvejų
+
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(3), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
+
+```
+
+Prognozių lentelė. 
+```{r, echo = FALSE}
+odf %>% mutate(incidence = round(incidence)) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day")
+```
+
+Viso atvejų
+```{r, echo = FALSE}
+codf %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, confirmed) %>% left_join(dt %>% select(day, historic = confirmed), by ="day")
+```
+
+Modelių koeficentai. Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.
+```{r, echo = FALSE}
+df <- as.data.frame(one_day %>% sapply("[[", "p") %>% t %>% round(3))
+colnames(df) <- c("r", "p")
+df
+```
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
+library(EpiEstim)
+incidence_data <- dt %>% select(date = day, I = incidence)
+ltR <-  estimate_R(incidence_data,
+                                  method="uncertain_si",
+                                  config = make_config(list(
+                                  mean_si = 4.8, std_mean_si = 3.0,
+                                  min_mean_si = 2, max_mean_si = 7.5,
+                                  std_si = 3.0, std_std_si = 1.0,
+                                  min_std_si = 0.5, max_std_si = 4.0,
+                                  n1 = 1000, n2 = 1000)))
+```
+
+Savaitinis R įvertis. R<1 reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą [straipsnį](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/) su R paketu [EpiEstim](https://cran.r-project.org/web/packages/EpiEstim/index.html).
+
+```{r, echo = FALSE}
+plot(ltR,what = "R")
+```
+
+Ta pati informacija lentelėje
+
+```{r,echo=FALSE}
+ltR$R[,1:4]
+```
+
+
+[Serijiniai intervalai](https://en.wikipedia.org/wiki/Serial_interval) (intervalai tarp sėkmingų užkrėtimų)
+
+```{r, echo = FALSE}
+plot(ltR, what = "SI")
+```
