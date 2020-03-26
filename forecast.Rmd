@@ -90,7 +90,9 @@ one_day <- lapply(TT, function(end) {
 
 ```{r, echo = FALSE}
 odf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
-odf <- odf %>% mutate(end = as.character(end)) %>% filter(day <= max(dt$day)+days(10))
+odf <- odf %>% mutate(end = as.character(end)) %>% filter(day <= max(dt$day)+days(10)) %>% mutate(incidence = round(incidence))
+
+codf <- odf %>% arrange(end, day) %>% group_by(end) %>% mutate(confirmed = cumsum(incidence) + 3) %>% select(-incidence) %>% ungroup
 ```
 
 
@@ -102,9 +104,21 @@ ggplot(aes(x = day, y = incidence, group = end, colour = end), data = odf %>%  f
 
 ```
 
+Viso atvejų
+
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(2), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
+
+```
+
 Prognozių lentelė. 
 ```{r, echo = FALSE}
 odf %>% mutate(incidence = round(incidence)) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day")
+```
+
+Viso atvejų
+```{r, echo = FALSE}
+codf %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, confirmed) %>% left_join(dt %>% select(day, historic = confirmed), by ="day")
 ```
 
 Modelių koeficentai. Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.
