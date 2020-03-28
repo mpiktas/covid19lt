@@ -1,5 +1,5 @@
 ---
-title: "Simple forecasts"
+title: "Apibendrintas logistinio augimo modelis"
 output: distill::distill_article
 ---
 Modelis paremtas šituo [straipsniu](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1406-6).  Modeliuojamas užsikrėtusių per dieną skaičius.
@@ -66,6 +66,7 @@ plot_f <- function(dt, fr) {
 ```
 
 Duomenys modeliavimui
+
 ```{r,  echo = FALSE}
 dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
 ag <- function(x)(c(x[1],diff(x)))
