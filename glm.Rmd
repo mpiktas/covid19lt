@@ -11,6 +11,7 @@ library(lubridate)
 library(deSolve)
 library(ggplot2)
 library(tidyr)
+library(rmarkdown)
 options(max.print = 100000)
 glmde <- function(t, state, parameters) {
     with(as.list(c(state, parameters)), {
@@ -65,13 +66,13 @@ plot_f <- function(dt, fr) {
 }
 ```
 
-Duomenys modeliavimui
+# Duomenys modeliavimui
 
 ```{r,  echo = FALSE}
 dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
 ag <- function(x)(c(x[1],diff(x)))
 dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, confirmed, incidence, times) %>% mutate(day = ymd(day)) %>% filter(day >= "2020-03-13")
-dt
+dt %>% paged_table
 ```
 
 ```{r echo = FALSE}
@@ -97,34 +98,45 @@ codf <- odf %>% arrange(end, day) %>% group_by(end) %>% mutate(confirmed = cumsu
 ```
 
 
+# Prognozės
 Sugeneruoti trys modeliai, numetant po vieną dieną nuo visos imties. Kiekvienam modeliui suskaičiuota 10 dienų prognozė.
 
 Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
+
+## Dieniniai atvejai
+
 ```{r, echo = FALSE}
 ggplot(aes(x = day, y = incidence, group = end, colour = end), data = odf %>%  filter(end >= max(dt$day) - days(2), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
 
 ```
 
-Viso atvejų
+## Viso atvejų
 
 ```{r, echo = FALSE}
 ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(2), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
 
 ```
 
-Prognozių lentelė. 
+# Prognozių lentelės
+
+## Dieniniai atvejai
+
 ```{r, echo = FALSE}
-odf %>% mutate(incidence = round(incidence)) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day")
+odf %>% mutate(incidence = round(incidence)) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day") %>% paged_table
 ```
 
-Viso atvejų
+## Viso atvejų
+
 ```{r, echo = FALSE}
-codf %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, confirmed) %>% left_join(dt %>% select(day, historic = confirmed), by ="day")
+codf %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, confirmed) %>% left_join(dt %>% select(day, historic = confirmed), by ="day") %>% paged_table
 ```
 
-Modelių koeficentai. Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.
+# Modelių koeficentai 
+
+Eksponentinis augimas yra $p = 1$. $K$ yra suminis visų atvejų skaičius.
+
 ```{r, echo = FALSE}
 df <- as.data.frame(one_day %>% sapply("[[", "p") %>% t %>% round(3))
 colnames(df) <- c("r", "p", "K")
-df %>% mutate(K = round(K))
+df %>% mutate(K = round(K)) %>% paged_table
 ```

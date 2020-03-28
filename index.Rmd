@@ -1,15 +1,15 @@
 ---
 title: "COVID-19 statistika ir modeliai"
-description: |
-  Welcome to the website. I hope you enjoy it!
+
 site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
 ```
 
+
+  - [Elementarioji statistika](stats.html)
+  - [Apibendrinto logistinio augimo modelis](glm.html)
+  - [Apibendrinto augimo modelis ir efektyvusis R](ggm.html)

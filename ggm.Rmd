@@ -11,6 +11,7 @@ library(lubridate)
 library(deSolve)
 library(ggplot2)
 library(tidyr)
+library(rmarkdown)
 options(max.print = 100000)
 
 ggm <- function(t, state, parameters) {
@@ -118,14 +119,16 @@ plot_f <- function(dt, fr) {
 }
 ```
 
-Duomenys modeliavimui
+
+# Duomenys modeliavimui
+
 ```{r,  echo = FALSE}
 dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
 ag <- function(x)(c(x[1],diff(x)))
 dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, confirmed, incidence, times) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
 dtf <- dt
 dt <- dt %>% filter(day >= "2020-03-11")
-dt
+paged_table(dt %>% select(-w))
 ```
 
 
@@ -151,36 +154,50 @@ codf <- odf %>% arrange(end, day) %>% group_by(end) %>% mutate(confirmed = cumsu
 ```
 
 
+# Prognozių grafikai
+
 Sugeneruoti keturi modeliai, numetant po vieną dieną nuo visos imties. Kiekvienam modeliui suskaičiuota 10 dienų prognozė.
 
+
+## Dieniniai atvejai
+
 Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
+
+
 ```{r, echo = FALSE}
 ggplot(aes(x = day, y = incidence, group = end, colour = end), data = odf %>%  filter(end >= max(dt$day) - days(3), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
 
 ```
 
-Viso atvejų
+
+## Viso atvejų
 
 ```{r, echo = FALSE}
 ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(3), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
 
 ```
 
-Prognozių lentelė. 
+# Prognozių lentelė. 
+
 ```{r, echo = FALSE}
-odf %>% mutate(incidence = round(incidence)) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day")
+odf %>% mutate(incidence = round(incidence)) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day") %>% paged_table
 ```
 
 Viso atvejų
+
 ```{r, echo = FALSE}
-codf %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, confirmed) %>% left_join(dt %>% select(day, historic = confirmed), by ="day")
+codf %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, confirmed) %>% left_join(dt %>% select(day, historic = confirmed), by ="day") %>% paged_table
 ```
 
-Modelių koeficentai. Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.
-```{r, echo = FALSE}
+
+# Modelių koeficentai. 
+
+Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.
+
+```{r, echo = FALSE} 
 df <- as.data.frame(one_day %>% sapply("[[", "p") %>% t %>% round(3))
 colnames(df) <- c("r", "p")
-df
+df %>% paged_table
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning=FALSE}
@@ -196,7 +213,9 @@ ltR <-  estimate_R(incidence_data,
                                   n1 = 1000, n2 = 1000)))
 ```
 
-Savaitinis R įvertis. R<1 reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą [straipsnį](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/) su R paketu [EpiEstim](https://cran.r-project.org/web/packages/EpiEstim/index.html). Daryta pagal pavyzdį iš šio [blogo](https://timchurches.github.io/blog/posts/2020-02-18-analysing-covid-19-2019-ncov-outbreak-data-with-r-part-1/#fitting-an-sir-model-to-the-hubei-province-data).
+# Savaitinis R įvertis. 
+
+R<1 reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą [straipsnį](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/) su R paketu [EpiEstim](https://cran.r-project.org/web/packages/EpiEstim/index.html). Daryta pagal pavyzdį iš šio [blogo](https://timchurches.github.io/blog/posts/2020-02-18-analysing-covid-19-2019-ncov-outbreak-data-with-r-part-1/#fitting-an-sir-model-to-the-hubei-province-data).
 
 ```{r, echo = FALSE}
 plot(ltR,what = "R")
@@ -205,7 +224,7 @@ plot(ltR,what = "R")
 Ta pati informacija lentelėje
 
 ```{r,echo=FALSE}
-ltR$R[,1:4]
+ltR$R %>% paged_table
 ```
 
 

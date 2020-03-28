@@ -1,13 +1,12 @@
 ---
 title: "Apie"
-description: |
-  Apie šitą puslapį
+description: Informacija apie COVID-19 Lietuvoje
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Informacija apie COVID-19 Lietuvoje. Istoriniai duomenys surinkti iš įvairių šaltinių. Naujausi duomenys imami iš SAM.
+ Istoriniai duomenys surinkti iš įvairių šaltinių. Naujausi duomenys imami iš SAM.
 
 Modeliai yra edukacinio pobūdžio, juos galima laisvai naudoti, bet jiems nesuteikiama jokia garantija.

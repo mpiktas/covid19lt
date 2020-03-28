@@ -1,5 +1,5 @@
 ---
-title: "COVID-19 statistics"
+title: "COVID-19 statistika"
 output: distill::distill_article
 ---
 

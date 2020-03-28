@@ -1254,6 +1254,8 @@
   </script>
   
   <!--/radix_placeholder_distill-->
+  <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+  <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
   <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
@@ -1280,8 +1282,8 @@
 <a href="index.html" class="title">COVID-19 statistika ir modeliai</a>
 </div>
 <div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
+<a href="index.html">Pradžia</a>
+<a href="about.html">Apie</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -1301,27 +1303,13 @@
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-Duomenys modeliavimui
+<h1 id="duomenys-modeliavimui">Duomenys modeliavimui</h1>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-          day confirmed incidence times w
-1  2020-03-11         3         2    13 1
-2  2020-03-12         3         0    14 0
-3  2020-03-13         6         3    15 1
-4  2020-03-14         7         1    16 1
-5  2020-03-15        12         5    17 1
-6  2020-03-16        17         5    18 1
-7  2020-03-17        26         9    19 1
-8  2020-03-18        34         8    20 1
-9  2020-03-19        48        14    21 1
-10 2020-03-20        69        21    22 1
-11 2020-03-21       105        36    23 1
-12 2020-03-22       143        38    24 1
-13 2020-03-23       187        44    25 1
-14 2020-03-24       255        68    26 1
-15 2020-03-25       290        35    27 1
-16 2020-03-26       344        54    28 1
-17 2020-03-27       382        38    29 1</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["day"],"name":[1],"type":["date"],"align":["right"]},{"label":["confirmed"],"name":[2],"type":["int"],"align":["right"]},{"label":["incidence"],"name":[3],"type":["int"],"align":["right"]},{"label":["times"],"name":[4],"type":["int"],"align":["right"]}],"data":[{"1":"2020-03-11","2":"3","3":"2","4":"13"},{"1":"2020-03-12","2":"3","3":"0","4":"14"},{"1":"2020-03-13","2":"6","3":"3","4":"15"},{"1":"2020-03-14","2":"7","3":"1","4":"16"},{"1":"2020-03-15","2":"12","3":"5","4":"17"},{"1":"2020-03-16","2":"17","3":"5","4":"18"},{"1":"2020-03-17","2":"26","3":"9","4":"19"},{"1":"2020-03-18","2":"34","3":"8","4":"20"},{"1":"2020-03-19","2":"48","3":"14","4":"21"},{"1":"2020-03-20","2":"69","3":"21","4":"22"},{"1":"2020-03-21","2":"105","3":"36","4":"23"},{"1":"2020-03-22","2":"143","3":"38","4":"24"},{"1":"2020-03-23","2":"187","3":"44","4":"25"},{"1":"2020-03-24","2":"255","3":"68","4":"26"},{"1":"2020-03-25","2":"290","3":"35","4":"27"},{"1":"2020-03-26","2":"344","3":"54","4":"28"},{"1":"2020-03-27","2":"382","3":"38","4":"29"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
@@ -1329,95 +1317,57 @@ Duomenys modeliavimui
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
+<h1 id="prognozių-grafikai">Prognozių grafikai</h1>
 <p>Sugeneruoti keturi modeliai, numetant po vieną dieną nuo visos imties. Kiekvienam modeliui suskaičiuota 10 dienų prognozė.</p>
-Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
+<h2 id="dieniniai-atvejai">Dieniniai atvejai</h2>
+<p>Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="ggm_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
-<p>Viso atvejų</p>
+<h2 id="viso-atvejų">Viso atvejų</h2>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="ggm_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
-Prognozių lentelė.
+<h1 id="prognozių-lentelė.">Prognozių lentelė.</h1>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-          day 2020-03-25 2020-03-26 2020-03-27 historic
-1  2020-03-11          2          2          2        2
-2  2020-03-12          2          2          3        0
-3  2020-03-13          3          3          4        3
-4  2020-03-14          5          5          6        1
-5  2020-03-15          7          7          9        5
-6  2020-03-16          9         10         11        5
-7  2020-03-17         12         12         14        9
-8  2020-03-18         15         16         17        8
-9  2020-03-19         19         19         21       14
-10 2020-03-20         23         24         24       21
-11 2020-03-21         28         28         28       36
-12 2020-03-22         34         33         32       38
-13 2020-03-23         40         39         36       44
-14 2020-03-24         48         45         41       68
-15 2020-03-25         55         52         45       35
-16 2020-03-26         64         59         50       54
-17 2020-03-27         73         67         55       38
-18 2020-03-28         83         75         61       NA
-19 2020-03-29         94         84         66       NA
-20 2020-03-30        106         94         72       NA
-21 2020-03-31        118        104         78       NA
-22 2020-04-01        132        114         84       NA
-23 2020-04-02        147        126         90       NA
-24 2020-04-03        162        138         97       NA
-25 2020-04-04        179        150        103       NA
-26 2020-04-05        196        163        110       NA
-27 2020-04-06        215        177        117       NA</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["day"],"name":[1],"type":["date"],"align":["right"]},{"label":["2020-03-25"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["2020-03-26"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["2020-03-27"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["historic"],"name":[5],"type":["int"],"align":["right"]}],"data":[{"1":"2020-03-11","2":"2","3":"2","4":"2","5":"2"},{"1":"2020-03-12","2":"2","3":"2","4":"3","5":"0"},{"1":"2020-03-13","2":"3","3":"3","4":"4","5":"3"},{"1":"2020-03-14","2":"5","3":"5","4":"6","5":"1"},{"1":"2020-03-15","2":"7","3":"7","4":"9","5":"5"},{"1":"2020-03-16","2":"9","3":"10","4":"11","5":"5"},{"1":"2020-03-17","2":"12","3":"12","4":"14","5":"9"},{"1":"2020-03-18","2":"15","3":"16","4":"17","5":"8"},{"1":"2020-03-19","2":"19","3":"19","4":"21","5":"14"},{"1":"2020-03-20","2":"23","3":"24","4":"24","5":"21"},{"1":"2020-03-21","2":"28","3":"28","4":"28","5":"36"},{"1":"2020-03-22","2":"34","3":"33","4":"32","5":"38"},{"1":"2020-03-23","2":"40","3":"39","4":"36","5":"44"},{"1":"2020-03-24","2":"48","3":"45","4":"41","5":"68"},{"1":"2020-03-25","2":"55","3":"52","4":"45","5":"35"},{"1":"2020-03-26","2":"64","3":"59","4":"50","5":"54"},{"1":"2020-03-27","2":"73","3":"67","4":"55","5":"38"},{"1":"2020-03-28","2":"83","3":"75","4":"61","5":"NA"},{"1":"2020-03-29","2":"94","3":"84","4":"66","5":"NA"},{"1":"2020-03-30","2":"106","3":"94","4":"72","5":"NA"},{"1":"2020-03-31","2":"118","3":"104","4":"78","5":"NA"},{"1":"2020-04-01","2":"132","3":"114","4":"84","5":"NA"},{"1":"2020-04-02","2":"147","3":"126","4":"90","5":"NA"},{"1":"2020-04-03","2":"162","3":"138","4":"97","5":"NA"},{"1":"2020-04-04","2":"179","3":"150","4":"103","5":"NA"},{"1":"2020-04-05","2":"196","3":"163","4":"110","5":"NA"},{"1":"2020-04-06","2":"215","3":"177","4":"117","5":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
 </div>
-Viso atvejų
-<div class="layout-chunk" data-layout="l-body">
-<pre><code>
-# A tibble: 27 x 5
-   day        `2020-03-25` `2020-03-26` `2020-03-27` historic
-   &lt;date&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;    &lt;int&gt;
- 1 2020-03-11            2            2            2        3
- 2 2020-03-12            4            4            5        3
- 3 2020-03-13            7            7            9        6
- 4 2020-03-14           12           12           15        7
- 5 2020-03-15           19           19           24       12
- 6 2020-03-16           28           29           35       17
- 7 2020-03-17           40           41           49       26
- 8 2020-03-18           55           57           66       34
- 9 2020-03-19           74           76           87       48
-10 2020-03-20           97          100          111       69
-# … with 17 more rows</code></pre>
 </div>
-Modelių koeficentai. Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.
+<p>Viso atvejų</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-      r     p
-1 0.527 0.893
-2 0.920 0.729
-3 1.017 0.702
-4 1.328 0.631</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["day"],"name":[1],"type":["date"],"align":["right"]},{"label":["2020-03-25"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["2020-03-26"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["2020-03-27"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["historic"],"name":[5],"type":["int"],"align":["right"]}],"data":[{"1":"2020-03-11","2":"2","3":"2","4":"2","5":"3"},{"1":"2020-03-12","2":"4","3":"4","4":"5","5":"3"},{"1":"2020-03-13","2":"7","3":"7","4":"9","5":"6"},{"1":"2020-03-14","2":"12","3":"12","4":"15","5":"7"},{"1":"2020-03-15","2":"19","3":"19","4":"24","5":"12"},{"1":"2020-03-16","2":"28","3":"29","4":"35","5":"17"},{"1":"2020-03-17","2":"40","3":"41","4":"49","5":"26"},{"1":"2020-03-18","2":"55","3":"57","4":"66","5":"34"},{"1":"2020-03-19","2":"74","3":"76","4":"87","5":"48"},{"1":"2020-03-20","2":"97","3":"100","4":"111","5":"69"},{"1":"2020-03-21","2":"125","3":"128","4":"139","5":"105"},{"1":"2020-03-22","2":"159","3":"161","4":"171","5":"143"},{"1":"2020-03-23","2":"199","3":"200","4":"207","5":"187"},{"1":"2020-03-24","2":"247","3":"245","4":"248","5":"255"},{"1":"2020-03-25","2":"302","3":"297","4":"293","5":"290"},{"1":"2020-03-26","2":"366","3":"356","4":"343","5":"344"},{"1":"2020-03-27","2":"439","3":"423","4":"398","5":"382"},{"1":"2020-03-28","2":"522","3":"498","4":"459","5":"NA"},{"1":"2020-03-29","2":"616","3":"582","4":"525","5":"NA"},{"1":"2020-03-30","2":"722","3":"676","4":"597","5":"NA"},{"1":"2020-03-31","2":"840","3":"780","4":"675","5":"NA"},{"1":"2020-04-01","2":"972","3":"894","4":"759","5":"NA"},{"1":"2020-04-02","2":"1119","3":"1020","4":"849","5":"NA"},{"1":"2020-04-03","2":"1281","3":"1158","4":"946","5":"NA"},{"1":"2020-04-04","2":"1460","3":"1308","4":"1049","5":"NA"},{"1":"2020-04-05","2":"1656","3":"1471","4":"1159","5":"NA"},{"1":"2020-04-06","2":"1871","3":"1648","4":"1276","5":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<h1 id="modelių-koeficentai.">Modelių koeficentai.</h1>
+<p>Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["r"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["p"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.527","2":"0.893"},{"1":"0.920","2":"0.729"},{"1":"1.017","2":"0.702"},{"1":"1.328","2":"0.631"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>Savaitinis R įvertis. R&lt;1 reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/">straipsnį</a> su R paketu <a href="https://cran.r-project.org/web/packages/EpiEstim/index.html">EpiEstim</a>. Daryta pagal pavyzdį iš šio <a href="https://timchurches.github.io/blog/posts/2020-02-18-analysing-covid-19-2019-ncov-outbreak-data-with-r-part-1/#fitting-an-sir-model-to-the-hubei-province-data">blogo</a>.</p>
+<h1 id="savaitinis-r-įvertis.">Savaitinis R įvertis.</h1>
+<p>R&lt;1 reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/">straipsnį</a> su R paketu <a href="https://cran.r-project.org/web/packages/EpiEstim/index.html">EpiEstim</a>. Daryta pagal pavyzdį iš šio <a href="https://timchurches.github.io/blog/posts/2020-02-18-analysing-covid-19-2019-ncov-outbreak-data-with-r-part-1/#fitting-an-sir-model-to-the-hubei-province-data">blogo</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="ggm_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
 </div>
 <p>Ta pati informacija lentelėje</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>
-   t_start t_end  Mean(R)    Std(R)
-1        2     8 5.045577 3.4940553
-2        3     9 4.729667 2.9354824
-3        4    10 4.435155 2.5169321
-4        5    11 4.730172 2.4881025
-5        6    12 4.361145 2.2524130
-6        7    13 3.953387 2.0084282
-7        8    14 3.785014 1.8555672
-8        9    15 3.046305 1.4327992
-9       10    16 2.622698 1.1073921
-10      11    17 2.142183 0.7801746</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["t_start"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["t_end"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Mean(R)"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Std(R)"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Quantile.0.025(R)"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Quantile.0.05(R)"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Quantile.0.25(R)"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Median(R)"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Quantile.0.75(R)"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Quantile.0.95(R)"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Quantile.0.975(R)"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"2","2":"8","3":"5.113501","4":"3.351174","5":"1.429949","6":"1.595740","7":"11.984884","8":"4.105975","9":"11.984884","10":"11.984884","11":"13.766126"},{"1":"3","2":"9","3":"4.794037","4":"2.841156","5":"1.620828","6":"1.771152","7":"10.640774","8":"3.932923","9":"10.640774","10":"10.640774","11":"12.028483"},{"1":"4","2":"10","3":"4.497318","4":"2.442261","5":"1.624100","6":"1.765055","7":"9.482275","8":"3.811504","9":"9.482275","10":"9.482275","11":"10.570906"},{"1":"5","2":"11","3":"4.799343","4":"2.420967","5":"1.826963","6":"1.966623","7":"9.657252","8":"4.170987","9":"9.657252","10":"9.657252","11":"10.604126"},{"1":"6","2":"12","3":"4.432320","4":"2.203248","5":"1.613641","6":"1.740039","7":"8.761466","8":"3.913724","9":"8.761466","10":"8.761466","11":"9.525431"},{"1":"7","2":"13","3":"4.018586","4":"1.973133","5":"1.538566","6":"1.643488","7":"7.903664","8":"3.526763","9":"7.903664","10":"7.903664","11":"8.548172"},{"1":"8","2":"14","3":"3.842782","4":"1.821575","5":"1.584336","6":"1.679663","7":"7.482690","8":"3.368938","9":"7.482690","10":"7.482690","11":"8.066329"},{"1":"9","2":"15","3":"3.089733","4":"1.402601","5":"1.319750","6":"1.398507","7":"5.883985","8":"2.737609","9":"5.883985","10":"5.883985","11":"6.342899"},{"1":"10","2":"16","3":"2.655391","4":"1.085163","5":"1.310401","6":"1.370902","7":"4.821129","8":"2.375073","9":"4.821129","10":"4.821129","11":"5.168772"},{"1":"11","2":"17","3":"2.166985","4":"0.768603","5":"1.186609","6":"1.237676","7":"3.683225","8":"1.977373","9":"3.683225","10":"3.683225","11":"3.925420"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <p><a href="https://en.wikipedia.org/wiki/Serial_interval">Serijiniai intervalai</a> (intervalai tarp užsikrėtimų)</p>
 <div class="layout-chunk" data-layout="l-body">
