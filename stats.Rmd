@@ -1,6 +1,6 @@
 ---
 title: "COVID-19 statistics"
-output: github_document
+output: distill::distill_article
 ---
 
 ```{r, echo=FALSE, message=FALSE}

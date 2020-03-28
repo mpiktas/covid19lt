@@ -1,6 +1,6 @@
 ---
 title: "Apibendrintas augimo modelis"
-output: github_document
+output: distill::distill_article
 ---
 Modelis paremtas šituo [straipsniu](https://www.sciencedirect.com/science/article/pii/S1755436516000037).  Modeliuojamas užsikrėtusių per dieną skaičius.
 

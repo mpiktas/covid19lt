@@ -1,0 +1,12 @@
+name: "COVID-19-Lietuva"
+title: "COVID-19 statistika ir modeliai"
+description: |
+  COVID-19 statistika ir modeliai
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
