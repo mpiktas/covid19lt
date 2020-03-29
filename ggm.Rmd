@@ -220,7 +220,7 @@ Eksponentinis augimas yra $p = 1$.
 
 ```{r, echo = FALSE} 
 coefs <- read.csv("forecasts/models_ggm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
-df <- coefs %>% filter(end >= max(end)- days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(r, 2))
+df <- coefs %>% filter(end >= max(end)- days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(p, 2))
 
 df %>% paged_table
 ```

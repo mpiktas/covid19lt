@@ -138,7 +138,7 @@ ggplot(aes(x = day, y = incidence, group = end, colour = end), data = codf %>%  
 ## Viso atvejų
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(2), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
+ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
 
 ```
 
@@ -162,7 +162,7 @@ Eksponentinis augimas yra $p = 1$. $K$ yra suminis visų atvejų skaičius.
 
 ```{r, echo = FALSE}
 coefs <- read.csv("forecasts/models_glm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
-df <- coefs %>% filter(end >= max(end) - days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(r, 2), K = round(K))
+df <- coefs %>% filter(end >= max(end) - days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(p, 2), K = round(K))
 
 df %>% paged_table
 ```
