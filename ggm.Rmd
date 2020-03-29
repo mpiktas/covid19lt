@@ -154,14 +154,24 @@ odf <- odf %>% mutate(end = as.character(end)) %>% mutate(incidence = round(inci
 
 codf <- odf %>% arrange(end, day) %>% group_by(end) %>% mutate(confirmed = cumsum(incidence) + 1) %>% ungroup %>% select(day, end, incidence, confirmed)
 
-fodf <- read.csv("forecasts/forecasts_ggm.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day), end = ymd(end))
-rf <- range(fodf$end)
-mf <- max(min(codf$end), rf[1])
+fcodf <- read.csv("forecasts/forecasts_ggm.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day), end = ymd(end))
+mf <- max(min(codf$end), min(fcodf$end))
 
-if ( mf > rf[1]) {
-  codf <- bind_rows(fodf %>% filter(end<mf), codf)
+if ( mf > min(fcodf$end)) {
+  codf <- bind_rows(fcodf %>% filter(end < mf), codf)
+  write.csv(codf, "forecasts/forecasts_ggm.csv", row.names = FALSE)
+} 
 
-if (max(codf$end) > )
+coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day), r = l$p[1], p = l$p[2])) %>% bind_rows()
+
+fcoefs <- read.csv("forecasts/models_ggm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
+
+mf <- max(min(coefs$end), min(fcoefs$end))
+
+if (mf > min(fcoefs$end)) {
+  coefs <- bind_rows(fcoefs %>% filter(end < mf), coefs)
+  write.csv(coefs, "forecasts/models_ggm.csv", row.names = FALSE)
+}
 
 ```
 
@@ -177,7 +187,9 @@ Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
 
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = incidence, group = end, colour = end), data = odf %>%  filter(end >= max(dt$day) - days(3), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
+codf <- read.csv("forecasts/forecasts_ggm.csv", colClasses = c("Date","character","integer","integer"), stringsAsFactors = FALSE)
+
+ggplot(aes(x = day, y = incidence, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
 
 ```
 
@@ -185,29 +197,30 @@ ggplot(aes(x = day, y = incidence, group = end, colour = end), data = odf %>%  f
 ## Viso atvejų
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(3), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
+ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
 
 ```
 
 # Prognozių lentelė. 
 
 ```{r, echo = FALSE}
-odf %>% mutate(incidence = round(incidence)) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day") %>% paged_table
+codf %>% select(-confirmed) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day") %>% paged_table
 ```
 
 Viso atvejų
 
 ```{r, echo = FALSE}
-codf %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, confirmed) %>% left_join(dt %>% select(day, historic = confirmed), by ="day") %>% paged_table
+codf %>% select(-incidence) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, confirmed) %>% left_join(dt %>% select(day, historic = confirmed), by ="day") %>% paged_table
 ```
 
 
 # Modelių koeficentai. 
 
-Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.
+Eksponentinis augimas yra $p = 1$. 
 
 ```{r, echo = FALSE} 
-df <- as.data.frame(one_day %>% sapply("[[", "p") %>% t %>% round(3))
-colnames(df) <- c("r", "p")
+coefs <- read.csv("forecasts/models_ggm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
+df <- coefs %>% filter(end >= max(end)- days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(r, 2))
+
 df %>% paged_table
 ```
