@@ -12,5 +12,5 @@ knitr::opts_chunk$set(echo = FALSE)
 
   - [Elementarioji statistika](stats.html)
   - [Apibendrinto logistinio augimo modelis](glm.html)
-  - [Apibendrinto augimo modelis ir efektyvusis R](ggm.html)
+  - [Apibendrinto augimo modelis](ggm.html)
   - [Efektyvusis R](Re.html)
