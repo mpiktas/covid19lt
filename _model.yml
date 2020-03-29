@@ -1,0 +1,3 @@
+default:
+  show: 4
+  calculate: 10

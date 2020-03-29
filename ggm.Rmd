@@ -12,6 +12,7 @@ library(deSolve)
 library(ggplot2)
 library(tidyr)
 library(rmarkdown)
+library(config)
 options(max.print = 100000)
 
 ggm <- function(t, state, parameters) {
@@ -133,8 +134,9 @@ paged_table(dt %>% select(-w))
 
 
 ```{r echo = FALSE}
+mc <- config::get(file = "_model.yml")
 
-TT <- dt$day[dt$day >= max(dt$day) - days(3)]
+TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
 one_day <- lapply(TT, function(end) { 
     dt19 <- dt %>% filter(day <= end)
@@ -148,9 +150,19 @@ one_day <- lapply(TT, function(end) {
 
 ```{r, echo = FALSE}
 odf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
-odf <- odf %>% mutate(end = as.character(end)) %>% filter(day <= max(dt$day)+days(10)) %>% mutate(incidence = round(incidence))
+odf <- odf %>% mutate(end = as.character(end)) %>% mutate(incidence = round(incidence))
 
-codf <- odf %>% arrange(end, day) %>% group_by(end) %>% mutate(confirmed = cumsum(incidence)) %>% select(-incidence) %>% ungroup
+codf <- odf %>% arrange(end, day) %>% group_by(end) %>% mutate(confirmed = cumsum(incidence) + 1) %>% ungroup %>% select(day, end, incidence, confirmed)
+
+fodf <- read.csv("forecasts/forecasts_ggm.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day), end = ymd(end))
+rf <- range(fodf$end)
+mf <- max(min(codf$end), rf[1])
+
+if ( mf > rf[1]) {
+  codf <- bind_rows(fodf %>% filter(end<mf), codf)
+
+if (max(codf$end) > )
+
 ```
 
 
@@ -198,38 +210,4 @@ Eksponentinis augimas yra p = 1. K yra suminis visų atvejų skaičius.
 df <- as.data.frame(one_day %>% sapply("[[", "p") %>% t %>% round(3))
 colnames(df) <- c("r", "p")
 df %>% paged_table
-```
-
-```{r, echo = FALSE, message = FALSE, warning=FALSE}
-library(EpiEstim)
-incidence_data <- dt %>% select(date = day, I = incidence)
-ltR <-  estimate_R(incidence_data,
-                                  method="uncertain_si",
-                                  config = make_config(list(
-                                  mean_si = 4.8, std_mean_si = 3.0,
-                                  min_mean_si = 2, max_mean_si = 7.5,
-                                  std_si = 3.0, std_std_si = 1.0,
-                                  min_std_si = 0.5, max_std_si = 4.0,
-                                  n1 = 1000, n2 = 1000)))
-```
-
-# Savaitinis R įvertis. 
-
-R<1 reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą [straipsnį](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/) su R paketu [EpiEstim](https://cran.r-project.org/web/packages/EpiEstim/index.html). Daryta pagal pavyzdį iš šio [blogo](https://timchurches.github.io/blog/posts/2020-02-18-analysing-covid-19-2019-ncov-outbreak-data-with-r-part-1/#fitting-an-sir-model-to-the-hubei-province-data).
-
-```{r, echo = FALSE}
-plot(ltR,what = "R")
-```
-
-Ta pati informacija lentelėje
-
-```{r,echo=FALSE}
-ltR$R %>% paged_table
-```
-
-
-[Serijiniai intervalai](https://en.wikipedia.org/wiki/Serial_interval) (intervalai tarp užsikrėtimų)
-
-```{r, echo = FALSE}
-plot(ltR, what = "SI")
 ```
