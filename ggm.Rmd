@@ -158,7 +158,7 @@ fcodf <- read.csv("forecasts/forecasts_ggm.csv", stringsAsFactors = FALSE) %>% m
 mf <- max(min(codf$end), min(fcodf$end))
 
 if ( mf > min(fcodf$end)) {
-  codf <- bind_rows(fcodf %>% filter(end < mf), codf)
+  codf <- bind_rows(fcodf %>% filter(end < mf), codf %>% mutate(end = ymd(end)))
   write.csv(codf, "forecasts/forecasts_ggm.csv", row.names = FALSE)
 } 
 
@@ -169,7 +169,7 @@ fcoefs <- read.csv("forecasts/models_ggm.csv", stringsAsFactors = FALSE) %>% mut
 mf <- max(min(coefs$end), min(fcoefs$end))
 
 if (mf > min(fcoefs$end)) {
-  coefs <- bind_rows(fcoefs %>% filter(end < mf), coefs)
+  coefs <- bind_rows(fcoefs %>% filter(end < mf), coefs %>% mutate(end = ymd(end)))
   write.csv(coefs, "forecasts/models_ggm.csv", row.names = FALSE)
 }
 

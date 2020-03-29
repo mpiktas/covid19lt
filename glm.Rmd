@@ -72,8 +72,8 @@ plot_f <- function(dt, fr) {
 ```{r,  echo = FALSE}
 dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
 ag <- function(x)(c(x[1],diff(x)))
-dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, confirmed, incidence, times) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) %>% filter(day >= "2020-03-11") %>% select(-w, -times)
-dt %>% paged_table
+dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, confirmed, incidence, times) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) %>% filter(day >= "2020-03-11") 
+dt %>% select(-times, -w )%>% paged_table
 ```
 
 ```{r echo = FALSE}
@@ -104,7 +104,7 @@ fcodf <- read.csv("forecasts/forecasts_glm.csv", stringsAsFactors = FALSE) %>% m
 mf <- max(min(codf$end), min(fcodf$end))
 
 if ( mf > min(fcodf$end)) {
-  codf <- bind_rows(fcodf %>% filter(end < mf), codf)
+  codf <- bind_rows(fcodf %>% filter(end < mf), codf %>% mutate(end = ymd(end)))
   write.csv(codf, "forecasts/forecasts_glm.csv", row.names = FALSE)
 } 
 
@@ -115,7 +115,7 @@ fcoefs <- read.csv("forecasts/models_glm.csv", stringsAsFactors = FALSE) %>% mut
 mf <- max(min(coefs$end), min(fcoefs$end))
 
 if (mf > min(fcoefs$end)) {
-  coefs <- bind_rows(fcoefs %>% filter(end < mf), coefs)
+  coefs <- bind_rows(fcoefs %>% filter(end < mf), coefs %>% mutate(end = ymd(end)))
   write.csv(coefs, "forecasts/models_glm.csv", row.names = FALSE)
 }
 ```
@@ -161,8 +161,8 @@ codf %>% select(-incidence) %>% filter(end >= max(dt$day) - days(2)) %>%  spread
 Eksponentinis augimas yra $p = 1$. $K$ yra suminis visų atvejų skaičius.
 
 ```{r, echo = FALSE}
-coefs <- read.csv("forecasts/models_ggm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
+coefs <- read.csv("forecasts/models_glm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
 df <- coefs %>% filter(end >= max(end) - days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(r, 2), K = round(K))
 
-df %>% mutate(K = round(K)) %>% paged_table
+df %>% paged_table
 ```
