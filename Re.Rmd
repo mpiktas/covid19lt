@@ -8,6 +8,7 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 library(rmarkdown)
+library(lubridate)
 options(max.print = 100000)
 ```
 
@@ -17,9 +18,9 @@ options(max.print = 100000)
 ```{r,  echo = FALSE}
 dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
 ag <- function(x)(c(x[1],diff(x)))
-dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, confirmed, incidence, times) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
+dt <- dt %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
 dtf <- dt
-dt <- dt %>% filter(day >= "2020-03-11")
+dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
 paged_table(dt %>% select(-w))
 ```
 
@@ -40,14 +41,26 @@ ltR <-  estimate_R(incidence_data,
 
 $R < 1$ reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą [straipsnį](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3816335/) su R paketu [EpiEstim](https://cran.r-project.org/web/packages/EpiEstim/index.html). Daryta pagal pavyzdį iš šio [blogo](https://timchurches.github.io/blog/posts/2020-02-18-analysing-covid-19-2019-ncov-outbreak-data-with-r-part-1/#fitting-an-sir-model-to-the-hubei-province-data).
 
+
+
 ```{r, echo = FALSE}
 plot(ltR,what = "R")
 ```
 
+$x$-ašyje yra dienos nuo epidemijos pradžios. Epidemijos pradžia pasirinkta 2020-03-11, tai pirma diena. 
+
 Ta pati informacija lentelėje
 
 ```{r,echo=FALSE}
-ltR$R %>% paged_table
+
+RR <- ltR$R 
+
+RR[,1] <- RR[,2]
+RR[,2] <- dt$day[RR[,1]]
+
+colnames(RR)[1:2] <- c("t_end", "day_end")
+
+RR %>% paged_table
 ```
 
 
