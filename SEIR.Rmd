@@ -1,0 +1,196 @@
+---
+title: "SEIR epidemiologinis modelis"
+output: distill::distill_article
+---
+
+```{r, echo = FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(rmarkdown)
+library(lubridate)
+library(deSolve)
+options(max.print = 100000)
+```
+
+
+```{r, echo = FALSE}
+
+
+seir <- function(t, state, parameters) {
+    with(as.list(c(state, parameters)), {
+
+        drs <- 1/D_recovery_severe
+        beta <- R0/D_infectious
+        if (t > t_N)  {
+            beta <- R0/D_infectious*exp(-mu*(t - t_N))
+            #print(c(t, beta*D_infectious))
+        }
+
+        gamma <- 1/D_infectious
+        a <-  1/D_incubation
+
+        dS  <-   -beta*I*S
+        dI        <-  a*E - gamma*I
+        dE        <-   beta*I*S - a*E
+        dMild     <-   p_mild*gamma*I   - (1/D_recovery_mild)*Mild
+        dSevere   <-   p_severe*gamma*I - (1/D_hospital_lag)*Severe
+        dSevere_H <-   (1/D_hospital_lag)*Severe - drs*Severe_H
+        dFatal    <-   p_fatal*gamma*I  - (1/D_death)*Fatal
+        dR_Mild   <-   (1/D_recovery_mild)*Mild
+        dR_Severe <-   drs*Severe_H
+        dR_Fatal  <-  (1/D_death)*Fatal
+
+        list(c(dS, dE, dI, dMild, dSevere, dSevere_H, dFatal, dR_Mild, dR_Severe, dR_Fatal))
+    })
+}
+
+mseir <- function(times, init, param) {
+    out <- ode(y = init, time = times, func = seir, parms = param)
+    out
+}
+
+mseir_param <- function(times, R0 = 2, mu = 0.01, D_infectious = 2.9, D_incubation = 5.2, t_N = round(times[1] + range(times)/2), I0 = 1, N = 2793196) {
+
+
+    Time_to_death <- 32
+    p_severe <-  0.2
+    death_rate = 0.02
+
+    params = c(R0 = R0, mu = mu, t_N = t_N,
+               p_severe = p_severe, p_fatal = death_rate, p_mild = 1 - p_severe - death_rate,
+               D_recovery_mild   = (14 - D_infectious),
+               D_recovery_severe = (31.5 - D_infectious),
+               D_hospital_lag    = 5,
+               D_death           = Time_to_death - D_infectious,
+               D_infectious = D_infectious,
+               D_incubation = D_incubation)
+
+    init <- c(S = 1 - I0/N,
+              E = 0,
+              I = I0/N,
+              Mild = 0,
+              Severe = 0,
+              Severe_H = 0 ,
+              Fatal = 0,
+              R_Mild = 0,
+              R_Severe = 0,
+              R_Fatal = 0)
+    out <- mseir(times, init, params)
+    out[,-1] <- out[,-1]*N
+    out
+}
+
+fit_seir1 <- function(p, times, y, t_N, I0, N) {
+    out <- mseirp1(times, p = p, t_N = t_N, I0 = I0, N = N)
+    cc <- N - out[, 2]
+    sum((diff(y) - diff(cc))^2)/length(y)
+}
+
+fit_seir2 <- function(p, times, y, t_N, I0, N) {
+    out <- mseirp2(times, p = p, t_N = t_N, I0 = I0, N = N)
+    cc <- N - out[, 2]
+    sum((diff(y) - diff(cc))^2)/length(y)
+}
+
+
+
+mseirp1 <- function(times, p, t_N, I0, N ) {
+    mseir_param(times, R0 = p[1], mu = p[2], D_infectious = 2.9, D_incubation = 5.2, t_N = t_N , I0 = I0, N = N)
+}
+
+mseirp2 <- function(times, p, t_N , I0 , N ) {
+    mseir_param(times, R0 = p[1], mu = p[2], D_infectious = p[3], D_incubation = p[4], t_N = t_N, I0 = I0, N = N)
+}
+
+
+```
+
+# Duomenys modeliavimui
+
+```{r,  echo = FALSE}
+dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
+ag <- function(x)(c(x[1],diff(x)))
+dt <- dt %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
+dtf <- dt
+dt <- dt %>% filter(day >= "2020-03-08") %>% mutate(times = 1:n())
+paged_table(dt %>% select(-w))
+```
+
+# Modelis
+
+
+Naudojamas epidemiologinio modelio SEIR [variantas](http://gabgoh.github.io/COVID/index.html?fbclid=IwAR3v2wuljs8Pzg0BIFa0Ip-kKSMNvT4yJdQDF16XzKaoVHZsR2PVOgbrjvM). 
+
+Intervencija, t. y. $R_t$ modeliuojama pagal šį [straipsnį](https://www.medrxiv.org/content/10.1101/2020.03.21.20040154v1.full.pdf?fbclid=IwAR0E0VZbfTb5xzi9ex6uJAsHCuLkXvnnxLS9_9wci38NBu82zzgWFr44TUM). Laikoma kad po intervencijos $R_t$ gesta exponentiškai, ty 
+
+$R_t = R_0 \exp(-\mu(t - T_N)),$
+
+čia $T_N$ yra intervercijos pradžia.
+
+Lietuvoje intervencija prasidėjo kovo 16, ty $T_N = 9$. SEIR modelis su intervencija turi 4 parametrus 
+
+ - $R_0$ - bazinis reprodukcinis skaičius, 
+ - $\mu$ - intervencijos efektyvumas, 
+ - $T_{inf}$ - dienų kiek užkrėstasis gali užkrėsti kitus
+ - $T_{inc}$ - inkubacinis periodas.
+
+
+Vertinsime du modelius Lietuvos duomenims. Vieną su fiksuotais periodais $T_{inc} = 5.2$ ir $T_{inf} = 2.9$ o kitą kai periodai bus įvertinti iš duomenų.
+
+Lietuvos duomenimis įvertinti koeficientai yra tokie:
+
+```{r, echo = FALSE}
+m1 <- optim(c(2,0.1), fit_seir1, y = dt$confirmed, times = dt$times, t_N = 9,  I0 = 1, N = 2793196)
+m2 <- optim(c(2,0.1, 2.9, 5.2), fit_seir2, y = dt$confirmed, times = dt$times, t_N = 9, I0 = 1, N = 2793196)
+
+tm <- min(dt$times):(max(dt$times) + 30)
+fday <- dt$day[1] + days(1:length(tm) - 1)
+
+m1r <- mseirp1(tm, m1$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% mutate(day = fday, incidence = c(0, round(-diff(S)))) %>% mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed =  round(2793196 -S), Hospital = round(Severe_H+Fatal), Recovered = round(R_Mild+R_Severe)) %>% select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
+
+m2r <- mseirp2(tm, m2$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% mutate(day = fday, incidence = c(0, -diff(S))) %>%  mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed =  round(2793196 -S), Hospital = round(Severe_H+Fatal), Recovered = round(R_Mild+R_Severe)) %>% select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
+
+res <- bind_rows(m1r %>% mutate(Model = "SEIR1"), m2r %>% mutate(Model = "SEIR2"))
+
+cf <- data.frame(Model = c("SEIR1","SEIR2"),rbind(c(m1$par,2.9, 5.2),m2$par))
+colnames(cf) <- c("Model", "R0", "mu", "T_inf", "T_inc")
+cf %>% paged_table
+```
+
+Inkubacinis periodas antruoju atveju nesutampa su literatūroje pateiktais įverčiais.
+
+# Prognozės
+
+## Dieniniai atvejai
+
+```{r}
+ggplot(aes(x = day, y = incidence, group = Model, colour = Model), data = res %>% filter(day <= max(dt$day) + days(10))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt) 
+```
+
+
+## Viso atvejų
+
+```{r}
+ggplot(aes(x = day, y = confirmed, group = Model, colour = Model), data = res %>% filter(day <= max(dt$day) + days(10))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt) 
+```
+
+
+# Efektyvusis R
+
+Taip atrodo modeliuojamas intervencijos efektas
+
+```{r, echo = FALSE}
+tmm <- tm - 9 
+tmm[tmm <= 0] <- 0
+eR <- data.frame(day = fday, time = tm, SEIR1 = m1$par[1]*exp(-m1$par[2] * tmm), SEIR2 =   m2$par[1]*exp(-m2$par[2] * tmm)) %>% pivot_longer(SEIR1:SEIR2, "Model", values_to = "R")
+
+ggplot(aes(x= day, y = R, group = Model, color = Model), data = eR) +geom_line()
+```
+
+# SEIR compartments
+
+```{r, echo = FALSE} 
+pm1r <- m1r %>% select(day, Infectious, Exposed, Hospitalized = Hospital, Fatalities = Dead) %>% pivot_longer(Infectious:Fatalities,"Compartment") %>% mutate(Compartment = factor(Compartment, levels = c("Exposed", "Infectious","Hospitalized","Fatalities")))
+ggplot(aes(x= day, y = value, group = Compartment), data = pm1r)+ geom_col(aes(fill = Compartment)) + scale_fill_manual(values = c("Exposed" = "yellow", "Infectious" = "red", "Hospitalized" = "blue", "Fatalities" = "black"))
+```
