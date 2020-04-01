@@ -29,14 +29,14 @@ seir <- function(t, state, parameters) {
 
         gamma <- 1/D_infectious
         a <-  1/D_incubation
-
+        
         dS  <-   -beta*I*S
         dI        <-  a*E - gamma*I
         dE        <-   beta*I*S - a*E
         dMild     <-   p_mild*gamma*I   - (1/D_recovery_mild)*Mild
-        dSevere   <-   p_severe*gamma*I - (1/D_hospital_lag)*Severe
+        dSevere   <-   p_severe*(1 - p_fatal/p_severe)*gamma*I - (1/D_hospital_lag)*Severe
         dSevere_H <-   (1/D_hospital_lag)*Severe - drs*Severe_H
-        dFatal    <-   p_fatal*gamma*I  - (1/D_death)*Fatal
+        dFatal    <-   p_fatal*gamma*I - (1/D_death)*Fatal
         dR_Mild   <-   (1/D_recovery_mild)*Mild
         dR_Severe <-   drs*Severe_H
         dR_Fatal  <-  (1/D_death)*Fatal
@@ -58,7 +58,7 @@ mseir_param <- function(times, R0 = 2, mu = 0.01, D_infectious = 2.9, D_incubati
     death_rate = 0.02
 
     params = c(R0 = R0, mu = mu, t_N = t_N,
-               p_severe = p_severe, p_fatal = death_rate, p_mild = 1 - p_severe - death_rate,
+               p_severe = p_severe, p_fatal = death_rate, p_mild = 1 - p_severe,
                D_recovery_mild   = (14 - D_infectious),
                D_recovery_severe = (31.5 - D_infectious),
                D_hospital_lag    = 5,
