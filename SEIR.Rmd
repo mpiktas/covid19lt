@@ -31,8 +31,8 @@ seir <- function(t, state, parameters) {
         a <-  1/D_incubation
         
         dS  <-   -beta*I*S
-        dI        <-  a*E - gamma*I
         dE        <-   beta*I*S - a*E
+        dI        <-  a*E - gamma*I
         dMild     <-   p_mild*gamma*I   - (1/D_recovery_mild)*Mild
         dSevere   <-   p_severe*(1 - p_fatal/p_severe)*gamma*I - (1/D_hospital_lag)*Severe
         dSevere_H <-   (1/D_hospital_lag)*Severe - drs*Severe_H
@@ -41,7 +41,8 @@ seir <- function(t, state, parameters) {
         dR_Severe <-   drs*Severe_H
         dR_Fatal  <-  (1/D_death)*Fatal
 
-        list(c(dS, dE, dI, dMild, dSevere, dSevere_H, dFatal, dR_Mild, dR_Severe, dR_Fatal))
+        conf.flow <- gamma*I  
+        list(c(dS, dE, dI, dMild, dSevere, dSevere_H, dFatal, dR_Mild, dR_Severe, dR_Fatal, conf.flow))
     })
 }
 
@@ -75,7 +76,7 @@ mseir_param <- function(times, R0 = 2, mu = 0.01, D_infectious = 2.9, D_incubati
               Fatal = 0,
               R_Mild = 0,
               R_Severe = 0,
-              R_Fatal = 0)
+              R_Fatal = 0, conf.flow = 0)
     out <- mseir(times, init, params)
     out[,-1] <- out[,-1]*N
     out
@@ -83,16 +84,21 @@ mseir_param <- function(times, R0 = 2, mu = 0.01, D_infectious = 2.9, D_incubati
 
 fit_seir1 <- function(p, times, y, t_N, I0, N) {
     out <- mseirp1(times, p = p, t_N = t_N, I0 = I0, N = N)
-    cc <- N - out[, 2]
+    cc <- out[, "conf.flow"]
     sum((diff(y) - diff(cc))^2)/length(y)
 }
 
 fit_seir2 <- function(p, times, y, t_N, I0, N) {
     out <- mseirp2(times, p = p, t_N = t_N, I0 = I0, N = N)
-    cc <- N - out[, 2]
+    cc <- out[, "conf.flow"]
     sum((diff(y) - diff(cc))^2)/length(y)
 }
 
+fit_seir3 <- function(p, times, y, t_N, I0, N) {
+    out <- mseirp3(times, p = p, t_N = t_N, I0 = I0, N = N)
+    cc <- out[, "conf.flow"]
+    sum((diff(y) - diff(cc))^2)/length(y)
+}
 
 
 mseirp1 <- function(times, p, t_N, I0, N ) {
@@ -103,6 +109,9 @@ mseirp2 <- function(times, p, t_N , I0 , N ) {
     mseir_param(times, R0 = p[1], mu = p[2], D_infectious = p[3], D_incubation = p[4], t_N = t_N, I0 = I0, N = N)
 }
 
+mseirp3 <- function(times, p, t_N, I0, N ) {
+    mseir_param(times, R0 = p[1], mu = 0, D_infectious = 2.9, D_incubation = 5.2, t_N = t_N , I0 = I0, N = N)
+}
 
 ```
 
@@ -143,17 +152,18 @@ Lietuvos duomenimis įvertinti koeficientai yra tokie:
 ```{r, echo = FALSE}
 m1 <- optim(c(2,0.1), fit_seir1, y = dt$confirmed, times = dt$times, t_N = 9,  I0 = 1, N = 2793196)
 m2 <- optim(c(2,0.1, 2.9, 5.2), fit_seir2, y = dt$confirmed, times = dt$times, t_N = 9, I0 = 1, N = 2793196)
+#m3 <- optimize(fit_seir3,c(0,10), y = dt$confirmed, times = dt$times, t_N = 9, I0 = 1, N = 2793196)
 
 tm <- min(dt$times):(max(dt$times) + 30)
 fday <- dt$day[1] + days(1:length(tm) - 1)
 
-m1r <- mseirp1(tm, m1$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% mutate(day = fday, incidence = c(0, round(-diff(S)))) %>% mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed =  round(2793196 -S), Hospital = round(Severe_H+Fatal), Recovered = round(R_Mild+R_Severe)) %>% select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
+m1r <- mseirp1(tm, m1$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% mutate(day = fday, incidence = c(0, round(diff(conf.flow)))) %>% mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed =  round(conf.flow), Hospital = round(Severe_H+Fatal), Recovered = round(R_Mild+R_Severe)) %>% select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
 
-m2r <- mseirp2(tm, m2$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% mutate(day = fday, incidence = c(0, -diff(S))) %>%  mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed =  round(2793196 -S), Hospital = round(Severe_H+Fatal), Recovered = round(R_Mild+R_Severe)) %>% select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
+m2r <- mseirp2(tm, m2$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% mutate(day = fday, incidence = c(0, diff(conf.flow))) %>%  mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed =  round(conf.flow), Hospital = round(Severe_H+Fatal), Recovered = round(R_Mild+R_Severe)) %>% select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
 
 res <- bind_rows(m1r %>% mutate(Model = "SEIR1"), m2r %>% mutate(Model = "SEIR2"))
 
-cf <- data.frame(Model = c("SEIR1","SEIR2"),rbind(c(m1$par,2.9, 5.2),m2$par))
+cf <- data.frame(Model = c("SEIR1","SEIR2"),rbind(c(m1$par,2.9, 5.2),c(m2$par)))
 colnames(cf) <- c("Model", "R0", "mu", "T_inf", "T_inc")
 cf %>% paged_table
 ```
