@@ -104,7 +104,7 @@ mseirp1 <- function(times, p, t_N, I0, N ) {
 ```{r,  echo = FALSE}
 dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
 ag <- function(x)(c(x[1],diff(x)))
-dt <- dt %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
+dt <- dt %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence, Recovered = recovered, Deaths  = deaths ) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
 dtf <- dt
 dt <- dt %>% filter(day >= "2020-03-08") %>% mutate(times = 1:n())
 paged_table(dt %>% select(-w))
@@ -138,6 +138,9 @@ mc <- config::get(file = "_model.yml")
 
 TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
+#TT <- dt$day[dt$day >= max(dt$day) - 10]
+
+
 one_day <- lapply(TT, function(end) { 
     dt19 <- dt %>% filter(day <= end)
     m1 <- optim(c(2,0.1), fit_seir1, y = dt19$confirmed, times = dt19$times, t_N = 9,  I0 = 1, N = 2793196)
@@ -156,8 +159,8 @@ m1r <- mseirp1(tm, m1$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% muta
 ```
 
 ```{r, echo = FALSE}
-odf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
-odf <- odf %>% mutate(end = as.character(end)) 
+codf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
+codf <- codf %>% mutate(end = as.character(end)) 
 
 fcodf <- read.csv("forecasts/forecasts_seir.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day), end = ymd(end))
 mf <- max(min(codf$end), min(fcodf$end))
@@ -178,37 +181,93 @@ if (mf > min(fcoefs$end)) {
   write.csv(coefs, "forecasts/models_seir.csv", row.names = FALSE)
 }
 ```
+
+
 # Prognozės
+Sugeneruoti keturi modeliai, numetant po vieną dieną nuo visos imties. Kiekvienam modeliui suskaičiuota 10 dienų prognozė.
+
+Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
 
 ## Dieniniai atvejai
 
-```{r}
-ggplot(aes(x = day, y = incidence, group = Model, colour = Model), data = res %>% filter(day <= max(dt$day) + days(10))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt) 
-```
+```{r, echo = FALSE}
+codf <- read.csv("forecasts/forecasts_seir.csv", colClasses = c("Date",rep("integer",8),"character"), stringsAsFactors = FALSE)
 
+ggplot(aes(x = day, y = incidence, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
+
+```
 
 ## Viso atvejų
 
-```{r}
-ggplot(aes(x = day, y = confirmed, group = Model, colour = Model), data = res %>% filter(day <= max(dt$day) + days(10))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt) 
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
+
+```
+
+# Modelių koeficentai 
+
+
+```{r, echo = FALSE}
+coefs <- read.csv("forecasts/models_seir.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
+df <- coefs %>% filter(end >= max(end) - days(mc$show - 1)) %>% mutate(R = round(R, 2), mu = round(mu, 2))
+
+df %>% paged_table
 ```
 
 
 # Efektyvusis R
 
-Taip atrodo modeliuojamas intervencijos efektas
+Taip atrodo modeliuojami intervencijos efektai. $R < 1$  reiškia kad epidemija suvaldyta
 
 ```{r, echo = FALSE}
+
+tm <- min(dt$times):(max(dt$times) + 30)
+fday <- dt$day[1] + days(1:length(tm) - 1)
 tmm <- tm - 9 
 tmm[tmm <= 0] <- 0
-eR <- data.frame(day = fday, time = tm, SEIR1 = m1$par[1]*exp(-m1$par[2] * tmm), SEIR2 =   m2$par[1]*exp(-m2$par[2] * tmm)) %>% pivot_longer(SEIR1:SEIR2, "Model", values_to = "R")
 
-ggplot(aes(x= day, y = R, group = Model, color = Model), data = eR) +geom_line()
+Re <- split(df, df$end) %>% lapply(function(d) {
+      data.frame(day = fday, end =as.character(d$end), Re= d$R[1]*exp(-d$mu[1] * tmm), stringsAsFactors = FALSE)
+      
+}) %>% bind_rows()
+
+ggplot(aes(x = day, y = Re, group = end, colour = end), data = Re) + geom_line() + geom_hline(yintercept = 1)
+
 ```
+
+Data kai modelis rodo, kad krizė suvaldyta
+
+```{r, echo = FALSE}
+Re %>% group_by(end) %>% filter(Re<1) %>% filter(day == min(day)) %>% select(end, day, Re) %>% paged_table
+```
+
 
 # SEIR compartments
 
 ```{r, echo = FALSE} 
-pm1r <- m1r %>% select(day, Infectious, Exposed, Hospitalized = Hospital, Fatalities = Dead) %>% pivot_longer(Infectious:Fatalities,"Compartment") %>% mutate(Compartment = factor(Compartment, levels = c("Exposed", "Infectious","Hospitalized","Fatalities")))
+pm1r <- codf %>% filter(end == max(end)) %>% select(day, Infectious, Exposed, Hospitalized = Hospital, Fatalities = Dead) %>% pivot_longer(Infectious:Fatalities,"Compartment") %>% mutate(Compartment = factor(Compartment, levels = c("Exposed", "Infectious","Hospitalized","Fatalities")))
 ggplot(aes(x= day, y = value, group = Compartment), data = pm1r)+ geom_col(aes(fill = Compartment)) + scale_fill_manual(values = c("Exposed" = "yellow", "Infectious" = "red", "Hospitalized" = "blue", "Fatalities" = "black"))
 ```
+
+
+# Mirčių prognozė
+
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = Deaths, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>%  filter(end >= max(dt$day) - days(mc$show - 1))) + geom_line() + geom_point(aes(x = day,  y = Deaths, group = NULL), colour = "black", data = dt)
+
+```
+
+
+# Pasveikusių prognozė
+
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = Recovered, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>%  filter(end >= max(dt$day) - days(mc$show - 1))) + geom_line() + geom_point(aes(x = day,  y = Recovered, group = NULL), colour = "black", data = dt)
+
+```
+
+## Hospitalizuotų pacientų prognozės
+
+```{r, echo = FALSE}
+ggplot(aes(x = day, y = Hospital, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>%  filter(end >= max(dt$day) - days(mc$show - 1))) + geom_line() 
+```
+
