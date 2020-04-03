@@ -1,12 +1,22 @@
 ---
 title: "Apie"
-description: Informacija apie COVID-19 Lietuvoje
+
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
- Istoriniai duomenys surinkti iš įvairių šaltinių. Naujausi duomenys imami iš SAM.
+Istoriniai duomenys surinkti iš įvairių šaltinių. Naujausi duomenys imami iš SAM.
 
 Modeliai yra edukacinio pobūdžio, juos galima laisvai naudoti, bet jiems nesuteikiama jokia garantija.
+
+Modeliai yra atnaujinami kas dieną su naujais duomenimis. Duomenys yra [čia](https://github.com/mpiktas/covid19lt/tree/master/total), o visas prognozes galite rasti [čia](https://github.com/mpiktas/covid19lt/tree/master/forecasts).
+
+Modelių kodas yra `.Rmd` failuose. Puslapis su modeliais yra pergneruojamas kiekvieną dieną. Norint tai padaryti pačiam reikia:
+
+  1. Parsisiųsti šitą [repozitoriją](https://github.com/mpiktas/covid19lt/).
+  2. Atsidaryti [Rstudio](http://www.rstudio.com) projektą (`covid19lt.Proj`).
+  3. Įsidiegti reikiamus [R](http://www.r-project.org) paketus (`dplyr`, `lubridate`, `tidyr`, `ggplot2`, `EpiEstim`,`deSolve`, `rmarkdown`, `distill`).
+  4. Paleisti komandą `rmarkdown::render_site()`.
+  5. Rezultatai, t.y. puslapis bus sudėtas į `docs` katalogą.

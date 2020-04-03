@@ -21,27 +21,24 @@
   <!--radix_placeholder_meta_tags-->
   <title>COVID-19 statistika ir modeliai: Apie</title>
   
-  <meta property="description" itemprop="description" content="Informacija apie COVID-19 Lietuvoje"/>
   
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="COVID-19 statistika ir modeliai: Apie"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Informacija apie COVID-19 Lietuvoje"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="COVID-19 statistika ir modeliai"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="COVID-19 statistika ir modeliai: Apie"/>
-  <meta property="twitter:description" content="Informacija apie COVID-19 Lietuvoje"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Apie"]},{"type":"character","attributes":{},"value":["Informacija apie COVID-19 Lietuvoje"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Apie"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1272,7 +1269,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Apie","description":"Informacija apie COVID-19 Lietuvoje","authors":[]}
+{"title":"Apie","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1295,13 +1292,22 @@
 
 <div class="d-title">
 <h1>Apie</h1>
-<p>Informacija apie COVID-19 Lietuvoje</p>
+
 </div>
 
 
 <div class="d-article">
 <p>Istoriniai duomenys surinkti iš įvairių šaltinių. Naujausi duomenys imami iš SAM.</p>
 <p>Modeliai yra edukacinio pobūdžio, juos galima laisvai naudoti, bet jiems nesuteikiama jokia garantija.</p>
+<p>Modeliai yra atnaujinami kas dieną su naujais duomenimis. Duomenys yra <a href="https://github.com/mpiktas/covid19lt/tree/master/total">čia</a>, o visas prognozes galite rasti <a href="https://github.com/mpiktas/covid19lt/tree/master/forecasts">čia</a>.</p>
+<p>Modelių kodas yra <code>.Rmd</code> failuose. Puslapis su modeliais yra pergneruojamas kiekvieną dieną. Norint tai padaryti pačiam reikia:</p>
+<ol type="1">
+<li>Parsisiųsti šitą <a href="https://github.com/mpiktas/covid19lt/">repozitoriją</a>.</li>
+<li>Atsidaryti <a href="http://www.rstudio.com">Rstudio</a> projektą (<code>covid19lt.Proj</code>).</li>
+<li>Įsidiegti reikiamus <a href="http://www.r-project.org">R</a> paketus (<code>dplyr</code>, <code>lubridate</code>, <code>tidyr</code>, <code>ggplot2</code>, <code>EpiEstim</code>,<code>deSolve</code>, <code>rmarkdown</code>, <code>distill</code>).</li>
+<li>Paleisti komandą <code>rmarkdown::render_site()</code>.</li>
+<li>Rezultatai, t.y. puslapis bus sudėtas į <code>docs</code> katalogą.</li>
+</ol>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
