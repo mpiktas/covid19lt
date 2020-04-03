@@ -83,35 +83,19 @@ mseir_param <- function(times, R0 = 2, mu = 0.01, D_infectious = 2.9, D_incubati
 }
 
 fit_seir1 <- function(p, times, y, t_N, I0, N) {
-    out <- mseirp1(times, p = p, t_N = t_N, I0 = I0, N = N)
-    cc <- out[, "conf.flow"]
-    sum((diff(y) - diff(cc))^2)/length(y)
+    if (p[1] > 0 & p[2] > 0 ) {
+        out <- mseirp1(times, p = p, t_N = t_N, I0 = I0, N = N)
+        cc <- out[, "conf.flow"]
+        sum((diff(y) - diff(cc))^2)/length(y)
+    } else  NA
 }
 
-fit_seir2 <- function(p, times, y, t_N, I0, N) {
-    out <- mseirp2(times, p = p, t_N = t_N, I0 = I0, N = N)
-    cc <- out[, "conf.flow"]
-    sum((diff(y) - diff(cc))^2)/length(y)
-}
-
-fit_seir3 <- function(p, times, y, t_N, I0, N) {
-    out <- mseirp3(times, p = p, t_N = t_N, I0 = I0, N = N)
-    cc <- out[, "conf.flow"]
-    sum((diff(y) - diff(cc))^2)/length(y)
-}
 
 
 mseirp1 <- function(times, p, t_N, I0, N ) {
     mseir_param(times, R0 = p[1], mu = p[2], D_infectious = 2.9, D_incubation = 5.2, t_N = t_N , I0 = I0, N = N)
 }
 
-mseirp2 <- function(times, p, t_N , I0 , N ) {
-    mseir_param(times, R0 = p[1], mu = p[2], D_infectious = p[3], D_incubation = p[4], t_N = t_N, I0 = I0, N = N)
-}
-
-mseirp3 <- function(times, p, t_N, I0, N ) {
-    mseir_param(times, R0 = p[1], mu = 0, D_infectious = 2.9, D_incubation = 5.2, t_N = t_N , I0 = I0, N = N)
-}
 
 ```
 
@@ -150,26 +134,50 @@ Vertinsime du modelius Lietuvos duomenims. Vieną su fiksuotais periodais $T_{in
 Lietuvos duomenimis įvertinti koeficientai yra tokie:
 
 ```{r, echo = FALSE}
-m1 <- optim(c(2,0.1), fit_seir1, y = dt$confirmed, times = dt$times, t_N = 9,  I0 = 1, N = 2793196)
-m2 <- optim(c(2,0.1, 2.9, 5.2), fit_seir2, y = dt$confirmed, times = dt$times, t_N = 9, I0 = 1, N = 2793196)
-#m3 <- optimize(fit_seir3,c(0,10), y = dt$confirmed, times = dt$times, t_N = 9, I0 = 1, N = 2793196)
+mc <- config::get(file = "_model.yml")
 
-tm <- min(dt$times):(max(dt$times) + 30)
-fday <- dt$day[1] + days(1:length(tm) - 1)
+TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
+
+one_day <- lapply(TT, function(end) { 
+    dt19 <- dt %>% filter(day <= end)
+    m1 <- optim(c(2,0.1), fit_seir1, y = dt19$confirmed, times = dt19$times, t_N = 9,  I0 = 1, N = 2793196)
+
+    tm <- min(dt19$times):(max(dt19$times) + 30)
+    fday <- dt19$day[1] + days(1:length(tm) - 1)
 
 m1r <- mseirp1(tm, m1$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% mutate(day = fday, incidence = c(0, round(diff(conf.flow)))) %>% mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed =  round(conf.flow), Hospital = round(Severe_H+Fatal), Recovered = round(R_Mild+R_Severe)) %>% select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
 
-m2r <- mseirp2(tm, m2$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% mutate(day = fday, incidence = c(0, diff(conf.flow))) %>%  mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed =  round(conf.flow), Hospital = round(Severe_H+Fatal), Recovered = round(R_Mild+R_Severe)) %>% select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
 
-res <- bind_rows(m1r %>% mutate(Model = "SEIR1"), m2r %>% mutate(Model = "SEIR2"))
+    list(dt = dt19, p = m1$par, opt = m1, forecast = m1r)
+    
+}
+)
 
-cf <- data.frame(Model = c("SEIR1","SEIR2"),rbind(c(m1$par,2.9, 5.2),c(m2$par)))
-colnames(cf) <- c("Model", "R0", "mu", "T_inf", "T_inc")
-cf %>% paged_table
 ```
 
-Inkubacinis periodas antruoju atveju nesutampa su literatūroje pateiktais įverčiais.
+```{r, echo = FALSE}
+odf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
+odf <- odf %>% mutate(end = as.character(end)) 
 
+fcodf <- read.csv("forecasts/forecasts_seir.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day), end = ymd(end))
+mf <- max(min(codf$end), min(fcodf$end))
+
+if ( mf > min(fcodf$end)) {
+  codf <- bind_rows(fcodf %>% filter(end < mf), codf %>% mutate(end = ymd(end)))
+  write.csv(codf, "forecasts/forecasts_seir.csv", row.names = FALSE)
+} 
+
+coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day), R = l$p[1], mu = l$p[2])) %>% bind_rows()
+
+fcoefs <- read.csv("forecasts/models_seir.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
+
+mf <- max(min(coefs$end), min(fcoefs$end))
+
+if (mf > min(fcoefs$end)) {
+  coefs <- bind_rows(fcoefs %>% filter(end < mf), coefs %>% mutate(end = ymd(end)))
+  write.csv(coefs, "forecasts/models_seir.csv", row.names = FALSE)
+}
+```
 # Prognozės
 
 ## Dieniniai atvejai
