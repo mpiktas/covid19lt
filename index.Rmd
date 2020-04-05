@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-Atnaujinama kas dieną. Paskutinis atnaujinimas 2020-04-04. Daugiau informacijos apie [puslapį.](about.html)
+Atnaujinama kas dieną. Paskutinis atnaujinimas 2020-04-05. Daugiau informacijos apie [puslapį.](about.html)
 
   - [Elementarioji statistika](stats.html)
   - [Apibendrinto logistinio augimo modelis](glm.html)
