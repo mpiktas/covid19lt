@@ -19,3 +19,4 @@ Atnaujinama kas dieną. Paskutinis atnaujinimas `r data`. Daugiau informacijos a
   - [Apibendrinto augimo modelis](ggm.html)
   - [Efektyvusis R](Re.html)
   - [SEIR epidemiologinis modelis](SEIR.html)
+  - [Modelių prognozių palyginimas](comparison.html)
