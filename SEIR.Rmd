@@ -96,8 +96,10 @@ mseirp1 <- function(times, p, t_N, I0, N ) {
     mseir_param(times, R0 = p[1], mu = p[2], D_infectious = 2.9, D_incubation = 5.2, t_N = t_N , I0 = I0, N = N)
 }
 
-
+data <- Sys.time()
 ```
+
+Atnaujinta: `r data`
 
 # Duomenys modeliavimui
 

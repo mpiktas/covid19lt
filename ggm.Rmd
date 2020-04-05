@@ -120,6 +120,12 @@ plot_f <- function(dt, fr) {
 }
 ```
 
+```{r include = FALSE}
+data <- Sys.time()
+```
+
+Atnaujinta: `r data`. 
+
 
 # Duomenys modeliavimui
 

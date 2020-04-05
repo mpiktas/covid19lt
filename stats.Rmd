@@ -11,6 +11,12 @@ library(tidyr)
 tt <- read_csv("total/lt-covid19-total.csv") 
 ```
 
+```{r include = FALSE}
+data <- Sys.time()
+```
+
+Atnaujinta: `r data`. 
+
 
 ```{r, echo = FALSE}
 stt <- tt %>% select(day, confirmed, deaths, recovered) %>% pivot_longer(confirmed:recovered, "type")

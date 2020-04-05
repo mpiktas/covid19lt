@@ -12,6 +12,11 @@ library(lubridate)
 options(max.print = 100000)
 ```
 
+```{r include = FALSE}
+data <- Sys.time()
+```
+
+Atnaujinta: `r data`. 
 
 # Duomenys modeliavimui
 
