@@ -16,7 +16,7 @@ library(config)
 options(max.print = 100000)
 glmde <- function(t, state, parameters) {
     with(as.list(c(state, parameters)), {
-        list(r*C^p*(1 - C/K))
+        list(exp(r)*C^exp(p)*(1 - C/exp(K)))
     })
 }
 
@@ -33,7 +33,7 @@ cases_glmde <- function(times, p) {
 }
 
 fit_incidence <- function(p , times, y, w) {
-    if (p[1] > 0 & p[2] > 0 & p[2] <= 1) {
+    if (p[2] <= 0) {
         sum(w*(y - incidence_glmde(times, c(y[1], p)))^2)
     } else NA
 }
@@ -91,7 +91,7 @@ TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
 one_day <- lapply(TT, function(end) { 
     dt19 <- dt %>% filter(day <= end)
-    r19 <- grid_search(dt19$times, dt19$incidence, dt19$w, c(0.3, 0.9), c(0.3, 0.9), c(200, 300, 400, 500, 600, 1000, 10000, 5e4, 1e5, 3*1e5))
+    r19 <- grid_search(dt19$times, dt19$incidence, dt19$w, log(c(0.3, 0.9)), log(c(0.3, 0.9)), log(c(sum(dt19$incidence), 3e6*0.01, 3e6*0.1)))
     p19 <- r19$p
     fr19 <- forecast_glmde(dt19, p19, ahead = 20) 
     list(dt = dt19, grid = r19, p = p19, forecast = fr19)
@@ -115,7 +115,7 @@ if ( mf > min(fcodf$end)) {
   write.csv(codf, "forecasts/forecasts_glm.csv", row.names = FALSE)
 } 
 
-coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day), r = l$p[1], p = l$p[2], K = l$p[3])) %>% bind_rows()
+coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day), r = exp(l$p[1]), p = exp(l$p[2]), K = exp(l$p[3]))) %>% bind_rows()
 
 fcoefs <- read.csv("forecasts/models_glm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
 
