@@ -11,6 +11,7 @@ oo <- read_html(raw)
 cd <- html_nodes(oo,".text") %>% html_nodes("li") %>% html_text
 tbs <- html_table(oo, fill = TRUE)
 
+if(FALSE) {
 
 cdd <- cd %>% strsplit(":")
 cdd <- cdd[sapply(cdd, length) == 2]
@@ -30,16 +31,17 @@ outd <- gsub("-","",as.character(new_day))
 new_day_data <- read.csv(fns[which.max(daysd)], stringsAsFactors = FALSE)
 new_day_data$day <- new_day
 
-if ((nums[1] - nums[2]) == new_data_day$confirmed[1]) new_data_day$confirmed[1] <- nums[1]
+if ((nums[1] - nums[2]) == new_day_data$confirmed[1]) new_day_data$confirmed[1] <- nums[1]
 
-if (nums[3] >= new_data_day$deaths[1]) new_data_day$deaths[1] <- nums[3]
+if (nums[3] >= new_day_data$deaths[1]) new_data_day$deaths[1] <- nums[3]
 
-if (nums[4] >= new_data_day$recovered[1]) new_data_day$recovered[1] <- nums[4]
+if (nums[4] >= new_day_data$recovered[1]) new_data_day$recovered[1] <- nums[4]
 
-if ((nums[6] - nums[5]) == new_data_day$tested[1]) new_data_day$tested[1] <- nums[6]
+if ((nums[6] - nums[5]) == new_day_data$tested[1]) new_data_day$tested[1] <- nums[6]
 
 write.csv(new_day_data, glue::glue("total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
 
+}
 tb1 <- tbs[[1]][-1:-4,]
 
 colnames(tb1) <- c("laboratory", "tested_all", "tested_mobile", "negative_all", "negative_mobile", "positive_all","positive_mobile", "not_tested", "not_tested_mobile")

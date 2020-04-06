@@ -11,6 +11,7 @@ oo <- read_html(raw)
 cd <- html_nodes(oo,".text") %>% html_nodes("li") %>% html_text
 tbs <- html_table(oo, fill = TRUE)
 
+if(FALSE) {
 
 cdd <- cd %>% strsplit(":")
 cdd <- cdd[sapply(cdd, length) == 2]
@@ -40,6 +41,7 @@ if ((nums[6] - nums[5]) == new_day_data$tested[1]) new_data_day$tested[1] <- num
 
 write.csv(new_day_data, glue::glue("total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
 
+}
 tb1 <- tbs[[1]][-1:-4,]
 
 colnames(tb1) <- c("laboratory", "tested_all", "tested_mobile", "negative_all", "negative_mobile", "positive_all","positive_mobile", "not_tested", "not_tested_mobile")
