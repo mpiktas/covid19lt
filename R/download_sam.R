@@ -31,7 +31,7 @@ tb1[, -1] <- sapply(tb1[, -1], as.integer)
 
 tbr <- tb1 %>% filter(laboratory != "VISO")
 
-tbr <- bind_cols(data.frame(day = rep(outd, nrow(tbr))), tbr)
+tbr <- bind_cols(data.frame(day = rep(new_day, nrow(tbr))), tbr)
 
 tot <- tbr[,-1:-2] %>% sapply(sum, na.rm = TRUE)
 
