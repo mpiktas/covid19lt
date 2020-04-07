@@ -6,3 +6,4 @@ tmp
 .DS_Store
 docs/forecasts/
 docs/total
+docs/tests
