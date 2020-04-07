@@ -12,5 +12,5 @@ dt <- fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
 fns <- dir("tests", pattern = "[0-9]+.csv", full.names = TRUE)
 
 dt <- fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
-    bind_rows %>% arrange(day, laboratory) %>% fill(under_observation) %>%
+    bind_rows %>% arrange(day, laboratory)  %>%
     write.csv("tests/lt-covid19-laboratory-total.csv", row.names = FALSE)

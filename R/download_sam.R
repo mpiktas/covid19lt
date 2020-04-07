@@ -8,7 +8,11 @@ raw <- GET("http://sam.lrv.lt/lt/naujienos/koronavirusas")
 #writeLines(unlist(strsplit(gsub("\n+","\n",gsub("(\n )+","\n",gsub(" +"," ",gsub("\r|\t", "", html_text(read_html(raw)))))),"\n")), paste0("/home/vaidotas/R/corona/data/korona_LT_",gsub( ":| ","_",raw$date),".csv"))
 
 oo <- read_html(raw)
-cd <- html_nodes(oo,".text") %>% html_nodes("li") %>% html_text
+
+
+# Get the tests data ------------------------------------------------------
+
+
 tbs <- html_table(oo, fill = TRUE)
 
 fns <- dir("tests", pattern="[0-9]+.csv", full.names  = TRUE)
@@ -41,23 +45,36 @@ if ( sum(abs(tot - tb1 %>% filter(laboratory == "VISO") %>% .[,-1] %>% unlist)) 
 
 
 
-if(FALSE) {
+# Add the totals data -----------------------------------------------------
+
+cd <- html_nodes(oo,".text") %>% html_nodes("li") %>% html_text
 
 cdd <- cd %>% strsplit(":")
 cdd <- cdd[sapply(cdd, length) == 2]
 nums <- cdd %>% sapply("[[", 2) %>% gsub("(.{1})([0-9]*)","\\2",.) %>% as.integer
 
 
+fns <- dir("total", pattern="[0-9]+.csv", full.names  = TRUE)
+
+days <- fns %>% strsplit("-") %>% sapply(function(x)gsub(".csv","",x[length(x)]))
+
+daysd <- ymd(days)
+
+new_day <- max(daysd)+days(1)
+
+outd <- gsub("-","",as.character(new_day))
+
+new_day_data <- read.csv(fns[which.max(daysd)], stringsAsFactors = FALSE)
 new_day_data$day <- new_day
 
 if ((nums[1] - nums[2]) == new_day_data$confirmed[1]) new_day_data$confirmed[1] <- nums[1]
 
-if (nums[3] >= new_day_data$deaths[1]) new_data_day$deaths[1] <- nums[3]
+if (nums[3] >= new_day_data$deaths[1]) new_day_data$deaths[1] <- nums[3]
 
-if (nums[4] >= new_day_data$recovered[1]) new_data_day$recovered[1] <- nums[4]
+if (nums[4] >= new_day_data$recovered[1]) new_day_data$recovered[1] <- nums[4]
 
-if ((nums[6] - nums[5]) == new_day_data$tested[1]) new_data_day$tested[1] <- nums[6]
+if ((nums[6] - nums[5]) == new_day_data$tested[1]) new_day_data$tested[1] <- nums[6]
 
 write.csv(new_day_data, glue::glue("total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
 
-}
+
