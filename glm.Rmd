@@ -173,3 +173,24 @@ df <- coefs %>% filter(end >= max(end) - days(mc$show - 1)) %>% mutate(r = round
 
 df %>% paged_table
 ```
+
+```{r, echo= FALSE, eval=FALSE}
+
+fr <- one_day[[1]]$forecast %>% filter(day <=max(dt$day)) %>% mutate(times = 12+1:n())
+pp <- one_day[[1]]$p
+
+sim <- sapply(fr$incidence, function(x)rpois(100,x))
+sim[,1] <- 2
+
+do_one <- function(x, fr) { 
+    dt19 <- fr %>% mutate(w = ifelse(incidence == 0, 0, 1))
+    dt19$incidence <- x
+    r19 <- optim(pp, fit_incidence, y = dt19$incidence, times = dt19$times, w = dt19$w)
+    p19 <- r19$p
+    fr19 <- forecast_glmde(dt19, p19, ahead = 20) 
+    list(dt = dt19, grid = r19, p = p19, forecast = fr19)
+}
+
+sim_day <- apply(sim, 1,  do_one, fr = fr)
+
+```
