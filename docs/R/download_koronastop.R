@@ -27,14 +27,18 @@ new_day <- max(daysd)+days(1)
 
 outd <- gsub("-","",as.character(new_day))
 
-new_day_data <- read.csv(fns[which.max(daysd)], stringsAsFactors = FALSE)
+old_day_data <- read.csv(fns[which.max(daysd)], stringsAsFactors = FALSE)
+
+new_day_data <- old_day_data
 new_day_data$day <- new_day
 
 nums <- c(nums1, nums2)
 if ((nums[1] - nums[2]) == new_day_data$confirmed[1])  {
-    new_day_data$confirmed[1] <- nums[1]
-} else stop("Confirmed do not match")
-
+    new_day_data$confirmed[1] <- old_day_data$confirmed[1] + nums[2]
+} else {
+    warning("Confirmed do not match")
+    new_day_data$confirmed[1] <- old_day_data$confirmed[1] + nums[2]
+}
 if (nums[4] >= new_day_data$deaths[1]) {
     new_day_data$deaths[1] <- nums[4]
 } else stop("Deaths is lower that previous day")
