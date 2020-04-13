@@ -131,8 +131,6 @@ Lietuvoje intervencija prasidėjo kovo 16, ty $T_N = 9$. SEIR modelis su interve
  - $T_{inc}$ - inkubacinis periodas.
 
 
-Vertinsime du modelius Lietuvos duomenims. Vieną su fiksuotais periodais $T_{inc} = 5.2$ ir $T_{inf} = 2.9$ o kitą kai periodai bus įvertinti iš duomenų.
-
 Lietuvos duomenimis įvertinti koeficientai yra tokie:
 
 ```{r, echo = FALSE}
