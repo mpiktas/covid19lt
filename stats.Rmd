@@ -46,5 +46,12 @@ labs <- read.csv("tests/lt-covid19-laboratory-total.csv", stringsAsFactors = FAL
 labst <- labs %>% select(day, laboratory, tested_all, positive_all, not_tested) %>% pivot_longer(tested_all:not_tested, "type")
 
 
-ggplot(aes(x = day, y = value, group = type), data = labst) + geom_col(aes(fill=type),position = "dodge",)+ facet_wrap(~laboratory, scales = "free_y")+labs(title = paste("Laboratory tests:",max(tt$day)))
+ggplot(aes(x = day, y = value, group = type), data = labst) + geom_col(aes(fill=type),position = "dodge")+ facet_wrap(~laboratory, scales = "free_y")+labs(title = paste("Laboratory tests:",max(tt$day)))
+```
+
+
+```{r, echo = FALSE}
+labs <- labs %>% group_by(laboratory) %>% mutate(tested_all = ifelse(is.na(tested_all), 0, tested_all), capacity = 100*(tested_all/max(tested_all)))
+
+ggplot(aes(x = day, y = capacity, group = laboratory) , data = labs) + geom_col(aes(fill=laboratory),position = "dodge")+ labs(title = paste("Laboratory capacity:",max(labs$day)))
 ```
