@@ -1,10 +1,10 @@
-"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","not_tested","not_tested_mobile"
-"2020-04-04","NVSPL",252,28,244,25,8,3,177,0
-"2020-04-04","Santaros klinikos",111,59,100,58,7,1,97,76
-"2020-04-04","Kauno klinikos",869,553,862,550,4,3,66,0
-"2020-04-04","Klaipėdos universitetinė ligoninė",NA,NA,NA,NA,NA,NA,NA,NA
-"2020-04-04","Šiaulių ligoninė",231,171,226,169,3,2,77,28
-"2020-04-04","NMVRVI",414,169,402,163,9,6,0,0
-"2020-04-04","Medicina practica",158,0,158,0,0,0,481,0
-"2020-04-04","Diagnostikos laboratorija",41,39,40,38,1,1,0,0
-"2020-04-04","NVI",193,0,185,0,8,0,0,0
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_again","not_tested","not_tested_mobile"
+"2020-04-04","NVSPL",252,28,244,25,8,3,0,177,0
+"2020-04-04","Santaros klinikos",111,59,100,58,7,1,4,97,76
+"2020-04-04","Kauno klinikos",869,553,862,550,4,3,3,66,0
+"2020-04-04","Klaipėdos universitetinė ligoninė",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"2020-04-04","Šiaulių ligoninė",231,171,226,169,3,2,2,77,28
+"2020-04-04","NMVRVI",414,169,402,163,9,6,3,0,0
+"2020-04-04","Medicina practica",158,0,158,0,0,0,0,481,0
+"2020-04-04","Diagnostikos laboratorija",41,39,40,38,1,1,0,0,0
+"2020-04-04","NVI",193,0,185,0,8,0,0,0,0
