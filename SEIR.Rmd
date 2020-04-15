@@ -242,6 +242,23 @@ Re %>% group_by(end) %>% filter(Re<1) %>% filter(day == min(day)) %>% select(end
 ```
 
 
+## Visos istorinės prognozės
+```{r}
+fr <- read.csv("forecasts/forecasts_seir.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end), day = ymd(day)) 
+
+ggplot(aes(x= day, y = incidence, group = end, colour =end), data = fr %>% filter(end >="2020-03-27")) + geom_line() +geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
+```
+
+
+# Epidemijos pabaigos ir viso susirgusių prognozės 
+
+```{r}
+zz <- fr %>% group_by(end) %>% filter(day >= "2020-03-16") %>% filter(incidence == min(incidence)) %>% arrange(day) %>% slice(1) %>% select(forecast_day = end, epidemic_end = day,  confirmed_total = confirmed)
+
+zz <- zz[order(zz$forecast_day, decreasing = TRUE), ]
+zz %>% paged_table
+```
+
 # SEIR compartments
 
 ```{r, echo = FALSE} 
