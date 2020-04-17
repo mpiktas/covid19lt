@@ -47,5 +47,5 @@ tbr <- tbr %>% mutate(positive_new = NA, positive_retested = NA) %>%
            not_tested, not_tested_mobile)
 
 
-write.csv(tbr, glue::glue("tests/lt-cxovid19-laboratory-{outd}.csv"), row.names = FALSE )
+write.csv(tbr, glue::glue("tests/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
 

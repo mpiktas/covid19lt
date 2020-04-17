@@ -1,7 +1,7 @@
-"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_again","not_tested","not_tested_mobile"
-"2020-04-12","NVSPL",51,48,49,46,2,2,0,0,0
-"2020-04-12","Santaros klinikos",105,0,104,0,0,0,1,2,0
-"2020-04-12","Kauno klinikos",191,23,190,22,1,1,0,0,0
-"2020-04-12","Klaipėdos universitetinė ligoninė",188,140,187,140,1,0,0,0,0
-"2020-04-12","Šiaulių ligoninė",86,0,86,0,0,0,0,8,0
-"2020-04-12","NMVRVI",170,166,161,161,5,5,4,0,0
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_retested","positive_new","not_tested","not_tested_mobile"
+"2020-04-12","NVSPL",51,48,49,46,2,2,0,2,0,0
+"2020-04-12","Santaros klinikos",105,0,104,0,1,0,1,0,2,0
+"2020-04-12","Kauno klinikos",191,23,190,22,1,1,0,1,0,0
+"2020-04-12","Klaipėdos universitetinė ligoninė",188,140,187,140,1,0,0,1,0,0
+"2020-04-12","Šiaulių ligoninė",86,0,86,0,0,0,0,0,8,0
+"2020-04-12","NMVRVI",170,166,161,161,9,5,4,5,0,0
