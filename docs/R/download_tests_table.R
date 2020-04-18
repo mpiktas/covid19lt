@@ -29,7 +29,7 @@ new_day_data <- read.csv(fns[which.max(daysd)], stringsAsFactors = FALSE)
 
 tb1 <- tbs[[1]][-1:-4,]
 
-colnames(tb1) <- c("laboratory", "tested_all", "tested_mobile", "negative_all", "negative_mobile", "positive_all","positive_mobile", "positive_again","not_tested", "not_tested_mobile")
+colnames(tb1) <- c("laboratory", "tested_all", "tested_mobile", "negative_all", "negative_mobile", "positive_all","positive_mobile","not_tested", "not_tested_mobile")
 
 tb1[, -1] <- sapply(tb1[, -1], as.integer)
 
@@ -38,7 +38,14 @@ tbr <- tb1 %>% filter(laboratory != "VISO")
 tbr <- bind_cols(data.frame(day = rep(new_day, nrow(tbr))), tbr)
 
 tot <- tbr[,-1:-2] %>% sapply(sum, na.rm = TRUE)
+if(sum(abs(tot - tb1 %>% filter(laboratory == "VISO") %>% .[,-1] %>% unlist)) != 0) warning("Totals do not match")
 
-if ( sum(abs(tot - tb1 %>% filter(laboratory == "VISO") %>% .[,-1] %>% unlist)) == 0) {
-    write.csv(tbr, glue::glue("tests/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
-}
+tbr <- tbr %>% mutate(positive_new = NA, positive_retested = NA) %>%
+    select(day, laboratory, tested_all, tested_mobile,
+           negative_all, negative_mobile,
+           positive_all, positive_mobile, positive_new, positive_retested,
+           not_tested, not_tested_mobile)
+
+
+write.csv(tbr, glue::glue("tests/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
+
