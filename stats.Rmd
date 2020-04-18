@@ -36,12 +36,31 @@ ggplot(aes(x = day, y = tested), data = tt) +geom_point() + geom_line() + labs(t
 
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = ag(tested)), data = tt) +geom_col() + labs(title = paste("Daily tests: ", max(tt$day)), y="tested")
-```
-
-```{r, echo = FALSE, fig.height=10, fig.width=10}
 library(lubridate)
 labs <- read.csv("tests/lt-covid19-laboratory-total.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+
+lbt <- labs %>% group_by(day) %>% summarise(daily_tests = sum(tested_all))
+ltt <- tt %>% mutate(daily_tests = ag(tested)) %>% select(day, daily_tests)
+
+lct <- ltt %>% left_join(lbt %>% rename(laboratory_tests = daily_tests), by = "day") %>% 
+    mutate(sam_daily_tests = daily_tests, 
+           daily_tests = ifelse(is.na(laboratory_tests), sam_daily_tests, laboratory_tests)) 
+    
+
+ggplot(aes(x = day, y = daily_tests), data = lct) +geom_col() + labs(title = paste("Daily tests: ", max(tt$day)), y="tested")
+```
+
+```{r}
+tpd <- tt %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
+    mutate(incidence = ag(confirmed), normalized = incidence*1000/daily_tests, percent = incidence/daily_tests*100)
+ggplot(aes(x = day, y = normalized), data = tpd) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 1000 tests", max(tt$day)),  y = "")
+
+```
+
+
+
+```{r, echo = FALSE, fig.height=10, fig.width=10}
+
 
 labst <- labs %>% select(day, laboratory, tested_all, positive_all, not_tested) %>% pivot_longer(tested_all:not_tested, "type")
 
