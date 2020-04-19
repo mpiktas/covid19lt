@@ -31,7 +31,7 @@ tb1 <- tbs[[1]][-1:-4,]
 
 colnames(tb1) <- c("laboratory", "tested_all", "tested_mobile", "negative_all", "negative_mobile", "positive_all","positive_mobile","not_tested", "not_tested_mobile")
 
-tb1[, -1] <- sapply(tb1[, -1], as.integer)
+tb1[, -1] <- sapply(tb1[, -1], function(x)as.integer(gsub("*","",x, fixed = TRUE)))
 
 tbr <- tb1 %>% filter(laboratory != "VISO")
 
