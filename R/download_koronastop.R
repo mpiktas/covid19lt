@@ -54,3 +54,8 @@ if ((nums[6] - nums[5]) == new_day_data$tested[1]) {
     new_day_data$tested[1] <- nums[6]
 }
 write.csv(new_day_data, glue::glue("total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
+
+ndd <- new_day_data %>% select(country, day) %>% mutate(incidence = nums[2], daily_tests = nums[5])
+write.csv(new_day_data, glue::glue("daily/lt-covid19-daily-{outd}.csv"), row.names = FALSE )
+
+
