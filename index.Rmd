@@ -20,6 +20,13 @@ Atnaujinama kas dieną. Paskutinis atnaujinimas `r data`. Daugiau informacijos a
 <p><img src="Re_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
 
+## Epidemijos bangų modelio dieninių atvejų prognozė 
+
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="glme_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+
+
 ## GLM dieninių atvejų prognozė 
 
 <div class="layout-chunk" data-layout="l-body">
@@ -35,8 +42,9 @@ Atnaujinama kas dieną. Paskutinis atnaujinimas `r data`. Daugiau informacijos a
 ## Puslapio turinys
 
   - [Elementarioji statistika](stats.html)
-  - [Apibendrinto logistinio augimo modelis](glm.html)
-  - [Apibendrinto augimo modelis](ggm.html)
   - [Efektyvusis R](Re.html)
+  - [Epidemijos bangų models](glme.html)
+  - [Apibendrinto logistinio augimo modelis](glm.html)
   - [SEIR epidemiologinis modelis](SEIR.html)
   - [Modelių prognozių palyginimas](comparison.html)
+  - [Apibendrinto augimo modelis](ggm.html)
