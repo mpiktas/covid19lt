@@ -1,8 +1,8 @@
 ---
-title: "Apibendrintas logistinio augimo modelis"
+title: "Epidemijos bangų modelis"
 output: distill::distill_article
 ---
-Modelis paremtas šituo [straipsniu](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1406-6).  Modeliuojamas užsikrėtusių per dieną skaičius.
+Modelis paremtas šituo [straipsniu](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1406-6).  Modeliuojamas užsikrėtusių per dieną skaičius. Laikoma kad yra dvi epidemijos bangos.
 
 
 ```{r, echo = FALSE, message=FALSE}
@@ -104,9 +104,9 @@ dt %>% select(-times, -w )%>% paged_table
 
 mc <- config::get(file = "_model.yml")
 
-#TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
+TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
-TT <- dt$day[dt$day >= max(dt$day) - days(4)]
+#TT <- dt$day[dt$day >= max(dt$day) - days(10)]
 
 one_day <- lapply(TT, function(end) { 
     dt19 <- dt %>% filter(day <= end)
@@ -135,7 +135,7 @@ if ( mf > min(fcodf$end)) {
   write.csv(codf, "forecasts/forecasts_glme.csv", row.names = FALSE)
 } 
 
-coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day), r = exp(l$p[1]), p = exp(l$p[2]), K = exp(l$p[3]))) %>% bind_rows()
+coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day),n = 2,  r = exp(l$p[1]), p = exp(l$p[2]), K = exp(l$p[3]), q = exp(l$p[4]), Ct = exp(l$p[5]))) %>% bind_rows()
 
 fcoefs <- read.csv("forecasts/models_glme.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
 
@@ -156,7 +156,7 @@ Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
 ## Dieniniai atvejai
 
 ```{r, echo = FALSE}
-codf <- read.csv("forecasts/forecasts_glm.csv", colClasses = c("Date","character","integer","integer"), stringsAsFactors = FALSE)
+codf <- read.csv("forecasts/forecasts_glme.csv", colClasses = c("Date","character","integer","integer"), stringsAsFactors = FALSE)
 
 ggplot(aes(x = day, y = incidence, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
 
@@ -185,11 +185,11 @@ codf %>% select(-incidence) %>% filter(end >= max(dt$day) - days(2)) %>%  spread
 
 # Modelių koeficentai 
 
-Eksponentinis augimas yra $p = 1$. $K$ yra suminis visų atvejų skaičius.
+Įprasta logistinė kreivė (eksponentinis augimas epidemijos pradžioje) atitinkamas $p = 1$. $K$ yra vienos epidemijos bangos suminis atvejų skaičius. $Ct$ yra slenkstis atvejų kai prasideda antra banga. Antros epidemijos bangos suminis atvejų skaičius yra $Ke^{-q}$
 
 ```{r, echo = FALSE}
 coefs <- read.csv("forecasts/models_glm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
-df <- coefs %>% filter(end >= max(end) - days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(p, 2), K = round(K))
+df <- coefs %>% filter(end >= max(end) - days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(p, 2), K = round(K), q = round(q, 2), Ct = round(Ct))
 
 df %>% paged_table
 ```
@@ -198,7 +198,7 @@ df %>% paged_table
 ## Visų prognozių palyginimas
 
 ```{r}
-fr <- read.csv("forecasts/forecasts_glm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end), day = ymd(day)) 
+fr <- read.csv("forecasts/forecasts_glme.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end), day = ymd(day)) 
 
 ggplot(aes(x= day, y = incidence, group = end, colour =end), data = fr %>% filter(end >="2020-03-27")) + geom_line() +geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
 ```
