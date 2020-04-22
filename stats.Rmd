@@ -57,6 +57,13 @@ ggplot(aes(x = day, y = normalized), data = tpd) +geom_point() + geom_line() + l
 
 ```
 
+```{r}
+tpd <- tt %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
+    mutate(incidence = ag(confirmed), normalized = incidence*1000/daily_tests, percent = incidence/daily_tests*100)
+ggplot(aes(x = day, y = normalized), data = tpd %>% filter(day>="2020-04-01")) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 1000 tests since 2020-04-01", max(tt$day)),  y = "")
+
+```
+
 
 
 ```{r, echo = FALSE, fig.height=10, fig.width=10}
