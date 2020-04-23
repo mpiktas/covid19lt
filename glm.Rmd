@@ -89,6 +89,8 @@ mc <- config::get(file = "_model.yml")
 
 TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
+#TT <- dt$day[dt$day >= max(dt$day) - 35]
+
 one_day <- lapply(TT, function(end) { 
     dt19 <- dt %>% filter(day <= end)
     r19 <- grid_search(dt19$times, dt19$incidence, dt19$w, log(c(0.3, 0.9)), log(c(0.3, 0.9)), log(c(sum(dt19$incidence), 3e6*0.01, 3e6*0.1)))
