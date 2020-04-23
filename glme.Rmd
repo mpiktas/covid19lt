@@ -112,6 +112,14 @@ one_day <- lapply(TT, function(end) {
     dt19 <- dt %>% filter(day <= end)
     #r19 <- grid_search(dt19$times, dt19$incidence, dt19$w, 2, log(c(0.3)), log((0.9)), log(c(sum(dt19$incidence), 3e6*0.01)), log(c(0.01, 0.1)))
     r19 <- optim(log(c(0.3,0.9, sum(dt19$incidence)/2, 0.1, sum(dt19$incidence)/2)), fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 2)
+    if(r19$convergence == 1) {
+      r192 <- try(optim(r19$par, fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 2, method = "BFGS"))
+      if(inherits(r192, "try-error")) {
+        r19 <- optim(r19$par, fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 2)
+      } else {
+      r19 <- r192
+      }
+    }
     p19 <- r19$p
     fr19 <- forecast_ewaves(dt19, p19, ahead = 30, n = 2) 
     list(dt = dt19, grid = r19, p = p19, forecast = fr19)
