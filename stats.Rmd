@@ -81,7 +81,7 @@ Laboratorijos pajėgumas tai istorinis laboratorijoje darytų testų maksimumas.
 ```{r}
 labs <- labs %>% group_by(laboratory) %>% mutate(tested_all = ifelse(is.na(tested_all), 0, tested_all), capacity= 100*(tested_all/max(tested_all)))
 
-ggplot(aes(x = day, y = capacity, group = laboratory) , data = labs) + geom_col(aes(fill=laboratory),position = "dodge")+ labs(title = paste("Laboratory capacity:",max(labs$day)))
+ggplot(aes(x = day, y = capacity, group = laboratory) , data = labs) + geom_col(aes(fill=laboratory),position = "dodge")+ labs(title = paste("Laboratory capacity, percentage:",max(labs$day)))
 ```
 
 
@@ -93,6 +93,12 @@ Visų laboratorijų pajėgumai yra kiekvienos laboratorijos pajėgumų suma. Gra
 totc <- labs %>% group_by(laboratory) %>% summarize(m = max(tested_all)) %>% .$m %>% sum
 daily <- labs %>% group_by(day) %>% summarise(all = sum(tested_all)) %>% ungroup %>% mutate(capacity = 100*all/totc)
 
-ggplot(aes(x = day, y = capacity) , data = daily) + geom_line() + geom_point()+labs(title = paste("Total capacity:",max(labs$day)))
+ggplot(aes(x = day, y = capacity) , data = daily) + geom_line() + geom_point()+labs(title = paste("Total capacity percentage:",max(labs$day)))
 ```
 
+```{r}
+
+dm <- labs %>% group_by(day) %>% summarise(untested = 100*sum(not_tested, na.rm = TRUE)/sum(tested_all, na.rm = TRUE))
+
+ggplot(aes(x = day, y = untested) , data = dm) + geom_line() + geom_point()+labs(title = paste("Not tested percentage:",max(labs$day)))
+```

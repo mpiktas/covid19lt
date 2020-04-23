@@ -104,9 +104,9 @@ dt %>% select(-times, -w )%>% paged_table
 
 mc <- config::get(file = "_model.yml")
 
-TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
+#TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
-#TT <- dt$day[dt$day >= max(dt$day) - days(10)]
+TT <- dt$day[dt$day >= max(dt$day) - days(16)]
 
 one_day <- lapply(TT, function(end) { 
     dt19 <- dt %>% filter(day <= end)
@@ -143,7 +143,7 @@ mf <- max(min(coefs$end), min(fcoefs$end))
 
 if (mf > min(fcoefs$end)) {
   coefs <- bind_rows(fcoefs %>% filter(end < mf), coefs %>% mutate(end = ymd(end)))
-  write.csv(coefs, "forecasts/models_glm.csv", row.names = FALSE)
+  write.csv(coefs, "forecasts/models_glme.csv", row.names = FALSE)
 }
 ```
 
@@ -189,7 +189,7 @@ codf %>% select(-incidence) %>% filter(end >= max(dt$day) - days(2)) %>%  spread
 
 ```{r, echo = FALSE}
 coefs <- read.csv("forecasts/models_glm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
-df <- coefs %>% filter(end >= max(end) - days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(p, 2), K = round(K), q = round(q, 2), Ct = round(Ct))
+df <- coefs %>% filter(end >= (max(end) - days(mc$show - 1))) %>% mutate(r = round(r, 2), p = round(p, 2), K = round(K), q = round(q, 2), Ct = round(Ct))
 
 df %>% paged_table
 ```
