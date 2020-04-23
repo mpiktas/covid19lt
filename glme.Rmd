@@ -104,9 +104,9 @@ dt %>% select(-times, -w )%>% paged_table
 
 mc <- config::get(file = "_model.yml")
 
-#TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
+TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
-TT <- dt$day[dt$day >= max(dt$day) - days(16)]
+#TT <- dt$day[dt$day >= max(dt$day) - days(16)]
 
 one_day <- lapply(TT, function(end) { 
     dt19 <- dt %>% filter(day <= end)
@@ -188,7 +188,7 @@ codf %>% select(-incidence) %>% filter(end >= max(dt$day) - days(2)) %>%  spread
 Įprasta logistinė kreivė (eksponentinis augimas epidemijos pradžioje) atitinkamas $p = 1$. $K$ yra vienos epidemijos bangos suminis atvejų skaičius. $Ct$ yra slenkstis atvejų kai prasideda antra banga. Antros epidemijos bangos suminis atvejų skaičius yra $Ke^{-q}$
 
 ```{r, echo = FALSE}
-coefs <- read.csv("forecasts/models_glm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
+coefs <- read.csv("forecasts/models_glme.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
 df <- coefs %>% filter(end >= (max(end) - days(mc$show - 1))) %>% mutate(r = round(r, 2), p = round(p, 2), K = round(K), q = round(q, 2), Ct = round(Ct))
 
 df %>% paged_table
