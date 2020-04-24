@@ -52,18 +52,34 @@ ggplot(aes(x = day, y = daily_tests), data = lct) +geom_col() + labs(title = pas
 
 ```{r}
 tpd <- tt %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
-    mutate(incidence = ag(confirmed), normalized = incidence*1000/daily_tests, percent = incidence/daily_tests*100)
-ggplot(aes(x = day, y = normalized), data = tpd) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 1000 tests", max(tt$day)),  y = "")
+    mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, percent = incidence/daily_tests*100)
+ggplot(aes(x = day, y = normalized), data = tpd) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 100 tests", max(tt$day)),  y = "")
 
 ```
 
 ```{r}
 tpd <- tt %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
-    mutate(incidence = ag(confirmed), normalized = incidence*1000/daily_tests, percent = incidence/daily_tests*100)
-ggplot(aes(x = day, y = normalized), data = tpd %>% filter(day>="2020-04-01")) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 1000 tests since 2020-04-01", max(tt$day)),  y = "")
+    mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, percent = incidence/daily_tests*100)
+ggplot(aes(x = day, y = normalized), data = tpd %>% filter(day>="2020-04-01")) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 100 tests since 2020-04-01", max(tt$day)),  y = "")
 
 ```
 
+```{r}
+
+pr <- read.csv("tests/profilactic.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+
+ggplot(aes(x = day, y = profilactic), data = pr) +geom_point() + geom_line() + 
+           labs(title = paste("Profilactic tests per day", max(tt$day)),  y = "")
+
+```
+
+```{r}
+prt <- tpd %>% inner_join(pr, by = "day") %>% mutate(profilactic_removed = 100*(incidence/(daily_tests-profilactic))) %>% 
+    select(day, normalized, profilactic_removed ) %>% pivot_longer(normalized:profilactic_removed)
+
+ggplot(aes(x= day, y=value, group = name, colour =name), data=prt)+geom_point()+geom_line() +labs(title = paste("Confirmed cases per 100 total tests vs 100 non-profilactic tests"))
+
+```
 
 
 ```{r, echo = FALSE, fig.height=10, fig.width=10}
