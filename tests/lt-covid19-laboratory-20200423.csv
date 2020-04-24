@@ -1,0 +1,13 @@
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
+2020-04-23,"NVSPL",514,0,513,0,1,0,1,0,225,0
+2020-04-23,"Santaros klinikos",849,0,835,0,14,0,2,12,9,0
+2020-04-23,"Kauno klinikos",2183,256,2179,255,4,1,1,3,300,300
+2020-04-23,"Klaipėdos universitetinė ligoninė",574,201,562,200,12,1,2,10,345,0
+2020-04-23,"Šiaulių ligoninė",11,0,11,0,0,0,0,0,44,0
+2020-04-23,"NMVRVI",417,336,414,334,3,2,2,1,141,141
+2020-04-23,"NVI",511,10,510,10,1,0,1,0,87,0
+2020-04-23,"Baltic medics",216,216,216,216,0,0,0,0,61,61
+2020-04-23,"Medicina practica",809,0,809,0,0,0,0,0,100,100
+2020-04-23,"VU GMC",463,463,462,462,1,1,1,0,171,23
+2020-04-23,"SK Impeks MDC",202,0,201,0,1,0,1,0,199,0
+2020-04-23,"Diagnostikos laboratorija",652,197,650,196,2,1,1,1,591,120
