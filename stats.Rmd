@@ -17,7 +17,6 @@ data <- Sys.time()
 
 Atnaujinta: `r data`. 
 
-
 ```{r, echo = FALSE}
 stt <- tt %>% select(day, confirmed, deaths, recovered) %>% pivot_longer(confirmed:recovered, "type")
 ggplot(aes(x = day, y = value, group = type, colour = type), data =stt) + geom_point()+geom_line()+labs(title = paste("Cumulative cases:",max(tt$day))) + scale_color_manual(values = c("confirmed" = "red", "recovered" = "springgreen", deaths = "black"))
@@ -117,4 +116,12 @@ ggplot(aes(x = day, y = capacity) , data = daily) + geom_line() + geom_point()+l
 dm <- labs %>% group_by(day) %>% summarise(untested = 100*sum(not_tested, na.rm = TRUE)/sum(tested_all, na.rm = TRUE))
 
 ggplot(aes(x = day, y = untested) , data = dm) + geom_line() + geom_point()+labs(title = paste("Not tested percentage:",max(labs$day)))
+```
+
+```{r}
+epc <- read.csv("exceptions/epidemic_curve_20200427.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+
+tt1 <- tt %>% mutate(incidence = ag(confirmed))
+
+ggplot(aes(x= day, y = incidence), data = epc) + geom_point()+geom_line() +geom_point(data=tt1, colour="red")+geom_line(data=tt1, colour="red") +labs(title = "Confirmed and actual cases")
 ```
