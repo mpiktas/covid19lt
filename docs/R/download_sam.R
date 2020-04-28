@@ -15,7 +15,7 @@ cd <- html_nodes(oo,".text") %>% html_nodes("li") %>% html_text
 
 cdd <- cd %>% strsplit(":")
 cdd <- cdd[sapply(cdd, length) == 2]
-nums <- cdd %>% sapply("[[", 2) %>% gsub("(.{1})([0-9]*)","\\2",.) %>% as.integer
+nums <- cdd %>% sapply("[[", 2) %>% gsub("(.{1})([0-9]+)(.*)","\\2",.) %>% as.integer
 
 
 fns <- dir("total", pattern="[0-9]+.csv", full.names  = TRUE)
@@ -36,30 +36,32 @@ new_day_data$day <- new_day
 
 
 
-if ((nums[1] - nums[2]) == new_day_data$confirmed[1])  {
+if ((nums[1] - nums[3]) == new_day_data$confirmed[1])  {
     new_day_data$confirmed[1] <- nums[1]
 } else {
     warning("Confirmed numbers do not match")
-    new_day_data$confirmed[1] <-  new_day_data$confirmed[1]+nums[2]
+    new_day_data$confirmed[1] <-  new_day_data$confirmed[1] + nums[3]
 }
 
-if (nums[3] >= new_day_data$deaths[1]) {
-    new_day_data$deaths[1] <- nums[3]
+if (nums[4] >= new_day_data$deaths[1]) {
+    new_day_data$deaths[1] <- nums[4]
 }else warning("Deaths number is lower")
 
-if (nums[4] >= new_day_data$recovered[1]) {
-    new_day_data$recovered[1] <- nums[4]
+if (nums[5] >= new_day_data$recovered[1]) {
+    new_day_data$recovered[1] <- nums[5]
 } else warning("Recovered number is lower")
 
-if ((nums[6] - nums[5]) == new_day_data$tested[1])  {
-    new_day_data$tested[1] <- nums[6]
+if ((nums[8] - nums[6]) == new_day_data$tested[1])  {
+    new_day_data$tested[1] <- nums[8]
 } else  {
     warning("Tested numbers do not match")
-    new_day_data$tested[1] <- nums[6]
+    new_day_data$tested[1] <- nums[8]
 }
+
+new_day_data$quarantined[1] <- nums[7]
 
 write.csv(new_day_data, glue::glue("total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
 
-ndd <- new_day_data %>% select(country, day) %>% mutate(incidence = nums[2], daily_tests = nums[5])
+ndd <- new_day_data %>% select(country, day) %>% mutate(confirmed = nums[1], active = nums[2], incidence = nums[3], deaths = nums[4], recovered = nums[5], daily_tests = nums[6], quarantined = nums[7], total_tests = nums[8])
 write.csv(ndd, glue::glue("daily/lt-covid19-daily-{outd}.csv"), row.names = FALSE )
 
