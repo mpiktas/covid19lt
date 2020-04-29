@@ -118,6 +118,8 @@ dm <- labs %>% group_by(day) %>% summarise(untested = 100*sum(not_tested, na.rm 
 ggplot(aes(x = day, y = untested) , data = dm) + geom_line() + geom_point()+labs(title = paste("Not tested percentage:",max(labs$day)))
 ```
 
+Epideminė kreivė pagal SAM. Juoda spalva atidėta kada susirgta, raudona kada buvo patvirtintas teigimas testas.
+
 ```{r}
 epc <- read.csv("exceptions/epidemic_curve_20200427.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 
