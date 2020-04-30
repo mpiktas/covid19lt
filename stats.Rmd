@@ -17,10 +17,18 @@ data <- Sys.time()
 
 Atnaujinta: `r data`. 
 
+# Suminiai atvejai
+
+Sudėti dieniniai susirgimų atvejai, dieniniai pasveikusiųjų ir dieniniai mirusiųjų atvejai. Neatsižvelgiama į 2020-04-28 paskelbtą SAM korekciją.
+
 ```{r, echo = FALSE}
 stt <- tt %>% select(day, confirmed, deaths, recovered) %>% pivot_longer(confirmed:recovered, "type")
 ggplot(aes(x = day, y = value, group = type, colour = type), data =stt) + geom_point()+geom_line()+labs(title = paste("Cumulative cases:",max(tt$day))) + scale_color_manual(values = c("confirmed" = "red", "recovered" = "springgreen", deaths = "black"))
 ```
+
+# Nauji atvejai
+
+Dieniniai susirgimų atvejai, dieniniai pasveikusiųjų ir dieniniai mirusiųjų atvejai. Neatsižvelgiama į 2020-04-28 paskelbtą SAM korekciją, nes nebuvo paskelbta koreguota istorinė eilutė.
 
 ```{r, echo = FALSE}
 ag <- function(x)c(x[1],diff(x))
@@ -29,10 +37,19 @@ ggplot(aes(x = day, y = value, group = type), data =ntt) + geom_col(aes(fill=typ
 ```
 
 
+# Testų skaičius
+
+Kas dieną atliktų testų suma. SAM kiekvieną dieną praneša suminį testų skaičių ir tą dieną atliktų testų skaičių. Sumuojant pastarąjį per visas dienas jis turėtų sutapti su skelbiamu testų skaičiumi. Taip ne visados įvykdavo, todėl čia skelbiamas tik suminis testų skaičius.
+
 ```{r, echo = FALSE}
 ggplot(aes(x = day, y = tested), data = tt) +geom_point() + geom_line() + labs(title = paste("Cumulative tests:",max(tt$day)),  x = "tested")
 ```
 
+
+# Per dieną atliktų testų skaičius
+
+
+Nuo balandžio 1 d. pradėjus skelbti laboratorijų testų skaičius, dieninis skaičių testas imamas iš šių duomenų.
 
 ```{r, echo = FALSE}
 library(lubridate)
@@ -49,6 +66,10 @@ lct <- ltt %>% left_join(lbt %>% rename(laboratory_tests = daily_tests), by = "d
 ggplot(aes(x = day, y = daily_tests), data = lct) +geom_col() + labs(title = paste("Daily tests: ", max(tt$day)), y="tested")
 ```
 
+# Atvejų skaičius tenkantis 100 testų
+
+Pateikiama istorinė eilutė
+
 ```{r}
 tpd <- tt %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
     mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, percent = incidence/daily_tests*100)
@@ -56,12 +77,18 @@ ggplot(aes(x = day, y = normalized), data = tpd) +geom_point() + geom_line() + l
 
 ```
 
+Pateikiama eilutė nuo 2020-04-01
+
 ```{r}
 tpd <- tt %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
     mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, percent = incidence/daily_tests*100)
 ggplot(aes(x = day, y = normalized), data = tpd %>% filter(day>="2020-04-01")) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 100 tests since 2020-04-01", max(tt$day)),  y = "")
 
 ```
+
+# Profilaktiniai testai
+
+SAM vieną kartą paskelbė duomenis kiek testuojama profilaktiškai. Šitie duomenys nėra atnaujinami.
 
 ```{r}
 
@@ -72,6 +99,9 @@ ggplot(aes(x = day, y = profilactic), data = pr) +geom_point() + geom_line() +
 
 ```
 
+
+Profilaktiniai testai daromi padidintos rizikos darbuotojams. Norint analizuoti naujus susirgimus ir epidemijos plitimą, juos reikėtų išimti iš bendros statistikos.
+
 ```{r}
 prt <- tpd %>% inner_join(pr, by = "day") %>% mutate(profilactic_removed = 100*(incidence/(daily_tests-profilactic))) %>% 
     select(day, normalized, profilactic_removed ) %>% pivot_longer(normalized:profilactic_removed)
@@ -80,6 +110,7 @@ ggplot(aes(x= day, y=value, group = name, colour =name), data=prt)+geom_point()+
 
 ```
 
+# Laboratorijų duomenys
 
 ```{r, echo = FALSE, fig.height=10, fig.width=10}
 
@@ -118,7 +149,14 @@ dm <- labs %>% group_by(day) %>% summarise(untested = 100*sum(not_tested, na.rm 
 ggplot(aes(x = day, y = untested) , data = dm) + geom_line() + geom_point()+labs(title = paste("Not tested percentage:",max(labs$day)))
 ```
 
-Epideminė kreivė pagal SAM. Juoda spalva atidėta kada susirgta, raudona kada buvo patvirtintas teigimas testas.
+
+
+# Epideminė kreivė
+
+
+Epideminė kreivė paskelbta SAM. Pateiktas tik [grafikas](tests/pdfs/COVID-19 situacija Lietuvoje_siuntimui.jpg). Iš jo duomenys buvo išskaičiuoti darant lyginamąją grafiko analizę. Mažiausias stulpelis buvo laikomas vienas atvejis, buvo laikoma, kad dieną užfiksuotų atvejų skaičius yra tiek kiek atitinkamame stulpelyje telpa mažiausių stulpelių.
+
+Juoda spalva atidėta kada susirgta, raudona kada buvo patvirtintas teigimas testas.
 
 ```{r}
 epc <- read.csv("exceptions/epidemic_curve_20200427.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))

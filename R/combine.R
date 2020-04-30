@@ -29,4 +29,8 @@ ln <- ln %>% rename(laboratory=lab_reported)
 
 dtl <- dtl %>% inner_join(ln, by = "laboratory")
 
-write.csv("tests/lt-covid19-laboratory-total.csv", row.names = FALSE)
+oo <- dtl %>% select(-laboratory) %>% rename(laboratory = lab_actual) %>%
+    group_by(day, laboratory) %>% summarise_all(sum)
+
+
+write.csv(oo,"tests/lt-covid19-laboratory-total.csv", row.names = FALSE)
