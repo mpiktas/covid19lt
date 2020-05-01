@@ -16,9 +16,9 @@ dtl <- fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
 
 ln <- read.csv("tests/laboratory_names.csv", stringsAsFactors = FALSE)
 
-lrn <- unique(dtl$lab_reported)
+lrn <- unique(dtl$laboratory)
 
-lr <- setdiff(intersect(lrn,ln$laboratory), lrn)
+lr <- setdiff(lrn,intersect(lrn,ln$lab_reported))
 if (length(lr) > 0) {
     warning("New laboratories: ", paste(lr, collapse = ", "))
     ln <- bind_rows(ln, data.frame(lab_reported = lr, lab_actual = lr, stringsAsFactors = FALSE))
