@@ -54,7 +54,7 @@ if(identical(dim(tbr),dim(new_day_data))) {
     sm <- 0
 }
 
-if (sm == 0) {
+if (sm > 0) {
     write.csv(tbr, glue::glue("tests/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
 } else {
     warning("New day data is identical to the previous day")
