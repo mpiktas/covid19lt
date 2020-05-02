@@ -51,7 +51,7 @@ tbr <- tbr %>% mutate(positive_new = NA, positive_retested = NA) %>%
 if(identical(dim(tbr),dim(new_day_data))) {
     sm <- sum(abs(new_day_data[,-2:-1]-tbr[,-2:-1]), na.rm=TRUE)
 }else {
-    sm <- 0
+    sm <- 1
 }
 
 if (sm > 0) {
