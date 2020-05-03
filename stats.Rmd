@@ -156,7 +156,7 @@ ggplot(aes(x = day, y = untested) , data = dm) + geom_line() + geom_point()+labs
 
 Epideminė kreivė paskelbta SAM. Pateiktas tik [grafikas](tests/pdfs/COVID-19 situacija Lietuvoje_siuntimui.jpg). Iš jo duomenys buvo išskaičiuoti darant lyginamąją grafiko analizę. Mažiausias stulpelis buvo laikomas vienas atvejis, buvo laikoma, kad dieną užfiksuotų atvejų skaičius yra tiek kiek atitinkamame stulpelyje telpa mažiausių stulpelių.
 
-Juoda spalva atidėta kada susirgta, raudona kada buvo patvirtintas teigimas testas.
+Juoda spalva atidėta kada susirgta, raudona kada buvo patvirtintas teigiamas testas.
 
 ```{r}
 epc <- read.csv("exceptions/epidemic_curve_20200427.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
