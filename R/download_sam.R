@@ -47,21 +47,21 @@ if (nums[4] >= new_day_data$deaths[1]) {
     new_day_data$deaths[1] <- nums[4]
 }else warning("Deaths number is lower")
 
-if (nums[5] >= new_day_data$recovered[1]) {
-    new_day_data$recovered[1] <- nums[5]
+if (nums[6] >= new_day_data$recovered[1]) {
+    new_day_data$recovered[1] <- nums[6]
 } else warning("Recovered number is lower")
 
-if ((nums[8] - nums[6]) == new_day_data$tested[1])  {
-    new_day_data$tested[1] <- nums[8]
+if ((nums[9] - nums[7]) == new_day_data$tested[1])  {
+    new_day_data$tested[1] <- nums[9]
 } else  {
     warning("Tested numbers do not match")
-    new_day_data$tested[1] <- nums[8]
+    new_day_data$tested[1] <- nums[9]
 }
 
-new_day_data$quarantined[1] <- nums[7]
+new_day_data$quarantined[1] <- nums[8]
 
 write.csv(new_day_data, glue::glue("total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
 
-ndd <- new_day_data %>% select(country, day) %>% mutate(confirmed = nums[1], active = nums[2], incidence = nums[3], deaths = nums[4], recovered = nums[5], daily_tests = nums[6], quarantined = nums[7], total_tests = nums[8])
+ndd <- new_day_data %>% select(country, day) %>% mutate(confirmed = nums[1], active = nums[2], incidence = nums[3], deaths = nums[4], deaths_different =nums[5], recovered = nums[6], daily_tests = nums[7], quarantined = nums[8], total_tests = nums[9])
 write.csv(ndd, glue::glue("daily/lt-covid19-daily-{outd}.csv"), row.names = FALSE )
 
