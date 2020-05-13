@@ -33,12 +33,12 @@ colnames(tb1) <- c("laboratory", "tested_all", "tested_mobile", "negative_all", 
 
 tb1[, -1] <- sapply(tb1[, -1], function(x)as.integer(gsub("*","",x, fixed = TRUE)))
 
-tbr <- tb1 %>% filter(laboratory != "Suma:")
+tbr <- tb1 %>% filter(laboratory != "Iš viso:")
 
 tbr <- bind_cols(data.frame(day = rep(new_day, nrow(tbr))), tbr)
 
 tot <- tbr[,-1:-2] %>% sapply(sum, na.rm = TRUE)
-if(sum(abs(tot - tb1 %>% filter(laboratory == "Suma:") %>% .[,-1] %>% unlist)) != 0) warning("Totals do not match")
+if(sum(abs(tot - tb1 %>% filter(laboratory == "Iš viso:") %>% .[,-1] %>% unlist)) != 0) warning("Totals do not match")
 
 tbr <- tbr %>% mutate(positive_new = NA, positive_retested = NA) %>%
     select(day, laboratory, tested_all, tested_mobile,
