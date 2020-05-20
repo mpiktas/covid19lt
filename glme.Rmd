@@ -111,17 +111,17 @@ TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 one_day <- lapply(TT, function(end) { 
     dt19 <- dt %>% filter(day <= end)
     #r19 <- grid_search(dt19$times, dt19$incidence, dt19$w, 2, log(c(0.3)), log((0.9)), log(c(sum(dt19$incidence), 3e6*0.01)), log(c(0.01, 0.1)))
-    r19 <- optim(log(c(0.3,0.9, sum(dt19$incidence)/2, 0.1, sum(dt19$incidence)/2)), fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 2)
+    r19 <- optim(log(c(0.3,0.9, sum(dt19$incidence)/2, 0.1, sum(dt19$incidence)/2)), fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 3)
     if(r19$convergence == 1) {
-      r192 <- try(optim(r19$par, fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 2, method = "BFGS"))
+      r192 <- try(optim(r19$par, fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 3, method = "BFGS"))
       if(inherits(r192, "try-error")) {
-        r19 <- optim(r19$par, fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 2)
+        r19 <- optim(r19$par, fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 3)
       } else {
       r19 <- r192
       }
     }
     p19 <- r19$p
-    fr19 <- forecast_ewaves(dt19, p19, ahead = 30, n = 2) 
+    fr19 <- forecast_ewaves(dt19, p19, ahead = 30, n = 3) 
     list(dt = dt19, grid = r19, p = p19, forecast = fr19)
 }
 )
@@ -143,7 +143,7 @@ if ( mf > min(fcodf$end)) {
   write.csv(codf, "forecasts/forecasts_glme.csv", row.names = FALSE)
 } 
 
-coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day),n = 2,  r = exp(l$p[1]), p = exp(l$p[2]), K = exp(l$p[3]), q = exp(l$p[4]), Ct = exp(l$p[5]))) %>% bind_rows()
+coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day),n = 3,  r = exp(l$p[1]), p = exp(l$p[2]), K = exp(l$p[3]), q = exp(l$p[4]), Ct = exp(l$p[5]))) %>% bind_rows()
 
 fcoefs <- read.csv("forecasts/models_glme.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
 
