@@ -115,7 +115,8 @@ one_day <- lapply(TT, function(end) {
     if(r19$convergence == 1) {
       r192 <- try(optim(r19$par, fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 3, method = "BFGS"))
       if(inherits(r192, "try-error")) {
-        r19 <- optim(r19$par, fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 3)
+        r193 <-try(optim(r19$par, fit_incidence, times = dt19$times, y = dt19$incidence, w = dt19$w, n = 3))
+        if(!inherits(r193, "try-error")) r19 <- r193
       } else {
       r19 <- r192
       }
