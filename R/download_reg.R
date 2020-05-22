@@ -14,7 +14,9 @@ geo <- GET("https://maps.registrucentras.lt/arcgis/rest/services/covid/pjuviai/F
 
 dst1 <- fromJSON(sub("[)];$","",sub("^.*[(]","",rawToChar(ds$content))))
 
-geo1 <- fromJSON(sub("[)];$","",sub("^.*[(]","",rawToChar(geo$content))))
+geo1 <- fromJSON(sub("[)];$","",sub("^.*[(]","",gsub("(\"ATNUJINTA\":)([0-9]+)","\\1\"\\2\"", rawToChar(geo$content)))))
+
+
 
 dd <- gsub(" ","_",Sys.time())
 
