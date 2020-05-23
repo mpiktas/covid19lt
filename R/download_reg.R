@@ -40,6 +40,6 @@ adsd <- lapply(ad, function(l)fix_esridate(rawToChar(l$content)))
 
 dd <- gsub(" ","_",Sys.time())
 
-mapply(function(dt, nm) write.csv(dt,paste0("rc/",nm,"_",dd,".csv")), )
+mapply(function(dt, nm) write.csv(dt,paste0("rc/",nm,"_",dd,".csv")), adsd, names(adsd), SIMPLIFY=FALSE)
 
 
