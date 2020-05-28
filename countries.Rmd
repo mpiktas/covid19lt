@@ -1,0 +1,36 @@
+---
+title: "COVID-19 Europos šalių statistika"
+output: distill::distill_article
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(tidyr)
+library(COVID19)
+library(rmarkdown)
+library(lubridate)
+```
+
+```{r include = FALSE}
+data <- Sys.time()
+```
+
+Atnaujinta: `r data`. 
+
+
+
+Pagal 2020-05-27 Lietuvos vyriausybės [nutarimą](https://koronastop.lrv.lt/lt/naujienos/karantino-salygos-darosi-svelnesnes) į Lietuvą be karantino galima atvykti Europos ekonominės erdvės valstybių, Šveicarijos, Didžiosios Britanijos ir Airijos piliečiams ir jose teisėtai gyvenantiems žmonėms, jeigu toje valstybėje, sergamumas koronaviruso infekcija (COVID-19) per pastarąsias 14 kalendorinių dienų neviršijo 25 nustatytų koronaviruso atvejų 100 tūkst. gyventojų.
+
+
+Čia pateikiamas sąrašas Europos šalių ir atvejų skaičius 100 tūkst gyventojų nuo `r Sys.Date() - days(16)` iki `r Sys.Date()- days(2)`.
+
+```{r}
+cn <- read.csv("exceptions/Countries-Europe.csv")
+x <- covid19(cn$ISO.alpha.3, verbose = FALSE)
+
+x  %>% filter(date == Sys.Date() -days(2) | date == Sys.Date() - days(16)) %>% group_by(administrative_area_level_1) %>% summarize(cases14 = round(diff(confirmed)/unique(population)*1e5,2)) %>% arrange(cases14) %>% rename(country = administrative_area_level_1) %>% mutate(rank = 1:n()) %>% select(rank, country, cases14) %>% paged_table()
+
+
+```
