@@ -29,9 +29,11 @@ Pagal 2020-05-27 Lietuvos vyriausybės [nutarimą](https://koronastop.lrv.lt/lt/
 
 ```{r}
 cn <- read.csv("exceptions/Countries-Europe.csv")
-x <- covid19(cn$ISO.alpha.3, verbose = FALSE)
+x <- covid19(cn$ISO.alpha.3, verbose = FALSE, cache = FALSE)
 
-x  %>% filter(date == Sys.Date() -days(2) | date == Sys.Date() - days(16)) %>% group_by(administrative_area_level_1) %>% summarize(cases14 = round(diff(confirmed)/unique(population)*1e5,2)) %>% arrange(cases14) %>% rename(country = administrative_area_level_1) %>% mutate(rank = 1:n()) %>% select(country, cases14) %>% datatable( 
+x  %>% filter(date == Sys.Date() -days(2) | date == Sys.Date() - days(16)) %>% group_by(administrative_area_level_1) %>% 
+    summarize(cases14 = round(diff(confirmed)/unique(population)*1e5,2)) %>% 
+    arrange(cases14) %>% rename(country = administrative_area_level_1) %>% mutate(rank = 1:n()) %>% select(country, cases14) %>% datatable( 
          extensions = c('FixedColumns',"FixedHeader"),
           options = list(scrollX = TRUE, 
                          paging=FALSE,
