@@ -3,6 +3,7 @@ library(rvest)
 library(jsonlite)
 library(dplyr)
 library(lubridate)
+library(stringr)
 
 raw <- GET("http://sam.lrv.lt/lt/naujienos/koronavirusas")
 #writeLines(unlist(strsplit(gsub("\n+","\n",gsub("(\n )+","\n",gsub(" +"," ",gsub("\r|\t", "", html_text(read_html(raw)))))),"\n")), paste0("/home/vaidotas/R/corona/data/korona_LT_",gsub( ":| ","_",raw$date),".csv"))
@@ -15,7 +16,7 @@ cd <- html_nodes(oo,".text") %>% html_nodes("li") %>% html_text
 
 cdd <- cd %>% strsplit(":")
 cdd <- cdd[sapply(cdd, length) == 2]
-nums <- cdd %>% sapply("[[", 2) %>% gsub("(.{1})([0-9]+)(.*)","\\2",.) %>% as.integer
+nums <- cdd %>% sapply("[[", 2) %>% gsub("(.{1})([0-9]+)(.*)","\\2",.) %>% str_trim %>%  as.integer
 
 
 fns <- dir("total", pattern="[0-9]+.csv", full.names  = TRUE)

@@ -35,6 +35,7 @@ layer_queries <- list(
     pokyciai_SAM = "https://maps.registrucentras.lt/arcgis/rest/services/covid/pjuviai/MapServer/9/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson"
     )
 
+#httr::set_config(config(ssl_verifypeer = 0L))
 ad <- lapply(layer_queries, GET)
 adsd <- lapply(ad, function(l)fix_esridate(rawToChar(l$content)))
 
