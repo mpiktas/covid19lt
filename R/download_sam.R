@@ -16,14 +16,25 @@ cd <- html_nodes(oo,".text") %>% html_nodes("li") %>% html_text
 
 cd1 <-  html_nodes(oo,".text") %>% html_nodes("strong") %>% html_text
 
+cd2 <- html_nodes(oo,".text") %>% html_nodes("p") %>% html_text
+
 cdd <- cd %>% strsplit(":")
 cdd <- cdd[sapply(cdd, length) == 2]
 nums1 <- cdd %>% sapply("[[", 2) %>% gsub("(.{1})([0-9]+)(.*)","\\2",.) %>% str_trim %>%  as.integer
 
 nums2 <- cd1 %>% str_trim %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
 
-ia1 <- nums2[8]
-nums <- nums2[-8]
+ia1 <- cd2[grepl("įvežt",cd2)] %>% strsplit(":") %>% .[[1]] %>% .[2] %>% str_trim %>% as.integer
+
+nums89 <- cd2[grepl("Per vakar",cd2)] %>%
+    strsplit("\r\n") %>%
+    .[[1]] %>%
+    strsplit(":") %>%
+    sapply(function(x)x[min(length(x),2)]) %>%
+    gsub("(.{1})([0-9]+)(.*)","\\2",.) %>%
+    str_trim %>% as.integer %>% na.omit
+
+nums <- c(nums1, nums89)
 
 fns <- dir("total", pattern="[0-9]+.csv", full.names  = TRUE)
 
