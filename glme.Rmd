@@ -86,9 +86,10 @@ fit_incidence <- function(p, times, y, w, n) {
 
 ```{r include = FALSE}
 data <- Sys.time()
+mc <- config::get(file = "_model.yml")
 ```
 
-Atnaujinta: `r data`. 
+Atnaujinta: 2020-07-02
 
 
 # Duomenys modeliavimui
@@ -100,9 +101,9 @@ dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, co
 dt %>% select(-times, -w )%>% paged_table
 ```
 
-```{r echo = FALSE}
+```{r echo = FALSE, eval=FALSE}
 
-mc <- config::get(file = "_model.yml")
+
 
 TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
@@ -129,7 +130,7 @@ one_day <- lapply(TT, function(end) {
 
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, eval=FALSE}
 
 odf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
 odf <- odf %>% mutate(end = as.character(end)) %>% mutate(incidence = round(incidence))
