@@ -40,7 +40,9 @@ ad <- lapply(layer_queries, GET)
 adsd <- lapply(ad, function(l)fix_esridate(rawToChar(l$content)))
 
 dd <- gsub(" ","_",Sys.time())
+fnl <- paste0("rc/",names(adsd),"_",dd,".csv")
 
-mapply(function(dt, nm) write.csv(dt,paste0("rc/",nm,"_",dd,".csv"), row.names = FALSE), adsd, names(adsd), SIMPLIFY=FALSE)
+mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), adsd, fnl, SIMPLIFY = FALSE)
 
-
+#
+#file.remove(fnl)
