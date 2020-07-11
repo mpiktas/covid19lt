@@ -20,10 +20,11 @@ new_day_data$day <- new_day
 ##4. deaths
 ##5. deaths for other reasons
 ##6. recovered
-##7. tests
-##8. total tests
-nums <- c(1841, 204, 5, 79, 11, 1547, 70, 1149, 443391)
-ia1 <- 37
+##7. isolated
+##8. tests
+##9. total tests
+nums <- c(1865, 203, 4, 79, 12, 1579, 119, 3571, 459404)
+ia1 <- 44
 
 
 if ((nums[1] - nums[3]) == new_day_data$confirmed[1])  {
