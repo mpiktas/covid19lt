@@ -63,11 +63,11 @@ fn <- dir("rc", full.names = TRUE)
 
 fns <- c(fn[grepl("amziaus_grupes_",fn)])
 
-ag <- lapply(fns, read.csv, stringsAsFactors = FALSE)
+agr <- lapply(fns, read.csv, stringsAsFactors = FALSE)
 
 pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
 
-ag1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), ag, pt, SIMPLIFY = FALSE) %>% bind_rows %>%
+ag1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), agr, pt, SIMPLIFY = FALSE) %>% bind_rows %>%
     select(-X) %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
 
 ag2 <-  ag1 %>% group_by(day) %>%
@@ -87,4 +87,29 @@ ag2 <-  ag1 %>% group_by(day) %>%
            downloaded
     )
 
+# Do profession -----------------------------------------------------------
+
+fn <- dir("rc", full.names = TRUE)
+
+fns <- c(fn[grepl("profesijos",fn)])
+
+pr <- lapply(fns, read.csv, stringsAsFactors = FALSE)
+
+pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[2:3],collapse="_")))
+
+pr1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), pr, pt, SIMPLIFY = FALSE) %>% bind_rows %>%
+    select(-X) %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
+
+pr2 <-  pr1 %>% group_by(day) %>%
+    filter(downloaded == max(downloaded)) %>% ungroup %>%
+    select(day, profession = PROFESIJA,
+           confirmed = TEIGIAMI,
+           confirmed_male = VYRAI,
+           confirmed_female  = MOTERYS,
+           active = GYDOMA,
+           recovered = PASVEIKO,
+           deaths = MIRE,
+           updated = ATNAUJINIMODATA,
+           downloaded
+    )
 
