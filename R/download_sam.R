@@ -61,13 +61,14 @@ if ((nums[1] - nums[3]) == new_day_data$confirmed[1])  {
     new_day_data$confirmed[1] <-  new_day_data$confirmed[1] + nums[3]
 }
 
-if (nums[4] >= new_day_data$deaths[1]) {
-    new_day_data$deaths[1] <- nums[4]
-}else warning("Deaths number is lower")
+new_day_data$deaths[1] <- nums[4]
+if (nums[4] < new_day_data$deaths[1]) warning("Deaths number is lower")
 
-if (nums[6] >= new_day_data$recovered[1]) {
-    new_day_data$recovered[1] <- nums[6]
-} else warning("Recovered number is lower")
+new_day_data$recovered[1] <- nums[6]
+
+if (nums[6] < new_day_data$recovered[1])
+    warning("Recovered number is lower")
+
 
 if ((nums[9] - nums[8]) == new_day_data$tested[1])  {
     new_day_data$tested[1] <- nums[9]
