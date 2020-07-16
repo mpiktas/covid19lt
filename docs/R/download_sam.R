@@ -26,15 +26,17 @@ nums2 <- cd1 %>% str_trim %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na
 
 ia1 <- cd2[grepl("įvežt",cd2)] %>% strsplit(":") %>% .[[1]] %>% .[2] %>% str_trim %>% as.integer
 
-nums89 <- cd2[grepl("Per vakar",cd2)] %>%
-    strsplit("\r\n") %>%
-    .[[1]] %>%
-    strsplit(":") %>%
-    sapply(function(x)x[min(length(x),2)]) %>%
-    gsub("(.{1})([0-9]+)(.*)","\\2",.) %>%
-    str_trim %>% as.integer %>% na.omit
+# nums89 <- cd2[grepl("Per vakar",cd2)] %>%
+#     strsplit("\r\n") %>%
+#     .[[1]] %>%
+#     strsplit(":") %>%
+#     sapply(function(x)x[min(length(x),2)]) %>%
+#     gsub("(.{1})([0-9]+)(.*)","\\2",.) %>%
+#     str_trim %>% as.integer %>% na.omit
 
-nums <- c(nums1, nums89)
+#nums <- c(nums1, nums89)
+
+nums <- nums1
 
 fns <- dir("total", pattern="[0-9]+.csv", full.names  = TRUE)
 
