@@ -20,32 +20,14 @@ Atnaujinama kas dieną. Paskutinis atnaujinimas `r data`. Daugiau informacijos a
 <p><img src="Re_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
 
-## Epidemijos bangų modelio dieninių atvejų prognozė 
-
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="glme_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
-</div>
-
-
-## GLM dieninių atvejų prognozė 
-
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="glm_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
-</div>
-
-## SEIR dieninių atvejų prognozė
-
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="SEIR_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
-</div>
 
 ## Puslapio turinys
 
   - [Elementarioji statistika](stats.html)
   - [Efektyvusis R](Re.html)
   - [Europos šalių 14 dienų atvejai 100 tūkst. gyventojų](countries.html)
-  - [Epidemijos bangų models](glme.html)
-  - [Apibendrinto logistinio augimo modelis](glm.html)
-  - [SEIR epidemiologinis modelis](SEIR.html)
-  - [Modelių prognozių palyginimas](comparison.html)
-  - [Apibendrinto augimo modelis](ggm.html)
+  - [Epidemijos bangų models (nebeatnaujinamas)](glme.html)
+  - [Apibendrinto logistinio augimo modelis (nebeatnaujinamas)](glm.html)
+  - [SEIR epidemiologinis modelis (nebeatnaujinamas)](SEIR.html)
+  - [Modelių prognozių palyginimas (nebeatnaujinamas)](comparison.html)
+  - [Apibendrinto augimo modelis (nebeatnaujinamas)](ggm.html)

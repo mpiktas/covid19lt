@@ -121,7 +121,9 @@ plot_f <- function(dt, fr) {
 ```
 
 ```{r include = FALSE}
-data <- Sys.time()
+mc <- config::get(file = "_model.yml")
+#data <- Sys.time()
+data <- "2020-07-16"
 ```
 
 Atnaujinta: `r data`. 
@@ -139,8 +141,8 @@ paged_table(dt %>% select(-w))
 ```
 
 
-```{r echo = FALSE}
-mc <- config::get(file = "_model.yml")
+```{r echo = FALSE, eval= FALSE}
+
 
 TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
@@ -154,7 +156,7 @@ one_day <- lapply(TT, function(end) {
 )
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, eval = FALSE}
 odf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
 odf <- odf %>% mutate(end = as.character(end)) %>% mutate(incidence = round(incidence))
 
