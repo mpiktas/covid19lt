@@ -9,6 +9,8 @@ library(ggplot2)
 library(tidyr)
 library(rmarkdown)
 library(lubridate)
+library(dygraphs)
+library(xts)
 options(max.print = 100000)
 ```
 
@@ -49,7 +51,9 @@ $R < 1$ reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą [straips
 
 
 ```{r, echo = FALSE}
-plot(ltR,what = "R")
+oo<-ltR$R %>% inner_join(dt %>% rename(t_end=times), by ="t_end") %>% select(day, R = `Mean(R)`, lwr = `Quantile.0.025(R)`,upr = `Quantile.0.975(R)`)
+bb <- xts(oo %>% select(-day), order.by=ymd(oo$day))
+dygraph(bb, main = "Effective R in Lithuania") %>% dySeries(c("lwr","R","upr"), label = "R") %>% dyRangeSelector()
 ```
 
 $x$-ašyje yra dienos nuo epidemijos pradžios. Epidemijos pradžia pasirinkta 2020-03-11, tai pirma diena. 

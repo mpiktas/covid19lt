@@ -14,12 +14,6 @@ data <- Sys.time()
 ```
 Atnaujinama kas dieną. Paskutinis atnaujinimas `r data`. Daugiau informacijos apie [puslapį.](about.html)
 
-## Efektyvusis R
-
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="Re_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
-</div>
-
 
 ## Puslapio turinys
 
