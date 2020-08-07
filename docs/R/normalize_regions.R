@@ -56,6 +56,7 @@ svd2 <-  svd1 %>% group_by(day) %>%
            downloaded,
            updated =ATNUJINTA
     )
+write.csv(svd2, "data/lt-covid19-regions.csv", row.names = FALSE)
 
 # Do age groups -----------------------------------------------------------
 
@@ -86,6 +87,7 @@ ag2 <-  ag1 %>% group_by(day) %>%
            population_female = GYV_SKAIC_M,
            downloaded
     )
+write.csv(ag2, "data/lt-covid19-agegroups.csv", row.names = FALSE)
 
 # Do profession -----------------------------------------------------------
 
