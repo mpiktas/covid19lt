@@ -6,13 +6,13 @@ fns <- dir("total", pattern = "[0-9]+.csv", full.names = TRUE)
 
 dt <- fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
     bind_rows %>% arrange(country,day) %>% fill(under_observation) %>%
-    write.csv("total/lt-covid19-total.csv", row.names = FALSE)
+    write.csv("data/lt-covid19-total.csv", row.names = FALSE)
 
 fns <- dir("daily", pattern = "[0-9]+.csv", full.names = TRUE)
 
 dt <- fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
     bind_rows  %>%
-    write.csv("daily/lt-covid19-daily.csv", row.names = FALSE)
+    write.csv("data/lt-covid19-daily.csv", row.names = FALSE)
 
 
 fns <- dir("tests", pattern = "[0-9]+.csv", full.names = TRUE)
@@ -39,4 +39,4 @@ oo <- dtl %>% select(-laboratory) %>% rename(laboratory = lab_actual) %>%
     group_by(day, laboratory) %>% summarise_all(sum)
 
 
-write.csv(oo,"tests/lt-covid19-laboratory-total.csv", row.names = FALSE)
+write.csv(oo,"data/lt-covid19-laboratory-total.csv", row.names = FALSE)

@@ -132,7 +132,7 @@ Atnaujinta: `r data`.
 # Duomenys modeliavimui
 
 ```{r,  echo = FALSE}
-dt <- read.csv("total/lt-covid19-total.csv", stringsAsFactors = FALSE)
+dt <- read.csv("data/lt-covid19-total.csv", stringsAsFactors = FALSE)
 ag <- function(x)(c(x[1],diff(x)))
 dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, confirmed, incidence, times) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
 dtf <- dt
