@@ -71,8 +71,8 @@ i14 <- xx1 %>% select(date, country, incidence14_100k) %>% pivot_wider(names_fro
 
 i14x <- xts(i14 %>% select(-date), order.by= ymd(i14$date))
 
-dygraph(i14x[,c("Lithuania","Latvia","Estonia","Poland")],  main = "Cases per 100k population for the last 14 days") %>% 
-    dyOptions(colors = c("#046A38","#A4343A","#0072CE","#D22630")) %>% 
+dygraph(i14x[,c("Lithuania","Latvia","Estonia","Poland", "Germany")],  main = "Cases per 100k population for the last 14 days") %>% 
+    dyOptions(colors = c("#046A38","#A4343A","#0072CE","#D22630","#FFCD00")) %>% 
     dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>% 
     dyRangeSelector
 
