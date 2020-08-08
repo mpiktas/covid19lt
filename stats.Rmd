@@ -8,6 +8,7 @@ library(dplyr)
 library(ggplot2)
 library(readr)
 library(tidyr)
+library(dygraphs)
 tt <- read_csv("data/lt-covid19-total.csv") 
 ```
 
@@ -23,7 +24,12 @@ Sudėti dieniniai susirgimų atvejai, dieniniai pasveikusiųjų ir dieniniai mir
 
 ```{r, echo = FALSE}
 stt <- tt %>% select(day, confirmed, deaths, recovered) %>% pivot_longer(confirmed:recovered, "type")
-ggplot(aes(x = day, y = value, group = type, colour = type), data =stt) + geom_point()+geom_line()+labs(title = paste("Cumulative cases:",max(tt$day))) + scale_color_manual(values = c("confirmed" = "red", "recovered" = "springgreen", deaths = "black"))
+
+xtt <- xts(tt %>% select(deaths, confirmed, recovered, -day), order.by =tt$day)
+
+dygraph(xtt, main = paste("Cumulative cases:",max(tt$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% dyRangeSelector()
+
+#ggplot(aes(x = day, y = value, group = type, colour = type), data =stt) + geom_point()+geom_line()+labs(title = paste("Cumulative cases:",max(tt$day))) + scale_color_manual(values = c("confirmed" = "red", "recovered" = "springgreen", deaths = "black"))
 ```
 
 # Nauji atvejai
@@ -33,7 +39,23 @@ Dieniniai susirgimų atvejai, dieniniai pasveikusiųjų ir dieniniai mirusiųjų
 ```{r, echo = FALSE}
 ag <- function(x)c(x[1],diff(x))
 ntt <- stt %>% arrange(type, day) %>% group_by(type) %>%  mutate(value = ag(value)) %>% ungroup
-ggplot(aes(x = day, y = value, group = type), data =ntt) + geom_col(aes(fill=type),position = "dodge",)+labs(title = paste("New cases:",max(tt$day))) + scale_fill_manual(values = c("confirmed" = "red", "recovered" = "springgreen", deaths = "black"))
+
+dyMultiColumn <- function(dygraph) {
+  dyPlotter(dygraph = dygraph,
+            name = "MultiColumn",
+            path = system.file("plotters/multicolumn.js",
+                               package = "dygraphs"))
+}
+
+dxtt <- diff(xtt)
+
+dygraph(dxtt) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% 
+  dyRangeSelector() %>%
+  dyMultiColumn()
+
+
+#ggplot(aes(x = day, y = value, group = type), data =ntt) + geom_col(aes(fill=type),position = "dodge",)+labs(title = paste("New cases:",max(tt$day))) + scale_fill_manual(values = c("confirmed" = "red", "recovered" = "springgreen", deaths = "black"))
 ```
 
 
@@ -42,7 +64,11 @@ ggplot(aes(x = day, y = value, group = type), data =ntt) + geom_col(aes(fill=typ
 Kas dieną atliktų testų suma. SAM kiekvieną dieną praneša suminį testų skaičių ir tą dieną atliktų testų skaičių. Sumuojant pastarąjį per visas dienas jis turėtų sutapti su skelbiamu testų skaičiumi. Taip ne visados įvykdavo, todėl čia skelbiamas tik suminis testų skaičius.
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = tested), data = tt) +geom_point() + geom_line() + labs(title = paste("Cumulative tests:",max(tt$day)),  x = "tested")
+xtests <- xts(tt$tested, order.by = tt$day)
+colnames(xtests) <- "tested"
+
+dygraph(xtests, main = paste("Cumulative tests:",max(tt$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector
+#ggplot(aes(x = day, y = tested), data = tt) +geom_point() + geom_line() + labs(title = paste("Cumulative tests:",max(tt$day)),  x = "tested")
 ```
 
 
@@ -61,54 +87,40 @@ ltt <- tt %>% mutate(daily_tests = ag(tested)) %>% select(day, daily_tests)
 lct <- ltt %>% left_join(lbt %>% rename(laboratory_tests = daily_tests), by = "day") %>% 
     mutate(sam_daily_tests = daily_tests, 
            daily_tests = ifelse(is.na(laboratory_tests), sam_daily_tests, laboratory_tests)) 
-    
 
-ggplot(aes(x = day, y = daily_tests), data = lct) +geom_col() + labs(title = paste("Daily tests: ", max(tt$day)), y="tested")
+xdt <- xts(lct$daily_tests, order.by = lct$day)
+colnames(xdt) <- "tested"
+dyBarChart <- function(dygraph) {
+  dyPlotter(dygraph = dygraph,
+            name = "BarChart",
+            path = system.file("plotters/barchart.js",
+                               package = "dygraphs"))
+}
+
+dygraph(xdt, main =  paste("Daily tests: ", max(tt$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector %>% dyBarChart
+#ggplot(aes(x = day, y = daily_tests), data = lct) +geom_col() + labs(title = paste("Daily tests: ", max(tt$day)), y="tested")
 ```
 
 # Atvejų skaičius tenkantis 100 testų
 
-Pateikiama istorinė eilutė
+Pateikiama istorinė eilutė ir dviejų savaičių slenkanti suma (normalizuojami paskutinių 14 dienų testų ir atvejų skaičiai).
 
 ```{r}
 tpd <- tt %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
-    mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, percent = incidence/daily_tests*100)
-ggplot(aes(x = day, y = normalized), data = tpd) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 100 tests", max(tt$day)),  y = "")
+    mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, 
+           incidence14 = rollsum(incidence, k = 14, fill = NA, align = "right"),
+           tests14 = rollsum(daily_tests, k = 14, fill = NA, align = "right"),
+           normalized14 = incidence14*100/tests14
+           )  
+    
+#ggplot(aes(x = day, y = normalized), data = tpd) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 100 tests", max(tt$day)),  y = "")
 
-```
+xtpd <- xts(tpd %>% select(normalized, normalized14), order.by = tpd$day)
 
-Pateikiama eilutė nuo 2020-04-01
-
-```{r}
-tpd <- tt %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
-    mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, percent = incidence/daily_tests*100)
-ggplot(aes(x = day, y = normalized), data = tpd %>% filter(day>="2020-04-01")) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 100 tests since 2020-04-01", max(tt$day)),  y = "")
-
-```
-
-# Profilaktiniai testai
-
-SAM vieną kartą paskelbė duomenis kiek testuojama profilaktiškai. Šitie duomenys nėra atnaujinami.
-
-```{r}
-
-pr <- read.csv("tests/profilactic.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
-
-ggplot(aes(x = day, y = profilactic), data = pr) +geom_point() + geom_line() + 
-           labs(title = paste("Profilactic tests per day", max(tt$day)),  y = "")
-
+dygraph(xtpd, main = paste("Confirmed daily cases per 100 tests", max(tt$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2:3]) %>% dyRangeSelector 
 ```
 
 
-Profilaktiniai testai daromi padidintos rizikos darbuotojams. Norint analizuoti naujus susirgimus ir epidemijos plitimą, juos reikėtų išimti iš bendros statistikos.
-
-```{r}
-prt <- tpd %>% inner_join(pr, by = "day") %>% mutate(profilactic_removed = 100*(incidence/(daily_tests-profilactic))) %>% 
-    select(day, normalized, profilactic_removed ) %>% pivot_longer(normalized:profilactic_removed)
-
-ggplot(aes(x= day, y=value, group = name, colour =name), data=prt)+geom_point()+geom_line() +labs(title = paste("Confirmed cases per 100 total tests vs 100 non-profilactic tests"))
-
-```
 
 # Laboratorijų duomenys
 
