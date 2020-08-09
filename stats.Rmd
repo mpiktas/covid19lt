@@ -9,6 +9,7 @@ library(ggplot2)
 library(readr)
 library(tidyr)
 library(dygraphs)
+library(xts)
 tt <- read_csv("data/lt-covid19-total.csv") 
 ```
 
@@ -133,47 +134,27 @@ labst <- labs %>% select(day, laboratory, tested_all, positive_all, not_tested) 
 ggplot(aes(x = day, y = value, group = type), data = labst) + geom_col(aes(fill=type),position = "dodge")+ facet_wrap(~laboratory, scales = "free_y")+labs(title = paste("Laboratory tests:",max(labs$day)))
 ```
 
-Laboratorijos pajėgumas tai istorinis laboratorijoje darytų testų maksimumas. Grafike vaizduojamas kiek kurią dieną laboratorijos išnaudoja savo pajėgumus procentais.
 
 
-```{r}
-labs <- labs %>% group_by(laboratory) %>% mutate(tested_all = ifelse(is.na(tested_all), 0, tested_all), capacity= 100*(tested_all/max(tested_all)))
 
-ggplot(aes(x = day, y = capacity, group = laboratory) , data = labs) + geom_col(aes(fill=laboratory),position = "dodge")+ labs(title = paste("Laboratory capacity, percentage:",max(labs$day)))
-```
-
-
-Visų laboratorijų pajėgumai yra kiekvienos laboratorijos pajėgumų suma. Grafike vaizduojama kiek visos laboratorijos kartu išnaudoja savo pajėgumus procentais.
+Visų laboratorijų pajėgumai yra kiekvienos laboratorijos pajėgumų suma. Grafike vaizduojama kiek visos laboratorijos kartu išnaudoja savo pajėgumus procentais ir kiek lieka neištestuotų testų.
 
 
 ```{r, echo = FALSE}
 
-totc <- labs %>% group_by(laboratory) %>% summarize(m = max(tested_all)) %>% .$m %>% sum
-daily <- labs %>% group_by(day) %>% summarise(all = sum(tested_all)) %>% ungroup %>% mutate(capacity = 100*all/totc)
+totc <- labs %>% group_by(laboratory) %>% summarize(m = max(tested_all, na.rm = TRUE)) %>% .$m %>% sum(na.rm = TRUE)
+daily <- labs %>% group_by(day) %>% summarise(all = sum(tested_all, na.rm = TRUE)) %>% ungroup %>% mutate(capacity = 100*all/totc)
 
-ggplot(aes(x = day, y = capacity) , data = daily) + geom_line() + geom_point()+labs(title = paste("Total capacity percentage:",max(labs$day)))
-```
-
-```{r}
+xdaily <- xts(daily$capacity, order.by=daily$day)
+colnames(xdaily) <- "capacity"
 
 dm <- labs %>% group_by(day) %>% summarise(untested = 100*sum(not_tested, na.rm = TRUE)/sum(tested_all, na.rm = TRUE))
 
-ggplot(aes(x = day, y = untested) , data = dm) + geom_line() + geom_point()+labs(title = paste("Not tested percentage:",max(labs$day)))
-```
+xdm <- xts(dm$untested, order.by = dm$day)
+colnames(xdm) <- "untested"
 
+xdmd <- cbind(xdaily, xdm)
 
-
-# Epideminė kreivė
-
-
-Epideminė kreivė paskelbta SAM. Pateiktas tik [grafikas](tests/pdfs/COVID-19 situacija Lietuvoje_siuntimui.jpg). Iš jo duomenys buvo išskaičiuoti darant lyginamąją grafiko analizę. Mažiausias stulpelis buvo laikomas vienas atvejis, buvo laikoma, kad dieną užfiksuotų atvejų skaičius yra tiek kiek atitinkamame stulpelyje telpa mažiausių stulpelių.
-
-Juoda spalva atidėta kada susirgta, raudona kada buvo patvirtintas teigiamas testas.
-
-```{r}
-epc <- read.csv("exceptions/epidemic_curve_20200427.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
-
-tt1 <- tt %>% mutate(incidence = ag(confirmed))
-
-ggplot(aes(x= day, y = incidence), data = epc) + geom_point()+geom_line() +geom_point(data=tt1, colour="red")+geom_line(data=tt1, colour="red") +labs(title = "Confirmed and actual cases")
+dygraph(xdmd, main = paste("Capacity and not tested percentages:",max(labs$day)) ) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2:1]) %>% dyRangeSelector
+#ggplot(aes(x = day, y = capacity) , data = daily) + geom_line() + geom_point()+labs(title = paste("Total capacity percentage:",max(labs$day)))
 ```
