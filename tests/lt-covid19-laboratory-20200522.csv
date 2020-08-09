@@ -1,15 +1,15 @@
-"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
-2020-05-22,"VU ligoninės Santaros klinikų laboratorija",960,0,953,0,7,6,NA,NA,8,0
-2020-05-22,"Klaipėdos universitetinės ligoninės laboratorija",425,163,418,159,7,0,NA,NA,0,0
-2020-05-22,"Nacionalinė visuomenės sveikatos priežiūros laboratorija",603,86,603,86,0,0,NA,NA,250,56
-2020-05-22,"Respublikinės Šiaulių ligoninės laboratorija",596,168,595,168,1,0,NA,NA,42,0
-2020-05-22,"LSMU ligoninės Kauno klinikų laboratorija",1442,342,1442,342,0,0,NA,NA,0,0
-2020-05-22,"Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",417,417,409,409,8,0,NA,NA,137,133
-2020-05-22,"Nacionalinio vėžio instituto laboratorija",303,46,301,46,2,0,NA,NA,3,0
-2020-05-22,"UAB „Baltic Medics“",232,222,232,222,0,0,NA,NA,0,0
-2020-05-22,"UAB „Diagnostikos laboratorija“",375,5,375,5,0,0,NA,NA,90,25
-2020-05-22,"UAB „Medicina practica laboratorija“",327,107,327,107,0,0,NA,NA,63,0
-2020-05-22,"UAB „SK Impeks Medicinos diagnostikos centras“",8,0,8,0,0,0,NA,NA,0,0
-2020-05-22,"VU Gyvybės mokslų centras",0,0,0,0,0,0,NA,NA,0,0
-2020-05-22,"UAB „Invitro diagnostika“",79,0,79,0,0,0,NA,NA,0,0
-2020-05-22,"Respublikinės Panevėžio ligoninės laboratorija",72,0,72,0,0,0,NA,NA,0,0
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile","created"
+"2020-05-22","VU ligoninės Santaros klinikų laboratorija",960,0,953,0,7,6,NA,NA,8,0,2020-05-23 14:58:31
+"2020-05-22","Klaipėdos universitetinės ligoninės laboratorija",425,163,418,159,7,0,NA,NA,0,0,2020-05-23 14:58:31
+"2020-05-22","Nacionalinė visuomenės sveikatos priežiūros laboratorija",603,86,603,86,0,0,NA,NA,250,56,2020-05-23 14:58:31
+"2020-05-22","Respublikinės Šiaulių ligoninės laboratorija",596,168,595,168,1,0,NA,NA,42,0,2020-05-23 14:58:31
+"2020-05-22","LSMU ligoninės Kauno klinikų laboratorija",1442,342,1442,342,0,0,NA,NA,0,0,2020-05-23 14:58:31
+"2020-05-22","Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",417,417,409,409,8,0,NA,NA,137,133,2020-05-23 14:58:31
+"2020-05-22","Nacionalinio vėžio instituto laboratorija",303,46,301,46,2,0,NA,NA,3,0,2020-05-23 14:58:31
+"2020-05-22","UAB „Baltic Medics“",232,222,232,222,0,0,NA,NA,0,0,2020-05-23 14:58:31
+"2020-05-22","UAB „Diagnostikos laboratorija“",375,5,375,5,0,0,NA,NA,90,25,2020-05-23 14:58:31
+"2020-05-22","UAB „Medicina practica laboratorija“",327,107,327,107,0,0,NA,NA,63,0,2020-05-23 14:58:31
+"2020-05-22","UAB „SK Impeks Medicinos diagnostikos centras“",8,0,8,0,0,0,NA,NA,0,0,2020-05-23 14:58:31
+"2020-05-22","VU Gyvybės mokslų centras",0,0,0,0,0,0,NA,NA,0,0,2020-05-23 14:58:31
+"2020-05-22","UAB „Invitro diagnostika“",79,0,79,0,0,0,NA,NA,0,0,2020-05-23 14:58:31
+"2020-05-22","Respublikinės Panevėžio ligoninės laboratorija",72,0,72,0,0,0,NA,NA,0,0,2020-05-23 14:58:31

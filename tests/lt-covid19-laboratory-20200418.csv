@@ -1,13 +1,13 @@
-"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
-2020-04-18,"NVSPL",505,0,503,0,2,0,NA,NA,251,0
-2020-04-18,"Santaros klinikos",651,50,638,50,13,0,NA,NA,10,0
-2020-04-18,"Kauno klinikos",1505,877,1491,872,14,5,NA,NA,0,0
-2020-04-18,"Klaipėdos universitetinė ligoninė",261,183,220,142,41,41,NA,NA,0,0
-2020-04-18,"Šiaulių ligoninė",417,39,417,39,0,0,NA,NA,36,7
-2020-04-18,"NMVRVI",651,444,644,443,7,1,NA,NA,235,235
-2020-04-18,"NVI",286,41,285,41,1,0,NA,NA,29,0
-2020-04-18,"VU GMC",151,56,151,56,0,0,NA,NA,0,0
-2020-04-18,"Medicina practica",94,94,94,94,0,0,NA,NA,6,6
-2020-04-18,"Diagnostikos laboratorija",542,214,542,214,0,0,NA,NA,2,0
-2020-04-18,"Baltic medics",18,0,18,0,0,0,NA,NA,0,0
-2020-04-18,"SK Impeks",138,133,138,133,0,0,NA,NA,0,0
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile","created"
+"2020-04-18","NVSPL",505,0,503,0,2,0,NA,NA,251,0,2020-04-19 18:03:39
+"2020-04-18","Santaros klinikos",651,50,638,50,13,0,NA,NA,10,0,2020-04-19 18:03:39
+"2020-04-18","Kauno klinikos",1505,877,1491,872,14,5,NA,NA,0,0,2020-04-19 18:03:39
+"2020-04-18","Klaipėdos universitetinė ligoninė",261,183,220,142,41,41,NA,NA,0,0,2020-04-19 18:03:39
+"2020-04-18","Šiaulių ligoninė",417,39,417,39,0,0,NA,NA,36,7,2020-04-19 18:03:39
+"2020-04-18","NMVRVI",651,444,644,443,7,1,NA,NA,235,235,2020-04-19 18:03:39
+"2020-04-18","NVI",286,41,285,41,1,0,NA,NA,29,0,2020-04-19 18:03:39
+"2020-04-18","VU GMC",151,56,151,56,0,0,NA,NA,0,0,2020-04-19 18:03:39
+"2020-04-18","Medicina practica",94,94,94,94,0,0,NA,NA,6,6,2020-04-19 18:03:39
+"2020-04-18","Diagnostikos laboratorija",542,214,542,214,0,0,NA,NA,2,0,2020-04-19 18:03:39
+"2020-04-18","Baltic medics",18,0,18,0,0,0,NA,NA,0,0,2020-04-19 18:03:39
+"2020-04-18","SK Impeks",138,133,138,133,0,0,NA,NA,0,0,2020-04-19 18:03:39

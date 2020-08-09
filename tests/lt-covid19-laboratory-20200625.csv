@@ -1,13 +1,13 @@
-"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
-2020-06-25,"VU ligoninės Santaros klinikų laboratorija",828,0,816,0,12,0,NA,NA,2,0
-2020-06-25,"Klaipėdos universitetinės ligoninės laboratorija",327,127,326,126,1,0,NA,NA,0,0
-2020-06-25,"Nacionalinė visuomenės sveikatos priežiūros laboratorija",320,4,320,4,0,0,NA,NA,35,0
-2020-06-25,"Respublikinės Šiaulių ligoninės laboratorija",221,0,221,0,0,0,NA,NA,17,0
-2020-06-25,"LSMU ligoninės Kauno klinikų laboratorija",991,113,989,111,2,2,NA,NA,0,0
-2020-06-25,"Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",365,201,363,199,2,1,NA,NA,63,63
-2020-06-25,"Nacionalinio vėžio instituto laboratorija",41,0,41,0,0,0,NA,NA,0,0
-2020-06-25,"UAB „Baltic Medics“",27,27,27,27,0,0,NA,NA,0,0
-2020-06-25,"UAB „Medicina practica laboratorija“",304,63,304,63,0,0,NA,NA,24,0
-2020-06-25,"UAB „SK Impeks Medicinos diagnostikos centras“",148,0,148,0,0,0,NA,NA,19,0
-2020-06-25,"UAB „Invitro diagnostika“",283,26,283,26,0,0,NA,NA,2,0
-2020-06-25,"Respublikinės Panevėžio ligoninės laboratorija",70,0,70,0,0,0,NA,NA,0,0
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile","created"
+2020-06-25,"VU ligoninės Santaros klinikų laboratorija",961,0,957,0,4,0,NA,NA,9,0,2020-06-26 11:45:12
+2020-06-25,"Klaipėdos universitetinės ligoninės laboratorija",400,129,400,129,0,0,NA,NA,0,0,2020-06-26 11:45:12
+2020-06-25,"Nacionalinė visuomenės sveikatos priežiūros laboratorija",189,18,188,18,1,0,NA,NA,45,0,2020-06-26 11:45:12
+2020-06-25,"Respublikinės Šiaulių ligoninės laboratorija",399,60,399,60,0,0,NA,NA,0,0,2020-06-26 11:45:12
+2020-06-25,"LSMU ligoninės Kauno klinikų laboratorija",1165,238,1164,237,1,1,NA,NA,0,0,2020-06-26 11:45:12
+2020-06-25,"Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",444,214,435,206,9,1,NA,NA,63,63,2020-06-26 11:45:12
+2020-06-25,"Nacionalinio vėžio instituto laboratorija",69,0,69,0,0,0,NA,NA,1,0,2020-06-26 11:45:12
+2020-06-25,"UAB „Baltic Medics“",64,26,64,26,0,0,NA,NA,0,0,2020-06-26 11:45:12
+2020-06-25,"UAB „Diagnostikos laboratorija“ („Antėja“)",291,13,291,13,0,0,NA,NA,15,0,2020-06-26 11:45:12
+2020-06-25,"UAB „Medicina practica laboratorija“",120,34,120,34,0,0,NA,NA,66,15,2020-06-26 11:45:12
+2020-06-25,"UAB „SK Impeks Medicinos diagnostikos centras“",84,0,84,0,0,0,NA,NA,0,0,2020-06-26 11:45:12
+2020-06-25,"Respublikinės Panevėžio ligoninės laboratorija",124,0,124,0,0,0,NA,NA,0,0,2020-06-26 11:45:12

@@ -1,12 +1,12 @@
-"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
-2020-05-09,"VU ligoninės Santaros klinikų laboratorija",192,0,186,0,6,0,NA,NA,10,0
-2020-05-09,"Klaipėdos universitetinės ligoninės laboratorija",282,99,270,93,12,1,NA,NA,0,0
-2020-05-09,"Nacionalinė visuomenės sveikatos priežiūros laboratorija",607,29,606,29,1,0,NA,NA,141,21
-2020-05-09,"Respublikinės Šiaulių ligoninės laboratorija",133,61,132,60,1,1,NA,NA,16,0
-2020-05-09,"LSMU ligoninės Kauno klinikų laboratorija",1062,552,1062,552,0,0,NA,NA,0,0
-2020-05-09,"Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",485,438,484,437,1,1,NA,NA,200,200
-2020-05-09,"Nacionalinio vėžio instituto laboratorija",236,31,236,31,0,0,NA,NA,0,0
-2020-05-09,"UAB „Baltic Medics“",164,164,164,164,0,0,NA,NA,0,0
-2020-05-09,"UAB „Diagnostikos laboratorija“",110,107,110,107,0,0,NA,NA,0,0
-2020-05-09,"VU Gyvybės mokslų centras",286,209,285,208,1,1,NA,NA,0,0
-2020-05-09,"Respublikinės Panevėžio ligoninės laboratorija",24,0,24,0,0,0,NA,NA,0,0
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile","created"
+"2020-05-09","VU ligoninės Santaros klinikų laboratorija",192,0,186,0,6,0,NA,NA,10,0,2020-05-10 12:33:11
+"2020-05-09","Klaipėdos universitetinės ligoninės laboratorija",282,99,270,93,12,1,NA,NA,0,0,2020-05-10 12:33:11
+"2020-05-09","Nacionalinė visuomenės sveikatos priežiūros laboratorija",607,29,606,29,1,0,NA,NA,141,21,2020-05-10 12:33:11
+"2020-05-09","Respublikinės Šiaulių ligoninės laboratorija",133,61,132,60,1,1,NA,NA,16,0,2020-05-10 12:33:11
+"2020-05-09","LSMU ligoninės Kauno klinikų laboratorija",1062,552,1062,552,0,0,NA,NA,0,0,2020-05-10 12:33:11
+"2020-05-09","Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",485,438,484,437,1,1,NA,NA,200,200,2020-05-10 12:33:11
+"2020-05-09","Nacionalinio vėžio instituto laboratorija",236,31,236,31,0,0,NA,NA,0,0,2020-05-10 12:33:11
+"2020-05-09","UAB „Baltic Medics“",164,164,164,164,0,0,NA,NA,0,0,2020-05-10 12:33:11
+"2020-05-09","UAB „Diagnostikos laboratorija“",110,107,110,107,0,0,NA,NA,0,0,2020-05-10 12:33:11
+"2020-05-09","VU Gyvybės mokslų centras",286,209,285,208,1,1,NA,NA,0,0,2020-05-10 12:33:11
+"2020-05-09","Respublikinės Panevėžio ligoninės laboratorija",24,0,24,0,0,0,NA,NA,0,0,2020-05-10 12:33:11

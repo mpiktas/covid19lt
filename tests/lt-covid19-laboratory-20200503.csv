@@ -1,9 +1,9 @@
-"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
-2020-05-03,"VU ligoninės Santaros klinikų laboratorija",367,0,355,0,12,0,NA,NA,10,0
-2020-05-03,"Klaipėdos universitetinės ligoninės laboratorija",139,42,139,42,0,0,NA,NA,0,0
-2020-05-03,"Nacionalinė visuomenės sveikatos priežiūros laboratorija",116,63,116,63,0,0,NA,NA,52,25
-2020-05-03,"Respublikinės Šiaulių ligoninės laboratorija",304,169,303,168,1,1,NA,NA,0,0
-2020-05-03,"LSMU ligoninės Kauno klinikų laboratorija",654,374,650,374,4,0,NA,NA,0,0
-2020-05-03,"Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",640,640,640,640,0,0,NA,NA,200,200
-2020-05-03,"UAB „Diagnostikos laboratorija“",131,131,131,131,0,0,NA,NA,0,0
-2020-05-03,"UAB „Medicina practica laboratorija“",0,0,0,0,0,0,NA,NA,151,151
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile","created"
+"2020-05-03","VU ligoninės Santaros klinikų laboratorija",367,0,355,0,12,0,NA,NA,10,0,2020-05-04 14:16:30
+"2020-05-03","Klaipėdos universitetinės ligoninės laboratorija",139,42,139,42,0,0,NA,NA,0,0,2020-05-04 14:16:30
+"2020-05-03","Nacionalinė visuomenės sveikatos priežiūros laboratorija",116,63,116,63,0,0,NA,NA,52,25,2020-05-04 14:16:30
+"2020-05-03","Respublikinės Šiaulių ligoninės laboratorija",304,169,303,168,1,1,NA,NA,0,0,2020-05-04 14:16:30
+"2020-05-03","LSMU ligoninės Kauno klinikų laboratorija",654,374,650,374,4,0,NA,NA,0,0,2020-05-04 14:16:30
+"2020-05-03","Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",640,640,640,640,0,0,NA,NA,200,200,2020-05-04 14:16:30
+"2020-05-03","UAB „Diagnostikos laboratorija“",131,131,131,131,0,0,NA,NA,0,0,2020-05-04 14:16:30
+"2020-05-03","UAB „Medicina practica laboratorija“",0,0,0,0,0,0,NA,NA,151,151,2020-05-04 14:16:30

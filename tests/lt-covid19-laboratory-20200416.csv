@@ -1,10 +1,10 @@
-"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","not_tested","not_tested_mobile"
-2020-04-16,"NVSPL",339,41,330,40,9,1,239,1
-2020-04-16,"Santaros klinikos",669,2,664,2,5,0,43,0
-2020-04-16,"Kauno klinikos",1889,375,1884,375,5,0,300,0
-2020-04-16,"Klaipėdos universitetinė ligoninė",375,133,372,132,3,1,0,0
-2020-04-16,"Šiaulių ligoninė",450,25,449,25,1,0,119,0
-2020-04-16,"NMVRVI",265,265,259,259,6,6,0,0
-2020-04-16,"NVI",178,55,178,55,0,0,0,0
-2020-04-16,"VU GMC",154,0,154,0,0,0,243,0
-2020-04-16,"Medicina practica",245,234,245,234,0,0,3,3
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","not_tested","not_tested_mobile","created"
+"2020-04-16","NVSPL",339,41,330,40,9,1,239,1,2020-04-17 20:05:20
+"2020-04-16","Santaros klinikos",669,2,664,2,5,0,43,0,2020-04-17 20:05:20
+"2020-04-16","Kauno klinikos",1889,375,1884,375,5,0,300,0,2020-04-17 20:05:20
+"2020-04-16","Klaipėdos universitetinė ligoninė",375,133,372,132,3,1,0,0,2020-04-17 20:05:20
+"2020-04-16","Šiaulių ligoninė",450,25,449,25,1,0,119,0,2020-04-17 20:05:20
+"2020-04-16","NMVRVI",265,265,259,259,6,6,0,0,2020-04-17 20:05:20
+"2020-04-16","NVI",178,55,178,55,0,0,0,0,2020-04-17 20:05:20
+"2020-04-16","VU GMC",154,0,154,0,0,0,243,0,2020-04-17 20:05:20
+"2020-04-16","Medicina practica",245,234,245,234,0,0,3,3,2020-04-17 20:05:20

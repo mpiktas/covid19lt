@@ -1,13 +1,13 @@
-"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
-2020-04-27,"NVSPL",496,114,496,114,0,0,NA,NA,225,40
-2020-04-27,"Santaros klinikos",731,0,726,0,5,0,NA,NA,19,0
-2020-04-27,"Kauno klinikos",1468,285,1465,285,3,0,NA,NA,0,0
-2020-04-27,"Klaipėdos universitetinė ligoninė",491,144,483,143,8,1,NA,NA,139,49
-2020-04-27,"Šiaulių ligoninė",259,0,259,0,0,0,NA,NA,172,30
-2020-04-27,"Panevėžio ligoninė",24,0,24,0,0,0,NA,NA,0,0
-2020-04-27,"NMVRVI",205,155,203,154,2,1,NA,NA,137,137
-2020-04-27,"NVI",203,0,203,0,0,0,NA,NA,0,0
-2020-04-27,"Medicina practica",445,76,445,76,0,0,NA,NA,53,0
-2020-04-27,"Diagnostikos laboratorija",345,66,345,66,0,0,NA,NA,463,108
-2020-04-27,"Baltic medics",331,331,331,331,0,0,NA,NA,1,1
-2020-04-27,"SK Impeks",36,0,36,0,0,0,NA,NA,0,0
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile","created"
+"2020-04-27","NVSPL",496,114,496,114,0,0,NA,NA,225,40,2020-04-28 18:40:09
+"2020-04-27","Santaros klinikos",731,0,726,0,5,0,NA,NA,19,0,2020-04-28 18:40:09
+"2020-04-27","Kauno klinikos",1468,285,1465,285,3,0,NA,NA,0,0,2020-04-28 18:40:09
+"2020-04-27","Klaipėdos universitetinė ligoninė",491,144,483,143,8,1,NA,NA,139,49,2020-04-28 18:40:09
+"2020-04-27","Šiaulių ligoninė",259,0,259,0,0,0,NA,NA,172,30,2020-04-28 18:40:09
+"2020-04-27","Panevėžio ligoninė",24,0,24,0,0,0,NA,NA,0,0,2020-04-28 18:40:09
+"2020-04-27","NMVRVI",205,155,203,154,2,1,NA,NA,137,137,2020-04-28 18:40:09
+"2020-04-27","NVI",203,0,203,0,0,0,NA,NA,0,0,2020-04-28 18:40:09
+"2020-04-27","Medicina practica",445,76,445,76,0,0,NA,NA,53,0,2020-04-28 18:40:09
+"2020-04-27","Diagnostikos laboratorija",345,66,345,66,0,0,NA,NA,463,108,2020-04-28 18:40:09
+"2020-04-27","Baltic medics",331,331,331,331,0,0,NA,NA,1,1,2020-04-28 18:40:09
+"2020-04-27","SK Impeks",36,0,36,0,0,0,NA,NA,0,0,2020-04-28 18:40:09
