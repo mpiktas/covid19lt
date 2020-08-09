@@ -21,7 +21,14 @@ days <- fns %>% strsplit("-") %>% sapply(function(x)gsub(".csv","",x[length(x)])
 
 daysd <- ymd(days)
 
+crtime <- Sys.time()
+
 new_day <- max(daysd)+days(1)
+
+if(new_day != Sys.date() - days(1)) {
+    warning("Possibly the wrong day")
+    new_day <- Sys.date() - days(1)
+}
 
 outd <- gsub("-","",as.character(new_day))
 
@@ -49,12 +56,13 @@ tbr <- tbr %>% mutate(positive_new = NA, positive_retested = NA) %>%
 
 ##Compare with the previous days data:
 if(identical(dim(tbr),dim(new_day_data))) {
-    sm <- sum(abs(new_day_data[,-2:-1]-tbr[,-2:-1]), na.rm=TRUE)
+    sm <- sum(abs(new_day_data[,c(-2:-1, -ncol(new_day_data))]-tbr[,-2:-1]), na.rm=TRUE)
 }else {
     sm <- 1
 }
 
 if (sm > 0) {
+    tbr <- tbr %>% mutate(created = crtime)
     write.csv(tbr, glue::glue("tests/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
 } else {
     warning("New day data is identical to the previous day")
