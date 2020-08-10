@@ -25,9 +25,9 @@ crtime <- Sys.time()
 
 new_day <- max(daysd)+days(1)
 
-if(new_day != Sys.date() - days(1)) {
+if(new_day != Sys.Date() - days(1)) {
     warning("Possibly the wrong day")
-    new_day <- Sys.date() - days(1)
+    new_day <- Sys.Date() - days(1)
 }
 
 outd <- gsub("-","",as.character(new_day))
