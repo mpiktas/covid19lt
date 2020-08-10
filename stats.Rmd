@@ -49,16 +49,31 @@ dyMultiColumn <- function(dygraph) {
 }
 
 dxtt <- diff(xtt)
+colnames(dxtt)[2] <- "incidence"
 
 dygraph(dxtt) %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% 
-  dyRangeSelector() %>%
-  dyMultiColumn()
+  dyRangeSelector() #%>%
+ # dyMultiColumn()
 
 
 #ggplot(aes(x = day, y = value, group = type), data =ntt) + geom_col(aes(fill=type),position = "dodge",)+labs(title = paste("New cases:",max(tt$day))) + scale_fill_manual(values = c("confirmed" = "red", "recovered" = "springgreen", deaths = "black"))
 ```
 
+
+# Dieniniai atvejai ir 7, 14 dienų slenkantys vidurkiai
+```{r}
+dxtt7 <- rollmean(dxtt, 7, fill = NA, align = "right")
+dxtt14 <- rollmean(dxtt, 14, fill = NA, align = "right")
+colnames(dxtt7) <- paste0(colnames(dxtt7),"7")
+colnames(dxtt14) <- paste0(colnames(dxtt14),"14")
+
+d714 <- cbind(dxtt, dxtt7, dxtt14)
+
+dygraph(d714[, c("incidence", "incidence7","incidence14")]) %>% dyRangeSelector
+  
+  
+```
 
 # Testų skaičius
 
