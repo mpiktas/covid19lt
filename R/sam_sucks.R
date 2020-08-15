@@ -1,3 +1,10 @@
+library(httr)
+library(rvest)
+library(jsonlite)
+library(dplyr)
+library(lubridate)
+library(stringr)
+
 fns <- dir("total", pattern="[0-9]+.csv", full.names  = TRUE)
 
 days <- fns %>% strsplit("-") %>% sapply(function(x)gsub(".csv","",x[length(x)]))
@@ -23,8 +30,8 @@ new_day_data$day <- new_day
 ##7. isolated
 ##8. tests
 ##9. total tests
-nums <- c(2283, 510, 18, 81, 13, 1679, 3088, 4269, 557657)
-ia1 <- 126
+nums <- c(2386, 588, 34, 81, 13, 1704, 3124, 5591, 576248)
+ia1 <- 152
 
 
 if ((nums[1] - nums[3]) == new_day_data$confirmed[1])  {
