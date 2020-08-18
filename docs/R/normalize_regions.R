@@ -58,6 +58,27 @@ svd2 <-  svd1 %>% group_by(day) %>%
     )
 write.csv(svd2, "data/lt-covid19-regions.csv", row.names = FALSE)
 
+
+# Last 14 days for regions ------------------------------------------------
+
+sdd <- function(x)c(0, diff(x))
+
+rr <- svd2 %>% arrange(administrative_level_3,day) %>%
+    filter(day == max(day) | day == (max(day) - days(14))) %>%
+    group_by(administrative_level_3) %>%
+    mutate(incidence = sdd(confirmed)) %>%
+    ungroup %>%
+    filter(day == max(day)) %>%
+    select(day, administrative_level_3, incidence, population)
+
+svap <- adsd$sav %>% select(administrative_level_3 = SAV_PAV, administrative_level_2 = APSKRITIS) %>% unique
+rr1 <- rr %>% inner_join(svap)
+
+rr2 <- rr1 %>% group_by(administrative_level_2) %>%
+    summarize(n = n(), s=sum(incidence), p = sum(incidence<=0), population = sum(population)) %>%
+    mutate(s14 = s/population*1e5)
+
+
 # Do age groups -----------------------------------------------------------
 
 fn <- dir("rc", full.names = TRUE)
