@@ -27,3 +27,22 @@ test_that("There are more positive tests than incidence", {
         expect_true(sum(lbl$positive_all) >= ld$incidence[2])
     }
 })
+
+tagr <- read.csv("data/lt-covid19-agegroups.csv") %>% mutate(day = ymd(day))
+tsavd <- read.csv("data/lt-covid19-regions.csv") %>% mutate(day = ymd(day))
+
+tagr1 <- tagr %>% filter(day == max(dd$day))
+tsavd1 <- tsavd %>% filter(day == max(dd$day))
+
+test_that("Age group data coincides with daily reported data", {
+    if(nrow(tagr1)>0) {
+        expect_true(sum(tagr1$confirmed) == ld$confirmed[2])
+    }
+})
+
+
+test_that("Regions data coincides with daily reported data", {
+    if(nrow(tsavd1)>0) {
+        expect_true(sum(tsavd1$confirmed) == ld$confirmed[2])
+    }
+})
