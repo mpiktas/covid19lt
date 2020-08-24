@@ -1,8 +1,9 @@
 ##Do sanity checks
 
 library(testthat)
-dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
-lb <- read.csv("data/lt-covid19-laboratory-total.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
+
+dd <- read.csv("../data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
+lb <- read.csv("../data/lt-covid19-laboratory-total.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
 
 ld <- dd %>% slice_tail(n = 2)
 
@@ -28,8 +29,8 @@ test_that("There are more positive tests than incidence", {
     }
 })
 
-tagr <- read.csv("data/lt-covid19-agegroups.csv") %>% mutate(day = ymd(day))
-tsavd <- read.csv("data/lt-covid19-regions.csv") %>% mutate(day = ymd(day))
+tagr <- read.csv("../data/lt-covid19-agegroups.csv") %>% mutate(day = ymd(day))
+tsavd <- read.csv("../data/lt-covid19-regions.csv") %>% mutate(day = ymd(day))
 
 tagr1 <- tagr %>% filter(day == max(dd$day))
 tsavd1 <- tsavd %>% filter(day == max(dd$day))
