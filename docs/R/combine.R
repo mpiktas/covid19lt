@@ -43,5 +43,6 @@ oo <- dtl %>% select(-laboratory, - created) %>% rename(laboratory = lab_actual)
 
 write.csv(oo,"data/lt-covid19-laboratory-total.csv", row.names = FALSE)
 
-source("R/sanity_checks.R")
+test_file("R/sanity_checks.R")
+
 
