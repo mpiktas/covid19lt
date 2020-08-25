@@ -136,5 +136,5 @@ pr2 <-  pr1 %>% group_by(day) %>%
            downloaded
     )
 
-
+library(testthat)
 test_file("R/sanity_checks.R")
