@@ -1,7 +1,7 @@
 library(jsonlite)
 
 system("wget ftp://atviriduomenys.nvsc.lt/COVID19.json")
-file.copy("COVID19.json","individual/COVID19.json")
+file.copy("COVID19.json","individual/COVID19.json",overwrite=TRUE)
 suff <- gsub("-","",Sys.Date())
 
 file.copy("COVID19.json",paste0("~/tmp/covid19lt-json/COVID19-",suff,".json"))
@@ -23,7 +23,7 @@ zz1 <- zz %>% rename(actual_day = `Susirgimo data`,
                      hospitalized = `Ar hospitalizuotas`,
                      intensive = `Gydomas intensyvioje terapijoje`,
                      precondition = `Turi lėtinių ligų`) %>%
-    arrange(day, actual_day, administrative_level_3)
+    arrange(day, actual_day, administrative_level_3, age)
 
 zz1 %>% write.csv("individual/lt-covid19-individual.csv", row.names = FALSE)
 
