@@ -37,3 +37,16 @@ zz3 <- lapply(zz2, function(d) d %>% mutate(dday = day) %>% summarize(day = max(
                                                deaths_different = sum(status == "Kita"),
                                                hospitalized = sum(hospitalized == "Taip"),
                                                intensive = sum(intensive == "Taip"))) %>% bind_rows
+
+zz1$dday <- strsplit(zz1$day, "T") %>% sapply("[[",1) %>% ymd
+tt <- read.csv("data/lt-covid19-total.csv") %>% mutate(day = ymd(day)) %>% arrange(day) %>% mutate(incidence = c(1,diff(confirmed)))
+
+cmp <- zz1 %>% count(day = dday) %>% inner_join(tt %>% select(day, incidence)) %>% mutate(I = cumsum(n), S = cumsum(incidence))
+
+
+cnv <- function(x) {
+ x %>% strsplit("T") %>% sapply("[[",1) %>% ymd
+}
+
+zz4<- zz1 %>% mutate(actual_day = cnv(actual_day))
+n
