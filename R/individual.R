@@ -34,7 +34,7 @@ zz1<- zz1 %>% mutate(actual_day = ifelse(actual_day == "", day, actual_day)) %>%
     mutate(day = cnv(day), actual_day = cnv(actual_day))
 
 
-zz1 %>% write.csv("individual/lt-covid19-individual.csv", row.names = FALSE)
+zz1 %>% write.csv("data/lt-covid19-individual.csv", row.names = FALSE)
 
 
 zz2 <- lapply(sort(unique(zz1$day)), function(d) zz1 %>% filter(day <= d))
