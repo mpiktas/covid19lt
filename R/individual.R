@@ -27,6 +27,14 @@ zz1 <- zz %>% rename(actual_day = `Susirgimo data`,
                      precondition = `Turi lėtinių ligų`) %>%
     arrange(day, actual_day, administrative_level_3, age)
 
+cnv <- function(x) {
+    x %>% strsplit("T") %>% sapply("[[",1) %>% ymd
+}
+
+zz1<- zz1 %>% mutate(actual_day = ifelse(actual_day == "", day, actual_day)) %>%
+    mutate(day = cnv(day), actual_day = cnv(actual_day))
+
+
 zz1 %>% write.csv("individual/lt-covid19-individual.csv", row.names = FALSE)
 
 
@@ -46,9 +54,4 @@ tt <- read.csv("data/lt-covid19-total.csv") %>% mutate(day = ymd(day)) %>% arran
 cmp <- zz1 %>% count(day = dday) %>% inner_join(tt %>% select(day, incidence)) %>% mutate(I = cumsum(n), S = cumsum(incidence))
 
 
-cnv <- function(x) {
- x %>% strsplit("T") %>% sapply("[[",1) %>% ymd
-}
 
-zz4<- zz1 %>% mutate(actual_day = cnv(actual_day))
-n
