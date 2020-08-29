@@ -1,13 +1,12 @@
 library(jsonlite)
 library(dplyr)
 library(lubridate)
+library(curl)
 
-system("wget ftp://atviriduomenys.nvsc.lt/COVID19.json")
-file.copy("COVID19.json","individual/COVID19.json",overwrite=TRUE)
+curl_download("ftp://atviriduomenys.nvsc.lt/COVID19.json", "individual/COVID19.json")
 suff <- gsub("-","",Sys.Date())
 
-file.copy("COVID19.json",paste0("~/tmp/covid19lt-json/COVID19-",suff,".json"))
-file.remove("COVID19.json")
+file.copy("individual/COVID19.json",paste0("~/tmp/covid19lt-json/COVID19-",suff,".json"))
 
 
 
@@ -48,7 +47,7 @@ zz3 <- lapply(zz2, function(d) d %>% mutate(dday = day) %>% summarize(day = max(
                                                hospitalized = sum(hospitalized == "Taip"),
                                                intensive = sum(intensive == "Taip"))) %>% bind_rows
 
-zz1$dday <- strsplit(zz1$day, "T") %>% sapply("[[",1) %>% ymd
+
 tt <- read.csv("data/lt-covid19-total.csv") %>% mutate(day = ymd(day)) %>% arrange(day) %>% mutate(incidence = c(1,diff(confirmed)))
 
 cmp <- zz1 %>% count(day) %>% inner_join(tt %>% select(day, incidence)) %>% mutate(I = cumsum(n), S = cumsum(incidence))
