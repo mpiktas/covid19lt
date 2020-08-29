@@ -1,4 +1,6 @@
 library(jsonlite)
+library(dplyr)
+library(lubridate)
 
 system("wget ftp://atviriduomenys.nvsc.lt/COVID19.json")
 file.copy("COVID19.json","individual/COVID19.json",overwrite=TRUE)
