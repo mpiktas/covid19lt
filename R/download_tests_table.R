@@ -15,7 +15,7 @@ oo <- read_html(raw)
 
 tbs <- html_table(oo, fill = TRUE)
 
-fns <- dir("tests", pattern="[0-9]+.csv", full.names  = TRUE)
+fns <- dir("laboratory", pattern="[0-9]+.csv", full.names  = TRUE)
 
 days <- fns %>% strsplit("-") %>% sapply(function(x)gsub(".csv","",x[length(x)]))
 
@@ -63,7 +63,7 @@ if(identical(dim(tbr),dim(new_day_data))) {
 
 if (sm > 0) {
     tbr <- tbr %>% mutate(created = crtime)
-    write.csv(tbr, glue::glue("tests/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
+    write.csv(tbr, glue::glue("laboratory/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
 } else {
     warning("New day data is identical to the previous day")
 }
