@@ -1,6 +1,7 @@
 library(lubridate)
 library(dplyr)
 library(tidyr)
+library(testthat)
 
 fns <- dir("total", pattern = "[0-9]+.csv", full.names = TRUE)
 
@@ -15,12 +16,12 @@ fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
     write.csv("data/lt-covid19-daily.csv", row.names = FALSE)
 
 
-fns <- dir("tests", pattern = "[0-9]+.csv", full.names = TRUE)
+fns <- dir("laboratory", pattern = "[0-9]+.csv", full.names = TRUE)
 
 dtl <- fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
     bind_rows %>% arrange(day, laboratory)
 
-ln <- read.csv("tests/laboratory_names.csv", stringsAsFactors = FALSE)
+ln <- read.csv("laboratory/laboratory_names.csv", stringsAsFactors = FALSE)
 
 lrn <- unique(dtl$laboratory)
 
@@ -28,7 +29,7 @@ lr <- setdiff(lrn,intersect(lrn,ln$lab_reported))
 if (length(lr) > 0) {
     warning("New laboratories: ", paste(lr, collapse = ", "))
     ln <- bind_rows(ln, data.frame(lab_reported = lr, lab_actual = lr, stringsAsFactors = FALSE))
-    write.csv(ln, "tests/laboratory_names.csv", row.names = FALSE)
+    write.csv(ln, "laboratory/laboratory_names.csv", row.names = FALSE)
 }
 
 ln <- ln %>% rename(laboratory=lab_reported)
