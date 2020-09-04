@@ -37,7 +37,8 @@ layer_queries <- list(
 
 httr::set_config(config(ssl_verifypeer = 0L))
 ad <- lapply(layer_queries, GET)
-adsd <- lapply(ad, function(l)fix_esridate(rawToChar(l$content)))
+adsd0 <- lapply(ad, function(l)try(fix_esridate(rawToChar(l$content))))
+adsd <- adsd0[sapply(adsd0, class) != "try-error"]
 
 dd <- gsub(" ","_",Sys.time())
 fnl <- paste0("rc/",names(adsd),"_",dd,".csv")
