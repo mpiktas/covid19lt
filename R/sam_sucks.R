@@ -30,8 +30,8 @@ new_day_data$day <- new_day
 ##7. isolated
 ##8. tests
 ##9. total tests
-nums <- c(3040, 989, 36, 86, 13, 1952, 5882, 5237, 663899)
-ia1 <- 206
+nums <- c(3083, 1030, 43, 86, 13, 1954, 6047, 1886, 665785)
+ia1 <- 207
 
 
 if ((nums[1] - nums[3]) == new_day_data$confirmed[1])  {
