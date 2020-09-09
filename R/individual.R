@@ -36,6 +36,22 @@ zz1<- zz1 %>% mutate(actual_day = ifelse(actual_day == "", day, actual_day)) %>%
 
 zz1 %>% write.csv("data/lt-covid19-individual.csv", row.names = FALSE)
 
+iit <- zz1 %>% summarize(confirmed = n(), hospitalized = sum(hospitalized == "Taip" & status == "Gydomas"),
+                        intensive = sum(intensive == "Taip" & status == "Gydomas"),
+                        active = sum(status == "Gydomas"),
+                        deaths = sum(status == "Mirė"),
+                        deaths_different = sum(status == "Kita"),
+                        recovered = sum(status == "Pasveiko"),
+                        imported = sum(imported == "Taip"))
+
+
+iit <- iit %>% mutate(day = max(zz1$day), incidence = zz11$incidence[ii1$day == max(zz1$day)])
+iit1 <- iit %>% select(day, confirmed, recovered, deaths, deaths_different, imported, active, hospitalized, intensive, incidence)
+
+idt <- gsub("-","", iit1$day[1])
+
+write.csv(iit1, paste0("individual/lt-covid19-individual-daily-",idt,".csv"))
+
 
 zz2 <- lapply(sort(unique(zz1$day)), function(d) zz1 %>% filter(day <= d))
 

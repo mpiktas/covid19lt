@@ -40,5 +40,9 @@ ii3 <- ii2 %>% left_join(dd %>% select(day, deaths_different, quarantined)) %>%
 ii4 <- ii3 %>% select(day, confirmed, deaths, deaths_different, recovered, active, imported, tested,
                       incidence, tests_daily, imported_daily, quarantined)
 
+ii5 <- ii4 %>% left_join(iit %>% select(day, hospitalized, intensive))
+
+
+
 
 
