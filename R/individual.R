@@ -53,7 +53,7 @@ dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arran
 
 cmp <- zz1 %>% count(day) %>% inner_join(tt %>% select(day, incidence)) %>%
     mutate(I = cumsum(n), S = cumsum(incidence)) %>%
-    left_join(daily %>% select(day, ID= incidence, SD = confirmed))
+    left_join(dd %>% select(day, ID= incidence, SD = confirmed))
 
 
 zz4 <- zz1 %>% mutate(aday = ifelse(actual_day> day, day, actual_day)) %>% mutate(d = day -actual_day)
