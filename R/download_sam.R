@@ -88,11 +88,11 @@ ndd <- new_day_data %>% select(country, day) %>%
            active = nums[2],
            incidence = nums[3],
            deaths = nums[4],
-           deaths_different =nums[5],
+           deaths_different = nums[5],
            recovered = nums[6],
            daily_tests = nums[8],
            quarantined = nums[7],
            total_tests = nums[9],
            imported0601 = ia1)
-write.csv(ndd, glue::glue("daily/lt-covid19-daily-{outd}.csv"), row.names = FALSE )
+write.csv(ndd, glue::glue("daily/lt-covid19-daily-{outd}.csv"), row.names = FALSE)
 
