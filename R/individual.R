@@ -45,7 +45,8 @@ iit <- zz1 %>% summarize(confirmed = n(), hospitalized = sum(hospitalized == "Ta
                         imported = sum(imported == "Taip"))
 
 
-iit <- iit %>% mutate(day = max(zz1$day), incidence = zz11$incidence[ii1$day == max(zz1$day)])
+iit <- iit %>% mutate(day = max(zz1$day), incidence = sum(zz1$day == max(zz1$day)))
+
 iit1 <- iit %>% select(day, confirmed, recovered, deaths, deaths_different, imported, active, hospitalized, intensive, incidence)
 
 idt <- gsub("-","", iit1$day[1])
