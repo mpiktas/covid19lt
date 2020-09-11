@@ -14,6 +14,10 @@ if(md > mi) {
     tt <- tt0 %>% filter(day <= mi)
     dd1 <- dd0 %>% filter(day > mi)
     tt1 <- tt %>% filter(day > mi)
+} else {
+
+    dd <- dd0
+    tt <- tt0
 }
 
 
@@ -52,9 +56,9 @@ if(nrow(dd1)>0) {
                           tested = total_tests, incidence, tests_daily = daily_tests, quarantined)
     id <- diff(dd0$imported0601)
     dd2$imported_daily <- id[length(id)]
-    dd2$imported <- ii5$import
+    #dd2$imported <- ii5$import
 }
 
-
+ii5 %>% write.csv("data/lt-covid19-aggregate.csv", row.names = FALSE)
 
 
