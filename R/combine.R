@@ -15,6 +15,13 @@ fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
     bind_rows  %>%
     write.csv("data/lt-covid19-daily.csv", row.names = FALSE)
 
+fns <- dir("individual", pattern = "[0-9]+.csv", full.names = TRUE)
+
+fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
+    bind_rows  %>%
+    write.csv("data/lt-covid19-individual-daily.csv", row.names = FALSE)
+
+
 
 fns <- dir("laboratory", pattern = "[0-9]+.csv", full.names = TRUE)
 
