@@ -10,5 +10,6 @@ docs/tests
 docs/daily
 docs/rc
 docs/R/*
-docs/individual
+docs/individual/*
+docs/data/*
 *.swp

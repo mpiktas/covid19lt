@@ -15,7 +15,6 @@ if(md > mi) {
     dd1 <- dd0 %>% filter(day > mi)
     tt1 <- tt %>% filter(day > mi)
 } else {
-
     dd <- dd0
     tt <- tt0
 }
@@ -50,7 +49,7 @@ ii4 <- ii3 %>% left_join(iit %>% select(day, hospitalized, intensive, dd1 = deat
 ii5 <- ii4 %>% select(day, confirmed, deaths, deaths_different, recovered, active, imported, tested,
                       incidence, tests_daily, imported_daily, quarantined, hospitalized, intensive)
 
-if(nrow(dd1)>0) {
+if(md > mi) {
     ##assume only one day is missing
     dd2 <- dd1 %>% select(day, confirmed, deaths, deaths_different, recovered, active,
                           tested = total_tests, incidence, tests_daily = daily_tests, quarantined)
