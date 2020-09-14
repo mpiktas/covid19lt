@@ -47,3 +47,7 @@ mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), adsd, fnl, SIMPLIF
 
 #
 #file.remove(fnl)
+
+dd1 <- "2020-09-13_23:00:00.csv"
+fnl1 <-  paste0("rc/",names(adsd),"_",dd1,".csv")
+file.rename(fnl, fnl1)
