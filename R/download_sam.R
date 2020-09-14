@@ -37,6 +37,7 @@ ia1 <- cd2[grepl("įvežt",cd2)] %>% strsplit(":") %>% .[[1]] %>% .[2] %>% str_t
 #nums <- c(nums1, nums89)
 
 nums <- nums1
+nums <- nums1[-8]
 
 fns <- dir("total", pattern="[0-9]+.csv", full.names  = TRUE)
 
