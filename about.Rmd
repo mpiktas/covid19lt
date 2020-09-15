@@ -11,7 +11,7 @@ Istoriniai duomenys surinkti iš įvairių šaltinių. Naujausi duomenys imami i
 
 Modeliai yra edukacinio pobūdžio, juos galima laisvai naudoti, bet jiems nesuteikiama jokia garantija.
 
-Modeliai yra atnaujinami kas dieną su naujais duomenimis. Duomenys yra [čia](https://github.com/mpiktas/covid19lt/tree/master/total), o visas prognozes galite rasti [čia](https://github.com/mpiktas/covid19lt/tree/master/forecasts).
+Modeliai yra atnaujinami kas dieną su naujais duomenimis. Duomenys yra [čia](https://github.com/mpiktas/covid19lt/tree/master/data), o visas prognozes galite rasti [čia](https://github.com/mpiktas/covid19lt/tree/master/forecasts).
 
 Modelių kodas yra `.Rmd` failuose. Puslapis su modeliais yra pergneruojamas kiekvieną dieną. Norint tai padaryti pačiam reikia:
 
