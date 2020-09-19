@@ -10,6 +10,7 @@ library(readr)
 library(tidyr)
 library(dygraphs)
 library(xts)
+library(lubridate)
 tt <- read_csv("data/lt-covid19-total.csv") 
 ```
 
@@ -61,7 +62,7 @@ dygraph(dxtt) %>%
 ```
 
 
-# Dieniniai atvejai ir 7, 14 dienų slenkantys vidurkiai
+# Dieniniai atvejai ir 7, 14 dienų slenkantys vidurkiai 
 ```{r}
 dxtt7 <- rollmean(dxtt, 7, fill = NA, align = "right")
 dxtt14 <- rollmean(dxtt, 14, fill = NA, align = "right")
@@ -71,6 +72,25 @@ colnames(dxtt14) <- paste0(colnames(dxtt14),"14")
 d714 <- cbind(dxtt, dxtt7, dxtt14)
 
 dygraph(d714[, c("incidence", "incidence7","incidence14")]) %>% dyRangeSelector
+  
+  
+```
+
+# Dieniniai atvejai ir 7, 14 dienų slenkantys vidurkiai, data.gov.lt duomenys 
+```{r}
+
+aa <- read.csv("data/lt-covid19-aggregate.csv") %>% mutate(day = ymd(day))
+axtt <- xts(aa$incidence, order.by =aa$day)
+colnames(axtt) <- "incidence"
+
+axtt7 <- rollmean(axtt, 7, fill = NA, align = "right")
+axtt14 <- rollmean(axtt, 14, fill = NA, align = "right")
+colnames(axtt7) <- paste0(colnames(axtt7),"7")
+colnames(axtt14) <- paste0(colnames(axtt14),"14")
+
+a714 <- cbind(axtt, axtt7, axtt14)
+
+dygraph(a714[, c("incidence", "incidence7","incidence14")]) %>% dyRangeSelector
   
   
 ```
