@@ -63,7 +63,7 @@ if(identical(dim(tbr),dim(new_day_data))) {
 
 if (sm > 0) {
     tbr <- tbr %>% mutate(created = crtime)
-    write.csv(tbr, glue::glue("laboratory/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
+    write.csv(tbr, glue::glue("raw_data/laboratory/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
 } else {
     warning("New day data is identical to the previous day")
 }

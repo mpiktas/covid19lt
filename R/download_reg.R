@@ -41,7 +41,7 @@ adsd0 <- lapply(ad, function(l)try(fix_esridate(rawToChar(l$content))))
 adsd <- adsd0[sapply(adsd0, class) != "try-error"]
 
 dd <- gsub(" ","_",Sys.time())
-fnl <- paste0("rc/",names(adsd),"_",dd,".csv")
+fnl <- paste0("raw_data/rc/",names(adsd),"_",dd,".csv")
 
 mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), adsd, fnl, SIMPLIFY = FALSE)
 
