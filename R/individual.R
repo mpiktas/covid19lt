@@ -3,14 +3,14 @@ library(dplyr)
 library(lubridate)
 library(curl)
 
-curl_download("ftp://atviriduomenys.nvsc.lt/COVID19.json", "individual/COVID19.json")
+curl_download("ftp://atviriduomenys.nvsc.lt/COVID19.json", "raw_data/datagov/COVID19.json")
 suff <- gsub("-","",Sys.Date())
 
-file.copy("individual/COVID19.json",paste0("~/tmp/covid19lt-json/COVID19-",suff,".json"))
+file.copy("raw_data/datagov/COVID19.json",paste0("~/tmp/covid19lt-json/COVID19-",suff,".json"))
 
 
 
-zz <- fromJSON("individual/COVID19.json")
+zz <- fromJSON("raw_data/datagov/COVID19.json")
 
 zz1 <- zz %>% rename(actual_day = `Susirgimo data`,
                      day = `Atvejo patvirtinimo data`,
@@ -51,7 +51,7 @@ iit1 <- iit %>% select(day, confirmed, recovered, deaths, deaths_different, impo
 
 idt <- gsub("-","", iit1$day[1])
 
-write.csv(iit1, paste0("individual/lt-covid19-individual-daily-",idt,".csv"), row.names = FALSE)
+write.csv(iit1, paste0("raw_data/datagov/lt-covid19-individual-daily-",idt,".csv"), row.names = FALSE)
 
 
 zz2 <- lapply(sort(unique(zz1$day)), function(d) zz1 %>% filter(day <= d))

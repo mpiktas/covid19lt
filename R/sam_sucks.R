@@ -5,7 +5,7 @@ library(dplyr)
 library(lubridate)
 library(stringr)
 
-fns <- dir("total", pattern="[0-9]+.csv", full.names  = TRUE)
+fns <- dir("raw_data/total", pattern="[0-9]+.csv", full.names  = TRUE)
 
 days <- fns %>% strsplit("-") %>% sapply(function(x)gsub(".csv","",x[length(x)]))
 
@@ -30,8 +30,8 @@ new_day_data$day <- new_day
 ##7. isolated
 ##8. tests
 ##9. total tests
-nums <- c(3335, 1165, 39, 87, 13, 2070, 7835, 1916, 694139)
-ia1 <- 226
+nums <- c(3664, 1363, 99, 87, 17, 2197, 11150, 5925, 722897)
+ia1 <- 243
 
 
 if ((nums[1] - nums[3]) == new_day_data$confirmed[1])  {
@@ -58,7 +58,7 @@ if ((nums[9] - nums[8]) == new_day_data$tested[1])  {
 
 new_day_data$quarantined[1] <- nums[7]
 
-write.csv(new_day_data, glue::glue("total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
+write.csv(new_day_data, glue::glue("raw_data/total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
 
 ndd <- new_day_data %>% select(country, day) %>%
     mutate(confirmed = nums[1],
@@ -71,5 +71,5 @@ ndd <- new_day_data %>% select(country, day) %>%
            quarantined = nums[7],
            total_tests = nums[9],
            imported0601 = ia1)
-write.csv(ndd, glue::glue("daily/lt-covid19-daily-{outd}.csv"), row.names = FALSE )
+write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily-{outd}.csv"), row.names = FALSE )
 
