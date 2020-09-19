@@ -82,7 +82,7 @@ if ((nums[9] - nums[8]) == new_day_data$tested[1])  {
 
 new_day_data$quarantined[1] <- nums[7]
 
-write.csv(new_day_data, glue::glue("total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
+write.csv(new_day_data, glue::glue("raw_data/total/lt-covid19-total-{outd}.csv"), row.names = FALSE )
 
 ndd <- new_day_data %>% select(country, day) %>%
     mutate(confirmed = nums[1],
@@ -95,5 +95,5 @@ ndd <- new_day_data %>% select(country, day) %>%
            quarantined = nums[7],
            total_tests = nums[9],
            imported0601 = ia1)
-write.csv(ndd, glue::glue("daily/lt-covid19-daily-{outd}.csv"), row.names = FALSE)
+write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily-{outd}.csv"), row.names = FALSE)
 

@@ -1,13 +1,13 @@
 library(dplyr)
 library(lubridate)
 
-fn <- dir("rc", full.names = TRUE)
+fn <- dir("raw_data/rc", full.names = TRUE)
 
 fns <- c(fn[grepl("sav_",fn)])
 
 savd <- lapply(fns, read.csv, stringsAsFactors = FALSE)
 
-pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[2:3],collapse="_")))
+pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
 
 savd1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), savd, pt, SIMPLIFY = FALSE) %>% bind_rows %>%
     select(-X) %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
@@ -28,13 +28,13 @@ savd2 <-  savd1 %>% group_by(day) %>%
 
 # Do the same for another layer -------------------------------------------
 
-fn <- dir("rc", full.names = TRUE)
+fn <- dir("raw_data/rc", full.names = TRUE)
 
 fns <- c(fn[grepl("savivaldybiu_",fn)])
 
 savd <- lapply(fns, read.csv, stringsAsFactors = FALSE)
 
-pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[2:3],collapse="_")))
+pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
 
 svd1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), savd, pt, SIMPLIFY = FALSE) %>% bind_rows %>%
     select(-X) %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
@@ -81,13 +81,13 @@ rr2 <- rr1 %>% group_by(administrative_level_2) %>%
 
 # Do age groups -----------------------------------------------------------
 
-fn <- dir("rc", full.names = TRUE)
+fn <- dir("raw_data/rc", full.names = TRUE)
 
 fns <- c(fn[grepl("amziaus_grupes_",fn)])
 
 agr <- lapply(fns, read.csv, stringsAsFactors = FALSE)
 
-pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
+pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[4:5],collapse="_")))
 
 ag1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), agr, pt, SIMPLIFY = FALSE) %>% bind_rows %>%
     select(-X) %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
@@ -112,13 +112,13 @@ write.csv(ag2, "data/lt-covid19-agegroups.csv", row.names = FALSE)
 
 # Do profession -----------------------------------------------------------
 
-fn <- dir("rc", full.names = TRUE)
+fn <- dir("raw_data/rc", full.names = TRUE)
 
 fns <- c(fn[grepl("profesijos",fn)])
 
 pr <- lapply(fns, read.csv, stringsAsFactors = FALSE)
 
-pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[2:3],collapse="_")))
+pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
 
 pr1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), pr, pt, SIMPLIFY = FALSE) %>% bind_rows %>%
     select(-X) %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
