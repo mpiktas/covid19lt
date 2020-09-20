@@ -75,4 +75,15 @@ cmp <- zz1 %>% count(day) %>% inner_join(tt %>% select(day, incidence)) %>%
 
 zz4 <- zz1 %>% mutate(aday = ifelse(actual_day> day, day, actual_day)) %>% mutate(d = day -actual_day)
 
+if(FALSE) {
+    oo <- ii2 %>% count(age) %>% rename(Wave2=n) %>% left_join(ii1 %>% count(age) %>% rename(Wave1=n))
+    oo1 <- oo
+    oo1$Wave2[11] <- oo$Wave2[11]+1
+    oo1 <- oo1[-3,]
 
+    oo1 <- oo1 %>% mutate(pWave2 = round(Wave2/sum(Wave2)*100,2), pWave1 = round(Wave1/sum(Wave1,na.rm = TRUE)*100,2))
+
+    oo2 <- oo1 %>% select(age, pWave1, pWave2) %>% pivot_longer(-age,names_to="wave", values_to="percent")
+
+
+}
