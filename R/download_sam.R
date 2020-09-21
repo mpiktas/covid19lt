@@ -39,7 +39,7 @@ ia1 <- cd2[grepl("įvežt",cd2)] %>% strsplit(":") %>% .[[1]] %>% .[2] %>% str_t
 nums <- nums1
 nums <- nums1[-8]
 
-fns <- dir("total", pattern="[0-9]+.csv", full.names  = TRUE)
+fns <- dir("raw_data/total", pattern="[0-9]+.csv", full.names  = TRUE)
 
 days <- fns %>% strsplit("-") %>% sapply(function(x)gsub(".csv","",x[length(x)]))
 
