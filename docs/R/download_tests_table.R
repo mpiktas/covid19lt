@@ -15,7 +15,7 @@ oo <- read_html(raw)
 
 tbs <- html_table(oo, fill = TRUE)
 
-fns <- dir("laboratory", pattern="[0-9]+.csv", full.names  = TRUE)
+fns <- dir("raw_data/laboratory", pattern="[0-9]+.csv", full.names  = TRUE)
 
 days <- fns %>% strsplit("-") %>% sapply(function(x)gsub(".csv","",x[length(x)]))
 
