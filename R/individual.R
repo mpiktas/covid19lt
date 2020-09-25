@@ -2,6 +2,7 @@ library(jsonlite)
 library(dplyr)
 library(lubridate)
 library(curl)
+library(tidyr)
 
 curl_download("ftp://atviriduomenys.nvsc.lt/COVID19.json", "raw_data/datagov/COVID19.json")
 suff <- gsub("-","",Sys.Date())
@@ -87,3 +88,34 @@ if(FALSE) {
 
 
 }
+
+
+
+daily_xtable <- function(zz1, ztotal = FALSE) {
+
+    agad <- zz1 %>% count(day, administrative_level_3, age)  %>%
+        pivot_wider(names_from = "age", values_from ="n", values_fill = 0,names_sort = TRUE) %>%
+        arrange(day, administrative_level_3)
+
+    ag <- zz1 %>% count(day, age)
+
+    ag1 <- ag %>% group_by(day) %>% summarise(n = sum(n))
+    ag2 <- ag %>% bind_rows(ag1 %>% mutate(age = "Total")) %>%
+        pivot_wider(names_from = "age", values_from ="n", values_fill = 0,names_sort = TRUE) %>%
+        mutate(administrative_level_3 = "ZTotal")
+
+    ad <- zz1 %>% count(day,administrative_level_3) %>% rename(Total = n)
+
+    agad1 <- agad %>% inner_join(ad)
+    agad2 <- agad1 %>% bind_rows(ag2) %>%
+        select(day, administrative_level_3, `0-9`, `10-19`, `20-29`, `30-39`, `40-49`, `50-59`, `60-69`,`70-79`,`80-89`,`90-99`, `100-109`, Total) %>%
+        arrange(day, administrative_level_3)
+    agad2
+}
+
+#agad2 %>% write.csv("data/lt-covid19-age-region-incidence.csv", row.names = FALSE)
+#
+
+ad <- zz1 %>% count(day,administrative_level_3) %>% mutate(day = ymd(day))
+
+ggplot(aes(x= ))
