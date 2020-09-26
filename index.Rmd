@@ -97,13 +97,14 @@ dygraph(xtpd, main = paste("Atvejų skaičius tenkantis 100 testų", max(aa$day)
 ```
 
 
-##Atvejų pasiskirstymas pagal amžių ir savivaldybes `r last_day` 
+## Atvejų pasiskirstymas pagal amžių ir savivaldybes `r last_day` 
 
 ```{r}
 agre <- read.csv("data/lt-covid19-age-region-incidence.csv", check.names =  FALSE) 
 
-agre1 <- agre %>% filter(day == max(day))
-agre1 %>% datatable( 
+agre1 <- agre %>% filter(day == max(day)) %>% select(-day) 
+agre2 <- agre1 %>% rename(Savivaldybė = administrative_level_3)
+agre2 %>% datatable( 
          extensions = c('FixedColumns',"FixedHeader"),
           options = list(scrollX = TRUE, 
                          paging=FALSE,
