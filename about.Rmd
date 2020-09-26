@@ -6,8 +6,21 @@ title: "Apie"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+Atnaujinama kas dieną. Paskutinis atnaujinimas `r data`. 
 
-Istoriniai duomenys surinkti iš įvairių šaltinių. Naujausi duomenys imami iš SAM.
+## Puslapio turinys
+
+  - [Elementarioji statistika](stats.html)
+  - [Efektyvusis R](Re.html)
+  - [Europos šalių 14 dienų atvejai 100 tūkst. gyventojų](countries.html)
+  - [Epidemijos bangų models (nebeatnaujinamas)](glme.html)
+  - [Apibendrinto logistinio augimo modelis (nebeatnaujinamas)](glm.html)
+  - [SEIR epidemiologinis modelis (nebeatnaujinamas)](SEIR.html)
+  - [Modelių prognozių palyginimas (nebeatnaujinamas)](comparison.html)
+  - [Apibendrinto augimo modelis (nebeatnaujinamas)](ggm.html)
+
+
+## Papildoma informacija
 
 Modeliai yra edukacinio pobūdžio, juos galima laisvai naudoti, bet jiems nesuteikiama jokia garantija.
 

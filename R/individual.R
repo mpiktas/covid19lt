@@ -125,13 +125,5 @@ daily_xtable <- function(zz1, colsums = FALSE) {
 
 daily_xtable(zz1, colsums = TRUE) %>% write.csv("data/lt-covid19-age-region-incidence.csv", row.names =  FALSE)
 
-daily_xtable(zz1 %>% filter(status = "Mirė")) %>% write.csv("data/lt-covid19-age-region-deaths.csv", row.names =  FALSE)
+daily_xtable(zz1 %>% filter(status == "Mirė")) %>% write.csv("data/lt-covid19-age-region-deaths.csv", row.names =  FALSE)
 
-#agad2 %>% write.csv("data/lt-covid19-age-region-incidence.csv", row.names = FALSE)
-#
-
-#ad <- zz1 %>% count(day,administrative_level_3) %>% mutate(day = ymd(day))
-
-#ggplot(aes(x=day, y = n ),
-#       data = ad %>% filter(day >= "2020-07-01", administrative_level_3 %in% (agad2 %>% filter(day == max(day)) %>% pull(administrative_level_3)))) +
-#           facet_wrap(~administrative_level_3, scales = "free_y") +geom_line()

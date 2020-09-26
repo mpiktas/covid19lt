@@ -1,27 +1,122 @@
 ---
-title: "COVID-19 statistika ir modeliai"
+title: "COVID-19 Lietuvoje"
 
 site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(tidyr)
+library(dygraphs)
+library(xts)
+library(lubridate)
+library(DT)
 ```
 
 ```{r include=FALSE}
 data <- Sys.time()
 ```
-Atnaujinama kas dieną. Paskutinis atnaujinimas `r data`. Daugiau informacijos apie [puslapį.](about.html)
 
 
-## Puslapio turinys
+```{r,  echo = FALSE}
+aa <- read.csv("data/lt-covid19-aggregate.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+last_day <- max(aa$day)
 
-  - [Elementarioji statistika](stats.html)
-  - [Efektyvusis R](Re.html)
-  - [Europos šalių 14 dienų atvejai 100 tūkst. gyventojų](countries.html)
-  - [Epidemijos bangų models (nebeatnaujinamas)](glme.html)
-  - [Apibendrinto logistinio augimo modelis (nebeatnaujinamas)](glm.html)
-  - [SEIR epidemiologinis modelis (nebeatnaujinamas)](SEIR.html)
-  - [Modelių prognozių palyginimas (nebeatnaujinamas)](comparison.html)
-  - [Apibendrinto augimo modelis (nebeatnaujinamas)](ggm.html)
+ag <- function(x)(c(x[1],diff(x)))
+dt <- aa %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
+dtf <- dt
+dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
+```
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
+library(EpiEstim)
+incidence_data <- dt %>% select(date = day, I = incidence)
+ltR <-  estimate_R(incidence_data,
+                                  method="uncertain_si",
+                                  config = make_config(list(
+                                  mean_si = 4.8, std_mean_si = 3.0,
+                                  min_mean_si = 2, max_mean_si = 7.5,
+                                  std_si = 3.0, std_std_si = 1.0,
+                                  min_std_si = 0.5, max_std_si = 4.0,
+                                  n1 = 1000, n2 = 1000)))
+dput(ltR, "raw_data/effectiveR/ltR.R")
+```
+
+```{r, echo = FALSE}
+oo <- ltR$R %>% inner_join(dt %>% rename(t_end=times), by ="t_end") %>% select(day, R = `Mean(R)`, lwr = `Quantile.0.025(R)`,upr = `Quantile.0.975(R)`)
+bb <- xts(oo %>% select(-day), order.by=ymd(oo$day))
+dygraph(bb, main = "R Lietuvoje") %>% dySeries(c("lwr","R","upr"), label = "R") %>% dyRangeSelector()
+```
+
+
+```{r, echo = FALSE}
+stt <- aa %>% select(day, confirmed, deaths, recovered) %>% pivot_longer(confirmed:recovered, "type")
+
+xtt <- xts(aa %>% select(deaths, confirmed, recovered, -day), order.by =aa$day)
+
+dygraph(xtt, main = paste("Suminiai atvejai:",max(aa$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% dyRangeSelector()
+```
+
+```{r, echo = FALSE}
+axtt <- xts(aa$incidence, order.by =aa$day)
+colnames(axtt) <- "incidence"
+
+axtt7 <- rollmean(axtt, 7, fill = NA, align = "right")
+axtt14 <- rollmean(axtt, 14, fill = NA, align = "right")
+colnames(axtt7) <- paste0(colnames(axtt7),"7")
+colnames(axtt14) <- paste0(colnames(axtt14),"14")
+
+a714 <- cbind(axtt, axtt7, axtt14)
+
+dygraph(a714[, c("incidence", "incidence7","incidence14")], main = paste("Dieniniai atvejai ir slenkantys vidurkiai:",max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector
+```
+
+```{r, echo =FALSE}
+labs <- read.csv("data/lt-covid19-laboratory-total.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+
+lbt <- labs %>% group_by(day) %>% summarise(daily_tests = sum(tested_all))
+ltt <- aa %>% mutate(daily_tests = ag(tested)) %>% select(day, daily_tests)
+
+lct <- ltt %>% left_join(lbt %>% rename(laboratory_tests = daily_tests), by = "day") %>% 
+    mutate(sam_daily_tests = daily_tests, 
+           daily_tests = ifelse(is.na(laboratory_tests), sam_daily_tests, laboratory_tests))
+
+tpd <- aa %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
+    mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, 
+           incidence14 = rollsum(incidence, k = 14, fill = NA, align = "right"),
+           tests14 = rollsum(daily_tests, k = 14, fill = NA, align = "right"),
+           normalized14 = incidence14*100/tests14
+           )  
+    
+xtpd <- xts(tpd %>% select(normalized, normalized14), order.by = tpd$day)
+
+dygraph(xtpd, main = paste("Atvejų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2:3]) %>% dyRangeSelector 
+```
+
+
+##Atvejų pasiskirstymas pagal amžių ir savivaldybes `r last_day` 
+
+```{r}
+agre <- read.csv("data/lt-covid19-age-region-incidence.csv", check.names =  FALSE) 
+
+agre1 <- agre %>% filter(day == max(day))
+agre1 %>% datatable( 
+         extensions = c('FixedColumns',"FixedHeader"),
+          options = list(scrollX = TRUE, 
+                         paging=FALSE,
+                         fixedHeader=TRUE))
+```
+
+## Situacija savivaldybėse `r last_day`
+
+```{r, echo=FALSE}
+ii <- read.csv("data/lt-covid19-individual.csv")
+ad <- ii %>% count(day,administrative_level_3) %>% mutate(day = ymd(day))
+
+ggplot(aes(x=day, y = n ),
+       data = ad %>% filter(day >= "2020-07-01", administrative_level_3 %in% (agre1 %>% pull(administrative_level_3)))) +
+           facet_wrap(~administrative_level_3, scales = "free_y") +geom_line()
+```

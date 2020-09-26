@@ -14,4 +14,5 @@ docs/individual/*
 docs/data/*
 docs/laboratory
 docs/raw_data
+docs/archive
 *.swp
