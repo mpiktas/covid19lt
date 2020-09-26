@@ -1,10 +1,11 @@
 ---
 title: "Apie"
-
 ---
 
 ```{r setup, include=FALSE}
+
 knitr::opts_chunk$set(echo = FALSE)
+data <- Sys.time()
 ```
 Atnaujinama kas dieną. Paskutinis atnaujinimas `r data`. 
 

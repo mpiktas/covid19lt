@@ -60,7 +60,7 @@ write.csv(svd2, "data/lt-covid19-regions.csv", row.names = FALSE)
 
 
 # Last 14 days for regions ------------------------------------------------
-
+if(FALSE) {
 sdd <- function(x)c(0, diff(x))
 
 rr <- svd2 %>% arrange(administrative_level_3,day) %>%
@@ -77,7 +77,7 @@ rr1 <- rr %>% inner_join(svap)
 rr2 <- rr1 %>% group_by(administrative_level_2) %>%
     summarize(n = n(), s=sum(incidence), p = sum(incidence<=0), population = sum(population)) %>%
     mutate(s14 = s/population*1e5)
-
+}
 
 # Do age groups -----------------------------------------------------------
 
