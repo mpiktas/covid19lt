@@ -48,7 +48,7 @@ dput(ltR, "raw_data/effectiveR/ltR.R")
 ```{r, echo = FALSE}
 oo <- ltR$R %>% inner_join(dt %>% rename(t_end=times), by ="t_end") %>% select(day, R = `Mean(R)`, lwr = `Quantile.0.025(R)`,upr = `Quantile.0.975(R)`)
 bb <- xts(oo %>% select(-day), order.by=ymd(oo$day))
-dygraph(bb, main = "R Lietuvoje") %>% dySeries(c("lwr","R","upr"), label = "R") %>% dyRangeSelector()
+dygraph(bb, main = "Efektyvus reprodukcinis skaičius R") %>% dySeries(c("lwr","R","upr"), label = "R") %>% dyRangeSelector()
 ```
 
 
@@ -111,7 +111,9 @@ agre2 %>% datatable(
                          fixedHeader=TRUE))
 ```
 
-## Situacija savivaldybėse `r last_day`
+## Atvejų skaičiai savivaldybėse `r last_day`
+
+Nuo liepos 1d.
 
 ```{r, echo=FALSE}
 ii <- read.csv("data/lt-covid19-individual.csv")
