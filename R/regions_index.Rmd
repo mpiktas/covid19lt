@@ -1,0 +1,29 @@
+---
+title: "Covid-19 Lietuvos savivaldybėse"
+output: 
+  flexdashboard::flex_dashboard:
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(htmltools)
+library(flexdashboard)
+library(dplyr)
+```
+
+
+```{r, echo = FALSE, results = 'asis'}
+regs <- read.csv("../data/lt-covid19-individual.csv") %>% .$administrative_level_3 %>% unique %>% sort
+
+regs_n <- paste0(gsub("[.]","",gsub(" ", "_",regs)),".html")
+
+tags$h3("Savivaldybių sąrašas")
+
+links <- paste0("regions/", regs_n)
+
+tags$ul(mapply(function(nm, hr) tags$li(tags$a(href=hr, nm)),  regs, links, SIMPLIFY = FALSE))
+
+```
+
+
+
