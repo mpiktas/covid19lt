@@ -12,6 +12,12 @@ All the data is contained in the data folder. The following datasets are availab
   4. [lt-covid19-agegroups.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-agegroups.csv) - historical data of confirmed cases by age groups. Provided by [Registrų centras](https://registrucentras.maps.arcgis.com/apps/opsdashboard/index.html#/becd01f2fade4149ba7a9e5baaddcd8d)
   5. [lt-covid19-regions.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-regions.csv) - historical data of confirmed cases by administrative regions of Lithuania. Provided by [Registrų centras](https://registrucentras.maps.arcgis.com/apps/opsdashboard/index.html#/becd01f2fade4149ba7a9e5baaddcd8d)
   6. [lt-covid19-individual.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-individual.csv) - anonymized data of each confirmed case. Provided by [data.gov.lt](https://data.gov.lt/dataset/covid-19-epidemiologiniai-duomenys)
+  7. [lt-covid19-individual-daily.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-individual-daily.csv) - Daily summaries from the `lt-covid19-individual.csv`.
+  8. [lt-covid19-age-region-deaths.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-age-region-deaths.csv) - Deaths summary by age and  region from `lt-covid19-individual.csv`
+  9. [lt-covid19-age-region-incidence.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-age-region-incidence.csv) - Incidence summary by age and  region from `lt-covid19-individual.csv`.
+  10. [lt-covid19-aggregate.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-aggregate.csv) - All the time series collected from all the sources.
+  11. [lt-covid19-effective-R.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-effective-R.csv) - Effective R calculated from `lt-covid19-individual.csv` incidence data.
+.
 
 The data is updated every day, usually in the evenings. The data in the webpage on Lithuanian Health Ministry is updated irregularly, usually around 10-11 am. It is not updated on Saturdays and Sundays. The data is then gathered from unofficial sources, usually media portal pages. The Registrų centras is also updated irregularly.
 
