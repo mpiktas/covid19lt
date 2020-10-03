@@ -14,6 +14,7 @@ Atnaujinama kas dieną. Paskutinis atnaujinimas `r data`.
   - [Elementarioji statistika](stats.html)
   - [Efektyvusis R](Re.html)
   - [Europos šalių 14 dienų atvejai 100 tūkst. gyventojų](countries.html)
+  - [Savivaldybių statistika](savivaldybes.html)
   - [Epidemijos bangų models (nebeatnaujinamas)](glme.html)
   - [Apibendrinto logistinio augimo modelis (nebeatnaujinamas)](glm.html)
   - [SEIR epidemiologinis modelis (nebeatnaujinamas)](SEIR.html)
