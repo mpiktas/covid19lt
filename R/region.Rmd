@@ -1,0 +1,105 @@
+---
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+params: 
+   region: "Vilniaus m."
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(dplyr)
+library(dygraphs)
+library(ggplot2)
+library(xts)
+library(lubridate)
+library(tidyr)
+library(gridExtra)
+
+ii <- read.csv("../data/lt-covid19-individual.csv") %>% filter(administrative_level_3 == params$region) %>% mutate(day = ymd(day))
+inc <- ii %>% count(day)
+fulld <- days(1:(diff(range(inc$day))+1)-1)+min(inc$day)
+fixNA <- function(x) {
+    x[is.na(x)] <- 0
+    x
+}
+inc1 <- data.frame(day = fulld, n1 = 0) %>% left_join(inc, by = "day") %>% select(-n1) %>% mutate(incidence = fixNA(n)) %>% select(-n)
+
+xi <- xts(inc1$incidence, order.by = inc1$day)
+```
+
+---
+title: "Covid-19 `r params$region`"
+---
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Atvejų istorija
+
+```{r}
+
+colnames(xi) <- "incidence"
+
+axtt3 <- rollmean(xi, 3, fill = NA, align = "right")
+axtt7 <- rollmean(xi, 7, fill = NA, align = "right")
+colnames(axtt7) <- paste0(colnames(axtt7),"3")
+colnames(axtt3) <- paste0(colnames(axtt3),"7")
+
+a714 <- cbind(xi, axtt3, axtt7)
+
+dygraph(a714[, c("incidence", "incidence3","incidence7")], main = paste("Dieniniai atvejai ir slenkantys vidurkiai:",max(inc$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Atvejų amžiaus pasiskirstymas per pastarąsias 14 dienų
+
+```{r}
+last_day <- max(ii$day)
+agr <- read.csv("../raw_data/agegroups.csv")
+as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras","Moteris")) %>% mutate(n1 = 0)
+
+oo <- ii%>% filter(day >= last_day- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
+
+ld14 <- max(ii$day)-days(13)
+
+cols<-RColorBrewer::brewer.pal(3, "Set1")
+
+pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.08, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
+
+pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.5)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.09)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
+
+grid.arrange(pm,
+    pv,
+    ncol=2
+)
+```
+
+### Istorinis mirčių pasiskirstymas pagal amžių
+
+```{r}
+last_day <- max(ii$day)
+
+
+
+oo <- ii%>% filter(status == "Mirė") %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n))
+
+
+oo <- oo %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
+
+
+pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.08, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
+
+pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.5)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.09)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
+
+grid.arrange(pm,
+    pv,
+    ncol=2
+)
+
+```
+
