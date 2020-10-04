@@ -9,19 +9,47 @@ output:
 library(htmltools)
 library(flexdashboard)
 library(dplyr)
+library(lubridate)
+library(DT)
+Sys.setlocale(locale="lt_LT")
 ```
 
 
-```{r, echo = FALSE, results = 'asis'}
-regs <- read.csv("../data/lt-covid19-individual.csv") %>% .$administrative_level_3 %>% unique %>% sort
 
-regs_n <- paste0(gsub("[.]","",gsub(" ", "_",regs)),".html")
+```{r, echo = FALSE}
+ii <- read.csv("../data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
+last_day <- max(ii$day)
 
-tags$h3("Savivaldybių sąrašas")
+l14 <- ii %>% filter(day>=last_day-days(13)) %>% count(administrative_level_3) 
 
-links <- paste0("regions/", regs_n)
+rr <- read.csv("../raw_data/administrative_levels.csv")
 
-tags$ul(mapply(function(nm, hr) tags$li(tags$a(href=hr, nm)),  regs, links, SIMPLIFY = FALSE))
+fixNA <- function(x) {
+    x[is.na(x)] <- 0
+    x
+}
+
+
+dp <- l14 %>% right_join(rr, by = "administrative_level_3") %>% mutate(n = fixNA(n), Atvejai_100k = round(n/population*100000,2)) %>% arrange(administrative_level_3)
+    
+regs_n <- paste0(gsub("[.]","",gsub(" ", "_",dp$administrative_level_3)),".html")
+
+
+links <- paste0("regions/", regs_n) 
+
+links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  dp$administrative_level_3, links, SIMPLIFY = FALSE)
+
+dp$administrative_level_3 <- sapply(links2,as.character)
+
+colnames(dp) <- c("Savivaldybė", "Atvejai","Populiacija","Atvejai_100k")
+dp <- dp[,c(1,2,4,3)]
+
+dp %>% datatable( 
+         extensions = c('FixedColumns',"FixedHeader"),
+         escape = FALSE,
+          options = list(scrollX = TRUE, 
+                         paging=FALSE,
+                         fixedHeader=TRUE))
 
 ```
 
