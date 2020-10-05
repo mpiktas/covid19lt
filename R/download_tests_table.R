@@ -34,7 +34,7 @@ outd <- gsub("-","",as.character(new_day))
 
 new_day_data <- read.csv(fns[which.max(daysd)], stringsAsFactors = FALSE)
 
-tb1 <- tbs[[1]][-1:-4,]
+tb1 <- tbs[[4]][-1:-4,]
 
 colnames(tb1) <- c("laboratory", "tested_all", "tested_mobile", "negative_all", "negative_mobile", "positive_all","positive_mobile","not_tested", "not_tested_mobile")
 
