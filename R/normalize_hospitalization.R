@@ -14,7 +14,7 @@ tlk1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), tlk, pt, SIMPLIF
 
 tlk2 <-  tlk1 %>% group_by(day) %>%
     filter(downloaded == max(downloaded)) %>% ungroup %>%
-    select(day, description, tlk, total, intensive, ventilated, oxygen_mask, downloaded)
+    select(day, description, tlk, total, intensive, ventilated, oxygen_mask)
 
 write.csv(tlk2, "data/hospital-capacity.csv", row.names = FALSE)
 
@@ -35,7 +35,7 @@ cvh2 <-  cvh1 %>% group_by(day) %>%
     filter(downloaded == max(downloaded)) %>% ungroup %>%
     select(day, total, oxygen_mask = oxygen,
            ventilated,
-           intensive, downloaded)
+           intensive)
 
 write.csv(cvh2, "data/lt-covid19-hospitalized.csv", row.names = FALSE)
 
