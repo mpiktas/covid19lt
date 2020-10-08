@@ -32,11 +32,11 @@ x <- covid19(cn$ISO.alpha.3, verbose = FALSE, cache = FALSE)
 ```
 
 
-Čia pateikiamas sąrašas Europos šalių ir atvejų skaičius 100 tūkst gyventojų nuo `r max(x$date) - days(14)` iki `r max(x$date)`.
+Čia pateikiamas sąrašas Europos šalių ir atvejų skaičius 100 tūkst gyventojų nuo `r max(x$date) - days(14)` iki `r max(x$date)-days(1)`.
 
 ```{r}
 
-x  %>% filter(date == max(date) | date == max(date) - days(14)) %>% group_by(administrative_area_level_1) %>% 
+x  %>% filter(date == max(date)-days(1) | date == max(date) - days(14)) %>% group_by(administrative_area_level_1) %>% 
     summarize(cases14 = round(diff(confirmed)/unique(population)*1e5,2)) %>% 
     arrange(cases14) %>% rename(country = administrative_area_level_1) %>% mutate(rank = 1:n()) %>% select(country, cases14) %>% datatable( 
          extensions = c('FixedColumns',"FixedHeader"),
@@ -51,7 +51,7 @@ x  %>% filter(date == max(date) | date == max(date) - days(14)) %>% group_by(adm
 ```{r echo = FALSE}
 xx <- x %>% ungroup %>% select(date, confirmed, tests, population, country = administrative_area_level_1)
 ddiff <- function(x)c(0, diff(x))
-xx1 <- xx %>% arrange(country, date) %>%  group_by(country) %>% 
+xx1 <- xx %>% filter(date!=max(date)) %>% arrange(country, date) %>%  group_by(country) %>% 
     mutate(incidence = ddiff(confirmed), daily_tests = ddiff(tests),
            incidence14 = rollsum(incidence, k = 14, fill = NA, align = "right"),
            tests14 = rollsum(daily_tests, k = 14, fill = NA, align = "right"),
