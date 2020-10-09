@@ -53,16 +53,13 @@ Ta pati informacija lentelėje
 
 ```{r,echo=FALSE}
 
-RR <- ltR$R 
+RR <- read.csv("data/lt-covid19-effective-R.csv")
 
-RR[,1] <- RR[,2]
-RR[,2] <- dt$day[RR[,1]]
-
-colnames(RR)[1:2] <- c("t_end", "day")
-RR <- RR[,-1]
-RR %>% write.csv("data/lt-covid19-effective-R.csv", row.names = FALSE)
-
-RR %>% paged_table
+RR %>% datatable( 
+         extensions = c('FixedColumns',"FixedHeader"),
+          options = list(scrollX = TRUE, 
+                         paging=FALSE,
+                         fixedHeader=TRUE))
 ```
 
 

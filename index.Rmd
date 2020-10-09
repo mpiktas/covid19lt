@@ -14,38 +14,28 @@ library(dygraphs)
 library(xts)
 library(lubridate)
 library(DT)
+library(htmltools)
 ```
 
 ```{r include=FALSE}
 data <- Sys.time()
 ```
-
-
-```{r,  echo = FALSE}
-aa <- read.csv("data/lt-covid19-aggregate.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
-last_day <- max(aa$day)
-
-ag <- function(x)(c(x[1],diff(x)))
-dt <- aa %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
-dtf <- dt
-dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
-```
-
-```{r, echo = FALSE, message = FALSE, warning=FALSE}
-library(EpiEstim)
-incidence_data <- dt %>% select(date = day, I = incidence)
-ltR <-  estimate_R(incidence_data,
-                                  method="uncertain_si",
-                                  config = make_config(list(
-                                  mean_si = 4.8, std_mean_si = 3.0,
-                                  min_mean_si = 2, max_mean_si = 7.5,
-                                  std_si = 3.0, std_std_si = 1.0,
-                                  min_std_si = 0.5, max_std_si = 4.0,
-                                  n1 = 1000, n2 = 1000)))
-dput(ltR, "raw_data/effectiveR/ltR.R")
-```
+  - [Savivaldybių statistika](savivaldybes.html)    
+  - [Europos šalių 14 dienų atvejai 100 tūkst. gyventojų](countries.html)
+  - [Laboratorijų duomenys](stats.html)
+  - [Efektyvusis R](Re.html)
+  
+Atnaujinta: `r data`. 
 
 ```{r, echo = FALSE}
+aa <- read.csv("data/lt-covid19-aggregate.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+last_day <- max(aa$day)
+ltR <- dget("raw_data/effectiveR/ltR.R")
+ag <- function(x)(c(x[1],diff(x)))
+dt <- aa %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
+dtf <- dt
+dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
+
 oo <- ltR$R %>% inner_join(dt %>% rename(t_end=times), by ="t_end") %>% select(day, R = `Mean(R)`, lwr = `Quantile.0.025(R)`,upr = `Quantile.0.975(R)`)
 bb <- xts(oo %>% select(-day), order.by=ymd(oo$day))
 dygraph(bb, main = "Efektyvus reprodukcinis skaičius R") %>% dySeries(c("lwr","R","upr"), label = "R") %>% dyRangeSelector()
@@ -103,9 +93,22 @@ dygraph(xtpd, main = paste("Atvejų skaičius tenkantis 100 testų", max(aa$day)
 agre <- read.csv("data/lt-covid19-age-region-incidence.csv", check.names =  FALSE) 
 
 agre1 <- agre %>% filter(day == max(day)) %>% select(-day) 
-agre2 <- agre1 %>% rename(Savivaldybė = administrative_level_3)
+
+regs_n <- paste0(gsub("[.]","",gsub(" ", "_",agre1$administrative_level_3)),".html")
+
+links <- paste0("regions/", regs_n) 
+
+links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  agre1$administrative_level_3, links, SIMPLIFY = FALSE)
+
+
+agre2 <- agre1
+agre2$administrative_level_3 <- sapply(links2,as.character)
+agre2$administrative_level_3[nrow(agre2)] <- "Total"
+
+agre2 <- agre2 %>% rename(Savivaldybė = administrative_level_3)
 agre2 %>% datatable( 
          extensions = c('FixedColumns',"FixedHeader"),
+          escape = FALSE,
           options = list(scrollX = TRUE, 
                          paging=FALSE,
                          fixedHeader=TRUE))
