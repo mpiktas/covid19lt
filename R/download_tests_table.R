@@ -42,4 +42,4 @@ tbr <- tbr %>% mutate(positive_new = NA, positive_retested = NA) %>%
 
 outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
 
-write.csv(tbr, glue::glue("raw_data/laboratory/lt-covid19-laboratory-{outd}.csv"), row.names = FALSE )
+write.csv(tbr, glue::glue("raw_data/laboratory/lt-covid19-laboratory_{outd}.csv"), row.names = FALSE )
