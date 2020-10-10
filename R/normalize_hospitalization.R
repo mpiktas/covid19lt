@@ -35,6 +35,7 @@ cvh2 <-  cvh1 %>% group_by(day) %>%
     filter(downloaded == max(downloaded)) %>% ungroup %>%
     select(day, total, oxygen_mask = oxygen,
            ventilated,
+           not_intensive = hospitalized_not_intensive,
            intensive)
 
 write.csv(cvh2, "data/lt-covid19-hospitalized.csv", row.names = FALSE)
