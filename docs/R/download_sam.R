@@ -5,7 +5,7 @@ library(dplyr)
 library(lubridate)
 library(stringr)
 
-raw <- GET("http://sam.lrv.lt/lt/naujienos/koronavirusas")
+raw <- GET("https://nvsc.lrv.lt/lt/visuomenei/nacionalinio-visuomenes-sveikatos-centro-duomenys")
 #writeLines(unlist(strsplit(gsub("\n+","\n",gsub("(\n )+","\n",gsub(" +"," ",gsub("\r|\t", "", html_text(read_html(raw)))))),"\n")), paste0("/home/vaidotas/R/corona/data/korona_LT_",gsub( ":| ","_",raw$date),".csv"))
 
 oo <- read_html(raw)
@@ -16,28 +16,27 @@ cd <- html_nodes(oo,".text") %>% html_nodes("li") %>% html_text
 
 cd1 <-  html_nodes(oo,".text") %>% html_nodes("strong") %>% html_text
 
-cd2 <- html_nodes(oo,".text") %>% html_nodes("p") %>% html_text
+nums1 <- cd1 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
 
-cdd <- cd %>% strsplit(":")
-cdd <- cdd[sapply(cdd, length) == 2]
-nums1 <- cdd %>% sapply("[[", 2) %>% gsub("(.{1})([0-9]+)(.*)","\\2",.) %>% str_trim %>%  as.integer
+ia1 <- nums1[8]
 
-nums2 <- cd1 %>% str_trim %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
 
-ia1 <- cd2[grepl("įvežt",cd2)] %>% strsplit(":") %>% .[[1]] %>% .[2] %>% str_trim %>% as.integer
+# Get the tests data ------------------------------------------------------
 
-# nums89 <- cd2[grepl("Per vakar",cd2)] %>%
-#     strsplit("\r\n") %>%
-#     .[[1]] %>%
-#     strsplit(":") %>%
-#     sapply(function(x)x[min(length(x),2)]) %>%
-#     gsub("(.{1})([0-9]+)(.*)","\\2",.) %>%
-#     str_trim %>% as.integer %>% na.omit
+raw1 <- GET("https://nvsc.lrv.lt/lt/visuomenei/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
 
-#nums <- c(nums1, nums89)
+oo1 <- read_html(raw1)
 
-nums <- nums1
-nums <- nums1[-8]
+cd2 <-  html_nodes(oo1,".text") %>% html_nodes("strong") %>% html_text
+
+nums2 <- cd2 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
+
+nums <- c(nums1[-8],nums2[1:2])
+
+# Treat and write ---------------------------------------------------------
+
+
+
 
 fns <- dir("raw_data/total", pattern="[0-9]+.csv", full.names  = TRUE)
 

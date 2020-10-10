@@ -67,3 +67,7 @@ test_that("Regions data coincides with daily reported data", {
         expect_true(sum(tsavd1$confirmed) == ld$confirmed[2])
     }
 })
+
+#Test the downloads. Have we downloaded today?
+#
+

@@ -59,3 +59,9 @@ oo <- dtl %>% select(-laboratory) %>% rename(laboratory = lab_actual) %>%
 zz <- read.csv("data/lt-covid19-laboratory-total.csv") %>% select(-created)
 
 #write.csv(oo,"data/lt-covid19-laboratory-total.csv", row.names = FALSE)
+#
+
+
+# Redo SAM ----------------------------------------------------------------
+
+
