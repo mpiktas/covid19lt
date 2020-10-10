@@ -1,0 +1,9 @@
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_retested","positive_new","not_tested","not_tested_mobile"
+"2020-04-06","NVSPL",189,0,182,0,7,0,0,7,201,84
+"2020-04-06","Santaros klinikos",222,0,215,0,7,0,5,2,12,0
+"2020-04-06","Kauno klinikos",714,153,698,149,16,4,0,16,0,0
+"2020-04-06","Klaipėdos universitetinė ligoninė",186,59,181,55,5,4,0,5,434,339
+"2020-04-06","Šiaulių ligoninė",191,68,186,65,5,3,1,4,161,77
+"2020-04-06","NMVRVI",558,558,557,557,1,1,0,1,60,60
+"2020-04-06","Diagnostikos laboratorija",45,45,43,43,2,2,0,2,4,4
+"2020-04-06","SK Impeks",103,7,102,7,1,0,1,0,1,0

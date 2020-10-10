@@ -1,0 +1,9 @@
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
+"2020-08-30","VU ligoninės Santaros klinikų laboratorija",255,0,252,0,3,0,NA,NA,5,0
+"2020-08-30","Klaipėdos universitetinės ligoninės laboratorija",182,77,181,76,1,0,NA,NA,0,0
+"2020-08-30","Respublikinės Šiaulių ligoninės laboratorija",88,0,88,0,0,0,NA,NA,0,0
+"2020-08-30","LSMU ligoninės Kauno klinikų laboratorija",449,137,436,135,13,2,NA,NA,0,0
+"2020-08-30","Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",466,442,452,428,14,9,NA,NA,186,120
+"2020-08-30","UAB „Diagnostikos laboratorija“ („Antėja“)",4,1,4,1,0,0,NA,NA,0,0
+"2020-08-30","UAB „Medicina practica laboratorija“",48,28,48,28,0,0,NA,NA,0,0
+"2020-08-30","Respublikinės Panevėžio ligoninės laboratorija",43,0,43,0,0,0,NA,NA,0,0
