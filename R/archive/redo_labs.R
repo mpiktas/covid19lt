@@ -1,37 +1,33 @@
-library(lubridate)
-library(dplyr)
-library(tidyr)
-library(testthat)
 
-fns <- dir("raw_data/total", pattern = "[0-9]+.csv", full.names = TRUE)
+fns <- dir("raw_data/laboratory/", pattern = "lt-c")
 
-fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
-    bind_rows %>% arrange(country,day) %>% fill(under_observation) %>%
-    write.csv("data/lt-covid19-total.csv", row.names = FALSE)
+lapply(fns, function(fn) {
+    lb <- read.csv(paste0("raw_data/laboratory/",fn))
+    cr <- lb$created %>% unique
+    crd <- ymd_hms(cr)
+    dd <- ymd(lb$day %>% unique)
 
-fns <- dir("raw_data/sam", pattern = "[0-9]+.csv", full.names = TRUE)
+    if (date(crd) > ymd(dd)+days(1)) {
+        cr1 <- paste0(gsub("-","",as.character(ymd(dd)+days(1))),"_00:00:01")
+    } else {
+        cr1 <- gsub(" ","_",gsub("-","", cr))
+    }
 
-fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
-    bind_rows  %>%
-    write.csv("data/lt-covid19-daily.csv", row.names = FALSE)
+    lb1 <- lb %>% select(-created)
 
-fns <- dir("raw_data/datagov/", pattern = "[0-9]+.csv", full.names = TRUE)
-
-fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
-    bind_rows  %>%
-    write.csv("data/lt-covid19-individual-daily.csv", row.names = FALSE)
+    fn1 <- paste0("raw_data/laboratory1/lt-covid19-laboratory_",cr1,".csv")
+    write.csv(lb1, fn1,row.names = FALSE)
+})
 
 
-# Do laboratory data ------------------------------------------------------
-
-fns <- dir("raw_data/laboratory", pattern = "[0-9]+.csv", full.names = TRUE)
+fns <- dir("raw_data/laboratory1", pattern = "[0-9]+.csv", full.names = TRUE)
 
 pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
 
 lbd <- lapply(fns, read.csv, stringsAsFactor = FALSE)
 
 dtl0 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), lbd, pt, SIMPLIFY = FALSE) %>% bind_rows %>%
-    select(-day) %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
+     select(-day) %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
 
 dtl <-  dtl0 %>% group_by(day) %>%
     filter(downloaded == max(downloaded)) %>% ungroup %>%
@@ -60,9 +56,6 @@ dtl <- dtl %>% inner_join(ln, by = "laboratory")
 oo <- dtl %>% select(-laboratory) %>% rename(laboratory = lab_actual) %>%
     group_by(day, laboratory) %>% summarise_all(sum) %>% ungroup
 
+zz <- read.csv("data/lt-covid19-laboratory-total.csv") %>% select(-created)
 
-write.csv(oo,"data/lt-covid19-laboratory-total.csv", row.names = FALSE)
-
-#test_file("R/sanity_checks.R")
-
-
+#write.csv(oo,"data/lt-covid19-laboratory-total.csv", row.names = FALSE)
