@@ -20,7 +20,7 @@ lapply(fns, function(fn) {
 })
 
 
-fns <- dir("raw_data/laboratory1", pattern = "[0-9]+.csv", full.names = TRUE)
+fns <- dir("raw_data/laboratory", pattern = "[0-9]+.csv", full.names = TRUE)
 
 pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
 
