@@ -64,4 +64,51 @@ zz <- read.csv("data/lt-covid19-laboratory-total.csv") %>% select(-created)
 
 # Redo SAM ----------------------------------------------------------------
 
+ddf <- function(x)c(x[1],diff(x))
+
+tt <- read.csv("data/lt-covid19-total.csv") %>% mutate(day = ymd(day)) %>% mutate(incidence = ddf(confirmed), daily_tests = ddf(tested))
+
+dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day))
+
+tt %>% inner_join(dd %>% select(day, di = incidence)) %>% mutate(d = di-incidence) %>% .$d
+tt %>% inner_join(dd %>% select(day, dt = daily_tests)) %>% mutate(d = dt-tests_daily) %>% View
+
+tt1 <- tt %>% filter(day<="2020-04-26") %>%
+    select(day, confirmed, deaths, recovered, total_tests=tested, under_observation, incidence, daily_tests) %>%
+    mutate(active = confirmed - deaths - recovered)
+
+tt1 %>% split(tt1$day) %>% lapply(function(d) {
+    outd <- paste0(gsub("-","",as.character(d$day+days(1))),"_12:00:01")
+    write.csv(d, glue::glue("raw_data/sam1/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
+})
+
+fns <- dir("raw_data/sam", pattern = "daily") %>% sort
+
+fns1 <- fns[-9:-1]
+
+fns1 %>% lapply(function(fn) {
+
+    dd <- read.csv(paste0("raw_data/sam/",fn)) %>% mutate(day = ymd(day)) %>% select(-country)
+    outd <-  paste0(gsub("-","",as.character(dd$day+days(1))),"_12:00:01")
+    write.csv(dd, glue::glue("raw_data/sam1/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
+})
+
+
+fns <- dir("raw_data/sam1", pattern = "daily", full.names = TRUE)
+
+samd <- lapply(fns, read.csv, stringsAsFactors = FALSE)
+
+pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
+
+sam <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm) %>% select(-day), samd, pt, SIMPLIFY = FALSE) %>% bind_rows  %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
+
+dl <-  sam %>% group_by(day) %>%
+    filter(downloaded == max(downloaded)) %>% ungroup %>%
+    select(day, incidence, daily_tests, confirmed, active, deaths, recovered, quarantined, total_tests, deaths_different, imported0601, under_observation)
+
+tl <- dl %>% select(-confirmed) %>% mutate(confirmed = cumsum(incidence)) %>%
+    select(day, confirmed, deaths, recovered, tested = total_tests, under_observation, quarantined)
+
+##test with existing files
+
 
