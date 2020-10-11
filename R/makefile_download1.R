@@ -1,0 +1,6 @@
+source("R/download_sam.R")
+source("R/download_rc.R")
+source("R/download_sam_tables.R")
+source("R/treat_sam.R")
+source("R/treat_rc.R")
+source("R/treat_hospitalization.R")
