@@ -93,10 +93,16 @@ xtpd <- xts(tpd %>% select(normalized, normalized14), order.by = tpd$day)
 dygraph(xtpd, main = paste("Atvejų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2:3]) %>% dyRangeSelector 
 ```
 
-### Atvejų amžiaus pasiskirstymas per pastarąsias 14 dienų
+```{r, echo = FALSE}
+ii <- read.csv("data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
+p100k <- round(nrow(ii %>% filter(day>= last_day-days(13)))/2794329*100*1000,2)
+```
+
+### Atvejų amžiaus pasiskirstymas per pastarąsias 14 dienų, `r last_day`
+
+Lietuvoje 100k gyventojų per pastarąsias 14 dienų tenka **`r p100k`** atvejų.
 
 ```{r}
-ii <- read.csv("data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
 agr <- read.csv("raw_data/agegroups.csv")
 as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras","Moteris")) %>% mutate(n1 = 0)
 
@@ -116,11 +122,10 @@ grid.arrange(pm,
 )
 ```
 
-### Istorinis mirčių pasiskirstymas pagal amžių
+### Istorinis mirčių pasiskirstymas pagal amžių, `r last_day`
 
 ```{r}
 last_day <- max(ii$day)
-
 
 
 oo <- ii%>% filter(status == "Mirė") %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n))
