@@ -15,6 +15,7 @@ library(xts)
 library(lubridate)
 library(DT)
 library(htmltools)
+library(gridExtra)
 ```
 
 ```{r include=FALSE}
@@ -30,6 +31,11 @@ Atnaujinta: `r data`.
 ```{r, echo = FALSE}
 aa <- read.csv("data/lt-covid19-aggregate.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 last_day <- max(aa$day)
+fixNA <- function(x) {
+    x[is.na(x)] <- 0
+    x
+}
+
 ltR <- dget("raw_data/effectiveR/ltR.R")
 ag <- function(x)(c(x[1],diff(x)))
 dt <- aa %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
@@ -39,6 +45,7 @@ dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
 oo <- ltR$R %>% inner_join(dt %>% rename(t_end=times), by ="t_end") %>% select(day, R = `Mean(R)`, lwr = `Quantile.0.025(R)`,upr = `Quantile.0.975(R)`)
 bb <- xts(oo %>% select(-day), order.by=ymd(oo$day))
 dygraph(bb, main = "Efektyvus reprodukcinis skaičius R") %>% dySeries(c("lwr","R","upr"), label = "R") %>% dyRangeSelector()
+
 ```
 
 
@@ -86,6 +93,54 @@ xtpd <- xts(tpd %>% select(normalized, normalized14), order.by = tpd$day)
 dygraph(xtpd, main = paste("Atvejų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2:3]) %>% dyRangeSelector 
 ```
 
+### Atvejų amžiaus pasiskirstymas per pastarąsias 14 dienų
+
+```{r}
+ii <- read.csv("data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
+agr <- read.csv("raw_data/agegroups.csv")
+as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras","Moteris")) %>% mutate(n1 = 0)
+
+oo <- ii%>% filter(day >= last_day- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
+
+ld14 <- max(ii$day)-days(13)
+
+cols<-RColorBrewer::brewer.pal(3, "Set1")
+
+pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.08, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
+
+pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.5)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.09)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
+
+grid.arrange(pm,
+    pv,
+    ncol=2
+)
+```
+
+### Istorinis mirčių pasiskirstymas pagal amžių
+
+```{r}
+last_day <- max(ii$day)
+
+
+
+oo <- ii%>% filter(status == "Mirė") %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n))
+
+
+oo <- oo %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
+
+
+pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.08, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
+
+pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.5)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.09)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
+
+grid.arrange(pm,
+    pv,
+    ncol=2
+)
+
+```
+
+
 
 ## Atvejų pasiskirstymas pagal amžių ir savivaldybes `r last_day` 
 
@@ -119,7 +174,7 @@ agre2 %>% datatable(
 Nuo liepos 1d.
 
 ```{r, echo=FALSE}
-ii <- read.csv("data/lt-covid19-individual.csv")
+
 ad <- ii %>% count(day,administrative_level_3) %>% mutate(day = ymd(day))
 
 ggplot(aes(x=day, y = n ),
