@@ -76,8 +76,8 @@ cmp <- zz1 %>% count(day) %>% inner_join(tt %>% select(day, incidence)) %>%
 
 zz4 <- zz1 %>% mutate(aday = ifelse(actual_day> day, day, actual_day)) %>% mutate(d = day -actual_day)
 
-
-zz2 <- zz1 %>% filter(age!="")
+agr <- read.csv("raw_data/agegroups.csv")
+zz2 <- zz1 %>% filter(age!="") %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age = age1)
 
 daily_xtable <- function(zz1, colsums = FALSE) {
 
@@ -86,12 +86,12 @@ daily_xtable <- function(zz1, colsums = FALSE) {
         arrange(day, administrative_level_3)
 
     agr <- zz1$age %>% unique
-    sagr <- sapply(strsplit(agr, "-"),"[[",1) %>% as.integer
+    sagr <- sapply(strsplit(agr, "-"),"[[",1) %>% gsub("[+]","",.) %>% as.integer
     agr_sorted <- agr[order(sagr)]
 
     ad <- zz1 %>% count(day,administrative_level_3) %>% rename(Total = n)
 
-    agad1 <- agad %>% inner_join(ad)
+    agad1 <- agad %>% inner_join(ad, by = c("day", "administrative_level_3"))
 
     if(colsums) {
         ag <- zz1 %>% count(day, age)
