@@ -21,7 +21,7 @@ nums1 <- cd1 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("(
 ia1 <- nums1[8]
 
 
-# Get the tests data ------------------------------------------------------
+# Get the tests and laboratory data ------------------------------------------------------
 
 raw1 <- GET("https://nvsc.lrv.lt/lt/visuomenei/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
 
@@ -50,4 +50,38 @@ ndd <- new_day_data %>% select(country, day) %>%
            total_tests = nums[9],
            imported0601 = ia1)
 write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
+
+
+
+# Do the laboratory tables data -------------------------------------------
+
+trs <- html_nodes(oo1, "tr")
+
+tbrs1 <- lapply(trs, function(x)html_nodes(x, "td") %>% html_text %>% str_trim)
+
+crtime <- Sys.time()
+
+tb1 <- data.frame(do.call("rbind",tbrs1[-4:-1]))
+
+colnames(tb1) <- c("laboratory", "tested_all", "tested_mobile", "negative_all", "negative_mobile", "positive_all","positive_mobile","not_tested", "not_tested_mobile")
+
+tb1[, -1] <- sapply(tb1[, -1], function(x)as.integer(gsub("*","",x, fixed = TRUE)))
+
+tbr <- tb1 %>% filter(laboratory != "Iš viso:")
+
+tbr <- bind_cols(data.frame(day = rep(floor_date(crtime, unit = "days")-days(1), nrow(tbr))), tbr)
+
+tot <- tbr[,-1:-2] %>% sapply(sum, na.rm = TRUE)
+if(sum(abs(tot - tb1 %>% filter(laboratory == "Iš viso:") %>% .[,-1] %>% unlist)) != 0) warning("Totals do not match")
+
+tbr <- tbr %>% mutate(positive_new = NA, positive_retested = NA) %>%
+    select(day, laboratory, tested_all, tested_mobile,
+           negative_all, negative_mobile,
+           positive_all, positive_mobile, positive_new, positive_retested,
+           not_tested, not_tested_mobile)
+
+
+outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
+
+write.csv(tbr, glue::glue("raw_data/laboratory/lt-covid19-laboratory_{outd}.csv"), row.names = FALSE )
 
