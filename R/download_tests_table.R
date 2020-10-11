@@ -12,7 +12,7 @@ oo <- read_html(raw)
 
 # Get the tests data ------------------------------------------------------
 
-tbs <- html_table(oo, fill = TRUE)
+#tbs <- html_table(oo, fill = TRUE)
 
 trs <- html_nodes(oo, "tr")
 

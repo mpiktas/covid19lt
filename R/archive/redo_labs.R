@@ -109,6 +109,27 @@ dl <-  sam %>% group_by(day) %>%
 tl <- dl %>% select(-confirmed) %>% mutate(confirmed = cumsum(incidence)) %>%
     select(day, confirmed, deaths, recovered, tested = total_tests, under_observation, quarantined)
 
+
+tt <- read.csv("data/lt-covid19-total.csv")
+
+zz <- tt %>% select(-country,-intensive_therapy, -hospitalized,-day) - tl %>% select(-day)
+
+zz <- dl %>% filter(day>="2020-04-18") %>% select(-day,-under_observation) - dd %>% select(-day, -country)
+
 ##test with existing files
+##
+
+raw <- GET("https://nvsc.lrv.lt/lt/visuomenei/covid-19-ugdymo-istaigose?fbclid=IwAR1RhabJa1O3e1PCaBzRxjifhfCPdrl2qihCvkHEHNJNHRKKyIMvlPZT2Jg")
+#writeLines(unlist(strsplit(gsub("\n+","\n",gsub("(\n )+","\n",gsub(" +"," ",gsub("\r|\t", "", html_text(read_html(raw)))))),"\n")), paste0("/home/vaidotas/R/corona/data/korona_LT_",gsub( ":| ","_",raw$date),".csv"))
+
+oo <- read_html(raw)
+tbs <- html_table(oo, fill = TRUE)
+
+tb1 <- tbs[[1]][-2:-1,-1]
+colnames(tb1) <- c("educational_institution","confirmed_students","confirmed_teachers","confirmed_other","quarantined","first_case","last_case")
+
+tb1 %>% write.csv("raw_data/nvsc/education_20201010_23:13:00.csv", row.names=FALSE)
+# Get the tests data ------------------------------------------------------
+
 
 
