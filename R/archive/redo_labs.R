@@ -128,7 +128,7 @@ tbs <- html_table(oo, fill = TRUE)
 tb1 <- tbs[[1]][-2:-1,-1]
 colnames(tb1) <- c("educational_institution","confirmed_students","confirmed_teachers","confirmed_other","quarantined","first_case","last_case")
 
-tb1 %>% write.csv("raw_data/nvsc/education_20201010_23:13:00.csv", row.names=FALSE)
+tb1 %>% write.csv("raw_data/nvsc/education_20201012_22:40:00.csv", row.names=FALSE)
 # Get the tests data ------------------------------------------------------
 
 
