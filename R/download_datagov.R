@@ -54,27 +54,15 @@ idt <- gsub("-","", iit1$day[1])
 
 write.csv(iit1, paste0("raw_data/datagov/lt-covid19-individual-daily-",idt,".csv"), row.names = FALSE)
 
+fns <- dir("raw_data/datagov/", pattern = "[0-9]+.csv", full.names = TRUE)
 
-zz2 <- lapply(sort(unique(zz1$day)), function(d) zz1 %>% filter(day <= d))
-
-zz3 <- lapply(zz2, function(d) d %>% mutate(dday = day) %>% summarize(day = max(day), confirmed = n(), incidence = sum(dday == max(day)),
-                                               imported = sum(imported == "Taip"),
-                                               recovered = sum(status == "Pasveiko"),
-                                               deaths = sum(status == "Mirė"),
-                                               deaths_different = sum(status == "Kita"),
-                                               hospitalized = sum(hospitalized == "Taip"),
-                                               intensive = sum(intensive == "Taip"))) %>% bind_rows
+fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
+    bind_rows  %>%
+    write.csv("data/lt-covid19-individual-daily.csv", row.names = FALSE)
 
 
-tt <- read.csv("data/lt-covid19-total.csv") %>% mutate(day = ymd(day)) %>% arrange(day) %>% mutate(incidence = c(1,diff(confirmed)))
-dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
+# Do death and incidence by age group -------------------------------------
 
-cmp <- zz1 %>% count(day) %>% inner_join(tt %>% select(day, incidence)) %>%
-    mutate(I = cumsum(n), S = cumsum(incidence)) %>%
-    left_join(dd %>% select(day, ID= incidence, SD = confirmed))
-
-
-zz4 <- zz1 %>% mutate(aday = ifelse(actual_day> day, day, actual_day)) %>% mutate(d = day -actual_day)
 
 agr <- read.csv("raw_data/agegroups.csv")
 zz2 <- zz1 %>% filter(age!="") %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age = age1)
