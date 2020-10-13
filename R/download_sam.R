@@ -38,7 +38,7 @@ nums <- c(nums1[-8],nums2[1:2])
 crtime <- Sys.time()
 
 outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
-ndd <- new_day_data %>% select(country, day) %>%
+ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "days")-days(1))) %>%
     mutate(confirmed = nums[1],
            active = nums[2],
            incidence = nums[3],
