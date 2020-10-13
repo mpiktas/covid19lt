@@ -1,0 +1,10 @@
+image: "rocker/verse:latest"
+
+nvsc:
+    only:
+      - master
+    when:
+      - manual
+    script:
+      - R -e "install.packages('gert')"
+      - R -e "source('R/makefile_samrc.R')"

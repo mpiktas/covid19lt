@@ -5,3 +5,8 @@ source("R/download_datagov.R")
 source("R/merge.R")
 source("R/effective.R")
 test_file("R/sanity_checks.R")
+
+git_add("raw_data")
+git_add("data")
+git_commit("Update datagov data")
+git_push()
