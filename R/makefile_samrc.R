@@ -6,3 +6,7 @@ source("R/treat_sam.R")
 source("R/treat_rc.R")
 source("R/treat_hospitalization.R")
 test_file("R/sanity_checks.R")
+
+#git_add("raw_data")
+#git_commit_all("Update SAM and RC data")
+#git_push()
