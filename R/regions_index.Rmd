@@ -49,7 +49,7 @@ links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  dp$administrative_level_
 
 dp$administrative_level_3 <- sapply(links2,as.character)
 
-colnames(dp) <- c("Savivaldybė", "Atvejai","Augimas","Populiacija","Atvejai_100k")
+colnames(dp) <- c("Savivaldybė", "Atvejai","Augimas (%)","Populiacija","Atvejai_100k")
 dp <- dp[,c(1,2,5,3,4)]
 
 dp %>% datatable( 
