@@ -22,12 +22,20 @@ last_day <- max(ii$day)
 
 l14 <- ii %>% filter(day>=last_day-days(13)) %>% count(administrative_level_3) 
 
-rr <- read.csv("../raw_data/administrative_levels.csv")
+l17 <- ii %>% filter(day>=last_day-days(6)) %>% count(administrative_level_3) %>% rename(first = n)
+l27 <- ii %>% filter(day>=last_day-days(13) & day<last_day-days(6)) %>% count(administrative_level_3) %>% rename(second = n)
 
 fixNA <- function(x) {
     x[is.na(x)] <- 0
     x
 }
+
+wk <- l17 %>% full_join(l27, by = "administrative_level_3") %>%  mutate(first=fixNA(first), second = fixNA(second), Augimas = round(100*(first/second-1),2))
+
+l14 <- l14 %>% left_join(wk %>% select(administrative_level_3, Augimas), by = "administrative_level_3")
+
+rr <- read.csv("../raw_data/administrative_levels.csv")
+
 
 
 dp <- l14 %>% right_join(rr, by = "administrative_level_3") %>% mutate(n = fixNA(n), Atvejai_100k = round(n/population*100000,2)) %>% arrange(administrative_level_3)
@@ -41,8 +49,8 @@ links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  dp$administrative_level_
 
 dp$administrative_level_3 <- sapply(links2,as.character)
 
-colnames(dp) <- c("Savivaldybė", "Atvejai","Populiacija","Atvejai_100k")
-dp <- dp[,c(1,2,4,3)]
+colnames(dp) <- c("Savivaldybė", "Atvejai","Augimas","Populiacija","Atvejai_100k")
+dp <- dp[,c(1,2,5,3,4)]
 
 dp %>% datatable( 
          extensions = c('FixedColumns',"FixedHeader"),
