@@ -95,7 +95,7 @@ oo <- read_html(raw)
 tbs <- html_table(oo, fill = TRUE)
 
 tb1 <- tbs[[1]][-2:-1,-1]
-colnames(tb1) <- c("educational_institution","confirmed_students","confirmed_teachers","confirmed_other","quarantined","first_case","last_case")
+colnames(tb1) <- c("educational_institution","confirmed_students","confirmed_all","first_case","last_case")
 
 tb1 %>% write.csv(glue::glue("raw_data/nvsc/education_{outd}.csv"), row.names=FALSE)
 
