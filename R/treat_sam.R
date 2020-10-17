@@ -22,8 +22,17 @@ dl <-  sam %>% group_by(day) %>%
 tl <- dl %>% select(-confirmed) %>% mutate(confirmed = cumsum(incidence), country = "Lithuania") %>%
     select(country, day, confirmed, deaths, recovered, tested = total_tests, under_observation, quarantined)
 
-dl %>% write.csv("data/lt-covid19-daily.csv", row.names = FALSE)
-tl %>% write.csv("data/lt-covid19-total.csv", row.names = FALSE)
+dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
+ld <- dd %>% slice_tail(1)
+ldl <- dl %>% arrange(day) %>% slice_tail(1)
+ss <- identical(ld[1,-2:-1], data.frame(ldl[1,-2:-1]))
+
+if(ss) {
+    cat("\nNo new data for daily\n")
+} else {
+    dl %>% write.csv("data/lt-covid19-daily.csv", row.names = FALSE)
+    tl %>% write.csv("data/lt-covid19-total.csv", row.names = FALSE)
+}
 
 # Do laboratory data ------------------------------------------------------
 
@@ -63,9 +72,18 @@ dtl <- dtl %>% inner_join(ln, by = "laboratory")
 oo <- dtl %>% select(-laboratory) %>% rename(laboratory = lab_actual) %>%
     group_by(day, laboratory) %>% summarise_all(sum) %>% ungroup
 
+lbt <- read.csv("data/lt-covid19-laboratory-total.csv") %>% mutate(day = ymd(day)) %>% arrange(day, laboratory)
 
-write.csv(oo,"data/lt-covid19-laboratory-total.csv", row.names = FALSE)
+llbt <- lbt %>% filter(day == max(day))
 
-#test_file("R/sanity_checks.R")
+loo <- oo %>% arrange(day, laboratory) %>% filter(day == max(day))
+
+ss <- identical(data.frame(llbt)[,-1], data.frame(loo)[,-1])
+if(ss) {
+    cat("\nNo new data for laboratory\n")
+} else {
+    write.csv(oo,"data/lt-covid19-laboratory-total.csv", row.names = FALSE)
+}
+
 
 
