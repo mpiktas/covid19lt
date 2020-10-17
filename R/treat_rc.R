@@ -119,7 +119,7 @@ opr2 <- pr2 %>% filter(day == max(day)) %>% arrange(profession)
 
 ss <- identical(opr[,-1], data.frame(opr2[,-1]))
 if(ss) {
-    cat("\nNo new data for age groups\n")
+    cat("\nNo new data for professions\n")
 } else {
     write.csv(pr2, "data/lt-covid19-professions.csv", row.names=FALSE)
 }
