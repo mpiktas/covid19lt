@@ -112,9 +112,9 @@ ld14 <- max(ii$day)-days(13)
 
 cols<-RColorBrewer::brewer.pal(3, "Set1")
 
-pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.08, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
+pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.15, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
 
-pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.5)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.09)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
+pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.5)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.18)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
 
 grid.arrange(pm,
     pv,
@@ -134,9 +134,9 @@ oo <- ii%>% filter(status == "Mirė") %>% inner_join(agr, by = "age") %>% select
 oo <- oo %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
 
 
-pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.08, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
+pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.1, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
 
-pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.5)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.09)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
+pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.5)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.11)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
 
 grid.arrange(pm,
     pv,
