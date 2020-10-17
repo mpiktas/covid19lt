@@ -21,6 +21,7 @@ modf <- git_status() %>% .$file %>% find_root %>% unique
     if(ghpt!="") {
         git_branch_checkout("test")
         git_add("raw_data")
+        git_signature("Gitlab CI Bot", "test@test")
         git_commit("Update sam and rc data", author = "Gitlab CI bot")
         git_remote_add(glue::glue("https://covid19-ci:{ght}@github.com/mpiktas/covid19lt.git"), "github")
         git_push(remote = "github")
