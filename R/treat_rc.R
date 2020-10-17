@@ -30,7 +30,20 @@ svd2 <-  svd1 %>% group_by(day) %>%
            population = GYV_SK,
            updated =ATNUJINTA
     )
-write.csv(svd2, "data/lt-covid19-regions.csv", row.names = FALSE)
+
+rr <- read.csv("data/lt-covid19-regions.csv") %>% mutate(day = ymd(day))
+
+lrr <- rr %>% filter(day == max(day)) %>% arrange(administrative_level_3)
+lsvd <- svd2 %>% filter(day == max(day)) %>% arrange(administrative_level_3)
+
+ss <- identical(lrr[,-1], data.frame(lsvd[,-1]))
+
+if(ss) {
+    cat("\nNo new data for regions\n")
+} else {
+    write.csv(svd2, "data/lt-covid19-regions.csv", row.names = FALSE)
+}
+
 
 # Do age groups -----------------------------------------------------------
 
@@ -58,9 +71,21 @@ ag2 <-  ag1 %>% group_by(day) %>%
            total = VISO,
            population = GYV_SKAIC,
            population_male = GYV_SKAIC_V,
-           population_female = GYV_SKAIC_M,
+           population_female = GYV_SKAIC_M
     )
-write.csv(ag2, "data/lt-covid19-agegroups.csv", row.names = FALSE)
+
+ag <- read.csv("data/lt-covid19-agegroups.csv") %>% mutate(day = ymd(day))
+
+lag <- ag %>% filter(day == max(day)) %>% arrange(age_group)
+lag2 <- ag2 %>% filter(day == max(day)) %>% arrange(age_group)
+
+ss <- identical(lag[,-1], data.frame(lag2[,-1]))
+
+if(ss) {
+    cat("\nNo new data for age groups\n")
+} else {
+    write.csv(ag2, "data/lt-covid19-agegroups.csv", row.names = FALSE)
+}
 
 # Do profession -----------------------------------------------------------
 
@@ -87,4 +112,14 @@ pr2 <-  pr1 %>% group_by(day) %>%
            updated = ATNAUJINIMODATA,
     )
 
-write.csv(pr2, "data/lt-covid19-professions.csv", row.names=FALSE)
+pr <- read.csv("data/lt-covid19-professions.csv") %>% mutate(day = ymd(day))
+
+opr <- pr %>% filter(day == max(day)) %>% arrange(profession)
+opr2 <- pr2 %>% filter(day == max(day)) %>% arrange(profession)
+
+ss <- identical(opr[,-1], data.frame(opr2[,-1]))
+if(ss) {
+    cat("\nNo new data for age groups\n")
+} else {
+    write.csv(pr2, "data/lt-covid19-professions.csv", row.names=FALSE)
+}
