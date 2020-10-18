@@ -36,6 +36,53 @@ nums1 <- cd1 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("(
 ia1 <- nums1[8]
 
 
+
+# Get the total capacity data ------------------------------------------------------
+
+tbs <- html_table(oo, fill = TRUE)
+
+
+capacity_total <- tbs[[1]][-2:-1,]
+colnames(capacity_total) <- c("description", "total", "intensive", "ventilated", "oxygen_mask")
+capacity_total[,-1] <- sapply(capacity_total[,-1], function(x)as.integer(gsub(" ","",x)))
+rownames(capacity_total) <- NULL
+
+
+# Get covid hospitalisation data ----------------------------------------------------------
+
+cvh <- tbs[[2]][-2:-1,]
+
+colnames(cvh) <- c("description","total", "oxygen","ventilated","hospitalized_not_intensive", "intensive")
+cvh[,-1] <- sapply(cvh[,-1], as.integer)
+
+
+# Get regional hospitalization data ---------------------------------------
+
+tlk <- tbs[[3]][-2:-1,]
+colnames(tlk) <-c("description", "tlk", "total", "intensive", "ventilated", "oxygen_mask")
+tlk[,-2:-1] <- sapply(tlk[,-2:-1], function(x)as.integer(gsub("[,. ]","",x)))
+
+tt <- tlk %>% filter(tlk == "VISO")
+
+tlk <- tlk %>% filter(tlk != "VISO")
+
+tt1 <- tlk %>% select(-tlk) %>% group_by(description) %>% summarise_all(sum)
+
+test_total <- sum(tt[order(tt$description), -1:-2] - tt1[order(tt1$description),-1])
+if(test_total != 0) warning("Totals do not match with TLK breakdown")
+
+
+# Write everything --------------------------------------------------------
+
+res <- list(total_capacity= capacity_total, covid_hospitalization = cvh, tlk_capacity = tlk)
+
+dd <- gsub(" ","_",Sys.time())
+fnl <- paste0("raw_data/hospitalization//",names(res),"_",dd,".csv")
+
+mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), res, fnl, SIMPLIFY = FALSE)
+
+
+
 # Get the tests and laboratory data ------------------------------------------------------
 
 raw1 <- tryget("https://nvsc.lrv.lt/lt/visuomenei/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
@@ -65,6 +112,8 @@ ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "da
            total_tests = nums[9],
            imported0601 = ia1)
 write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
+
+
 
 
 
@@ -103,11 +152,11 @@ write.csv(tbr, glue::glue("raw_data/laboratory/lt-covid19-laboratory_{outd}.csv"
 
 # Get education -----------------------------------------------------------
 
-raw <- GET("https://nvsc.lrv.lt/lt/visuomenei/covid-19-ugdymo-istaigose?fbclid=IwAR1RhabJa1O3e1PCaBzRxjifhfCPdrl2qihCvkHEHNJNHRKKyIMvlPZT2Jg")
+raw3 <- GET("https://nvsc.lrv.lt/lt/visuomenei/covid-19-ugdymo-istaigose?fbclid=IwAR1RhabJa1O3e1PCaBzRxjifhfCPdrl2qihCvkHEHNJNHRKKyIMvlPZT2Jg")
 #writeLines(unlist(strsplit(gsub("\n+","\n",gsub("(\n )+","\n",gsub(" +"," ",gsub("\r|\t", "", html_text(read_html(raw)))))),"\n")), paste0("/home/vaidotas/R/corona/data/korona_LT_",gsub( ":| ","_",raw$date),".csv"))
 
-oo <- read_html(raw)
-tbs <- html_table(oo, fill = TRUE)
+oo3 <- read_html(raw3)
+tbs <- html_table(oo3, fill = TRUE)
 
 tb1 <- tbs[[1]][-2:-1,-1]
 colnames(tb1) <- c("educational_institution","confirmed_students","confirmed_all","first_case","last_case")
