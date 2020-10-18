@@ -3,8 +3,17 @@ library(dplyr)
 library(lubridate)
 library(curl)
 library(tidyr)
+library(glue)
 
-curl_download("ftp://atviriduomenys.nvsc.lt/COVID19.json", "raw_data/datagov/COVID19.json")
+
+custom_link <- Sys.getenv("DATAGOV_LINK")
+
+download_link <- "ftp://atviriduomenys.nvsc.lt/COVID19.json"
+if(custom_link != "") {
+    download_link <- glue::glue("http://{custom_link}:2020/ftp/download?path=COVID19.json")
+}
+
+curl_download(download_link, "raw_data/datagov/COVID19.json")
 suff <- gsub("-","",Sys.Date())
 
 file.copy("raw_data/datagov/COVID19.json",paste0("~/tmp/covid19lt-json/COVID19-",suff,".json"))

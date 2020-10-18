@@ -10,3 +10,17 @@ nvsc:
     script:
       - R -e "install.packages('gert')"
       - R -e "source('R/makefile_samrc.R')"
+
+datagov:
+    only:
+      refs :
+        - master
+        - schedules
+      variables:
+        - $SOURCE == "datagov"
+    script:
+      - R -e "install.packages('gert')"
+      - R -e "install.packages('EpiEstim')"
+      - R -e "source('R/makefile_datagov.R')"
+      - R -e "source('R/makefile_site.R')"
+

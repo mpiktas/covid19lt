@@ -1,4 +1,5 @@
 library(dplyr)
+library(rmarkdown)
 
 regs <- read.csv("data/lt-covid19-individual.csv") %>% .$administrative_level_3 %>% unique %>% sort
 
