@@ -17,14 +17,20 @@ sam <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm) %>% select(-day), 
 dl <-  sam %>% group_by(day) %>%
     filter(downloaded == max(downloaded)) %>% ungroup %>%
     mutate(country = "Lithuania") %>%
-    select(country, day, incidence, daily_tests, confirmed, active, deaths, recovered, quarantined, total_tests, deaths_different, imported0601, under_observation)
+    select(country, day, incidence, daily_tests, confirmed, active, deaths, recovered, quarantined, total_tests, deaths_different, imported0601, under_observation) %>%
+    arrange(day)
+
+##Do not trust total_tests data for the last period
+##
+nn <- nrow(dl)
+dl$total_tests[nn] <- dl$total_tests[nn - 1] + dl$daily_tests[nn]
 
 tl <- dl %>% select(-confirmed) %>% mutate(confirmed = cumsum(incidence), country = "Lithuania") %>%
     select(country, day, confirmed, deaths, recovered, tested = total_tests, under_observation, quarantined)
 
 dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
-ld <- dd %>% slice_tail(1)
-ldl <- dl %>% arrange(day) %>% slice_tail(1)
+ld <- dd %>% filter(day == max(day))
+ldl <- dl  %>% filter(day == max(day))
 ss <- identical(ld[1,-2:-1], data.frame(ldl[1,-2:-1]))
 
 if(ss) {
@@ -70,13 +76,13 @@ ln <- ln %>% rename(laboratory=lab_reported)
 dtl <- dtl %>% inner_join(ln, by = "laboratory")
 
 oo <- dtl %>% select(-laboratory) %>% rename(laboratory = lab_actual) %>%
-    group_by(day, laboratory) %>% summarise_all(sum) %>% ungroup
+    group_by(day, laboratory) %>% summarise_all(sum) %>% ungroup %>% arrange(day, laboratory)
 
-lbt <- read.csv("data/lt-covid19-laboratory-total.csv") %>% mutate(day = ymd(day)) %>% arrange(day, laboratory)
+lbt <- read.csv("data/lt-covid19-laboratory-total.csv") %>% mutate(day = ymd(day))
 
-llbt <- lbt %>% filter(day == max(day))
+llbt <- lbt %>% filter(day == max(day)) %>% arrange(laboratory)
 
-loo <- oo %>% arrange(day, laboratory) %>% filter(day == max(day))
+loo <- oo  %>% filter(day == max(day)) %>% arrange(laboratory)
 
 ss <- identical(data.frame(llbt)[,-1], data.frame(loo)[,-1])
 if(ss) {
