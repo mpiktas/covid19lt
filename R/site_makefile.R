@@ -1,6 +1,0 @@
-library(gert)
-rmarkdown::render_site()
-source("R/render_regions.R")
-git_add("docs")
-git_commit("Update the site")
-git_push()
