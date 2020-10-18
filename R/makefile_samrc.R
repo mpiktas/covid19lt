@@ -33,6 +33,8 @@ if(!("data" %in% modf)) {
         git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
         git_push(remote = "github")
     } else {
+        git_add("raw_data")
+        git_add("data")
         git_commit("Update sam and rc data")
         git_push()
     }
