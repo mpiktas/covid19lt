@@ -5,7 +5,22 @@ library(dplyr)
 library(lubridate)
 library(stringr)
 
-raw <- GET("https://nvsc.lrv.lt/lt/visuomenei/nacionalinio-visuomenes-sveikatos-centro-duomenys")
+tryget <- function(link, times = 10) {
+    res <- NULL
+    for (i in 1:times) {
+        res <- try(GET(link))
+        if(inherits(res, "try-error")) {
+            cat("\nFailed to get the data, sleeping for 1 second\n")
+            Sys.sleep(1)
+        } else break
+    }
+    if(is.null(res))stop("Failed to get the data after ", times, " times.")
+    res
+}
+
+raw <- tryget("https://nvsc.lrv.lt/lt/visuomenei/nacionalinio-visuomenes-sveikatos-centro-duomenys")
+
+
 #writeLines(unlist(strsplit(gsub("\n+","\n",gsub("(\n )+","\n",gsub(" +"," ",gsub("\r|\t", "", html_text(read_html(raw)))))),"\n")), paste0("/home/vaidotas/R/corona/data/korona_LT_",gsub( ":| ","_",raw$date),".csv"))
 
 oo <- read_html(raw)
@@ -23,7 +38,7 @@ ia1 <- nums1[8]
 
 # Get the tests and laboratory data ------------------------------------------------------
 
-raw1 <- GET("https://nvsc.lrv.lt/lt/visuomenei/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
+raw1 <- tryget("https://nvsc.lrv.lt/lt/visuomenei/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
 
 oo1 <- read_html(raw1)
 
