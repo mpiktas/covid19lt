@@ -6,4 +6,4 @@ nvsc:
     when: manual
     script:
       - R -e "install.packages('gert')"
-      - R -e "source('R/makefile_samrc_test.R')"
+      - R -e "source('R/makefile_samrc.R')"
