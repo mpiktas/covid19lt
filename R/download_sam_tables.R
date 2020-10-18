@@ -4,7 +4,21 @@ library(jsonlite)
 library(dplyr)
 library(lubridate)
 
-raw <- GET("http://sam.lrv.lt/lt/naujienos/koronavirusas")
+tryget <- function(link, times = 10) {
+    res <- NULL
+    for (i in 1:times) {
+        res <- try(GET(link))
+        if(inherits(res, "try-error")) {
+            cat("\nFailed to get the data, sleeping for 1 second\n")
+            Sys.sleep(1)
+        } else break
+    }
+    if(is.null(res))stop("Failed to get the data after ", times, " times.")
+    res
+}
+
+raw <- tryget("http://sam.lrv.lt/lt/naujienos/koronavirusas")
+
 #writeLines(unlist(strsplit(gsub("\n+","\n",gsub("(\n )+","\n",gsub(" +"," ",gsub("\r|\t", "", html_text(read_html(raw)))))),"\n")), paste0("/home/vaidotas/R/corona/data/korona_LT_",gsub( ":| ","_",raw$date),".csv"))
 
 oo <- read_html(raw)
