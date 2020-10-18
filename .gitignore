@@ -17,6 +17,7 @@ docs/raw_data
 docs/archive
 R/region.html
 R/regions_index.html
+R/*.html
 raw_data/laboratory1
 raw_data/laboratory2
 raw_data/sam1
