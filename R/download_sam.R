@@ -45,50 +45,59 @@ cat("\nParsing total capacity data\n")
 
 tbs <- html_table(oo, fill = TRUE)
 
+if(length(tbs) != 3) {
+    cat("\nLooking into SAM page")
+    rawh <- tryget("https://sam.lrv.lt/lt/naujienos/koronavirusas")
+    ooh <- read_html(rawh)
+    tbs <- html_table(ooh, fill = TRUE)
+}
 
-capacity_total <- tbs[[1]][-2:-1,]
-colnames(capacity_total) <- c("description", "total", "intensive", "ventilated", "oxygen_mask")
-capacity_total[,-1] <- sapply(capacity_total[,-1], function(x)as.integer(gsub(" ","",x)))
-rownames(capacity_total) <- NULL
-
-
-# Get covid hospitalisation data ----------------------------------------------------------
-cat("\nParsing covid hospitalization data\n")
-
-cvh <- tbs[[2]][-2:-1,]
-
-colnames(cvh) <- c("description","total", "oxygen","ventilated","hospitalized_not_intensive", "intensive")
-cvh[,-1] <- sapply(cvh[,-1], as.integer)
-
-
-# Get regional hospitalization data ---------------------------------------
-cat("\nParsing regional hospitalization data\n")
-
-tlk <- tbs[[3]][-2:-1,]
-colnames(tlk) <-c("description", "tlk", "total", "intensive", "ventilated", "oxygen_mask")
-tlk[,-2:-1] <- sapply(tlk[,-2:-1], function(x)as.integer(gsub("[,. ]","",x)))
-
-tt <- tlk %>% filter(tlk == "VISO")
-
-tlk <- tlk %>% filter(tlk != "VISO")
-
-tt1 <- tlk %>% select(-tlk) %>% group_by(description) %>% summarise_all(sum)
-
-test_total <- sum(tt[order(tt$description), -1:-2] - tt1[order(tt1$description),-1])
-if(test_total != 0) warning("Totals do not match with TLK breakdown")
+if(length(tbs) < 3) {
+    cat("\nNo valid hospitalization data present\n")
+} else {
+    capacity_total <- tbs[[1]][-2:-1,]
+    colnames(capacity_total) <- c("description", "total", "intensive", "ventilated", "oxygen_mask")
+    capacity_total[,-1] <- sapply(capacity_total[,-1], function(x)as.integer(gsub(" ","",x)))
+    rownames(capacity_total) <- NULL
 
 
-# Write everything --------------------------------------------------------
-cat("\nWriting hospitalization data\n")
-res <- list(total_capacity= capacity_total, covid_hospitalization = cvh, tlk_capacity = tlk)
+    # Get covid hospitalisation data ----------------------------------------------------------
+    cat("\nParsing covid hospitalization data\n")
 
-dd <- gsub(" ","_",Sys.time())
-fnl <- paste0("raw_data/hospitalization//",names(res),"_",dd,".csv")
+    cvh <- tbs[[2]][-2:-1,]
 
-mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), res, fnl, SIMPLIFY = FALSE)
-
+    colnames(cvh) <- c("description","total", "oxygen","ventilated","hospitalized_not_intensive", "intensive")
+    cvh[,-1] <- sapply(cvh[,-1], as.integer)
 
 
+    # Get regional hospitalization data ---------------------------------------
+    cat("\nParsing regional hospitalization data\n")
+
+    tlk <- tbs[[3]][-2:-1,]
+    colnames(tlk) <-c("description", "tlk", "total", "intensive", "ventilated", "oxygen_mask")
+    tlk[,-2:-1] <- sapply(tlk[,-2:-1], function(x)as.integer(gsub("[,. ]","",x)))
+
+    tt <- tlk %>% filter(tlk == "Iš viso:" | tlk == "VISO")
+
+    tlk <- tlk %>% filter(!(tlk %in% c("Iš viso:", "VISO")))
+
+    tt1 <- tlk %>% select(-tlk) %>% group_by(description) %>% summarise_all(sum)
+
+    test_total <- sum(tt[order(tt$description), -1:-2] - tt1[order(tt1$description),-1])
+    if(test_total != 0) warning("Totals do not match with TLK breakdown")
+
+
+    # Write everything --------------------------------------------------------
+    cat("\nWriting hospitalization data\n")
+    res <- list(total_capacity= capacity_total, covid_hospitalization = cvh, tlk_capacity = tlk)
+
+    dd <- gsub(" ","_",Sys.time())
+    fnl <- paste0("raw_data/hospitalization//",names(res),"_",dd,".csv")
+
+    mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), res, fnl, SIMPLIFY = FALSE)
+
+
+}
 # Get the tests and laboratory data ------------------------------------------------------
 cat("\nParsing test data\n")
 raw1 <- tryget("https://nvsc.lrv.lt/lt/visuomenei/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
