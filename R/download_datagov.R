@@ -16,7 +16,7 @@ if(custom_link != "") {
 curl_download(download_link, "raw_data/datagov/COVID19.json")
 suff <- gsub("-","",Sys.Date())
 
-file.copy("raw_data/datagov/COVID19.json",paste0("~/tmp/covid19lt-json/COVID19-",suff,".json"))
+if(custom_link=="") file.copy("raw_data/datagov/COVID19.json",paste0("~/tmp/covid19lt-json/COVID19-",suff,".json"))
 
 zz <- fromJSON("raw_data/datagov/COVID19.json")
 

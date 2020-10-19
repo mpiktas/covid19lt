@@ -2,11 +2,9 @@ library(dplyr)
 library(lubridate)
 library(testthat)
 library(gert)
-library(EpiEstim)
 
 source("R/download_datagov.R")
 source("R/merge.R")
-source("R/effective.R")
 
 modf <- git_status() %>% .$file %>% find_root %>% unique
 if(!("data" %in% modf)) {
