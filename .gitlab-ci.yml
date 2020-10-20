@@ -1,6 +1,11 @@
 image: "rocker/verse:latest"
 
+stages:
+ - download
+ - site
+
 nvsc:
+   stage: download
     only:
       refs :
         - master
@@ -12,6 +17,7 @@ nvsc:
       - R -e "source('R/makefile_samrc.R')"
 
 datagov:
+    stage: download
     only:
       refs :
         - master
@@ -21,5 +27,15 @@ datagov:
     script:
       - R -e "install.packages('gert')"
       - R -e "source('R/makefile_datagov.R')"
-      - R -e "source('R/makefile_site.R')"
 
+update:
+    stage: site
+    only:
+      refs :
+        - master
+        - schedules
+      variables:
+        - $SOURCE == "datagov"
+    script:
+      - R -e "install.packages(c('gert',dygraphs','xts', 'gridExtra','distill'))"
+      - R -e "source('R/makefile_site.R')"

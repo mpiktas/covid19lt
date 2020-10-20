@@ -17,6 +17,8 @@ if(cdt == max(aa$day)) {
         git_config_set("user.email", "test@email.com")
         cat("\nCurrent git status\n")
         print(git_status())
+        print(git_info())
+        git_branch_checkout("master")
         git_add("docs")
         cat("\nTrying to commit\n")
         git_commit("Update the site")
