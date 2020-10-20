@@ -37,5 +37,5 @@ update:
       variables:
         - $SOURCE == "datagov"
     script:
-      - R -e "install.packages(c('gert',dygraphs','xts', 'gridExtra','distill'))"
+      - R -e "install.packages(c('gert','dygraphs','xts', 'gridExtra','distill'))"
       - R -e "source('R/makefile_site.R')"
