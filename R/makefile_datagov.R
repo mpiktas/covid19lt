@@ -23,7 +23,7 @@ if(!("data" %in% modf)) {
         git_config_set("user.email", "test@email.com")
         cat("\nCurrent git status\n")
         print(git_status())
-        pirnt(git_info())
+        print(git_info())
         git_branch_checkout("master")
         git_add("raw_data")
         git_add("data")
