@@ -6,6 +6,11 @@ library(gert)
 source("R/download_datagov.R")
 source("R/merge.R")
 
+
+find_root <- function(x) {
+    x %>% strsplit("/") %>% sapply("[[",1)
+}
+
 modf <- git_status() %>% .$file %>% find_root %>% unique
 if(!("data" %in% modf)) {
     cat("\nNo new data, not pushing anything\n")

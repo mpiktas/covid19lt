@@ -28,7 +28,7 @@ if(!("data" %in% modf)) {
         cat("\nGithub token not found, relying on local git configuration\n")
         git_add("raw_data")
         git_add("data")
-        git_commit("Update data.gov.lt data")
+        git_commit("Update effective R")
         git_push()
     }
 }
