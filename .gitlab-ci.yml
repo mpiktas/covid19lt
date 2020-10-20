@@ -5,7 +5,7 @@ stages:
  - site
 
 nvsc:
-   stage: download
+    stage: download
     only:
       refs :
         - master
