@@ -52,8 +52,8 @@ colnames(xi) <- "incidence"
 if(nrow(xi) > 6) {
     axtt3 <- rollmean(xi, 3, fill = NA, align = "right")
     axtt7 <- rollmean(xi, 7, fill = NA, align = "right")
-    colnames(axtt7) <- paste0(colnames(axtt7),"3")
-    colnames(axtt3) <- paste0(colnames(axtt3),"7")
+    colnames(axtt7) <- paste0(colnames(axtt7),"7")
+    colnames(axtt3) <- paste0(colnames(axtt3),"3")
     a714 <- cbind(xi, axtt3, axtt7)
 } else {
     a714 <- xi
