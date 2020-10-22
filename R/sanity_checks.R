@@ -30,6 +30,19 @@ test_that("Confirmed match for daily and aggregate", {
     }
 })
 
+test_that("Deaths match for daily and aggregate", {
+    if (nrow(aal) > 0) {
+        expect_true(aal$deaths[1]== ld$deaths[2])
+    }
+})
+
+test_that("Deaths_different match for daily and aggregate", {
+    if (nrow(aal) > 0) {
+        expect_true(aal$deaths_different[1]== ld$deaths_different[2])
+    }
+})
+
+
 test_that("Imported for the day coincide for daily and aggregate", {
     if (nrow(aal) > 0) {
         expect_true(aal$imported_daily[1]== ld$imported0601[2]-ld$imported0601[1])

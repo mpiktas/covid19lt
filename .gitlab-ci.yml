@@ -27,6 +27,11 @@ datagov:
     script:
       - R -e "install.packages('gert')"
       - R -e "source('R/makefile_datagov.R')"
+    artifacts:
+      paths:
+        - data
+      expire_in: 1 day
+
 
 update:
     stage: site
