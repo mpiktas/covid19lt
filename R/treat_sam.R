@@ -4,41 +4,6 @@ library(tidyr)
 library(testthat)
 
 
-# Create daily and total files --------------------------------------------
-
-fns <- dir("raw_data/sam", pattern = "daily", full.names = TRUE)
-
-samd <- lapply(fns, read.csv, stringsAsFactors = FALSE)
-
-pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
-
-sam <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm) %>% select(-day), samd, pt, SIMPLIFY = FALSE) %>% bind_rows  %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
-
-dl <-  sam %>% group_by(day) %>%
-    filter(downloaded == max(downloaded)) %>% ungroup %>%
-    mutate(country = "Lithuania") %>%
-    select(country, day, incidence, daily_tests, confirmed, active, deaths, recovered, quarantined, total_tests, deaths_different, imported0601, under_observation) %>%
-    arrange(day)
-
-##Do not trust total_tests data for the last period
-##
-nn <- nrow(dl)
-dl$total_tests[nn] <- dl$total_tests[nn - 1] + dl$daily_tests[nn]
-
-tl <- dl %>% select(-confirmed) %>% mutate(confirmed = cumsum(incidence), country = "Lithuania") %>%
-    select(country, day, confirmed, deaths, recovered, tested = total_tests, under_observation, quarantined)
-
-dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
-ld <- dd %>% filter(day == max(day))
-ldl <- dl  %>% filter(day == max(day))
-ss <- identical(ld[1,-2:-1], data.frame(ldl[1,-2:-1]))
-
-if(ss) {
-    cat("\nNo new data for daily\n")
-} else {
-    dl %>% write.csv("data/lt-covid19-daily.csv", row.names = FALSE)
-    tl %>% write.csv("data/lt-covid19-total.csv", row.names = FALSE)
-}
 
 # Do laboratory data ------------------------------------------------------
 
@@ -91,5 +56,42 @@ if(ss) {
     write.csv(oo,"data/lt-covid19-laboratory-total.csv", row.names = FALSE)
 }
 
+
+# Create daily and total files --------------------------------------------
+
+fns <- dir("raw_data/sam", pattern = "daily", full.names = TRUE)
+
+samd <- lapply(fns, read.csv, stringsAsFactors = FALSE)
+
+pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
+
+sam <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm) %>% select(-day), samd, pt, SIMPLIFY = FALSE) %>% bind_rows  %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
+
+dl <-  sam %>% group_by(day) %>%
+    filter(downloaded == max(downloaded)) %>% ungroup %>%
+    mutate(country = "Lithuania") %>%
+    select(country, day, incidence, daily_tests, confirmed, active, deaths, recovered, quarantined, total_tests, deaths_different, imported0601, under_observation) %>%
+    arrange(day)
+
+tst <- dl %>% select(day, daily_tests, total_tests)
+lbt <- oo %>% group_by(day) %>% summarise(lab_total = sum(tested_all, na.rm = TRUE))
+
+tst <- tst %>% left_join(lbt, by = "day") %>%
+    mutate(tests_daily = ifelse(is.na(lab_total), daily_tests, lab_total), tested = cumsum(tests_daily))
+
+tl <- dl %>% left_join(tst %>% select(day, tested)) %>% select(-confirmed) %>% mutate(confirmed = cumsum(incidence), country = "Lithuania") %>%
+    select(country, day, confirmed, deaths, recovered, tested , under_observation, quarantined)
+
+dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
+ld <- dd %>% filter(day == max(day))
+ldl <- dl  %>% filter(day == max(day))
+ss <- identical(ld[1,-2:-1], data.frame(ldl[1,-2:-1]))
+
+if(ss) {
+    cat("\nNo new data for daily\n")
+} else {
+    dl %>% write.csv("data/lt-covid19-daily.csv", row.names = FALSE)
+    tl %>% write.csv("data/lt-covid19-total.csv", row.names = FALSE)
+}
 
 
