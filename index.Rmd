@@ -26,7 +26,7 @@ data <- Sys.time()
   - [Laboratorijų duomenys](stats.html)
   - [Efektyvusis R](Re.html)
   
-Atnaujinta: `r data`. 
+Atnaujinta: `r format(data, usetz = TRUE)`. 
 
 ```{r, echo = FALSE}
 aa <- read.csv("data/lt-covid19-aggregate.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
@@ -100,11 +100,16 @@ dygraph(xtpd, main = paste("Atvejų skaičius tenkantis 100 testų", max(aa$day)
 ```{r, echo = FALSE}
 ii <- read.csv("data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
 p100k <- round(nrow(ii %>% filter(day>= last_day-days(13)))/2794329*100*1000,2)
+
+ll <- labs %>% filter(day>= last_day - days(6))
+
+pr <- round(100*sum(ll$positive_all)/sum(ll$tested_all),2)
+
 ```
 
 ### Atvejų amžiaus pasiskirstymas per pastarąsias 14 dienų, `r last_day`
 
-Lietuvoje 100k gyventojų per pastarąsias 14 dienų tenka **`r p100k`** atvejų.
+Lietuvoje 100k gyventojų per pastarąsias 14 dienų tenka **`r p100k`** atvejų. Testų pozityvumo norma ([test positivity rate](https://ec.europa.eu/info/live-work-travel-eu/health/coronavirus-response/travel-during-coronavirus-pandemic/common-approach-travel-measures-eu_en)) **`r pr`**.
 
 ```{r}
 agr <- read.csv("raw_data/agegroups.csv")

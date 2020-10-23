@@ -49,11 +49,17 @@ test_that("Imported for the day coincide for daily and aggregate", {
     }
 })
 
-
 test_that("Tests match", {
     expect_true(ld$daily_tests[2] + ld$total_tests[1] == ld$total_tests[2])
 
 })
+
+test_that("Daily tests match with laboratory tests", {
+    expect_true(ld$daily_tests[2] == sum(lbl$tested_all))
+
+})
+
+
 
 test_that("Decomposition is valid for daily", {
     expect_true(ld$confirmed[2] == ld$active[2] + ld$deaths[2] + ld$recovered[2] + ld$deaths_different[2] )
