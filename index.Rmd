@@ -58,6 +58,21 @@ dygraph(xtt, main = paste("Suminiai atvejai:",max(aa$day))) %>%  dyOptions(color
 ```
 
 ```{r, echo = FALSE}
+
+sdr <- aa %>% select(day, deaths) %>%  mutate(daily_deaths = ag(deaths))
+
+xsdr1 <- xts(sdr$daily_deaths, order.by = sdr$day)
+xsdr7 <- rollmean(xsdr1, 7, fill = NA, align = "right")
+xsdr14 <- rollmean(xsdr1, 14, fill = NA, align = "right")
+
+xsdr <- cbind(xsdr1, xsdr7, xsdr14)
+colnames(xsdr) <- c("deaths", "deaths7", "deaths14")
+
+
+dygraph(xsdr, main = paste("Mirtys per dieną ir slenkantys vidurkiai",max(aa$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% dyRangeSelector()
+```
+
+```{r, echo = FALSE}
 axtt <- xts(aa$incidence, order.by =aa$day)
 colnames(axtt) <- "incidence"
 
@@ -74,7 +89,8 @@ dygraph(a714[, c("incidence", "incidence7","incidence14")], main = paste("Dienin
 ```{r, echo =FALSE}
 labs <- read.csv("data/lt-covid19-laboratory-total.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 
-lbt <- labs %>% group_by(day) %>% summarise(daily_tests = sum(tested_all))
+lbt <- labs %>% group_by(day) %>% summarise(daily_tests = sum(tested_all, na.rm=TRUE), positive_all = sum(positive_all, na.rm = TRUE), ratio = round(100*positive_all/daily_tests,2))
+
 ltt <- aa %>% mutate(daily_tests = ag(tested)) %>% select(day, daily_tests)
 
 lct <- ltt %>% left_join(lbt %>% rename(laboratory_tests = daily_tests), by = "day") %>% 
@@ -93,8 +109,16 @@ tpd <- aa %>% select(day, confirmed) %>% left_join(lct, by = "day") %>%
            )  
     
 xtpd <- xts(tpd %>% select(normalized, normalized7, normalized14), order.by = tpd$day)
+colnames(xtpd) <- c("Atvejų proc.", "AP7", "AP14")
 
 dygraph(xtpd, main = paste("Atvejų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector 
+```
+
+
+```{r, echo = FALSE}
+xtpr <- xts(lbt$ratio, order.by = lbt$day)
+colnames(xtpr) <- "Test positivity rate"
+dygraph(xtpr, main = paste("Teigiamų testų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector 
 ```
 
 ```{r, echo = FALSE}
@@ -103,9 +127,10 @@ p100k <- round(nrow(ii %>% filter(day>= last_day-days(13)))/2794329*100*1000,2)
 
 ll <- labs %>% filter(day>= last_day - days(6))
 
-pr <- round(100*sum(ll$positive_all)/sum(ll$tested_all),2)
+pr <- round(tpd$normalized7[nrow(tpd)],2)
 
 ```
+
 
 ### Atvejų amžiaus pasiskirstymas per pastarąsias 14 dienų, `r last_day`
 
