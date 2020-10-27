@@ -238,4 +238,3 @@ allsx <- xts(alls %>% select(-day), order.by=alls$day)
 dygraph(diff(allsx)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(4, "Set1")) %>% dyRangeSelector()
 ```
 
-```
