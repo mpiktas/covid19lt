@@ -18,7 +18,7 @@ tt <- read_csv("data/lt-covid19-total.csv")
 data <- Sys.time()
 ```
 
-Atnaujinta: `r data`. 
+Atnaujinta: `r format(data, usetz = TRUE)`. 
 
 # Suminiai atvejai
 
