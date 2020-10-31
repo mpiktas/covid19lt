@@ -1,0 +1,39 @@
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
+2020-10-30,"VU ligoninės Santaros klinikų laboratorija",1507,0,1451,0,56,0,NA,NA,87,0
+2020-10-30,"Klaipėdos universitetinės ligoninės laboratorija",750,352,609,242,141,106,NA,NA,30,0
+2020-10-30,"Nacionalinė visuomenės sveikatos priežiūros laboratorija",294,14,289,14,5,0,NA,NA,45,0
+2020-10-30,"Respublikinės Šiaulių ligoninės laboratorija",440,0,422,0,18,0,NA,NA,0,0
+2020-10-30,"LSMU ligoninės Kauno klinikų laboratorija",652,0,629,0,23,0,NA,NA,0,0
+2020-10-30,"Nacionalinio vėžio instituto laboratorija",71,0,70,0,1,0,NA,NA,0,0
+2020-10-30,"UAB „Diagnostikos laboratorija“ („Antėja“ Vilnius)",849,87,810,73,39,14,NA,NA,209,209
+2020-10-30,"UAB „Medicina practica laboratorija“",2540,202,2346,151,194,48,NA,NA,48,11
+2020-10-30,"UAB „SK Impeks Medicinos diagnostikos centras“",168,0,160,0,8,0,NA,NA,0,0
+2020-10-30,"UAB „InMedica“",465,57,422,54,43,3,NA,NA,0,0
+2020-10-30,"Respublikinės Panevėžio ligoninės laboratorija",175,0,171,0,4,0,NA,NA,0,0
+2020-10-30,"Tauragės ligoninės laboratorija",11,0,7,0,4,0,NA,NA,0,0
+2020-10-30,"UAB „Diagnostikos laboratorija“ („Antėja“ Kaunas)",1378,700,1259,616,119,84,NA,NA,188,188
+2020-10-30,"UAB „Diagnostikos laboratorija“ („Antėja“ Klaipėda)",787,542,683,445,108,97,NA,NA,226,224
+2020-10-30,"SYNLAB Lietuva UAB",270,0,257,0,13,0,NA,NA,0,0
+2020-10-30,"Respublikinės Klaipėdos ligoninės laboratorija",6,0,6,0,0,0,NA,NA,0,0
+2020-10-30,"Klaipėdos vaikų ligoninės laboratorija",1,0,1,0,0,0,NA,NA,0,0
+2020-10-30,"Stacionaro lovų duomenys",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2020-10-30,"reanimacijos-intensyvios terapijos",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2020-10-30,"Stacionaro lovų skaičius",NA,568,518,NA,NA,NA,NA,NA,568,518
+2020-10-30,"Užimtų lovų skaičius",NA,336,186,NA,NA,NA,NA,NA,336,186
+2020-10-30,"Pacientų duomenys",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2020-10-30,"su deguonies kaukėmis",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2020-10-30,"Pacientai, kuriems patvirtinta COVID19 infekcija",386,165,19,341,37,NA,NA,NA,386,165
+2020-10-30,"Stacionaro lovų duomenys",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2020-10-30,"reanimacijos-intensyvios terapijos",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2020-10-30,"Stacionaro lovų skaičius",NA,NA,568,518,NA,NA,NA,NA,NA,NA
+2020-10-30,"Vilniaus TLK",NA,212,200,NA,NA,NA,NA,NA,212,200
+2020-10-30,"Kauno TLK",NA,142,122,NA,NA,NA,NA,NA,142,122
+2020-10-30,"Klaipėdos TLK",NA,74,68,918,NA,NA,NA,NA,74,68
+2020-10-30,"Šiaulių TLK",NA,60,57,963,NA,NA,NA,NA,60,57
+2020-10-30,"Panevėžio TLK",NA,80,71,452,NA,NA,NA,NA,80,71
+2020-10-30,"Užimtų lovų skaičius",NA,NA,336,186,NA,NA,NA,NA,NA,NA
+2020-10-30,"Vilniaus TLK",NA,134,87,784,NA,NA,NA,NA,134,87
+2020-10-30,"Kauno TLK",NA,100,47,254,NA,NA,NA,NA,100,47
+2020-10-30,"Klaipėdos TLK",NA,38,16,287,NA,NA,NA,NA,38,16
+2020-10-30,"Šiaulių TLK",851,27,13,89,NA,851,NA,NA,27,13
+2020-10-30,"Panevėžio TLK",NA,37,23,164,NA,NA,NA,NA,37,23
