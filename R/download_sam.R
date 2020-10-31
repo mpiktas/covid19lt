@@ -37,25 +37,67 @@ nums1 <- cd1 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("(
 
 ia1 <- nums1[8]
 
+# Determine where is the hospitalization data ---------------------------
 
+##In this block tbs will contain 3 tables
+
+cat("\nTrying to determine where is the hospitalization data\n")
+tbs <- html_table(oo, fill = TRUE)
+
+raw1 <- tryget("https://nvsc.lrv.lt/lt/visuomenei/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
+
+oo1 <- read_html(raw1)
+
+trs <- html_nodes(oo1, "tr")
+
+tbrs1 <- lapply(trs, function(x)html_nodes(x, "td") %>% html_text %>% str_trim)
+
+crtime <- Sys.time()
+outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
+
+stbrs1 <- tbrs1 %>% sapply(paste,collapse=";")
+
+writeLines(stbrs1, glue::glue("raw_data/laboratory/lt-covid19-laboratory_raw_{outd}.csv"))
+
+##Test for the NVSC fuckup
+
+tbrs2 <- tbrs1[-4:-1]
+rc <- sapply(tbrs2, length)
+tb1 <- data.frame(do.call("rbind",tbrs2[rc == 9]))
+
+if(length(tbs) != 3) {
+    cat("\nNo hospitalization data in the daily NVSC page")
+    ##Always prefer NVSC page if the data is there
+    if(length(unique(rc))>1)  {
+        cat("\nHospitalization data is in the laboratory NVSC page")
+        tbrs3 <- tbrs2[rc != 9]
+        tmp_extend <- function(x, n = 6) {
+            if(length(x)<6) {
+                x <- c(rep("",6-length(x)), x)
+            }
+            x
+        }
+        tbs <- list(do.call("rbind",tbrs3[1:4]),
+                    do.call("rbind",tbrs3[5:7]),
+                    do.call("rbind",lapply(tbrs3[8:length(tbrs3)],tmp_extend,n=6))
+                    )
+
+    } else {
+        cat("\nLooking into SAM page")
+        rawh <- tryget("https://sam.lrv.lt/lt/naujienos/koronavirusas")
+        ooh <- read_html(rawh)
+        tbs <- html_table(ooh, fill = TRUE)
+    }
+}
 
 # Get the total capacity data ------------------------------------------------------
 
 cat("\nParsing total capacity data\n")
 
-tbs <- html_table(oo, fill = TRUE)
-
-if(length(tbs) != 3) {
-    cat("\nLooking into SAM page")
-    rawh <- tryget("https://sam.lrv.lt/lt/naujienos/koronavirusas")
-    ooh <- read_html(rawh)
-    tbs <- html_table(ooh, fill = TRUE)
-}
-
 if(length(tbs) < 3) {
     cat("\nNo valid hospitalization data present\n")
 } else {
-    capacity_total <- tbs[[1]][-2:-1,]
+    capacity_total <- data.frame(tbs[[1]][-2:-1,])
     colnames(capacity_total) <- c("description", "total", "intensive", "ventilated", "oxygen_mask")
     capacity_total[,-1] <- sapply(capacity_total[,-1], function(x)as.integer(gsub(" ","",x)))
     rownames(capacity_total) <- NULL
@@ -64,7 +106,7 @@ if(length(tbs) < 3) {
     # Get covid hospitalisation data ----------------------------------------------------------
     cat("\nParsing covid hospitalization data\n")
 
-    cvh <- tbs[[2]][-2:-1,]
+    cvh <- data.frame(tbs[[2]][-2:-1,,drop = FALSE])
 
     colnames(cvh) <- c("description","total", "oxygen","ventilated","hospitalized_not_intensive", "intensive")
     cvh[,-1] <- sapply(cvh[,-1], as.integer)
@@ -73,9 +115,11 @@ if(length(tbs) < 3) {
     # Get regional hospitalization data ---------------------------------------
     cat("\nParsing regional hospitalization data\n")
 
-    tlk <- tbs[[3]][-2:-1,]
+    tlk <- data.frame(tbs[[3]][-2:-1,])
     colnames(tlk) <-c("description", "tlk", "total", "intensive", "ventilated", "oxygen_mask")
     tlk[,-2:-1] <- sapply(tlk[,-2:-1], function(x)as.integer(gsub("[,. ]","",x)))
+    tlk$description[tlk$description == ""] <- NA
+    tlk <- tlk %>% fill(description)
 
     tt <- tlk %>% filter(tlk == "Iš viso:" | tlk == "VISO")
 
@@ -100,9 +144,6 @@ if(length(tbs) < 3) {
 }
 # Get the tests and laboratory data ------------------------------------------------------
 cat("\nParsing test data\n")
-raw1 <- tryget("https://nvsc.lrv.lt/lt/visuomenei/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
-
-oo1 <- read_html(raw1)
 
 cd2 <-  html_nodes(oo1,".text") %>% html_nodes("strong") %>% html_text
 
@@ -133,13 +174,6 @@ write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily_{outd}.csv"), row.names
 # Do the laboratory tables data -------------------------------------------
 cat("\nParsing laboratory data\n")
 
-trs <- html_nodes(oo1, "tr")
-
-tbrs1 <- lapply(trs, function(x)html_nodes(x, "td") %>% html_text %>% str_trim)
-
-crtime <- Sys.time()
-
-tb1 <- data.frame(do.call("rbind",tbrs1[-4:-1]))
 
 colnames(tb1) <- c("laboratory", "tested_all", "tested_mobile", "negative_all", "negative_mobile", "positive_all","positive_mobile","not_tested", "not_tested_mobile")
 
@@ -150,7 +184,7 @@ tbr <- tb1 %>% filter(laboratory != "Iš viso:")
 tbr <- bind_cols(data.frame(day = rep(floor_date(crtime, unit = "days")-days(1), nrow(tbr))), tbr)
 
 tot <- tbr[,-1:-2] %>% sapply(sum, na.rm = TRUE)
-if(sum(abs(tot - tb1 %>% filter(laboratory == "Iš viso:") %>% .[,-1] %>% unlist)) != 0) warning("Totals do not match")
+if(sum(abs(tot - tb1 %>% filter(laboratory == "Iš viso:") %>% .[,-1] %>% unlist)) != 0) cat("\nTotals for laboratory data do not match\n")
 
 tbr <- tbr %>% mutate(positive_new = NA, positive_retested = NA) %>%
     select(day, laboratory, tested_all, tested_mobile,
@@ -159,7 +193,7 @@ tbr <- tbr %>% mutate(positive_new = NA, positive_retested = NA) %>%
            not_tested, not_tested_mobile)
 
 
-outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
+
 
 write.csv(tbr, glue::glue("raw_data/laboratory/lt-covid19-laboratory_{outd}.csv"), row.names = FALSE )
 
