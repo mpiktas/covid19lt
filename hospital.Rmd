@@ -1,0 +1,55 @@
+---
+title: "COVID-19 ligoninių statistika"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(tidyr)
+library(COVID19)
+library(rmarkdown)
+library(lubridate)
+library(DT)
+library(xts)
+library(dygraphs)
+Sys.setlocale(locale = "lt_LT.UTF-8")
+```
+
+```{r include = FALSE}
+data <- Sys.time()
+```
+
+Atnaujinta: `r format(data, usetz = TRUE)`. 
+
+```{r}
+cvh <- read.csv("data/lt-covid19-hospitalized.csv") %>% mutate(day = ymd(day))
+tlk <- read.csv("data/hospital-capacity.csv") %>% mutate(day = ymd(day))
+
+toxts <- function(d, cols) {
+    out <- xts(d[,cols], order.by = d$day)
+    colnames(out) <- cols
+    out
+    
+}
+
+cvhx <- toxts(cvh, c("total", "oxygen_mask","ventilated","intensive"))
+
+dygraph(cvhx[,"total"], main = "Covid-19 ligonių skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector     
+```
+
+```{r}
+dygraph(cvhx[,"intensive"], main = "Covid-19 ligonių reanimacijoje skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector    
+```
+
+```{r}
+dygraph(cvhx[,"ventilated"], main = "Covid-19 ventiliuojami ligoniai") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector    
+```
+
+
+```{r}
+dygraph(cvhx[,"oxygen_mask"], main = "Covid-19 ligonių su deguonies kaukėm skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector    
+```
+
