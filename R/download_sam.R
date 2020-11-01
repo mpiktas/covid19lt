@@ -4,6 +4,7 @@ library(jsonlite)
 library(dplyr)
 library(lubridate)
 library(stringr)
+library(tidyr)
 
 tryget <- function(link, times = 10) {
     res <- NULL
