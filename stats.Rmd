@@ -20,93 +20,6 @@ data <- Sys.time()
 
 Atnaujinta: `r format(data, usetz = TRUE)`. 
 
-# Suminiai atvejai
-
-Sudėti dieniniai susirgimų atvejai, dieniniai pasveikusiųjų ir dieniniai mirusiųjų atvejai. Neatsižvelgiama į 2020-04-28 paskelbtą SAM korekciją.
-
-```{r, echo = FALSE}
-stt <- tt %>% select(day, confirmed, deaths, recovered) %>% pivot_longer(confirmed:recovered, "type")
-
-xtt <- xts(tt %>% select(deaths, confirmed, recovered, -day), order.by =tt$day)
-
-dygraph(xtt, main = paste("Cumulative cases:",max(tt$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% dyRangeSelector()
-
-#ggplot(aes(x = day, y = value, group = type, colour = type), data =stt) + geom_point()+geom_line()+labs(title = paste("Cumulative cases:",max(tt$day))) + scale_color_manual(values = c("confirmed" = "red", "recovered" = "springgreen", deaths = "black"))
-```
-
-# Nauji atvejai
-
-Dieniniai susirgimų atvejai, dieniniai pasveikusiųjų ir dieniniai mirusiųjų atvejai. Neatsižvelgiama į 2020-04-28 paskelbtą SAM korekciją, nes nebuvo paskelbta koreguota istorinė eilutė.
-
-```{r, echo = FALSE}
-ag <- function(x)c(x[1],diff(x))
-ntt <- stt %>% arrange(type, day) %>% group_by(type) %>%  mutate(value = ag(value)) %>% ungroup
-
-dyMultiColumn <- function(dygraph) {
-  dyPlotter(dygraph = dygraph,
-            name = "MultiColumn",
-            path = system.file("plotters/multicolumn.js",
-                               package = "dygraphs"))
-}
-
-dxtt <- diff(xtt)
-colnames(dxtt)[2] <- "incidence"
-
-dygraph(dxtt) %>%
-  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% 
-  dyRangeSelector() #%>%
- # dyMultiColumn()
-
-
-#ggplot(aes(x = day, y = value, group = type), data =ntt) + geom_col(aes(fill=type),position = "dodge",)+labs(title = paste("New cases:",max(tt$day))) + scale_fill_manual(values = c("confirmed" = "red", "recovered" = "springgreen", deaths = "black"))
-```
-
-
-# Dieniniai atvejai ir 7, 14 dienų slenkantys vidurkiai 
-```{r}
-dxtt7 <- rollmean(dxtt, 7, fill = NA, align = "right")
-dxtt14 <- rollmean(dxtt, 14, fill = NA, align = "right")
-colnames(dxtt7) <- paste0(colnames(dxtt7),"7")
-colnames(dxtt14) <- paste0(colnames(dxtt14),"14")
-
-d714 <- cbind(dxtt, dxtt7, dxtt14)
-
-dygraph(d714[, c("incidence", "incidence7","incidence14")]) %>% dyRangeSelector
-  
-  
-```
-
-# Dieniniai atvejai ir 7, 14 dienų slenkantys vidurkiai, data.gov.lt duomenys 
-```{r}
-
-aa <- read.csv("data/lt-covid19-aggregate.csv") %>% mutate(day = ymd(day))
-axtt <- xts(aa$incidence, order.by =aa$day)
-colnames(axtt) <- "incidence"
-
-axtt7 <- rollmean(axtt, 7, fill = NA, align = "right")
-axtt14 <- rollmean(axtt, 14, fill = NA, align = "right")
-colnames(axtt7) <- paste0(colnames(axtt7),"7")
-colnames(axtt14) <- paste0(colnames(axtt14),"14")
-
-a714 <- cbind(axtt, axtt7, axtt14)
-
-dygraph(a714[, c("incidence", "incidence7","incidence14")]) %>% dyRangeSelector
-  
-  
-```
-
-# Testų skaičius
-
-Kas dieną atliktų testų suma. SAM kiekvieną dieną praneša suminį testų skaičių ir tą dieną atliktų testų skaičių. Sumuojant pastarąjį per visas dienas jis turėtų sutapti su skelbiamu testų skaičiumi. Taip ne visados įvykdavo, todėl čia skelbiamas tik suminis testų skaičius.
-
-```{r, echo = FALSE}
-xtests <- xts(tt$tested, order.by = tt$day)
-colnames(xtests) <- "tested"
-
-dygraph(xtests, main = paste("Cumulative tests:",max(tt$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector
-#ggplot(aes(x = day, y = tested), data = tt) +geom_point() + geom_line() + labs(title = paste("Cumulative tests:",max(tt$day)),  x = "tested")
-```
-
 
 # Per dieną atliktų testų skaičius
 
@@ -115,6 +28,7 @@ Nuo balandžio 1 d. pradėjus skelbti laboratorijų testų skaičius, dieninis s
 
 ```{r, echo = FALSE}
 library(lubridate)
+ag <- function(x)c(x[1],diff(x))
 labs <- read.csv("data/lt-covid19-laboratory-total.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 
 lbt <- labs %>% group_by(day) %>% summarise(daily_tests = sum(tested_all))
