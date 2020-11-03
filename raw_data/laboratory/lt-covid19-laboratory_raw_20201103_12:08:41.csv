@@ -1,0 +1,40 @@
+;Ištirta ėminių per parą;Liko neištirta ėminių
+Iš viso;Iš jų;iš viso;iš jų iš mobilių punktų
+neigiami;teigiami
+iš viso;iš jų iš mobilių punktų;iš viso;iš jų iš mobilių punktų;iš viso;iš jų iš mobilių punktų
+VU ligoninės Santaros klinikų laboratorija;502;0;469;0;33;0;1;0
+Klaipėdos universitetinės ligoninės laboratorija;441;150;341;93;100;57;0;0
+Nacionalinė visuomenės sveikatos priežiūros laboratorija;7;1;6;1;1;0;0;0
+Respublikinės Šiaulių ligoninės laboratorija;306;0;283;0;23;0;0;0
+LSMU ligoninės Kauno klinikų laboratorija;534;0;512;0;22;0;0;0
+Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija;936;894;714;678;222;210;25;25
+UAB „Baltic Medics“;323;89;243;51;80;38;0;0
+UAB „Diagnostikos laboratorija“ („Antėja“ Vilnius);125;8;119;5;6;3;0;0
+UAB „Medicina practica laboratorija“;697;165;647;149;50;16;12;0
+UAB „InMedica“;50;0;47;0;3;0;0;0
+Respublikinės Panevėžio ligoninės laboratorija;103;0;96;0;7;0;0;0
+Tauragės ligoninės laboratorija;1;0;1;0;0;0;0;0
+UAB „Diagnostikos laboratorija“ („Antėja“ Kaunas);949;848;819;735;130;113;224;224
+Respublikinės Klaipėdos ligoninės laboratorija;19;0;16;0;3;0;0;0
+Iš viso:;4993;2155;4313;1712;680*;437;262;249
+Stacionaro lovų duomenys;Iš viso;Iš jų:
+reanimacijos-intensyvios terapijos;su DPV;su deguonimi
+Stacionaro lovų skaičius;16863;632;569;6006
+Užimtų lovų skaičius;9053;342;201;1629
+Pacientų duomenys;Iš viso;Iš jų:
+su deguonies kaukėmis;ventiliuojami;stacionare (be reanimacijos);reanimacijos (intensyvios terapijos)
+Pacientai, kuriems patvirtinta COVID19 infekcija;613;286;26;546;51
+;;;Iš jų:
+Stacionaro lovų duomenys;TLK;Iš viso;reanimacijos (intensyvios terapijos);su DPV;su deguonimi
+Stacionaro lovų skaičius;Iš viso:;16863;632;569;6.006
+Vilniaus TLK;4773;203;191;1662
+Kauno TLK;4131;181;157;1893
+Klaipėdos TLK;3337;94;82;995
+Šiaulių TLK;2005;64;59;963
+Panevėžio TLK;2617;90;80;493
+Užimtų lovų skaičius;Iš viso:;9053;342;201;1629
+Vilniaus TLK;2925;126;94;610
+Kauno TLK;2192;106;54;401
+Klaipėdos TLK;1451;44;14;328
+Šiaulių TLK;973;34;21;100
+Panevėžio TLK;1512;32;18;190
