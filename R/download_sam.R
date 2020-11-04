@@ -19,7 +19,7 @@ tryget <- function(link, times = 10) {
     res
 }
 
-raw <- tryget("https://nvsc.lrv.lt/lt/visuomenei/nacionalinio-visuomenes-sveikatos-centro-duomenys")
+raw <- tryget("https://nvsc.lrv.lt/lt/visuomenei/statistine-metodine-ir-kita-informacija/nacionalinio-visuomenes-sveikatos-centro-duomenys")
 
 
 #writeLines(unlist(strsplit(gsub("\n+","\n",gsub("(\n )+","\n",gsub(" +"," ",gsub("\r|\t", "", html_text(read_html(raw)))))),"\n")), paste0("/home/vaidotas/R/corona/data/korona_LT_",gsub( ":| ","_",raw$date),".csv"))
@@ -45,7 +45,7 @@ ia1 <- nums1[8]
 cat("\nTrying to determine where is the hospitalization data\n")
 tbs <- html_table(oo, fill = TRUE)
 
-raw1 <- tryget("https://nvsc.lrv.lt/lt/visuomenei/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
+raw1 <- tryget("https://nvsc.lrv.lt/lt/visuomenei/statistine-metodine-ir-kita-informacija/nacionalines-visuomenes-sveikatos-prieziuros-laboratorijos-duomenys")
 
 oo1 <- read_html(raw1)
 
