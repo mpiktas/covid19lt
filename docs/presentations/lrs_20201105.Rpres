@@ -1,0 +1,93 @@
+Epidemijos duomenų kokybės analizė
+========================================================
+author: Vaidotas Zemlys-Balevičius
+date: 2020-11-05
+autosize: true
+font-family: 'Lucida Sans Unicode'
+
+Prisistatymas
+========================================================
+
+
+- 20 metų darbo patirtis su duomenimis
+- Vienas iš duomenų mokslininkų grupės vadovų įmonėje Euromonitor International.
+- Atsakingas už duomenų surinkimą ir jų standartizavimą DI metodais iš 2000+ skirtingų šaltinių.
+- Kovo - gegužės mėnesį atsakingas už Covid-19 epidemijų prognozių kasdienį atnaujinimą visoms pasaulio šalims. Prognozės buvo skelbiamos Euromonitor International klientams.
+
+
+
+Epidemijos duomenų šaltiniai Lietuvoje
+========================================================
+
+- SAM kasdienė suvestinė: visos Lietuvos atvejai, laboratorijų duomenys (nuo 04.01), hospitalizacijos duomenys (nuo 10-01)
+- Registrų centro kasdienė regioninių ir amžiaus grupių atvejų dienos suvestinė (nuo 05.23)
+- data.gov.lt nuasmeninti epidemiologiniai duomenys (nuo 08.22)
+
+Duomenų problemos I
+=====================================================
+
+ - Pateikiamos tik dienos suvestinės. Nėra saugomi istoriniai duomenys, jeigu tą dieną neparsisiunti duomenų jie dingsta.
+ - Duomenų formatas nuolatos keičiasi.
+ - Duomenys iš skirtingų šaltinių skiriasi:
+    + Nesutampa dienos atvejų skaičiai
+    + Nesutampa mirčių skaičiai
+    + Nesutampa sergančių ligoninėse skaičiai
+ - Duomenys nesutampa diena iš dienos:
+    + Lyginant dviejų dienos atvejų skaičių dingsta ir atsiranda atvejai
+    + Lyginant dviejų dienos testų skaičių dingsta ir atsiranda testai
+
+Duomenų problemos II
+====================================================
+
+ - Savaitgaliais kai kurie rodikliai neatnaujinami:
+    + hospitalizacijos duomenys
+    + laboratorijų duomenys rugpjūčio - rugsėjo mėnesį
+ - Neskelbiami savivaldybių testų duomenys, pagal kuriuos sprendžiama į kurią zoną savivaldybė patenka
+ - Neskelbiami židinių duomenys savivaldybėse, židinių skaičius, židiniuose apsikrėtusių asmenų skaičius, židinių tipas
+ - Covid-19 sergančių skaičius skelbiamas ne iš visų gydymo įstaigų. Skelbiama tik suma, nėra atskirų ligoninių duomenų.
+
+Duomenų problemos III
+=====================================================
+
+  - Skelbiamas teigiamų testų skaičius būna mažesnis už tos dienos naujų atvejų skaičių.
+  - Stebimas atvejų "prirašymas" naujai dienai iš senesnių datų
+  - Izoliacijoje esančių asmenų skaičius mažėja daugėjant naujų atvejų
+
+
+Iššūkiai analizei
+=================================================
+  - Tikslios prognozės yra neįmanomos nes atvejų duomenys labiau atspindi NVSC darbo broką, o ne epidemijos situaciją.
+  - Esminės epidemijos suvaldymo priemonė - sveikatos apsaugos sistemos pajėgumų prognozavimas negalimas dėl duomenų trūkumo.
+  - Dėl turimų duomenų trūkumų reikia juos taisyti statistiniais metodais. Dėl to galima
+tik bendra tendencijų apžvalga, kuri nuo to kas vyksta dabar atsilieka savaite ar dviem.
+  - Lietuvoje stebimas eksponentinis atvejų augimas nuo liepos - rugpjūčio mėnesį ir rugsėjo - spalio mėnesį.
+  - Spalio mėnesį stebimas ir sergančių ligoninėse skaičiaus augimas.
+  - Kol kas iš duomenų nesimato jokių prielaidų augimui mažėti.
+
+Išvados ir pasiūlymai
+=====================================================
+
+ - Esant eksponentiniam augimui sprendimus reikia priimti kuo greičiau, kol nėra vėlu. Tai pavyko padaryti pirmą bangą, stipriai pavėluota per antrąją.
+ - Tinkamus sprendimus lengviau priimti su tinkamais duomenimis
+ - Epidemijos suvaldymas neįmanomas be visuomenės įsitraukimo. Visuomenei trūksta informacijos apie epidemijos eigą.
+ - Visuomenėje netrūksta iniciatyvių žmonių, kurie gali atlikti kokybišką duomenų analizę ir informuoti visuomenę.
+ - Duomenų atvėrimas pagal gerąsias atvirų duomenų praktikas leistų visuomenei labiau įsitraukti į epidemijos valdymą.
+ - Dauguma pasaulyje kuriamų Covid-19 modelių yra daromi visiems prieinamiems duomenims. Tinkamai atvėrus duomenis ir juos nuolatos atnaujinant būtų galima pasinaudoti geriausiais pasaulio prognozių modeliais.
+
+
+Atvirų duomenų galimybės
+====================================================
+
+  - Kasdien atnaujinami duomenys ir statistika Lietuvai ir savivaldybėms:
+  https://mpiktas.github.io/covid19lt/
+  - Analizių pavyzdžiai: https://vzemlys.gitlab.io/data-blog/
+  - Naudojami atviro kodo sprendimai, visos analizės gali būti atkartojamos visų kas tik nori.
+
+
+
+
+
+
+
+
+
