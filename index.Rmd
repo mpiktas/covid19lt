@@ -24,6 +24,7 @@ data <- Sys.time()
   - [Savivaldybių statistika](savivaldybes.html)    
   - [Europos šalių 14 dienų atvejai 100 tūkst. gyventojų](countries.html)
   - [Laboratorijų duomenys](stats.html)
+  - [Ligoninių duomenys](hospital.html)
   - [Efektyvusis R](Re.html)
   
 Atnaujinta: `r format(data, usetz = TRUE)`. 
