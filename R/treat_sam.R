@@ -9,6 +9,8 @@ library(testthat)
 
 fns <- dir("raw_data/laboratory", pattern = "[0-9]+.csv", full.names = TRUE)
 
+fns <- fns[!grepl("laboratory_raw",fns)]
+
 pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
 
 lbd <- lapply(fns, read.csv, stringsAsFactor = FALSE)
