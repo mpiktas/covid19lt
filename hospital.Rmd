@@ -34,10 +34,14 @@ toxts <- function(d, cols) {
     out
     
 }
+aa <- read.csv("data/lt-covid19-aggregate.csv") %>% mutate(day = ymd(day))
+aa2 <- aa %>% select(day, hospitalized, intensive1=intensive) %>% left_join(cvh)
+cvhx1 <- xts(aa2 %>% select(sam = total, datagov = hospitalized), order.by = aa2$day)
+
 
 cvhx <- toxts(cvh, c("total", "oxygen_mask","ventilated","intensive"))
 
-dygraph(cvhx[,"total"], main = "Covid-19 ligonių skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector     
+dygraph(cvhx1["2020-08-22/"], main = "Covid-19 ligonių skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1,2)]) %>% dyRangeSelector     
 ```
 
 ```{r}
