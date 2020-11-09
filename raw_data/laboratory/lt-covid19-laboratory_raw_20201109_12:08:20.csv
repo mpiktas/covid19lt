@@ -1,0 +1,41 @@
+;Ištirta ėminių per parą;Liko neištirta ėminių
+Iš viso;Iš jų;iš viso;iš jų iš mobilių punktų
+neigiami;teigiami
+iš viso;iš jų iš mobilių punktų;iš viso;iš jų iš mobilių punktų;iš viso;iš jų iš mobilių punktų
+VU ligoninės Santaros klinikų laboratorija;630;0;539;0;91;0;6;0
+Klaipėdos universitetinės ligoninės laboratorija;559;363;394;223;165;139;0;0
+Nacionalinė visuomenės sveikatos priežiūros laboratorija;170;1;166;1;4;0;45;0
+Respublikinės Šiaulių ligoninės laboratorija;314;0;284;0;30;0;0;0
+LSMU ligoninės Kauno klinikų laboratorija;439;0;417;0;22;0;0;0
+Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija;1116;1098;843;826;273;269;400;300
+UAB „Diagnostikos laboratorija“ („Antėja“ Vilnius);612;215;539;151;73;64;280;280
+UAB „Medicina practica laboratorija“;888;205;708;126;180;79;118;3
+UAB „InMedica“;738;147;663;118;75;28;0;0
+Respublikinės Panevėžio ligoninės laboratorija;74;0;62;0;12;0;0;0
+Tauragės ligoninės laboratorija;5;0;4;0;1;0;0;0
+UAB „Diagnostikos laboratorija“ („Antėja“ Kaunas);1310;1194;1114;1012;196;182;200;200
+UAB „Diagnostikos laboratorija“ („Antėja“ Klaipėda);132;112;110;98;22;14;0;0
+SYNLAB Lietuva UAB;146;0;132;0;14;0;0;0
+Respublikinės Klaipėdos ligoninės laboratorija;37;0;25;0;12;0;0;0
+Iš viso:;7170;3335;6000;2555;*1170;775;1049;783
+Stacionaro lovų duomenys;Iš viso;Iš jų:
+reanimacijos-intensyvios terapijos;su DPV;su deguonimi
+Stacionaro lovų skaičius;15 838;611;561;6 099
+Užimtų lovų skaičius;8 244;301;178;1 756
+Pacientų duomenys;Iš viso;Iš jų:
+su deguonies kaukėmis;ventiliuojami;stacionare (be reanimacijos);reanimacijos-intensyvios terapijos
+Pacientai, kuriems patvirtinta COVID19 infekcija;818;408;44;723;74
+Stacionaro lovų duomenys;TLK;Iš viso;Iš jų:
+reanimacijos-intensyvios terapijos;su DPV;su deguonimi
+Stacionaro lovų skaičius;VISO;15 838;611;561;6 099
+Vilniaus TLK;4 200;192;176;1 627
+Kauno TLK;4 061;179;159;1 920
+Klaipėdos TLK;3 282;97;93;1 120
+Šiaulių TLK;1 851;60;58;970
+Panevėžio TLK;2 444;83;75;462
+Užimtų lovų skaičius;VISO;8 244;301;178;1 756
+Vilniaus TLK;2 527;102;75;754
+Kauno TLK;2 074;84;47;385
+Klaipėdos TLK;1 395;47;17;307
+Šiaulių TLK;897;38;23;119
+Panevėžio TLK;1 351;30;16;191
