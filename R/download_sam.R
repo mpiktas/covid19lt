@@ -77,9 +77,9 @@ cat("\nParsing total capacity data\n")
 
 if(length(tbs) < 3) {
     cat("\nNo valid hospitalization data present\n")
-    tb1 <- tbs[[1]][-4:-1]
+    tb1 <- tbs[[1]][-4:-1,]
 } else {
-    tb1 <- tbs[[4]][-4:-1]
+    tb1 <- tbs[[4]][-4:-1,]
 
     capacity_total <- data.frame(tbs[[1]][-2:-1,])
     colnames(capacity_total) <- c("description", "total", "intensive", "ventilated", "oxygen_mask")
