@@ -77,8 +77,8 @@ if(ss) {
     # Do death and incidence by age group -------------------------------------
 
 
-    agr <- read.csv("raw_data/agegroups.csv")
-    zz2 <- zz1 %>% filter(age!="") %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age = age1)
+    agr <- read.csv("raw_data/agegroups.csv") %>% bind_rows(data.frame(age = "", age1 = "Nenustatyta"))
+    zz2 <- zz1  %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age = age1)
 
     daily_xtable <- function(zz1, colsums = FALSE) {
 
