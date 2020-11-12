@@ -1,0 +1,19 @@
+"day","laboratory","tested_all","tested_mobile","negative_all","negative_mobile","positive_all","positive_mobile","positive_new","positive_retested","not_tested","not_tested_mobile"
+2020-11-11,"VU ligoninės Santaros klinikų laboratorija",1433,0,1360,0,73,0,NA,NA,27,0
+2020-11-11,"Klaipėdos universitetinės ligoninės laboratorija",944,445,740,227,204,165,NA,NA,22,22
+2020-11-11,"Nacionalinė visuomenės sveikatos priežiūros laboratorija",337,73,287,50,50,23,NA,NA,45,0
+2020-11-11,"Respublikinės Šiaulių ligoninės laboratorija",719,0,677,0,42,0,NA,NA,0,0
+2020-11-11,"LSMU ligoninės Kauno klinikų laboratorija",880,0,847,0,33,3,NA,NA,185,0
+2020-11-11,"Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija",1209,914,941,658,268,255,NA,NA,300,300
+2020-11-11,"Nacionalinio vėžio instituto laboratorija",83,0,83,0,0,0,NA,NA,6,0
+2020-11-11,"UAB „Baltic Medics“",1340,760,1188,672,152,88,NA,NA,0,0
+2020-11-11,"UAB „Diagnostikos laboratorija“ („Antėja“ Vilnius)",1168,631,1013,492,155,139,NA,NA,843,171
+2020-11-11,"UAB „Medicina practica laboratorija“",2527,394,2193,209,334,182,NA,NA,88,24
+2020-11-11,"UAB „SK Impeks Medicinos diagnostikos centras“",178,0,165,0,13,0,NA,NA,0,0
+2020-11-11,"UAB „InMedica“",567,158,487,96,80,62,NA,NA,0,0
+2020-11-11,"Respublikinės Panevėžio ligoninės laboratorija",263,0,235,0,28,0,NA,NA,0,0
+2020-11-11,"VšĮ Respublikinės Vilniaus universitetinės ligoninės laboratorija",53,0,52,0,1,0,NA,NA,0,0
+2020-11-11,"UAB „Diagnostikos laboratorija“ („Antėja“ Kaunas)",1518,567,1316,453,202,114,NA,NA,492,481
+2020-11-11,"UAB „Diagnostikos laboratorija“ („Antėja“ Klaipėda)",910,554,802,467,108,87,NA,NA,368,253
+2020-11-11,"SYNLAB Lietuva UAB",283,0,244,0,39,0,NA,NA,0,0
+2020-11-11,"Respublikinės Klaipėdos ligoninės laboratorija",43,0,29,0,14,0,NA,NA,0,0
