@@ -6,9 +6,9 @@ library(lubridate)
 library(stringr)
 library(bit64)
 
+Sys.setlocale(locale = "lt_LT.UTF-8")
 osp <- GET("https://opendata.arcgis.com/datasets/538b7bd574594daa86fefd16509cbc36_0.geojson")
 osp1 <- fromJSON(rawToChar(osp$content))$features$properties
-#osp <- GET("https://osp-sdg.stat.gov.lt/arcgis/rest/services/SDG/COVID_TESTS_OPEN/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&f=pjson")
 
 fix_esridate <- function(str) {
     dd <- fromJSON(str)
@@ -26,12 +26,12 @@ fix_esridate <- function(str) {
     }
     dd
 }
-#osp1 <- fix_esridate(rawToChar(osp$content))
+
 osp1 %>% arrange(test_performed_date,municipality_name) %>% write.csv("raw_data/osp/osp_covid19_tests.csv", row.names = FALSE)
 
 
 osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(test_performed_date)))
-#osp2 <- osp1 %>% mutate(day = ymd(test_performed_date))
+
 
 adm <- read.csv("raw_data/administrative_levels.csv")
 
@@ -45,3 +45,12 @@ if(nrow(osp3) == nrow(osp2)) {
         write.csv("data/lt-covid19-tests.csv", row.names = FALSE)
 }
 
+if(FALSE) {
+    posp <- GET("https://osp-sdg.stat.gov.lt/arcgis/rest/services/SDG/COVID_TESTS_OPEN/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=test_performed_date+desc&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&f=pjson")
+    posp1 <- fix_esridate(rawToChar(osp$content))
+    posp2 <- osp1 %>% mutate(day = ymd(test_performed_date))
+    posp22 <- osp2 %>% filter(day == max(day))
+
+    osp2 <- osp2 %>% select(-test_performed_date) %>% bind_rows(posp22 %>% select(-test_performed_date)) %>% unique
+    osp3 <-  osp2 %>% inner_join(adm %>% select(-population))
+}
