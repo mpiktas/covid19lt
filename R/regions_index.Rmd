@@ -34,7 +34,7 @@ wk <- l17 %>% full_join(l27, by = "administrative_level_3") %>%  mutate(first=fi
 
 l14 <- l14 %>% left_join(wk %>% select(administrative_level_3, Augimas), by = "administrative_level_3")
 
-rr <- read.csv("../raw_data/administrative_levels.csv")
+rr <- read.csv("../raw_data/administrative_levels.csv") %>% select(-municipality_name)
 
 
 
