@@ -32,11 +32,20 @@ cat("\nParsing daily data\n")
 
 cd <- html_nodes(oo,".text") %>% html_nodes("li") %>% html_text
 
-cd1 <-  html_nodes(oo,".text") %>% html_nodes("strong") %>% html_text
+#cd1 <-  html_nodes(oo,".text") %>% html_nodes("strong") %>% html_text
+#nums1 <- cd1 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
+##ia1 <- nums1[8]
 
-nums1 <- cd1 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
+aa1 <- cd %>% str_trim %>% strsplit(":")
 
-ia1 <- nums1[8]
+ii <- sapply(aa1, length)
+
+nums <- sapply(aa1[ii ==2], "[[",2) %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("\xc2\xa0","",.) %>%  gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
+
+
+iad <- html_nodes(oo,".text") %>% html_nodes("p") %>% html_text
+ia1 <- iad[grepl("birž",iad)] %>%  gsub("(.*)(: )([0-9]+)(.*)","\\3",.) %>% as.integer
+
 
 # Determine where is the hospitalization data ---------------------------
 
@@ -146,11 +155,17 @@ if(length(tbs) < 3) {
 # Get the tests and laboratory data ------------------------------------------------------
 cat("\nParsing test data\n")
 
-cd2 <-  html_nodes(oo1,".text") %>% html_nodes("strong") %>% html_text
+cd2 <-  html_nodes(oo1,"p")  %>% html_text
 
-nums2 <- cd2 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
+cd3 <- strsplit(cd2[1],"\n") %>% .[[1]] %>%
+    gsub("([0-9]+)( )([0-9+])","\\1\\3",.)%>%
+    gsub("(.*)(: )([0-9]+)(.*)","\\3",.) %>%
+    as.integer %>% na.omit
 
-nums <- c(nums1[-8],nums2[1:2])
+#nums2 <- cd2 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
+#nums <- c(nums1[-8],nums2[1:2])
+
+nums <- c(nums, cd3)
 
 # Treat and write ---------------------------------------------------------
 cat("\nWriting daily  data\n")

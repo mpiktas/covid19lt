@@ -1,6 +1,5 @@
 library(testthat)
 library(gert)
-source("R/download_nvsc.R")
 source("R/download_rc.R")
 try(source("R/download_osp.R"))
 source("R/treat_sam.R")

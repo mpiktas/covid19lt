@@ -14,7 +14,22 @@ nvsc:
         - $SOURCE == "nvsc"
     script:
       - R -e "install.packages('gert')"
+      - R -e "source('R/download_nvsc.R')"
       - R -e "source('R/makefile_samrc.R')"
+
+sam:
+    stage: download
+    only:
+      refs :
+        - master
+        - schedules
+      variables:
+        - $SOURCE == "sam"
+    script:
+      - R -e "install.packages('gert')"
+      - R -e "source('R/download_sam.R')"
+      - R -e "source('R/makefile_samrc.R')"
+
 
 datagov:
     stage: download
