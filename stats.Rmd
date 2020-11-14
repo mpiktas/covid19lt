@@ -77,7 +77,7 @@ dygraph(xtpd, main = paste("Confirmed daily cases per 100 tests", max(tt$day))) 
 ```{r, echo = FALSE, fig.height=10, fig.width=10}
 
 
-labst <- labs %>% select(day, laboratory, tested_all, positive_all, not_tested) %>% pivot_longer(tested_all:not_tested, "type")
+labst <- labs %>% select(day, laboratory, tested_all, not_tested) %>% pivot_longer(tested_all:not_tested, "type")
 
 
 ggplot(aes(x = day, y = value, group = type), data = labst) + geom_col(aes(fill=type),position = "dodge")+ facet_wrap(~laboratory, scales = "free_y")+labs(title = paste("Laboratory tests:",max(labs$day)))
