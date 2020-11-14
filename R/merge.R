@@ -41,9 +41,10 @@ ii2 <- tt %>% select(day, recovered, deaths, tested, under_observation) %>% left
 ii3 <- ii2 %>% left_join(dd %>% select(day, deaths_different, quarantined)) %>%
      mutate(deaths_different = fixNA(deaths_different),tests_daily = diff1(tested))
 
-ii4 <- ii3 %>% left_join(iit %>% select(day, hospitalized, intensive, dd1 = deaths_different, dd0 = deaths)) %>%
+ii4 <- ii3 %>% left_join(iit %>% select(day, hospitalized, intensive, rec0 = recovered, dd1 = deaths_different, dd0 = deaths)) %>%
             mutate(deaths_different = ifelse(is.na(dd1), deaths_different, dd1)) %>% select(-dd1) %>%
             mutate(deaths = ifelse(is.na(dd0), deaths, dd0)) %>% select(-dd0) %>%
+            mutate(recovered = ifelse(is.na(rec0), recovered, rec0)) %>% select(-rec0) %>%
             mutate(active = confirmed - recovered - deaths - deaths_different)
 
 
