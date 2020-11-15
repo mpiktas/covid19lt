@@ -4,12 +4,12 @@ library(tidyr)
 library(lubridate)
 library(EpiEstim)
 
-aa <- read.csv("data/lt-covid19-tests.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+tt <- read.csv("data/lt-covid19-tests.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 
 last_day <- max(aa$day)
 
 ag <- function(x)(c(x[1],diff(x)))
-dt <- aa %>% select(day, incidence = tests_positive_new) %>% group_by(day) %>%
+dt <- tt %>% select(day, incidence = tests_positive_new) %>% group_by(day) %>%
     summarise(incidence = sum(incidence))
 
 incidence_data <- dt %>% select(date = day, I = incidence)
