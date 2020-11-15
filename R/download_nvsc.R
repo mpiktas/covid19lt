@@ -43,9 +43,11 @@ ii <- sapply(aa1, length)
 nums <- sapply(aa1[ii ==2], "[[",2) %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("\xc2\xa0","",.) %>%  gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
 
 
-iad <- html_nodes(oo,".text") %>% html_nodes("p") %>% html_text
-ia1 <- iad[grepl("birž",iad)] %>%  gsub("(.*)(: )([0-9]+)(.*)","\\3",.) %>% as.integer
+#iad <- html_nodes(oo,".text") %>% html_nodes("p") %>% html_text
+#ia1 <- iad[grepl("birž",iad)] %>%  gsub("(.*)(: )([0-9]+)(.*)","\\3",.) %>% as.integer
 
+ia1 <- nums[8]
+nums <- nums[-8]
 
 # Determine where is the hospitalization data ---------------------------
 
@@ -155,13 +157,16 @@ if(length(tbs) < 3) {
 # Get the tests and laboratory data ------------------------------------------------------
 cat("\nParsing test data\n")
 
-cd2 <-  html_nodes(oo1,"p")  %>% html_text
+#cd2 <-  html_nodes(oo1,"p")  %>% html_text
 
-cd3 <- strsplit(cd2[1],"\n") %>% .[[1]] %>%
-    gsub("([0-9]+)( )([0-9+])","\\1\\3",.)%>%
-    gsub("(.*)(: )([0-9]+)(.*)","\\3",.) %>%
-    as.integer %>% na.omit
+#cd3 <- strsplit(cd2[1],"\n") %>% .[[1]] %>%
+#    gsub("([0-9]+)( )([0-9+])","\\1\\3",.)%>%
+#    gsub("(.*)(: )([0-9]+)(.*)","\\3",.) %>%
+#    as.integer %>% na.omit
 
+cd2 <- html_nodes(oo1, ".content") %>% html_nodes("li") %>% html_text
+
+cd3 <- cd2 %>% gsub("(.*)(: )([0-9]+)(.*)","\\3",.) %>% as.integer %>% na.omit
 #nums2 <- cd2 %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
 #nums <- c(nums1[-8],nums2[1:2])
 
