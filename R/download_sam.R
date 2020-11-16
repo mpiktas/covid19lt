@@ -83,7 +83,7 @@ if(length(tbs) < 3) {
 
     capacity_total <- data.frame(tbs[[1]][-2:-1,])
     colnames(capacity_total) <- c("description", "total", "intensive", "ventilated", "oxygen_mask")
-    capacity_total[,-1] <- sapply(capacity_total[,-1], function(x)as.integer(gsub(" ","",x)))
+    capacity_total[,-1] <- sapply(capacity_total[,-1], function(x)as.integer(gsub("[,. ]","", x)))
     rownames(capacity_total) <- NULL
 
 
@@ -93,7 +93,7 @@ if(length(tbs) < 3) {
     cvh <- data.frame(tbs[[2]][-2:-1,,drop = FALSE])
 
     colnames(cvh) <- c("description","total", "oxygen","ventilated","hospitalized_not_intensive", "intensive")
-    cvh[,-1] <- sapply(cvh[,-1], as.integer)
+    cvh[,-1] <- sapply(cvh[,-1], function(x)as.integer(gsub("[,. ]","",x)))
 
 
     # Get regional hospitalization data ---------------------------------------
