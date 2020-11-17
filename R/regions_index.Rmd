@@ -11,13 +11,14 @@ library(flexdashboard)
 library(dplyr)
 library(lubridate)
 library(DT)
-Sys.setlocale(locale="lt_LT")
+Sys.setlocale(locale="lt_LT.UTF-8")
 ```
 
 
 
 ```{r, echo = FALSE}
 ii <- read.csv("../data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
+tt <- read.csv("../data/lt-covid19-tests.csv") %>% mutate(day = ymd(day))
 last_day <- max(ii$day)
 
 l14 <- ii %>% filter(day>=last_day-days(13)) %>% count(administrative_level_3) 
@@ -37,6 +38,20 @@ l14 <- l14 %>% left_join(wk %>% select(administrative_level_3, Augimas), by = "a
 rr <- read.csv("../raw_data/administrative_levels.csv") %>% select(-municipality_name)
 
 
+tt7 <- tt %>% filter(day>=last_day-days(6)) %>% group_by(administrative_level_3) %>% 
+  summarize(tests_new = sum(tests_positive_new), tests_total = sum(tests_total)) %>%
+  mutate(first = round(100*tests_new/tests_total,2))
+
+tt27 <- tt %>% filter(day>=last_day-days(13) & day<last_day-days(6)) %>% group_by(administrative_level_3) %>% 
+  summarize(tests_new = sum(tests_positive_new), tests_total = sum(tests_total)) %>%
+  mutate(second = round(100*tests_new/tests_total,2))
+
+tt14 <- tt7 %>% select(administrative_level_3, first) %>% 
+  left_join(tt27 %>%select(administrative_level_3, second))
+
+tt14 <- tt14 %>% mutate(diff = round(first-second,2))
+
+l14 <- l14 %>% inner_join(tt14 %>% select(administrative_level_3, `Tyrimų dalis` = first, `Tyrimų dalies pokytis` = diff))
 
 dp <- l14 %>% right_join(rr, by = "administrative_level_3") %>% mutate(n = fixNA(n), Atvejai_100k = round(n/population*100000,2)) %>% arrange(administrative_level_3)
     
@@ -49,8 +64,8 @@ links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  dp$administrative_level_
 
 dp$administrative_level_3 <- sapply(links2,as.character)
 
-colnames(dp) <- c("Savivaldybė", "Atvejai","Augimas (%)","Populiacija","Atvejai_100k")
-dp <- dp[,c(1,2,5,3,4)]
+colnames(dp) <- c("Savivaldybė", "Atvejai","Augimas (%)","Teigiamų tyrimų dalis", "Tyrimų dalies pokytis", "Populiacija","Atvejai_100k")
+dp <- dp[,c(1,2,7,3,4,5,6)]
 
 dp %>% datatable( 
          extensions = c('FixedColumns',"FixedHeader"),
