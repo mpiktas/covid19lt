@@ -40,6 +40,9 @@ aa1 <- cd %>% str_trim %>% strsplit(":")
 
 nums <- sapply(aa1, "[[",2) %>% str_trim %>% gsub("([0-9]+)( )([0-9+])","\\1\\3",.) %>% gsub("\xc2\xa0","",.) %>%  gsub("([0-9]+)(.*)","\\1",.) %>% as.integer %>% na.omit
 
+iad <- html_nodes(oo,".text") %>% html_nodes("p") %>% html_text
+ia1 <- iad[grepl("birž",iad)] %>%  gsub("(.*)(: )([0-9]+)(.*)","\\3",.) %>% as.integer
+nums <- c(nums[1:7],ia1,nums[8:9])
 
 # Treat and write ---------------------------------------------------------
 cat("\nWriting daily  data\n")
