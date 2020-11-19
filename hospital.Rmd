@@ -25,7 +25,7 @@ data <- Sys.time()
 Atnaujinta: `r format(data, usetz = TRUE)`. 
 
 ```{r}
-cvh <- read.csv("data/lt-covid19-hospitalized.csv") %>% mutate(day = ymd(day))
+cvh <- read.csv("data/lt-covid19-hospitalized.csv") %>% mutate(day = ymd(day)) %>% na.omit
 tlk <- read.csv("data/hospital-capacity.csv") %>% mutate(day = ymd(day))
 
 toxts <- function(d, cols) {
