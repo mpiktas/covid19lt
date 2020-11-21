@@ -27,7 +27,7 @@ fix_esridate <- function(str) {
     dd
 }
 
-osp1 %>% arrange(test_performed_date,municipality_name) %>% write.csv("raw_data/osp/osp_covid19_tests.csv", row.names = FALSE)
+osp1 %>% arrange(test_performed_date, municipality_code) %>% write.csv("raw_data/osp/osp_covid19_tests.csv", row.names = FALSE)
 
 
 osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(test_performed_date)))
@@ -38,10 +38,10 @@ adm <- read.csv("raw_data/administrative_levels.csv")
 osp3 <- osp2 %>% inner_join(adm %>% select(-population))
 
 if(nrow(osp3) == nrow(osp2)) {
-    osp3 %>% select(day, administrative_level_3,
+    osp3 %>% select(day, municipality_code, administrative_level_3,
                     tests_negative, tests_positive, tests_positive_repeated,
                     tests_positive_new, tests_total) %>%
-        arrange(day, administrative_level_3) %>%
+        arrange(day, municipality_code) %>%
         write.csv("data/lt-covid19-tests.csv", row.names = FALSE)
 }
 
@@ -49,7 +49,7 @@ if(FALSE) {
     posp <- GET("https://osp-sdg.stat.gov.lt/arcgis/rest/services/SDG/COVID_TESTS_OPEN/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=test_performed_date+desc&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&f=pjson")
     posp1 <- fix_esridate(rawToChar(posp$content))
     posp2 <- posp1 %>% mutate(day = ymd(test_performed_date))
-    posp22 <- posp2 %>% filter(day == max(day))
+    posp22 <- posp2 %>% filter(day == max(day)) %>%
 
     osp4 <- osp2  %>% bind_rows(posp22 %>% select(-test_performed_date)) %>% unique %>% select(-object_id,-municipality_code, -test_performed_date)
     osp5 <-  osp4 %>% inner_join(adm %>% select(-population)) %>% select(-municipality_name)
