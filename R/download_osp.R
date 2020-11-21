@@ -49,9 +49,9 @@ if(FALSE) {
     posp <- GET("https://osp-sdg.stat.gov.lt/arcgis/rest/services/SDG/COVID_TESTS_OPEN/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=test_performed_date+desc&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&f=pjson")
     posp1 <- fix_esridate(rawToChar(posp$content))
     posp2 <- posp1 %>% mutate(day = ymd(test_performed_date))
-    posp22 <- posp2 %>% filter(day == max(day)) %>%
+    posp22 <- posp2 %>% filter(day == max(day))
 
-    osp4 <- osp2  %>% bind_rows(posp22 %>% select(-test_performed_date)) %>% unique %>% select(-object_id,-municipality_code, -test_performed_date)
+    osp4 <- osp2  %>% bind_rows(posp22 %>% select(-test_performed_date)) %>% unique
     osp5 <-  osp4 %>% inner_join(adm %>% select(-population)) %>% select(-municipality_name)
 
     library(zoo)
