@@ -1,0 +1,47 @@
+;Ištirta ėminių per parą;Liko neištirta ėminių
+Iš viso;Iš jų;iš viso;iš jų iš mobilių punktų
+neigiami;teigiami
+iš viso;iš jų iš mobilių punktų;iš viso;iš jų iš mobilių punktų;iš viso;iš jų iš mobilių punktų
+VU ligoninės Santaros klinikų laboratorija;1510;29;1394;14;116;15;159;0
+Klaipėdos universitetinės ligoninės laboratorija;1048;508;804;299;244;204;0;0
+Nacionalinė visuomenės sveikatos priežiūros laboratorija;150;6;139;5;11;1;50;0
+Respublikinės Šiaulių ligoninės laboratorija;691;22;635;16;56;6;0;0
+LSMU ligoninės Kauno klinikų laboratorija;665;0;624;0;41;0;7;0
+Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija;1209;1006;914;738;295;263;600;500
+Nacionalinio vėžio instituto laboratorija;179;0;175;0;4;0;42;0
+UAB „Diagnostikos laboratorija" („Antėja" Vilnius);1120;571;873;358;247;213;723;263
+UAB „Medicina practica laboratorija";2418;161;2105;72;313;89;202;80
+UAB „SK Impeks Medicinos diagnostikos centras";193;0;164;0;29;0;0;0
+VU Gyvybės mokslų centras;137;0;122;0;15;0;165;136
+UAB „InMedica";512;144;421;84;91;59;0;0
+Respublikinės Panevėžio ligoninės laboratorija;207;0;185;0;22;0;0;0
+VšĮ Respublikinės Vilniaus universitetinės ligoninės laboratorija;36;0;34;0;2;0;0;0
+Tauragės ligoninės laboratorija;11;0;6;0;5;0;0;0
+UAB „Diagnostikos laboratorija" („Antėja" Kaunas);2472;1657;2083;1303;389;353;200;100
+UAB „Diagnostikos laboratorija" („Antėja" Klaipėda);835;354;759;301;76;53;319;264
+SYNLAB Lietuva UAB;366;0;336;0;30;0;0;0
+Respublikinės Klaipėdos ligoninės laboratorija;7;0;5;0;2;0;0;0
+Regioninės Telšių ligoninės laboratorija;7;0;4;0;3;0;0;0
+UAB Rezus.lt;360;299;233;172;127;120;20;20
+Iš viso:;14133;4757;12015;3362;2118*;1376;2487;1363
+Stacionaro lovų duomenys;Iš viso;Iš jų:
+reanimacijos-intensyvios terapijos;su DPV;su deguonimi
+Stacionaro lovų skaičius;16805;669;618;6324
+Užimtų lovų skaičius;8561;374;221;2047
+Pacientų duomenys;Iš viso;Iš jų:
+su deguonies kaukėmis;ventiliuojami;stacionare (be reanimacijos);reanimacijos (intensyvios terapijos)
+Pacientai, kuriems patvirtinta COVID19 infekcija;1459;843;69;1264;114
+;;;Iš jų:
+Stacionaro lovų duomenys;TLK;Iš viso;reanimacijos (intensyvios terapijos);su DPV;su deguonimi
+Stacionaro lovų skaičius;Iš viso:;16 805;669;618;6 324
+Vilniaus TLK;4 881;235;223;1 786
+Kauno TLK;4 248;183;163;1 969
+Klaipėdos TLK;3 056;97;93;1 051
+Šiaulių TLK;2 003;64;59;1 025
+Panevėžio TLK;2 617;90;80;493
+Užimtų lovų skaičius;Iš viso:;8 561;374;221;2 047
+Vilniaus TLK;2 499;140;103;773
+Kauno TLK;2 237;109;44;448
+Klaipėdos TLK;1 398;55;28;423
+Šiaulių TLK;1 001;31;21;187
+Panevėžio TLK;1 426;39;25;216
