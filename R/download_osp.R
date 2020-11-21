@@ -54,6 +54,12 @@ if(FALSE) {
     osp4 <- osp2  %>% bind_rows(posp22 %>% select(-test_performed_date)) %>% unique
     osp5 <-  osp4 %>% inner_join(adm %>% select(-population)) %>% select(-municipality_name)
 
+    osp5 %>% select(day, municipality_code, administrative_level_3,
+                    tests_negative, tests_positive, tests_positive_repeated,
+                    tests_positive_new, tests_total) %>%
+        arrange(day, municipality_code) %>%
+        write.csv("data/lt-covid19-tests.csv", row.names = FALSE)
+
     library(zoo)
     tta <- osp5 %>% select(day, tests_total, tests_positive_new) %>% group_by(day) %>% summarise_all(sum)
     tta1 <- tta %>% mutate(l7 = lag(tests_positive_new, 7), gdod = round(100*(tests_positive_new/l7-1),2))
