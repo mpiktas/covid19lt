@@ -1,0 +1,42 @@
+;Ištirta ėminių per parą;Liko neištirta ėminių
+Iš viso;Iš jų;iš viso;iš jų iš mobilių punktų
+neigiami;teigiami
+iš viso;iš jų iš mobilių punktų;iš viso;iš jų iš mobilių punktų;iš viso;iš jų iš mobilių punktų
+VU ligoninės Santaros klinikų laboratorija;578;1;530;0;48;1;2;0
+Klaipėdos universitetinės ligoninės laboratorija;470;283;299;151;171;126;4;4
+Respublikinės Šiaulių ligoninės laboratorija;489;96;414;52;75;44;0;0
+LSMU ligoninės Kauno klinikų laboratorija;435;0;417;0;18;0;0;0
+Nacionalinio maisto ir veterinarijos rizikos vertinimo instituto laboratorija;1114;1012;787;711;327;294;500;500
+UAB „Baltic Medics";910;367;743;298;167;92;0;0
+UAB „Diagnostikos laboratorija" („Antėja" Vilnius);897;238;820;177;77;61;668;357
+UAB „Medicina practica laboratorija";902;473;627;324;275;149;0;0
+Respublikinės Panevėžio ligoninės laboratorija;92;0;85;0;7;0;0;0
+Tauragės ligoninės laboratorija;6;0;3;0;3;0;0;0
+UAB „Diagnostikos laboratorija" („Antėja" Kaunas);896;728;653;508;243;220;55;55
+UAB „Diagnostikos laboratorija" („Antėja" Klaipėda);469;340;355;238;114;102;0;0
+SYNLAB Lietuva UAB;132;0;117;0;15;0;0;0
+Respublikinės Klaipėdos ligoninės laboratorija;23;0;14;8;9;0;0;0
+Regioninės Telšių ligoninės laboratorija;3;0;2;0;1;0;0;0
+UAB Rezus.lt;234;134;179;95;55;39;0;0
+Iš viso:;7650;3672;6045;2562;1605*;1128;1229;916
+Stacionaro lovų duomenys;Iš viso;Iš jų:
+reanimacijos-intensyvios terapijos;su DPV;su deguonimi
+Stacionaro lovų skaičius;16 596;669;618;6 256
+Užimtų lovų skaičius;8 573;375;227;1 930
+Pacientų duomenys;Iš viso;Iš jų:
+su deguonies kaukėmis;ventiliuojami;stacionare (be reanimacijos);reanimacijos (intensyvios terapijos)
+Pacientai, kuriems patvirtinta COVID19 infekcija;1 443;747;68;1 170;124
+;;;Iš jų:
+Stacionaro lovų duomenys;TLK;Iš viso;reanimacijos (intensyvios terapijos);su DPV;su deguonimi
+Stacionaro lovų skaičius;Iš viso:;16 596;669;618;6 256
+Vilniaus TLK;4 672;235;223;1 718
+Kauno TLK;4 248;183;163;1 969
+Klaipėdos TLK;3 056;97;93;1 051
+Šiaulių TLK;2 003;64;59;1 025
+Panevėžio TLK;2 617;90;80;493
+Užimtų lovų skaičius;Iš viso:;8 573;375;227;1 930
+Vilniaus TLK;2 704;147;105;663
+Kauno TLK;2 020;96;45;417
+Klaipėdos TLK;1 426;57;29;424
+Šiaulių TLK;1 016;38;22;202
+Panevėžio TLK;1 407;37;26;224
