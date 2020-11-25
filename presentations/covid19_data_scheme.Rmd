@@ -1,0 +1,29 @@
+---
+title: "Covid-19 duomenų schema"
+author: "Me"
+date: "11/24/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(DiagrammeR)
+```
+
+## Covid 19 duomenų schema
+
+```{r}
+DiagrammeR::mermaid("
+graph LR 
+  A[Įtariamas]-->B[Testas]
+  B-->C[Neigiamas]
+  B-->D[Teigiamas]
+  D-->E[Gydomas Namie]
+  D-->F[Gydomas Ligoninėje]
+  E-->G[Pasveiksta]
+  E-->F
+  F-->E
+  F-->G
+  F-->H[Miršta]
+", width = 700, height = 200)
+```
