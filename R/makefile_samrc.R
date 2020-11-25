@@ -1,7 +1,7 @@
 library(testthat)
 library(gert)
 try(source("R/download_rc.R"))
-try(source("R/download_osp.R"))
+try(source("R/download_osp_tests.R"))
 try(source("R/download_osp_cases.R"))
 source("R/treat_sam.R")
 source("R/treat_rc.R")

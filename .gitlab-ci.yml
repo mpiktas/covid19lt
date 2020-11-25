@@ -14,7 +14,7 @@ nvsc:
         - $SOURCE == "nvsc"
     script:
       - R -e "install.packages('gert')"
-      - R -e "try(source('R/download_nvsc.R'))"
+      - R -e "try(source('R/download_osp.R'))"
       - R -e "source('R/makefile_samrc.R')"
 
 sam:
@@ -27,7 +27,7 @@ sam:
         - $SOURCE == "sam"
     script:
       - R -e "install.packages('gert')"
-      - R -e "try(source('R/download_sam.R'))"
+      - R -e "try(source('R/download_osp.R'))"
       - R -e "source('R/makefile_samrc.R')"
 
 
