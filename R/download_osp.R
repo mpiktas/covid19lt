@@ -19,7 +19,7 @@ tryget <- function(link, times = 10) {
     res
 }
 
-raw <- tryget("https://osp.stat.gov.lt/informaciniai-pranesimai?articleId=8221260")
+raw <- tryget("https://osp.stat.gov.lt/informaciniai-pranesimai?articleId=8225529")
 
 oo <- read_html(raw)
 
