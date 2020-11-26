@@ -29,7 +29,7 @@ tbs <- html_table(oo, fill = TRUE)
 
 cat("\nParsing daily data\n")
 
-cdd <- tbs[[3]][,2]
+cdd <- tbs[[3]][,1]
 
 crtime <- Sys.time()
 
