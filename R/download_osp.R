@@ -52,9 +52,6 @@ ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "da
 write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
 
 
-
-
-
 # Get the total capacity data ------------------------------------------------------
 
 cat("\nParsing total capacity data\n")
