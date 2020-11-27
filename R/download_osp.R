@@ -19,7 +19,7 @@ tryget <- function(link, times = 10) {
     res
 }
 
-raw <- tryget("https://osp.stat.gov.lt/informaciniai-pranesimai?articleId=8225529")
+raw <- tryget("https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika")
 
 oo <- read_html(raw)
 
@@ -29,7 +29,7 @@ tbs <- html_table(oo, fill = TRUE)
 
 cat("\nParsing daily data\n")
 
-cdd <- tbs[[3]][,1]
+cdd <- tbs[[2]][,1]
 
 crtime <- Sys.time()
 
@@ -59,7 +59,7 @@ cat("\nParsing total capacity data\n")
 # Get covid hospitalisation data ----------------------------------------------------------
 cat("\nParsing covid hospitalization data\n")
 
-cvh0 <- data.frame(tbs[[4]])
+cvh0 <- data.frame(tbs[[3]])
 
 colnames(cvh0) <- c("description","total", "oxygen","ventilated","hospitalized_not_intensive", "intensive")
 
@@ -72,7 +72,7 @@ cvh[,-1] <- sapply(cvh[,-1], as.integer)
 # Get regional hospitalization data ---------------------------------------
 cat("\nParsing regional hospitalization data\n")
 
-tlk <- data.frame(tbs[[5]][-2:-1,])
+tlk <- data.frame(tbs[[4]][3:14,])
 colnames(tlk) <-c("description", "tlk", "total", "intensive", "ventilated", "oxygen_mask")
 tlk[,-2:-1] <- sapply(tlk[,-2:-1], function(x)as.integer(gsub("[,. ]","",x)))
 tlk$description[tlk$description == ""] <- NA
