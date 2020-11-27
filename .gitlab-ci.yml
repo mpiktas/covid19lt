@@ -4,31 +4,29 @@ stages:
  - download
  - site
 
-nvsc:
+osp:
     stage: download
     only:
       refs :
         - master
         - schedules
       variables:
-        - $SOURCE == "nvsc"
+        - $SOURCE == "osp"
     script:
       - R -e "install.packages('gert')"
-      - R -e "try(source('R/download_osp.R'))"
-      - R -e "source('R/makefile_samrc.R')"
+      - R -e "source('R/makefile_osp_live.R')"
 
-sam:
+ospa:
     stage: download
     only:
       refs :
         - master
         - schedules
       variables:
-        - $SOURCE == "sam"
+        - $SOURCE == "ospa"
     script:
       - R -e "install.packages('gert')"
-      - R -e "try(source('R/download_osp.R'))"
-      - R -e "source('R/makefile_samrc.R')"
+      - R -e "source('R/makefile_osp_a.R')"
 
 
 datagov:

@@ -1,23 +1,10 @@
 library(dplyr)
 library(lubridate)
 
-dd0 <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day))
-tt0 <- read.csv("data/lt-covid19-total.csv") %>% mutate(day = ymd(day))
+dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day))
+tt <- read.csv("data/lt-covid19-total.csv") %>% mutate(day = ymd(day))
 ii <- read.csv("data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
 iit <- read.csv("data/lt-covid19-individual-daily.csv") %>% mutate(day = ymd(day))
-
-md <- max(dd0$day)
-mi <- max(ii$day)
-
-if(md > mi) {
-    dd <-dd0 %>% filter(day <= mi)
-    tt <- tt0 %>% filter(day <= mi)
-    dd1 <- dd0 %>% filter(day > mi)
-    tt1 <- tt %>% filter(day > mi)
-} else {
-    dd <- dd0
-    tt <- tt0
-}
 
 
 ii1 <- ii %>% group_by(day) %>% summarize(incidence = n(),
