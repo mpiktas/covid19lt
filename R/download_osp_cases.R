@@ -6,9 +6,9 @@ library(lubridate)
 library(stringr)
 library(bit64)
 
-Sys.setlocale(locale = "lt_LT.UTF-8")
-osp <- GET("https://opendata.arcgis.com/datasets/3df1e86f5235498ab7cf9cec615a7fd7_0.geojson")
-osp1 <- fromJSON(rawToChar(osp$content))$features$properties
+
+#osp <- GET("https://opendata.arcgis.com/datasets/3df1e86f5235498ab7cf9cec615a7fd7_0.geojson")
+#osp1 <- fromJSON(rawToChar(osp$content))$features$properties
 
 fix_esridate <- function(str) {
     dd <- fromJSON(str)
@@ -27,15 +27,38 @@ fix_esridate <- function(str) {
     dd
 }
 
+tryget <- function(link, times = 10) {
+    res <- NULL
+    for (i in 1:times) {
+        res <- try(GET(link))
+        if(inherits(res, "try-error")) {
+            cat("\nFailed to get the data, sleeping for 1 second\n")
+            Sys.sleep(1)
+        } else break
+    }
+    if(is.null(res))stop("Failed to get the data after ", times, " times.")
+    res
+}
+
+httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
+posp <- tryget("https://osp-sdg.stat.gov.lt/arcgis/rest/services/SDG/COVID_atvejai_charts/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&f=pjson")
+posp1 <- fix_esridate(rawToChar(posp$content))
+posp2 <- posp1 %>% mutate(day = ymd(date))
+
+alls <- lapply(unique(posp2$municipality_name), function(x) {
+    sav <- URLencode(x)
+    try(tryget(glue::glue("https://osp-sdg.stat.gov.lt/arcgis/rest/services/SDG/COVID_atvejai_charts/FeatureServer/0/query?where=municipality_name%3D%27{sav}%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&f=pjson")))
+})
+
+osp1 <- lapply(alls, function(l)fix_esridate(rawToChar(l$content))) %>% bind_rows
+
 osp1 %>% arrange(date, municipality_code) %>% write.csv("raw_data/osp/osp_covid19_cases.csv", row.names = FALSE)
 
-
-osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(date)))
-
+osp2 <- osp1 %>% mutate(day = ymd(date))
 
 adm <- read.csv("raw_data/administrative_levels.csv")
 
-adm <- adm %>% rbind(data.frame(administrative_level_3 = "Unknown", population = NA, municipality_name="nenustatyta"))
+adm <- adm %>% rbind(data.frame(administrative_level_3 = c("Unknown","Lithuania"), population = c(NA,sum(adm$population)),  municipality_name=c("nenustatyta","Lietuva")))
 
 osp3 <- osp2 %>% inner_join(adm %>% select(-population))
 
