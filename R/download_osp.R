@@ -36,7 +36,8 @@ crtime <- Sys.time()
 cdd1 <- cdd[cdd!=""]
 cdd2 <- sapply(strsplit(cdd1,":"),"[[",2) %>% str_trim %>% as.integer
 
-nums <- c(cdd2[c(2, 7, 1, 4, 5, 6)],NA,NA,cdd2[8:9])
+nums <- c(cdd2[c(2, 8, 1, 4, 5, 6)],NA,NA,cdd2[9:10])
+
 outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
 ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "days")-days(1))) %>%
     mutate(confirmed = nums[1],
