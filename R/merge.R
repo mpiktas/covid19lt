@@ -38,14 +38,6 @@ ii4 <- ii3 %>% left_join(iit %>% select(day, hospitalized, intensive, rec0 = rec
 ii5 <- ii4 %>% select(day, confirmed, deaths, deaths_different, recovered, active, imported, tested,
                       incidence, tests_daily, imported_daily, quarantined, hospitalized, intensive)
 
-if(md > mi) {
-    ##assume only one day is missing
-    dd2 <- dd1 %>% select(day, confirmed, deaths, deaths_different, recovered, active,
-                          tested = total_tests, incidence, tests_daily = daily_tests, quarantined)
-    id <- diff(dd0$imported0601)
-    dd2$imported_daily <- id[length(id)]
-    #dd2$imported <- ii5$import
-}
 
 ii5 %>% write.csv("data/lt-covid19-aggregate.csv", row.names = FALSE)
 
