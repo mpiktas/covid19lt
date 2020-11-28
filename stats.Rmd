@@ -11,7 +11,7 @@ library(tidyr)
 library(dygraphs)
 library(xts)
 library(lubridate)
-tt <- read_csv("data/lt-covid19-total.csv") 
+tt <- read_csv("data/archive/lt-covid19-total.csv") 
 ```
 
 ```{r include = FALSE}
@@ -29,7 +29,7 @@ Nuo balandžio 1 d. pradėjus skelbti laboratorijų testų skaičius, dieninis s
 ```{r, echo = FALSE}
 library(lubridate)
 ag <- function(x)c(x[1],diff(x))
-labs <- read.csv("data/lt-covid19-laboratory-total.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+labs <- read.csv("data/archive/lt-covid19-laboratory-total.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 
 lbt <- labs %>% group_by(day) %>% summarise(daily_tests = sum(tested_all))
 ltt <- tt %>% mutate(daily_tests = ag(tested)) %>% select(day, daily_tests)
