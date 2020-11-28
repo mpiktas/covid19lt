@@ -1,8 +1,7 @@
 library(testthat)
 library(gert)
 try(source('R/download_osp.R'))
-source("R/treat_sam.R")
-source("R/treat_hospitalization.R")
+source("R/treat_osp.R")
 
 find_root <- function(x) {
     x %>% strsplit("/") %>% sapply("[[",1)
