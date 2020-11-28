@@ -4,11 +4,11 @@ library(tidyr)
 library(lubridate)
 library(EpiEstim)
 
-aa <- read.csv("data/lt-covid19-aggregate.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+aa <- read.csv("data/lt-covid19-country.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 last_day <- max(aa$day)
 
 ag <- function(x)(c(x[1],diff(x)))
-dt <- aa %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
+dt <- aa %>% mutate(incidence = confirmed_daily) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
 dtf <- dt
 dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
 

@@ -30,7 +30,7 @@ data <- Sys.time()
 Atnaujinta: `r format(data, usetz = TRUE)`. 
 
 ```{r, echo = FALSE}
-aa <- read.csv("data/lt-covid19-aggregate.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+aa <- read.csv("data/lt-covid19-country.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 last_day <- max(aa$day)
 fixNA <- function(x) {
     x[is.na(x)] <- 0
@@ -60,9 +60,9 @@ dygraph(xtt, main = paste("Suminiai atvejai:",max(aa$day))) %>%  dyOptions(color
 
 ```{r, echo = FALSE}
 
-sdr <- aa %>% select(day, deaths) %>%  mutate(daily_deaths = ag(deaths))
+sdr <- aa %>% select(day, deaths_daily) 
 
-xsdr1 <- xts(sdr$daily_deaths, order.by = sdr$day)
+xsdr1 <- xts(sdr$deaths_daily, order.by = sdr$day)
 xsdr7 <- rollmean(xsdr1, 7, fill = NA, align = "right")
 xsdr14 <- rollmean(xsdr1, 14, fill = NA, align = "right")
 
@@ -70,11 +70,11 @@ xsdr <- cbind(xsdr1, xsdr7, xsdr14)
 colnames(xsdr) <- c("deaths", "deaths7", "deaths14")
 
 
-dygraph(xsdr, main = paste("Mirtys per dieną ir slenkantys vidurkiai",max(aa$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% dyRangeSelector()
+dygraph(xsdr["2020-03-20/",], main = paste("Mirtys per dieną ir slenkantys vidurkiai",max(aa$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% dyRangeSelector()
 ```
 
 ```{r, echo = FALSE}
-axtt <- xts(aa$incidence, order.by =aa$day)
+axtt <- xts(aa$confirmed_daily, order.by =aa$day)
 colnames(axtt) <- "incidence"
 
 axtt7 <- rollmean(axtt, 7, fill = NA, align = "right")
@@ -88,11 +88,10 @@ dygraph(a714[, c("incidence", "incidence7","incidence14")], main = paste("Dienin
 ```
 
 ```{r, echo =FALSE}
-tt <- read.csv("data/lt-covid19-tests.csv") %>% mutate(day= ymd(day))
-tta <- tt %>% group_by(day) %>% summarize(tp = sum(tests_positive_new), daily_tests = sum(tests_total)) %>% mutate(ratio = 100*tp/daily_tests)
 
-tpd <- aa %>% select(day, confirmed) %>% left_join(tta, by = "day") %>% 
-    mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, 
+
+tpd <- aa %>% select(day, incidence = confirmed_daily, daily_tests = tests_daily) %>% 
+    mutate(normalized = incidence*100/daily_tests, 
            incidence14 = rollsum(incidence, k = 14, fill = NA, align = "right"),
            tests14 = rollsum(daily_tests, k = 14, fill = NA, align = "right"),
            normalized14 = incidence14*100/tests14,
@@ -110,9 +109,11 @@ dygraph(xtpd["2020-07-01/",], main = paste("Atvejų skaičius tenkantis 100 test
 
 
 ```{r, echo = FALSE}
+tta <- aa %>% select(day, tests_daily, tests_positive_new_daily) %>% mutate(ratio = 100*(tests_positive_new_daily/tests_daily))
+
 xtpr <- xts(tta$ratio, order.by = tta$day)
 colnames(xtpr) <- "Test positivity rate"
-dygraph(xtpr, main = paste("Teigiamų testų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector 
+dygraph(xtpr["2020-07-01/"], main = paste("Teigiamų testų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector 
 ```
 
 ```{r, echo = FALSE}
@@ -199,35 +200,5 @@ agre2 %>% datatable(
           options = list(scrollX = TRUE, 
                          paging=FALSE,
                          fixedHeader=TRUE))
-```
-
-## Atvejų skaičiai savivaldybėse `r last_day`
-
-Nuo liepos 1d.
-
-```{r, echo=FALSE}
-
-ad <- ii %>% count(day,administrative_level_3) %>% mutate(day = ymd(day))
-
-ggplot(aes(x=day, y = n ),
-       data = ad %>% filter(day >= "2020-07-01", administrative_level_3 %in% (agre1 %>% pull(administrative_level_3)))) +
-           facet_wrap(~administrative_level_3, scales = "free_y") +geom_line()
-```
-
-## Atvejų skaičių skirtumai duomenų šaltiniuose
-
-```{r}
-rr <- read.csv("data/lt-covid19-regions.csv") %>% mutate(day = ymd(day))
-rr1 <- rr %>% group_by(day) %>% summarise(regions = sum(confirmed))
-ra <- read.csv("data/lt-covid19-agegroups.csv") %>% mutate(day = ymd(day))
-ra1 <- ra %>% group_by(day) %>% summarise(age = sum(confirmed))
-
-dd1 <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% select(day, sam = confirmed)
-
-alls <- aa %>% select(day, datagov = confirmed) %>% left_join(dd1) %>% left_join(rr1) %>% left_join(ra1)
-
-allsx <- xts(alls %>% select(-day), order.by=alls$day)
-
-dygraph(diff(allsx)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(4, "Set1")) %>% dyRangeSelector()
 ```
 
