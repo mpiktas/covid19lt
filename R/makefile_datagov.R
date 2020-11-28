@@ -4,7 +4,6 @@ library(testthat)
 library(gert)
 
 source("R/download_datagov.R")
-source("R/merge.R")
 
 
 find_root <- function(x) {
