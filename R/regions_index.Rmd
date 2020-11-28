@@ -1,5 +1,5 @@
 ---
-title: "Covid-19 Lietuvos savivaldybėse"
+title: "Covid-19 Lietuvos regionuose"
 output: 
   flexdashboard::flex_dashboard:
     vertical_layout: fill
@@ -14,7 +14,8 @@ library(DT)
 Sys.setlocale(locale="lt_LT.UTF-8")
 ```
 
-
+Savivaldybės
+=============
 
 ```{r, echo = FALSE}
 ii <- read.csv("../data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
@@ -35,7 +36,7 @@ wk <- l17 %>% full_join(l27, by = "administrative_level_3") %>%  mutate(first=fi
 
 l14 <- l14 %>% left_join(wk %>% select(administrative_level_3, Augimas), by = "administrative_level_3")
 
-rr <- read.csv("../raw_data/administrative_levels.csv") %>% select(-municipality_name)
+rr <- read.csv("../raw_data/administrative_levels.csv") %>% select(-municipality_name,-administrative_level_2)
 
 
 tt7 <- tt %>% filter(day>=last_day-days(6)) %>% group_by(administrative_level_3) %>% 
@@ -76,5 +77,6 @@ dp %>% datatable(
 
 ```
 
-
+Apskritys
+===================
 
