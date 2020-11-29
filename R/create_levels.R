@@ -27,10 +27,10 @@ adm <- read.csv("raw_data/administrative_levels.csv")
 
 tt <- tt %>% arrange(administrative_level_3, day) %>% group_by(administrative_level_3) %>% mutate(cumulative_tests = cumsum(tests_total))
 
-cs %>% filter(administrative_level_3 == "Lithuania") %>%
-    select(day, confirmed_cases_cumulative, deaths_cumulative) %>%
-    left_join(aa %>% select(day, confirmed, deaths)) %>%
-    mutate(dc = confirmed_cases_cumulative - confirmed, dd = deaths_cumulative -deaths)
+#cs %>% filter(administrative_level_3 == "Lithuania") %>%
+#    select(day, confirmed_cases_cumulative, deaths_cumulative) %>%
+#    left_join(aa %>% select(day, confirmed, deaths)) %>%
+#    mutate(dc = confirmed_cases_cumulative - confirmed, dd = deaths_cumulative -deaths)
 
 oo <- cs %>%   filter(administrative_level_3!= "Lithuania") %>%select(-municipality_code,-administrative_level_3) %>%
     group_by(day) %>% summarise_all(sum)

@@ -4,7 +4,7 @@ output:
     orientation: columns
     vertical_layout: fill
 params: 
-   region: "Lietuva"
+   region: "Akmenės r."
 ---
 
 ```{r setup, include=FALSE}
@@ -30,7 +30,7 @@ if(grepl("apskr", params$region)) {
       aa <- read.csv("../data/lt-covid19-country.csv") %>% mutate(region = "Lietuva") 
       ii <- ii %>% mutate(day = ymd(day))
   } else {
-      aa <- read.csv("../data/lt-covid19-level3.csv") %>% rename(region = administrative_level_2)
+      aa <- read.csv("../data/lt-covid19-level3.csv") %>% rename(region = administrative_level_3)
       ii <- ii %>% filter(administrative_level_3 == params$region) %>% mutate(day = ymd(day))
   }
 }
