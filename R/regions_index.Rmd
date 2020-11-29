@@ -18,65 +18,61 @@ Savivaldybės
 =============
 
 ```{r, echo = FALSE}
-ii <- read.csv("../data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
-tt <- read.csv("../data/lt-covid19-tests.csv") %>% mutate(day = ymd(day))
-last_day <- max(ii$day)
-
-l14 <- ii %>% filter(day>=last_day-days(13)) %>% count(administrative_level_3) 
-
-l17 <- ii %>% filter(day>=last_day-days(6)) %>% count(administrative_level_3) %>% rename(first = n)
-l27 <- ii %>% filter(day>=last_day-days(13) & day<last_day-days(6)) %>% count(administrative_level_3) %>% rename(second = n)
-
-fixNA <- function(x) {
-    x[is.na(x)] <- 0
-    x
-}
-
-wk <- l17 %>% full_join(l27, by = "administrative_level_3") %>%  mutate(first=fixNA(first), second = fixNA(second), Augimas = round(100*(first/second-1),2))
-
-l14 <- l14 %>% left_join(wk %>% select(administrative_level_3, Augimas), by = "administrative_level_3")
-
-rr <- read.csv("../raw_data/administrative_levels.csv") %>% select(-municipality_name,-administrative_level_2)
 
 
-tt7 <- tt %>% filter(day>=last_day-days(6)) %>% group_by(administrative_level_3) %>% 
-  summarize(tests_new = sum(tests_positive_new), tests_total = sum(tests_total)) %>%
-  mutate(first = round(100*tests_new/tests_total,2))
+dp0 <- read.csv("../data/lt-covid19-level3.csv") %>% mutate(day = ymd(day)) %>% filter(day == max(day))
+cn <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day)) %>% filter(day == max(day)) %>% mutate(administrative_level_3 = "Lietuva")
 
-tt27 <- tt %>% filter(day>=last_day-days(13) & day<last_day-days(6)) %>% group_by(administrative_level_3) %>% 
-  summarize(tests_new = sum(tests_positive_new), tests_total = sum(tests_total)) %>%
-  mutate(second = round(100*tests_new/tests_total,2))
+dp00 <- dp0 %>% bind_rows(cn)
 
-tt14 <- tt7 %>% select(administrative_level_3, first) %>% 
-  left_join(tt27 %>%select(administrative_level_3, second))
+dp <- dp00 %>% filter(administrative_level_3!="Unknown") %>% select(Savivaldybė = administrative_level_3, `Atvejai_100k` = confirmed_100k, `Savaitinis augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, Populiacija = population ) 
 
-tt14 <- tt14 %>% mutate(diff = round(first-second,2))
-
-l14 <- l14 %>% inner_join(tt14 %>% select(administrative_level_3, `Tyrimų dalis` = first, `Tyrimų dalies pokytis` = diff))
-
-dp <- l14 %>% right_join(rr, by = "administrative_level_3") %>% mutate(n = fixNA(n), Atvejai_100k = round(n/population*100000,2)) %>% arrange(administrative_level_3)
-    
-regs_n <- paste0(gsub("[.]","",gsub(" ", "_",dp$administrative_level_3)),".html")
-
+regs_n <- paste0(gsub("[.]","",gsub(" ", "_",dp$Savivaldybė)),".html")
 
 links <- paste0("regions/", regs_n) 
 
-links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  dp$administrative_level_3, links, SIMPLIFY = FALSE)
+links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  dp$Savivaldybė, links, SIMPLIFY = FALSE)
 
-dp$administrative_level_3 <- sapply(links2,as.character)
+dp$Savivaldybė <- sapply(links2,as.character)
 
-colnames(dp) <- c("Savivaldybė", "Atvejai","Augimas (%)","Teigiamų tyrimų dalis", "Tyrimų dalies pokytis", "Populiacija","Atvejai_100k")
-dp <- dp[,c(1,2,7,3,4,5,6)]
 
 dp %>% datatable( 
          extensions = c('FixedColumns',"FixedHeader"),
          escape = FALSE,
           options = list(scrollX = TRUE, 
                          paging=FALSE,
-                         fixedHeader=TRUE))
+                         fixedHeader=TRUE)) %>% 
+  formatRound(colnames(dp)[2:5],2)
 
 ```
 
 Apskritys
 ===================
 
+```{r}
+
+dp0 <- read.csv("../data/lt-covid19-level2.csv") %>% mutate(day = ymd(day)) %>% filter(day == max(day))
+cn <- cn %>% rename(administrative_level_2 = administrative_level_3)
+
+dp00 <- dp0 %>% bind_rows(cn)
+
+dp <- dp00 %>% filter(administrative_level_2!="Unknown") %>% select(Apskritis = administrative_level_2, `Atvejai_100k` = confirmed_100k, `Savaitinis augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, Populiacija = population ) 
+
+regs_n <- paste0(gsub("[.]","",gsub(" ", "_",dp$Apskritis)),".html")
+
+links <- paste0("regions/", regs_n) 
+
+links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  dp$Apskritis, links, SIMPLIFY = FALSE)
+
+dp$Apskritis <- sapply(links2,as.character)
+
+
+dp %>% datatable( 
+         extensions = c('FixedColumns',"FixedHeader"),
+         escape = FALSE,
+          options = list(scrollX = TRUE, 
+                         paging=FALSE,
+                         fixedHeader=TRUE)) %>% 
+  formatRound(colnames(dp)[2:5],2)
+
+```
