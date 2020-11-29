@@ -10,7 +10,7 @@ cvh <- read.csv("data/lt-covid19-hospitalized.csv") %>% mutate(day = ymd(day))
 vlk <- read.csv("raw_data/vlk_historical.csv") %>% mutate(day = ymd(day))
 
 hosp0 <- vlk %>% full_join(cvh %>% rename(vent = ventilated))
-hosp1 <- hosp %>% mutate(hospitalized = ifelse(is.na(hospitalized), total, hospitalized),
+hosp1 <- hosp0 %>% mutate(hospitalized = ifelse(is.na(hospitalized), total, hospitalized),
                          icu = ifelse(is.na(icu), intensive, icu),
                          ventilated = ifelse(is.na(ventilated), vent, ventilated),
                          oxygen = ifelse(is.na(oxygen), oxygen_mask, oxygen)) %>%
@@ -62,7 +62,7 @@ lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3, mu
                     tests_positive_repeated_daily = tests_positive_repeated,
                     imported_daily, population)
 
-lvl2 <- lvl31 %>% select(-administrative_level_3) %>%
+lvl2 <- lvl31 %>% select(-administrative_level_3, -municipality_code) %>%
     group_by(day, administrative_level_2) %>% summarise_all(sum)
 
 lvl1 <- lvl2 %>% select(-administrative_level_2) %>% summarise_all(sum)
