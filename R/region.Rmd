@@ -4,7 +4,7 @@ output:
     orientation: columns
     vertical_layout: fill
 params: 
-   region: "Akmenės r."
+   region: "Lietuva"
 ---
 
 ```{r setup, include=FALSE}
@@ -44,6 +44,9 @@ last_day <- ymd(max(ii$day))
 
 aa <- aa %>% filter(region == params$region) %>% mutate(day = ymd(day)) %>% filter(day>="2020-02-28")
 
+aa_stats <- aa %>% select(day,confirmed_growth_weekly, confirmed_100k, tpr_confirmed, tpr_tpn)
+
+xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
 
 xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, tests = tests_daily, tpnew = tests_positive_new_daily), order.by = aa$day)
 
@@ -78,11 +81,26 @@ if(nrow(xi) > 6) {
 dygraph(a714[,c("confirmed","confirmed3","confirmed7")], main = paste("Dieniniai atvejai ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector
 ```
 
+
 ### Nauji teigiami testai
 
 ```{r}
-dygraph(a714[,c("tpnew","tpnew3","tpnew7")], main = paste("Dieniniai atvejai ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector
+dygraph(a714[,c("tpnew","tpnew3","tpnew7")], main = paste("Nauji teigiami testai ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector
 
+```
+
+
+### Savaitinis augimas
+
+```{r}
+dygraph(xaa[,"confirmed_growth_weekly"], main = paste("Savaitinis atvejų augimas:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector
+```
+
+
+### 100k dinamika
+
+```{r}
+dygraph(xaa[,"confirmed_100k"], main = paste("Atvejų skaičius 100k gyventojų per 14 dienų:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector
 ```
 
 Column {data-width=350}
