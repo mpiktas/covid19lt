@@ -48,7 +48,7 @@ aa_stats <- aa %>% select(day,confirmed_growth_weekly, confirmed_100k, tpr_confi
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
 
-xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, tests = tests_daily, tpnew = tests_positive_new_daily), order.by = aa$day)
+xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, tests = tests_daily, tpnew = tests_positive_new_daily, other_deaths = other_deaths_daily) %>% mutate(all_deaths = deaths+other_deaths), order.by = aa$day)
 
 ```
 
@@ -191,11 +191,23 @@ dygraph(a714[,"tests"], main =  paste("Dieniniai testai ", last_day)) %>%  dyOpt
 
 
 
-Column {data-width=500}
+Column {data-width=500, .tabset}
 -----------------------------------------------------------------------
 
 ### Mirčių istorija
 
 ```{r}
 dygraph(a714[,c("deaths","deaths7")], main = paste("Dieninės mirtys ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector
+```
+
+### Mirčių nuo kitų priežasčių istorija
+
+```{r}
+dygraph(a714[,c("other_deaths","other_deaths7")], main = paste("Dieninės mirtys nuo kitų priežasčių ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector
+```
+
+### Visų mirčių istorija
+
+```{r}
+dygraph(a714[,c("all_deaths","all_deaths7")], main = paste("Visos dieninės mirtys ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector
 ```
