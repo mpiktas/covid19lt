@@ -77,13 +77,13 @@ lvl11 <- lvl1 %>% left_join(hosp1) %>%
 
 
 add_stats <- function(dt) {
-    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive_new_daily, deaths, other_deaths, population) %>%
+    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive_new_daily, deaths_daily, other_deaths_daily, population) %>%
         arrange(region, day) %>% group_by(region) %>%
         mutate(cases_sum7 = rollsum(confirmed_daily, 7, fill = NA, align = "right"),
                cases_sum14 = rollsum(confirmed_daily, 14, fill = NA, align = "right"),
                test_sum7 = rollsum(tests_daily, 7, fill = NA, align = "right"),
-               deaths_sum14 = rollsum(deaths, 7, fill = NA, align = "right"),
-               other_deaths_sum14 = rollsum(other_deaths, 7, fill = NA, align = "right"),
+               deaths_sum14 = rollsum(deaths_daily, 14, fill = NA, align = "right"),
+               other_deaths_sum14 = rollsum(other_deaths_daily, 14, fill = NA, align = "right"),
                tpn_sum7 = rollsum(tests_positive_new_daily, 7, fill = NA, align = "right"),
                tpn_sum14 = rollsum(tests_positive_new_daily, 14, fill = NA, align = "right"),
                tpr_confirmed = round(100*cases_sum7/test_sum7,2),
