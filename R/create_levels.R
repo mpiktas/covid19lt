@@ -77,23 +77,31 @@ lvl11 <- lvl1 %>% left_join(hosp1) %>%
 
 
 add_stats <- function(dt) {
-    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive_new_daily, population) %>%
+    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive_new_daily, deaths, other_deaths, population) %>%
         arrange(region, day) %>% group_by(region) %>%
         mutate(cases_sum7 = rollsum(confirmed_daily, 7, fill = NA, align = "right"),
                cases_sum14 = rollsum(confirmed_daily, 14, fill = NA, align = "right"),
                test_sum7 = rollsum(tests_daily, 7, fill = NA, align = "right"),
+               deaths_sum14 = rollsum(deaths, 7, fill = NA, align = "right"),
+               other_deaths_sum14 = rollsum(other_deaths, 7, fill = NA, align = "right"),
                tpn_sum7 = rollsum(tests_positive_new_daily, 7, fill = NA, align = "right"),
                tpn_sum14 = rollsum(tests_positive_new_daily, 14, fill = NA, align = "right"),
                tpr_confirmed = round(100*cases_sum7/test_sum7,2),
                tpr_tpn =round(100*tpn_sum7/test_sum7,2),
                confirmed_100k = cases_sum14/population*100000,
                tpn_100k = tpn_sum14/population*100000,
+               deaths_100k = deaths_sum14/population*100000,
+               other_deaths_100k = other_deaths_sum14/population*100000,
+               all_deaths_100k = (deaths_sum14+other_deaths_sum14)/population*100000,
                confirmed_growth_weekly = round(100*(cases_sum7/lag(cases_sum7,7)-1),2),
                tpn_growth_weekly = round(100*(tpn_sum7/lag(tpn_sum7,7)-1),2),
                tpr_confirmed_diff_weekly = tpr_confirmed-lag(tpr_confirmed, 7),
                tpr_tpn_diff_weekly = tpr_tpn - lag(tpr_tpn, 7),
                confirmed_100k_growth_weekly=round(100*(confirmed_100k/lag(confirmed_100k,7) - 1),2),
-               tpn_100k_growth_weekly=round(100*(tpn_100k/lag(tpn_100k,7) - 1),2)
+               tpn_100k_growth_weekly=round(100*(tpn_100k/lag(tpn_100k,7) - 1),2),
+               deaths_100k_growth_weekly=round(100*(deaths_100k/lag(deaths_100k,7) - 1),2),
+               other_deaths_100k_growth_weekly=round(100*(other_deaths_100k/lag(other_deaths_100k,7) - 1),2),
+               all_deaths_100k_growth_weekly=round(100*(all_deaths_100k/lag(all_deaths_100k,7) - 1),2)
         ) %>% select(-(confirmed_daily:tpn_sum14)) %>% ungroup
 }
 
