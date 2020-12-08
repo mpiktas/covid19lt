@@ -47,6 +47,7 @@ lvl3 <- cs  %>% filter(administrative_level_3 != "Lithuania") %>%
            tests_positive_repeated = fixNA(tests_positive_repeated),
            tests_positive_new = fixNA(tests_positive_new),
            tests_total= fixNA(tests_total),
+           tests_mobile_posts = fixNA(tests_mobile_posts),
            cumulative_tests = fixNA(cumulative_tests),
            population = fixNA(population),
            imported_daily = fixNA(imported_daily))

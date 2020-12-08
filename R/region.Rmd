@@ -4,7 +4,7 @@ output:
     orientation: columns
     vertical_layout: fill
 params: 
-   region: "Lietuva"
+   region: "Klaipėdos m."
 ---
 
 ```{r setup, include=FALSE}
@@ -51,7 +51,7 @@ aa_stats <- aa %>% select(day,confirmed_growth_weekly, confirmed_100k, tpr_confi
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
 
-xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, tests = tests_daily, tpnew = tests_positive_new_daily, other_deaths = other_deaths_daily) %>% mutate(all_deaths = deaths+other_deaths), order.by = aa$day)
+xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, tests = tests_daily, mobile_tests = tests_mobile_daily, tpnew = tests_positive_new_daily, other_deaths = other_deaths_daily) %>% mutate(all_deaths = deaths+other_deaths), order.by = aa$day)
 
 ```
 
@@ -192,6 +192,11 @@ dygraph(ttn[,c("ttn","ttn7")], main = paste("Teigiamų tyrimų dalis:",last_day)
 dygraph(a714[,"tests"], main =  paste("Dieniniai testai ", last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector %>% dyBarChart
 ```
 
+### Testai mobiliuose punktuose
+
+```{r}
+dygraph(a714[,"mobile_tests"], main =  paste("Dieniniai testai mobiliuose punktuose", last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector %>% dyBarChart
+```
 
 
 Column {data-width=500 .tabset}
