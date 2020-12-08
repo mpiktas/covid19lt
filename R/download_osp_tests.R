@@ -66,7 +66,7 @@ osp3 <- osp2 %>% inner_join(adm %>% select(-population))
 if(nrow(osp3) == nrow(osp2)) {
     osp3 %>% select(day, municipality_code, administrative_level_3,
                     tests_negative, tests_positive, tests_positive_repeated,
-                    tests_positive_new, tests_total) %>%
+                    tests_positive_new, tests_total, tests_mobile_posts) %>%
         arrange(day, municipality_code) %>%
         write.csv("data/lt-covid19-tests.csv", row.names = FALSE)
 
