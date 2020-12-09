@@ -41,17 +41,17 @@ tryget <- function(link, times = 10) {
 }
 
 httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
-posp <- tryget("https://osp-sdg.stat.gov.lt/arcgis/rest/services/SDG/COVID_lovos_MAP/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&f=json")
+posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/ArcGIS/rest/services/COVID_lovos_MAP/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token=")
 posp1 <- fix_esridate(rawToChar(posp$content))
 posp2 <- posp1 %>% mutate(day = ymd(date))
 
-alls <- lapply(unique(posp2$hospital_name), function(x) {
-    sav <- URLencode(x)
-    try(tryget(glue::glue("https://osp-sdg.stat.gov.lt/arcgis/rest/services/SDG/COVID_lovos_MAP/FeatureServer/0/query?where=hospital_name%3D%27{sav}%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&f=json")))
-})
+#alls <- lapply(unique(posp2$hospital_name), function(x) {
+#    sav <- URLencode(x)
+#    try(tryget(glue::glue("https://osp-sdg.stat.gov.lt/arcgis/rest/services/SDG/COVID_lovos_MAP/FeatureServer/0/query?where=hospital_name%3D%27{sav}%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&f=json")))
+#})
 
-osp1 <- lapply(alls, function(l)fix_esridate(rawToChar(l$content))) %>% bind_rows
-
+#osp1 <- lapply(alls, function(l)fix_esridate(rawToChar(l$content))) %>% bind_rows
+osp1 <- posp1
 osp1 %>% arrange(date, hospital_id) %>% write.csv("raw_data/osp/osp_covid19_hospital.csv", row.names = FALSE)
 
 osp2 <- osp1 %>% mutate(day = ymd(date))
