@@ -59,7 +59,13 @@ osp1 %>% arrange(test_performed_date, municipality_code) %>% write.csv("raw_data
 #osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(test_performed_date)))
 osp2 <- osp1 %>% mutate(day = ymd(test_performed_date))
 
-adm <- read.csv("raw_data/administrative_levels.csv")
+
+adm <- adm %>% rbind(
+    data.frame(administrative_level_2 = c("Unknown","Lithuania"),
+               administrative_level_3 = c("Unknown","Lithuania"),
+               municipality_name = c("nenustatyta","Lietuva"),
+               population = c(0,sum(adm$population)))
+)
 
 osp3 <- osp2 %>% inner_join(adm %>% select(-population))
 
