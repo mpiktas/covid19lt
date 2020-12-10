@@ -99,5 +99,10 @@ fnl <- paste0("raw_data/hospitalization//",names(res),"_",dd,".csv")
 
 mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), res, fnl, SIMPLIFY = FALSE)
 
+## Write the death age distribution
+aged0 <- tbs[[4]]
+aged <- aged0[-1,]
+colnames(aged) <- c(aged0[[1]][1],aged0[[2]][1])
+aged[,2] <- sapply(aged[,2], as.integer)
 
-
+write.csv(aged, glue::glue("raw_data/sam/lt-covid19-death-age_{outd}.csv"), row.names = FALSE)
