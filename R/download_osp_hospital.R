@@ -58,7 +58,7 @@ osp2 <- osp1 %>% mutate(day = ymd(date))
 
 
 osp3 <- osp2 %>% select(day, hospital_name, hospital_id,
-                covid19_patients_confirmed_total,
+                covid19_patients_confirmed_total = covid19_patients_confirmed_tota,
                 beds_total, beds_total_occupied,
                 beds_rits, beds_rits_occupied,
                 beds_with_o2, beds_with_o2_occupied,
