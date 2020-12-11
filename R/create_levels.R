@@ -86,6 +86,8 @@ add_stats <- function(dt) {
                test_sum7 = rollsum(tests_daily, 7, fill = NA, align = "right"),
                deaths_sum14 = rollsum(deaths_daily, 14, fill = NA, align = "right"),
                other_deaths_sum14 = rollsum(other_deaths_daily, 14, fill = NA, align = "right"),
+               deaths_sum7 = rollsum(deaths_daily, 7, fill = NA, align = "right"),
+               other_deaths_sum7 = rollsum(other_deaths_daily, 7, fill = NA, align = "right"),
                tpn_sum7 = rollsum(tests_positive_new_daily, 7, fill = NA, align = "right"),
                tpn_sum14 = rollsum(tests_positive_new_daily, 14, fill = NA, align = "right"),
                tpr_confirmed = round(100*cases_sum7/test_sum7,2),
@@ -101,9 +103,9 @@ add_stats <- function(dt) {
                tpr_tpn_diff_weekly = tpr_tpn - lag(tpr_tpn, 7),
                confirmed_100k_growth_weekly=round(100*(confirmed_100k/lag(confirmed_100k,7) - 1),2),
                tpn_100k_growth_weekly=round(100*(tpn_100k/lag(tpn_100k,7) - 1),2),
-               deaths_100k_growth_weekly=round(100*(deaths_100k/lag(deaths_100k,7) - 1),2),
-               other_deaths_100k_growth_weekly=round(100*(other_deaths_100k/lag(other_deaths_100k,7) - 1),2),
-               all_deaths_100k_growth_weekly=round(100*(all_deaths_100k/lag(all_deaths_100k,7) - 1),2)
+               deaths_growth_weekly=round(100*(deaths_sum7/lag(deaths_sum7,7) - 1),2),
+               other_deaths_growth_weekly=round(100*(other_deaths_sum7/lag(other_deaths_sum7,7) - 1),2),
+               all_deaths_growth_weekly=round(100*((deaths_sum7+other_deaths_sum7)/lag(deaths_sum7+other_deaths_sum7,7) - 1),2)
         ) %>% select(-(confirmed_daily:tpn_sum14)) %>% ungroup
 }
 
