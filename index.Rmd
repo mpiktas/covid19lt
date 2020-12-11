@@ -118,10 +118,12 @@ dygraph(xtpr["2020-07-01/"], main = paste("Teigiamų testų skaičius tenkantis 
 
 ```{r, echo = FALSE}
 ii <- read.csv("data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
-p100k <- round(nrow(ii %>% filter(day>= last_day-days(13)))/2794329*100*1000,2)
+ld_stats <- aa %>% filter(day == max(day))
+
+p100k <- round(ld_stats$confirmed_100k[1],2)
+pr <- round(ld_stats$tpr_confirmed[1],2)
 
 
-pr <- round(tpd$normalized7[nrow(tpd)],2)
 
 ```
 
