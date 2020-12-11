@@ -25,7 +25,7 @@ cn <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day)) %>% 
 
 dp00 <- dp0 %>% bind_rows(cn)
 
-dp <- dp00 %>% filter(administrative_level_3!="Unknown") %>% select(Savivaldybė = administrative_level_3, `Atvejai_100k` = confirmed_100k, `Savaitinis augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_100k_growth_weekly, Populiacija = population ) 
+dp <- dp00 %>% filter(administrative_level_3!="Unknown") %>% select(Savivaldybė = administrative_level_3, `Atvejai_100k` = confirmed_100k, `Savaitinis augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_growth_weekly, Populiacija = population ) 
 
 regs_n <- paste0(gsub("[.]","",gsub(" ", "_",dp$Savivaldybė)),".html")
 
@@ -56,7 +56,7 @@ cn <- cn %>% rename(administrative_level_2 = administrative_level_3)
 
 dp00 <- dp0 %>% bind_rows(cn)
 
-dp <- dp00 %>% filter(administrative_level_2!="Unknown") %>% select(Apskritis = administrative_level_2, `Atvejai_100k` = confirmed_100k, `Savaitinis augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_100k_growth_weekly, Populiacija = population ) 
+dp <- dp00 %>% filter(administrative_level_2!="Unknown") %>% select(Apskritis = administrative_level_2, `Atvejai_100k` = confirmed_100k, `Savaitinis augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_growth_weekly, Populiacija = population ) 
 
 regs_n <- paste0(gsub("[.]","",gsub(" ", "_",dp$Apskritis)),".html")
 
