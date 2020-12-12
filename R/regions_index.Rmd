@@ -11,6 +11,9 @@ library(flexdashboard)
 library(dplyr)
 library(lubridate)
 library(DT)
+library(tidyr)
+library(xts)
+library(dygraphs)
 Sys.setlocale(locale="lt_LT.UTF-8")
 ```
 
@@ -51,7 +54,9 @@ Apskritys
 
 ```{r}
 
-dp0 <- read.csv("../data/lt-covid19-level2.csv") %>% mutate(day = ymd(day)) %>% filter(day == max(day))
+lv2 <- read.csv("../data/lt-covid19-level2.csv") %>% mutate(day = ymd(day)) 
+
+dp0 <- lv2 %>% filter(day == max(day))
 cn <- cn %>% rename(administrative_level_2 = administrative_level_3)
 
 dp00 <- dp0 %>% bind_rows(cn)
@@ -76,3 +81,4 @@ dp %>% datatable(
   formatRound(colnames(dp)[2:7],2)
 
 ```
+
