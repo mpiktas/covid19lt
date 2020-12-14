@@ -4,6 +4,7 @@ try(source('R/download_osp_tests.R'))
 try(source('R/download_osp_cases.R'))
 try(source('R/download_osp_hospital.R'))
 try(source('R/download_osp.R'))
+try(source("R/download_osp_agedist.R"))
 try(source("R/treat_osp.R"))
 try(source('R/create_levels.R'))
 
