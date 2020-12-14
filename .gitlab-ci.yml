@@ -16,19 +16,6 @@ osp:
       - R -e "install.packages(c('gert','zoo'))"
       - R -e "source('R/makefile_osp_live.R')"
 
-ospa:
-    stage: download
-    only:
-      refs :
-        - master
-        - schedules
-      variables:
-        - $SOURCE == "ospa"
-    script:
-      - R -e "install.packages(c('gert','zoo'))"
-      - R -e "source('R/makefile_osp_a.R')"
-
-
 datagov:
     stage: download
     only:
