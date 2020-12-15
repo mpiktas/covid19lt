@@ -38,13 +38,13 @@ tryget <- function(link, times = 10) {
     res
 }
 
-
-osp <- tryget("https://opendata.arcgis.com/datasets/20244b0dc7074ba7b6826550600f7498_0.geojson")
+osp <- tryget("https://opendata.arcgis.com/datasets/064ca1d6b0504082acb1c82840e79ce0_0.geojson")
 osp1 <- fromJSON(rawToChar(osp$content))$features$properties
 
 
 
-osp1 %>% arrange(confirmation_date, municipality_code, case_code) %>% write.csv("raw_data/osp/osp_covid19_agedist.csv", row.names = FALSE)
+osp1 %>% arrange(confirmation_date, municipality_code, case_code) %>% select(-object_id) %>%
+    write.csv("raw_data/osp/osp_covid19_agedist.csv", row.names = FALSE)
 
 osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(confirmation_date)))
 
