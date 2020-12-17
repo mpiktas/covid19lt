@@ -19,7 +19,7 @@ if(ghpt!="") {
     cat("\nTrying to commit\n")
     git_commit("Update the site")
     git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
-    git_push(remote = "github")
+    #git_push(remote = "github")
 } else {
     cat("\nGithub token not found, relying on local git configuration\n")
     git_add("docs")
