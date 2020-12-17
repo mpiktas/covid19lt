@@ -10,3 +10,4 @@ navbar:
     - text: "Apie"
       href: about.html
 output: distill::distill_article
+exclude: ["raw_data", "tmp"]

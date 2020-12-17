@@ -15,6 +15,7 @@ docs/data/*
 docs/laboratory
 docs/raw_data
 docs/archive
+docs/tmp
 R/region.html
 R/regions_index.html
 R/*.html
