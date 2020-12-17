@@ -27,7 +27,7 @@ Atnaujinta: `r data`.
 Pagal 2020-05-27 Lietuvos vyriausybės [nutarimą](https://koronastop.lrv.lt/lt/naujienos/karantino-salygos-darosi-svelnesnes) į Lietuvą be karantino galima atvykti Europos ekonominės erdvės valstybių, Šveicarijos, Didžiosios Britanijos ir Airijos piliečiams ir jose teisėtai gyvenantiems žmonėms, jeigu toje valstybėje, sergamumas koronaviruso infekcija (COVID-19) per pastarąsias 14 kalendorinių dienų neviršijo 25 nustatytų koronaviruso atvejų 100 tūkst. gyventojų.
 
 ```{r echo= FALSE}
-cn <- read.csv("exceptions/Countries-Europe.csv")
+cn <- read.csv("../exceptions/Countries-Europe.csv")
 x <- covid19(cn$ISO.alpha.3, verbose = FALSE, cache = FALSE)
 ```
 
