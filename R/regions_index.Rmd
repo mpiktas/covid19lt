@@ -3,6 +3,8 @@ title: "Covid-19 Lietuvos regionuose"
 output: 
   flexdashboard::flex_dashboard:
     vertical_layout: fill
+    includes:
+        in_header: ga_script.html
 ---
 
 ```{r setup, include=FALSE}
