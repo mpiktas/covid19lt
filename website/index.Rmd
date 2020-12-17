@@ -30,14 +30,14 @@ data <- Sys.time()
 Atnaujinta: `r format(data, usetz = TRUE)`. 
 
 ```{r, echo = FALSE}
-aa <- read.csv("data/lt-covid19-country.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+aa <- read.csv("../data/lt-covid19-country.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 last_day <- max(aa$day)
 fixNA <- function(x) {
     x[is.na(x)] <- 0
     x
 }
 
-ltR <- dget("raw_data/effectiveR/ltR.R")
+ltR <- dget("../raw_data/effectiveR/ltR.R")
 ag <- function(x)(c(x[1],diff(x)))
 dt <- aa %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
 dtf <- dt
@@ -117,7 +117,7 @@ dygraph(xtpr["2020-07-01/"], main = paste("Teigiamų testų skaičius tenkantis 
 ```
 
 ```{r, echo = FALSE}
-ii <- read.csv("data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
+ii <- read.csv("../data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
 ld_stats <- aa %>% filter(day == max(day))
 
 p100k <- round(ld_stats$confirmed_100k[1],2)
@@ -133,7 +133,7 @@ pr <- round(ld_stats$tpr_confirmed[1],2)
 Lietuvoje 100k gyventojų per pastarąsias 14 dienų tenka **`r p100k`** atvejų. Testų pozityvumo norma ([test positivity rate](https://ec.europa.eu/info/live-work-travel-eu/health/coronavirus-response/travel-during-coronavirus-pandemic/common-approach-travel-measures-eu_en)) **`r pr`**.
 
 ```{r}
-agr <- read.csv("raw_data/agegroups.csv")
+agr <- read.csv("../raw_data/agegroups.csv")
 as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras","Moteris")) %>% mutate(n1 = 0)
 
 oo <- ii%>% filter(day >= last_day- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
@@ -180,7 +180,7 @@ grid.arrange(pm,
 ## Atvejų pasiskirstymas pagal amžių ir savivaldybes `r last_day` 
 
 ```{r}
-agre <- read.csv("data/lt-covid19-age-region-incidence.csv", check.names =  FALSE) 
+agre <- read.csv("../data/lt-covid19-age-region-incidence.csv", check.names =  FALSE) 
 
 agre1 <- agre %>% filter(day == max(day)) %>% select(-day) 
 

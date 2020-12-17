@@ -24,7 +24,7 @@ Atnaujinta: `r data`.
 # Duomenys modeliavimui
 
 ```{r,  echo = FALSE}
-aa <- read.csv("data/lt-covid19-country.csv", stringsAsFactors = FALSE)
+aa <- read.csv("../data/lt-covid19-country.csv", stringsAsFactors = FALSE)
 ag <- function(x)(c(x[1],diff(x)))
 dt <- aa %>% mutate(incidence = confirmed_daily) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
 dtf <- dt
@@ -33,7 +33,7 @@ dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
 
 ```{r, echo = FALSE, message = FALSE, warning=FALSE}
 library(EpiEstim)
-ltR <- dget("raw_data/effectiveR/ltR.R")
+ltR <- dget("../raw_data/effectiveR/ltR.R")
 ```
 
 # Savaitinis R įvertis. 
@@ -54,7 +54,7 @@ Ta pati informacija lentelėje
 
 ```{r,echo=FALSE}
 
-RR <- read.csv("data/lt-covid19-effective-R.csv")
+RR <- read.csv("../data/lt-covid19-effective-R.csv")
 
 RR %>% datatable( 
          extensions = c('FixedColumns',"FixedHeader"),

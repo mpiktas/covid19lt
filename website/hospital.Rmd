@@ -32,7 +32,7 @@ toxts <- function(d, cols) {
     out
     
 }
-aa <- read.csv("data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
+aa <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
 
 cvhx <- toxts(aa, c("hospitalized", "icu","ventilated","oxygen"))
 
