@@ -2,7 +2,7 @@ library(gert)
 library(dplyr)
 library(lubridate)
 
-rmarkdown::render_site()
+rmarkdown::render_site("website")
 source("R/render_regions.R")
 
 cat("\nSending the site downstream\n")
