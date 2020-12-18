@@ -34,7 +34,7 @@ datagov:
       expire_in: 1 day
 
 
-update:
+update_site:
     stage: site
     only:
       refs :
@@ -46,7 +46,6 @@ update:
       - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
       - rm README.md
       - R -e "source('R/makefile_part_site.R')"
-      - git push github
     artifacts:
       paths:
         - docs
