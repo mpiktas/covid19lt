@@ -181,7 +181,7 @@ grid.arrange(pm,
 
 
 
-## Atvejų pasiskirstymas pagal amžių ir savivaldybes `r last_day` 
+## Atvejų pasiskirstymas pagal amžių ir savivaldybes `r ad_last_day` 
 
 ```{r}
 agre <- read.csv("../data/lt-covid19-age-region-incidence.csv", check.names =  FALSE) 

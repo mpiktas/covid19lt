@@ -68,7 +68,7 @@ if(nrow(osp3) == nrow(osp2)) {
     osp4 %>%  write.csv("data/lt-covid19-agedist.csv", row.names = FALSE)
 
     agr <- read.csv("raw_data/agegroups.csv") %>%
-        bind_rows(data.frame(age = c("nenustatyta","Virš 80"), age1 = c("Nenustatyta","80+")))
+        bind_rows(data.frame(age = c("nenustatyta"), age1 = c("Nenustatyta")))
     zz2 <- osp4  %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age = age1)
     zz2 <- zz2 %>% mutate(administrative_level_3 = ifelse(administrative_level_3 == "Unknown", "", administrative_level_3))
     bb <- daily_xtable(zz2, colsums = TRUE)
