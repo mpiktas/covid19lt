@@ -38,7 +38,8 @@ tryget <- function(link, times = 10) {
     res
 }
 
-osp <- tryget("https://opendata.arcgis.com/datasets/064ca1d6b0504082acb1c82840e79ce0_0.geojson")
+#osp <- tryget("https://opendata.arcgis.com/datasets/064ca1d6b0504082acb1c82840e79ce0_0.geojson")
+osp <- tryget("https://opendata.arcgis.com/datasets/034590b3317d46c0aa2717d0e87760d8_0.geojson")
 osp1 <- fromJSON(rawToChar(osp$content))$features$properties
 
 
