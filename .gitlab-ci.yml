@@ -3,6 +3,7 @@ image: "rocker/verse:4.0.3"
 stages:
  - download
  - site
+ - regions
 
 osp:
     stage: download
@@ -35,6 +36,24 @@ datagov:
 
 update:
     stage: site
+    only:
+      refs :
+        - master
+        - schedules
+      variables:
+        - $SOURCE == "osp"
+    script:
+      - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
+      - rm README.md
+      - R -e "source('R/makefile_part_site.R')"
+      - git push github
+    artifacts:
+      paths:
+        - docs
+      expire_in: 1 day
+
+update:
+    stage: regions
     only:
       refs :
         - master

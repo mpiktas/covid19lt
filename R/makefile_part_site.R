@@ -6,6 +6,8 @@ rmarkdown::render_site("website/index.Rmd")
 rmarkdown::render_site("website/stats.Rmd")
 rmarkdown::render_site("website/hospital.Rmd")
 rmarkdown::render_site("website/Re.Rmd")
+rmarkdown::render("R/regions_index.Rmd", output_dir = 'docs/', output_file = "savivaldybes.html")
+
 
 cat("\nSending the site downstream\n")
 ghpt <- Sys.getenv("GITHUB_PA_TOKEN")

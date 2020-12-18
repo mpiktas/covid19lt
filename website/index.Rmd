@@ -118,6 +118,10 @@ dygraph(xtpr["2020-07-01/"], main = paste("Teigiamų testų skaičius tenkantis 
 
 ```{r, echo = FALSE}
 ii <- read.csv("../data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
+ad <- read.csv("../data/lt-covid19-agedist.csv") %>% mutate(day = ymd(day))
+
+ad_last_day <- max(ad$day)
+ii_last_day <- max(ii$day)
 ld_stats <- aa %>% filter(day == max(day))
 
 p100k <- round(ld_stats$confirmed_100k[1],2)
@@ -128,7 +132,7 @@ pr <- round(ld_stats$tpr_confirmed[1],2)
 ```
 
 
-### Atvejų amžiaus pasiskirstymas per pastarąsias 14 dienų, `r last_day`
+### Atvejų amžiaus pasiskirstymas per pastarąsias 14 dienų, `r ad_last_day`
 
 Lietuvoje 100k gyventojų per pastarąsias 14 dienų tenka **`r p100k`** atvejų. Testų pozityvumo norma ([test positivity rate](https://ec.europa.eu/info/live-work-travel-eu/health/coronavirus-response/travel-during-coronavirus-pandemic/common-approach-travel-measures-eu_en)) **`r pr`**.
 
@@ -136,9 +140,9 @@ Lietuvoje 100k gyventojų per pastarąsias 14 dienų tenka **`r p100k`** atvejų
 agr <- read.csv("../raw_data/agegroups.csv")
 as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras","Moteris")) %>% mutate(n1 = 0)
 
-oo <- ii%>% filter(day >= last_day- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
+oo <- ad%>% filter(day >= ad_last_day- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
 
-ld14 <- max(ii$day)-days(13)
+ld14 <- max(ad$day)-days(13)
 
 cols<-RColorBrewer::brewer.pal(3, "Set1")
 
@@ -152,7 +156,7 @@ grid.arrange(pm,
 )
 ```
 
-### Istorinis mirčių pasiskirstymas pagal amžių, `r last_day`
+### Istorinis mirčių pasiskirstymas pagal amžių, `r ii_last_day`
 
 ```{r}
 last_day <- max(ii$day)

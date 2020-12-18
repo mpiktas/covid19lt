@@ -6,7 +6,7 @@ library(lubridate)
 library(stringr)
 library(bit64)
 
-
+source("R/functions.R")
 
 fix_esridate <- function(str) {
     dd <- fromJSON(str)
@@ -60,9 +60,19 @@ adm <- adm %>% rbind(
 osp3 <- osp2 %>% inner_join(adm %>% select(-population))
 
 if(nrow(osp3) == nrow(osp2)) {
-    osp3 %>% select(day, administrative_level_2, administrative_level_3, municipality_code,
-                    age=age_bracket, gender, case_code) %>%
-        arrange(day, municipality_code, case_code) %>%
-        write.csv("data/lt-covid19-agedist.csv", row.names = FALSE)
+    osp4 <- osp3 %>% select(day, administrative_level_2, administrative_level_3, municipality_code,
+                    age=age_bracket, sex = gender, case_code) %>%
+        arrange(day, municipality_code, case_code)
+
+    osp4 %>%  write.csv("data/lt-covid19-agedist.csv", row.names = FALSE)
+
+    agr <- read.csv("raw_data/agegroups.csv") %>%
+        bind_rows(data.frame(age = c("nenustatyta","Virš 80"), age1 = c("Nenustatyta","80+")))
+    zz2 <- osp4  %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age = age1)
+    zz2 <- zz2 %>% mutate(administrative_level_3 = ifelse(administrative_level_3 == "Unknown", "", administrative_level_3))
+    bb <- daily_xtable(zz2, colsums = TRUE)
+
+    bb %>% write.csv("data/lt-covid19-age-region-incidence.csv", row.names =  FALSE)
+
 }
 
