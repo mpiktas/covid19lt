@@ -16,6 +16,11 @@ osp:
     script:
       - R -e "install.packages(c('gert','zoo'))"
       - R -e "source('R/makefile_osp_live.R')"
+    artifacts:
+      paths:
+        - data
+      expire_in: 1 day
+
 
 datagov:
     stage: download
