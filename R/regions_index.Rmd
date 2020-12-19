@@ -5,7 +5,10 @@ output:
     vertical_layout: fill
     includes:
         in_header: ga_script.html
+    navbar:
+      - {title: "COVID-19 Lietuvoje", href: "https://mpiktas.github.io/covid19lt/", align: right}
 ---
+
 
 ```{r setup, include=FALSE}
 library(htmltools)
