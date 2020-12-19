@@ -5,6 +5,8 @@ output:
     vertical_layout: fill
     includes:
         in_header: ga_script.html
+    navbar:
+      - {title: "Lietuvos regionai", href: "https://mpiktas.github.io/covid19lt/savivaldybes.html", align: right}
 params: 
    region: "Klaipėdos m."
 ---
@@ -41,14 +43,20 @@ fixNA <- function(x, value = 0) {
   x
 }
 
-last_day <- ymd(max(ii$day))
+ii_last_day <- max(ii$day) %>% as.character
+aa_last_day <- max(aa$day) %>% as.character
+
+view_interval <- c("2020-10-01", aa_last_day)
 
 
 aa <- aa %>% filter(region == params$region) %>% mutate(day = ymd(day)) %>% filter(day>="2020-02-28")
 
-aa_stats <- aa %>% select(day,confirmed_growth_weekly, confirmed_100k, tpr_confirmed, tpr_tpn,
+aa_stats <- aa %>% select(day,confirmed_growth_weekly, 
+                          confirmed_100k, tpr_confirmed, tpr_tpn,
                           tpr_confirmed_diff_weekly, tpr_tpn_diff_weekly,
-                          deaths_100k, other_deaths_100k, all_deaths_100k
+                          deaths_100k, other_deaths_100k, all_deaths_100k,
+                          tests_100k, tests_mobile_100k,
+                          tests_growth_weekly, tests_mobile_growth_weekly
                          )
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
@@ -73,39 +81,39 @@ Column {data-width=650 .tabset}
 
 
 if(nrow(xi) > 6) {
-    axtt3 <- rollmean(xi, 3, fill = NA, align = "right")
+    axtt14 <- rollmean(xi, 14, fill = NA, align = "right")
     axtt7 <- rollmean(xi, 7, fill = NA, align = "right")
     colnames(axtt7) <- paste0(colnames(axtt7),"7")
-    colnames(axtt3) <- paste0(colnames(axtt3),"3")
-    a714 <- cbind(xi, axtt3, axtt7)
+    colnames(axtt14) <- paste0(colnames(axtt14),"14")
+    a714 <- cbind(xi, axtt7, axtt14)
 } else {
     a714 <- xi
 }
 
 
-dygraph(a714[,c("confirmed","confirmed3","confirmed7")], main = paste("Dieniniai atvejai ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector
+dygraph(a714[,c("confirmed","confirmed7","confirmed14")], main = paste("Nauji atvejai ir slenkantys vidurkiai:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 
 ### Nauji teigiami testai
 
 ```{r}
-dygraph(a714[,c("tpnew","tpnew3","tpnew7")], main = paste("Nauji teigiami testai ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector
+dygraph(a714[,c("tpnew","tpnew7","tpnew14")], main = paste("Nauji teigiami testai ir slenkantys vidurkiai:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
 
 ```
-
 
 ### Savaitinis augimas
 
 ```{r}
-dygraph(xaa[,"confirmed_growth_weekly"], main = paste("Savaitinis atvejų augimas:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector
+dygraph(xaa[,"confirmed_growth_weekly"], main = paste("Savaitinis atvejų augimas:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval) %>% 
+  dyLimit(0)
 ```
 
 
 ### 100k dinamika
 
 ```{r}
-dygraph(xaa[,"confirmed_100k"], main = paste("Atvejų skaičius 100k gyventojų per 14 dienų:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector
+dygraph(xaa[,"confirmed_100k"], main = paste("Atvejų skaičius 100k gyventojų per 14 dienų:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 Column {data-width=350}
@@ -118,7 +126,7 @@ agr <- read.csv("../raw_data/agegroups.csv")
 as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras","Moteris")) %>% mutate(n1 = 0)
 ii <- ii %>% filter(sex %in% c("Vyras", "Moteris"))
 
-oo <- ii%>% filter(day >= last_day- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
+oo <- ii%>% filter(day >= ymd(ii_last_day)- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
 
 ld14 <- max(ii$day)-days(13)
 
@@ -137,8 +145,6 @@ grid.arrange(pm,
 ### Istorinis mirčių pasiskirstymas pagal amžių
 
 ```{r}
-last_day <- max(ii$day)
-
 
 oo <- ii%>% filter(status == "Mirė") %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n))
 
@@ -157,7 +163,7 @@ grid.arrange(pm,
 
 ```
 
-Testai
+Tyrimų dalis
 =======================================================================
 
 Column {data-width=500 .tabset}
@@ -172,7 +178,7 @@ ttn7 <- 100*a714[,"confirmed7"]/a714[,"tests7"]
 ttn <- cbind(ttn1, ttn7)
 colnames(ttn) <- c("ttn", "ttn7")
 
-dygraph(ttn[,c("ttn","ttn7")], main = paste("Naujų atvejų dalis testuose:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector
+dygraph(ttn[,c("ttn","ttn7")], main = paste("Naujų atvejų dalis testuose:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 ### Teigiamų tyrimų dalis
@@ -185,21 +191,8 @@ ttn7 <- 100*a714[,"tpnew7"]/a714[,"tests7"]
 ttn <- cbind(ttn1, ttn7)
 colnames(ttn) <- c("ttn", "ttn7")
 
-dygraph(ttn[,c("ttn","ttn7")], main = paste("Teigiamų tyrimų dalis:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector
+dygraph(ttn[,c("ttn","ttn7")], main = paste("Teigiamų tyrimų dalis:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
-
-### Testavimo apimtys
-
-```{r}
-dygraph(a714[,"tests"], main =  paste("Dieniniai testai ", last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector %>% dyBarChart
-```
-
-### Testai mobiliuose punktuose
-
-```{r}
-dygraph(a714[,"mobile_tests"], main =  paste("Dieniniai testai mobiliuose punktuose", last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector %>% dyBarChart
-```
-
 
 Column {data-width=500 .tabset}
 -----------------------------------------------------------------------
@@ -207,14 +200,62 @@ Column {data-width=500 .tabset}
 ### Naujų atvejų dalies augimas 
 
 ```{r}
-dygraph(xaa[,"tpr_confirmed_diff_weekly"], main = paste("Naujų atvejų dalies augimas:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector
+dygraph(xaa[,"tpr_confirmed_diff_weekly"], main = paste("Naujų atvejų dalies augimas:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
 ```
 
 
 ### Teigiamų tyrimų dalies augimas
 
 ```{r}
-dygraph(xaa[,"tpr_tpn_diff_weekly"], main = paste(" Teigiamų tyrimų dalies augimas:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector
+dygraph(xaa[,"tpr_tpn_diff_weekly"], main = paste(" Teigiamų tyrimų dalies augimas:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
+```
+
+
+
+Testai
+=======================================================================
+
+Column {data-width=500 .tabset}
+-----------------------------------------------------------------------
+
+### Viso testų
+
+```{r}
+dygraph(a714[,"tests"], main =  paste("Viso testų per dieną ", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyBarChart
+```
+
+### Mobilūs punktai
+
+```{r}
+dygraph(a714[,"mobile_tests"], main =  paste("Viso testų mobiliuose punktuose", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyBarChart
+```
+
+
+### 100k dinamika
+
+```{r}
+dygraph(xaa[,"tests_100k"], main =  paste("Testų skaičius 100k gyventojų per 14 dienų ", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
+```
+
+### 100k mobilūs punktai
+
+```{r}
+dygraph(xaa[,"tests_mobile_100k"], main =  paste("Testai mobiliuose punktuose 100k gyv. per 14 dienų", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
+```
+
+Column {data-width=500 .tabset}
+-----------------------------------------------------------------------
+
+### Testavimo savaitinis augimas
+
+```{r}
+dygraph(xaa[,"tests_growth_weekly"], main =  paste("Testų savaitinis augimas ", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
+```
+
+### Testų mobiliuose punktuose augimas
+
+```{r}
+dygraph(xaa[,"tests_mobile_growth_weekly"], main =  paste("Testų savaitinis augimas mobiliuose punktuose", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
 ```
 
 
@@ -228,19 +269,19 @@ Column {data-width=500 .tabset}
 ### Mirčių istorija
 
 ```{r}
-dygraph(a714[,c("deaths","deaths7")], main = paste("Dieninės mirtys ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector
+dygraph(a714[,c("deaths","deaths7")], main = paste("Dieninės mirtys ir slenkantys vidurkiai:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 ### Mirčių nuo kitų priežasčių istorija
 
 ```{r}
-dygraph(a714[,c("other_deaths","other_deaths7")], main = paste("Dieninės mirtys nuo kitų priežasčių ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector
+dygraph(a714[,c("other_deaths","other_deaths7")], main = paste("Dieninės mirtys nuo kitų priežasčių ir slenkantys vidurkiai:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 ### Visų mirčių istorija
 
 ```{r}
-dygraph(a714[,c("all_deaths","all_deaths7")], main = paste("Visos dieninės mirtys ir slenkantys vidurkiai:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector
+dygraph(a714[,c("all_deaths","all_deaths7")], main = paste("Visos dieninės mirtys ir slenkantys vidurkiai:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 Column {data-width=500, .tabset}
@@ -249,17 +290,17 @@ Column {data-width=500, .tabset}
 ### Mirčių skaičius 14 d. 100k
 
 ```{r}
-dygraph(xaa[,"deaths_100k"], main = paste("Mirčių skaičius 100k gyventojų per 14 dienų:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector
+dygraph(xaa[,"deaths_100k"], main = paste("Mirčių skaičius 100k gyventojų per 14 dienų:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 ### Kitų mirčių skaičius 14 d. 100k
 
 ```{r}
-dygraph(xaa[,"other_deaths_100k"], main = paste("Kitų mirčių skaičius 100k gyventojų per 14 dienų:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector
+dygraph(xaa[,"other_deaths_100k"], main = paste("Kitų mirčių skaičius 100k gyventojų per 14 dienų:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 ### Visų mirčių skaičius 14 d. 100k
 
 ```{r}
-dygraph(xaa[,"all_deaths_100k"], main = paste("Visų mirčių skaičius 100k gyventojų per 14 dienų:",last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector
+dygraph(xaa[,"all_deaths_100k"], main = paste("Visų mirčių skaičius 100k gyventojų per 14 dienų:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
