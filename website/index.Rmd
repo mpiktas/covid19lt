@@ -71,24 +71,24 @@ dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
 
 oo <- ltR$R %>% inner_join(dt %>% rename(t_end=times), by ="t_end") %>% select(day, R = `Mean(R)`, lwr = `Quantile.0.025(R)`,upr = `Quantile.0.975(R)`)
 bb <- xts(oo %>% select(-day), order.by=ymd(oo$day))
-dygraph(bb, main = "Efektyvus reprodukcinis skaičius R") %>% dySeries(c("lwr","R","upr"), label = "R") %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(bb, main = "Efektyvus reprodukcinis skaičius R") %>% dySeries(c("lwr","R","upr"), label = "R") %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(1)
 
 ```
 
 ```{r}
-dygraph(xaa[,"confirmed_growth_weekly"], main = paste("Savaitinis atvejų augimas:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval) %>% 
+dygraph(xaa[,"confirmed_growth_weekly"], main = paste("Savaitinis naujų atvejų augimas:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval) %>% 
   dyLimit(0)
 ```
 
 ```{r, echo = FALSE}
 
-dygraph(a714[, c("confirmed", "confirmed7","confirmed14")], main = paste("Nauji atvejai ir slenkantys vidurkiai:",max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(a714[, c("confirmed", "confirmed7","confirmed14")], main = paste("Nauji atvejai ir slenkantys vidurkiai:",max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 
 ```{r, echo = FALSE}
 
-dygraph(a714["2020-03-20/",c("deaths","deaths7","deaths14")], main = paste("Mirtys per dieną ir slenkantys vidurkiai",max(aa$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")) %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(a714["2020-03-20/",c("deaths","deaths7","deaths14")], main = paste("Mirtys per dieną ir slenkantys vidurkiai",max(aa$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 
@@ -118,7 +118,7 @@ tpntpr14 <- 100*a714[,"tpnew14"]/a714[,"tests14"]
 tpntpr <- cbind(tpntpr1, tpntpr7, tpntpr14)
 colnames(tpntpr) <- c("tpr", "tpr7", "tpr14")
 
-dygraph(tpntpr["2020-04-01/"], main = paste("Teigiamų testų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector(dateWindow = view_interval) 
+dygraph(tpntpr["2020-04-01/"], main = paste("Teigiamų testų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval) 
 ```
 
 ```{r}
