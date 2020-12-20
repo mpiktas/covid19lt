@@ -31,7 +31,8 @@ datagov:
       variables:
         - $SOURCE == "datagov"
     script:
-      - R -e "install.packages('gert')"
+      - R -e "install.packages('gert', 'zoo')"
+      - R -e "source('R/makefile_osp_live.R')"
       - R -e "source('R/makefile_datagov.R')"
     artifacts:
       paths:
@@ -46,11 +47,29 @@ update_site:
         - master
         - schedules
       variables:
-        - $SOURCE == "osp"
+        - $SOURCE == "partial"
     script:
       - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
       - rm README.md
       - R -e "source('R/makefile_part_site.R')"
+    artifacts:
+      paths:
+        - docs
+      expire_in: 1 day
+
+update_all:
+    stage: regions
+    only:
+      refs :
+        - master
+        - schedules
+      variables:
+        - $SOURCE == "osp"
+    script:
+      - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
+      - rm README.md
+      - R -e "source('R/makefile_site.R')"
+      - git push github
     artifacts:
       paths:
         - docs
