@@ -57,23 +57,6 @@ update_site:
         - docs
       expire_in: 1 day
 
-update_all:
-    stage: regions
-    only:
-      refs :
-        - master
-        - schedules
-      variables:
-        - $SOURCE == "osp"
-    script:
-      - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
-      - rm README.md
-      - R -e "source('R/makefile_site.R')"
-      - git push github
-    artifacts:
-      paths:
-        - docs
-      expire_in: 1 day
 
 update:
     stage: regions
@@ -81,8 +64,6 @@ update:
       refs :
         - master
         - schedules
-      variables:
-        - $SOURCE == "datagov"
     script:
       - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
       - rm README.md
