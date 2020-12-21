@@ -31,7 +31,7 @@ datagov:
       variables:
         - $SOURCE == "datagov"
     script:
-      - R -e "install.packages('gert', 'zoo')"
+      - R -e "install.packages(c('gert', 'zoo'))"
       - R -e "source('R/makefile_osp_live.R')"
       - R -e "source('R/makefile_datagov.R')"
     artifacts:
