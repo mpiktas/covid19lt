@@ -69,6 +69,7 @@ update:
       - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
       - rm README.md
       - R -e "source('R/makefile_site.R')"
+      - git pull
       - git push github
     artifacts:
       paths:
