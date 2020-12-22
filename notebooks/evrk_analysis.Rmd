@@ -1,0 +1,61 @@
+---
+title: "EVRK analysis"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(lubridate)
+library(ggplot2)
+evrk <- read.csv("../data/lt-covid19-evrk.csv") %>% mutate(day = ymd(day))
+evrk_meta <- read.csv("../raw_data/osp/evrk_meta.csv")
+```
+
+
+```{r}
+tt <- evrk %>% group_by(evrk_group_title, evrk_group_code ) %>% select(-day) %>% summarise_all(sum) %>% mutate(r = round(100*tests_positive/tests,2)) %>% arrange(tests) %>% ungroup
+tt
+```
+```{r}
+tt_month <- evrk %>% group_by(evrk_group_title, evrk_group_code, month = month(day)) %>% select(-day) %>% summarise_all(sum) %>% mutate(r = round(100*tests_positive/tests,2)) %>% arrange(tests) %>% ungroup
+
+tt_month %>% filter(month == 11) %>% arrange(-tests)
+```
+```{r}
+tt$tests %>% quantile(seq(0,1,by=0.1))
+
+```
+
+```{r}
+evrk1 <- evrk %>% group_by(evrk_group_code) %>% arrange(day) %>% mutate(
+    positive_sum7 = rollsum(tests_positive, 7, fill = NA, align = "right"),
+    positive_sum14 = rollsum(tests_positive, 14, fill = NA, align = "right"),
+    tests_sum7 = rollsum(tests, 7, fill = NA, align = "right"),
+    tests_sum14 = rollsum(tests, 14, fill = NA, align = "right"),
+    tpr7 = round(100*positive_sum7/tests_sum7, 2),
+    tpr14 = round(100*positive_sum14/tests_sum14,2 )
+)
+```
+
+
+```{r}
+lv1 <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
+```
+
+```{r}
+top15 <- tt %>% arrange(-tests) %>% slice_head(n=15) %>% .$evrk_group_code
+top16 <- tt %>% arrange(-tests) %>% slice_head(n=16) %>% .$evrk_group_code
+cmp <- evrk1 %>% select(day, evrk_group_code, evrk_group_title, tpr = tpr7) %>% filter(evrk_group_code %in% top15)
+lvt <- lv1 %>% select(day, tpr=tpr_tpn) %>% mutate(evrk_group_code = 0, evrk_group_title = "Lietuva")
+cmp1 <- cmp %>% bind_rows(lvt)
+cmp2 <- evrk1 %>%select(day, evrk_group_code, evrk_group_title, tpr = tpr7) %>% filter(evrk_group_code %in% top16) %>% 
+    inner_join(tt %>% select(evrk_group_code, total = tests)) %>% inner_join(lvt %>% select(day, tprl = tpr)) %>% mutate(veikla = paste0(evrk_group_title, " (", round(total/1000,1),"k)"))
+
+```
+
+```{r}
+cols <- RColorBrewer::brewer.pal(3, "Set1")[c(1,2)]
+names(cols) <- c("Lietuva","Veikla")
+
+ggplot(aes(x = day, y = tpr, colour = "Veikla"), data = cmp2 %>% filter(day>="2020-10-01"))+geom_line()+facet_wrap(~veikla) + theme_bw()+labs(x = "Data", y = "Procentai", title = "Teigiamų testų dalis, 7 dienų vidurkis, top 16 testuojamų veiklų")+geom_line(aes(y = tprl, colour = "Lietuva")) + scale_colour_manual(name = "Spalva", values = cols)
+```
