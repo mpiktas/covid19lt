@@ -29,6 +29,7 @@ osp3 <- osp2 %>% inner_join(evrk1 %>% select(evrk_group_code, evrk_group_title) 
 
 if(nrow(osp3) == nrow(osp2)) {
     osp4 <- osp3 %>% select(day, evrk_group_code, evrk_group_title, tests_positive, tests_negative) %>%
+        mutate(tests = tests_positive + tests_negative) %>% select(-tests_negative) %>%
         arrange(day, evrk_group_code)
 
     osp4 %>%  write.csv("data/lt-covid19-evrk.csv", row.names = FALSE)
