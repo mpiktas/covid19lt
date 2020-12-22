@@ -28,3 +28,34 @@ daily_xtable <- function(zz1, colsums = FALSE) {
 
     agad2[, c("day","administrative_level_3", agr_sorted, "Total")]
 }
+
+fix_esridate <- function(str) {
+    dd <- fromJSON(str)
+    fn <- dd$fields %>% filter(type == "esriFieldTypeDate") %>% .$name
+
+    if (length(fn) == 0) return(dd$features$attributes)
+    else {
+        for (aa in fn) {
+            str <- gsub(paste0("(\"",aa,"\": +)([0-9]+)"),"\\1\"\\2\"",str)
+        }
+        dd <- fromJSON(str)$features$attributes
+        for (aa in fn) {
+            dd[[aa]] <- as_datetime(as.integer64(dd[[aa]])/1000)
+        }
+    }
+    dd
+}
+
+tryget <- function(link, times = 10) {
+    res <- NULL
+    for (i in 1:times) {
+        res <- try(GET(link))
+        if(inherits(res, "try-error")) {
+            cat("\nFailed to get the data, sleeping for 1 second\n")
+            Sys.sleep(1)
+        } else break
+    }
+    if(is.null(res))stop("Failed to get the data after ", times, " times.")
+    res
+}
+
