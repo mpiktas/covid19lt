@@ -49,8 +49,11 @@ cmp <- evrk1 %>% select(day, evrk_group_code, evrk_group_title, tpr = tpr7) %>% 
 lvt <- lv1 %>% select(day, tpr=tpr_tpn) %>% mutate(evrk_group_code = 0, evrk_group_title = "Lietuva")
 cmp1 <- cmp %>% bind_rows(lvt)
 cmp2 <- evrk1 %>%select(day, evrk_group_code, evrk_group_title, tpr = tpr7) %>% filter(evrk_group_code %in% top16) %>% 
-    inner_join(tt %>% select(evrk_group_code, total = tests)) %>% inner_join(lvt %>% select(day, tprl = tpr)) %>% mutate(veikla = paste0(evrk_group_title, " (", round(total/1000,1),"k)"))
+    inner_join(tt %>% select(evrk_group_code, total = tests)) %>% inner_join(lvt %>% select(day, tprl = tpr)) %>% mutate(veikla = paste0(str_trunc(evrk_group_title,30), " (", round(total/1000,1),"k)"))
 
+```
+```{r}
+tt %>% filter(evrk_group_code %in% top16) %>% arrange(-tests) %>% select(evrk_group_title, tests)
 ```
 
 ```{r}
