@@ -1,0 +1,32 @@
+---
+title: "Weekdays"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+```
+
+```{r}
+lv1 <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
+
+lv11 <- lv1 %>% select(day, confirmed_daily, tpn = tests_positive_new_daily)
+
+lv12 <- lv11 %>% mutate(week = isoweek(day), weekday = weekdays(day), wday = wday(day, week_start = 1))
+
+wf <- lv12 %>% filter(wday %in% (1:7)) %>% slice_head(n=7) %>% arrange(wday) %>% .$weekday
+
+lv12 <- lv12 %>% mutate(wfday = factor(weekday, levels = wf))
+
+```
+
+```{r}
+ggplot(aes(x = wfday, y = tpn, group = week, colour = as.character(week)), data = lv12 %>% filter(week>47))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Teigiami nauji testai", title = "Teigiami nauji testai savaitės dienomis")
+```
+
+
+```{r}
+ggplot(aes(x = wfday, y = confirmed_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(week>47))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Nauji atvejai", title = "Nauji atvejai savaitės dienomis")
+```
