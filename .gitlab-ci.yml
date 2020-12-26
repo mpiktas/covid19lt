@@ -32,7 +32,6 @@ datagov:
         - $SOURCE == "datagov"
     script:
       - R -e "install.packages(c('gert', 'zoo'))"
-      - R -e "try(source('R/download_osp_agedist.R'))"
       - R -e "source('R/makefile_datagov.R')"
     artifacts:
       paths:
