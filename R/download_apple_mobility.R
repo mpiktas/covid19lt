@@ -3,13 +3,15 @@ library(tidyr)
 library(lubridate)
 library(glue)
 
-dd <- ymd(Sys.Date())
+curdate<- ymd(Sys.Date())
 
-zz <- dd - days(1:3)
+dd <- data.frame(date = ymd("2020-12-25")+days(0:20), hotfix = 19+0:20)
 
-lap <- lapply(zz, function(d) {
-    cd <- as.character(d)
-    lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev19/v3/en-us/applemobilitytrends-{cd}.csv")
+lap <- lapply(curdate - days(0:2), function(curd) {
+    cdd <- dd %>% filter(date == curd)
+    cd <- as.character(cdd$date)
+    hf <- as.character(cdd$hotfix)
+    lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev{hf}/v3/en-us/applemobilitytrends-{cd}.csv")
     print(lnk)
     try(read.csv(lnk))
 })
