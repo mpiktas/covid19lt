@@ -1,63 +1,63 @@
 "day","hospital_name","hospital_id","covid19_patients_confirmed_total","beds_total","beds_total_occupied","beds_rits","beds_rits_occupied","beds_with_o2","beds_with_o2_occupied","beds_without_o2","beds_without_o2_occupied","ventilated_beds","ventilated_beds_occupied"
-2020-12-25,"visos ligoninės","00",2300,16624,6991,684,414,6390,2112,8915,4179,635,286
-2020-12-25,"VšĮ Elektrėnų ligoninė","103",0,88,11,6,0,1,0,75,11,6,0
-2020-12-25,"VšĮ Lietuvos sveikatos mokslų universiteto Kauno ligoninė","10314",196,839,280,28,5,201,161,585,105,25,9
-2020-12-25,"VšĮ Trakų ligoninė","160",18,108,45,5,0,46,0,52,45,5,0
-2020-12-25,"VšĮ Tauragės ligoninė","259",42,247,95,6,6,131,37,104,49,6,3
-2020-12-25,"Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos ","26",34,1706,608,122,62,1263,130,220,383,101,33
-2020-12-25,"VšĮ Molėtų ligoninė","287",0,92,62,3,3,22,18,63,41,4,0
-2020-12-25,"VŠĮ UTENOS LIGONINĖ","339",28,285,79,6,4,6,0,267,75,6,0
-2020-12-25,"VšĮ Vilniaus miesto psichikos sveikatos centras","351",0,140,74,0,0,0,0,140,74,0,0
-2020-12-25,"Nacionalinis vėžio institutas","353",0,307,64,12,12,139,34,144,12,12,6
-2020-12-25,"VšĮ RESPUBLIKINĖ VILNIAUS PSICHIATRIJOS LIGONINĖ","355",2,420,3,6,3,6,3,404,-3,4,0
-2020-12-25,"VšĮ VILNIAUS UNIVERSITETO LIGONINĖS ŽALGIRIO KLINIKA","359",0,58,5,6,0,6,0,43,5,3,0
-2020-12-25,"VšĮ Mykolo Marcinkevičiaus ligoninė","362",37,242,118,8,5,70,20,156,88,8,5
-2020-12-25,"VšĮ Respublikinė Vilniaus universitetinė ligoninė","363",76,618,206,38,23,305,55,237,114,38,14
-2020-12-25,"VšĮ Vilniaus miesto klinikinė ligoninė","364",230,592,230,12,11,12,9,556,208,12,2
-2020-12-25,"VšĮ „VILNIAUS GIMDYMO NAMAI“","368",0,108,20,5,0,28,0,74,20,1,0
-2020-12-25,"VšĮ Visagino ligoninė","377",19,188,85,5,2,0,13,178,69,5,1
-2020-12-25,"VšĮ N.Akmenės ligoninė","385",0,75,32,3,0,5,2,65,30,2,0
-2020-12-25,"VšĮ Radviliškio ligoninė","386",15,128,71,3,1,38,12,83,58,4,0
-2020-12-25,"VšĮ Pakruojo ligoninė","387",0,79,15,1,0,0,0,78,15,0,0
-2020-12-25,"VšĮ Joniškio ligoninė","388",9,111,39,4,1,58,16,45,22,4,0
-2020-12-25,"VšĮ Kelmės ligoninė","389",17,134,47,4,1,15,5,111,41,4,0
-2020-12-25,"VšĮ Respublikinė Šiaulių ligoninė ","391",134,916,367,37,36,776,105,66,198,37,28
-2020-12-25,"VšĮ Respublikinė Kauno ligoninė ","400",25,354,119,10,2,120,61,214,55,10,1
-2020-12-25,"VšĮ Prienų ligoninė","408",27,111,50,2,3,61,20,43,26,5,1
-2020-12-25,"VšĮ Kėdainių ligoninė","409",73,249,133,6,7,78,65,159,57,6,4
-2020-12-25,"VšĮ Raseinių ligoninė","410",1,143,48,3,2,3,3,134,43,3,0
-2020-12-25,"VšĮ Kaišiadorių ligoninė","411",45,130,81,4,1,29,17,97,63,0,0
-2020-12-25,"VšĮ Jonavos ligoninė","413",33,151,63,5,1,30,16,111,46,5,0
-2020-12-25,"VšĮ Kupiškio ligoninė","419",7,100,40,3,1,10,4,83,35,4,0
-2020-12-25,"VšĮ Rokiškio rajono ligoninė","420",31,172,80,5,1,5,1,157,78,5,0
-2020-12-25,"VšĮ Rokiškio psichiatrijos ligoninė","421",53,440,355,0,0,0,0,440,355,0,0
-2020-12-25,"VšĮ Biržų ligoninė","422",14,131,57,4,0,19,10,102,47,6,0
-2020-12-25,"VšĮ Pasvalio ligoninė","423",1,144,86,3,0,64,35,74,51,3,0
-2020-12-25,"VšĮ Respublikinė Panevėžio ligoninė ","424",128,712,323,49,24,366,191,259,84,38,24
-2020-12-25,"VšĮ Vilkaviškio ligoninė","428",0,181,41,4,1,34,1,139,39,4,0
-2020-12-25,"Šakių ligoninė","429",1,115,63,3,2,18,0,92,59,2,2
-2020-12-25,"Marijampolės ligoninė","430",5,292,130,9,12,145,58,127,52,11,8
-2020-12-25,"VšĮ Plungės rajono savivaldybės ligoninė","441",9,181,81,3,2,42,0,133,77,3,2
-2020-12-25,"VšĮ Mažeikių ligoninė","442",54,198,116,6,4,45,46,141,62,6,4
-2020-12-25,"VšĮ Regioninė Telšių  ligoninė","443",36,181,103,6,5,84,25,85,73,6,0
-2020-12-25,"Kretingos rajono savivaldybės VšĮ Kretingos ligoninė","447",43,95,45,6,1,39,16,46,27,4,1
-2020-12-25,"Klaipėdos rajono savivaldybės Gargždų ligoninė","448",37,118,55,3,0,33,15,81,40,1,0
-2020-12-25,"VšĮ Šilutės ligoninė","449",22,89,57,6,1,45,23,32,32,6,1
-2020-12-25,"VšĮ Klaipėdos universitetinė ligoninė","450",109,865,317,33,38,404,71,395,181,33,27
-2020-12-25,"VšĮ Respublikinė Klaipėdos ligoninė ","451",109,834,244,17,12,67,65,738,159,12,8
-2020-12-25,"VšĮ Klaipėdos jūrininkų ligoninė ","452",19,364,205,19,14,219,135,107,50,19,6
-2020-12-25,"VšĮ Klaipėdos vaikų ligoninė","453",1,186,24,6,1,58,1,116,22,6,0
-2020-12-25,"VšĮ Šilalės rajono ligoninė","459",13,96,55,3,0,26,12,65,43,2,0
-2020-12-25,"VšĮ Jurbarko ligoninė","460",52,170,87,0,3,40,38,126,43,4,3
-2020-12-25,"Lietuvos Respublikos vidaus reikalų ministerijos Medicinos centras","463",0,32,7,2,0,4,4,25,3,1,0
-2020-12-25,"VšĮ Ignalinos rajono ligoninė","467",31,81,31,4,0,18,2,58,29,1,0
-2020-12-25,"Zarasų rajono savivaldybės VšĮ Zarasų ligoninė","468",14,79,43,2,0,6,4,69,39,2,0
-2020-12-25,"VšĮ Anykščių rajono savivaldybės ligoninė","469",21,193,86,6,2,16,1,165,83,6,0
-2020-12-25,"VšĮ Druskininkų ligoninė","483",17,130,67,3,2,75,25,45,38,7,2
-2020-12-25,"VšĮ Ukmergės ligoninė","489",55,181,105,7,3,59,31,112,69,3,2
-2020-12-25,"VšĮ Šalčininkų rajono savivaldybės ligoninė","490",9,118,39,3,2,3,2,110,35,2,0
-2020-12-25,"VšĮ Alytaus apskrities S.Kudirkos ligoninė","510",86,220,119,10,5,220,70,-20,40,10,4
-2020-12-25,"VšĮ Varėnos ligoninė","513",12,101,60,3,1,3,1,92,58,3,0
-2020-12-25,"VšĮ „Lazdijų ligoninė“","573",1,108,36,3,1,3,1,99,34,3,0
-2020-12-25,"Švenčionių rajono ligoninė","613",25,117,76,3,1,61,9,47,65,6,1
-2020-12-25,"VšĮ Vilniaus universiteto ligoninės Santaros klinikos","99",224,981,708,100,84,710,413,71,127,100,84
+2020-12-26,"visos ligoninės","00",2448,16624,7324,681,425,6370,2624,8938,4002,635,273
+2020-12-26,"VšĮ Elektrėnų ligoninė","103",0,88,11,6,0,1,0,75,11,6,0
+2020-12-26,"VšĮ Lietuvos sveikatos mokslų universiteto Kauno ligoninė","10314",216,839,286,28,7,201,156,585,116,25,7
+2020-12-26,"VšĮ Trakų ligoninė","160",20,108,46,5,0,46,0,52,46,5,0
+2020-12-26,"VšĮ Tauragės ligoninė","259",44,247,100,6,6,131,35,104,55,6,4
+2020-12-26,"Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos ","26",29,1706,615,122,69,1263,130,220,380,101,36
+2020-12-26,"VšĮ Molėtų ligoninė","287",0,92,56,3,0,22,15,63,41,4,0
+2020-12-26,"VŠĮ UTENOS LIGONINĖ","339",29,285,83,6,5,6,0,267,78,6,0
+2020-12-26,"VšĮ Vilniaus miesto psichikos sveikatos centras","351",0,140,74,0,0,0,0,140,74,0,0
+2020-12-26,"Nacionalinis vėžio institutas","353",0,307,64,12,12,139,34,144,12,12,6
+2020-12-26,"VšĮ RESPUBLIKINĖ VILNIAUS PSICHIATRIJOS LIGONINĖ","355",2,420,3,6,3,6,3,404,-3,4,0
+2020-12-26,"VšĮ VILNIAUS UNIVERSITETO LIGONINĖS ŽALGIRIO KLINIKA","359",0,58,4,6,0,6,0,43,4,3,0
+2020-12-26,"VšĮ Mykolo Marcinkevičiaus ligoninė","362",37,242,118,8,5,70,20,156,88,8,5
+2020-12-26,"VšĮ Respublikinė Vilniaus universitetinė ligoninė","363",65,618,262,38,23,295,221,247,7,38,11
+2020-12-26,"VšĮ Vilniaus miesto klinikinė ligoninė","364",331,592,331,12,12,12,300,556,15,12,4
+2020-12-26,"VšĮ „VILNIAUS GIMDYMO NAMAI“","368",0,108,27,5,0,28,0,74,27,1,0
+2020-12-26,"VšĮ Visagino ligoninė","377",21,188,87,5,3,0,14,178,69,5,1
+2020-12-26,"VšĮ N.Akmenės ligoninė","385",0,75,32,3,0,5,2,65,30,2,0
+2020-12-26,"VšĮ Radviliškio ligoninė","386",15,128,74,3,0,38,14,83,60,4,0
+2020-12-26,"VšĮ Pakruojo ligoninė","387",0,79,15,1,0,0,0,78,15,0,0
+2020-12-26,"VšĮ Joniškio ligoninė","388",15,111,41,4,1,58,17,45,23,4,0
+2020-12-26,"VšĮ Kelmės ligoninė","389",17,134,47,4,1,15,5,111,41,4,0
+2020-12-26,"VšĮ Respublikinė Šiaulių ligoninė ","391",136,916,391,37,35,776,111,66,225,37,20
+2020-12-26,"VšĮ Respublikinė Kauno ligoninė ","400",25,354,128,10,2,120,65,214,60,10,1
+2020-12-26,"VšĮ Prienų ligoninė","408",28,111,52,2,4,61,22,43,25,5,1
+2020-12-26,"VšĮ Kėdainių ligoninė","409",70,249,133,6,7,78,65,159,57,6,4
+2020-12-26,"VšĮ Raseinių ligoninė","410",2,143,49,3,2,3,4,134,42,3,1
+2020-12-26,"VšĮ Kaišiadorių ligoninė","411",43,130,76,4,0,29,14,93,62,4,0
+2020-12-26,"VšĮ Jonavos ligoninė","413",33,151,63,5,1,30,16,111,46,5,0
+2020-12-26,"VšĮ Kupiškio ligoninė","419",6,100,36,0,1,0,0,100,35,0,0
+2020-12-26,"VšĮ Rokiškio rajono ligoninė","420",34,172,85,5,1,5,1,157,83,5,0
+2020-12-26,"VšĮ Rokiškio psichiatrijos ligoninė","421",53,440,355,0,0,0,0,440,355,0,0
+2020-12-26,"VšĮ Biržų ligoninė","422",15,131,62,4,0,19,10,102,52,6,0
+2020-12-26,"VšĮ Pasvalio ligoninė","423",0,144,88,3,0,64,32,74,56,3,0
+2020-12-26,"VšĮ Respublikinė Panevėžio ligoninė ","424",134,712,344,49,26,366,213,259,79,38,26
+2020-12-26,"VšĮ Vilkaviškio ligoninė","428",0,181,43,4,1,34,3,139,39,4,0
+2020-12-26,"Šakių ligoninė","429",0,115,64,3,2,18,1,92,60,2,1
+2020-12-26,"Marijampolės ligoninė","430",5,292,130,9,12,145,58,127,52,11,8
+2020-12-26,"VšĮ Plungės rajono savivaldybės ligoninė","441",10,181,79,3,2,42,0,133,75,3,2
+2020-12-26,"VšĮ Mažeikių ligoninė","442",57,198,115,6,4,45,47,141,60,6,4
+2020-12-26,"VšĮ Regioninė Telšių  ligoninė","443",38,181,106,6,5,84,25,85,76,6,0
+2020-12-26,"Kretingos rajono savivaldybės VšĮ Kretingos ligoninė","447",45,95,47,6,1,39,26,46,20,4,0
+2020-12-26,"Klaipėdos rajono savivaldybės Gargždų ligoninė","448",33,118,54,3,0,33,12,81,42,1,0
+2020-12-26,"VšĮ Šilutės ligoninė","449",22,89,57,6,1,45,23,32,32,6,1
+2020-12-26,"VšĮ Klaipėdos universitetinė ligoninė","450",119,865,330,33,42,404,75,395,190,33,23
+2020-12-26,"VšĮ Respublikinė Klaipėdos ligoninė ","451",113,834,261,17,13,67,79,738,161,12,8
+2020-12-26,"VšĮ Klaipėdos jūrininkų ligoninė ","452",19,364,207,19,8,219,133,107,60,19,6
+2020-12-26,"VšĮ Klaipėdos vaikų ligoninė","453",1,186,32,6,0,58,2,116,30,6,0
+2020-12-26,"VšĮ Šilalės rajono ligoninė","459",13,96,55,3,0,26,12,65,43,2,0
+2020-12-26,"VšĮ Jurbarko ligoninė","460",59,170,94,0,4,40,38,126,49,4,3
+2020-12-26,"Lietuvos Respublikos vidaus reikalų ministerijos Medicinos centras","463",0,32,7,2,0,4,2,25,5,1,0
+2020-12-26,"VšĮ Ignalinos rajono ligoninė","467",31,81,31,4,0,18,2,58,29,1,0
+2020-12-26,"Zarasų rajono savivaldybės VšĮ Zarasų ligoninė","468",14,79,43,2,0,6,3,69,40,2,0
+2020-12-26,"VšĮ Anykščių rajono savivaldybės ligoninė","469",18,193,86,6,3,16,3,165,80,6,0
+2020-12-26,"VšĮ Druskininkų ligoninė","483",20,130,76,3,2,75,29,45,43,7,2
+2020-12-26,"VšĮ Ukmergės ligoninė","489",55,181,106,7,5,59,31,112,68,3,2
+2020-12-26,"VšĮ Šalčininkų rajono savivaldybės ligoninė","490",6,118,50,3,2,3,2,110,46,2,0
+2020-12-26,"VšĮ Alytaus apskrities S.Kudirkos ligoninė","510",87,220,128,10,9,220,70,-20,43,10,6
+2020-12-26,"VšĮ Varėnos ligoninė","513",12,101,62,3,2,3,0,92,60,3,0
+2020-12-26,"VšĮ „Lazdijų ligoninė“","573",1,108,36,3,1,3,1,99,34,3,0
+2020-12-26,"Švenčionių rajono ligoninė","613",23,117,74,3,1,61,7,47,65,6,1
+2020-12-26,"VšĮ Vilniaus universiteto ligoninės Santaros klinikos","99",227,981,713,100,79,710,421,71,134,100,79
