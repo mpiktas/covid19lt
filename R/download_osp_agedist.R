@@ -5,6 +5,7 @@ library(dplyr)
 library(lubridate)
 library(stringr)
 library(bit64)
+library(tidyr)
 
 source("R/functions.R")
 
