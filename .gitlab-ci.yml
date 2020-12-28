@@ -84,7 +84,7 @@ push:
       variables:
         - $SOURCE == "datagov" || $SOURCE =="osp"
     script:
-      - R -e "install.packages(c('gert')"
+      - R -e "install.packages(c('gert'))"
       - git checkout data
       - git checkout raw_data
       - git pull
