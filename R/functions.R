@@ -59,3 +59,31 @@ tryget <- function(link, times = 10) {
     res
 }
 
+push_to_github <- function(dirs, commit_message, push = TRUE) {
+    cat("\nSending the site downstream\n")
+    ghpt <- Sys.getenv("GITHUB_PA_TOKEN")
+    if(ghpt!="") {
+        cat("\nTrying to set signature\n")
+        git_config_set("user.name", "Gitlab CI bot")
+        git_config_set("user.email", "test@email.com")
+        cat("\nCurrent git status\n")
+        print(git_status())
+        print(git_info())
+        git_branch_checkout("master")
+        for (dd in dirs) {
+            git_add(dd)
+        }
+        cat("\nTrying to commit\n")
+        git_commit(commit_message)
+        git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
+        if(push) git_push(remote = "github")
+    } else {
+        cat("\nGithub token not found, relying on local git configuration\n")
+        for (dd in dirs) {
+            git_add(dd)
+        }
+        git_commit(commit_message)
+        git_push()
+    }
+
+}

@@ -4,6 +4,7 @@ stages:
  - download
  - site
  - regions
+ - github
 
 osp:
     stage: download
@@ -64,32 +65,28 @@ update:
         - master
         - schedules
       variables:
-        - $SOURCE == "datagov"
+        - $SOURCE == "datagov" || $SOURCE =="osp"
     script:
       - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
       - rm README.md
       - R -e "source('R/makefile_site.R')"
-      - git pull
-      - git push github
     artifacts:
       paths:
         - docs
       expire_in: 1 day
 
-update_osp:
-    stage: regions
+push:
+  stage: github
     only:
       refs :
         - master
         - schedules
       variables:
-        - $SOURCE == "osp"
-    script:
-      - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
-      - rm README.md
-      - R -e "source('R/makefile_site.R')"
-      - git push github
-    artifacts:
-      paths:
-        - docs
-      expire_in: 1 day
+        - $SOURCE == "datagov" || $SOURCE =="osp"
+      script:
+      - R -e "install.packages(c('gert')"
+      - git checkout data
+      - git checkout raw_data
+      - git pull
+      - R -e "source('R/makefile_github.R')"
+      - git push
