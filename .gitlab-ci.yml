@@ -76,14 +76,14 @@ update:
       expire_in: 1 day
 
 push:
-  stage: github
+    stage: github
     only:
       refs :
         - master
         - schedules
       variables:
         - $SOURCE == "datagov" || $SOURCE =="osp"
-      script:
+    script:
       - R -e "install.packages(c('gert')"
       - git checkout data
       - git checkout raw_data
