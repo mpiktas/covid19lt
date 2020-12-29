@@ -200,13 +200,37 @@ mll <- ll %>% pivot_longer(Atvejai:Testai, names_to = "type", values_to = "value
 
 ```
 
+## Mobilumo duomenys
+
+```{r}
+gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania.csv") %>% mutate(day =ymd(day))
+am <- read.csv("../data/lt-apple-mobility-data.csv") %>% mutate(day =ymd(day))
+```
+
+### Google `r max(gm$day)`
+
+```{r}
+xgm <- xts(gm %>% select(-day), gm$day)
+
+dygraph(xgm, main = "Google mobilumo duomenys") %>% dyRangeSelector %>% dyOptions(colors = RColorBrewer::brewer.pal(6, "Paired"))
+```
+
+
+### Apple `r max(am$day)`
+
+```{r}
+
+xam<- xts(am %>% select(-day), am$day)
+
+dygraph(xam, main = "Apple mobilumo duomenys") %>% dyRangeSelector %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2])
+```
+
+
 ## Situacija apskrityse `r aa_last_day`
 
 ```{r}
 ggplot(aes(x = day, y = value, group =Apskritis, colour = Apskritis), data =mll %>% filter(day >= "2020-10-01"))+geom_line()+theme_bw()+scale_colour_manual(values= RColorBrewer::brewer.pal(10, "Paired"))+facet_wrap(~type, scales= "free_y")+labs(x="Data", y  = "")
 ```
-
-
 
 
 ## Atvejų pasiskirstymas pagal amžių ir savivaldybes `r ad_last_day` 

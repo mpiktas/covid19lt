@@ -29,7 +29,7 @@ if(nrow(lv3) ==nrow(lv31)) {
                             retail_and_recreation, grocery_and_pharmacy, parks,
                             transit_stations, workplaces, residential)
 
-    lv32 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania_level3.csv")
+    lv32 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania_level3.csv", row.names = FALSE)
 }
 
 lv2 <- go %>% filter(sub_region_2 == "" & sub_region_1!="")
@@ -39,7 +39,7 @@ if(nrow(lv2) ==nrow(lv21)) {
                             retail_and_recreation, grocery_and_pharmacy, parks,
                             transit_stations, workplaces, residential)
 
-    lv22 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania_level2.csv")
+    lv22 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania_level2.csv", row.names = FALSE)
 }
 
 
@@ -49,5 +49,5 @@ lv12 <- lv1 %>% select(day,
                       retail_and_recreation, grocery_and_pharmacy, parks,
                       transit_stations, workplaces, residential)
 
-lv12 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania.csv")
+lv12 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania.csv", row.names = FALSE)
 

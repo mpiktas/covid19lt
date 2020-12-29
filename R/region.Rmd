@@ -8,7 +8,7 @@ output:
     navbar:
       - {title: "Lietuvos regionai", href: "https://mpiktas.github.io/covid19lt/savivaldybes.html", align: right}
 params: 
-   region: "Lietuva"
+   region: "Alytaus m."
 ---
 
 ```{r setup, include=FALSE}
@@ -31,15 +31,18 @@ if(grepl("apskr", params$region)) {
   
   ii <- ii %>% filter(administrative_level_3 %in% adm$administrative_level_3) %>% mutate(day = ymd(day))
   ad <- ad %>% filter(administrative_level_3 %in% adm$administrative_level_3) %>% mutate(day = ymd(day))
+  gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania_level2.csv") %>% filter(administrative_level_2 == params$region) %>% mutate(day = ymd(day)) %>% select(-administrative_level_2)
 } else {
   if(params$region == "Lietuva") {
       aa <- read.csv("../data/lt-covid19-country.csv") %>% mutate(region = "Lietuva") 
       ii <- ii %>% mutate(day = ymd(day))
       ad <- ad %>% mutate(day = ymd(day))
+      gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania.csv") %>% mutate(day = ymd(day))
   } else {
       aa <- read.csv("../data/lt-covid19-level3.csv") %>% rename(region = administrative_level_3)
       ii <- ii %>% filter(administrative_level_3 == params$region) %>% mutate(day = ymd(day))
       ad <- ad %>% filter(administrative_level_3 == params$region) %>% mutate(day = ymd(day))
+      gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania_level3.csv") %>% filter(administrative_level_3 == params$region) %>% mutate(day = ymd(day)) %>% select(-administrative_level_2, - administrative_level_3)
   }
 }
 fixNA <- function(x, value = 0) {
@@ -334,3 +337,46 @@ dygraph(xaa[,"other_deaths_100k"], main = paste("Kitų mirčių skaičius 100k g
 ```{r}
 dygraph(xaa[,"all_deaths_100k"], main = paste("Visų mirčių skaičius 100k gyventojų per 14 dienų:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
+
+Mobilumo duomenys
+=======================================================================
+
+Column {.tabset}
+-----------------------------------------------------------------------
+
+```{r}
+if(nrow(gm)>0) {
+xgm <- xts(gm %>% select(-day), gm$day )
+
+gmt <- mapply(function(x, tbname, plotname)list(x = x, tbname = tbname, plotname = plotname),
+              as.list(xgm), 
+              c("Prekybos centrai",
+                "Maisto parduotuvės ir vaistinės",
+                "Parkai",
+                "Viešasis transportas", 
+                "Darbovietės", 
+                "Gyvenamosios vietos"),
+              c("Google mobilumas, prekybos centrai ir pramogų vietos",
+                "Google mobilumas, maisto parduotuvės ir vaistinės",
+                "Google mobilumas, parkai",
+                "Google mobilumo duomenys, viešasis transportas",
+                "Google mobilumo duomenys, darbovietės",
+                "Google mobilumo duomenys, gyvenamosios vietos"),
+                SIMPLIFY =  FALSE)
+}
+```
+
+```{r, include=FALSE}
+if(nrow(gm)>0) {
+tabs <- sapply(gmt, function(tab_report) { 
+    nn <- new.env()
+    nn$tab_report <- tab_report
+    knitr::knit_child('mobility_tab.Rmd', envir = nn)
+})
+} else {
+  tabs <- "Nėra duomenų"
+}
+```
+
+`r paste(tabs, collapse = '\n')`
+
