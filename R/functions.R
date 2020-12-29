@@ -46,6 +46,10 @@ fix_esridate <- function(str) {
     dd
 }
 
+find_root <- function(x) {
+    x %>% strsplit("/") %>% sapply("[[",1)
+}
+
 tryget <- function(link, times = 10) {
     res <- NULL
     for (i in 1:times) {

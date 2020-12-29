@@ -17,9 +17,6 @@ cat("\n=======Creating levels data================\n")
 try(source('R/create_levels.R'))
 
 
-find_root <- function(x) {
-    x %>% strsplit("/") %>% sapply("[[",1)
-}
 
 modf <- git_status() %>% .$file %>% find_root %>% unique
 if(!("data" %in% modf)) {

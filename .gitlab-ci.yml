@@ -22,6 +22,21 @@ osp:
         - data
       expire_in: 1 day
 
+mobility:
+    stage: download
+    only:
+      refs :
+        - master
+        - schedules
+      variables:
+        - $SOURCE == "mobility"
+    script:
+      - R -e "install.packages(c('gert'))"
+      - R -e "source('R/makefile_mobility.R')"
+    artifacts:
+      paths:
+        - data
+      expire_in: 1 day
 
 datagov:
     stage: download
