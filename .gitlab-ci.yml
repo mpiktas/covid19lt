@@ -88,4 +88,4 @@ push:
       - git checkout data
       - git checkout raw_data
       - R -e "source('R/makefile_github.R')"
-      - git push
+      - git push github master
