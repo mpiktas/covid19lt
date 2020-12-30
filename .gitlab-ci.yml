@@ -33,6 +33,7 @@ mobility:
     script:
       - R -e "install.packages(c('gert'))"
       - R -e "source('R/makefile_mobility.R')"
+      - git push github master
     artifacts:
       paths:
         - data
