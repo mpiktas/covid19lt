@@ -3633,8 +3633,8 @@
 "Nacionalinis vėžio institutas","2020/12/01 00:00:00+00","1557",0,1
 "SYNLAB Lietuva UAB","2020/12/01 00:00:00+00","1477",79,102
 "UAB ""Baltic Medics""","2020/12/01 00:00:00+00","1477",179,639
-"UAB ""Rezus.lt""","2020/12/01 00:00:00+00","1477",75,180
 "UAB ""Rezus.lt""","2020/12/01 00:00:00+00","1557",2,74
+"UAB ""Rezus.lt""","2020/12/01 00:00:00+00","1477",75,180
 "UAB ""SK IMPEKS MEDICINOS DIAGNOSTIKOS CENTRAS""","2020/12/01 00:00:00+00","1477",18,174
 "UAB Diagnostikos laboratorija","2020/12/01 00:00:00+00","1477",683,2793
 "UAB InMedica","2020/12/01 00:00:00+00","1477",182,466
@@ -3744,8 +3744,8 @@
 "Nacionalinis maisto ir veterinarijos rizikos vertinimo institutas","2020/12/05 00:00:00+00","1477",357,570
 "SYNLAB Lietuva UAB","2020/12/05 00:00:00+00","1477",13,65
 "UAB ""Baltic Medics""","2020/12/05 00:00:00+00","1477",163,599
-"UAB ""Rezus.lt""","2020/12/05 00:00:00+00","1557",0,1
 "UAB ""Rezus.lt""","2020/12/05 00:00:00+00","1477",122,180
+"UAB ""Rezus.lt""","2020/12/05 00:00:00+00","1557",0,1
 "UAB Diagnostikos laboratorija","2020/12/05 00:00:00+00","1477",843,2064
 "UAB Diagnostikos laboratorija","2020/12/05 00:00:00+00","1537",1,0
 "UAB InMedica","2020/12/05 00:00:00+00","1477",2,36
@@ -4350,7 +4350,7 @@
 "Vilniaus universitetas","2020/12/26 00:00:00+00","1477",42,45
 "Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2020/12/27 00:00:00+00","1477",26,414
 "Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2020/12/27 00:00:00+00","1557",0,2
-"Nacionalinis maisto ir veterinarijos rizikos vertinimo institutas","2020/12/27 00:00:00+00","1477",384,526
+"Nacionalinis maisto ir veterinarijos rizikos vertinimo institutas","2020/12/27 00:00:00+00","1477",384,527
 "SYNLAB Lietuva UAB","2020/12/27 00:00:00+00","1477",3,0
 "UAB ""Baltic Medics""","2020/12/27 00:00:00+00","1477",115,201
 "UAB ""Rezus.lt""","2020/12/27 00:00:00+00","1477",63,174
@@ -4371,7 +4371,7 @@
 "Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/27 00:00:00+00","1537",1,9
 "Viešoji įstaiga Tauragės ligoninė","2020/12/27 00:00:00+00","1477",0,1
 "Viešoji įstaiga Tauragės ligoninė","2020/12/27 00:00:00+00","1557",1,3
-"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/27 00:00:00+00","1477",99,310
+"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/27 00:00:00+00","1477",102,310
 "Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/27 00:00:00+00","1537",16,10
 "Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/27 00:00:00+00","1557",7,2
 "Vilniaus universitetas","2020/12/27 00:00:00+00","1477",1,0
@@ -4404,7 +4404,7 @@
 "Viešoji įstaiga Tauragės ligoninė","2020/12/28 00:00:00+00","1477",1,3
 "Viešoji įstaiga Tauragės ligoninė","2020/12/28 00:00:00+00","1557",4,2
 "Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/28 00:00:00+00","1537",7,20
-"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/28 00:00:00+00","1477",139,1346
+"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/28 00:00:00+00","1477",141,1346
 "Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/28 00:00:00+00","1557",7,7
 "Vilniaus universitetas","2020/12/28 00:00:00+00","1477",37,88
 "Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2020/12/29 00:00:00+00","1537",0,1
@@ -4420,7 +4420,7 @@
 "UAB Diagnostikos laboratorija","2020/12/29 00:00:00+00","1477",828,2191
 "UAB InMedica","2020/12/29 00:00:00+00","1557",4,15
 "UAB InMedica","2020/12/29 00:00:00+00","1477",232,518
-"UAB Medicina practica laboratorija","2020/12/29 00:00:00+00","1477",542,2056
+"UAB Medicina practica laboratorija","2020/12/29 00:00:00+00","1477",542,2055
 "UAB Medicina practica laboratorija","2020/12/29 00:00:00+00","1557",0,8
 "Viešoji įstaiga Klaipėdos universitetinė ligoninė","2020/12/29 00:00:00+00","1477",177,426
 "Viešoji įstaiga KLAIPĖDOS VAIKŲ LIGONINĖ","2020/12/29 00:00:00+00","1477",0,1
@@ -4428,7 +4428,7 @@
 "Viešoji įstaiga Respublikinė Klaipėdos ligoninė","2020/12/29 00:00:00+00","1477",0,2
 "Viešoji įstaiga Respublikinė Panevėžio ligoninė","2020/12/29 00:00:00+00","1477",19,108
 "Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/29 00:00:00+00","1557",3,22
-"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/29 00:00:00+00","1477",75,682
+"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/29 00:00:00+00","1477",75,683
 "Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/29 00:00:00+00","1537",0,11
 "Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/29 00:00:00+00","1557",1,0
 "Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/29 00:00:00+00","1477",0,3
@@ -4439,7 +4439,7 @@
 "Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/29 00:00:00+00","1477",198,1173
 "Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/29 00:00:00+00","1537",5,14
 "Vilniaus universitetas","2020/12/29 00:00:00+00","1477",32,140
-"Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2020/12/30 00:00:00+00","1477",40,607
+"Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2020/12/30 00:00:00+00","1477",40,611
 "Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2020/12/30 00:00:00+00","1557",0,2
 "Nacionalinė visuomenės sveikatos priežiūros laboratorija","2020/12/30 00:00:00+00","1477",59,303
 "Nacionalinis maisto ir veterinarijos rizikos vertinimo institutas","2020/12/30 00:00:00+00","1477",448,568
@@ -4448,7 +4448,7 @@
 "UAB ""Baltic Medics""","2020/12/30 00:00:00+00","1477",196,642
 "UAB ""Rezus.lt""","2020/12/30 00:00:00+00","1477",168,192
 "UAB ""Rezus.lt""","2020/12/30 00:00:00+00","1557",4,124
-"UAB Diagnostikos laboratorija","2020/12/30 00:00:00+00","1477",956,2558
+"UAB Diagnostikos laboratorija","2020/12/30 00:00:00+00","1477",960,2560
 "UAB InMedica","2020/12/30 00:00:00+00","1477",393,757
 "UAB InMedica","2020/12/30 00:00:00+00","1557",2,24
 "UAB Medicina practica laboratorija","2020/12/30 00:00:00+00","1557",0,5
@@ -4460,7 +4460,7 @@
 "Viešoji įstaiga Respublikinė Klaipėdos ligoninė","2020/12/30 00:00:00+00","1557",9,12
 "Viešoji įstaiga Respublikinė Klaipėdos ligoninė","2020/12/30 00:00:00+00","1477",0,5
 "Viešoji įstaiga Respublikinė Panevėžio ligoninė","2020/12/30 00:00:00+00","1477",14,92
-"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/30 00:00:00+00","1477",117,543
+"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/30 00:00:00+00","1477",117,544
 "Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/30 00:00:00+00","1557",0,4
 "Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/30 00:00:00+00","1537",0,4
 "Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/30 00:00:00+00","1477",0,2
@@ -4469,12 +4469,12 @@
 "Viešoji įstaiga Vilniaus miesto klinikinė ligoninė","2020/12/30 00:00:00+00","1477",0,2
 "Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/30 00:00:00+00","1537",6,8
 "Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/30 00:00:00+00","1557",5,2
-"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/30 00:00:00+00","1477",131,983
+"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/30 00:00:00+00","1477",143,996
 "Vilniaus universitetas","2020/12/30 00:00:00+00","1477",163,451
 "Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2020/12/31 00:00:00+00","1477",44,548
 "Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2020/12/31 00:00:00+00","1557",0,1
 "Nacionalinė visuomenės sveikatos priežiūros laboratorija","2020/12/31 00:00:00+00","1477",50,276
-"Nacionalinis maisto ir veterinarijos rizikos vertinimo institutas","2020/12/31 00:00:00+00","1477",394,921
+"Nacionalinis maisto ir veterinarijos rizikos vertinimo institutas","2020/12/31 00:00:00+00","1477",394,922
 "Nacionalinis vėžio institutas","2020/12/31 00:00:00+00","1477",4,38
 "Nacionalinis vėžio institutas","2020/12/31 00:00:00+00","1557",0,1
 "SYNLAB Lietuva UAB","2020/12/31 00:00:00+00","1557",0,4
@@ -4482,7 +4482,7 @@
 "UAB ""Baltic Medics""","2020/12/31 00:00:00+00","1477",201,706
 "UAB ""Rezus.lt""","2020/12/31 00:00:00+00","1477",256,492
 "UAB ""Rezus.lt""","2020/12/31 00:00:00+00","1557",2,44
-"UAB Diagnostikos laboratorija","2020/12/31 00:00:00+00","1477",621,1967
+"UAB Diagnostikos laboratorija","2020/12/31 00:00:00+00","1477",668,2144
 "UAB InMedica","2020/12/31 00:00:00+00","1477",234,801
 "UAB InMedica","2020/12/31 00:00:00+00","1557",1,2
 "UAB Medicina practica laboratorija","2020/12/31 00:00:00+00","1477",378,1664
@@ -4495,15 +4495,37 @@
 "Viešoji įstaiga Respublikinė Klaipėdos ligoninė","2020/12/31 00:00:00+00","1477",0,4
 "Viešoji įstaiga Respublikinė Klaipėdos ligoninė","2020/12/31 00:00:00+00","1557",2,7
 "Viešoji įstaiga Respublikinė Panevėžio ligoninė","2020/12/31 00:00:00+00","1477",17,117
-"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/31 00:00:00+00","1477",110,424
-"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/31 00:00:00+00","1557",16,23
+"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/31 00:00:00+00","1477",110,457
+"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2020/12/31 00:00:00+00","1557",17,23
 "Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/31 00:00:00+00","1477",0,8
-"Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/31 00:00:00+00","1537",0,3
+"Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/31 00:00:00+00","1537",0,10
 "Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2020/12/31 00:00:00+00","1557",1,0
-"Viešoji įstaiga Tauragės ligoninė","2020/12/31 00:00:00+00","1557",3,4
+"Viešoji įstaiga Tauragės ligoninė","2020/12/31 00:00:00+00","1557",3,6
 "Viešoji įstaiga Tauragės ligoninė","2020/12/31 00:00:00+00","1477",1,0
 "Viešoji įstaiga Vilniaus miesto klinikinė ligoninė","2020/12/31 00:00:00+00","1477",0,1
-"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/31 00:00:00+00","1477",90,546
-"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/31 00:00:00+00","1557",16,8
-"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/31 00:00:00+00","1537",6,9
+"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/31 00:00:00+00","1477",107,745
+"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/31 00:00:00+00","1557",17,8
+"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2020/12/31 00:00:00+00","1537",8,14
 "Vilniaus universitetas","2020/12/31 00:00:00+00","1477",17,2
+"Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2021/01/01 00:00:00+00","1477",25,342
+"Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","2021/01/01 00:00:00+00","1557",0,1
+"Nacionalinė visuomenės sveikatos priežiūros laboratorija","2021/01/01 00:00:00+00","1477",80,240
+"Nacionalinis maisto ir veterinarijos rizikos vertinimo institutas","2021/01/01 00:00:00+00","1477",463,822
+"UAB ""Baltic Medics""","2021/01/01 00:00:00+00","1557",0,1
+"UAB ""Baltic Medics""","2021/01/01 00:00:00+00","1477",150,531
+"UAB ""Rezus.lt""","2021/01/01 00:00:00+00","1477",0,41
+"UAB Diagnostikos laboratorija","2021/01/01 00:00:00+00","1477",167,437
+"UAB Medicina practica laboratorija","2021/01/01 00:00:00+00","1477",123,439
+"Viešoji įstaiga Klaipėdos universitetinė ligoninė","2021/01/01 00:00:00+00","1477",54,118
+"Viešoji įstaiga KLAIPĖDOS VAIKŲ LIGONINĖ","2021/01/01 00:00:00+00","1477",0,1
+"Viešoji įstaiga Regioninė Telšių ligoninė","2021/01/01 00:00:00+00","1477",1,1
+"Viešoji įstaiga Respublikinė Panevėžio ligoninė","2021/01/01 00:00:00+00","1477",9,23
+"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2021/01/01 00:00:00+00","1477",9,88
+"Viešoji įstaiga Respublikinė Šiaulių ligoninė","2021/01/01 00:00:00+00","1557",10,3
+"Viešoji įstaiga Respublikinė Vilniaus universitetinė ligoninė","2021/01/01 00:00:00+00","1537",0,3
+"Viešoji įstaiga Tauragės ligoninė","2021/01/01 00:00:00+00","1557",1,3
+"Viešoji įstaiga Tauragės ligoninė","2021/01/01 00:00:00+00","1477",1,0
+"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2021/01/01 00:00:00+00","1537",9,12
+"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2021/01/01 00:00:00+00","1557",3,2
+"Viešoji įstaiga Vilniaus universiteto ligoninė Santaros klinikos","2021/01/01 00:00:00+00","1477",78,208
+"Vilniaus universitetas","2021/01/01 00:00:00+00","1477",4,8
