@@ -29,19 +29,27 @@ Savivaldybės
 
 
 dp0 <- read.csv("../data/lt-covid19-level3.csv") %>% mutate(day = ymd(day)) %>% filter(day == max(day))
-cn <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day)) %>% filter(day == max(day)) %>% mutate(administrative_level_3 = "Lietuva")
+cn <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day)) %>% filter(day == max(day)) %>% mutate(administrative_level_3 = "Lietuva", administrative_level_2 = "Lietuva")
 
 dp00 <- dp0 %>% bind_rows(cn)
 
-dp <- dp00 %>% filter(administrative_level_3!="Unknown") %>% select(Savivaldybė = administrative_level_3, `Atvejai_100k` = confirmed_100k, `Atvejų augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_growth_weekly, `Testai_100k` = tests_100k, Populiacija = population ) %>% arrange(-Populiacija) 
+dp <- dp00 %>% filter(administrative_level_3!="Unknown") %>% select(Savivaldybė = administrative_level_3, Apskritis = administrative_level_2, `Atvejai_100k` = confirmed_100k, `Atvejų augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_growth_weekly, `Testai_100k` = tests_100k, Populiacija = population ) %>% arrange(-Populiacija) 
 
-regs_n <- paste0(gsub("[.]","",gsub(" ", "_",dp$Savivaldybė)),".html")
 
-links <- paste0("regions/", regs_n) 
+add_links <- function(x) {
+  
+  regs_n <- paste0(gsub("[.]","",gsub(" ", "_",x)),".html")
 
-links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  dp$Savivaldybė, links, SIMPLIFY = FALSE)
 
-dp$Savivaldybė <- sapply(links2,as.character)
+  links <- paste0("regions/", regs_n) 
+
+  links2 <- mapply(function(nm, hr) tags$a(href=hr, nm), x, links, SIMPLIFY = FALSE)
+  sapply(links2, as.character)
+}
+
+dp$Savivaldybė <- add_links(dp$Savivaldybė)
+dp$Apskritis <- add_links(dp$Apskritis)
+
 
 
 dp %>% datatable( 
@@ -50,7 +58,7 @@ dp %>% datatable(
           options = list(scrollX = TRUE, 
                          paging=FALSE,
                          fixedHeader=TRUE)) %>% 
-  formatRound(colnames(dp)[2:8],2)
+  formatRound(colnames(dp)[3:9],2)
 
 ```
 
@@ -62,7 +70,7 @@ Apskritys
 lv2 <- read.csv("../data/lt-covid19-level2.csv") %>% mutate(day = ymd(day)) 
 
 dp0 <- lv2 %>% filter(day == max(day))
-cn <- cn %>% rename(administrative_level_2 = administrative_level_3)
+
 
 dp00 <- dp0 %>% bind_rows(cn)
 
