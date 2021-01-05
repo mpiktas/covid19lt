@@ -29,14 +29,14 @@ tbs <- html_table(oo, fill = TRUE)
 
 cat("\nParsing daily data\n")
 
-cdd <- tbs[[2]][,1]
+cdd <- c(tbs[[2]][,1], tbs[[3]][,1])
 
 crtime <- Sys.time()
 
 cdd1 <- cdd[cdd!=""]
 cdd2 <- sapply(strsplit(cdd1,":"),"[[",2) %>% str_trim %>% as.integer
 
-nums <- c(cdd2[c(2, 8, 1, 4, 5, 6)],NA,NA,cdd2[9:10])
+nums <- c(cdd2[c(2, 10, 1, 5)],NA,cdd2[9],NA,NA,cdd2[11:12])
 
 outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
 ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "days")-days(1))) %>%
@@ -60,7 +60,7 @@ cat("\nParsing total capacity data\n")
 # Get covid hospitalisation data ----------------------------------------------------------
 cat("\nParsing covid hospitalization data\n")
 
-cvh0 <- data.frame(tbs[[4]])[1:4,]
+cvh0 <- data.frame(tbs[[5]])[1:4,]
 
 colnames(cvh0) <- c("description","total", "oxygen","ventilated","hospitalized_not_intensive", "intensive")
 
@@ -74,7 +74,7 @@ cvh[,-1] <- sapply(cvh[,-1], as.integer)
 # Get regional hospitalization data ---------------------------------------
 cat("\nParsing regional hospitalization data\n")
 
-tlk <- data.frame(tbs[[4]][-1:-8,])
+tlk <- data.frame(tbs[[5]][-1:-8,])
 colnames(tlk) <-c("description", "tlk", "total", "intensive", "ventilated", "oxygen_mask")
 tlk[,-2:-1] <- sapply(tlk[,-2:-1], function(x)as.integer(gsub("[,. ]","",x)))
 tlk$description[tlk$description == ""] <- NA
