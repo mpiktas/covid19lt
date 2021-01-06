@@ -91,3 +91,15 @@ push_to_github <- function(dirs, commit_message, push = TRUE) {
     }
 
 }
+
+
+scenABCD <- function(c100k, tpr, t100k) {
+    res <- rep(0, length(c100k))
+    res[c100k<25 & tpr<4] <- 1
+    res[c100k>=25 & c100k<100] <- 2
+    res[c100k>=100 & c100k<500] <- 3
+    res[c100k>=500] <- 4
+    res[t100k<=500] <- 0
+    res <- res/4
+    res
+}

@@ -6,18 +6,7 @@ library(lubridate)
 library(stringr)
 library(tidyr)
 
-tryget <- function(link, times = 10) {
-    res <- NULL
-    for (i in 1:times) {
-        res <- try(GET(link))
-        if(inherits(res, "try-error")) {
-            cat("\nFailed to get the data, sleeping for 1 second\n")
-            Sys.sleep(1)
-        } else break
-    }
-    if(is.null(res))stop("Failed to get the data after ", times, " times.")
-    res
-}
+source("R/functions.R")
 
 raw <- tryget("https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika")
 
@@ -29,7 +18,7 @@ tbs <- html_table(oo, fill = TRUE)
 
 cat("\nParsing daily data\n")
 
-cdd <- c(tbs[[2]][,1], tbs[[3]][,1])
+cdd <- c(tbs[[2]][,1], tbs[[3]][,1], tbs[[4]][,1])
 
 crtime <- Sys.time()
 
@@ -60,7 +49,7 @@ cat("\nParsing total capacity data\n")
 # Get covid hospitalisation data ----------------------------------------------------------
 cat("\nParsing covid hospitalization data\n")
 
-cvh0 <- data.frame(tbs[[5]])[1:4,]
+cvh0 <- data.frame(tbs[[6]])[1:4,]
 
 colnames(cvh0) <- c("description","total", "oxygen","ventilated","hospitalized_not_intensive", "intensive")
 
@@ -74,7 +63,7 @@ cvh[,-1] <- sapply(cvh[,-1], as.integer)
 # Get regional hospitalization data ---------------------------------------
 cat("\nParsing regional hospitalization data\n")
 
-tlk <- data.frame(tbs[[5]][-1:-8,])
+tlk <- data.frame(tbs[[6]][-1:-8,])
 colnames(tlk) <-c("description", "tlk", "total", "intensive", "ventilated", "oxygen_mask")
 tlk[,-2:-1] <- sapply(tlk[,-2:-1], function(x)as.integer(gsub("[,. ]","",x)))
 tlk$description[tlk$description == ""] <- NA
@@ -100,7 +89,7 @@ fnl <- paste0("raw_data/hospitalization//",names(res),"_",dd,".csv")
 mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), res, fnl, SIMPLIFY = FALSE)
 
 ## Write the death age distribution
-aged0 <- tbs[[3]]
+aged0 <- tbs[[5]]
 #aged <- aged0[-1,]
 #colnames(aged) <- c(aged0[[1]][1],aged0[[2]][1])
 #aged[,2] <- sapply(aged[,2], as.integer)
