@@ -1,6 +1,8 @@
 ---
 title: "Weekdays"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r}
@@ -21,31 +23,32 @@ wf <- lv12 %>% filter(wday %in% (1:7)) %>% slice_head(n=7) %>% arrange(wday) %>%
 
 lv12 <- lv12 %>% mutate(wfday = factor(weekday, levels = wf))
 
+start_day <- "2020-12-07"
+
 ```
 
 ```{r}
-ggplot(aes(x = wfday, y = tpn, group = week, colour = as.character(week)), data = lv12 %>% filter(week>47))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Teigiami nauji testai", title = "Teigiami nauji testai savaitės dienomis")
-```
-
-
-```{r}
-ggplot(aes(x = wfday, y = confirmed_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(week>47))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Nauji atvejai", title = "Nauji atvejai savaitės dienomis")
+ggplot(aes(x = wfday, y = tpn, group = week, colour = as.character(week)), data = lv12 %>% filter(day >= start_day))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Teigiami nauji testai", title = "Teigiami nauji testai savaitės dienomis")
 ```
 
 
 ```{r}
-ggplot(aes(x = wfday, y = tests_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(week>47))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Testai", title = "Testavimo apimtys savaitės dienomis")
+ggplot(aes(x = wfday, y = confirmed_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(day >= start_day))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Nauji atvejai", title = "Nauji atvejai savaitės dienomis")
+```
+
+
+```{r}
+ggplot(aes(x = wfday, y = tests_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(day >=start_day))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Testai", title = "Testavimo apimtys savaitės dienomis")
 ```
 
 ```{r}
-ggplot(aes(x = wfday, y = tests_mobile_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(week>47))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Testai mobiliuose punktuose", title = "Testavimo apimtys mobiliuose punktuose savaitės dienomis")
+ggplot(aes(x = wfday, y = tests_mobile_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(day >= start_day))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Testai mobiliuose punktuose", title = "Testavimo apimtys mobiliuose punktuose savaitės dienomis")
 ```
 ```{r}
-ggplot(aes(x = wfday, y = tpr_tpn, group = week, colour = as.character(week)), data = lv12 %>% filter(week>47))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Procentai", title = "Teigiamų tyrimų dalis (7 dienų vidurkis)")
+ggplot(aes(x = wfday, y = tpr_tpn, group = week, colour = as.character(week)), data = lv12 %>% filter(day>=start_day))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Procentai", title = "Teigiamų tyrimų dalis (7 dienų vidurkis)")
 ```
 ```{r}
-ggplot(aes(x = wfday, y = tpr, group = week, colour = as.character(week)), data = lv12 %>% filter(week>47))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Procentai", title = "Teigiamų tyrimų dalis")
+ggplot(aes(x = wfday, y = tpr, group = week, colour = as.character(week)), data = lv12 %>% filter(day>=start_day))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Procentai", title = "Teigiamų tyrimų dalis")
 ```
-```{r}
-ggplot(aes(x = wfday, y = tpr2, group = week, colour = as.character(week)), data = lv12 %>% filter(week>47))+geom_line()+scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) + theme_bw()+ labs(x="Savaitės diena", y = "Procentai", title = "Naujų atvejų dalis")
-```
+
+

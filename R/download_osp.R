@@ -14,34 +14,6 @@ oo <- read_html(raw)
 
 tbs <- html_table(oo, fill = TRUE)
 
-# Add the totals data -----------------------------------------------------
-
-cat("\nParsing daily data\n")
-
-cdd <- c(tbs[[2]][,1], tbs[[3]][,1], tbs[[4]][,1])
-
-crtime <- Sys.time()
-
-cdd1 <- cdd[cdd!=""]
-cdd2 <- sapply(strsplit(cdd1,":"),"[[",2) %>% str_trim %>% as.integer
-
-nums <- c(cdd2[c(2, 10, 1, 5)],NA,cdd2[9],NA,NA,cdd2[11:12])
-
-outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
-ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "days")-days(1))) %>%
-    mutate(confirmed = nums[1],
-           active = nums[2],
-           incidence = nums[3],
-           deaths = nums[4],
-           deaths_different = nums[5],
-           recovered = nums[6],
-           daily_tests = nums[9],
-           quarantined = nums[7],
-           total_tests = nums[10],
-           imported0601 = nums[8])
-write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
-
-
 # Get the total capacity data ------------------------------------------------------
 
 cat("\nParsing total capacity data\n")
@@ -88,10 +60,41 @@ fnl <- paste0("raw_data/hospitalization//",names(res),"_",dd,".csv")
 
 mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), res, fnl, SIMPLIFY = FALSE)
 
+
+# Add the totals data -----------------------------------------------------
+
+cat("\nParsing daily data\n")
+
+cdd <- c(tbs[[2]][,1], tbs[[3]][,1], tbs[[4]][,1])
+
+crtime <- Sys.time()
+
+cdd1 <- cdd[cdd!=""]
+cdd2 <- cdd1[grepl("[:]", cdd1)]
+cdd3 <- sapply(strsplit(cdd2,":"),"[[",2) %>% str_trim %>% as.integer
+
+nums <- c(cdd3[c(2, 11, 1, 6)],NA,cdd3[10],NA,NA,cdd3[13:14])
+
+outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
+ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "days")-days(1))) %>%
+    mutate(confirmed = nums[1],
+           active = nums[2],
+           incidence = nums[3],
+           deaths = nums[4],
+           deaths_different = nums[5],
+           recovered = nums[6],
+           daily_tests = nums[9],
+           quarantined = nums[7],
+           total_tests = nums[10],
+           imported0601 = nums[8])
+write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
+
+
+
 ## Write the death age distribution
-aged0 <- tbs[[5]]
+#aged0 <- tbs[[5]]
 #aged <- aged0[-1,]
 #colnames(aged) <- c(aged0[[1]][1],aged0[[2]][1])
 #aged[,2] <- sapply(aged[,2], as.integer)
 
-write.csv(aged0, glue::glue("raw_data/sam/lt-covid19-death-age_{outd}.csv"), row.names = FALSE)
+#write.csv(aged0, glue::glue("raw_data/sam/lt-covid19-death-age_{outd}.csv"), row.names = FALSE)
