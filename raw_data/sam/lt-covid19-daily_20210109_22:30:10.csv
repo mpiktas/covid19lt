@@ -1,2 +1,2 @@
-"country","day","confirmed","active","incidence","deaths","deaths_different","recovered","daily_tests","quarantined","total_tests","imported0601","vacine_daily","vacine_total"
+"country","day","confirmed","active","incidence","deaths","deaths_different","recovered","daily_tests","quarantined","total_tests","imported0601","vaccine_daily","vaccine_total"
 "Lithuania",2021-01-08,158180,62874,1641,52,NA,92212,12195,NA,1728603,NA,4579,22191

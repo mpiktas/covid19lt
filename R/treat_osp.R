@@ -14,7 +14,7 @@ sam <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm) %>% select(-day), 
 dl <-  sam %>% group_by(day) %>%
     filter(downloaded == max(downloaded)) %>% ungroup %>%
     mutate(country = "Lithuania") %>%
-    select(country, day, incidence, daily_tests, confirmed, active, deaths, recovered, quarantined, total_tests, deaths_different, imported0601, under_observation, vacine_daily, vacine_total) %>%
+    select(country, day, incidence, daily_tests, confirmed, active, deaths, recovered, quarantined, total_tests, deaths_different, imported0601, under_observation, vaccine_daily, vaccine_total) %>%
     arrange(day)
 
 dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
