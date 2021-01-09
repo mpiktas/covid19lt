@@ -87,8 +87,8 @@ ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "da
            quarantined = nums[7],
            total_tests = nums[10],
            imported0601 = nums[8],
-           vacine_daily = nums[11],
-           vacine_total = nums[12])
+           vaccine_daily = nums[11],
+           vaccine_total = nums[12])
 write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
 
 
