@@ -4587,7 +4587,7 @@
 2021-01-06,"94","Tauragės apskr.","Jurbarko r.","Antra dozė",0,0
 2021-01-06,"XX","Unknown","Unknown","Pirma dozė",13,6
 2021-01-06,"XX","Unknown","Unknown","Antra dozė",0,0
-2021-01-07,"00","Lithuania","Lithuania","Pirma dozė",17612,3912
+2021-01-07,"00","Lithuania","Lithuania","Pirma dozė",17619,3919
 2021-01-07,"00","Lithuania","Lithuania","Antra dozė",0,0
 2021-01-07,"11","Alytaus apskr.","Alytaus m.","Pirma dozė",175,10
 2021-01-07,"11","Alytaus apskr.","Alytaus m.","Antra dozė",0,0
@@ -4635,7 +4635,7 @@
 2021-01-07,"45","Utenos apskr.","Ignalinos r.","Antra dozė",0,0
 2021-01-07,"46","Kauno apskr.","Jonavos r.","Pirma dozė",124,12
 2021-01-07,"46","Kauno apskr.","Jonavos r.","Antra dozė",0,0
-2021-01-07,"47","Šiaulių apskr.","Joniškio r.","Pirma dozė",127,31
+2021-01-07,"47","Šiaulių apskr.","Joniškio r.","Pirma dozė",134,38
 2021-01-07,"47","Šiaulių apskr.","Joniškio r.","Antra dozė",0,0
 2021-01-07,"48","Marijampolės apskr.","Kalvarijos","Pirma dozė",12,2
 2021-01-07,"48","Marijampolės apskr.","Kalvarijos","Antra dozė",0,0
@@ -4711,7 +4711,7 @@
 2021-01-07,"94","Tauragės apskr.","Jurbarko r.","Antra dozė",0,0
 2021-01-07,"XX","Unknown","Unknown","Pirma dozė",19,6
 2021-01-07,"XX","Unknown","Unknown","Antra dozė",0,0
-2021-01-08,"00","Lithuania","Lithuania","Pirma dozė",22191,4579
+2021-01-08,"00","Lithuania","Lithuania","Pirma dozė",22210,4591
 2021-01-08,"00","Lithuania","Lithuania","Antra dozė",0,0
 2021-01-08,"11","Alytaus apskr.","Alytaus m.","Pirma dozė",406,231
 2021-01-08,"11","Alytaus apskr.","Alytaus m.","Antra dozė",0,0
@@ -4759,7 +4759,7 @@
 2021-01-08,"45","Utenos apskr.","Ignalinos r.","Antra dozė",0,0
 2021-01-08,"46","Kauno apskr.","Jonavos r.","Pirma dozė",205,81
 2021-01-08,"46","Kauno apskr.","Jonavos r.","Antra dozė",0,0
-2021-01-08,"47","Šiaulių apskr.","Joniškio r.","Pirma dozė",167,40
+2021-01-08,"47","Šiaulių apskr.","Joniškio r.","Pirma dozė",186,52
 2021-01-08,"47","Šiaulių apskr.","Joniškio r.","Antra dozė",0,0
 2021-01-08,"48","Marijampolės apskr.","Kalvarijos","Pirma dozė",17,5
 2021-01-08,"48","Marijampolės apskr.","Kalvarijos","Antra dozė",0,0
@@ -4835,3 +4835,127 @@
 2021-01-08,"94","Tauragės apskr.","Jurbarko r.","Antra dozė",0,0
 2021-01-08,"XX","Unknown","Unknown","Pirma dozė",27,8
 2021-01-08,"XX","Unknown","Unknown","Antra dozė",0,0
+2021-01-09,"00","Lithuania","Lithuania","Pirma dozė",22505,295
+2021-01-09,"00","Lithuania","Lithuania","Antra dozė",0,0
+2021-01-09,"11","Alytaus apskr.","Alytaus m.","Pirma dozė",407,1
+2021-01-09,"11","Alytaus apskr.","Alytaus m.","Antra dozė",0,0
+2021-01-09,"12","Kauno apskr.","Birštono","Pirma dozė",5,0
+2021-01-09,"12","Kauno apskr.","Birštono","Antra dozė",0,0
+2021-01-09,"13","Vilniaus apskr.","Vilniaus m.","Pirma dozė",4850,1
+2021-01-09,"13","Vilniaus apskr.","Vilniaus m.","Antra dozė",0,0
+2021-01-09,"15","Alytaus apskr.","Druskininkų","Pirma dozė",171,0
+2021-01-09,"15","Alytaus apskr.","Druskininkų","Antra dozė",0,0
+2021-01-09,"18","Marijampolės apskr.","Marijampolės","Pirma dozė",398,2
+2021-01-09,"18","Marijampolės apskr.","Marijampolės","Antra dozė",0,0
+2021-01-09,"19","Kauno apskr.","Kauno m.","Pirma dozė",4825,179
+2021-01-09,"19","Kauno apskr.","Kauno m.","Antra dozė",0,0
+2021-01-09,"21","Klaipėdos apskr.","Klaipėdos m.","Pirma dozė",2013,2
+2021-01-09,"21","Klaipėdos apskr.","Klaipėdos m.","Antra dozė",0,0
+2021-01-09,"23","Klaipėdos apskr.","Neringos","Pirma dozė",6,0
+2021-01-09,"23","Klaipėdos apskr.","Neringos","Antra dozė",0,0
+2021-01-09,"25","Klaipėdos apskr.","Palangos m.","Pirma dozė",221,0
+2021-01-09,"25","Klaipėdos apskr.","Palangos m.","Antra dozė",0,0
+2021-01-09,"27","Panevėžio apskr.","Panevėžio m.","Pirma dozė",1119,0
+2021-01-09,"27","Panevėžio apskr.","Panevėžio m.","Antra dozė",0,0
+2021-01-09,"29","Šiaulių apskr.","Šiaulių m.","Pirma dozė",1006,0
+2021-01-09,"29","Šiaulių apskr.","Šiaulių m.","Antra dozė",0,0
+2021-01-09,"30","Utenos apskr.","Visagino m.","Pirma dozė",88,0
+2021-01-09,"30","Utenos apskr.","Visagino m.","Antra dozė",0,0
+2021-01-09,"32","Šiaulių apskr.","Akmenės r.","Pirma dozė",67,0
+2021-01-09,"32","Šiaulių apskr.","Akmenės r.","Antra dozė",0,0
+2021-01-09,"33","Alytaus apskr.","Alytaus r.","Pirma dozė",59,0
+2021-01-09,"33","Alytaus apskr.","Alytaus r.","Antra dozė",0,0
+2021-01-09,"34","Utenos apskr.","Anykščių r.","Pirma dozė",163,0
+2021-01-09,"34","Utenos apskr.","Anykščių r.","Antra dozė",0,0
+2021-01-09,"36","Panevėžio apskr.","Biržų r.","Pirma dozė",228,0
+2021-01-09,"36","Panevėžio apskr.","Biržų r.","Antra dozė",0,0
+2021-01-09,"38","Alytaus apskr.","Varėnos r.","Pirma dozė",147,0
+2021-01-09,"38","Alytaus apskr.","Varėnos r.","Antra dozė",0,0
+2021-01-09,"39","Marijampolės apskr.","Vilkaviškio r.","Pirma dozė",132,0
+2021-01-09,"39","Marijampolės apskr.","Vilkaviškio r.","Antra dozė",0,0
+2021-01-09,"41","Vilniaus apskr.","Vilniaus r.","Pirma dozė",448,0
+2021-01-09,"41","Vilniaus apskr.","Vilniaus r.","Antra dozė",0,0
+2021-01-09,"42","Vilniaus apskr.","Elektrėnų","Pirma dozė",21,0
+2021-01-09,"42","Vilniaus apskr.","Elektrėnų","Antra dozė",0,0
+2021-01-09,"43","Utenos apskr.","Zarasų r.","Pirma dozė",102,0
+2021-01-09,"43","Utenos apskr.","Zarasų r.","Antra dozė",0,0
+2021-01-09,"45","Utenos apskr.","Ignalinos r.","Pirma dozė",58,0
+2021-01-09,"45","Utenos apskr.","Ignalinos r.","Antra dozė",0,0
+2021-01-09,"46","Kauno apskr.","Jonavos r.","Pirma dozė",206,1
+2021-01-09,"46","Kauno apskr.","Jonavos r.","Antra dozė",0,0
+2021-01-09,"47","Šiaulių apskr.","Joniškio r.","Pirma dozė",186,0
+2021-01-09,"47","Šiaulių apskr.","Joniškio r.","Antra dozė",0,0
+2021-01-09,"48","Marijampolės apskr.","Kalvarijos","Pirma dozė",17,0
+2021-01-09,"48","Marijampolės apskr.","Kalvarijos","Antra dozė",0,0
+2021-01-09,"49","Kauno apskr.","Kaišiadorių r.","Pirma dozė",57,1
+2021-01-09,"49","Kauno apskr.","Kaišiadorių r.","Antra dozė",0,0
+2021-01-09,"52","Kauno apskr.","Kauno r.","Pirma dozė",442,18
+2021-01-09,"52","Kauno apskr.","Kauno r.","Antra dozė",0,0
+2021-01-09,"53","Kauno apskr.","Kėdainių r.","Pirma dozė",209,1
+2021-01-09,"53","Kauno apskr.","Kėdainių r.","Antra dozė",0,0
+2021-01-09,"54","Šiaulių apskr.","Kelmės r.","Pirma dozė",163,0
+2021-01-09,"54","Šiaulių apskr.","Kelmės r.","Antra dozė",0,0
+2021-01-09,"55","Klaipėdos apskr.","Klaipėdos r.","Pirma dozė",261,0
+2021-01-09,"55","Klaipėdos apskr.","Klaipėdos r.","Antra dozė",0,0
+2021-01-09,"56","Klaipėdos apskr.","Kretingos r.","Pirma dozė",256,0
+2021-01-09,"56","Klaipėdos apskr.","Kretingos r.","Antra dozė",0,0
+2021-01-09,"57","Panevėžio apskr.","Kupiškio r.","Pirma dozė",60,0
+2021-01-09,"57","Panevėžio apskr.","Kupiškio r.","Antra dozė",0,0
+2021-01-09,"58","Marijampolės apskr.","Kazlų Rūdos","Pirma dozė",26,2
+2021-01-09,"58","Marijampolės apskr.","Kazlų Rūdos","Antra dozė",0,0
+2021-01-09,"59","Alytaus apskr.","Lazdijų r.","Pirma dozė",101,0
+2021-01-09,"59","Alytaus apskr.","Lazdijų r.","Antra dozė",0,0
+2021-01-09,"61","Telšių apskr.","Mažeikių r.","Pirma dozė",330,0
+2021-01-09,"61","Telšių apskr.","Mažeikių r.","Antra dozė",0,0
+2021-01-09,"62","Utenos apskr.","Molėtų r.","Pirma dozė",162,0
+2021-01-09,"62","Utenos apskr.","Molėtų r.","Antra dozė",0,0
+2021-01-09,"63","Tauragės apskr.","Pagėgių","Pirma dozė",10,0
+2021-01-09,"63","Tauragės apskr.","Pagėgių","Antra dozė",0,0
+2021-01-09,"65","Šiaulių apskr.","Pakruojo r.","Pirma dozė",71,0
+2021-01-09,"65","Šiaulių apskr.","Pakruojo r.","Antra dozė",0,0
+2021-01-09,"66","Panevėžio apskr.","Panevėžio r.","Pirma dozė",266,0
+2021-01-09,"66","Panevėžio apskr.","Panevėžio r.","Antra dozė",0,0
+2021-01-09,"67","Panevėžio apskr.","Pasvalio r.","Pirma dozė",271,0
+2021-01-09,"67","Panevėžio apskr.","Pasvalio r.","Antra dozė",0,0
+2021-01-09,"68","Telšių apskr.","Plungės r.","Pirma dozė",199,0
+2021-01-09,"68","Telšių apskr.","Plungės r.","Antra dozė",0,0
+2021-01-09,"69","Kauno apskr.","Prienų r.","Pirma dozė",141,1
+2021-01-09,"69","Kauno apskr.","Prienų r.","Antra dozė",0,0
+2021-01-09,"71","Šiaulių apskr.","Radviliškio r.","Pirma dozė",101,0
+2021-01-09,"71","Šiaulių apskr.","Radviliškio r.","Antra dozė",0,0
+2021-01-09,"72","Kauno apskr.","Raseinių r.","Pirma dozė",126,1
+2021-01-09,"72","Kauno apskr.","Raseinių r.","Antra dozė",0,0
+2021-01-09,"73","Panevėžio apskr.","Rokiškio r.","Pirma dozė",496,0
+2021-01-09,"73","Panevėžio apskr.","Rokiškio r.","Antra dozė",0,0
+2021-01-09,"74","Telšių apskr.","Rietavo","Pirma dozė",9,0
+2021-01-09,"74","Telšių apskr.","Rietavo","Antra dozė",0,0
+2021-01-09,"75","Klaipėdos apskr.","Skuodo r.","Pirma dozė",78,0
+2021-01-09,"75","Klaipėdos apskr.","Skuodo r.","Antra dozė",0,0
+2021-01-09,"77","Tauragės apskr.","Tauragės r.","Pirma dozė",226,0
+2021-01-09,"77","Tauragės apskr.","Tauragės r.","Antra dozė",0,0
+2021-01-09,"78","Telšių apskr.","Telšių r.","Pirma dozė",251,1
+2021-01-09,"78","Telšių apskr.","Telšių r.","Antra dozė",0,0
+2021-01-09,"79","Vilniaus apskr.","Trakų r.","Pirma dozė",40,0
+2021-01-09,"79","Vilniaus apskr.","Trakų r.","Antra dozė",0,0
+2021-01-09,"81","Vilniaus apskr.","Ukmergės r.","Pirma dozė",119,0
+2021-01-09,"81","Vilniaus apskr.","Ukmergės r.","Antra dozė",0,0
+2021-01-09,"82","Utenos apskr.","Utenos r.","Pirma dozė",125,0
+2021-01-09,"82","Utenos apskr.","Utenos r.","Antra dozė",0,0
+2021-01-09,"84","Marijampolės apskr.","Šakių r.","Pirma dozė",174,1
+2021-01-09,"84","Marijampolės apskr.","Šakių r.","Antra dozė",0,0
+2021-01-09,"85","Vilniaus apskr.","Šalčininkų r.","Pirma dozė",25,0
+2021-01-09,"85","Vilniaus apskr.","Šalčininkų r.","Antra dozė",0,0
+2021-01-09,"86","Vilniaus apskr.","Švenčionių r.","Pirma dozė",19,0
+2021-01-09,"86","Vilniaus apskr.","Švenčionių r.","Antra dozė",0,0
+2021-01-09,"87","Tauragės apskr.","Šilalės r.","Pirma dozė",161,0
+2021-01-09,"87","Tauragės apskr.","Šilalės r.","Antra dozė",0,0
+2021-01-09,"88","Klaipėdos apskr.","Šilutės r.","Pirma dozė",300,0
+2021-01-09,"88","Klaipėdos apskr.","Šilutės r.","Antra dozė",0,0
+2021-01-09,"89","Vilniaus apskr.","Širvintų r.","Pirma dozė",33,0
+2021-01-09,"89","Vilniaus apskr.","Širvintų r.","Antra dozė",0,0
+2021-01-09,"91","Šiaulių apskr.","Šiaulių r.","Pirma dozė",68,0
+2021-01-09,"91","Šiaulių apskr.","Šiaulių r.","Antra dozė",0,0
+2021-01-09,"94","Tauragės apskr.","Jurbarko r.","Pirma dozė",158,82
+2021-01-09,"94","Tauragės apskr.","Jurbarko r.","Antra dozė",0,0
+2021-01-09,"XX","Unknown","Unknown","Pirma dozė",28,1
+2021-01-09,"XX","Unknown","Unknown","Antra dozė",0,0
