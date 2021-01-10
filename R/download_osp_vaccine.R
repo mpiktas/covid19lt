@@ -5,6 +5,7 @@ library(dplyr)
 library(lubridate)
 library(stringr)
 library(bit64)
+library(tidyr)
 
 source("R/functions.R")
 
@@ -38,8 +39,17 @@ osp3 <- osp2 %>% inner_join(adm %>% select(-population))
 if(nrow(osp3) == nrow(osp2)) {
     osp4 <- osp3 %>%select(day, municipality_code, administrative_level_2,administrative_level_3,
                     dose_number,  vaccinated = vaccinated_cumulative, vaccinated_daily = vaccinated
-                    ) %>%
-        arrange(day, municipality_code)
-    osp4 %>% write.csv("data/lt-covid19-vaccinated.csv", row.names = FALSE)
+                    )
+    dosed <- data.frame(dose_number=c("Pirma dozė", "Antra dozė"), dose = c(1,2))
+    osp5 <- osp4 %>% inner_join(dosed) %>% select(-dose_number)
+    osp6 <- osp5 %>% pivot_wider(id_cols = day:administrative_level_3, names_from = "dose",
+                                  values_from  = vaccinated:vaccinated_daily) %>% arrange(day, municipality_code)
+
+    osp6 %>%  write.csv("data/lt-covid19-vaccinated.csv", row.names = FALSE)
+
+    osp7 <- osp3 %>% seelect(day, municipality_code, administrative_level_2, administrative_level_3, dose_number,
+                             vaccinated_under_65_females, vaccinated_under_65_males,
+                             vaccinated_65_and_over_females, vaccinated_65_and_over_males) %>%
+        pivot_longer(vaccinated_under_65_females:vaccinated_65_and_over_males, names_to = "type", values_to = "value")
 }
 

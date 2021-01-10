@@ -8,6 +8,7 @@ ii <- read.csv("data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
 iii <- ii %>% group_by(day, administrative_level_3) %>% summarise(imported_daily = sum(imported == "Taip"))
 
 cvh <- read.csv("data/lt-covid19-hospitalized.csv") %>% mutate(day = ymd(day))
+vcn <- read.csv("data/lt-covid19-vaccinated.csv") %>% mutate(day = ymd(day))
 vlk <- read.csv("raw_data/vlk_historical.csv") %>% mutate(day = ymd(day))
 
 hosp0 <- vlk %>% full_join(cvh %>% rename(vent = ventilated))
@@ -41,6 +42,7 @@ sum(abs(cs %>% filter(administrative_level_3 == "Lithuania") %>% select(-adminis
 lvl3 <- cs  %>% filter(administrative_level_3 != "Lithuania") %>%
     left_join(tt %>% select(-municipality_code)) %>% left_join(adm %>% select(-municipality_name)) %>%
     left_join(iii) %>%
+    left_join(vcn %>% select(-municipality_code) %>% filter(administrative_level_3 != "Lithuania")) %>%
     mutate(administrative_level_2 = ifelse(is.na(administrative_level_2), "Unknown",administrative_level_2)) %>%
     mutate(tests_negative = fixNA(tests_negative),
            tests_positive = fixNA(tests_positive),
@@ -50,7 +52,13 @@ lvl3 <- cs  %>% filter(administrative_level_3 != "Lithuania") %>%
            tests_mobile_posts = fixNA(tests_mobile_posts),
            cumulative_tests = fixNA(cumulative_tests),
            population = fixNA(population),
-           imported_daily = fixNA(imported_daily))
+           imported_daily = fixNA(imported_daily)) %>%
+    rename(vaccinated_1_daily = vaccinated_daily_1,
+           vaccinated_2_daily = vaccinated_daily_2) %>%
+    mutate(vaccinated_1 = fixNA(vaccinated_1),
+           vaccinated_2 = fixNA(vaccinated_2),
+           vaccinated_1_daily = fixNA(vaccinated_1_daily),
+           vaccinated_2_daily = fixNA(vaccinated_2_daily))
 
 
 
@@ -58,12 +66,14 @@ lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3, mu
                     confirmed = confirmed_cases_cumulative, tests = cumulative_tests,
                     deaths = deaths_cumulative, other_deaths = other_deaths_cumulative,
                     recovered = recovered_cases_cumulative, active = active_cases,
+                    vaccinated_1, vaccinated_2,
                     confirmed_daily = confirmed_cases, tests_daily = tests_total, tests_mobile_daily = tests_mobile_posts,
                     deaths_daily = deaths,
                     other_deaths_daily = other_deaths, recovered_daily = recovered_cases,
                     tests_positive_new_daily = tests_positive_new,
                     tests_positive_repeated_daily = tests_positive_repeated,
-                    imported_daily, population)
+                    vaccinated_1_daily, vaccinated_2_daily,
+                    imported_daily,population)
 
 lvl2 <- lvl31 %>% select(-administrative_level_3, -municipality_code) %>%
     group_by(day, administrative_level_2) %>% summarise_all(sum)
@@ -79,7 +89,8 @@ lvl11 <- lvl1 %>% left_join(hosp1) %>%
 
 
 add_stats <- function(dt) {
-    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive_new_daily, tests_mobile_daily, deaths_daily, other_deaths_daily, population) %>%
+    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive_new_daily, tests_mobile_daily, deaths_daily, other_deaths_daily,
+                  vaccinated_1, vaccinated_2, population) %>%
         arrange(region, day) %>% group_by(region) %>%
         mutate(cases_sum7 = rollsum(confirmed_daily, 7, fill = NA, align = "right"),
                cases_sum14 = rollsum(confirmed_daily, 14, fill = NA, align = "right"),
@@ -112,7 +123,9 @@ add_stats <- function(dt) {
                other_deaths_growth_weekly=round(100*(other_deaths_sum7/lag(other_deaths_sum7,7) - 1),2),
                all_deaths_growth_weekly=round(100*((deaths_sum7+other_deaths_sum7)/lag(deaths_sum7+other_deaths_sum7,7) - 1),2),
                tests_growth_weekly = round(100*(test_sum7/lag(test_sum7,7)-1),2),
-               tests_mobile_growth_weekly = round(100*(test_mobile_sum7/lag(test_mobile_sum7,7)-1),2)
+               tests_mobile_growth_weekly = round(100*(test_mobile_sum7/lag(test_mobile_sum7,7)-1),2),
+               vaccinated_1_100k = vaccinated_1/population*100000,
+               vaccinated_2_100k = vaccinated_2/population*100000
         ) %>% select(-(confirmed_daily:tpn_sum14)) %>% ungroup
 }
 
