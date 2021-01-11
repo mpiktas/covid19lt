@@ -33,7 +33,7 @@ cn <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day)) %>% 
 
 dp00 <- dp0 %>% bind_rows(cn)
 
-dp <- dp00 %>% filter(administrative_level_3!="Unknown") %>% select(Savivaldybė = administrative_level_3, Apskritis = administrative_level_2, `Atvejai_100k` = confirmed_100k, `Atvejų augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_growth_weekly, `Testai_100k` = tests_100k, Populiacija = population ) %>% arrange(-Populiacija) 
+dp <- dp00 %>% filter(administrative_level_3!="Unknown") %>% select(Savivaldybė = administrative_level_3, Apskritis = administrative_level_2, `Atvejai_100k` = confirmed_100k, `Atvejų augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_growth_weekly, `Testai_100k` = tests_100k, `Paskiepyta pirma doze (%)` = vaccinated_1_percent, Populiacija = population ) %>% arrange(-Populiacija) 
 
 
 add_links <- function(x) {
@@ -58,7 +58,7 @@ dp %>% datatable(
           options = list(scrollX = TRUE, 
                          paging=FALSE,
                          fixedHeader=TRUE)) %>% 
-  formatRound(colnames(dp)[3:9],2)
+  formatRound(colnames(dp)[3:10],2)
 
 ```
 
@@ -74,7 +74,7 @@ dp0 <- lv2 %>% filter(day == max(day))
 
 dp00 <- dp0 %>% bind_rows(cn)
 
-dp <- dp00 %>% filter(administrative_level_2!="Unknown") %>% select(Apskritis = administrative_level_2, `Atvejai_100k` = confirmed_100k, `Atvejų augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_growth_weekly, `Testai_100k` = tests_100k, Populiacija = population ) %>% arrange(-Populiacija)
+dp <- dp00 %>% filter(administrative_level_2!="Unknown") %>% select(Apskritis = administrative_level_2, `Atvejai_100k` = confirmed_100k, `Atvejų augimas` = confirmed_growth_weekly,`Teigiamų tyrimų dalis` = tpr_tpn, `Tyrimų dalies pokytis` = tpr_tpn_diff_weekly, `Mirtys_100k` = deaths_100k, `Mirčių augimas` = deaths_growth_weekly, `Testai_100k` = tests_100k, `Paskiepyta pirma doze (%)` = vaccinated_1_percent, Populiacija = population ) %>% arrange(-Populiacija)
 
 regs_n <- paste0(gsub("[.]","",gsub(" ", "_",dp$Apskritis)),".html")
 
@@ -91,7 +91,7 @@ dp %>% datatable(
           options = list(scrollX = TRUE, 
                          paging=FALSE,
                          fixedHeader=TRUE)) %>% 
-  formatRound(colnames(dp)[2:8],2)
+  formatRound(colnames(dp)[2:9],2)
 
 ```
 
