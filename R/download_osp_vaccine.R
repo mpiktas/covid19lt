@@ -47,9 +47,10 @@ if(nrow(osp3) == nrow(osp2)) {
 
     osp6 %>%  write.csv("data/lt-covid19-vaccinated.csv", row.names = FALSE)
 
-    osp7 <- osp3 %>% seelect(day, municipality_code, administrative_level_2, administrative_level_3, dose_number,
+    osp7 <- osp3 %>% select(day, municipality_code, administrative_level_2, administrative_level_3, dose_number,
                              vaccinated_under_65_females, vaccinated_under_65_males,
                              vaccinated_65_and_over_females, vaccinated_65_and_over_males) %>%
         pivot_longer(vaccinated_under_65_females:vaccinated_65_and_over_males, names_to = "type", values_to = "value")
+
 }
 

@@ -124,8 +124,8 @@ add_stats <- function(dt) {
                all_deaths_growth_weekly=round(100*((deaths_sum7+other_deaths_sum7)/lag(deaths_sum7+other_deaths_sum7,7) - 1),2),
                tests_growth_weekly = round(100*(test_sum7/lag(test_sum7,7)-1),2),
                tests_mobile_growth_weekly = round(100*(test_mobile_sum7/lag(test_mobile_sum7,7)-1),2),
-               vaccinated_1_100k = vaccinated_1/population*100000,
-               vaccinated_2_100k = vaccinated_2/population*100000
+               vaccinated_1_percent = round(vaccinated_1/population*100,2),
+               vaccinated_2_percent = round(vaccinated_2/population*100,2)
         ) %>% select(-(confirmed_daily:tpn_sum14)) %>% ungroup
 }
 

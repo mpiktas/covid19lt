@@ -8,7 +8,7 @@ output:
     navbar:
       - {title: "Lietuvos regionai", href: "https://mpiktas.github.io/covid19lt/savivaldybes.html", align: right}
 params: 
-   region: "Alytaus m."
+   region: "Lietuva"
 ---
 
 ```{r setup, include=FALSE}
@@ -55,6 +55,7 @@ aa_last_day <- max(aa$day) %>% as.character
 ad_last_day <- max(ad$day) %>% as.character
 
 view_interval <- c("2020-10-01", aa_last_day)
+vaccine_interval <- c("2020-12-27", aa_last_day)
 
 
 aa <- aa %>% filter(region == params$region) %>% mutate(day = ymd(day)) %>% filter(day>="2020-02-28")
@@ -65,7 +66,7 @@ aa_stats <- aa %>% select(day,confirmed_growth_weekly, tpn_growth_weekly,
                           deaths_100k, other_deaths_100k, all_deaths_100k,
                           tests_100k, tests_mobile_100k,
                           tests_growth_weekly, tests_mobile_growth_weekly,
-                          deaths_growth_weekly, other_deaths_growth_weekly, all_deaths_growth_weekly)
+                          deaths_growth_weekly, other_deaths_growth_weekly, all_deaths_growth_weekly, vaccinated_1, vaccinated_2, vaccinated_1_percent, vaccinated_2_percent, vaccinated_1_daily, vaccinated_2_daily)
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
 
@@ -336,6 +337,32 @@ dygraph(xaa[,"other_deaths_100k"], main = paste("Kitų mirčių skaičius 100k g
 
 ```{r}
 dygraph(xaa[,"all_deaths_100k"], main = paste("Visų mirčių skaičius 100k gyventojų per 14 dienų:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval)
+```
+
+
+Vakcinos
+=======================================================================
+
+
+Column {.tabset}
+-----------------------------------------------------------------------
+
+### Viso
+
+```{r}
+dygraph(xaa["2020-12-27/","vaccinated_1"], main = paste("Pirmą skiepų dozę gavusių žmonių skaičius",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = vaccine_interval)
+```
+
+### Per dieną
+
+```{r}
+dygraph(xaa["2020-12-27/","vaccinated_1_daily"], main = paste("Pirma dozė per dieną",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = vaccine_interval)
+```
+
+### Procentas paskiepytų
+
+```{r}
+dygraph(xaa["2020-12-27/","vaccinated_1_percent"], main = paste("Pirma dozę gavusių procentas",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = vaccine_interval)
 ```
 
 Mobilumo duomenys
