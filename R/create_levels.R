@@ -37,7 +37,9 @@ tt <- tt %>% arrange(administrative_level_3, day) %>% group_by(administrative_le
 oo <- cs %>%   filter(administrative_level_3!= "Lithuania") %>%select(-municipality_code,-administrative_level_3) %>%
     group_by(day) %>% summarise_all(sum)
 
-sum(abs(cs %>% filter(administrative_level_3 == "Lithuania") %>% select(-administrative_level_3, - municipality_code, - day) - oo %>% select(-day)))
+if("Lithuania" %in% cs$administrative_level_3) {
+    sum(abs(cs %>% filter(administrative_level_3 == "Lithuania") %>% select(-administrative_level_3, - municipality_code, - day) - oo %>% select(-day)))
+}
 
 lvl3 <- cs  %>% filter(administrative_level_3 != "Lithuania") %>%
     left_join(tt %>% select(-municipality_code)) %>% left_join(adm %>% select(-municipality_name)) %>%

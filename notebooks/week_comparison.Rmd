@@ -23,7 +23,7 @@ wf <- lv12 %>% filter(wday %in% (1:7)) %>% slice_head(n=7) %>% arrange(wday) %>%
 
 lv12 <- lv12 %>% mutate(wfday = factor(weekday, levels = wf))
 
-start_day <- "2020-12-07"
+start_day <- "2020-12-14"
 
 ```
 

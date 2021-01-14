@@ -7,12 +7,16 @@ output: html_notebook
 library(dplyr)
 library(lubridate)
 library(ggplot2)
+library(zoo)
+library(stringr)
 evrk <- read.csv("../data/lt-covid19-evrk.csv") %>% mutate(day = ymd(day))
 evrk_meta <- read.csv("../raw_data/osp/evrk_meta.csv")
+Sys.setlocale(locale = "lt_LT.UTF-8")
 ```
 
 
 ```{r}
+
 tt <- evrk %>% group_by(evrk_group_title, evrk_group_code ) %>% select(-day) %>% summarise_all(sum) %>% mutate(r = round(100*tests_positive/tests,2)) %>% arrange(tests) %>% ungroup
 tt
 ```
@@ -68,5 +72,27 @@ ggplot(aes(x = day, y = tpr, colour = "Veikla"), data = cmp2 %>% filter(day>="20
 cols <- RColorBrewer::brewer.pal(3, "Set1")[c(1,2)]
 names(cols) <- c("Lietuva","Veikla")
 
-ggplot(aes(x = day, y = tpr1, colour = "Veikla"), data = cmp2 %>% filter(day>="2020-12-01"))+geom_line()+facet_wrap(~veikla) + theme_bw()+labs(x = "Data", y = "Procentai", title = "Teigiamų testų dalis, 7 dienų vidurkis, top 16 testuojamų veiklų")+geom_line(aes(y = tprl, colour = "Lietuva")) + scale_colour_manual(name = "Spalva", values = cols)
+ggplot(aes(x = day, y = tpr1, colour = "Veikla"), data = cmp2 %>% filter(day>="2020-12-01"))+geom_line()+facet_wrap(~veikla) + theme_bw()+labs(x = "Data", y = "Procentai", title = "Teigiamų testų dalis, top 16 testuojamų veiklų")+geom_line(aes(y = tprl, colour = "Lietuva")) + scale_colour_manual(name = "Spalva", values = cols)
+```
+
+
+```{r}
+vv <- evrk %>% group_by(evrk_group_title, evrk_group_code, year = year(day),week = isoweek(day)) %>% summarise(day = min(day), tests = sum(tests), r = round(100*sum(tests_positive)/sum(tests),2)) %>% mutate( levels = cut(r,c(0,5,10,15,20,25,100), include.lowest = TRUE))
+
+vv1 <- vv %>% ungroup %>% count(year, week, levels) %>% ungroup %>% group_by(week) %>% mutate(p = round(100*n/sum(n),2))
+
+vv2 <- vv %>% ungroup %>% filter(tests>=10) %>% count(year,week, levels) %>% ungroup %>% group_by(week) %>% mutate(p = round(100*n/sum(n),2))
+
+wk2date <- function(year, week) {
+    week[year == 2020] <- week[year == 2020]-1
+    year[year == 2021 & week == 53] <- 2020
+    week[week == 53] <- 52
+    ymd(parse_date_time(paste(year, week, 1, sep="/"),'Y/W/u'))
+}
+
+vv3 <- vv2 %>% mutate(day = wk2date(year,week))
+```
+
+```{r}
+ggplot(aes(x=day,y=p, fill=levels), data = vv3)+geom_col() + scale_fill_manual(name = "Intervalai", values = RColorBrewer::brewer.pal(6, "Set1")[c(3,2,4,6, 5,1)]) + theme_bw()+ labs(y = "Procentai", x = "Data", title = "EVRK veiklų teigiamų tyrimų dalis savaitėmis")
 ```
