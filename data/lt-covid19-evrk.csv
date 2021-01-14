@@ -844,7 +844,7 @@
 2020-03-28,"702","Konsultacinė valdymo veikla",0,10
 2020-03-28,"711","Architektūros ir inžinerijos veikla bei su ja susijusios techninės konsultacijos",0,2
 2020-03-28,"712","Techninis tikrinimas ir analizė",0,2
-2020-03-28,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",0,2
+2020-03-28,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",0,3
 2020-03-28,"722","Socialinių ir humanitarinių mokslų moksliniai tyrimai ir taikomoji veikla",0,2
 2020-03-28,"731","Reklama",0,2
 2020-03-28,"749","Kita, niekur kitur nepriskirta, profesinė, mokslinė ir techninė veikla",0,1
@@ -859,7 +859,7 @@
 2020-03-28,"812","Valymo veikla",0,2
 2020-03-28,"813","Kraštovaizdžio tvarkymas",0,1
 2020-03-28,"821","Įstaigų administracinė ir aptarnavimo veikla",0,1
-2020-03-28,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",1,28
+2020-03-28,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",1,27
 2020-03-28,"842","Bendruomenei teikiamų paslaugų užtikrinimas",0,10
 2020-03-28,"843","Privalomojo (valstybinio) socialinio draudimo veikla",3,7
 2020-03-28,"851","Ikimokyklinis ugdymas",0,6
@@ -869,7 +869,7 @@
 2020-03-28,"855","Kitas mokymas",0,3
 2020-03-28,"860","Žmonių sveikatos priežiūros veikla",0,75
 2020-03-28,"861","Ligoninių veikla",4,158
-2020-03-28,"862","Medicininės ir odontologinės praktikos veikla",3,92
+2020-03-28,"862","Medicininės ir odontologinės praktikos veikla",3,93
 2020-03-28,"869","Kita žmonių sveikatos priežiūros veikla",0,29
 2020-03-28,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,3
 2020-03-28,"879","Kita stacionarinė globos veikla",0,1
@@ -1124,7 +1124,7 @@
 2020-03-30,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-03-30,"860","Žmonių sveikatos priežiūros veikla",0,29
 2020-03-30,"861","Ligoninių veikla",9,126
-2020-03-30,"862","Medicininės ir odontologinės praktikos veikla",7,63
+2020-03-30,"862","Medicininės ir odontologinės praktikos veikla",7,62
 2020-03-30,"869","Kita žmonių sveikatos priežiūros veikla",0,15
 2020-03-30,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,2
 2020-03-30,"879","Kita stacionarinė globos veikla",0,2
@@ -3993,7 +3993,7 @@
 2020-04-18,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-04-18,"860","Žmonių sveikatos priežiūros veikla",0,82
 2020-04-18,"861","Ligoninių veikla",4,2282
-2020-04-18,"862","Medicininės ir odontologinės praktikos veikla",11,1024
+2020-04-18,"862","Medicininės ir odontologinės praktikos veikla",11,1023
 2020-04-18,"869","Kita žmonių sveikatos priežiūros veikla",1,420
 2020-04-18,"871","Stacionarinė slaugos įstaigų veikla",0,5
 2020-04-18,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,1
@@ -5030,7 +5030,7 @@
 2020-04-24,"870","Kita stacionarinė globos veikla",0,1
 2020-04-24,"871","Stacionarinė slaugos įstaigų veikla",0,26
 2020-04-24,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,144
-2020-04-24,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",2,754
+2020-04-24,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",2,755
 2020-04-24,"879","Kita stacionarinė globos veikla",0,179
 2020-04-24,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",0,121
 2020-04-24,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",0,201
@@ -6127,7 +6127,7 @@
 2020-05-01,"870","Kita stacionarinė globos veikla",0,6
 2020-05-01,"871","Stacionarinė slaugos įstaigų veikla",0,8
 2020-05-01,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,32
-2020-05-01,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,680
+2020-05-01,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,681
 2020-05-01,"879","Kita stacionarinė globos veikla",0,277
 2020-05-01,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",0,203
 2020-05-01,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",0,114
@@ -7253,7 +7253,7 @@
 2020-05-07,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-05-07,"860","Žmonių sveikatos priežiūros veikla",0,264
 2020-05-07,"861","Ligoninių veikla",5,2397
-2020-05-07,"862","Medicininės ir odontologinės praktikos veikla",1,870
+2020-05-07,"862","Medicininės ir odontologinės praktikos veikla",1,869
 2020-05-07,"869","Kita žmonių sveikatos priežiūros veikla",3,379
 2020-05-07,"871","Stacionarinė slaugos įstaigų veikla",0,30
 2020-05-07,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,11
@@ -8260,7 +8260,7 @@
 2020-05-13,"870","Kita stacionarinė globos veikla",0,26
 2020-05-13,"871","Stacionarinė slaugos įstaigų veikla",0,7
 2020-05-13,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,44
-2020-05-13,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,850
+2020-05-13,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,851
 2020-05-13,"879","Kita stacionarinė globos veikla",0,314
 2020-05-13,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",0,103
 2020-05-13,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",0,166
@@ -9610,7 +9610,7 @@
 2020-05-21,"856","Švietimui būdingų paslaugų veikla",0,3
 2020-05-21,"860","Žmonių sveikatos priežiūros veikla",0,122
 2020-05-21,"861","Ligoninių veikla",6,1802
-2020-05-21,"862","Medicininės ir odontologinės praktikos veikla",1,557
+2020-05-21,"862","Medicininės ir odontologinės praktikos veikla",1,556
 2020-05-21,"869","Kita žmonių sveikatos priežiūros veikla",0,313
 2020-05-21,"870","Kita stacionarinė globos veikla",0,10
 2020-05-21,"871","Stacionarinė slaugos įstaigų veikla",0,30
@@ -10448,7 +10448,7 @@
 2020-05-26,"869","Kita žmonių sveikatos priežiūros veikla",0,139
 2020-05-26,"871","Stacionarinė slaugos įstaigų veikla",0,40
 2020-05-26,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,5
-2020-05-26,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,236
+2020-05-26,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,237
 2020-05-26,"879","Kita stacionarinė globos veikla",0,64
 2020-05-26,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",0,17
 2020-05-26,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",0,42
@@ -11682,7 +11682,7 @@
 2020-06-02,"856","Švietimui būdingų paslaugų veikla",0,3
 2020-06-02,"860","Žmonių sveikatos priežiūros veikla",0,96
 2020-06-02,"861","Ligoninių veikla",5,2196
-2020-06-02,"862","Medicininės ir odontologinės praktikos veikla",1,453
+2020-06-02,"862","Medicininės ir odontologinės praktikos veikla",1,452
 2020-06-02,"869","Kita žmonių sveikatos priežiūros veikla",0,150
 2020-06-02,"870","Kita stacionarinė globos veikla",0,1
 2020-06-02,"871","Stacionarinė slaugos įstaigų veikla",0,29
@@ -14396,12 +14396,12 @@
 2020-06-18,"851","Ikimokyklinis ugdymas",0,15
 2020-06-18,"852","Pradinis ugdymas",0,10
 2020-06-18,"853","Vidurinis ugdymas",0,46
-2020-06-18,"854","Aukštasis mokslas",0,60
+2020-06-18,"854","Aukštasis mokslas",0,61
 2020-06-18,"855","Kitas mokymas",0,16
 2020-06-18,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-06-18,"860","Žmonių sveikatos priežiūros veikla",0,90
 2020-06-18,"861","Ligoninių veikla",7,1444
-2020-06-18,"862","Medicininės ir odontologinės praktikos veikla",2,702
+2020-06-18,"862","Medicininės ir odontologinės praktikos veikla",2,701
 2020-06-18,"869","Kita žmonių sveikatos priežiūros veikla",0,190
 2020-06-18,"871","Stacionarinė slaugos įstaigų veikla",0,8
 2020-06-18,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,21
@@ -16654,7 +16654,7 @@
 2020-07-02,"869","Kita žmonių sveikatos priežiūros veikla",0,90
 2020-07-02,"871","Stacionarinė slaugos įstaigų veikla",0,6
 2020-07-02,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,27
-2020-07-02,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,327
+2020-07-02,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,328
 2020-07-02,"879","Kita stacionarinė globos veikla",0,54
 2020-07-02,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",0,28
 2020-07-02,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",0,21
@@ -17038,7 +17038,7 @@
 2020-07-05,"856","Švietimui būdingų paslaugų veikla",0,1
 2020-07-05,"860","Žmonių sveikatos priežiūros veikla",0,5
 2020-07-05,"861","Ligoninių veikla",0,95
-2020-07-05,"862","Medicininės ir odontologinės praktikos veikla",1,46
+2020-07-05,"862","Medicininės ir odontologinės praktikos veikla",1,45
 2020-07-05,"869","Kita žmonių sveikatos priežiūros veikla",0,15
 2020-07-05,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,3
 2020-07-05,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,2
@@ -17635,7 +17635,7 @@
 2020-07-09,"851","Ikimokyklinis ugdymas",0,9
 2020-07-09,"852","Pradinis ugdymas",0,4
 2020-07-09,"853","Vidurinis ugdymas",1,24
-2020-07-09,"854","Aukštasis mokslas",0,71
+2020-07-09,"854","Aukštasis mokslas",0,72
 2020-07-09,"855","Kitas mokymas",0,10
 2020-07-09,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-07-09,"860","Žmonių sveikatos priežiūros veikla",0,27
@@ -17793,7 +17793,7 @@
 2020-07-10,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-07-10,"860","Žmonių sveikatos priežiūros veikla",0,65
 2020-07-10,"861","Ligoninių veikla",0,1249
-2020-07-10,"862","Medicininės ir odontologinės praktikos veikla",1,450
+2020-07-10,"862","Medicininės ir odontologinės praktikos veikla",1,449
 2020-07-10,"869","Kita žmonių sveikatos priežiūros veikla",0,109
 2020-07-10,"871","Stacionarinė slaugos įstaigų veikla",0,5
 2020-07-10,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,15
@@ -18770,12 +18770,12 @@
 2020-07-17,"851","Ikimokyklinis ugdymas",1,9
 2020-07-17,"852","Pradinis ugdymas",0,4
 2020-07-17,"853","Vidurinis ugdymas",0,29
-2020-07-17,"854","Aukštasis mokslas",1,39
+2020-07-17,"854","Aukštasis mokslas",1,40
 2020-07-17,"855","Kitas mokymas",0,5
 2020-07-17,"856","Švietimui būdingų paslaugų veikla",0,1
 2020-07-17,"860","Žmonių sveikatos priežiūros veikla",0,41
 2020-07-17,"861","Ligoninių veikla",0,802
-2020-07-17,"862","Medicininės ir odontologinės praktikos veikla",0,359
+2020-07-17,"862","Medicininės ir odontologinės praktikos veikla",0,358
 2020-07-17,"869","Kita žmonių sveikatos priežiūros veikla",1,199
 2020-07-17,"871","Stacionarinė slaugos įstaigų veikla",0,12
 2020-07-17,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,1
@@ -20494,7 +20494,7 @@
 2020-08-01,"851","Ikimokyklinis ugdymas",1,26
 2020-08-01,"852","Pradinis ugdymas",1,4
 2020-08-01,"853","Vidurinis ugdymas",1,36
-2020-08-01,"854","Aukštasis mokslas",0,24
+2020-08-01,"854","Aukštasis mokslas",0,25
 2020-08-01,"855","Kitas mokymas",0,10
 2020-08-01,"856","Švietimui būdingų paslaugų veikla",0,1
 2020-08-01,"860","Žmonių sveikatos priežiūros veikla",1,60
@@ -22307,7 +22307,7 @@
 2020-08-12,"851","Ikimokyklinis ugdymas",0,11
 2020-08-12,"852","Pradinis ugdymas",0,3
 2020-08-12,"853","Vidurinis ugdymas",1,86
-2020-08-12,"854","Aukštasis mokslas",0,88
+2020-08-12,"854","Aukštasis mokslas",0,89
 2020-08-12,"855","Kitas mokymas",0,18
 2020-08-12,"856","Švietimui būdingų paslaugų veikla",0,1
 2020-08-12,"860","Žmonių sveikatos priežiūros veikla",0,46
@@ -22677,7 +22677,7 @@
 2020-08-14,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-08-14,"860","Žmonių sveikatos priežiūros veikla",0,102
 2020-08-14,"861","Ligoninių veikla",1,1223
-2020-08-14,"862","Medicininės ir odontologinės praktikos veikla",0,494
+2020-08-14,"862","Medicininės ir odontologinės praktikos veikla",0,493
 2020-08-14,"869","Kita žmonių sveikatos priežiūros veikla",0,190
 2020-08-14,"871","Stacionarinė slaugos įstaigų veikla",0,6
 2020-08-14,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,5
@@ -23934,7 +23934,7 @@
 2020-08-21,"851","Ikimokyklinis ugdymas",1,23
 2020-08-21,"852","Pradinis ugdymas",0,5
 2020-08-21,"853","Vidurinis ugdymas",0,60
-2020-08-21,"854","Aukštasis mokslas",0,68
+2020-08-21,"854","Aukštasis mokslas",0,69
 2020-08-21,"855","Kitas mokymas",0,15
 2020-08-21,"856","Švietimui būdingų paslaugų veikla",0,5
 2020-08-21,"860","Žmonių sveikatos priežiūros veikla",1,115
@@ -25395,12 +25395,12 @@
 2020-08-29,"851","Ikimokyklinis ugdymas",0,14
 2020-08-29,"852","Pradinis ugdymas",0,8
 2020-08-29,"853","Vidurinis ugdymas",3,58
-2020-08-29,"854","Aukštasis mokslas",0,40
+2020-08-29,"854","Aukštasis mokslas",0,41
 2020-08-29,"855","Kitas mokymas",1,8
 2020-08-29,"856","Švietimui būdingų paslaugų veikla",0,4
 2020-08-29,"860","Žmonių sveikatos priežiūros veikla",0,66
 2020-08-29,"861","Ligoninių veikla",2,623
-2020-08-29,"862","Medicininės ir odontologinės praktikos veikla",3,346
+2020-08-29,"862","Medicininės ir odontologinės praktikos veikla",3,345
 2020-08-29,"869","Kita žmonių sveikatos priežiūros veikla",1,118
 2020-08-29,"871","Stacionarinė slaugos įstaigų veikla",0,1
 2020-08-29,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,10
@@ -26322,7 +26322,7 @@
 2020-09-03,"869","Kita žmonių sveikatos priežiūros veikla",3,203
 2020-09-03,"871","Stacionarinė slaugos įstaigų veikla",0,16
 2020-09-03,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,7
-2020-09-03,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,100
+2020-09-03,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",0,101
 2020-09-03,"879","Kita stacionarinė globos veikla",0,41
 2020-09-03,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",0,21
 2020-09-03,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",0,19
@@ -26666,7 +26666,7 @@
 2020-09-05,"851","Ikimokyklinis ugdymas",1,12
 2020-09-05,"852","Pradinis ugdymas",0,7
 2020-09-05,"853","Vidurinis ugdymas",0,32
-2020-09-05,"854","Aukštasis mokslas",0,26
+2020-09-05,"854","Aukštasis mokslas",0,27
 2020-09-05,"855","Kitas mokymas",0,7
 2020-09-05,"856","Švietimui būdingų paslaugų veikla",0,1
 2020-09-05,"860","Žmonių sveikatos priežiūros veikla",0,49
@@ -27569,7 +27569,7 @@
 2020-09-10,"855","Kitas mokymas",0,17
 2020-09-10,"860","Žmonių sveikatos priežiūros veikla",0,76
 2020-09-10,"861","Ligoninių veikla",0,1052
-2020-09-10,"862","Medicininės ir odontologinės praktikos veikla",0,665
+2020-09-10,"862","Medicininės ir odontologinės praktikos veikla",0,664
 2020-09-10,"869","Kita žmonių sveikatos priežiūros veikla",0,162
 2020-09-10,"871","Stacionarinė slaugos įstaigų veikla",0,8
 2020-09-10,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,10
@@ -27759,7 +27759,7 @@
 2020-09-11,"851","Ikimokyklinis ugdymas",1,44
 2020-09-11,"852","Pradinis ugdymas",0,13
 2020-09-11,"853","Vidurinis ugdymas",5,224
-2020-09-11,"854","Aukštasis mokslas",0,62
+2020-09-11,"854","Aukštasis mokslas",0,63
 2020-09-11,"855","Kitas mokymas",0,22
 2020-09-11,"856","Švietimui būdingų paslaugų veikla",0,4
 2020-09-11,"860","Žmonių sveikatos priežiūros veikla",0,99
@@ -29175,7 +29175,7 @@
 2020-09-19,"851","Ikimokyklinis ugdymas",2,31
 2020-09-19,"852","Pradinis ugdymas",0,10
 2020-09-19,"853","Vidurinis ugdymas",4,63
-2020-09-19,"854","Aukštasis mokslas",3,38
+2020-09-19,"854","Aukštasis mokslas",3,39
 2020-09-19,"855","Kitas mokymas",2,8
 2020-09-19,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-09-19,"860","Žmonių sveikatos priežiūros veikla",0,24
@@ -30875,7 +30875,7 @@
 2020-09-28,"854","Aukštasis mokslas",2,80
 2020-09-28,"855","Kitas mokymas",1,24
 2020-09-28,"856","Švietimui būdingų paslaugų veikla",0,1
-2020-09-28,"860","Žmonių sveikatos priežiūros veikla",0,54
+2020-09-28,"860","Žmonių sveikatos priežiūros veikla",0,55
 2020-09-28,"861","Ligoninių veikla",4,954
 2020-09-28,"862","Medicininės ir odontologinės praktikos veikla",1,232
 2020-09-28,"869","Kita žmonių sveikatos priežiūros veikla",1,72
@@ -31881,7 +31881,7 @@
 2020-10-03,"851","Ikimokyklinis ugdymas",2,32
 2020-10-03,"852","Pradinis ugdymas",0,4
 2020-10-03,"853","Vidurinis ugdymas",5,120
-2020-10-03,"854","Aukštasis mokslas",3,40
+2020-10-03,"854","Aukštasis mokslas",3,41
 2020-10-03,"855","Kitas mokymas",4,23
 2020-10-03,"856","Švietimui būdingų paslaugų veikla",0,1
 2020-10-03,"860","Žmonių sveikatos priežiūros veikla",0,46
@@ -33306,7 +33306,7 @@
 2020-10-10,"851","Ikimokyklinis ugdymas",6,48
 2020-10-10,"852","Pradinis ugdymas",1,16
 2020-10-10,"853","Vidurinis ugdymas",9,104
-2020-10-10,"854","Aukštasis mokslas",1,63
+2020-10-10,"854","Aukštasis mokslas",1,64
 2020-10-10,"855","Kitas mokymas",0,41
 2020-10-10,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-10-10,"860","Žmonių sveikatos priežiūros veikla",0,84
@@ -34338,9 +34338,9 @@
 2020-10-15,"854","Aukštasis mokslas",3,156
 2020-10-15,"855","Kitas mokymas",2,24
 2020-10-15,"856","Švietimui būdingų paslaugų veikla",0,4
-2020-10-15,"860","Žmonių sveikatos priežiūros veikla",9,214
+2020-10-15,"860","Žmonių sveikatos priežiūros veikla",9,215
 2020-10-15,"861","Ligoninių veikla",24,2219
-2020-10-15,"862","Medicininės ir odontologinės praktikos veikla",9,925
+2020-10-15,"862","Medicininės ir odontologinės praktikos veikla",9,924
 2020-10-15,"869","Kita žmonių sveikatos priežiūros veikla",6,317
 2020-10-15,"871","Stacionarinė slaugos įstaigų veikla",0,13
 2020-10-15,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,14
@@ -34738,7 +34738,7 @@
 2020-10-17,"851","Ikimokyklinis ugdymas",15,74
 2020-10-17,"852","Pradinis ugdymas",6,20
 2020-10-17,"853","Vidurinis ugdymas",14,100
-2020-10-17,"854","Aukštasis mokslas",7,164
+2020-10-17,"854","Aukštasis mokslas",7,165
 2020-10-17,"855","Kitas mokymas",0,20
 2020-10-17,"856","Švietimui būdingų paslaugų veikla",0,1
 2020-10-17,"860","Žmonių sveikatos priežiūros veikla",0,177
@@ -34939,7 +34939,7 @@
 2020-10-18,"854","Aukštasis mokslas",4,131
 2020-10-18,"855","Kitas mokymas",3,17
 2020-10-18,"856","Švietimui būdingų paslaugų veikla",0,2
-2020-10-18,"860","Žmonių sveikatos priežiūros veikla",0,56
+2020-10-18,"860","Žmonių sveikatos priežiūros veikla",0,57
 2020-10-18,"861","Ligoninių veikla",9,933
 2020-10-18,"862","Medicininės ir odontologinės praktikos veikla",2,246
 2020-10-18,"869","Kita žmonių sveikatos priežiūros veikla",2,107
@@ -35147,7 +35147,7 @@
 2020-10-19,"869","Kita žmonių sveikatos priežiūros veikla",0,100
 2020-10-19,"871","Stacionarinė slaugos įstaigų veikla",1,3
 2020-10-19,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",1,13
-2020-10-19,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",6,53
+2020-10-19,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",6,54
 2020-10-19,"879","Kita stacionarinė globos veikla",1,17
 2020-10-19,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",1,3
 2020-10-19,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",1,15
@@ -36035,7 +36035,7 @@
 2020-10-23,"854","Aukštasis mokslas",10,227
 2020-10-23,"855","Kitas mokymas",9,38
 2020-10-23,"856","Švietimui būdingų paslaugų veikla",1,4
-2020-10-23,"860","Žmonių sveikatos priežiūros veikla",1,214
+2020-10-23,"860","Žmonių sveikatos priežiūros veikla",1,215
 2020-10-23,"861","Ligoninių veikla",60,2657
 2020-10-23,"862","Medicininės ir odontologinės praktikos veikla",16,1005
 2020-10-23,"869","Kita žmonių sveikatos priežiūros veikla",7,342
@@ -36240,7 +36240,7 @@
 2020-10-24,"851","Ikimokyklinis ugdymas",12,77
 2020-10-24,"852","Pradinis ugdymas",8,20
 2020-10-24,"853","Vidurinis ugdymas",47,149
-2020-10-24,"854","Aukštasis mokslas",8,128
+2020-10-24,"854","Aukštasis mokslas",8,129
 2020-10-24,"855","Kitas mokymas",3,22
 2020-10-24,"856","Švietimui būdingų paslaugų veikla",0,5
 2020-10-24,"860","Žmonių sveikatos priežiūros veikla",2,130
@@ -37582,7 +37582,7 @@
 2020-10-30,"856","Švietimui būdingų paslaugų veikla",0,1
 2020-10-30,"860","Žmonių sveikatos priežiūros veikla",5,210
 2020-10-30,"861","Ligoninių veikla",73,3554
-2020-10-30,"862","Medicininės ir odontologinės praktikos veikla",53,1339
+2020-10-30,"862","Medicininės ir odontologinės praktikos veikla",53,1338
 2020-10-30,"869","Kita žmonių sveikatos priežiūros veikla",16,528
 2020-10-30,"871","Stacionarinė slaugos įstaigų veikla",3,34
 2020-10-30,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,19
@@ -38228,7 +38228,7 @@
 2020-11-02,"851","Ikimokyklinis ugdymas",23,72
 2020-11-02,"852","Pradinis ugdymas",3,58
 2020-11-02,"853","Vidurinis ugdymas",41,161
-2020-11-02,"854","Aukštasis mokslas",15,116
+2020-11-02,"854","Aukštasis mokslas",15,117
 2020-11-02,"855","Kitas mokymas",5,27
 2020-11-02,"856","Švietimui būdingų paslaugų veikla",0,2
 2020-11-02,"860","Žmonių sveikatos priežiūros veikla",3,82
@@ -38462,7 +38462,7 @@
 2020-11-03,"854","Aukštasis mokslas",10,188
 2020-11-03,"855","Kitas mokymas",3,40
 2020-11-03,"856","Švietimui būdingų paslaugų veikla",0,4
-2020-11-03,"860","Žmonių sveikatos priežiūros veikla",6,164
+2020-11-03,"860","Žmonių sveikatos priežiūros veikla",6,165
 2020-11-03,"861","Ligoninių veikla",63,2132
 2020-11-03,"862","Medicininės ir odontologinės praktikos veikla",17,608
 2020-11-03,"869","Kita žmonių sveikatos priežiūros veikla",4,170
@@ -38706,7 +38706,7 @@
 2020-11-04,"869","Kita žmonių sveikatos priežiūros veikla",15,287
 2020-11-04,"871","Stacionarinė slaugos įstaigų veikla",0,6
 2020-11-04,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,21
-2020-11-04,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",10,244
+2020-11-04,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",10,245
 2020-11-04,"879","Kita stacionarinė globos veikla",1,73
 2020-11-04,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",0,52
 2020-11-04,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",5,52
@@ -38947,7 +38947,7 @@
 2020-11-05,"869","Kita žmonių sveikatos priežiūros veikla",17,417
 2020-11-05,"871","Stacionarinė slaugos įstaigų veikla",0,29
 2020-11-05,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,11
-2020-11-05,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",16,463
+2020-11-05,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",16,464
 2020-11-05,"879","Kita stacionarinė globos veikla",9,81
 2020-11-05,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",2,54
 2020-11-05,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",2,52
@@ -40143,7 +40143,7 @@
 2020-11-10,"851","Ikimokyklinis ugdymas",26,130
 2020-11-10,"852","Pradinis ugdymas",7,22
 2020-11-10,"853","Vidurinis ugdymas",44,226
-2020-11-10,"854","Aukštasis mokslas",13,197
+2020-11-10,"854","Aukštasis mokslas",13,198
 2020-11-10,"855","Kitas mokymas",7,43
 2020-11-10,"856","Švietimui būdingų paslaugų veikla",1,3
 2020-11-10,"860","Žmonių sveikatos priežiūros veikla",18,199
@@ -41806,12 +41806,12 @@
 2020-11-17,"851","Ikimokyklinis ugdymas",38,104
 2020-11-17,"852","Pradinis ugdymas",17,39
 2020-11-17,"853","Vidurinis ugdymas",57,216
-2020-11-17,"854","Aukštasis mokslas",17,176
+2020-11-17,"854","Aukštasis mokslas",17,177
 2020-11-17,"855","Kitas mokymas",8,29
 2020-11-17,"856","Švietimui būdingų paslaugų veikla",2,13
-2020-11-17,"860","Žmonių sveikatos priežiūros veikla",21,264
+2020-11-17,"860","Žmonių sveikatos priežiūros veikla",21,265
 2020-11-17,"861","Ligoninių veikla",186,2991
-2020-11-17,"862","Medicininės ir odontologinės praktikos veikla",81,1000
+2020-11-17,"862","Medicininės ir odontologinės praktikos veikla",81,999
 2020-11-17,"869","Kita žmonių sveikatos priežiūros veikla",25,224
 2020-11-17,"871","Stacionarinė slaugos įstaigų veikla",0,9
 2020-11-17,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",1,19
@@ -42556,7 +42556,7 @@
 2020-11-20,"869","Kita žmonių sveikatos priežiūros veikla",34,437
 2020-11-20,"871","Stacionarinė slaugos įstaigų veikla",1,25
 2020-11-20,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,4
-2020-11-20,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",20,310
+2020-11-20,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",20,311
 2020-11-20,"879","Kita stacionarinė globos veikla",8,160
 2020-11-20,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",1,45
 2020-11-20,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",3,58
@@ -43508,7 +43508,7 @@
 2020-11-24,"851","Ikimokyklinis ugdymas",37,139
 2020-11-24,"852","Pradinis ugdymas",20,43
 2020-11-24,"853","Vidurinis ugdymas",90,275
-2020-11-24,"854","Aukštasis mokslas",17,196
+2020-11-24,"854","Aukštasis mokslas",17,197
 2020-11-24,"855","Kitas mokymas",17,73
 2020-11-24,"856","Švietimui būdingų paslaugų veikla",1,11
 2020-11-24,"860","Žmonių sveikatos priežiūros veikla",22,288
@@ -45139,7 +45139,7 @@
 2020-12-01,"663","Fondų valdymo veikla",0,1
 2020-12-01,"680","Nekilnojamojo turto operacijos",0,1
 2020-12-01,"681","Nuosavo nekilnojamojo turto pirkimas ir pardavimas",1,9
-2020-12-01,"682","Nuosavo arba nuomojamo nekilnojamojo turto nuoma ir eksploatavimas",11,50
+2020-12-01,"682","Nuosavo arba nuomojamo nekilnojamojo turto nuoma ir eksploatavimas",11,51
 2020-12-01,"683","Nekilnojamojo turto operacijos už atlygį arba pagal sutartį",5,13
 2020-12-01,"691","Teisinė veikla",4,13
 2020-12-01,"692","Apskaitos, buhalterijos ir audito veikla; konsultacijos mokesčių klausimais",7,26
@@ -45185,17 +45185,17 @@
 2020-12-01,"851","Ikimokyklinis ugdymas",47,109
 2020-12-01,"852","Pradinis ugdymas",21,34
 2020-12-01,"853","Vidurinis ugdymas",88,248
-2020-12-01,"854","Aukštasis mokslas",13,182
+2020-12-01,"854","Aukštasis mokslas",13,183
 2020-12-01,"855","Kitas mokymas",10,38
 2020-12-01,"856","Švietimui būdingų paslaugų veikla",0,4
 2020-12-01,"860","Žmonių sveikatos priežiūros veikla",21,209
 2020-12-01,"861","Ligoninių veikla",200,3075
-2020-12-01,"862","Medicininės ir odontologinės praktikos veikla",81,1014
+2020-12-01,"862","Medicininės ir odontologinės praktikos veikla",81,1013
 2020-12-01,"869","Kita žmonių sveikatos priežiūros veikla",26,265
 2020-12-01,"870","Kita stacionarinė globos veikla",0,1
 2020-12-01,"871","Stacionarinė slaugos įstaigų veikla",2,25
 2020-12-01,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",2,11
-2020-12-01,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",28,233
+2020-12-01,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",28,234
 2020-12-01,"879","Kita stacionarinė globos veikla",10,67
 2020-12-01,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",2,40
 2020-12-01,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",6,46
@@ -45391,7 +45391,7 @@
 2020-12-02,"663","Fondų valdymo veikla",0,1
 2020-12-02,"680","Nekilnojamojo turto operacijos",0,1
 2020-12-02,"681","Nuosavo nekilnojamojo turto pirkimas ir pardavimas",1,5
-2020-12-02,"682","Nuosavo arba nuomojamo nekilnojamojo turto nuoma ir eksploatavimas",13,69
+2020-12-02,"682","Nuosavo arba nuomojamo nekilnojamojo turto nuoma ir eksploatavimas",13,68
 2020-12-02,"683","Nekilnojamojo turto operacijos už atlygį arba pagal sutartį",4,15
 2020-12-02,"691","Teisinė veikla",2,18
 2020-12-02,"692","Apskaitos, buhalterijos ir audito veikla; konsultacijos mokesčių klausimais",7,25
@@ -45691,7 +45691,7 @@
 2020-12-03,"854","Aukštasis mokslas",24,246
 2020-12-03,"855","Kitas mokymas",12,50
 2020-12-03,"856","Švietimui būdingų paslaugų veikla",2,8
-2020-12-03,"860","Žmonių sveikatos priežiūros veikla",22,297
+2020-12-03,"860","Žmonių sveikatos priežiūros veikla",22,298
 2020-12-03,"861","Ligoninių veikla",195,3315
 2020-12-03,"862","Medicininės ir odontologinės praktikos veikla",72,1343
 2020-12-03,"869","Kita žmonių sveikatos priežiūros veikla",30,492
@@ -46640,7 +46640,7 @@
 2020-12-07,"851","Ikimokyklinis ugdymas",39,98
 2020-12-07,"852","Pradinis ugdymas",12,28
 2020-12-07,"853","Vidurinis ugdymas",53,140
-2020-12-07,"854","Aukštasis mokslas",20,165
+2020-12-07,"854","Aukštasis mokslas",20,166
 2020-12-07,"855","Kitas mokymas",6,24
 2020-12-07,"856","Švietimui būdingų paslaugų veikla",0,4
 2020-12-07,"860","Žmonių sveikatos priežiūros veikla",17,136
@@ -47899,7 +47899,7 @@
 2020-12-12,"854","Aukštasis mokslas",13,169
 2020-12-12,"855","Kitas mokymas",14,48
 2020-12-12,"856","Švietimui būdingų paslaugų veikla",0,3
-2020-12-12,"860","Žmonių sveikatos priežiūros veikla",28,179
+2020-12-12,"860","Žmonių sveikatos priežiūros veikla",28,180
 2020-12-12,"861","Ligoninių veikla",171,1809
 2020-12-12,"862","Medicininės ir odontologinės praktikos veikla",97,1058
 2020-12-12,"869","Kita žmonių sveikatos priežiūros veikla",30,271
@@ -48373,7 +48373,7 @@
 2020-12-14,"870","Kita stacionarinė globos veikla",0,1
 2020-12-14,"871","Stacionarinė slaugos įstaigų veikla",0,3
 2020-12-14,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,6
-2020-12-14,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",22,172
+2020-12-14,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",22,173
 2020-12-14,"879","Kita stacionarinė globos veikla",3,57
 2020-12-14,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",1,5
 2020-12-14,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",6,45
@@ -48579,7 +48579,7 @@
 2020-12-15,"711","Architektūros ir inžinerijos veikla bei su ja susijusios techninės konsultacijos",9,32
 2020-12-15,"712","Techninis tikrinimas ir analizė",3,11
 2020-12-15,"720","Moksliniai tyrimai ir taikomoji veikla",0,2
-2020-12-15,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",15,111
+2020-12-15,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",15,112
 2020-12-15,"722","Socialinių ir humanitarinių mokslų moksliniai tyrimai ir taikomoji veikla",0,7
 2020-12-15,"730","Reklama ir rinkos tyrimas",0,2
 2020-12-15,"731","Reklama",8,29
@@ -48595,7 +48595,7 @@
 2020-12-15,"774","Intelektinės nuosavybės ir panašių produktų, išskyrus autorių teisių saugomus objektus, išperkamoji nuoma",0,2
 2020-12-15,"780","Įdarbinimo veikla",1,3
 2020-12-15,"781","Įdarbinimo agentūrų veikla",0,5
-2020-12-15,"782","Laikinojo įdarbinimo agentūrų veikla",6,22
+2020-12-15,"782","Laikinojo įdarbinimo agentūrų veikla",6,23
 2020-12-15,"783","Kitas darbo jėgos teikimas",2,10
 2020-12-15,"791","Kelionių agentūrų ir ekskursijų organizatorių veikla",4,9
 2020-12-15,"799","Kitų išankstinio užsakymo ir susijusių paslaugų veikla",1,2
@@ -48611,17 +48611,17 @@
 2020-12-15,"823","Posėdžių ir verslo renginių organizavimas",0,1
 2020-12-15,"829","Niekur kitur nepriskirta verslui būdingų paslaugų veikla",7,13
 2020-12-15,"840","Viešasis valdymas ir gynyba; privalomasis socialinis draudimas",3,9
-2020-12-15,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",35,132
+2020-12-15,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",35,131
 2020-12-15,"842","Bendruomenei teikiamų paslaugų užtikrinimas",83,261
 2020-12-15,"843","Privalomojo (valstybinio) socialinio draudimo veikla",11,23
 2020-12-15,"850","Švietimas",1,2
 2020-12-15,"851","Ikimokyklinis ugdymas",69,143
 2020-12-15,"852","Pradinis ugdymas",21,44
 2020-12-15,"853","Vidurinis ugdymas",105,273
-2020-12-15,"854","Aukštasis mokslas",15,234
+2020-12-15,"854","Aukštasis mokslas",15,235
 2020-12-15,"855","Kitas mokymas",8,48
 2020-12-15,"856","Švietimui būdingų paslaugų veikla",1,8
-2020-12-15,"860","Žmonių sveikatos priežiūros veikla",36,334
+2020-12-15,"860","Žmonių sveikatos priežiūros veikla",36,336
 2020-12-15,"861","Ligoninių veikla",348,4058
 2020-12-15,"862","Medicininės ir odontologinės praktikos veikla",102,1200
 2020-12-15,"869","Kita žmonių sveikatos priežiūros veikla",51,326
@@ -48767,7 +48767,7 @@
 2020-12-16,"462","Žemės ūkio žaliavų ir gyvų gyvulių didmeninė prekyba",1,8
 2020-12-16,"463","Maisto produktų, gėrimų, tabako ir jo gaminių didmeninė prekyba",34,168
 2020-12-16,"464","Namų ūkio reikmenų didmeninė prekyba",18,65
-2020-12-16,"465","Informacijos ir ryšių technologijų (IRT) įrangos didmeninė prekyba",5,11
+2020-12-16,"465","Informacijos ir ryšių technologijų (IRT) įrangos didmeninė prekyba",5,12
 2020-12-16,"466","Kitų mašinų, įrangos ir reikmenų didmeninė prekyba",16,48
 2020-12-16,"467","Kita specializuota didmeninė prekyba",37,83
 2020-12-16,"469","Nespecializuota didmeninė prekyba",4,18
@@ -48812,7 +48812,7 @@
 2020-12-16,"619","Kitų ryšių paslaugų veikla",0,2
 2020-12-16,"620","Kompiuterių programavimo, konsultacinė ir susijusi veikla",6,39
 2020-12-16,"630","Informacinių paslaugų veikla",0,2
-2020-12-16,"631","Duomenų apdorojimo, interneto serverių paslaugų (prieglobos) ir susijusi veikla; interneto vartų paslaugų veikla",4,18
+2020-12-16,"631","Duomenų apdorojimo, interneto serverių paslaugų (prieglobos) ir susijusi veikla; interneto vartų paslaugų veikla",4,19
 2020-12-16,"639","Kita informacinių paslaugų veikla",0,1
 2020-12-16,"640","Finansinių paslaugų veikla, išskyrus draudimą ir pensijų lėšų kaupimą",1,2
 2020-12-16,"641","Piniginis tarpininkavimas",13,41
@@ -48854,7 +48854,7 @@
 2020-12-16,"773","Kitų mašinų, įrangos ir materialiųjų vertybių nuoma ir išperkamoji nuoma",3,8
 2020-12-16,"780","Įdarbinimo veikla",0,1
 2020-12-16,"781","Įdarbinimo agentūrų veikla",0,5
-2020-12-16,"782","Laikinojo įdarbinimo agentūrų veikla",8,25
+2020-12-16,"782","Laikinojo įdarbinimo agentūrų veikla",8,26
 2020-12-16,"783","Kitas darbo jėgos teikimas",1,9
 2020-12-16,"791","Kelionių agentūrų ir ekskursijų organizatorių veikla",1,5
 2020-12-16,"799","Kitų išankstinio užsakymo ir susijusių paslaugų veikla",4,6
@@ -48870,24 +48870,24 @@
 2020-12-16,"823","Posėdžių ir verslo renginių organizavimas",2,2
 2020-12-16,"829","Niekur kitur nepriskirta verslui būdingų paslaugų veikla",4,12
 2020-12-16,"840","Viešasis valdymas ir gynyba; privalomasis socialinis draudimas",4,11
-2020-12-16,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",56,229
+2020-12-16,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",56,230
 2020-12-16,"842","Bendruomenei teikiamų paslaugų užtikrinimas",74,241
 2020-12-16,"843","Privalomojo (valstybinio) socialinio draudimo veikla",6,12
 2020-12-16,"850","Švietimas",1,3
-2020-12-16,"851","Ikimokyklinis ugdymas",66,174
+2020-12-16,"851","Ikimokyklinis ugdymas",66,175
 2020-12-16,"852","Pradinis ugdymas",15,32
 2020-12-16,"853","Vidurinis ugdymas",112,258
-2020-12-16,"854","Aukštasis mokslas",18,248
+2020-12-16,"854","Aukštasis mokslas",18,249
 2020-12-16,"855","Kitas mokymas",13,49
 2020-12-16,"856","Švietimui būdingų paslaugų veikla",1,4
 2020-12-16,"860","Žmonių sveikatos priežiūros veikla",30,340
 2020-12-16,"861","Ligoninių veikla",253,3313
 2020-12-16,"862","Medicininės ir odontologinės praktikos veikla",93,1084
-2020-12-16,"869","Kita žmonių sveikatos priežiūros veikla",43,309
+2020-12-16,"869","Kita žmonių sveikatos priežiūros veikla",43,310
 2020-12-16,"870","Kita stacionarinė globos veikla",0,11
 2020-12-16,"871","Stacionarinė slaugos įstaigų veikla",2,5
 2020-12-16,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",1,11
-2020-12-16,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",94,519
+2020-12-16,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",94,520
 2020-12-16,"879","Kita stacionarinė globos veikla",17,146
 2020-12-16,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",12,51
 2020-12-16,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",9,77
@@ -50143,14 +50143,14 @@
 2020-12-21,"860","Žmonių sveikatos priežiūros veikla",39,253
 2020-12-21,"861","Ligoninių veikla",195,2597
 2020-12-21,"862","Medicininės ir odontologinės praktikos veikla",60,919
-2020-12-21,"869","Kita žmonių sveikatos priežiūros veikla",24,302
+2020-12-21,"869","Kita žmonių sveikatos priežiūros veikla",24,303
 2020-12-21,"870","Kita stacionarinė globos veikla",1,1
 2020-12-21,"871","Stacionarinė slaugos įstaigų veikla",0,3
 2020-12-21,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",4,9
 2020-12-21,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",55,205
 2020-12-21,"879","Kita stacionarinė globos veikla",6,52
 2020-12-21,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",2,21
-2020-12-21,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",4,40
+2020-12-21,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",4,41
 2020-12-21,"889","Kita, nesusijusi su apgyvendinimu, socialinio darbo veikla",1,26
 2020-12-21,"900","Kūrybinė, meninė ir pramogų organizavimo veikla",9,43
 2020-12-21,"910","Bibliotekų, archyvų, muziejų ir kita kultūrinė veikla",9,24
@@ -50357,7 +50357,7 @@
 2020-12-22,"711","Architektūros ir inžinerijos veikla bei su ja susijusios techninės konsultacijos",11,47
 2020-12-22,"712","Techninis tikrinimas ir analizė",6,14
 2020-12-22,"720","Moksliniai tyrimai ir taikomoji veikla",1,1
-2020-12-22,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",11,119
+2020-12-22,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",12,120
 2020-12-22,"722","Socialinių ir humanitarinių mokslų moksliniai tyrimai ir taikomoji veikla",0,4
 2020-12-22,"730","Reklama ir rinkos tyrimas",0,1
 2020-12-22,"731","Reklama",5,26
@@ -50389,7 +50389,7 @@
 2020-12-22,"823","Posėdžių ir verslo renginių organizavimas",3,5
 2020-12-22,"829","Niekur kitur nepriskirta verslui būdingų paslaugų veikla",7,17
 2020-12-22,"840","Viešasis valdymas ir gynyba; privalomasis socialinis draudimas",5,8
-2020-12-22,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",42,155
+2020-12-22,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",41,154
 2020-12-22,"842","Bendruomenei teikiamų paslaugų užtikrinimas",78,240
 2020-12-22,"843","Privalomojo (valstybinio) socialinio draudimo veikla",8,14
 2020-12-22,"850","Švietimas",2,2
@@ -50401,7 +50401,7 @@
 2020-12-22,"856","Švietimui būdingų paslaugų veikla",0,6
 2020-12-22,"860","Žmonių sveikatos priežiūros veikla",33,383
 2020-12-22,"861","Ligoninių veikla",354,4377
-2020-12-22,"862","Medicininės ir odontologinės praktikos veikla",134,1483
+2020-12-22,"862","Medicininės ir odontologinės praktikos veikla",135,1483
 2020-12-22,"869","Kita žmonių sveikatos priežiūros veikla",44,464
 2020-12-22,"871","Stacionarinė slaugos įstaigų veikla",4,18
 2020-12-22,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",4,38
@@ -50650,7 +50650,7 @@
 2020-12-23,"851","Ikimokyklinis ugdymas",83,170
 2020-12-23,"852","Pradinis ugdymas",14,27
 2020-12-23,"853","Vidurinis ugdymas",91,203
-2020-12-23,"854","Aukštasis mokslas",28,262
+2020-12-23,"854","Aukštasis mokslas",28,263
 2020-12-23,"855","Kitas mokymas",21,56
 2020-12-23,"856","Švietimui būdingų paslaugų veikla",1,3
 2020-12-23,"860","Žmonių sveikatos priežiūros veikla",41,395
@@ -50660,10 +50660,10 @@
 2020-12-23,"870","Kita stacionarinė globos veikla",0,2
 2020-12-23,"871","Stacionarinė slaugos įstaigų veikla",7,18
 2020-12-23,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,22
-2020-12-23,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",53,437
+2020-12-23,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",53,473
 2020-12-23,"879","Kita stacionarinė globos veikla",10,110
 2020-12-23,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",6,54
-2020-12-23,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",13,55
+2020-12-23,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",13,56
 2020-12-23,"889","Kita, nesusijusi su apgyvendinimu, socialinio darbo veikla",7,35
 2020-12-23,"900","Kūrybinė, meninė ir pramogų organizavimo veikla",12,21
 2020-12-23,"910","Bibliotekų, archyvų, muziejų ir kita kultūrinė veikla",10,22
@@ -50769,7 +50769,7 @@
 2020-12-24,"380","Atliekų surinkimas, tvarkymas ir šalinimas; medžiagų atgavimas",0,1
 2020-12-24,"381","Atliekų surinkimas",7,11
 2020-12-24,"382","Atliekų tvarkymas ir šalinimas",5,13
-2020-12-24,"410","Pastatų statyba",3,11
+2020-12-24,"410","Pastatų statyba",3,12
 2020-12-24,"411","Statybų plėtra",4,5
 2020-12-24,"412","Gyvenamųjų ir negyvenamųjų pastatų statyba",38,90
 2020-12-24,"420","Inžinerinių statinių statyba",9,28
@@ -50900,7 +50900,7 @@
 2020-12-24,"870","Kita stacionarinė globos veikla",0,1
 2020-12-24,"871","Stacionarinė slaugos įstaigų veikla",2,8
 2020-12-24,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",1,14
-2020-12-24,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",40,375
+2020-12-24,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",40,376
 2020-12-24,"879","Kita stacionarinė globos veikla",8,128
 2020-12-24,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",5,38
 2020-12-24,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",9,46
@@ -51123,10 +51123,10 @@
 2020-12-25,"854","Aukštasis mokslas",15,54
 2020-12-25,"855","Kitas mokymas",11,28
 2020-12-25,"856","Švietimui būdingų paslaugų veikla",0,1
-2020-12-25,"860","Žmonių sveikatos priežiūros veikla",2,39
+2020-12-25,"860","Žmonių sveikatos priežiūros veikla",2,40
 2020-12-25,"861","Ligoninių veikla",43,336
-2020-12-25,"862","Medicininės ir odontologinės praktikos veikla",31,340
-2020-12-25,"869","Kita žmonių sveikatos priežiūros veikla",8,68
+2020-12-25,"862","Medicininės ir odontologinės praktikos veikla",31,342
+2020-12-25,"869","Kita žmonių sveikatos priežiūros veikla",9,71
 2020-12-25,"870","Kita stacionarinė globos veikla",0,9
 2020-12-25,"871","Stacionarinė slaugos įstaigų veikla",3,4
 2020-12-25,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",2,13
@@ -51591,7 +51591,7 @@
 2020-12-27,"870","Kita stacionarinė globos veikla",1,2
 2020-12-27,"871","Stacionarinė slaugos įstaigų veikla",0,3
 2020-12-27,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",2,7
-2020-12-27,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",12,95
+2020-12-27,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",12,96
 2020-12-27,"879","Kita stacionarinė globos veikla",15,43
 2020-12-27,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",3,9
 2020-12-27,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",3,20
@@ -52078,7 +52078,7 @@
 2020-12-29,"851","Ikimokyklinis ugdymas",63,137
 2020-12-29,"852","Pradinis ugdymas",11,26
 2020-12-29,"853","Vidurinis ugdymas",67,201
-2020-12-29,"854","Aukštasis mokslas",19,212
+2020-12-29,"854","Aukštasis mokslas",20,213
 2020-12-29,"855","Kitas mokymas",2,34
 2020-12-29,"856","Švietimui būdingų paslaugų veikla",0,1
 2020-12-29,"860","Žmonių sveikatos priežiūros veikla",30,265
@@ -52337,7 +52337,7 @@
 2020-12-30,"855","Kitas mokymas",7,26
 2020-12-30,"856","Švietimui būdingų paslaugų veikla",1,5
 2020-12-30,"860","Žmonių sveikatos priežiūros veikla",18,265
-2020-12-30,"861","Ligoninių veikla",171,2931
+2020-12-30,"861","Ligoninių veikla",171,2932
 2020-12-30,"862","Medicininės ir odontologinės praktikos veikla",110,1254
 2020-12-30,"869","Kita žmonių sveikatos priežiūros veikla",38,468
 2020-12-30,"870","Kita stacionarinė globos veikla",0,1
@@ -52353,7 +52353,7 @@
 2020-12-30,"920","Azartinių žaidimų ir lažybų organizavimo veikla",0,3
 2020-12-30,"930","Sportinė veikla, pramogų ir poilsio organizavimo veikla",0,4
 2020-12-30,"931","Sportinė veikla",4,17
-2020-12-30,"932","Pramogų ir poilsio organizavimo veikla",6,14
+2020-12-30,"932","Pramogų ir poilsio organizavimo veikla",6,15
 2020-12-30,"940","Narystės organizacijų veikla",0,2
 2020-12-30,"941","Verslininkų, darbdavių ir profesinių narystės organizacijų veikla",5,17
 2020-12-30,"942","Profesinių sąjungų veikla",4,7
@@ -52486,7 +52486,7 @@
 2020-12-31,"464","Namų ūkio reikmenų didmeninė prekyba",12,53
 2020-12-31,"465","Informacijos ir ryšių technologijų (IRT) įrangos didmeninė prekyba",0,10
 2020-12-31,"466","Kitų mašinų, įrangos ir reikmenų didmeninė prekyba",7,23
-2020-12-31,"467","Kita specializuota didmeninė prekyba",37,86
+2020-12-31,"467","Kita specializuota didmeninė prekyba",37,87
 2020-12-31,"469","Nespecializuota didmeninė prekyba",4,22
 2020-12-31,"470","Mažmeninė prekyba, išskyrus variklinių transporto priemonių ir motociklų prekybą",1,5
 2020-12-31,"471","Mažmeninė prekyba nespecializuotose parduotuvėse",68,185
@@ -52595,7 +52595,7 @@
 2020-12-31,"856","Švietimui būdingų paslaugų veikla",2,6
 2020-12-31,"860","Žmonių sveikatos priežiūros veikla",20,247
 2020-12-31,"861","Ligoninių veikla",138,2189
-2020-12-31,"862","Medicininės ir odontologinės praktikos veikla",77,1130
+2020-12-31,"862","Medicininės ir odontologinės praktikos veikla",77,1129
 2020-12-31,"869","Kita žmonių sveikatos priežiūros veikla",20,408
 2020-12-31,"870","Kita stacionarinė globos veikla",0,2
 2020-12-31,"871","Stacionarinė slaugos įstaigų veikla",0,14
@@ -53278,7 +53278,7 @@
 2021-01-03,"869","Kita žmonių sveikatos priežiūros veikla",17,108
 2021-01-03,"871","Stacionarinė slaugos įstaigų veikla",0,2
 2021-01-03,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",0,15
-2021-01-03,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",12,77
+2021-01-03,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",12,78
 2021-01-03,"879","Kita stacionarinė globos veikla",6,30
 2021-01-03,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",1,19
 2021-01-03,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",6,27
@@ -53469,7 +53469,7 @@
 2021-01-04,"710","Architektūros ir inžinerijos veikla; techninis tikrinimas ir analizė",1,2
 2021-01-04,"711","Architektūros ir inžinerijos veikla bei su ja susijusios techninės konsultacijos",11,52
 2021-01-04,"712","Techninis tikrinimas ir analizė",3,10
-2021-01-04,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",19,122
+2021-01-04,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",20,123
 2021-01-04,"722","Socialinių ir humanitarinių mokslų moksliniai tyrimai ir taikomoji veikla",1,8
 2021-01-04,"730","Reklama ir rinkos tyrimas",0,1
 2021-01-04,"731","Reklama",5,28
@@ -53498,7 +53498,7 @@
 2021-01-04,"823","Posėdžių ir verslo renginių organizavimas",0,2
 2021-01-04,"829","Niekur kitur nepriskirta verslui būdingų paslaugų veikla",5,6
 2021-01-04,"840","Viešasis valdymas ir gynyba; privalomasis socialinis draudimas",0,1
-2021-01-04,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",20,157
+2021-01-04,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",19,156
 2021-01-04,"842","Bendruomenei teikiamų paslaugų užtikrinimas",46,142
 2021-01-04,"843","Privalomojo (valstybinio) socialinio draudimo veikla",5,8
 2021-01-04,"850","Švietimas",2,4
@@ -53510,7 +53510,7 @@
 2021-01-04,"856","Švietimui būdingų paslaugų veikla",0,2
 2021-01-04,"860","Žmonių sveikatos priežiūros veikla",19,251
 2021-01-04,"861","Ligoninių veikla",122,2358
-2021-01-04,"862","Medicininės ir odontologinės praktikos veikla",53,737
+2021-01-04,"862","Medicininės ir odontologinės praktikos veikla",54,737
 2021-01-04,"869","Kita žmonių sveikatos priežiūros veikla",14,230
 2021-01-04,"871","Stacionarinė slaugos įstaigų veikla",1,2
 2021-01-04,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",3,16
@@ -53842,7 +53842,7 @@
 2021-01-06,"204","Muilo ir ploviklių, valiklių ir blizgiklių, kvepalų ir tualeto priemonių gamyba",4,8
 2021-01-06,"205","Kitų cheminių medžiagų gamyba",2,11
 2021-01-06,"212","Farmacinių preparatų gamyba",0,3
-2021-01-06,"220","Guminių ir plastikinių gaminių gamyba",1,2
+2021-01-06,"220","Guminių ir plastikinių gaminių gamyba",0,1
 2021-01-06,"221","Guminių gaminių gamyba",0,1
 2021-01-06,"222","Plastikinių gaminių gamyba",18,61
 2021-01-06,"231","Stiklo ir stiklo gaminių bei dirbinių gamyba",3,7
@@ -53894,7 +53894,7 @@
 2021-01-06,"383","Medžiagų atgavimas",0,2
 2021-01-06,"410","Pastatų statyba",1,12
 2021-01-06,"411","Statybų plėtra",5,6
-2021-01-06,"412","Gyvenamųjų ir negyvenamųjų pastatų statyba",18,175
+2021-01-06,"412","Gyvenamųjų ir negyvenamųjų pastatų statyba",18,176
 2021-01-06,"420","Inžinerinių statinių statyba",7,11
 2021-01-06,"421","Kelių ir geležinkelių tiesimas",7,24
 2021-01-06,"422","Komunalinių statinių statyba",1,18
@@ -54023,7 +54023,7 @@
 2021-01-06,"854","Aukštasis mokslas",8,177
 2021-01-06,"855","Kitas mokymas",8,38
 2021-01-06,"856","Švietimui būdingų paslaugų veikla",1,2
-2021-01-06,"860","Žmonių sveikatos priežiūros veikla",19,252
+2021-01-06,"860","Žmonių sveikatos priežiūros veikla",19,253
 2021-01-06,"861","Ligoninių veikla",113,2655
 2021-01-06,"862","Medicininės ir odontologinės praktikos veikla",48,1304
 2021-01-06,"869","Kita žmonių sveikatos priežiūros veikla",37,376
@@ -54089,7 +54089,7 @@
 2021-01-07,"171","Plaušienos, popieriaus ir kartono gamyba",0,1
 2021-01-07,"172","Popieriaus ir kartoninių gaminių gamyba",13,25
 2021-01-07,"181","Spausdinimas ir su spausdinimu susijusios paslaugos",3,15
-2021-01-07,"192","Rafinuotų naftos produktų gamyba",1,3
+2021-01-07,"192","Rafinuotų naftos produktų gamyba",1,4
 2021-01-07,"201","Pagrindinių chemikalų, trąšų ir azoto junginių, pirminių plastikų ir pirminio sintetinio kaučiuko gamyba",1,40
 2021-01-07,"203","Dažų, lakų ir panašių dangų medžiagų, spaustuvinių dažų ir mastikų gamyba",0,1
 2021-01-07,"204","Muilo ir ploviklių, valiklių ir blizgiklių, kvepalų ir tualeto priemonių gamyba",1,2
@@ -54199,7 +54199,7 @@
 2021-01-07,"552","Poilsiautojų ir kita trumpalaikio apgyvendinimo veikla",0,1
 2021-01-07,"559","Kita apgyvendinimo veikla",0,2
 2021-01-07,"560","Maitinimo ir gėrimų teikimo veikla",1,10
-2021-01-07,"561","Restoranų ir pagaminto valgio teikimo veikla",14,81
+2021-01-07,"561","Restoranų ir pagaminto valgio teikimo veikla",14,82
 2021-01-07,"562","Pagaminto valgio tiekimas renginiams ir kitų maitinimo paslaugų veikla",9,39
 2021-01-07,"563","Gėrimų pardavimo vartoti vietoje veikla",2,5
 2021-01-07,"581","Knygų, periodinių leidinių leidyba ir kita leidybinė veikla",3,4
@@ -54214,7 +54214,7 @@
 2021-01-07,"631","Duomenų apdorojimo, interneto serverių paslaugų (prieglobos) ir susijusi veikla; interneto vartų paslaugų veikla",3,10
 2021-01-07,"639","Kita informacinių paslaugų veikla",0,4
 2021-01-07,"640","Finansinių paslaugų veikla, išskyrus draudimą ir pensijų lėšų kaupimą",0,1
-2021-01-07,"641","Piniginis tarpininkavimas",4,40
+2021-01-07,"641","Piniginis tarpininkavimas",5,41
 2021-01-07,"642","Kontroliuojančiųjų bendrovių veikla",1,1
 2021-01-07,"649","Kita finansinių paslaugų veikla, išskyrus draudimą ir pensijų lėšų kaupimą",1,8
 2021-01-07,"650","Draudimo, perdraudimo ir pensijų lėšų kaupimo, išskyrus privalomąjį socialinį draudimą, veikla",1,3
@@ -54234,7 +54234,7 @@
 2021-01-07,"711","Architektūros ir inžinerijos veikla bei su ja susijusios techninės konsultacijos",10,43
 2021-01-07,"712","Techninis tikrinimas ir analizė",2,7
 2021-01-07,"720","Moksliniai tyrimai ir taikomoji veikla",1,4
-2021-01-07,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",5,59
+2021-01-07,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",5,60
 2021-01-07,"722","Socialinių ir humanitarinių mokslų moksliniai tyrimai ir taikomoji veikla",1,3
 2021-01-07,"730","Reklama ir rinkos tyrimas",1,1
 2021-01-07,"731","Reklama",1,19
@@ -54276,8 +54276,8 @@
 2021-01-07,"855","Kitas mokymas",4,31
 2021-01-07,"856","Švietimui būdingų paslaugų veikla",0,1
 2021-01-07,"860","Žmonių sveikatos priežiūros veikla",16,194
-2021-01-07,"861","Ligoninių veikla",87,2184
-2021-01-07,"862","Medicininės ir odontologinės praktikos veikla",43,1026
+2021-01-07,"861","Ligoninių veikla",88,2186
+2021-01-07,"862","Medicininės ir odontologinės praktikos veikla",43,1027
 2021-01-07,"869","Kita žmonių sveikatos priežiūros veikla",18,340
 2021-01-07,"870","Kita stacionarinė globos veikla",9,19
 2021-01-07,"871","Stacionarinė slaugos įstaigų veikla",0,8
@@ -54486,7 +54486,7 @@
 2021-01-08,"773","Kitų mašinų, įrangos ir materialiųjų vertybių nuoma ir išperkamoji nuoma",0,23
 2021-01-08,"780","Įdarbinimo veikla",1,26
 2021-01-08,"781","Įdarbinimo agentūrų veikla",0,18
-2021-01-08,"782","Laikinojo įdarbinimo agentūrų veikla",5,57
+2021-01-08,"782","Laikinojo įdarbinimo agentūrų veikla",5,58
 2021-01-08,"783","Kitas darbo jėgos teikimas",0,16
 2021-01-08,"791","Kelionių agentūrų ir ekskursijų organizatorių veikla",0,6
 2021-01-08,"801","Privati apsauga",11,43
@@ -54511,8 +54511,8 @@
 2021-01-08,"855","Kitas mokymas",3,30
 2021-01-08,"856","Švietimui būdingų paslaugų veikla",2,5
 2021-01-08,"860","Žmonių sveikatos priežiūros veikla",12,217
-2021-01-08,"861","Ligoninių veikla",103,2431
-2021-01-08,"862","Medicininės ir odontologinės praktikos veikla",44,1054
+2021-01-08,"861","Ligoninių veikla",103,2432
+2021-01-08,"862","Medicininės ir odontologinės praktikos veikla",44,1057
 2021-01-08,"869","Kita žmonių sveikatos priežiūros veikla",21,288
 2021-01-08,"870","Kita stacionarinė globos veikla",0,5
 2021-01-08,"871","Stacionarinė slaugos įstaigų veikla",0,18
@@ -54656,7 +54656,7 @@
 2021-01-09,"474","Informacijos ir ryšių technologijų (IRT) įrangos mažmeninė prekyba specializuotose parduotuvėse",1,6
 2021-01-09,"475","Kitos namų ūkio įrangos mažmeninė prekyba specializuotose parduotuvėse",2,14
 2021-01-09,"476","Kultūros ir poilsio prekių mažmeninė prekyba specializuotose parduotuvėse",2,5
-2021-01-09,"477","Kitų prekių mažmeninė prekyba specializuotose parduotuvėse",26,71
+2021-01-09,"477","Kitų prekių mažmeninė prekyba specializuotose parduotuvėse",26,72
 2021-01-09,"478","Mažmeninė prekyba kioskuose ir prekyvietėse",0,1
 2021-01-09,"479","Mažmeninė prekyba ne parduotuvėse, kioskuose ar prekyvietėse",4,35
 2021-01-09,"492","Krovininis geležinkelio transportas",1,6
@@ -54743,13 +54743,13 @@
 2021-01-09,"855","Kitas mokymas",1,25
 2021-01-09,"856","Švietimui būdingų paslaugų veikla",0,1
 2021-01-09,"860","Žmonių sveikatos priežiūros veikla",7,89
-2021-01-09,"861","Ligoninių veikla",55,1279
-2021-01-09,"862","Medicininės ir odontologinės praktikos veikla",22,478
+2021-01-09,"861","Ligoninių veikla",55,1280
+2021-01-09,"862","Medicininės ir odontologinės praktikos veikla",22,479
 2021-01-09,"869","Kita žmonių sveikatos priežiūros veikla",21,179
 2021-01-09,"870","Kita stacionarinė globos veikla",0,1
 2021-01-09,"871","Stacionarinė slaugos įstaigų veikla",0,7
 2021-01-09,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",1,21
-2021-01-09,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",16,115
+2021-01-09,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",16,134
 2021-01-09,"879","Kita stacionarinė globos veikla",16,63
 2021-01-09,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",0,25
 2021-01-09,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",3,33
@@ -54824,7 +54824,7 @@
 2021-01-10,"292","Variklinių transporto priemonių kėbulų gamyba; priekabų ir puspriekabių gamyba",0,2
 2021-01-10,"293","Variklinių transporto priemonių dalių ir pagalbinių reikmenų gamyba",0,9
 2021-01-10,"309","Niekur kitur nepriskirtų transporto priemonių gamyba",0,1
-2021-01-10,"310","Baldų gamyba",9,33
+2021-01-10,"310","Baldų gamyba",9,34
 2021-01-10,"324","Žaidimų ir žaislų gamyba",1,1
 2021-01-10,"325","Medicinos ir odontologijos prietaisų, instrumentų ir reikmenų gamyba",2,11
 2021-01-10,"329","Niekur kitur nepriskirta gamyba",1,1
@@ -54919,7 +54919,7 @@
 2021-01-10,"711","Architektūros ir inžinerijos veikla bei su ja susijusios techninės konsultacijos",2,13
 2021-01-10,"712","Techninis tikrinimas ir analizė",0,5
 2021-01-10,"720","Moksliniai tyrimai ir taikomoji veikla",0,1
-2021-01-10,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",2,10
+2021-01-10,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",2,11
 2021-01-10,"722","Socialinių ir humanitarinių mokslų moksliniai tyrimai ir taikomoji veikla",0,1
 2021-01-10,"730","Reklama ir rinkos tyrimas",0,1
 2021-01-10,"731","Reklama",1,6
@@ -54973,226 +54973,466 @@
 2021-01-10,"949","Kitų narystės organizacijų veikla",4,19
 2021-01-10,"951","Kompiuterių ir ryšių įrangos remontas",1,3
 2021-01-10,"960","Kita asmenų aptarnavimo veikla",0,7
-2021-01-11,"011","Vienmečių augalų auginimas",3,8
-2021-01-11,"014","Gyvulininkystė",3,15
+2021-01-11,"011","Vienmečių augalų auginimas",3,9
+2021-01-11,"014","Gyvulininkystė",5,17
 2021-01-11,"015","Mišrusis žemės ūkis",4,10
-2021-01-11,"016","Žemės ūkiui būdingų paslaugų ir derliaus apdorojimo veikla",1,13
+2021-01-11,"016","Žemės ūkiui būdingų paslaugų ir derliaus apdorojimo veikla",2,15
+2021-01-11,"020","Miškininkystė ir medienos ruoša",0,2
 2021-01-11,"021","Miško medžių auginimas ir kita miškininkystės veikla",0,4
-2021-01-11,"022","Medienos ruoša",1,7
-2021-01-11,"024","Miškininkystei būdingų paslaugų veikla",0,2
+2021-01-11,"022","Medienos ruoša",1,8
+2021-01-11,"024","Miškininkystei būdingų paslaugų veikla",0,3
 2021-01-11,"031","Žvejyba",0,1
-2021-01-11,"081","Akmens, smėlio ir molio karjerų eksploatavimas",0,1
+2021-01-11,"032","Akvakultūra",0,1
+2021-01-11,"081","Akmens, smėlio ir molio karjerų eksploatavimas",0,3
 2021-01-11,"089","Niekur kitur nepriskirta kasyba ir karjerų eksploatavimas",1,2
-2021-01-11,"101","Mėsos perdirbimas ir konservavimas ir mėsos produktų gamyba",3,12
+2021-01-11,"101","Mėsos perdirbimas ir konservavimas ir mėsos produktų gamyba",3,13
 2021-01-11,"102","Žuvų, vėžiagyvių ir moliuskų perdirbimas ir konservavimas",1,10
-2021-01-11,"103","Vaisių ir daržovių perdirbimas ir konservavimas",0,1
-2021-01-11,"105","Pieno produktų gamyba",1,18
-2021-01-11,"106","Grūdų malimo produktų, krakmolo ir krakmolo produktų gamyba",0,4
-2021-01-11,"107","Kepyklos ir miltinių produktų gamyba",4,17
-2021-01-11,"108","Kitų maisto produktų gamyba",2,14
-2021-01-11,"109","Paruoštų pašarų gyvuliams gamyba",0,3
-2021-01-11,"110","Gėrimų gamyba",2,10
+2021-01-11,"103","Vaisių ir daržovių perdirbimas ir konservavimas",0,2
+2021-01-11,"104","Gyvūninių ir augalinių riebalų bei aliejaus gamyba",0,2
+2021-01-11,"105","Pieno produktų gamyba",2,20
+2021-01-11,"106","Grūdų malimo produktų, krakmolo ir krakmolo produktų gamyba",0,6
+2021-01-11,"107","Kepyklos ir miltinių produktų gamyba",12,29
+2021-01-11,"108","Kitų maisto produktų gamyba",2,16
+2021-01-11,"109","Paruoštų pašarų gyvuliams gamyba",1,5
+2021-01-11,"110","Gėrimų gamyba",4,14
 2021-01-11,"132","Tekstilės audimas",1,2
 2021-01-11,"133","Tekstilės apdaila",0,1
-2021-01-11,"139","Kitų tekstilės gaminių ir dirbinių gamyba",4,40
+2021-01-11,"139","Kitų tekstilės gaminių ir dirbinių gamyba",4,41
 2021-01-11,"140","Drabužių siuvimas (gamyba)",0,2
-2021-01-11,"141","Drabužių, išskyrus kailinius drabužius, siuvimas (gamyba)",6,14
-2021-01-11,"143","Megztų (trikotažinių) ir nertų drabužių gamyba",0,3
-2021-01-11,"161","Medienos pjaustymas ir obliavimas",1,15
-2021-01-11,"162","Gaminių ir dirbinių iš medienos, kamštienos, šiaudų ir pynimo medžiagų gamyba",5,16
-2021-01-11,"170","Popieriaus ir popieriaus gaminių gamyba",0,6
+2021-01-11,"141","Drabužių, išskyrus kailinius drabužius, siuvimas (gamyba)",11,28
+2021-01-11,"143","Megztų (trikotažinių) ir nertų drabužių gamyba",0,4
+2021-01-11,"160","Medienos bei medienos ir kamštienos gaminių, išskyrus baldus, gamyba; gaminių iš šiaudų ir pynimo medžiagų gamyba",0,1
+2021-01-11,"161","Medienos pjaustymas ir obliavimas",2,19
+2021-01-11,"162","Gaminių ir dirbinių iš medienos, kamštienos, šiaudų ir pynimo medžiagų gamyba",6,22
+2021-01-11,"170","Popieriaus ir popieriaus gaminių gamyba",0,7
 2021-01-11,"171","Plaušienos, popieriaus ir kartono gamyba",1,1
-2021-01-11,"172","Popieriaus ir kartoninių gaminių gamyba",2,6
-2021-01-11,"181","Spausdinimas ir su spausdinimu susijusios paslaugos",2,11
+2021-01-11,"172","Popieriaus ir kartoninių gaminių gamyba",3,8
+2021-01-11,"181","Spausdinimas ir su spausdinimu susijusios paslaugos",2,15
 2021-01-11,"201","Pagrindinių chemikalų, trąšų ir azoto junginių, pirminių plastikų ir pirminio sintetinio kaučiuko gamyba",4,15
-2021-01-11,"203","Dažų, lakų ir panašių dangų medžiagų, spaustuvinių dažų ir mastikų gamyba",0,3
+2021-01-11,"203","Dažų, lakų ir panašių dangų medžiagų, spaustuvinių dažų ir mastikų gamyba",0,5
 2021-01-11,"204","Muilo ir ploviklių, valiklių ir blizgiklių, kvepalų ir tualeto priemonių gamyba",0,1
 2021-01-11,"205","Kitų cheminių medžiagų gamyba",1,9
 2021-01-11,"212","Farmacinių preparatų gamyba",0,2
-2021-01-11,"222","Plastikinių gaminių gamyba",10,34
+2021-01-11,"222","Plastikinių gaminių gamyba",12,39
 2021-01-11,"231","Stiklo ir stiklo gaminių bei dirbinių gamyba",0,2
 2021-01-11,"235","Cemento, kalkių ir gipso gamyba",0,1
-2021-01-11,"236","Betono, cemento ir gipso gaminių bei dirbinių gamyba",2,5
-2021-01-11,"239","Abrazyvinių gaminių ir niekur kitur nepriskirtų nemetalo mineralinių produktų gamyba",3,29
-2021-01-11,"251","Konstrukcinių metalo gaminių gamyba",7,26
+2021-01-11,"236","Betono, cemento ir gipso gaminių bei dirbinių gamyba",2,6
+2021-01-11,"237","Akmens pjaustymas, tašymas ir apdailinimas",1,1
+2021-01-11,"239","Abrazyvinių gaminių ir niekur kitur nepriskirtų nemetalo mineralinių produktų gamyba",3,31
+2021-01-11,"250","Metalo gaminių, išskyrus mašinas ir įrenginius, gamyba",0,1
+2021-01-11,"251","Konstrukcinių metalo gaminių gamyba",7,27
 2021-01-11,"252","Metalinių cisternų, rezervuarų ir talpyklų gamyba",0,4
-2021-01-11,"254","Ginklų ir šaudmenų gamyba",0,1
+2021-01-11,"254","Ginklų ir šaudmenų gamyba",0,2
 2021-01-11,"255","Metalo kalimas, presavimas, štampavimas ir profiliavimas; miltelių metalurgija",1,29
-2021-01-11,"256","Metalų apdorojimas ir dengimas; mechaninis apdirbimas",1,5
+2021-01-11,"256","Metalų apdorojimas ir dengimas; mechaninis apdirbimas",2,6
 2021-01-11,"257","Valgomųjų įrankių, kitų įrankių ir bendrųjų metalo dirbinių gamyba",0,28
-2021-01-11,"259","Kitų metalo gaminių gamyba",2,14
-2021-01-11,"261","Elektroninių komponentų ir plokščių gamyba",3,6
+2021-01-11,"259","Kitų metalo gaminių gamyba",2,17
+2021-01-11,"261","Elektroninių komponentų ir plokščių gamyba",4,9
 2021-01-11,"264","Vartotojiškos elektroninės įrangos gamyba",2,23
 2021-01-11,"265","Matavimo, bandymo, navigacinės ir kontrolės įrangos gamyba; įvairių tipų laikrodžių gamyba",0,2
 2021-01-11,"267","Optinių prietaisų ir fotografijos įrangos gamyba",0,4
 2021-01-11,"271","Elektros variklių, generatorių, transformatorių bei elektros skirstomosios ir valdymo įrangos gamyba",3,5
-2021-01-11,"273","Laidų ir instaliacijos įtaisų gamyba",0,2
+2021-01-11,"273","Laidų ir instaliacijos įtaisų gamyba",0,3
 2021-01-11,"274","Elektros apšvietimo įrangos gamyba",0,1
 2021-01-11,"275","Buitinių aparatų ir prietaisų gamyba",1,35
-2021-01-11,"282","Kitų bendrosios paskirties mašinų ir įrangos gamyba",2,5
+2021-01-11,"282","Kitų bendrosios paskirties mašinų ir įrangos gamyba",2,7
 2021-01-11,"283","Žemės ir miškų ūkio mašinų gamyba",0,1
 2021-01-11,"289","Kitų specialiosios paskirties mašinų gamyba",1,2
 2021-01-11,"290","Variklinių transporto priemonių, priekabų ir puspriekabių gamyba",0,1
 2021-01-11,"292","Variklinių transporto priemonių kėbulų gamyba; priekabų ir puspriekabių gamyba",0,2
-2021-01-11,"293","Variklinių transporto priemonių dalių ir pagalbinių reikmenų gamyba",1,22
-2021-01-11,"301","Įvairių tipų laivų statyba",0,2
+2021-01-11,"293","Variklinių transporto priemonių dalių ir pagalbinių reikmenų gamyba",1,23
+2021-01-11,"301","Įvairių tipų laivų statyba",1,3
 2021-01-11,"302","Geležinkelio lokomotyvų bei riedmenų gamyba",0,2
-2021-01-11,"309","Niekur kitur nepriskirtų transporto priemonių gamyba",0,2
-2021-01-11,"310","Baldų gamyba",23,67
-2021-01-11,"325","Medicinos ir odontologijos prietaisų, instrumentų ir reikmenų gamyba",3,15
-2021-01-11,"329","Niekur kitur nepriskirta gamyba",2,2
+2021-01-11,"309","Niekur kitur nepriskirtų transporto priemonių gamyba",0,3
+2021-01-11,"310","Baldų gamyba",30,85
+2021-01-11,"325","Medicinos ir odontologijos prietaisų, instrumentų ir reikmenų gamyba",3,19
+2021-01-11,"329","Niekur kitur nepriskirta gamyba",2,3
 2021-01-11,"330","Mašinų ir įrangos remontas ir įrengimas",4,7
 2021-01-11,"331","Metalo gaminių, mašinų ir įrangos remontas",8,27
 2021-01-11,"332","Pramoninių mašinų ir įrangos įrengimas",0,10
-2021-01-11,"351","Elektros energijos gamyba, perdavimas ir paskirstymas",4,16
+2021-01-11,"351","Elektros energijos gamyba, perdavimas ir paskirstymas",4,20
 2021-01-11,"352","Dujų gamyba; dujinio kuro paskirstymas dujotiekiais",1,2
-2021-01-11,"353","Garo tiekimas ir oro kondicionavimas",2,4
-2021-01-11,"360","Vandens surinkimas, valymas ir tiekimas",3,18
+2021-01-11,"353","Garo tiekimas ir oro kondicionavimas",5,9
+2021-01-11,"360","Vandens surinkimas, valymas ir tiekimas",4,20
 2021-01-11,"370","Nuotekų valymas",0,1
 2021-01-11,"380","Atliekų surinkimas, tvarkymas ir šalinimas; medžiagų atgavimas",1,1
-2021-01-11,"381","Atliekų surinkimas",1,3
-2021-01-11,"382","Atliekų tvarkymas ir šalinimas",1,2
-2021-01-11,"410","Pastatų statyba",1,7
-2021-01-11,"412","Gyvenamųjų ir negyvenamųjų pastatų statyba",5,80
+2021-01-11,"381","Atliekų surinkimas",1,7
+2021-01-11,"382","Atliekų tvarkymas ir šalinimas",4,8
+2021-01-11,"410","Pastatų statyba",1,10
+2021-01-11,"411","Statybų plėtra",2,4
+2021-01-11,"412","Gyvenamųjų ir negyvenamųjų pastatų statyba",7,95
 2021-01-11,"420","Inžinerinių statinių statyba",0,5
-2021-01-11,"421","Kelių ir geležinkelių tiesimas",5,10
-2021-01-11,"422","Komunalinių statinių statyba",1,8
-2021-01-11,"430","Specializuota statybos veikla",0,5
+2021-01-11,"421","Kelių ir geležinkelių tiesimas",5,12
+2021-01-11,"422","Komunalinių statinių statyba",1,11
+2021-01-11,"430","Specializuota statybos veikla",0,6
 2021-01-11,"431","Statinių nugriovimas ir statybvietės paruošimas",0,7
-2021-01-11,"432","Elektros, vandentiekio ir kitos įrangos įrengimas",10,42
-2021-01-11,"433","Statybos baigimas ir apdaila",4,17
-2021-01-11,"439","Kita specializuota statybos veikla",4,47
+2021-01-11,"432","Elektros, vandentiekio ir kitos įrangos įrengimas",12,51
+2021-01-11,"433","Statybos baigimas ir apdaila",5,19
+2021-01-11,"439","Kita specializuota statybos veikla",6,49
 2021-01-11,"450","Variklinių transporto priemonių ir motociklų didmeninė ir mažmeninė prekyba bei remontas",1,10
-2021-01-11,"451","Variklinių transporto priemonių pardavimas",2,8
-2021-01-11,"452","Variklinių transporto priemonių techninė priežiūra ir remontas",5,18
-2021-01-11,"453","Variklinių transporto priemonių atsarginių dalių ir pagalbinių reikmenų pardavimas",5,14
-2021-01-11,"460","Didmeninė prekyba, išskyrus prekybą variklinėmis transporto priemonėmis ir motociklais",2,7
-2021-01-11,"461","Didmeninė prekyba už atlygį ar pagal sutartį",1,7
-2021-01-11,"462","Žemės ūkio žaliavų ir gyvų gyvulių didmeninė prekyba",1,3
-2021-01-11,"463","Maisto produktų, gėrimų, tabako ir jo gaminių didmeninė prekyba",3,27
-2021-01-11,"464","Namų ūkio reikmenų didmeninė prekyba",9,34
-2021-01-11,"465","Informacijos ir ryšių technologijų (IRT) įrangos didmeninė prekyba",2,11
-2021-01-11,"466","Kitų mašinų, įrangos ir reikmenų didmeninė prekyba",4,40
-2021-01-11,"467","Kita specializuota didmeninė prekyba",13,94
-2021-01-11,"469","Nespecializuota didmeninė prekyba",1,8
-2021-01-11,"470","Mažmeninė prekyba, išskyrus variklinių transporto priemonių ir motociklų prekybą",1,5
-2021-01-11,"471","Mažmeninė prekyba nespecializuotose parduotuvėse",25,130
-2021-01-11,"472","Maisto, gėrimų ir tabako mažmeninė prekyba specializuotose parduotuvėse",2,5
-2021-01-11,"473","Automobilių degalų mažmeninė prekyba specializuotose parduotuvėse",4,11
+2021-01-11,"451","Variklinių transporto priemonių pardavimas",3,12
+2021-01-11,"452","Variklinių transporto priemonių techninė priežiūra ir remontas",6,19
+2021-01-11,"453","Variklinių transporto priemonių atsarginių dalių ir pagalbinių reikmenų pardavimas",9,19
+2021-01-11,"460","Didmeninė prekyba, išskyrus prekybą variklinėmis transporto priemonėmis ir motociklais",4,12
+2021-01-11,"461","Didmeninė prekyba už atlygį ar pagal sutartį",2,9
+2021-01-11,"462","Žemės ūkio žaliavų ir gyvų gyvulių didmeninė prekyba",1,6
+2021-01-11,"463","Maisto produktų, gėrimų, tabako ir jo gaminių didmeninė prekyba",3,30
+2021-01-11,"464","Namų ūkio reikmenų didmeninė prekyba",9,50
+2021-01-11,"465","Informacijos ir ryšių technologijų (IRT) įrangos didmeninė prekyba",2,12
+2021-01-11,"466","Kitų mašinų, įrangos ir reikmenų didmeninė prekyba",5,44
+2021-01-11,"467","Kita specializuota didmeninė prekyba",15,105
+2021-01-11,"469","Nespecializuota didmeninė prekyba",1,9
+2021-01-11,"470","Mažmeninė prekyba, išskyrus variklinių transporto priemonių ir motociklų prekybą",2,7
+2021-01-11,"471","Mažmeninė prekyba nespecializuotose parduotuvėse",29,153
+2021-01-11,"472","Maisto, gėrimų ir tabako mažmeninė prekyba specializuotose parduotuvėse",3,7
+2021-01-11,"473","Automobilių degalų mažmeninė prekyba specializuotose parduotuvėse",5,13
 2021-01-11,"474","Informacijos ir ryšių technologijų (IRT) įrangos mažmeninė prekyba specializuotose parduotuvėse",0,5
-2021-01-11,"475","Kitos namų ūkio įrangos mažmeninė prekyba specializuotose parduotuvėse",1,29
-2021-01-11,"476","Kultūros ir poilsio prekių mažmeninė prekyba specializuotose parduotuvėse",0,2
-2021-01-11,"477","Kitų prekių mažmeninė prekyba specializuotose parduotuvėse",13,62
-2021-01-11,"478","Mažmeninė prekyba kioskuose ir prekyvietėse",1,3
-2021-01-11,"479","Mažmeninė prekyba ne parduotuvėse, kioskuose ar prekyvietėse",2,30
+2021-01-11,"475","Kitos namų ūkio įrangos mažmeninė prekyba specializuotose parduotuvėse",2,34
+2021-01-11,"476","Kultūros ir poilsio prekių mažmeninė prekyba specializuotose parduotuvėse",0,4
+2021-01-11,"477","Kitų prekių mažmeninė prekyba specializuotose parduotuvėse",14,72
+2021-01-11,"478","Mažmeninė prekyba kioskuose ir prekyvietėse",1,4
+2021-01-11,"479","Mažmeninė prekyba ne parduotuvėse, kioskuose ar prekyvietėse",3,35
 2021-01-11,"490","Sausumos transportas ir transportavimas vamzdynais",0,2
-2021-01-11,"492","Krovininis geležinkelio transportas",4,8
-2021-01-11,"493","Kitas keleivinis sausumos transportas",7,17
-2021-01-11,"494","Krovininis kelių transportas ir perkraustymo veikla",20,77
+2021-01-11,"492","Krovininis geležinkelio transportas",5,11
+2021-01-11,"493","Kitas keleivinis sausumos transportas",8,21
+2021-01-11,"494","Krovininis kelių transportas ir perkraustymo veikla",26,94
 2021-01-11,"503","Vidaus vandenų keleivinis transportas",0,1
 2021-01-11,"511","Keleivinis oro transportas",0,1
 2021-01-11,"520","Sandėliavimas ir transportui būdingų paslaugų veikla",0,1
 2021-01-11,"521","Sandėliavimas ir saugojimas",2,5
-2021-01-11,"522","Transportui būdingų paslaugų veikla",11,50
+2021-01-11,"522","Transportui būdingų paslaugų veikla",15,64
 2021-01-11,"530","Pašto ir pasiuntinių (kurjerių) veikla",1,2
-2021-01-11,"531","Pašto pagal įpareigojimą teikti universaliąsias paslaugas atliekama veikla",3,7
-2021-01-11,"532","Kita pašto ir pasiuntinių (kurjerių) veikla",0,1
+2021-01-11,"531","Pašto pagal įpareigojimą teikti universaliąsias paslaugas atliekama veikla",5,11
+2021-01-11,"532","Kita pašto ir pasiuntinių (kurjerių) veikla",0,2
 2021-01-11,"550","Apgyvendinimo veikla",0,1
-2021-01-11,"551","Viešbučių ir panašių laikinų buveinių veikla",0,10
-2021-01-11,"552","Poilsiautojų ir kita trumpalaikio apgyvendinimo veikla",0,1
+2021-01-11,"551","Viešbučių ir panašių laikinų buveinių veikla",0,11
+2021-01-11,"552","Poilsiautojų ir kita trumpalaikio apgyvendinimo veikla",0,2
 2021-01-11,"553","Poilsinių transporto priemonių, priekabų aikštelių ir stovyklaviečių veikla",0,1
-2021-01-11,"560","Maitinimo ir gėrimų teikimo veikla",4,6
-2021-01-11,"561","Restoranų ir pagaminto valgio teikimo veikla",6,36
-2021-01-11,"562","Pagaminto valgio tiekimas renginiams ir kitų maitinimo paslaugų veikla",3,9
+2021-01-11,"560","Maitinimo ir gėrimų teikimo veikla",4,7
+2021-01-11,"561","Restoranų ir pagaminto valgio teikimo veikla",6,44
+2021-01-11,"562","Pagaminto valgio tiekimas renginiams ir kitų maitinimo paslaugų veikla",4,11
 2021-01-11,"563","Gėrimų pardavimo vartoti vietoje veikla",0,4
 2021-01-11,"581","Knygų, periodinių leidinių leidyba ir kita leidybinė veikla",2,8
 2021-01-11,"582","Programinės įrangos leidyba",1,8
+2021-01-11,"590","Kino filmų, vaizdo filmų ir televizijos programų gamyba, garso įrašymo ir muzikos įrašų leidybos veikla",0,1
 2021-01-11,"591","Kino filmų, vaizdo filmų ir televizijos programų rengėjų veikla",0,3
 2021-01-11,"592","Garso įrašymas ir muzikos įrašų leidyba",1,1
 2021-01-11,"602","Televizijos programų rengimas ir transliavimas",1,5
 2021-01-11,"611","Laidinio ryšio paslaugų veikla",1,4
 2021-01-11,"612","Belaidžio ryšio paslaugų veikla",1,4
-2021-01-11,"620","Kompiuterių programavimo, konsultacinė ir susijusi veikla",2,17
-2021-01-11,"631","Duomenų apdorojimo, interneto serverių paslaugų (prieglobos) ir susijusi veikla; interneto vartų paslaugų veikla",1,8
-2021-01-11,"639","Kita informacinių paslaugų veikla",1,1
-2021-01-11,"641","Piniginis tarpininkavimas",5,23
+2021-01-11,"620","Kompiuterių programavimo, konsultacinė ir susijusi veikla",2,22
+2021-01-11,"631","Duomenų apdorojimo, interneto serverių paslaugų (prieglobos) ir susijusi veikla; interneto vartų paslaugų veikla",2,9
+2021-01-11,"639","Kita informacinių paslaugų veikla",1,2
+2021-01-11,"641","Piniginis tarpininkavimas",5,26
 2021-01-11,"642","Kontroliuojančiųjų bendrovių veikla",0,3
-2021-01-11,"649","Kita finansinių paslaugų veikla, išskyrus draudimą ir pensijų lėšų kaupimą",0,6
-2021-01-11,"650","Draudimo, perdraudimo ir pensijų lėšų kaupimo, išskyrus privalomąjį socialinį draudimą, veikla",0,1
-2021-01-11,"651","Draudimas",1,3
-2021-01-11,"661","Pagalbinė finansinių paslaugų, išskyrus draudimą ir pensijų lėšų kaupimą, veikla",0,2
+2021-01-11,"649","Kita finansinių paslaugų veikla, išskyrus draudimą ir pensijų lėšų kaupimą",0,7
+2021-01-11,"650","Draudimo, perdraudimo ir pensijų lėšų kaupimo, išskyrus privalomąjį socialinį draudimą, veikla",0,2
+2021-01-11,"651","Draudimas",1,5
+2021-01-11,"661","Pagalbinė finansinių paslaugų, išskyrus draudimą ir pensijų lėšų kaupimą, veikla",1,3
 2021-01-11,"662","Pagalbinė draudimo ir pensijų lėšų kaupimo veikla",1,3
 2021-01-11,"663","Fondų valdymo veikla",0,4
 2021-01-11,"680","Nekilnojamojo turto operacijos",0,5
 2021-01-11,"681","Nuosavo nekilnojamojo turto pirkimas ir pardavimas",0,4
-2021-01-11,"682","Nuosavo arba nuomojamo nekilnojamojo turto nuoma ir eksploatavimas",3,34
+2021-01-11,"682","Nuosavo arba nuomojamo nekilnojamojo turto nuoma ir eksploatavimas",3,42
 2021-01-11,"683","Nekilnojamojo turto operacijos už atlygį arba pagal sutartį",5,13
-2021-01-11,"691","Teisinė veikla",1,5
-2021-01-11,"692","Apskaitos, buhalterijos ir audito veikla; konsultacijos mokesčių klausimais",4,14
+2021-01-11,"691","Teisinė veikla",2,9
+2021-01-11,"692","Apskaitos, buhalterijos ir audito veikla; konsultacijos mokesčių klausimais",4,16
 2021-01-11,"701","Pagrindinių buveinių veikla",1,3
-2021-01-11,"702","Konsultacinė valdymo veikla",4,30
-2021-01-11,"711","Architektūros ir inžinerijos veikla bei su ja susijusios techninės konsultacijos",0,10
+2021-01-11,"702","Konsultacinė valdymo veikla",4,33
+2021-01-11,"711","Architektūros ir inžinerijos veikla bei su ja susijusios techninės konsultacijos",0,12
 2021-01-11,"712","Techninis tikrinimas ir analizė",0,6
 2021-01-11,"720","Moksliniai tyrimai ir taikomoji veikla",0,1
-2021-01-11,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",16,77
+2021-01-11,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",18,87
 2021-01-11,"722","Socialinių ir humanitarinių mokslų moksliniai tyrimai ir taikomoji veikla",0,3
 2021-01-11,"731","Reklama",2,11
 2021-01-11,"741","Specializuota projektavimo veikla",0,1
 2021-01-11,"742","Fotografavimo veikla",0,1
-2021-01-11,"743","Vertimo raštu ir žodžiu veikla",0,1
+2021-01-11,"743","Vertimo raštu ir žodžiu veikla",0,6
 2021-01-11,"749","Kita, niekur kitur nepriskirta, profesinė, mokslinė ir techninė veikla",1,9
-2021-01-11,"750","Veterinarinė veikla",0,4
-2021-01-11,"771","Variklinių transporto priemonių nuoma ir išperkamoji nuoma",1,3
-2021-01-11,"772","Asmeninių ir namų ūkio prekių nuoma ir išperkamoji nuoma",0,1
-2021-01-11,"773","Kitų mašinų, įrangos ir materialiųjų vertybių nuoma ir išperkamoji nuoma",0,10
+2021-01-11,"750","Veterinarinė veikla",0,5
+2021-01-11,"771","Variklinių transporto priemonių nuoma ir išperkamoji nuoma",1,5
+2021-01-11,"772","Asmeninių ir namų ūkio prekių nuoma ir išperkamoji nuoma",0,2
+2021-01-11,"773","Kitų mašinų, įrangos ir materialiųjų vertybių nuoma ir išperkamoji nuoma",0,12
 2021-01-11,"774","Intelektinės nuosavybės ir panašių produktų, išskyrus autorių teisių saugomus objektus, išperkamoji nuoma",0,2
-2021-01-11,"780","Įdarbinimo veikla",0,3
+2021-01-11,"780","Įdarbinimo veikla",0,6
 2021-01-11,"781","Įdarbinimo agentūrų veikla",0,4
-2021-01-11,"782","Laikinojo įdarbinimo agentūrų veikla",2,17
-2021-01-11,"783","Kitas darbo jėgos teikimas",2,6
+2021-01-11,"782","Laikinojo įdarbinimo agentūrų veikla",2,20
+2021-01-11,"783","Kitas darbo jėgos teikimas",2,10
 2021-01-11,"790","Kelionių agentūrų, ekskursijų organizatorių, išankstinio užsakymo paslaugų ir susijusi veikla",0,1
 2021-01-11,"791","Kelionių agentūrų ir ekskursijų organizatorių veikla",0,7
 2021-01-11,"799","Kitų išankstinio užsakymo ir susijusių paslaugų veikla",0,1
-2021-01-11,"801","Privati apsauga",3,20
+2021-01-11,"801","Privati apsauga",3,24
 2021-01-11,"802","Apsaugos sistemų paslaugų veikla",0,3
-2021-01-11,"812","Valymo veikla",5,29
+2021-01-11,"810","Pastatų aptarnavimas ir kraštovaizdžio tvarkymas",0,1
+2021-01-11,"811","Kombinuota patalpų funkcionavimo užtikrinimo veikla",0,1
+2021-01-11,"812","Valymo veikla",5,41
 2021-01-11,"813","Kraštovaizdžio tvarkymas",0,1
 2021-01-11,"820","Administracinė veikla, įstaigų ir kitų verslo įmonių aptarnavimo veikla",1,2
 2021-01-11,"821","Įstaigų administracinė ir aptarnavimo veikla",2,7
 2021-01-11,"822","Užsakomųjų informacinių paslaugų centrų veikla",0,3
 2021-01-11,"823","Posėdžių ir verslo renginių organizavimas",0,2
-2021-01-11,"829","Niekur kitur nepriskirta verslui būdingų paslaugų veikla",1,6
-2021-01-11,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",7,126
-2021-01-11,"842","Bendruomenei teikiamų paslaugų užtikrinimas",20,89
-2021-01-11,"843","Privalomojo (valstybinio) socialinio draudimo veikla",1,3
-2021-01-11,"850","Švietimas",0,2
-2021-01-11,"851","Ikimokyklinis ugdymas",10,43
-2021-01-11,"852","Pradinis ugdymas",3,7
-2021-01-11,"853","Vidurinis ugdymas",14,105
-2021-01-11,"854","Aukštasis mokslas",6,58
-2021-01-11,"855","Kitas mokymas",3,20
+2021-01-11,"829","Niekur kitur nepriskirta verslui būdingų paslaugų veikla",1,7
+2021-01-11,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",12,147
+2021-01-11,"842","Bendruomenei teikiamų paslaugų užtikrinimas",29,107
+2021-01-11,"843","Privalomojo (valstybinio) socialinio draudimo veikla",2,4
+2021-01-11,"850","Švietimas",1,3
+2021-01-11,"851","Ikimokyklinis ugdymas",19,55
+2021-01-11,"852","Pradinis ugdymas",3,8
+2021-01-11,"853","Vidurinis ugdymas",19,123
+2021-01-11,"854","Aukštasis mokslas",9,173
+2021-01-11,"855","Kitas mokymas",3,28
 2021-01-11,"856","Švietimui būdingų paslaugų veikla",1,7
-2021-01-11,"860","Žmonių sveikatos priežiūros veikla",9,103
-2021-01-11,"861","Ligoninių veikla",44,975
-2021-01-11,"862","Medicininės ir odontologinės praktikos veikla",33,357
-2021-01-11,"869","Kita žmonių sveikatos priežiūros veikla",10,154
+2021-01-11,"860","Žmonių sveikatos priežiūros veikla",12,160
+2021-01-11,"861","Ligoninių veikla",78,1933
+2021-01-11,"862","Medicininės ir odontologinės praktikos veikla",38,502
+2021-01-11,"869","Kita žmonių sveikatos priežiūros veikla",15,212
 2021-01-11,"870","Kita stacionarinė globos veikla",0,1
-2021-01-11,"871","Stacionarinė slaugos įstaigų veikla",0,1
+2021-01-11,"871","Stacionarinė slaugos įstaigų veikla",0,6
 2021-01-11,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",1,12
-2021-01-11,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",14,145
-2021-01-11,"879","Kita stacionarinė globos veikla",2,56
-2021-01-11,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",0,23
-2021-01-11,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",2,35
-2021-01-11,"889","Kita, nesusijusi su apgyvendinimu, socialinio darbo veikla",1,18
-2021-01-11,"900","Kūrybinė, meninė ir pramogų organizavimo veikla",3,12
-2021-01-11,"910","Bibliotekų, archyvų, muziejų ir kita kultūrinė veikla",1,9
-2021-01-11,"920","Azartinių žaidimų ir lažybų organizavimo veikla",1,4
+2021-01-11,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",28,264
+2021-01-11,"879","Kita stacionarinė globos veikla",4,62
+2021-01-11,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",2,28
+2021-01-11,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",3,40
+2021-01-11,"889","Kita, nesusijusi su apgyvendinimu, socialinio darbo veikla",2,25
+2021-01-11,"900","Kūrybinė, meninė ir pramogų organizavimo veikla",3,13
+2021-01-11,"910","Bibliotekų, archyvų, muziejų ir kita kultūrinė veikla",1,10
+2021-01-11,"920","Azartinių žaidimų ir lažybų organizavimo veikla",1,5
 2021-01-11,"930","Sportinė veikla, pramogų ir poilsio organizavimo veikla",0,3
-2021-01-11,"931","Sportinė veikla",1,24
-2021-01-11,"932","Pramogų ir poilsio organizavimo veikla",0,5
-2021-01-11,"941","Verslininkų, darbdavių ir profesinių narystės organizacijų veikla",1,2
+2021-01-11,"931","Sportinė veikla",1,26
+2021-01-11,"932","Pramogų ir poilsio organizavimo veikla",0,8
+2021-01-11,"941","Verslininkų, darbdavių ir profesinių narystės organizacijų veikla",1,5
 2021-01-11,"942","Profesinių sąjungų veikla",0,1
-2021-01-11,"949","Kitų narystės organizacijų veikla",5,20
-2021-01-11,"951","Kompiuterių ir ryšių įrangos remontas",0,1
+2021-01-11,"949","Kitų narystės organizacijų veikla",5,23
+2021-01-11,"951","Kompiuterių ir ryšių įrangos remontas",0,2
 2021-01-11,"952","Asmeninių ir namų ūkio reikmenų taisymas",0,2
-2021-01-11,"960","Kita asmenų aptarnavimo veikla",2,11
+2021-01-11,"960","Kita asmenų aptarnavimo veikla",3,16
+2021-01-12,"010","Augalininkystė ir gyvulininkystė, medžioklė ir susijusių paslaugų veikla",0,1
+2021-01-12,"011","Vienmečių augalų auginimas",3,6
+2021-01-12,"012","Daugiamečių augalų auginimas",1,1
+2021-01-12,"014","Gyvulininkystė",2,10
+2021-01-12,"015","Mišrusis žemės ūkis",1,7
+2021-01-12,"016","Žemės ūkiui būdingų paslaugų ir derliaus apdorojimo veikla",2,4
+2021-01-12,"020","Miškininkystė ir medienos ruoša",0,1
+2021-01-12,"021","Miško medžių auginimas ir kita miškininkystės veikla",4,10
+2021-01-12,"022","Medienos ruoša",2,8
+2021-01-12,"024","Miškininkystei būdingų paslaugų veikla",0,2
+2021-01-12,"031","Žvejyba",0,1
+2021-01-12,"081","Akmens, smėlio ir molio karjerų eksploatavimas",3,6
+2021-01-12,"089","Niekur kitur nepriskirta kasyba ir karjerų eksploatavimas",1,3
+2021-01-12,"099","Kitai kasybai ir karjerų eksploatavimui būdingų paslaugų veikla",0,1
+2021-01-12,"100","Maisto produktų gamyba",0,1
+2021-01-12,"101","Mėsos perdirbimas ir konservavimas ir mėsos produktų gamyba",4,9
+2021-01-12,"102","Žuvų, vėžiagyvių ir moliuskų perdirbimas ir konservavimas",6,26
+2021-01-12,"105","Pieno produktų gamyba",3,11
+2021-01-12,"106","Grūdų malimo produktų, krakmolo ir krakmolo produktų gamyba",1,2
+2021-01-12,"107","Kepyklos ir miltinių produktų gamyba",7,24
+2021-01-12,"108","Kitų maisto produktų gamyba",5,11
+2021-01-12,"109","Paruoštų pašarų gyvuliams gamyba",2,8
+2021-01-12,"110","Gėrimų gamyba",1,20
+2021-01-12,"131","Tekstilės pluoštų paruošimas ir verpimas",0,2
+2021-01-12,"132","Tekstilės audimas",0,4
+2021-01-12,"133","Tekstilės apdaila",0,2
+2021-01-12,"139","Kitų tekstilės gaminių ir dirbinių gamyba",2,14
+2021-01-12,"140","Drabužių siuvimas (gamyba)",3,6
+2021-01-12,"141","Drabužių, išskyrus kailinius drabužius, siuvimas (gamyba)",10,25
+2021-01-12,"143","Megztų (trikotažinių) ir nertų drabužių gamyba",2,2
+2021-01-12,"152","Avalynės gamyba",1,2
+2021-01-12,"160","Medienos bei medienos ir kamštienos gaminių, išskyrus baldus, gamyba; gaminių iš šiaudų ir pynimo medžiagų gamyba",0,2
+2021-01-12,"161","Medienos pjaustymas ir obliavimas",8,30
+2021-01-12,"162","Gaminių ir dirbinių iš medienos, kamštienos, šiaudų ir pynimo medžiagų gamyba",2,20
+2021-01-12,"171","Plaušienos, popieriaus ir kartono gamyba",0,1
+2021-01-12,"172","Popieriaus ir kartoninių gaminių gamyba",2,8
+2021-01-12,"181","Spausdinimas ir su spausdinimu susijusios paslaugos",2,7
+2021-01-12,"192","Rafinuotų naftos produktų gamyba",3,36
+2021-01-12,"201","Pagrindinių chemikalų, trąšų ir azoto junginių, pirminių plastikų ir pirminio sintetinio kaučiuko gamyba",3,9
+2021-01-12,"203","Dažų, lakų ir panašių dangų medžiagų, spaustuvinių dažų ir mastikų gamyba",0,1
+2021-01-12,"204","Muilo ir ploviklių, valiklių ir blizgiklių, kvepalų ir tualeto priemonių gamyba",0,2
+2021-01-12,"205","Kitų cheminių medžiagų gamyba",1,19
+2021-01-12,"212","Farmacinių preparatų gamyba",1,1
+2021-01-12,"220","Guminių ir plastikinių gaminių gamyba",1,1
+2021-01-12,"222","Plastikinių gaminių gamyba",6,35
+2021-01-12,"231","Stiklo ir stiklo gaminių bei dirbinių gamyba",2,4
+2021-01-12,"234","Kitų porcelianinių ir keraminių gaminių bei dirbinių gamyba",0,1
+2021-01-12,"235","Cemento, kalkių ir gipso gamyba",0,1
+2021-01-12,"236","Betono, cemento ir gipso gaminių bei dirbinių gamyba",3,11
+2021-01-12,"237","Akmens pjaustymas, tašymas ir apdailinimas",1,1
+2021-01-12,"250","Metalo gaminių, išskyrus mašinas ir įrenginius, gamyba",0,2
+2021-01-12,"251","Konstrukcinių metalo gaminių gamyba",9,35
+2021-01-12,"252","Metalinių cisternų, rezervuarų ir talpyklų gamyba",0,21
+2021-01-12,"255","Metalo kalimas, presavimas, štampavimas ir profiliavimas; miltelių metalurgija",4,10
+2021-01-12,"256","Metalų apdorojimas ir dengimas; mechaninis apdirbimas",2,7
+2021-01-12,"259","Kitų metalo gaminių gamyba",2,7
+2021-01-12,"261","Elektroninių komponentų ir plokščių gamyba",0,5
+2021-01-12,"264","Vartotojiškos elektroninės įrangos gamyba",0,1
+2021-01-12,"266","Švitinimo, elektromedicininės ir elektroterapinės įrangos gamyba",0,1
+2021-01-12,"267","Optinių prietaisų ir fotografijos įrangos gamyba",0,7
+2021-01-12,"271","Elektros variklių, generatorių, transformatorių bei elektros skirstomosios ir valdymo įrangos gamyba",1,4
+2021-01-12,"274","Elektros apšvietimo įrangos gamyba",0,1
+2021-01-12,"275","Buitinių aparatų ir prietaisų gamyba",1,44
+2021-01-12,"279","Kitos elektros įrangos gamyba",0,1
+2021-01-12,"282","Kitų bendrosios paskirties mašinų ir įrangos gamyba",2,10
+2021-01-12,"283","Žemės ir miškų ūkio mašinų gamyba",0,1
+2021-01-12,"284","Metalo formavimo įrangos ir staklių gamyba",1,3
+2021-01-12,"289","Kitų specialiosios paskirties mašinų gamyba",0,1
+2021-01-12,"290","Variklinių transporto priemonių, priekabų ir puspriekabių gamyba",0,1
+2021-01-12,"292","Variklinių transporto priemonių kėbulų gamyba; priekabų ir puspriekabių gamyba",1,2
+2021-01-12,"293","Variklinių transporto priemonių dalių ir pagalbinių reikmenų gamyba",3,24
+2021-01-12,"301","Įvairių tipų laivų statyba",1,2
+2021-01-12,"302","Geležinkelio lokomotyvų bei riedmenų gamyba",0,1
+2021-01-12,"309","Niekur kitur nepriskirtų transporto priemonių gamyba",0,1
+2021-01-12,"310","Baldų gamyba",24,147
+2021-01-12,"320","Kita gamyba",1,2
+2021-01-12,"321","Papuošalų, juvelyrinių, bižuterijos ir panašių dirbinių gamyba",0,1
+2021-01-12,"324","Žaidimų ir žaislų gamyba",0,1
+2021-01-12,"325","Medicinos ir odontologijos prietaisų, instrumentų ir reikmenų gamyba",9,33
+2021-01-12,"329","Niekur kitur nepriskirta gamyba",1,3
+2021-01-12,"330","Mašinų ir įrangos remontas ir įrengimas",0,8
+2021-01-12,"331","Metalo gaminių, mašinų ir įrangos remontas",4,36
+2021-01-12,"332","Pramoninių mašinų ir įrangos įrengimas",0,2
+2021-01-12,"351","Elektros energijos gamyba, perdavimas ir paskirstymas",3,13
+2021-01-12,"353","Garo tiekimas ir oro kondicionavimas",5,20
+2021-01-12,"360","Vandens surinkimas, valymas ir tiekimas",3,8
+2021-01-12,"370","Nuotekų valymas",0,1
+2021-01-12,"381","Atliekų surinkimas",2,8
+2021-01-12,"382","Atliekų tvarkymas ir šalinimas",4,10
+2021-01-12,"383","Medžiagų atgavimas",0,2
+2021-01-12,"410","Pastatų statyba",2,13
+2021-01-12,"411","Statybų plėtra",0,3
+2021-01-12,"412","Gyvenamųjų ir negyvenamųjų pastatų statyba",9,61
+2021-01-12,"420","Inžinerinių statinių statyba",1,7
+2021-01-12,"421","Kelių ir geležinkelių tiesimas",2,13
+2021-01-12,"422","Komunalinių statinių statyba",4,29
+2021-01-12,"429","Kitų inžinerinių statinių statyba",0,3
+2021-01-12,"430","Specializuota statybos veikla",1,8
+2021-01-12,"431","Statinių nugriovimas ir statybvietės paruošimas",1,6
+2021-01-12,"432","Elektros, vandentiekio ir kitos įrangos įrengimas",13,55
+2021-01-12,"433","Statybos baigimas ir apdaila",3,26
+2021-01-12,"439","Kita specializuota statybos veikla",3,12
+2021-01-12,"450","Variklinių transporto priemonių ir motociklų didmeninė ir mažmeninė prekyba bei remontas",0,1
+2021-01-12,"451","Variklinių transporto priemonių pardavimas",3,21
+2021-01-12,"452","Variklinių transporto priemonių techninė priežiūra ir remontas",3,22
+2021-01-12,"453","Variklinių transporto priemonių atsarginių dalių ir pagalbinių reikmenų pardavimas",6,20
+2021-01-12,"460","Didmeninė prekyba, išskyrus prekybą variklinėmis transporto priemonėmis ir motociklais",1,5
+2021-01-12,"461","Didmeninė prekyba už atlygį ar pagal sutartį",1,4
+2021-01-12,"462","Žemės ūkio žaliavų ir gyvų gyvulių didmeninė prekyba",2,4
+2021-01-12,"463","Maisto produktų, gėrimų, tabako ir jo gaminių didmeninė prekyba",6,92
+2021-01-12,"464","Namų ūkio reikmenų didmeninė prekyba",3,29
+2021-01-12,"465","Informacijos ir ryšių technologijų (IRT) įrangos didmeninė prekyba",3,10
+2021-01-12,"466","Kitų mašinų, įrangos ir reikmenų didmeninė prekyba",2,22
+2021-01-12,"467","Kita specializuota didmeninė prekyba",12,54
+2021-01-12,"469","Nespecializuota didmeninė prekyba",0,10
+2021-01-12,"470","Mažmeninė prekyba, išskyrus variklinių transporto priemonių ir motociklų prekybą",3,10
+2021-01-12,"471","Mažmeninė prekyba nespecializuotose parduotuvėse",28,151
+2021-01-12,"472","Maisto, gėrimų ir tabako mažmeninė prekyba specializuotose parduotuvėse",0,3
+2021-01-12,"473","Automobilių degalų mažmeninė prekyba specializuotose parduotuvėse",1,9
+2021-01-12,"474","Informacijos ir ryšių technologijų (IRT) įrangos mažmeninė prekyba specializuotose parduotuvėse",0,1
+2021-01-12,"475","Kitos namų ūkio įrangos mažmeninė prekyba specializuotose parduotuvėse",2,12
+2021-01-12,"476","Kultūros ir poilsio prekių mažmeninė prekyba specializuotose parduotuvėse",0,5
+2021-01-12,"477","Kitų prekių mažmeninė prekyba specializuotose parduotuvėse",21,80
+2021-01-12,"478","Mažmeninė prekyba kioskuose ir prekyvietėse",0,1
+2021-01-12,"479","Mažmeninė prekyba ne parduotuvėse, kioskuose ar prekyvietėse",4,15
+2021-01-12,"490","Sausumos transportas ir transportavimas vamzdynais",1,1
+2021-01-12,"492","Krovininis geležinkelio transportas",3,11
+2021-01-12,"493","Kitas keleivinis sausumos transportas",11,22
+2021-01-12,"494","Krovininis kelių transportas ir perkraustymo veikla",22,92
+2021-01-12,"502","Jūrų ir pakrančių krovininis vandens transportas",0,2
+2021-01-12,"511","Keleivinis oro transportas",0,3
+2021-01-12,"521","Sandėliavimas ir saugojimas",0,4
+2021-01-12,"522","Transportui būdingų paslaugų veikla",22,54
+2021-01-12,"530","Pašto ir pasiuntinių (kurjerių) veikla",0,1
+2021-01-12,"531","Pašto pagal įpareigojimą teikti universaliąsias paslaugas atliekama veikla",4,11
+2021-01-12,"532","Kita pašto ir pasiuntinių (kurjerių) veikla",0,1
+2021-01-12,"551","Viešbučių ir panašių laikinų buveinių veikla",3,7
+2021-01-12,"552","Poilsiautojų ir kita trumpalaikio apgyvendinimo veikla",0,1
+2021-01-12,"559","Kita apgyvendinimo veikla",0,4
+2021-01-12,"560","Maitinimo ir gėrimų teikimo veikla",0,12
+2021-01-12,"561","Restoranų ir pagaminto valgio teikimo veikla",8,37
+2021-01-12,"562","Pagaminto valgio tiekimas renginiams ir kitų maitinimo paslaugų veikla",1,13
+2021-01-12,"563","Gėrimų pardavimo vartoti vietoje veikla",1,5
+2021-01-12,"580","Leidybinė veikla",0,1
+2021-01-12,"581","Knygų, periodinių leidinių leidyba ir kita leidybinė veikla",0,3
+2021-01-12,"582","Programinės įrangos leidyba",0,5
+2021-01-12,"590","Kino filmų, vaizdo filmų ir televizijos programų gamyba, garso įrašymo ir muzikos įrašų leidybos veikla",0,2
+2021-01-12,"591","Kino filmų, vaizdo filmų ir televizijos programų rengėjų veikla",0,2
+2021-01-12,"602","Televizijos programų rengimas ir transliavimas",1,4
+2021-01-12,"611","Laidinio ryšio paslaugų veikla",0,2
+2021-01-12,"620","Kompiuterių programavimo, konsultacinė ir susijusi veikla",3,24
+2021-01-12,"631","Duomenų apdorojimo, interneto serverių paslaugų (prieglobos) ir susijusi veikla; interneto vartų paslaugų veikla",2,9
+2021-01-12,"640","Finansinių paslaugų veikla, išskyrus draudimą ir pensijų lėšų kaupimą",0,1
+2021-01-12,"641","Piniginis tarpininkavimas",4,23
+2021-01-12,"642","Kontroliuojančiųjų bendrovių veikla",1,1
+2021-01-12,"649","Kita finansinių paslaugų veikla, išskyrus draudimą ir pensijų lėšų kaupimą",1,7
+2021-01-12,"650","Draudimo, perdraudimo ir pensijų lėšų kaupimo, išskyrus privalomąjį socialinį draudimą, veikla",0,1
+2021-01-12,"651","Draudimas",1,3
+2021-01-12,"661","Pagalbinė finansinių paslaugų, išskyrus draudimą ir pensijų lėšų kaupimą, veikla",0,2
+2021-01-12,"662","Pagalbinė draudimo ir pensijų lėšų kaupimo veikla",0,2
+2021-01-12,"680","Nekilnojamojo turto operacijos",0,2
+2021-01-12,"681","Nuosavo nekilnojamojo turto pirkimas ir pardavimas",0,3
+2021-01-12,"682","Nuosavo arba nuomojamo nekilnojamojo turto nuoma ir eksploatavimas",2,27
+2021-01-12,"683","Nekilnojamojo turto operacijos už atlygį arba pagal sutartį",6,27
+2021-01-12,"691","Teisinė veikla",0,3
+2021-01-12,"692","Apskaitos, buhalterijos ir audito veikla; konsultacijos mokesčių klausimais",3,14
+2021-01-12,"701","Pagrindinių buveinių veikla",0,4
+2021-01-12,"702","Konsultacinė valdymo veikla",3,27
+2021-01-12,"711","Architektūros ir inžinerijos veikla bei su ja susijusios techninės konsultacijos",2,16
+2021-01-12,"712","Techninis tikrinimas ir analizė",3,7
+2021-01-12,"720","Moksliniai tyrimai ir taikomoji veikla",0,1
+2021-01-12,"721","Gamtos mokslų ir inžinerijos moksliniai tyrimai ir taikomoji veikla",5,59
+2021-01-12,"722","Socialinių ir humanitarinių mokslų moksliniai tyrimai ir taikomoji veikla",0,3
+2021-01-12,"731","Reklama",2,15
+2021-01-12,"732","Rinkos tyrimas ir viešosios nuomonės apklausa",0,4
+2021-01-12,"742","Fotografavimo veikla",0,2
+2021-01-12,"743","Vertimo raštu ir žodžiu veikla",0,1
+2021-01-12,"749","Kita, niekur kitur nepriskirta, profesinė, mokslinė ir techninė veikla",0,3
+2021-01-12,"750","Veterinarinė veikla",1,6
+2021-01-12,"771","Variklinių transporto priemonių nuoma ir išperkamoji nuoma",0,5
+2021-01-12,"772","Asmeninių ir namų ūkio prekių nuoma ir išperkamoji nuoma",1,2
+2021-01-12,"773","Kitų mašinų, įrangos ir materialiųjų vertybių nuoma ir išperkamoji nuoma",2,13
+2021-01-12,"774","Intelektinės nuosavybės ir panašių produktų, išskyrus autorių teisių saugomus objektus, išperkamoji nuoma",0,1
+2021-01-12,"780","Įdarbinimo veikla",0,1
+2021-01-12,"781","Įdarbinimo agentūrų veikla",0,3
+2021-01-12,"782","Laikinojo įdarbinimo agentūrų veikla",3,15
+2021-01-12,"783","Kitas darbo jėgos teikimas",3,11
+2021-01-12,"791","Kelionių agentūrų ir ekskursijų organizatorių veikla",0,2
+2021-01-12,"801","Privati apsauga",8,22
+2021-01-12,"802","Apsaugos sistemų paslaugų veikla",0,2
+2021-01-12,"811","Kombinuota patalpų funkcionavimo užtikrinimo veikla",1,3
+2021-01-12,"812","Valymo veikla",6,24
+2021-01-12,"813","Kraštovaizdžio tvarkymas",0,2
+2021-01-12,"820","Administracinė veikla, įstaigų ir kitų verslo įmonių aptarnavimo veikla",0,2
+2021-01-12,"821","Įstaigų administracinė ir aptarnavimo veikla",0,3
+2021-01-12,"822","Užsakomųjų informacinių paslaugų centrų veikla",0,5
+2021-01-12,"829","Niekur kitur nepriskirta verslui būdingų paslaugų veikla",2,3
+2021-01-12,"840","Viešasis valdymas ir gynyba; privalomasis socialinis draudimas",0,2
+2021-01-12,"841","Valstybės valdymas ir bendroji ekonominė bei socialinė bendruomenės politika",13,130
+2021-01-12,"842","Bendruomenei teikiamų paslaugų užtikrinimas",16,120
+2021-01-12,"843","Privalomojo (valstybinio) socialinio draudimo veikla",2,6
+2021-01-12,"850","Švietimas",0,1
+2021-01-12,"851","Ikimokyklinis ugdymas",26,57
+2021-01-12,"852","Pradinis ugdymas",4,8
+2021-01-12,"853","Vidurinis ugdymas",34,98
+2021-01-12,"854","Aukštasis mokslas",5,94
+2021-01-12,"855","Kitas mokymas",6,21
+2021-01-12,"856","Švietimui būdingų paslaugų veikla",0,3
+2021-01-12,"860","Žmonių sveikatos priežiūros veikla",8,108
+2021-01-12,"861","Ligoninių veikla",74,1987
+2021-01-12,"862","Medicininės ir odontologinės praktikos veikla",37,637
+2021-01-12,"869","Kita žmonių sveikatos priežiūros veikla",6,229
+2021-01-12,"871","Stacionarinė slaugos įstaigų veikla",2,5
+2021-01-12,"872","Stacionarinė protiškai atsilikusių, psichikos ligonių, sergančiųjų priklausomybės ligomis globos veikla",1,16
+2021-01-12,"873","Stacionarinė pagyvenusių ir neįgaliųjų asmenų globos veikla",31,385
+2021-01-12,"879","Kita stacionarinė globos veikla",11,139
+2021-01-12,"880","Nesusijusio su apgyvendinimu socialinio darbo veikla",3,28
+2021-01-12,"881","Nesusijusio su apgyvendinimu socialinio darbo su pagyvenusiais ir neįgaliaisiais asmenimis veikla",4,90
+2021-01-12,"889","Kita, nesusijusi su apgyvendinimu, socialinio darbo veikla",2,18
+2021-01-12,"900","Kūrybinė, meninė ir pramogų organizavimo veikla",2,11
+2021-01-12,"910","Bibliotekų, archyvų, muziejų ir kita kultūrinė veikla",8,15
+2021-01-12,"920","Azartinių žaidimų ir lažybų organizavimo veikla",0,6
+2021-01-12,"930","Sportinė veikla, pramogų ir poilsio organizavimo veikla",0,2
+2021-01-12,"931","Sportinė veikla",0,18
+2021-01-12,"932","Pramogų ir poilsio organizavimo veikla",0,2
+2021-01-12,"940","Narystės organizacijų veikla",0,1
+2021-01-12,"941","Verslininkų, darbdavių ir profesinių narystės organizacijų veikla",0,1
+2021-01-12,"942","Profesinių sąjungų veikla",1,1
+2021-01-12,"949","Kitų narystės organizacijų veikla",9,27
+2021-01-12,"960","Kita asmenų aptarnavimo veikla",5,24
