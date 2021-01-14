@@ -7,7 +7,7 @@ library(stringr)
 library(bit64)
 
 source("R/functions.R")
-geojson <- FALSE
+geojson <- TRUE
 
 if(geojson) {
     osp <- GET("https://opendata.arcgis.com/datasets/45b76303953d40e2996a3da255bf8fe8_0.geojson")
