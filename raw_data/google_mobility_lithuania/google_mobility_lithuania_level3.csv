@@ -322,6 +322,8 @@
 "Alytaus apskr.","Alytaus m.",2021-01-06,-64,15,NA,NA,-36,16
 "Alytaus apskr.","Alytaus m.",2021-01-07,-65,12,NA,NA,-36,16
 "Alytaus apskr.","Alytaus m.",2021-01-08,-68,9,NA,NA,-33,18
+"Alytaus apskr.","Alytaus m.",2021-01-09,-74,3,NA,NA,-24,NA
+"Alytaus apskr.","Alytaus m.",2021-01-10,-76,11,NA,NA,-20,NA
 "Alytaus apskr.","Alytaus r.",2020-02-15,NA,NA,12,NA,NA,NA
 "Alytaus apskr.","Alytaus r.",2020-02-16,NA,NA,10,NA,NA,NA
 "Alytaus apskr.","Alytaus r.",2020-02-17,NA,NA,11,NA,-22,NA
@@ -626,6 +628,8 @@
 "Alytaus apskr.","Alytaus r.",2021-01-06,NA,NA,37,NA,-41,10
 "Alytaus apskr.","Alytaus r.",2021-01-07,NA,NA,40,NA,-42,14
 "Alytaus apskr.","Alytaus r.",2021-01-08,NA,NA,15,NA,-39,15
+"Alytaus apskr.","Alytaus r.",2021-01-09,NA,NA,11,NA,-18,NA
+"Alytaus apskr.","Alytaus r.",2021-01-10,NA,NA,13,NA,NA,NA
 "Alytaus apskr.","Druskininkų",2020-02-15,13,NA,1,NA,NA,NA
 "Alytaus apskr.","Druskininkų",2020-02-16,14,NA,20,NA,NA,NA
 "Alytaus apskr.","Druskininkų",2020-02-17,24,NA,NA,NA,-13,NA
@@ -930,6 +934,8 @@
 "Alytaus apskr.","Druskininkų",2021-01-06,-76,NA,NA,NA,-53,NA
 "Alytaus apskr.","Druskininkų",2021-01-07,-75,NA,-45,NA,-55,NA
 "Alytaus apskr.","Druskininkų",2021-01-08,-73,NA,-35,NA,-53,NA
+"Alytaus apskr.","Druskininkų",2021-01-09,-86,-12,-64,NA,-51,NA
+"Alytaus apskr.","Druskininkų",2021-01-10,NA,NA,-53,NA,-42,NA
 "Alytaus apskr.","Lazdijų r.",2020-02-17,NA,NA,NA,NA,-16,NA
 "Alytaus apskr.","Lazdijų r.",2020-02-18,NA,NA,NA,NA,-20,NA
 "Alytaus apskr.","Lazdijų r.",2020-02-19,NA,NA,NA,NA,-22,NA
@@ -1382,6 +1388,7 @@
 "Alytaus apskr.","Varėnos r.",2021-01-06,NA,NA,NA,NA,-40,NA
 "Alytaus apskr.","Varėnos r.",2021-01-07,NA,NA,NA,NA,-37,NA
 "Alytaus apskr.","Varėnos r.",2021-01-08,NA,NA,NA,NA,-39,NA
+"Alytaus apskr.","Varėnos r.",2021-01-09,NA,NA,-30,NA,-23,NA
 "Kauno apskr.","Jonavos r.",2020-02-15,8,NA,NA,8,5,NA
 "Kauno apskr.","Jonavos r.",2020-02-16,2,NA,NA,NA,7,NA
 "Kauno apskr.","Jonavos r.",2020-02-17,5,5,NA,2,-16,4
@@ -1705,6 +1712,8 @@
 "Kauno apskr.","Jonavos r.",2021-01-06,-61,NA,NA,-56,-38,14
 "Kauno apskr.","Jonavos r.",2021-01-07,-60,NA,NA,-69,-42,15
 "Kauno apskr.","Jonavos r.",2021-01-08,-57,NA,NA,-56,-37,15
+"Kauno apskr.","Jonavos r.",2021-01-09,-53,NA,NA,-65,-26,NA
+"Kauno apskr.","Jonavos r.",2021-01-10,-57,NA,NA,NA,-18,NA
 "Kauno apskr.","Kaišiadorių r.",2020-02-17,0,NA,NA,NA,-16,3
 "Kauno apskr.","Kaišiadorių r.",2020-02-18,1,NA,NA,NA,-16,4
 "Kauno apskr.","Kaišiadorių r.",2020-02-19,-1,NA,NA,NA,-15,3
@@ -1991,6 +2000,8 @@
 "Kauno apskr.","Kaišiadorių r.",2021-01-06,NA,NA,NA,NA,-40,13
 "Kauno apskr.","Kaišiadorių r.",2021-01-07,NA,NA,NA,NA,-38,12
 "Kauno apskr.","Kaišiadorių r.",2021-01-08,NA,NA,NA,NA,-35,14
+"Kauno apskr.","Kaišiadorių r.",2021-01-09,NA,NA,NA,NA,-14,NA
+"Kauno apskr.","Kaišiadorių r.",2021-01-10,NA,NA,NA,NA,-13,NA
 "Kauno apskr.","Kauno m.",2020-02-15,1,1,15,2,1,-2
 "Kauno apskr.","Kauno m.",2020-02-16,8,2,16,16,0,-3
 "Kauno apskr.","Kauno m.",2020-02-17,4,2,16,-3,-10,2
@@ -2320,6 +2331,8 @@
 "Kauno apskr.","Kauno m.",2021-01-06,-62,-10,-4,-54,-41,19
 "Kauno apskr.","Kauno m.",2021-01-07,-63,-12,-19,-55,-43,19
 "Kauno apskr.","Kauno m.",2021-01-08,-65,-6,9,-54,-41,20
+"Kauno apskr.","Kauno m.",2021-01-09,-68,-10,58,-60,-27,11
+"Kauno apskr.","Kauno m.",2021-01-10,-70,-16,52,-61,-24,9
 "Kauno apskr.","Kauno r.",2020-02-15,3,7,9,0,-3,-1
 "Kauno apskr.","Kauno r.",2020-02-16,12,11,12,2,-3,-1
 "Kauno apskr.","Kauno r.",2020-02-17,4,0,-1,1,-15,3
@@ -2649,6 +2662,8 @@
 "Kauno apskr.","Kauno r.",2021-01-06,-49,17,18,-52,-41,18
 "Kauno apskr.","Kauno r.",2021-01-07,-49,13,-4,-50,-41,18
 "Kauno apskr.","Kauno r.",2021-01-08,-47,18,2,-46,-40,19
+"Kauno apskr.","Kauno r.",2021-01-09,-54,29,37,-58,-23,11
+"Kauno apskr.","Kauno r.",2021-01-10,-56,NA,59,-55,-16,7
 "Kauno apskr.","Kėdainių r.",2020-02-15,3,0,NA,-4,2,NA
 "Kauno apskr.","Kėdainių r.",2020-02-16,7,NA,NA,-2,NA,NA
 "Kauno apskr.","Kėdainių r.",2020-02-17,3,NA,NA,-10,-20,4
@@ -2972,6 +2987,8 @@
 "Kauno apskr.","Kėdainių r.",2021-01-06,-58,NA,NA,-31,-37,13
 "Kauno apskr.","Kėdainių r.",2021-01-07,-53,NA,NA,-32,-40,14
 "Kauno apskr.","Kėdainių r.",2021-01-08,-53,18,NA,-41,-34,12
+"Kauno apskr.","Kėdainių r.",2021-01-09,-50,13,NA,-55,-12,NA
+"Kauno apskr.","Kėdainių r.",2021-01-10,-48,NA,NA,-56,-14,NA
 "Kauno apskr.","Prienų r.",2020-02-15,NA,5,NA,NA,NA,NA
 "Kauno apskr.","Prienų r.",2020-02-17,NA,7,NA,NA,-15,NA
 "Kauno apskr.","Prienų r.",2020-02-18,NA,3,NA,NA,-15,NA
@@ -3238,6 +3255,8 @@
 "Kauno apskr.","Prienų r.",2021-01-06,NA,NA,NA,NA,-43,14
 "Kauno apskr.","Prienų r.",2021-01-07,NA,NA,NA,NA,-41,13
 "Kauno apskr.","Prienų r.",2021-01-08,NA,NA,NA,NA,-40,15
+"Kauno apskr.","Prienų r.",2021-01-09,NA,NA,NA,NA,-24,NA
+"Kauno apskr.","Prienų r.",2021-01-10,NA,NA,NA,NA,-19,NA
 "Kauno apskr.","Raseinių r.",2020-02-15,5,NA,NA,NA,NA,NA
 "Kauno apskr.","Raseinių r.",2020-02-17,NA,NA,NA,NA,-21,NA
 "Kauno apskr.","Raseinių r.",2020-02-18,NA,NA,NA,-15,-18,NA
@@ -3526,6 +3545,8 @@
 "Kauno apskr.","Raseinių r.",2021-01-06,-68,NA,NA,NA,-40,11
 "Kauno apskr.","Raseinių r.",2021-01-07,-66,NA,NA,-71,-39,10
 "Kauno apskr.","Raseinių r.",2021-01-08,-69,NA,-42,-78,-38,12
+"Kauno apskr.","Raseinių r.",2021-01-09,-76,NA,NA,-73,-9,NA
+"Kauno apskr.","Raseinių r.",2021-01-10,NA,NA,NA,NA,-1,NA
 "Klaipėdos apskr.","Klaipėdos m.",2020-02-15,19,12,289,27,1,-2
 "Klaipėdos apskr.","Klaipėdos m.",2020-02-16,12,5,124,3,-5,0
 "Klaipėdos apskr.","Klaipėdos m.",2020-02-17,2,-2,7,6,-14,3
@@ -3855,6 +3876,8 @@
 "Klaipėdos apskr.","Klaipėdos m.",2021-01-06,-57,7,-28,17,-40,17
 "Klaipėdos apskr.","Klaipėdos m.",2021-01-07,-56,9,-33,15,-43,17
 "Klaipėdos apskr.","Klaipėdos m.",2021-01-08,-59,4,-15,9,-39,18
+"Klaipėdos apskr.","Klaipėdos m.",2021-01-09,-62,4,-1,4,-30,10
+"Klaipėdos apskr.","Klaipėdos m.",2021-01-10,-64,0,51,2,-23,8
 "Klaipėdos apskr.","Klaipėdos r.",2020-02-15,-4,5,NA,11,-3,NA
 "Klaipėdos apskr.","Klaipėdos r.",2020-02-16,8,3,NA,23,1,NA
 "Klaipėdos apskr.","Klaipėdos r.",2020-02-17,1,4,NA,8,-20,5
@@ -4178,6 +4201,8 @@
 "Klaipėdos apskr.","Klaipėdos r.",2021-01-06,-51,10,NA,-15,-41,14
 "Klaipėdos apskr.","Klaipėdos r.",2021-01-07,-52,7,NA,-19,-39,15
 "Klaipėdos apskr.","Klaipėdos r.",2021-01-08,-53,25,NA,-21,-39,15
+"Klaipėdos apskr.","Klaipėdos r.",2021-01-09,-57,20,NA,-23,-17,8
+"Klaipėdos apskr.","Klaipėdos r.",2021-01-10,-53,NA,NA,-20,-14,5
 "Klaipėdos apskr.","Kretingos r.",2020-02-15,6,5,NA,NA,4,NA
 "Klaipėdos apskr.","Kretingos r.",2020-02-16,30,NA,NA,NA,NA,NA
 "Klaipėdos apskr.","Kretingos r.",2020-02-17,4,1,NA,NA,-14,3
@@ -4501,6 +4526,8 @@
 "Klaipėdos apskr.","Kretingos r.",2021-01-06,-64,NA,NA,NA,-40,13
 "Klaipėdos apskr.","Kretingos r.",2021-01-07,-66,-5,NA,NA,-40,13
 "Klaipėdos apskr.","Kretingos r.",2021-01-08,-62,1,NA,NA,-38,13
+"Klaipėdos apskr.","Kretingos r.",2021-01-09,-70,-8,NA,NA,-26,NA
+"Klaipėdos apskr.","Kretingos r.",2021-01-10,-59,NA,NA,NA,-24,NA
 "Klaipėdos apskr.","Palangos m.",2020-02-15,37,21,40,19,NA,NA
 "Klaipėdos apskr.","Palangos m.",2020-02-16,36,NA,98,NA,NA,NA
 "Klaipėdos apskr.","Palangos m.",2020-02-17,NA,16,NA,NA,-11,NA
@@ -4793,6 +4820,8 @@
 "Klaipėdos apskr.","Palangos m.",2021-01-06,-56,NA,-53,-60,-40,NA
 "Klaipėdos apskr.","Palangos m.",2021-01-07,-62,-18,-61,-69,-40,NA
 "Klaipėdos apskr.","Palangos m.",2021-01-08,-59,-19,-65,-56,-42,NA
+"Klaipėdos apskr.","Palangos m.",2021-01-09,-68,-35,-83,-75,-27,NA
+"Klaipėdos apskr.","Palangos m.",2021-01-10,-52,NA,-68,NA,-28,NA
 "Vilniaus apskr.","Širvintų r.",2020-02-15,-7,5,NA,NA,2,NA
 "Vilniaus apskr.","Širvintų r.",2020-02-17,-6,6,NA,NA,-14,4
 "Vilniaus apskr.","Širvintų r.",2020-02-18,-5,8,NA,NA,-16,4
@@ -5106,6 +5135,8 @@
 "Vilniaus apskr.","Širvintų r.",2021-01-06,-47,NA,NA,NA,-40,11
 "Vilniaus apskr.","Širvintų r.",2021-01-07,-43,NA,NA,NA,-42,11
 "Vilniaus apskr.","Širvintų r.",2021-01-08,-43,NA,NA,NA,-39,11
+"Vilniaus apskr.","Širvintų r.",2021-01-09,-47,NA,NA,NA,-28,NA
+"Vilniaus apskr.","Širvintų r.",2021-01-10,-36,NA,NA,NA,-19,NA
 "Marijampolės apskr.","Šakių r.",2020-02-17,NA,NA,NA,NA,-23,NA
 "Marijampolės apskr.","Šakių r.",2020-02-18,NA,NA,NA,NA,-26,NA
 "Marijampolės apskr.","Šakių r.",2020-02-19,NA,NA,NA,NA,-29,NA
@@ -5589,6 +5620,7 @@
 "Marijampolės apskr.","Kalvarijos",2021-01-06,NA,NA,NA,-58,-34,NA
 "Marijampolės apskr.","Kalvarijos",2021-01-07,NA,NA,NA,-62,-37,NA
 "Marijampolės apskr.","Kalvarijos",2021-01-08,NA,NA,NA,-68,-37,NA
+"Marijampolės apskr.","Kalvarijos",2021-01-09,NA,NA,NA,-75,NA,NA
 "Marijampolės apskr.","Kazlų Rūdos",2020-02-17,NA,NA,NA,NA,-16,NA
 "Marijampolės apskr.","Kazlų Rūdos",2020-02-18,NA,NA,NA,NA,-12,NA
 "Marijampolės apskr.","Kazlų Rūdos",2020-02-19,NA,NA,NA,NA,-10,NA
@@ -6116,6 +6148,8 @@
 "Marijampolės apskr.","Marijampolės",2021-01-06,-56,-6,NA,-42,-37,16
 "Marijampolės apskr.","Marijampolės",2021-01-07,-55,-1,NA,-45,-39,15
 "Marijampolės apskr.","Marijampolės",2021-01-08,-56,-6,NA,-50,-36,16
+"Marijampolės apskr.","Marijampolės",2021-01-09,-61,-16,NA,-47,-26,10
+"Marijampolės apskr.","Marijampolės",2021-01-10,-59,-15,NA,-50,-20,NA
 "Vilniaus apskr.","Šalčininkų r.",2020-02-17,NA,NA,NA,NA,-21,NA
 "Vilniaus apskr.","Šalčininkų r.",2020-02-18,NA,NA,NA,NA,-22,NA
 "Vilniaus apskr.","Šalčininkų r.",2020-02-19,NA,NA,NA,NA,-20,NA
@@ -6378,6 +6412,8 @@
 "Vilniaus apskr.","Šalčininkų r.",2021-01-06,NA,NA,NA,NA,-42,9
 "Vilniaus apskr.","Šalčininkų r.",2021-01-07,NA,NA,NA,NA,-41,11
 "Vilniaus apskr.","Šalčininkų r.",2021-01-08,NA,NA,NA,NA,-40,12
+"Vilniaus apskr.","Šalčininkų r.",2021-01-09,NA,NA,NA,NA,-17,NA
+"Vilniaus apskr.","Šalčininkų r.",2021-01-10,NA,NA,NA,NA,-19,NA
 "Marijampolės apskr.","Vilkaviškio r.",2020-02-15,9,NA,NA,NA,NA,NA
 "Marijampolės apskr.","Vilkaviškio r.",2020-02-17,NA,NA,NA,NA,-21,NA
 "Marijampolės apskr.","Vilkaviškio r.",2020-02-18,NA,NA,NA,NA,-21,NA
@@ -6670,6 +6706,8 @@
 "Marijampolės apskr.","Vilkaviškio r.",2021-01-06,-23,NA,NA,NA,-41,10
 "Marijampolės apskr.","Vilkaviškio r.",2021-01-07,-18,NA,NA,-41,-42,12
 "Marijampolės apskr.","Vilkaviškio r.",2021-01-08,-20,NA,NA,-29,-39,13
+"Marijampolės apskr.","Vilkaviškio r.",2021-01-09,-20,NA,NA,-35,-19,NA
+"Marijampolės apskr.","Vilkaviškio r.",2021-01-10,NA,NA,NA,NA,-15,NA
 "Panevėžio apskr.","Biržų r.",2020-02-17,NA,NA,NA,NA,-15,NA
 "Panevėžio apskr.","Biržų r.",2020-02-18,NA,NA,NA,NA,-16,NA
 "Panevėžio apskr.","Biržų r.",2020-02-19,NA,NA,NA,NA,-19,NA
@@ -6922,6 +6960,7 @@
 "Panevėžio apskr.","Biržų r.",2021-01-06,NA,NA,NA,NA,-36,NA
 "Panevėžio apskr.","Biržų r.",2021-01-07,NA,NA,NA,NA,-37,NA
 "Panevėžio apskr.","Biržų r.",2021-01-08,NA,NA,NA,NA,-37,NA
+"Panevėžio apskr.","Biržų r.",2021-01-09,NA,NA,11,NA,-18,NA
 "Panevėžio apskr.","Kupiškio r.",2020-02-15,NA,9,NA,NA,NA,NA
 "Panevėžio apskr.","Kupiškio r.",2020-02-17,NA,NA,NA,NA,-20,NA
 "Panevėžio apskr.","Kupiškio r.",2020-02-18,NA,NA,NA,NA,-18,NA
@@ -7476,6 +7515,8 @@
 "Panevėžio apskr.","Panevėžio m.",2021-01-06,-64,0,7,-36,-39,17
 "Panevėžio apskr.","Panevėžio m.",2021-01-07,-63,-4,7,-33,-37,17
 "Panevėžio apskr.","Panevėžio m.",2021-01-08,-64,-2,33,-44,-38,17
+"Panevėžio apskr.","Panevėžio m.",2021-01-09,-70,-10,75,-34,-27,10
+"Panevėžio apskr.","Panevėžio m.",2021-01-10,-72,-13,NA,-28,-27,8
 "Panevėžio apskr.","Panevėžio r.",2020-02-17,NA,NA,NA,NA,-21,5
 "Panevėžio apskr.","Panevėžio r.",2020-02-18,NA,NA,NA,NA,-20,2
 "Panevėžio apskr.","Panevėžio r.",2020-02-19,NA,NA,NA,NA,-21,2
@@ -7772,6 +7813,8 @@
 "Panevėžio apskr.","Panevėžio r.",2021-01-06,NA,NA,NA,NA,-38,11
 "Panevėžio apskr.","Panevėžio r.",2021-01-07,NA,NA,NA,NA,-36,13
 "Panevėžio apskr.","Panevėžio r.",2021-01-08,NA,NA,NA,NA,-36,15
+"Panevėžio apskr.","Panevėžio r.",2021-01-09,NA,NA,NA,NA,-23,NA
+"Panevėžio apskr.","Panevėžio r.",2021-01-10,NA,NA,NA,NA,-20,NA
 "Panevėžio apskr.","Pasvalio r.",2020-02-17,NA,NA,NA,NA,-18,NA
 "Panevėžio apskr.","Pasvalio r.",2020-02-18,NA,NA,NA,NA,-20,NA
 "Panevėžio apskr.","Pasvalio r.",2020-02-19,NA,NA,NA,NA,-20,NA
@@ -8016,6 +8059,7 @@
 "Panevėžio apskr.","Pasvalio r.",2021-01-06,NA,NA,NA,NA,-39,NA
 "Panevėžio apskr.","Pasvalio r.",2021-01-07,NA,NA,NA,NA,-37,NA
 "Panevėžio apskr.","Pasvalio r.",2021-01-08,NA,NA,NA,NA,-40,NA
+"Panevėžio apskr.","Pasvalio r.",2021-01-09,NA,NA,NA,NA,-18,NA
 "Panevėžio apskr.","Rokiškio r.",2020-02-17,NA,NA,NA,NA,-20,NA
 "Panevėžio apskr.","Rokiškio r.",2020-02-18,NA,NA,NA,NA,-17,NA
 "Panevėžio apskr.","Rokiškio r.",2020-02-19,NA,NA,NA,NA,-19,NA
@@ -8275,6 +8319,8 @@
 "Panevėžio apskr.","Rokiškio r.",2021-01-06,NA,NA,NA,NA,-34,10
 "Panevėžio apskr.","Rokiškio r.",2021-01-07,NA,NA,NA,NA,-32,11
 "Panevėžio apskr.","Rokiškio r.",2021-01-08,NA,NA,NA,NA,-29,13
+"Panevėžio apskr.","Rokiškio r.",2021-01-09,NA,NA,NA,NA,-11,NA
+"Panevėžio apskr.","Rokiškio r.",2021-01-10,NA,NA,NA,NA,-10,NA
 "Šiaulių apskr.","Akmenės r.",2020-02-17,NA,NA,NA,NA,-16,NA
 "Šiaulių apskr.","Akmenės r.",2020-02-18,NA,NA,NA,NA,-12,NA
 "Šiaulių apskr.","Akmenės r.",2020-02-19,NA,NA,NA,NA,-14,NA
@@ -8733,6 +8779,8 @@
 "Šiaulių apskr.","Joniškio r.",2021-01-06,NA,NA,NA,NA,-44,NA
 "Šiaulių apskr.","Joniškio r.",2021-01-07,NA,NA,NA,NA,-46,NA
 "Šiaulių apskr.","Joniškio r.",2021-01-08,NA,NA,NA,NA,-44,NA
+"Šiaulių apskr.","Joniškio r.",2021-01-09,NA,NA,NA,NA,-17,NA
+"Šiaulių apskr.","Joniškio r.",2021-01-10,NA,NA,NA,NA,-18,NA
 "Šiaulių apskr.","Kelmės r.",2020-02-17,NA,NA,NA,NA,-24,NA
 "Šiaulių apskr.","Kelmės r.",2020-02-18,NA,NA,NA,NA,-23,NA
 "Šiaulių apskr.","Kelmės r.",2020-02-19,NA,NA,NA,NA,-20,NA
@@ -8969,6 +9017,7 @@
 "Šiaulių apskr.","Kelmės r.",2021-01-06,NA,NA,NA,NA,-42,NA
 "Šiaulių apskr.","Kelmės r.",2021-01-07,NA,NA,NA,NA,-44,NA
 "Šiaulių apskr.","Kelmės r.",2021-01-08,NA,NA,NA,NA,-40,NA
+"Šiaulių apskr.","Kelmės r.",2021-01-09,NA,NA,NA,NA,-22,NA
 "Šiaulių apskr.","Pakruojo r.",2020-02-17,NA,NA,NA,NA,-21,NA
 "Šiaulių apskr.","Pakruojo r.",2020-02-18,NA,NA,NA,NA,-19,NA
 "Šiaulių apskr.","Pakruojo r.",2020-02-19,NA,NA,NA,NA,-22,NA
@@ -9190,6 +9239,7 @@
 "Šiaulių apskr.","Pakruojo r.",2021-01-06,NA,NA,NA,NA,-44,NA
 "Šiaulių apskr.","Pakruojo r.",2021-01-07,NA,NA,NA,NA,-43,NA
 "Šiaulių apskr.","Pakruojo r.",2021-01-08,NA,NA,NA,NA,-40,NA
+"Šiaulių apskr.","Pakruojo r.",2021-01-09,NA,NA,NA,NA,-32,NA
 "Šiaulių apskr.","Radviliškio r.",2020-02-17,-22,NA,NA,NA,-22,4
 "Šiaulių apskr.","Radviliškio r.",2020-02-18,-16,NA,NA,NA,-21,4
 "Šiaulių apskr.","Radviliškio r.",2020-02-19,-15,NA,NA,NA,-21,4
@@ -9486,6 +9536,8 @@
 "Šiaulių apskr.","Radviliškio r.",2021-01-06,NA,NA,NA,NA,-45,12
 "Šiaulių apskr.","Radviliškio r.",2021-01-07,-50,NA,NA,NA,-46,12
 "Šiaulių apskr.","Radviliškio r.",2021-01-08,-49,NA,NA,NA,-43,13
+"Šiaulių apskr.","Radviliškio r.",2021-01-09,NA,NA,NA,NA,-21,NA
+"Šiaulių apskr.","Radviliškio r.",2021-01-10,NA,NA,NA,NA,-17,NA
 "Šiaulių apskr.","Šiaulių r.",2020-02-15,-5,-5,0,-6,2,-1
 "Šiaulių apskr.","Šiaulių r.",2020-02-16,-1,-2,NA,-2,3,-1
 "Šiaulių apskr.","Šiaulių r.",2020-02-17,0,-5,NA,-6,-14,3
@@ -9815,6 +9867,8 @@
 "Šiaulių apskr.","Šiaulių r.",2021-01-06,-54,-26,NA,-30,-36,15
 "Šiaulių apskr.","Šiaulių r.",2021-01-07,-56,-22,NA,-28,-35,15
 "Šiaulių apskr.","Šiaulių r.",2021-01-08,-58,-25,NA,-31,-34,15
+"Šiaulių apskr.","Šiaulių r.",2021-01-09,-65,-31,NA,-30,-27,10
+"Šiaulių apskr.","Šiaulių r.",2021-01-10,-67,-29,NA,-36,-25,8
 "Tauragės apskr.","Šilalės r.",2020-02-15,NA,NA,NA,NA,7,NA
 "Tauragės apskr.","Šilalės r.",2020-02-17,NA,NA,NA,NA,-18,4
 "Tauragės apskr.","Šilalės r.",2020-02-18,NA,NA,NA,NA,-18,5
@@ -10123,6 +10177,8 @@
 "Tauragės apskr.","Šilalės r.",2021-01-06,NA,NA,NA,NA,-37,12
 "Tauragės apskr.","Šilalės r.",2021-01-07,NA,NA,NA,NA,-38,12
 "Tauragės apskr.","Šilalės r.",2021-01-08,NA,NA,NA,NA,-36,15
+"Tauragės apskr.","Šilalės r.",2021-01-09,NA,NA,NA,NA,-27,NA
+"Tauragės apskr.","Šilalės r.",2021-01-10,NA,NA,NA,NA,-25,NA
 "Tauragės apskr.","Jurbarko r.",2020-02-15,5,NA,NA,NA,NA,NA
 "Tauragės apskr.","Jurbarko r.",2020-02-17,NA,NA,NA,NA,-22,NA
 "Tauragės apskr.","Jurbarko r.",2020-02-18,9,NA,NA,NA,-20,NA
@@ -10375,6 +10431,7 @@
 "Tauragės apskr.","Jurbarko r.",2021-01-06,-62,NA,NA,NA,-41,NA
 "Tauragės apskr.","Jurbarko r.",2021-01-07,NA,NA,NA,NA,-41,NA
 "Tauragės apskr.","Jurbarko r.",2021-01-08,NA,NA,NA,NA,-40,NA
+"Tauragės apskr.","Jurbarko r.",2021-01-09,-68,NA,NA,NA,-8,NA
 "Tauragės apskr.","Pagėgių",2020-02-28,NA,NA,-24,NA,NA,NA
 "Tauragės apskr.","Pagėgių",2020-03-13,NA,NA,-28,NA,NA,NA
 "Tauragės apskr.","Pagėgių",2020-03-21,NA,NA,-29,NA,NA,NA
@@ -10763,6 +10820,7 @@
 "Klaipėdos apskr.","Šilutės r.",2021-01-06,-38,NA,NA,NA,-45,NA
 "Klaipėdos apskr.","Šilutės r.",2021-01-07,NA,NA,NA,NA,-46,NA
 "Klaipėdos apskr.","Šilutės r.",2021-01-08,-40,NA,NA,NA,-45,NA
+"Klaipėdos apskr.","Šilutės r.",2021-01-09,NA,NA,NA,NA,-20,NA
 "Tauragės apskr.","Tauragės r.",2020-02-15,7,-12,NA,NA,8,NA
 "Tauragės apskr.","Tauragės r.",2020-02-16,NA,-16,NA,NA,NA,NA
 "Tauragės apskr.","Tauragės r.",2020-02-17,3,-12,NA,NA,-17,4
@@ -11085,6 +11143,8 @@
 "Tauragės apskr.","Tauragės r.",2021-01-06,-59,5,NA,NA,-35,12
 "Tauragės apskr.","Tauragės r.",2021-01-07,-62,4,NA,NA,-36,13
 "Tauragės apskr.","Tauragės r.",2021-01-08,-61,8,NA,NA,-34,12
+"Tauragės apskr.","Tauragės r.",2021-01-09,-67,-15,NA,NA,-20,NA
+"Tauragės apskr.","Tauragės r.",2021-01-10,-66,NA,NA,NA,-13,NA
 "Telšių apskr.","Mažeikių r.",2020-02-15,-10,14,NA,NA,-3,NA
 "Telšių apskr.","Mažeikių r.",2020-02-16,4,26,NA,NA,9,NA
 "Telšių apskr.","Mažeikių r.",2020-02-17,-11,15,NA,NA,-17,4
@@ -11408,6 +11468,8 @@
 "Telšių apskr.","Mažeikių r.",2021-01-06,-54,25,NA,NA,-39,12
 "Telšių apskr.","Mažeikių r.",2021-01-07,-54,18,NA,NA,-39,13
 "Telšių apskr.","Mažeikių r.",2021-01-08,-55,24,NA,-28,-38,12
+"Telšių apskr.","Mažeikių r.",2021-01-09,-62,5,NA,NA,-29,8
+"Telšių apskr.","Mažeikių r.",2021-01-10,-59,20,NA,NA,-21,NA
 "Telšių apskr.","Plungės r.",2020-02-15,11,3,NA,NA,0,NA
 "Telšių apskr.","Plungės r.",2020-02-17,-2,NA,NA,NA,-20,4
 "Telšių apskr.","Plungės r.",2020-02-18,8,NA,NA,NA,-20,3
@@ -11714,6 +11776,8 @@
 "Telšių apskr.","Plungės r.",2021-01-06,NA,NA,NA,NA,-39,10
 "Telšių apskr.","Plungės r.",2021-01-07,NA,NA,NA,NA,-39,11
 "Telšių apskr.","Plungės r.",2021-01-08,NA,-1,NA,NA,-35,12
+"Telšių apskr.","Plungės r.",2021-01-09,-72,-10,NA,NA,-21,NA
+"Telšių apskr.","Plungės r.",2021-01-10,NA,NA,NA,NA,-14,NA
 "Telšių apskr.","Rietavo",2020-06-08,NA,NA,NA,NA,-11,NA
 "Telšių apskr.","Rietavo",2020-06-09,NA,NA,NA,NA,-9,NA
 "Telšių apskr.","Rietavo",2020-06-10,NA,NA,NA,NA,-5,NA
@@ -12163,6 +12227,8 @@
 "Telšių apskr.","Telšių r.",2021-01-06,-44,NA,-29,-39,-39,12
 "Telšių apskr.","Telšių r.",2021-01-07,-40,NA,-34,-37,-37,12
 "Telšių apskr.","Telšių r.",2021-01-08,-38,NA,-30,-38,-34,14
+"Telšių apskr.","Telšių r.",2021-01-09,-44,NA,-24,-44,-20,NA
+"Telšių apskr.","Telšių r.",2021-01-10,-41,NA,3,-53,-18,NA
 "Utenos apskr.","Anykščių r.",2020-02-15,16,10,22,NA,NA,NA
 "Utenos apskr.","Anykščių r.",2020-02-16,NA,NA,9,NA,NA,NA
 "Utenos apskr.","Anykščių r.",2020-02-17,NA,NA,NA,NA,-18,NA
@@ -12436,6 +12502,8 @@
 "Utenos apskr.","Anykščių r.",2021-01-06,NA,NA,NA,NA,-43,NA
 "Utenos apskr.","Anykščių r.",2021-01-07,NA,NA,NA,NA,-42,NA
 "Utenos apskr.","Anykščių r.",2021-01-08,NA,7,NA,NA,-39,NA
+"Utenos apskr.","Anykščių r.",2021-01-09,NA,NA,-18,NA,-23,NA
+"Utenos apskr.","Anykščių r.",2021-01-10,NA,NA,-12,NA,-34,NA
 "Utenos apskr.","Ignalinos r.",2020-03-11,NA,NA,NA,NA,-52,NA
 "Utenos apskr.","Ignalinos r.",2020-03-17,NA,NA,NA,NA,-37,NA
 "Utenos apskr.","Ignalinos r.",2020-03-18,NA,NA,NA,NA,-38,NA
@@ -12824,6 +12892,7 @@
 "Utenos apskr.","Molėtų r.",2021-01-06,NA,NA,NA,NA,-43,NA
 "Utenos apskr.","Molėtų r.",2021-01-07,NA,NA,NA,NA,-48,NA
 "Utenos apskr.","Molėtų r.",2021-01-08,NA,NA,NA,NA,-45,NA
+"Utenos apskr.","Molėtų r.",2021-01-09,NA,NA,5,NA,NA,NA
 "Utenos apskr.","Utenos r.",2020-02-15,3,11,NA,NA,0,NA
 "Utenos apskr.","Utenos r.",2020-02-16,2,-2,NA,NA,NA,NA
 "Utenos apskr.","Utenos r.",2020-02-17,3,-8,NA,NA,-14,2
@@ -13147,6 +13216,8 @@
 "Utenos apskr.","Utenos r.",2021-01-06,-49,19,NA,-55,-36,15
 "Utenos apskr.","Utenos r.",2021-01-07,-52,42,NA,-61,-35,15
 "Utenos apskr.","Utenos r.",2021-01-08,-52,26,NA,-56,-34,16
+"Utenos apskr.","Utenos r.",2021-01-09,-59,16,NA,-53,-19,NA
+"Utenos apskr.","Utenos r.",2021-01-10,-56,NA,NA,NA,-15,NA
 "Utenos apskr.","Visagino m.",2020-02-17,NA,NA,NA,NA,-6,NA
 "Utenos apskr.","Visagino m.",2020-02-18,NA,NA,NA,NA,-11,NA
 "Utenos apskr.","Visagino m.",2020-02-19,NA,NA,NA,NA,-13,NA
@@ -13389,6 +13460,7 @@
 "Utenos apskr.","Visagino m.",2021-01-06,NA,NA,NA,NA,-42,NA
 "Utenos apskr.","Visagino m.",2021-01-07,NA,NA,NA,NA,-47,NA
 "Utenos apskr.","Visagino m.",2021-01-08,NA,NA,NA,NA,-42,NA
+"Utenos apskr.","Visagino m.",2021-01-09,NA,NA,NA,NA,-27,NA
 "Utenos apskr.","Zarasų r.",2020-02-17,NA,NA,NA,NA,-17,NA
 "Utenos apskr.","Zarasų r.",2020-02-19,NA,NA,NA,NA,-16,NA
 "Utenos apskr.","Zarasų r.",2020-02-20,NA,NA,NA,NA,-18,NA
@@ -13588,6 +13660,7 @@
 "Utenos apskr.","Zarasų r.",2021-01-06,NA,NA,NA,NA,-41,NA
 "Utenos apskr.","Zarasų r.",2021-01-07,NA,NA,NA,NA,-38,NA
 "Utenos apskr.","Zarasų r.",2021-01-08,NA,NA,NA,NA,-36,NA
+"Utenos apskr.","Zarasų r.",2021-01-09,NA,NA,-33,NA,NA,NA
 "Vilniaus apskr.","Elektrėnų",2020-02-15,4,NA,NA,NA,NA,NA
 "Vilniaus apskr.","Elektrėnų",2020-02-17,NA,NA,NA,NA,-15,NA
 "Vilniaus apskr.","Elektrėnų",2020-02-18,NA,NA,NA,NA,-10,NA
@@ -13870,6 +13943,8 @@
 "Vilniaus apskr.","Elektrėnų",2021-01-06,-68,NA,NA,NA,-44,16
 "Vilniaus apskr.","Elektrėnų",2021-01-07,-65,NA,NA,NA,-40,16
 "Vilniaus apskr.","Elektrėnų",2021-01-08,-62,NA,NA,NA,-38,14
+"Vilniaus apskr.","Elektrėnų",2021-01-09,-65,NA,-10,NA,-13,NA
+"Vilniaus apskr.","Elektrėnų",2021-01-10,NA,NA,-32,NA,-20,NA
 "Šiaulių apskr.","Šiaulių m.",2020-02-17,NA,NA,NA,NA,-16,NA
 "Šiaulių apskr.","Šiaulių m.",2020-02-18,NA,NA,NA,NA,-13,NA
 "Šiaulių apskr.","Šiaulių m.",2020-02-19,NA,NA,NA,NA,-17,NA
@@ -14118,6 +14193,7 @@
 "Šiaulių apskr.","Šiaulių m.",2021-01-06,NA,NA,NA,NA,-40,9
 "Šiaulių apskr.","Šiaulių m.",2021-01-07,NA,NA,NA,NA,-39,13
 "Šiaulių apskr.","Šiaulių m.",2021-01-08,NA,NA,NA,NA,-39,12
+"Šiaulių apskr.","Šiaulių m.",2021-01-09,NA,NA,NA,NA,-16,NA
 "Klaipėdos apskr.","Skuodo r.",2020-02-17,NA,NA,NA,NA,-16,NA
 "Klaipėdos apskr.","Skuodo r.",2020-02-18,NA,NA,NA,NA,-15,NA
 "Klaipėdos apskr.","Skuodo r.",2020-02-19,NA,NA,NA,NA,-11,NA
@@ -14887,6 +14963,8 @@
 "Vilniaus apskr.","Trakų r.",2021-01-06,-69,NA,NA,-21,-42,17
 "Vilniaus apskr.","Trakų r.",2021-01-07,-69,NA,NA,-33,-41,18
 "Vilniaus apskr.","Trakų r.",2021-01-08,-68,NA,NA,-33,-41,19
+"Vilniaus apskr.","Trakų r.",2021-01-09,-76,NA,-30,-31,-9,NA
+"Vilniaus apskr.","Trakų r.",2021-01-10,NA,NA,-41,-42,-29,NA
 "Vilniaus apskr.","Ukmergės r.",2020-02-15,2,-6,NA,NA,NA,NA
 "Vilniaus apskr.","Ukmergės r.",2020-02-16,14,-15,NA,NA,NA,NA
 "Vilniaus apskr.","Ukmergės r.",2020-02-17,5,-15,NA,NA,-13,3
@@ -15209,6 +15287,8 @@
 "Vilniaus apskr.","Ukmergės r.",2021-01-06,-58,11,NA,NA,-37,14
 "Vilniaus apskr.","Ukmergės r.",2021-01-07,-64,16,NA,NA,-35,13
 "Vilniaus apskr.","Ukmergės r.",2021-01-08,-64,11,NA,NA,-36,12
+"Vilniaus apskr.","Ukmergės r.",2021-01-09,-66,-2,NA,NA,-11,NA
+"Vilniaus apskr.","Ukmergės r.",2021-01-10,NA,9,NA,NA,-16,NA
 "Vilniaus apskr.","Vilniaus m.",2020-02-15,-2,0,36,6,1,-2
 "Vilniaus apskr.","Vilniaus m.",2020-02-16,4,-1,28,12,-3,-2
 "Vilniaus apskr.","Vilniaus m.",2020-02-17,3,-2,12,1,-11,2
@@ -15538,6 +15618,8 @@
 "Vilniaus apskr.","Vilniaus m.",2021-01-06,-65,-12,2,-60,-53,25
 "Vilniaus apskr.","Vilniaus m.",2021-01-07,-65,-14,19,-59,-54,25
 "Vilniaus apskr.","Vilniaus m.",2021-01-08,-65,-11,35,-56,-52,25
+"Vilniaus apskr.","Vilniaus m.",2021-01-09,-69,-13,115,-56,-22,12
+"Vilniaus apskr.","Vilniaus m.",2021-01-10,-70,-16,64,-59,-25,11
 "Vilniaus apskr.","Vilniaus r.",2020-02-15,7,10,25,17,-1,-1
 "Vilniaus apskr.","Vilniaus r.",2020-02-16,4,7,8,8,-4,-1
 "Vilniaus apskr.","Vilniaus r.",2020-02-17,-1,2,22,9,-18,5
@@ -15867,3 +15949,5 @@
 "Vilniaus apskr.","Vilniaus r.",2021-01-06,-65,60,6,-23,-48,20
 "Vilniaus apskr.","Vilniaus r.",2021-01-07,-67,64,4,-28,-48,21
 "Vilniaus apskr.","Vilniaus r.",2021-01-08,-64,68,0,-26,-48,21
+"Vilniaus apskr.","Vilniaus r.",2021-01-09,-68,91,15,-35,-26,11
+"Vilniaus apskr.","Vilniaus r.",2021-01-10,-69,NA,15,-36,-21,8
