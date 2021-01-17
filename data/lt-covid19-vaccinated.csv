@@ -2317,7 +2317,7 @@
 2021-01-07,"89","Vilniaus apskr.","Širvintų r.",26,0,2,0
 2021-01-07,"91","Šiaulių apskr.","Šiaulių r.",61,0,13,0
 2021-01-07,"94","Tauragės apskr.","Jurbarko r.",68,0,9,0
-2021-01-08,"00","Lithuania","Lithuania",23030,0,5056,0
+2021-01-08,"00","Lithuania","Lithuania",23035,0,5061,0
 2021-01-08,"11","Alytaus apskr.","Alytaus m.",404,0,229,0
 2021-01-08,"12","Kauno apskr.","Birštono",5,0,2,0
 2021-01-08,"13","Vilniaus apskr.","Vilniaus m.",4890,0,1074,0
@@ -2329,7 +2329,7 @@
 2021-01-08,"25","Klaipėdos apskr.","Palangos m.",226,0,37,0
 2021-01-08,"27","Panevėžio apskr.","Panevėžio m.",1206,0,353,0
 2021-01-08,"29","Šiaulių apskr.","Šiaulių m.",1127,0,132,0
-2021-01-08,"30","Utenos apskr.","Visagino m.",107,0,20,0
+2021-01-08,"30","Utenos apskr.","Visagino m.",110,0,23,0
 2021-01-08,"32","Šiaulių apskr.","Akmenės r.",68,0,35,0
 2021-01-08,"33","Alytaus apskr.","Alytaus r.",60,0,21,0
 2021-01-08,"34","Utenos apskr.","Anykščių r.",177,0,15,0
@@ -2338,7 +2338,7 @@
 2021-01-08,"39","Marijampolės apskr.","Vilkaviškio r.",133,0,22,0
 2021-01-08,"41","Vilniaus apskr.","Vilniaus r.",452,0,110,0
 2021-01-08,"42","Vilniaus apskr.","Elektrėnų",21,0,2,0
-2021-01-08,"43","Utenos apskr.","Zarasų r.",106,0,7,0
+2021-01-08,"43","Utenos apskr.","Zarasų r.",108,0,9,0
 2021-01-08,"45","Utenos apskr.","Ignalinos r.",62,0,11,0
 2021-01-08,"46","Kauno apskr.","Jonavos r.",205,0,81,0
 2021-01-08,"47","Šiaulių apskr.","Joniškio r.",190,0,54,0
@@ -2378,7 +2378,7 @@
 2021-01-08,"89","Vilniaus apskr.","Širvintų r.",32,0,6,0
 2021-01-08,"91","Šiaulių apskr.","Šiaulių r.",77,0,16,0
 2021-01-08,"94","Tauragės apskr.","Jurbarko r.",76,0,8,0
-2021-01-09,"00","Lithuania","Lithuania",23334,0,304,0
+2021-01-09,"00","Lithuania","Lithuania",23339,0,304,0
 2021-01-09,"11","Alytaus apskr.","Alytaus m.",405,0,1,0
 2021-01-09,"12","Kauno apskr.","Birštono",5,0,0,0
 2021-01-09,"13","Vilniaus apskr.","Vilniaus m.",4891,0,1,0
@@ -2390,7 +2390,7 @@
 2021-01-09,"25","Klaipėdos apskr.","Palangos m.",226,0,0,0
 2021-01-09,"27","Panevėžio apskr.","Panevėžio m.",1206,0,0,0
 2021-01-09,"29","Šiaulių apskr.","Šiaulių m.",1127,0,0,0
-2021-01-09,"30","Utenos apskr.","Visagino m.",111,0,4,0
+2021-01-09,"30","Utenos apskr.","Visagino m.",114,0,4,0
 2021-01-09,"32","Šiaulių apskr.","Akmenės r.",68,0,0,0
 2021-01-09,"33","Alytaus apskr.","Alytaus r.",60,0,0,0
 2021-01-09,"34","Utenos apskr.","Anykščių r.",177,0,0,0
@@ -2399,7 +2399,7 @@
 2021-01-09,"39","Marijampolės apskr.","Vilkaviškio r.",133,0,0,0
 2021-01-09,"41","Vilniaus apskr.","Vilniaus r.",452,0,0,0
 2021-01-09,"42","Vilniaus apskr.","Elektrėnų",21,0,0,0
-2021-01-09,"43","Utenos apskr.","Zarasų r.",106,0,0,0
+2021-01-09,"43","Utenos apskr.","Zarasų r.",108,0,0,0
 2021-01-09,"45","Utenos apskr.","Ignalinos r.",62,0,0,0
 2021-01-09,"46","Kauno apskr.","Jonavos r.",206,0,1,0
 2021-01-09,"47","Šiaulių apskr.","Joniškio r.",190,0,0,0
@@ -2439,7 +2439,7 @@
 2021-01-09,"89","Vilniaus apskr.","Širvintų r.",32,0,0,0
 2021-01-09,"91","Šiaulių apskr.","Šiaulių r.",77,0,0,0
 2021-01-09,"94","Tauragės apskr.","Jurbarko r.",162,0,86,0
-2021-01-10,"00","Lithuania","Lithuania",23337,0,3,0
+2021-01-10,"00","Lithuania","Lithuania",23342,0,3,0
 2021-01-10,"11","Alytaus apskr.","Alytaus m.",405,0,0,0
 2021-01-10,"12","Kauno apskr.","Birštono",5,0,0,0
 2021-01-10,"13","Vilniaus apskr.","Vilniaus m.",4891,0,0,0
@@ -2451,7 +2451,7 @@
 2021-01-10,"25","Klaipėdos apskr.","Palangos m.",226,0,0,0
 2021-01-10,"27","Panevėžio apskr.","Panevėžio m.",1206,0,0,0
 2021-01-10,"29","Šiaulių apskr.","Šiaulių m.",1127,0,0,0
-2021-01-10,"30","Utenos apskr.","Visagino m.",111,0,0,0
+2021-01-10,"30","Utenos apskr.","Visagino m.",114,0,0,0
 2021-01-10,"32","Šiaulių apskr.","Akmenės r.",68,0,0,0
 2021-01-10,"33","Alytaus apskr.","Alytaus r.",60,0,0,0
 2021-01-10,"34","Utenos apskr.","Anykščių r.",177,0,0,0
@@ -2460,7 +2460,7 @@
 2021-01-10,"39","Marijampolės apskr.","Vilkaviškio r.",133,0,0,0
 2021-01-10,"41","Vilniaus apskr.","Vilniaus r.",452,0,0,0
 2021-01-10,"42","Vilniaus apskr.","Elektrėnų",21,0,0,0
-2021-01-10,"43","Utenos apskr.","Zarasų r.",106,0,0,0
+2021-01-10,"43","Utenos apskr.","Zarasų r.",108,0,0,0
 2021-01-10,"45","Utenos apskr.","Ignalinos r.",62,0,0,0
 2021-01-10,"46","Kauno apskr.","Jonavos r.",206,0,0,0
 2021-01-10,"47","Šiaulių apskr.","Joniškio r.",190,0,0,0
@@ -2500,7 +2500,7 @@
 2021-01-10,"89","Vilniaus apskr.","Širvintų r.",32,0,0,0
 2021-01-10,"91","Šiaulių apskr.","Šiaulių r.",77,0,0,0
 2021-01-10,"94","Tauragės apskr.","Jurbarko r.",163,0,1,0
-2021-01-11,"00","Lithuania","Lithuania",25509,0,2172,0
+2021-01-11,"00","Lithuania","Lithuania",25514,0,2172,0
 2021-01-11,"11","Alytaus apskr.","Alytaus m.",414,0,9,0
 2021-01-11,"12","Kauno apskr.","Birštono",6,0,1,0
 2021-01-11,"13","Vilniaus apskr.","Vilniaus m.",5590,0,699,0
@@ -2512,7 +2512,7 @@
 2021-01-11,"25","Klaipėdos apskr.","Palangos m.",228,0,2,0
 2021-01-11,"27","Panevėžio apskr.","Panevėžio m.",1263,0,57,0
 2021-01-11,"29","Šiaulių apskr.","Šiaulių m.",1272,0,145,0
-2021-01-11,"30","Utenos apskr.","Visagino m.",111,0,0,0
+2021-01-11,"30","Utenos apskr.","Visagino m.",114,0,0,0
 2021-01-11,"32","Šiaulių apskr.","Akmenės r.",68,0,0,0
 2021-01-11,"33","Alytaus apskr.","Alytaus r.",62,0,2,0
 2021-01-11,"34","Utenos apskr.","Anykščių r.",181,0,4,0
@@ -2521,7 +2521,7 @@
 2021-01-11,"39","Marijampolės apskr.","Vilkaviškio r.",139,0,6,0
 2021-01-11,"41","Vilniaus apskr.","Vilniaus r.",535,0,83,0
 2021-01-11,"42","Vilniaus apskr.","Elektrėnų",32,0,11,0
-2021-01-11,"43","Utenos apskr.","Zarasų r.",108,0,2,0
+2021-01-11,"43","Utenos apskr.","Zarasų r.",110,0,2,0
 2021-01-11,"45","Utenos apskr.","Ignalinos r.",62,0,0,0
 2021-01-11,"46","Kauno apskr.","Jonavos r.",214,0,8,0
 2021-01-11,"47","Šiaulių apskr.","Joniškio r.",191,0,1,0
@@ -2561,7 +2561,7 @@
 2021-01-11,"89","Vilniaus apskr.","Širvintų r.",47,0,15,0
 2021-01-11,"91","Šiaulių apskr.","Šiaulių r.",87,0,10,0
 2021-01-11,"94","Tauragės apskr.","Jurbarko r.",167,0,4,0
-2021-01-12,"00","Lithuania","Lithuania",27519,0,2010,0
+2021-01-12,"00","Lithuania","Lithuania",27524,0,2010,0
 2021-01-12,"11","Alytaus apskr.","Alytaus m.",498,0,84,0
 2021-01-12,"12","Kauno apskr.","Birštono",7,0,1,0
 2021-01-12,"13","Vilniaus apskr.","Vilniaus m.",6337,0,747,0
@@ -2573,7 +2573,7 @@
 2021-01-12,"25","Klaipėdos apskr.","Palangos m.",231,0,3,0
 2021-01-12,"27","Panevėžio apskr.","Panevėžio m.",1287,0,24,0
 2021-01-12,"29","Šiaulių apskr.","Šiaulių m.",1316,0,44,0
-2021-01-12,"30","Utenos apskr.","Visagino m.",116,0,5,0
+2021-01-12,"30","Utenos apskr.","Visagino m.",119,0,5,0
 2021-01-12,"32","Šiaulių apskr.","Akmenės r.",68,0,0,0
 2021-01-12,"33","Alytaus apskr.","Alytaus r.",75,0,13,0
 2021-01-12,"34","Utenos apskr.","Anykščių r.",187,0,6,0
@@ -2582,7 +2582,7 @@
 2021-01-12,"39","Marijampolės apskr.","Vilkaviškio r.",142,0,3,0
 2021-01-12,"41","Vilniaus apskr.","Vilniaus r.",617,0,82,0
 2021-01-12,"42","Vilniaus apskr.","Elektrėnų",231,0,199,0
-2021-01-12,"43","Utenos apskr.","Zarasų r.",109,0,1,0
+2021-01-12,"43","Utenos apskr.","Zarasų r.",111,0,1,0
 2021-01-12,"45","Utenos apskr.","Ignalinos r.",67,0,5,0
 2021-01-12,"46","Kauno apskr.","Jonavos r.",220,0,6,0
 2021-01-12,"47","Šiaulių apskr.","Joniškio r.",193,0,2,0
@@ -2622,19 +2622,19 @@
 2021-01-12,"89","Vilniaus apskr.","Širvintų r.",57,0,10,0
 2021-01-12,"91","Šiaulių apskr.","Šiaulių r.",89,0,2,0
 2021-01-12,"94","Tauragės apskr.","Jurbarko r.",172,0,5,0
-2021-01-13,"00","Lithuania","Lithuania",32794,0,5275,0
+2021-01-13,"00","Lithuania","Lithuania",32925,0,5401,0
 2021-01-13,"11","Alytaus apskr.","Alytaus m.",586,0,88,0
 2021-01-13,"12","Kauno apskr.","Birštono",11,0,4,0
-2021-01-13,"13","Vilniaus apskr.","Vilniaus m.",7407,0,1070,0
+2021-01-13,"13","Vilniaus apskr.","Vilniaus m.",7409,0,1072,0
 2021-01-13,"15","Alytaus apskr.","Druskininkų",277,0,92,0
-2021-01-13,"18","Marijampolės apskr.","Marijampolės",480,0,15,0
-2021-01-13,"19","Kauno apskr.","Kauno m.",6101,0,452,0
+2021-01-13,"18","Marijampolės apskr.","Marijampolės",510,0,45,0
+2021-01-13,"19","Kauno apskr.","Kauno m.",6102,0,453,0
 2021-01-13,"21","Klaipėdos apskr.","Klaipėdos m.",2322,0,110,0
 2021-01-13,"23","Klaipėdos apskr.","Neringos",29,0,13,0
 2021-01-13,"25","Klaipėdos apskr.","Palangos m.",253,0,22,0
 2021-01-13,"27","Panevėžio apskr.","Panevėžio m.",1401,0,114,0
 2021-01-13,"29","Šiaulių apskr.","Šiaulių m.",1537,0,221,0
-2021-01-13,"30","Utenos apskr.","Visagino m.",149,0,33,0
+2021-01-13,"30","Utenos apskr.","Visagino m.",152,0,33,0
 2021-01-13,"32","Šiaulių apskr.","Akmenės r.",217,0,149,0
 2021-01-13,"33","Alytaus apskr.","Alytaus r.",87,0,12,0
 2021-01-13,"34","Utenos apskr.","Anykščių r.",600,0,413,0
@@ -2642,12 +2642,12 @@
 2021-01-13,"38","Alytaus apskr.","Varėnos r.",230,0,75,0
 2021-01-13,"39","Marijampolės apskr.","Vilkaviškio r.",149,0,7,0
 2021-01-13,"41","Vilniaus apskr.","Vilniaus r.",727,0,110,0
-2021-01-13,"42","Vilniaus apskr.","Elektrėnų",240,0,9,0
-2021-01-13,"43","Utenos apskr.","Zarasų r.",136,0,27,0
+2021-01-13,"42","Vilniaus apskr.","Elektrėnų",243,0,12,0
+2021-01-13,"43","Utenos apskr.","Zarasų r.",138,0,27,0
 2021-01-13,"45","Utenos apskr.","Ignalinos r.",82,0,15,0
 2021-01-13,"46","Kauno apskr.","Jonavos r.",232,0,12,0
-2021-01-13,"47","Šiaulių apskr.","Joniškio r.",196,0,3,0
-2021-01-13,"48","Marijampolės apskr.","Kalvarijos",20,0,1,0
+2021-01-13,"47","Šiaulių apskr.","Joniškio r.",220,0,27,0
+2021-01-13,"48","Marijampolės apskr.","Kalvarijos",41,0,22,0
 2021-01-13,"49","Kauno apskr.","Kaišiadorių r.",155,0,43,0
 2021-01-13,"52","Kauno apskr.","Kauno r.",665,0,128,0
 2021-01-13,"53","Kauno apskr.","Kėdainių r.",265,0,5,0
@@ -2672,7 +2672,7 @@
 2021-01-13,"75","Klaipėdos apskr.","Skuodo r.",168,0,84,0
 2021-01-13,"77","Tauragės apskr.","Tauragės r.",291,0,13,0
 2021-01-13,"78","Telšių apskr.","Telšių r.",321,0,60,0
-2021-01-13,"79","Vilniaus apskr.","Trakų r.",103,0,39,0
+2021-01-13,"79","Vilniaus apskr.","Trakų r.",148,0,84,0
 2021-01-13,"81","Vilniaus apskr.","Ukmergės r.",385,0,109,0
 2021-01-13,"82","Utenos apskr.","Utenos r.",459,0,38,0
 2021-01-13,"84","Marijampolės apskr.","Šakių r.",189,0,6,0
@@ -2683,32 +2683,32 @@
 2021-01-13,"89","Vilniaus apskr.","Širvintų r.",91,0,34,0
 2021-01-13,"91","Šiaulių apskr.","Šiaulių r.",177,0,88,0
 2021-01-13,"94","Tauragės apskr.","Jurbarko r.",237,0,65,0
-2021-01-14,"00","Lithuania","Lithuania",39579,0,6785,0
-2021-01-14,"11","Alytaus apskr.","Alytaus m.",647,0,61,0
-2021-01-14,"12","Kauno apskr.","Birštono",17,0,6,0
-2021-01-14,"13","Vilniaus apskr.","Vilniaus m.",8251,0,844,0
+2021-01-14,"00","Lithuania","Lithuania",39836,0,6911,0
+2021-01-14,"11","Alytaus apskr.","Alytaus m.",652,0,66,0
+2021-01-14,"12","Kauno apskr.","Birštono",19,0,8,0
+2021-01-14,"13","Vilniaus apskr.","Vilniaus m.",8253,0,844,0
 2021-01-14,"15","Alytaus apskr.","Druskininkų",387,0,110,0
-2021-01-14,"18","Marijampolės apskr.","Marijampolės",524,0,44,0
-2021-01-14,"19","Kauno apskr.","Kauno m.",6691,0,590,0
+2021-01-14,"18","Marijampolės apskr.","Marijampolės",558,0,48,0
+2021-01-14,"19","Kauno apskr.","Kauno m.",6693,0,591,0
 2021-01-14,"21","Klaipėdos apskr.","Klaipėdos m.",2502,0,180,0
 2021-01-14,"23","Klaipėdos apskr.","Neringos",41,0,12,0
 2021-01-14,"25","Klaipėdos apskr.","Palangos m.",323,0,70,0
 2021-01-14,"27","Panevėžio apskr.","Panevėžio m.",1597,0,196,0
 2021-01-14,"29","Šiaulių apskr.","Šiaulių m.",1731,0,194,0
-2021-01-14,"30","Utenos apskr.","Visagino m.",201,0,52,0
+2021-01-14,"30","Utenos apskr.","Visagino m.",204,0,52,0
 2021-01-14,"32","Šiaulių apskr.","Akmenės r.",297,0,80,0
-2021-01-14,"33","Alytaus apskr.","Alytaus r.",94,0,7,0
+2021-01-14,"33","Alytaus apskr.","Alytaus r.",105,0,18,0
 2021-01-14,"34","Utenos apskr.","Anykščių r.",709,0,109,0
 2021-01-14,"36","Panevėžio apskr.","Biržų r.",380,0,109,0
 2021-01-14,"38","Alytaus apskr.","Varėnos r.",284,0,54,0
-2021-01-14,"39","Marijampolės apskr.","Vilkaviškio r.",442,0,293,0
+2021-01-14,"39","Marijampolės apskr.","Vilkaviškio r.",450,0,301,0
 2021-01-14,"41","Vilniaus apskr.","Vilniaus r.",923,0,196,0
-2021-01-14,"42","Vilniaus apskr.","Elektrėnų",248,0,8,0
-2021-01-14,"43","Utenos apskr.","Zarasų r.",211,0,75,0
+2021-01-14,"42","Vilniaus apskr.","Elektrėnų",251,0,8,0
+2021-01-14,"43","Utenos apskr.","Zarasų r.",213,0,75,0
 2021-01-14,"45","Utenos apskr.","Ignalinos r.",129,0,47,0
 2021-01-14,"46","Kauno apskr.","Jonavos r.",314,0,82,0
-2021-01-14,"47","Šiaulių apskr.","Joniškio r.",203,0,7,0
-2021-01-14,"48","Marijampolės apskr.","Kalvarijos",125,0,105,0
+2021-01-14,"47","Šiaulių apskr.","Joniškio r.",228,0,8,0
+2021-01-14,"48","Marijampolės apskr.","Kalvarijos",146,0,105,0
 2021-01-14,"49","Kauno apskr.","Kaišiadorių r.",235,0,80,0
 2021-01-14,"52","Kauno apskr.","Kauno r.",731,0,66,0
 2021-01-14,"53","Kauno apskr.","Kėdainių r.",421,0,156,0
@@ -2723,9 +2723,9 @@
 2021-01-14,"63","Tauragės apskr.","Pagėgių",12,0,0,0
 2021-01-14,"65","Šiaulių apskr.","Pakruojo r.",254,0,105,0
 2021-01-14,"66","Panevėžio apskr.","Panevėžio r.",585,0,151,0
-2021-01-14,"67","Panevėžio apskr.","Pasvalio r.",320,0,20,0
+2021-01-14,"67","Panevėžio apskr.","Pasvalio r.",326,0,26,0
 2021-01-14,"68","Telšių apskr.","Plungės r.",407,0,118,0
-2021-01-14,"69","Kauno apskr.","Prienų r.",268,0,69,0
+2021-01-14,"69","Kauno apskr.","Prienų r.",328,0,129,0
 2021-01-14,"71","Šiaulių apskr.","Radviliškio r.",549,0,150,0
 2021-01-14,"72","Kauno apskr.","Raseinių r.",273,0,140,0
 2021-01-14,"73","Panevėžio apskr.","Rokiškio r.",1012,0,283,0
@@ -2733,75 +2733,136 @@
 2021-01-14,"75","Klaipėdos apskr.","Skuodo r.",208,0,40,0
 2021-01-14,"77","Tauragės apskr.","Tauragės r.",305,0,14,0
 2021-01-14,"78","Telšių apskr.","Telšių r.",527,0,206,0
-2021-01-14,"79","Vilniaus apskr.","Trakų r.",120,0,17,0
+2021-01-14,"79","Vilniaus apskr.","Trakų r.",184,0,36,0
 2021-01-14,"81","Vilniaus apskr.","Ukmergės r.",405,0,20,0
 2021-01-14,"82","Utenos apskr.","Utenos r.",470,0,11,0
 2021-01-14,"84","Marijampolės apskr.","Šakių r.",285,0,96,0
-2021-01-14,"85","Vilniaus apskr.","Šalčininkų r.",94,0,35,0
+2021-01-14,"85","Vilniaus apskr.","Šalčininkų r.",103,0,44,0
 2021-01-14,"86","Vilniaus apskr.","Švenčionių r.",192,0,69,0
 2021-01-14,"87","Tauragės apskr.","Šilalės r.",272,0,97,0
 2021-01-14,"88","Klaipėdos apskr.","Šilutės r.",531,0,208,0
 2021-01-14,"89","Vilniaus apskr.","Širvintų r.",203,0,112,0
 2021-01-14,"91","Šiaulių apskr.","Šiaulių r.",290,0,113,0
 2021-01-14,"94","Tauragės apskr.","Jurbarko r.",467,0,230,0
-2021-01-15,"00","Lithuania","Lithuania",45475,1,5896,1
-2021-01-15,"11","Alytaus apskr.","Alytaus m.",853,0,206,0
-2021-01-15,"12","Kauno apskr.","Birštono",27,0,10,0
-2021-01-15,"13","Vilniaus apskr.","Vilniaus m.",9064,1,813,1
-2021-01-15,"15","Alytaus apskr.","Druskininkų",419,0,32,0
-2021-01-15,"18","Marijampolės apskr.","Marijampolės",557,0,33,0
-2021-01-15,"19","Kauno apskr.","Kauno m.",7531,0,840,0
+2021-01-15,"00","Lithuania","Lithuania",45882,1,6046,1
+2021-01-15,"11","Alytaus apskr.","Alytaus m.",858,0,206,0
+2021-01-15,"12","Kauno apskr.","Birštono",29,0,10,0
+2021-01-15,"13","Vilniaus apskr.","Vilniaus m.",9066,1,813,1
+2021-01-15,"15","Alytaus apskr.","Druskininkų",441,0,54,0
+2021-01-15,"18","Marijampolės apskr.","Marijampolės",609,0,51,0
+2021-01-15,"19","Kauno apskr.","Kauno m.",7535,0,842,0
 2021-01-15,"21","Klaipėdos apskr.","Klaipėdos m.",2721,0,219,0
 2021-01-15,"23","Klaipėdos apskr.","Neringos",41,0,0,0
 2021-01-15,"25","Klaipėdos apskr.","Palangos m.",344,0,21,0
-2021-01-15,"27","Panevėžio apskr.","Panevėžio m.",1636,0,39,0
-2021-01-15,"29","Šiaulių apskr.","Šiaulių m.",1980,0,249,0
-2021-01-15,"30","Utenos apskr.","Visagino m.",298,0,97,0
-2021-01-15,"32","Šiaulių apskr.","Akmenės r.",421,0,124,0
-2021-01-15,"33","Alytaus apskr.","Alytaus r.",138,0,44,0
+2021-01-15,"27","Panevėžio apskr.","Panevėžio m.",1638,0,41,0
+2021-01-15,"29","Šiaulių apskr.","Šiaulių m.",1986,0,255,0
+2021-01-15,"30","Utenos apskr.","Visagino m.",302,0,98,0
+2021-01-15,"32","Šiaulių apskr.","Akmenės r.",422,0,125,0
+2021-01-15,"33","Alytaus apskr.","Alytaus r.",149,0,44,0
 2021-01-15,"34","Utenos apskr.","Anykščių r.",737,0,28,0
 2021-01-15,"36","Panevėžio apskr.","Biržų r.",476,0,96,0
 2021-01-15,"38","Alytaus apskr.","Varėnos r.",298,0,14,0
-2021-01-15,"39","Marijampolės apskr.","Vilkaviškio r.",584,0,142,0
+2021-01-15,"39","Marijampolės apskr.","Vilkaviškio r.",609,0,159,0
 2021-01-15,"41","Vilniaus apskr.","Vilniaus r.",1087,0,164,0
-2021-01-15,"42","Vilniaus apskr.","Elektrėnų",422,0,174,0
-2021-01-15,"43","Utenos apskr.","Zarasų r.",385,0,174,0
+2021-01-15,"42","Vilniaus apskr.","Elektrėnų",425,0,174,0
+2021-01-15,"43","Utenos apskr.","Zarasų r.",388,0,175,0
 2021-01-15,"45","Utenos apskr.","Ignalinos r.",208,0,79,0
 2021-01-15,"46","Kauno apskr.","Jonavos r.",444,0,130,0
-2021-01-15,"47","Šiaulių apskr.","Joniškio r.",203,0,0,0
-2021-01-15,"48","Marijampolės apskr.","Kalvarijos",195,0,70,0
+2021-01-15,"47","Šiaulių apskr.","Joniškio r.",232,0,4,0
+2021-01-15,"48","Marijampolės apskr.","Kalvarijos",216,0,70,0
 2021-01-15,"49","Kauno apskr.","Kaišiadorių r.",362,0,127,0
 2021-01-15,"52","Kauno apskr.","Kauno r.",865,0,134,0
 2021-01-15,"53","Kauno apskr.","Kėdainių r.",461,0,40,0
-2021-01-15,"54","Šiaulių apskr.","Kelmės r.",407,0,48,0
+2021-01-15,"54","Šiaulių apskr.","Kelmės r.",409,0,50,0
 2021-01-15,"55","Klaipėdos apskr.","Klaipėdos r.",657,0,74,0
 2021-01-15,"56","Klaipėdos apskr.","Kretingos r.",604,0,20,0
 2021-01-15,"57","Panevėžio apskr.","Kupiškio r.",357,0,57,0
 2021-01-15,"58","Marijampolės apskr.","Kazlų Rūdos",40,0,2,0
-2021-01-15,"59","Alytaus apskr.","Lazdijų r.",181,0,52,0
+2021-01-15,"59","Alytaus apskr.","Lazdijų r.",182,0,53,0
 2021-01-15,"61","Telšių apskr.","Mažeikių r.",539,0,64,0
 2021-01-15,"62","Utenos apskr.","Molėtų r.",372,0,28,0
 2021-01-15,"63","Tauragės apskr.","Pagėgių",20,0,8,0
-2021-01-15,"65","Šiaulių apskr.","Pakruojo r.",290,0,36,0
+2021-01-15,"65","Šiaulių apskr.","Pakruojo r.",291,0,37,0
 2021-01-15,"66","Panevėžio apskr.","Panevėžio r.",650,0,65,0
-2021-01-15,"67","Panevėžio apskr.","Pasvalio r.",347,0,27,0
+2021-01-15,"67","Panevėžio apskr.","Pasvalio r.",390,0,64,0
 2021-01-15,"68","Telšių apskr.","Plungės r.",636,0,229,0
-2021-01-15,"69","Kauno apskr.","Prienų r.",338,0,70,0
-2021-01-15,"71","Šiaulių apskr.","Radviliškio r.",633,0,84,0
+2021-01-15,"69","Kauno apskr.","Prienų r.",398,0,70,0
+2021-01-15,"71","Šiaulių apskr.","Radviliškio r.",635,0,86,0
 2021-01-15,"72","Kauno apskr.","Raseinių r.",437,0,164,0
 2021-01-15,"73","Panevėžio apskr.","Rokiškio r.",1041,0,29,0
 2021-01-15,"74","Telšių apskr.","Rietavo",82,0,22,0
 2021-01-15,"75","Klaipėdos apskr.","Skuodo r.",244,0,36,0
 2021-01-15,"77","Tauragės apskr.","Tauragės r.",308,0,3,0
-2021-01-15,"78","Telšių apskr.","Telšių r.",705,0,178,0
-2021-01-15,"79","Vilniaus apskr.","Trakų r.",128,0,8,0
+2021-01-15,"78","Telšių apskr.","Telšių r.",708,0,181,0
+2021-01-15,"79","Vilniaus apskr.","Trakų r.",192,0,8,0
 2021-01-15,"81","Vilniaus apskr.","Ukmergės r.",520,0,115,0
 2021-01-15,"82","Utenos apskr.","Utenos r.",472,0,2,0
 2021-01-15,"84","Marijampolės apskr.","Šakių r.",358,0,73,0
-2021-01-15,"85","Vilniaus apskr.","Šalčininkų r.",98,0,4,0
+2021-01-15,"85","Vilniaus apskr.","Šalčininkų r.",115,0,12,0
 2021-01-15,"86","Vilniaus apskr.","Švenčionių r.",206,0,14,0
 2021-01-15,"87","Tauragės apskr.","Šilalės r.",339,0,67,0
-2021-01-15,"88","Klaipėdos apskr.","Šilutės r.",577,0,46,0
+2021-01-15,"88","Klaipėdos apskr.","Šilutės r.",596,0,65,0
 2021-01-15,"89","Vilniaus apskr.","Širvintų r.",252,0,49,0
-2021-01-15,"91","Šiaulių apskr.","Šiaulių r.",329,0,39,0
+2021-01-15,"91","Šiaulių apskr.","Šiaulių r.",332,0,42,0
 2021-01-15,"94","Tauragės apskr.","Jurbarko r.",551,0,84,0
+2021-01-16,"00","Lithuania","Lithuania",46923,1,1041,0
+2021-01-16,"11","Alytaus apskr.","Alytaus m.",858,0,0,0
+2021-01-16,"12","Kauno apskr.","Birštono",29,0,0,0
+2021-01-16,"13","Vilniaus apskr.","Vilniaus m.",9514,1,448,0
+2021-01-16,"15","Alytaus apskr.","Druskininkų",490,0,49,0
+2021-01-16,"18","Marijampolės apskr.","Marijampolės",615,0,6,0
+2021-01-16,"19","Kauno apskr.","Kauno m.",7547,0,12,0
+2021-01-16,"21","Klaipėdos apskr.","Klaipėdos m.",2721,0,0,0
+2021-01-16,"23","Klaipėdos apskr.","Neringos",41,0,0,0
+2021-01-16,"25","Klaipėdos apskr.","Palangos m.",345,0,1,0
+2021-01-16,"27","Panevėžio apskr.","Panevėžio m.",1641,0,3,0
+2021-01-16,"29","Šiaulių apskr.","Šiaulių m.",1992,0,6,0
+2021-01-16,"30","Utenos apskr.","Visagino m.",375,0,73,0
+2021-01-16,"32","Šiaulių apskr.","Akmenės r.",422,0,0,0
+2021-01-16,"33","Alytaus apskr.","Alytaus r.",150,0,1,0
+2021-01-16,"34","Utenos apskr.","Anykščių r.",738,0,1,0
+2021-01-16,"36","Panevėžio apskr.","Biržų r.",479,0,3,0
+2021-01-16,"38","Alytaus apskr.","Varėnos r.",299,0,1,0
+2021-01-16,"39","Marijampolės apskr.","Vilkaviškio r.",696,0,87,0
+2021-01-16,"41","Vilniaus apskr.","Vilniaus r.",1096,0,9,0
+2021-01-16,"42","Vilniaus apskr.","Elektrėnų",426,0,1,0
+2021-01-16,"43","Utenos apskr.","Zarasų r.",422,0,34,0
+2021-01-16,"45","Utenos apskr.","Ignalinos r.",210,0,2,0
+2021-01-16,"46","Kauno apskr.","Jonavos r.",492,0,48,0
+2021-01-16,"47","Šiaulių apskr.","Joniškio r.",237,0,5,0
+2021-01-16,"48","Marijampolės apskr.","Kalvarijos",217,0,1,0
+2021-01-16,"49","Kauno apskr.","Kaišiadorių r.",362,0,0,0
+2021-01-16,"52","Kauno apskr.","Kauno r.",867,0,2,0
+2021-01-16,"53","Kauno apskr.","Kėdainių r.",461,0,0,0
+2021-01-16,"54","Šiaulių apskr.","Kelmės r.",442,0,33,0
+2021-01-16,"55","Klaipėdos apskr.","Klaipėdos r.",657,0,0,0
+2021-01-16,"56","Klaipėdos apskr.","Kretingos r.",604,0,0,0
+2021-01-16,"57","Panevėžio apskr.","Kupiškio r.",376,0,19,0
+2021-01-16,"58","Marijampolės apskr.","Kazlų Rūdos",41,0,1,0
+2021-01-16,"59","Alytaus apskr.","Lazdijų r.",184,0,2,0
+2021-01-16,"61","Telšių apskr.","Mažeikių r.",539,0,0,0
+2021-01-16,"62","Utenos apskr.","Molėtų r.",374,0,2,0
+2021-01-16,"63","Tauragės apskr.","Pagėgių",20,0,0,0
+2021-01-16,"65","Šiaulių apskr.","Pakruojo r.",371,0,80,0
+2021-01-16,"66","Panevėžio apskr.","Panevėžio r.",655,0,5,0
+2021-01-16,"67","Panevėžio apskr.","Pasvalio r.",437,0,47,0
+2021-01-16,"68","Telšių apskr.","Plungės r.",636,0,0,0
+2021-01-16,"69","Kauno apskr.","Prienų r.",399,0,1,0
+2021-01-16,"71","Šiaulių apskr.","Radviliškio r.",636,0,1,0
+2021-01-16,"72","Kauno apskr.","Raseinių r.",437,0,0,0
+2021-01-16,"73","Panevėžio apskr.","Rokiškio r.",1043,0,2,0
+2021-01-16,"74","Telšių apskr.","Rietavo",82,0,0,0
+2021-01-16,"75","Klaipėdos apskr.","Skuodo r.",244,0,0,0
+2021-01-16,"77","Tauragės apskr.","Tauragės r.",314,0,6,0
+2021-01-16,"78","Telšių apskr.","Telšių r.",709,0,1,0
+2021-01-16,"79","Vilniaus apskr.","Trakų r.",204,0,12,0
+2021-01-16,"81","Vilniaus apskr.","Ukmergės r.",522,0,2,0
+2021-01-16,"82","Utenos apskr.","Utenos r.",474,0,2,0
+2021-01-16,"84","Marijampolės apskr.","Šakių r.",360,0,2,0
+2021-01-16,"85","Vilniaus apskr.","Šalčininkų r.",140,0,25,0
+2021-01-16,"86","Vilniaus apskr.","Švenčionių r.",206,0,0,0
+2021-01-16,"87","Tauragės apskr.","Šilalės r.",339,0,0,0
+2021-01-16,"88","Klaipėdos apskr.","Šilutės r.",597,0,1,0
+2021-01-16,"89","Vilniaus apskr.","Širvintų r.",253,0,1,0
+2021-01-16,"91","Šiaulių apskr.","Šiaulių r.",335,0,3,0
+2021-01-16,"94","Tauragės apskr.","Jurbarko r.",551,0,0,0
