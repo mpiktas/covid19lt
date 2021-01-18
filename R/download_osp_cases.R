@@ -7,7 +7,7 @@ library(stringr)
 library(bit64)
 
 source("R/functions.R")
-geojson <- TRUE
+geojson <- FALSE
 
 if(geojson) {
     osp <- GET("https://opendata.arcgis.com/datasets/45b76303953d40e2996a3da255bf8fe8_0.geojson")
@@ -29,7 +29,7 @@ if(geojson) {
 
 }
 
-osp1 %>% arrange(date, municipality_code) %>% write.csv("raw_data/osp/osp_covid19_cases.csv", row.names = FALSE)
+osp1 %>% arrange(date, municipality_code) %>% select(-municipality_order,-F_metadata_ingested_at, -F_metadata_last_updated_at,-object_id) %>% write.csv("raw_data/osp/osp_covid19_cases.csv", row.names = FALSE)
 
 osp2 <- osp1 %>% mutate(day = ymd(date))
 
