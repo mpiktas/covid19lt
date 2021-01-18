@@ -236,13 +236,23 @@ Column {data-width=500 .tabset}
 ### Viso testų
 
 ```{r}
-dygraph(a714[,"tests"], main =  paste("Viso testų per dieną ", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyBarChart
+dygraph(a714[,c("tests","tests7","tests14")], main =  paste("Viso testų per dieną ", aa_last_day)) %>%dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
+
 ```
 
 ### Mobilūs punktai
 
 ```{r}
-dygraph(a714[,"mobile_tests"], main =  paste("Viso testų mobiliuose punktuose", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyBarChart
+dygraph(a714[,c("mobile_tests","mobile_tests7","mobile_tests14")], main =  paste("Viso testų mobiliuose punktuose", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
+```
+
+
+### Ne mobilūs punktai
+
+```{r}
+nmt <- a714[,c("tests","tests7","tests14")]-a714[,c("mobile_tests","mobile_tests7","mobile_tests14")]
+colnames(nmt) <- c("tests","tests7","tests14")
+dygraph(nmt, main =  paste("Viso testų ne mobiliuose punktuose", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
 
