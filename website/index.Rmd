@@ -45,7 +45,8 @@ aa_stats <- aa %>% select(day,confirmed_growth_weekly,
                           tpr_confirmed_diff_weekly, tpr_tpn_diff_weekly,
                           deaths_100k, other_deaths_100k, all_deaths_100k,
                           tests_100k, tests_mobile_100k,
-                          tests_growth_weekly, tests_mobile_growth_weekly
+                          tests_growth_weekly, tests_mobile_growth_weekly,
+                          vaccinated_1_percent, vaccinated_2_percent
                          )
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
@@ -103,7 +104,6 @@ ttn14 <- 100*a714[,"confirmed14"]/a714[,"tests14"]
 ttn <- cbind(ttn1, ttn7, ttn14)
 colnames(ttn) <- c("Atvejų proc.", "AP7", "AP14")
 
-dygraph(ttn["2020-04-01/",], main = paste("Naujų atvejų skaičius tenkantis 100 testų", max(aa$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,2,1)]) %>% dyRangeSelector(dateWindow = view_interval) 
 ```
 
 
@@ -125,7 +125,9 @@ dygraph(tpntpr["2020-04-01/"], main = paste("Teigiamų testų skaičius tenkanti
 dygraph(xaa[,"tests_100k"], main =  paste("Testų skaičius 100k gyventojų per 14 dienų ", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
 ```
 
-
+```{r}
+dygraph(xaa["2020-12-27/",c("vaccinated_1_percent","vaccinated_2_percent")], main = paste("Paskiepytų pirma ir antra doze  procentas",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1,3)]) %>% dyRangeSelector
+```
 
 ```{r, echo = FALSE}
 ii <- read.csv("../data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
