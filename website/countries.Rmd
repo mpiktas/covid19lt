@@ -20,9 +20,7 @@ library(dygraphs)
 data <- Sys.time()
 ```
 
-Atnaujinta: `r data`. 
-
-
+Atnaujinta: `r data`.
 
 Pagal 2020-05-27 Lietuvos vyriausybės [nutarimą](https://koronastop.lrv.lt/lt/naujienos/karantino-salygos-darosi-svelnesnes) į Lietuvą be karantino galima atvykti Europos ekonominės erdvės valstybių, Šveicarijos, Didžiosios Britanijos ir Airijos piliečiams ir jose teisėtai gyvenantiems žmonėms, jeigu toje valstybėje, sergamumas koronaviruso infekcija (COVID-19) per pastarąsias 14 kalendorinių dienų neviršijo 25 nustatytų koronaviruso atvejų 100 tūkst. gyventojų.
 
@@ -30,7 +28,6 @@ Pagal 2020-05-27 Lietuvos vyriausybės [nutarimą](https://koronastop.lrv.lt/lt/
 cn <- read.csv("../exceptions/Countries-Europe.csv")
 x <- covid19(cn$ISO.alpha.3, verbose = FALSE, cache = FALSE)
 ```
-
 
 Čia pateikiamas sąrašas Europos šalių ir atvejų skaičius 100 tūkst gyventojų nuo `r max(x$date) - days(14)` iki `r max(x$date)-days(1)`.
 
@@ -47,7 +44,6 @@ x  %>% filter(date == max(date)-days(1) | date == max(date) - days(14)) %>% grou
 
 ```
 
-
 ```{r echo = FALSE}
 xx <- x %>% ungroup %>% select(date, confirmed, tests, population, country = administrative_area_level_1)
 ddiff <- function(x)c(0, diff(x))
@@ -59,7 +55,6 @@ xx1 <- xx %>% filter(date!=max(date)) %>% arrange(country, date) %>%  group_by(c
            tests14_100k = round(tests14/unique(population)*1e5,2)
            )
 ```
-
 
 ## Kaimyninių šalių palyginimas
 
