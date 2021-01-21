@@ -14,11 +14,44 @@ oo <- read_html(raw)
 
 tbs <- html_table(oo, fill = TRUE)
 
-# Get the total capacity data ------------------------------------------------------
-
-cat("\nParsing total capacity data\n")
 
 # Get covid hospitalisation data ----------------------------------------------------------
+
+hdd <- c(tbs[[5]][,1])
+
+
+hdd1 <- hdd[hdd!=""]
+hdd2 <- hdd1[grepl("[:]", hdd1)]
+
+parse_hosp <- function(x) {
+    xs <- strsplit(x,":")[[1]][2] %>% str_trim
+    num <- as.numeric(xs)
+    if(is.na(num)) {
+        xs1 <- gsub("[()]", "", xs)
+        xs1 <- gsub(" iš ", " ", xs1)
+        num <- strsplit(xs1," ",)[[1]]
+    } else num <- c(num, NA)
+    as.integer(num)
+}
+
+hdd3 <- hdd2 %>% sapply(parse_hosp)
+hdd4 <- data.frame( indicator = colnames(hdd3), t(hdd3))
+colnames(hdd4)[2:3] <- c("actual", "available")
+
+dd <- gsub(" ","_",Sys.time())
+
+writeLines(hdd2, glue::glue("raw_data/hospitalization/osp_hospitalization_{dd}.csv"))
+
+cvh <- data.frame(description = "Pacientai, kuriems patvirtinta COVID19 infekcija",
+                  total = hdd4$actual[4],
+                  oxygen = hdd4$actual[5],
+                  ventilated = hdd4$actual[7],
+                  hospitalized_not_intensive = NA,
+                  intensive = hdd4$actual[6])
+
+write.csv(cvh, glue::glue("raw_data/hospitalization/covid_hospitalization_{dd}.csv"), row.names = FALSE)
+
+if(FALSE) {
 cat("\nParsing covid hospitalization data\n")
 
 cvh0 <- data.frame(tbs[[4]])[1:4,]
@@ -60,12 +93,12 @@ fnl <- paste0("raw_data/hospitalization//",names(res),"_",dd,".csv")
 
 mapply(function(dt, nm) write.csv(dt, nm, row.names = FALSE), res, fnl, SIMPLIFY = FALSE)
 
-
+}
 # Add the totals data -----------------------------------------------------
 
 cat("\nParsing daily data\n")
 
-cdd <- c(tbs[[2]][,1], tbs[[3]][,1], tbs[[4]][,1])
+cdd <- c(tbs[[2]][,1])
 
 crtime <- Sys.time()
 
@@ -73,7 +106,7 @@ cdd1 <- cdd[cdd!=""]
 cdd2 <- cdd1[grepl("[:]", cdd1)]
 cdd3 <- sapply(strsplit(cdd2,":"),"[[",2) %>% str_trim %>% as.integer
 
-nums <- c(cdd3[c(2, 11, 1, 6)],NA,cdd3[10],NA,NA,cdd3[13:16])
+nums <- c(cdd3[c(2, 11, 1, 6)],NA,cdd3[10],NA,NA,cdd3[12:17])
 
 outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
 ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "days")-days(1))) %>%
@@ -87,8 +120,11 @@ ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "da
            quarantined = nums[7],
            total_tests = nums[10],
            imported0601 = nums[8],
-           vaccine_daily = nums[11],
-           vaccine_total = nums[12])
+           vaccine_1_daily = nums[11],
+           vaccine_1_total = nums[13],
+           vaccine_2_daily = nums[12],
+           vaccine_2_total = nums[14]
+           )
 write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
 
 
