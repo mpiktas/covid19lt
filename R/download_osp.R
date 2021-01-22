@@ -17,7 +17,7 @@ tbs <- html_table(oo, fill = TRUE)
 
 # Get covid hospitalisation data ----------------------------------------------------------
 
-hdd <- c(tbs[[5]][,1])
+hdd <- c(tbs[[4]][,1])
 
 
 hdd1 <- hdd[hdd!=""]
@@ -34,7 +34,7 @@ parse_hosp <- function(x) {
     as.integer(num)
 }
 
-hdd3 <- hdd2 %>% sapply(parse_hosp)
+hdd3 <- hdd2[1:15] %>% sapply(parse_hosp)
 hdd4 <- data.frame( indicator = colnames(hdd3), t(hdd3))
 colnames(hdd4)[2:3] <- c("actual", "available")
 
@@ -106,7 +106,7 @@ cdd1 <- cdd[cdd!=""]
 cdd2 <- cdd1[grepl("[:]", cdd1)]
 cdd3 <- sapply(strsplit(cdd2,":"),"[[",2) %>% str_trim %>% as.integer
 
-nums <- c(cdd3[c(2, 11, 1, 6)],NA,cdd3[10],NA,NA,cdd3[12:17])
+nums <- c(cdd3[1+c(2, 11, 1, 6)],NA,cdd3[11],NA,NA,cdd3[1+12:17],cdd3[1])
 
 outd <- gsub(" ","_",gsub("-","",as.character(crtime)))
 ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "days")-days(1))) %>%
@@ -123,7 +123,8 @@ ndd <- data.frame(country = "Lithuania", day = rep(floor_date(crtime, unit = "da
            vaccine_1_daily = nums[11],
            vaccine_1_total = nums[13],
            vaccine_2_daily = nums[12],
-           vaccine_2_total = nums[14]
+           vaccine_2_total = nums[14],
+           incidence_all = nums[15]
            )
 write.csv(ndd, glue::glue("raw_data/sam/lt-covid19-daily_{outd}.csv"), row.names = FALSE)
 
