@@ -5,14 +5,14 @@ library(glue)
 
 curdate<- ymd(Sys.Date())
 
-dd <- data.frame(date = ymd("2021-01-14")+days(0:20), hotfix =17+0:20)
+dd <- data.frame(date = ymd("2021-01-19")+days(0:20), hotfix =7+0:20)
 
 
 lap <- lapply(curdate - days(0:2), function(curd) {
     cdd <- dd %>% filter(date == curd)
     cd <- as.character(cdd$date)
     hf <- as.character(cdd$hotfix)
-    lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2024HotfixDev{hf}/v3/en-us/applemobilitytrends-{cd}.csv")
+    lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2025HotfixDev{hf}/v3/en-us/applemobilitytrends-{cd}.csv")
     print(lnk)
     try(read.csv(lnk))
 })
