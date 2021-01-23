@@ -11,14 +11,11 @@ output:
 
 
 ```{r setup, include=FALSE}
-library(htmltools)
 library(flexdashboard)
 library(dplyr)
 library(lubridate)
 library(DT)
-library(tidyr)
-library(xts)
-library(dygraphs)
+library(htmltools)
 Sys.setlocale(locale="lt_LT.UTF-8")
 ```
 
