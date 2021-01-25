@@ -12,7 +12,7 @@ The main datasets are the following three:
 2.  [lt-covid19-level2.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-level2.csv) - data for 10 administrative regions of Lithuania
 3.  [lt-covid19-level3.csv](https://github.com/mpiktas/covid19lt/blob/master/data/lt-covid19-level2.csv) - data at Lithuania municipality level.
 
-These data sets contain historical cases, test and deaths data. The country level data additionaly has hospitalization data. The column names should be explanatory. The data is harmonized, level 3 sums up to level 2 and level 2 sums up to country. All the data is fetched from [Statistics Lithuania](https://stat.gov.lt). There some cases which are not attributed to any region. They are attributed to "Unknown" administrative region and municipality.
+These data sets contain historical cases, test and deaths data. The country level data additionaly has hospitalization data. The column names should be explanatory. The data is harmonized, level 3 sums up to level 2 and level 2 sums up to country. All the data is fetched from Statistics Lithuania. ([Daily dispatches](https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika), [Open data ub](https://open-data-ls-osp-sdg.hub.arcgis.com/search?collection=Dataset&tags=covid%2Cevrk2)). There some cases which are not attributed to any region. They are attributed to "Unknown" administrative region and municipality.
 
 The additional data sets are available some of which are used as a source for the main files:
 
