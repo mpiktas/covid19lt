@@ -14,17 +14,18 @@ evrk_meta <- read.csv("../raw_data/osp/evrk_meta.csv")
 Sys.setlocale(locale = "lt_LT.UTF-8")
 ```
 
-
 ```{r}
 
 tt <- evrk %>% group_by(evrk_group_title, evrk_group_code ) %>% select(-day) %>% summarise_all(sum) %>% mutate(r = round(100*tests_positive/tests,2)) %>% arrange(tests) %>% ungroup
 tt
 ```
+
 ```{r}
 tt_month <- evrk %>% group_by(evrk_group_title, evrk_group_code, month = month(day)) %>% select(-day) %>% summarise_all(sum) %>% mutate(r = round(100*tests_positive/tests,2)) %>% arrange(tests) %>% ungroup
 
 tt_month %>% filter(month == 11) %>% arrange(-tests)
 ```
+
 ```{r}
 tt$tests %>% quantile(seq(0,1,by=0.1))
 
@@ -42,7 +43,6 @@ evrk1 <- evrk %>% group_by(evrk_group_code) %>% arrange(day) %>% mutate(
 )
 ```
 
-
 ```{r}
 lv1 <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
 ```
@@ -56,7 +56,14 @@ cmp1 <- cmp %>% bind_rows(lvt)
 cmp2 <- evrk1 %>%select(day, evrk_group_code, evrk_group_title, tpr = tpr7, tpr1 = tpr1) %>% filter(evrk_group_code %in% top16) %>% 
     inner_join(tt %>% select(evrk_group_code, total = tests)) %>% inner_join(lvt %>% select(day, tprl = tpr)) %>% mutate(veikla = paste0(str_trunc(evrk_group_title,30), " (", round(total/1000,1),"k)"))
 
+
+svt <- evrk_meta %>% filter(evrk_chapter_code == 85) %>% .$evrk_group_code %>% unique
+
+cmp3 <- evrk1 %>% select(day, evrk_group_code, evrk_group_title, tpr = tpr7, tpr1 = tpr1, tests_sum7) %>% filter(evrk_group_code %in% svt) %>% 
+    inner_join(tt %>% select(evrk_group_code, total = tests)) %>% inner_join(lvt %>% select(day, tprl = tpr)) %>% mutate(veikla = paste0(str_trunc(evrk_group_title,30), " (", round(total/1000,1),"k)"))
+
 ```
+
 ```{r}
 tt %>% filter(evrk_group_code %in% top16) %>% arrange(-tests) %>% select(evrk_group_title, tests)
 ```
@@ -75,14 +82,7 @@ names(cols) <- c("Lietuva","Veikla")
 ggplot(aes(x = day, y = tpr1, colour = "Veikla"), data = cmp2 %>% filter(day>="2020-12-01"))+geom_line()+facet_wrap(~veikla) + theme_bw()+labs(x = "Data", y = "Procentai", title = "Teigiamų testų dalis, top 16 testuojamų veiklų")+geom_line(aes(y = tprl, colour = "Lietuva")) + scale_colour_manual(name = "Spalva", values = cols)
 ```
 
-
 ```{r}
-vv <- evrk %>% group_by(evrk_group_title, evrk_group_code, year = year(day),week = isoweek(day)) %>% summarise(day = min(day), tests = sum(tests), r = round(100*sum(tests_positive)/sum(tests),2)) %>% mutate( levels = cut(r,c(0,5,10,15,20,25,100), include.lowest = TRUE))
-
-vv1 <- vv %>% ungroup %>% count(year, week, levels) %>% ungroup %>% group_by(week) %>% mutate(p = round(100*n/sum(n),2))
-
-vv2 <- vv %>% ungroup %>% filter(tests>=10) %>% count(year,week, levels) %>% ungroup %>% group_by(week) %>% mutate(p = round(100*n/sum(n),2))
-
 wk2date <- function(year, week) {
     week[year == 2020] <- week[year == 2020]-1
     year[year == 2021 & week == 53] <- 2020
@@ -90,9 +90,49 @@ wk2date <- function(year, week) {
     ymd(parse_date_time(paste(year, week, 1, sep="/"),'Y/W/u'))
 }
 
-vv3 <- vv2 %>% mutate(day = wk2date(year,week))
+vv <- evrk %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% group_by(evrk_group_title, evrk_group_code, wday) %>% summarise(tests = sum(tests), r = round(100*sum(tests_positive)/sum(tests),2)) %>% mutate( levels = cut(r,c(0,5,10,15,20,25,100), include.lowest = TRUE))
+
+vv1 <- vv %>% ungroup %>% count(wday,levels) %>% ungroup %>% group_by(wday) %>% mutate(p = round(100*n/sum(n),2))
+
+vv2 <- vv %>% ungroup %>% filter(tests>=10) %>% count(wday, levels) %>% ungroup %>% group_by(wday) %>% mutate(p = round(100*n/sum(n),2))
+
+
+vv3 <- vv2 %>% mutate(day = wday)
 ```
 
 ```{r}
 ggplot(aes(x=day,y=p, fill=levels), data = vv3)+geom_col() + scale_fill_manual(name = "Intervalai", values = RColorBrewer::brewer.pal(6, "Set1")[c(3,2,4,6, 5,1)]) + theme_bw()+ labs(y = "Procentai", x = "Data", title = "EVRK veiklų teigiamų tyrimų dalis savaitėmis")
+```
+
+```{r}
+ppt <- evrk %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% group_by(wday) %>% summarise(tests_positive = sum(tests_positive), tests = sum(tests)) %>% arrange(wday) %>% mutate(r = round(100 * tests_positive/tests,2))
+
+plv1 <- lv1 %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% select(wday, tests_daily, tests_positive_new_daily) %>% group_by(wday) %>% summarize( tests_positive = sum(tests_positive_new_daily),tests = sum(tests_daily)) %>% mutate(r = round(100 * tests_positive/tests,2))
+
+pp <- evrk %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% group_by(profilaktika = evrk_group_code %in% c(861, 862), wday) %>% summarise(tests_positive = sum(tests_positive), tests = sum(tests)) %>% arrange(wday) %>% mutate(r = round(100 * tests_positive/tests,2))
+
+ss
+```
+```{r}
+ggplot(aes(x=wday, y= r, colour = profilaktika),data=pp)+geom_line()+theme_bw()
+```
+
+```{r}
+ggplot(aes(x=wday, y= tests, colour = profilaktika),data=pp)+geom_line()+theme_bw()
+```
+
+
+```{r}
+cols <- RColorBrewer::brewer.pal(3, "Set1")[c(1,2)]
+names(cols) <- c("Lietuva","Veikla")
+
+ggplot(aes(x = day, y = tpr1, colour = "Veikla"), data = cmp3 %>% filter(day>="2020-12-01"))+geom_line()+facet_wrap(~veikla) + theme_bw()+labs(x = "Data", y = "Procentai", title = "Teigiamų testų dalis, švietimo sektoriaus veiklos")+geom_line(aes(y = tprl, colour = "Lietuva")) + scale_colour_manual(name = "Spalva", values = cols)
+```
+
+```{r}
+cols <- RColorBrewer::brewer.pal(3, "Set1")[c(1,2)]
+names(cols) <- c("Lietuva","Veikla")
+
+ggplot(aes(x = day, y = tests_sum7, colour = "Veikla"), data = cmp3 %>% filter(day>="2020-12-01"))+geom_line()+facet_wrap(~veikla, scales = "free_y") + theme_bw()+labs(x = "Data", y = "Testai", title = "Testų 7 dienų slenkanti suma")+ scale_colour_manual( values = cols)
+
 ```
