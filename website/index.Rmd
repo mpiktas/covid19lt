@@ -244,7 +244,7 @@ agre1 <- agre %>% filter(day == max(day)) %>% select(-day)
 
 regs_n <- paste0(gsub("[.]","",gsub(" ", "_",agre1$administrative_level_3)),".html")
 
-links <- paste0("regions/", regs_n) 
+links <- paste0("https://covid19.myliuduomenis.lt/regions/", regs_n) 
 
 links2 <- mapply(function(nm, hr) tags$a(href=hr, nm),  agre1$administrative_level_3, links, SIMPLIFY = FALSE)
 
