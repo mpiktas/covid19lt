@@ -31,16 +31,57 @@ labs1 <- labs %>% arrange(day, lab_name, test_type) %>% group_by(lab_name, test_
 top_lab <- labs1 %>% filter(test_type == 1477) %>% group_by(lab_name) %>% summarise(tests = sum(tests)) %>% arrange(-tests)
 top10 <- top_lab %>% select(lab_name) %>% slice_head(n = 10) %>% .$lab_name
 
+
+wk2date <- function(year, week) {
+    week[year == 2020] <- week[year == 2020]-1
+    year[year == 2021 & week == 53] <- 2020
+    week[week == 53] <- 52
+    ymd(parse_date_time(paste(year, week, 1, sep="/"),'Y/W/u'))
+}
+
+
+labt <- labs1  %>% group_by(lab_name, test_type) %>% summarise(tests = sum(tests)) %>% arrange(-tests)
+labt1 <- labt %>% pivot_wider(lab_name, names_from = "test_type",values_from="tests",values_fill = 0)
+
+
+labw <- labs1 %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% group_by(wday, lab_name, test_type) %>% summarise(tests = sum(tests))
+labw1 <- labw %>% pivot_wider(wday:lab_name, names_from = "test_type",values_from="tests", values_fill = 0)
+
+
 ```
 
 ```{r}
-ggplot(aes(x = day, y = tpn7, group = lab_name), data = labs1 %>% filter(test_type == 1477, lab_name %in% top10)) + geom_line() + fac
+ggplot(aes(x = day, y = tpn7, group = lab_name), data = labs1 %>% filter(test_type == 1477, lab_name %in% top10)) + geom_line() 
+```
+
+
+
+```{r}
+ggplot(aes(x = day, y = tpn7, group = lab_name), data = labs1 %>% filter(lab_name %in% top10)) + geom_line() + facet_wrap(~test_type, scales= "free_y")
 ```
 
 ```{r}
-ggplot(aes(x = day, y = tpn7, group = lab_name, colour = lab_name), data = labs1 %>% filter(test_type == 1477, lab_name %in% top10)) + geom_line()
+ggplot(aes(x = day, y = tests_sum7, group = lab_name), data = labs1 %>% filter(lab_name %in% top10)) + geom_line() + facet_wrap(~test_type, scales= "free_y")
 ```
+
 
 ```{r}
 ggplot(aes(x = day, y = tpn7), data = labs1 %>% filter(test_type == 1477, lab_name %in% top10)) + geom_line() + facet_wrap(~lab_name)
+```
+```{r}
+pil <-  labs %>% group_by(day, gmp_indication) %>% summarise(tests_positive = sum(tests_positive),tests = sum(tests)) %>%ungroup %>%  mutate(r = round(100*tests_positive/tests, 2))
+```
+
+```{r}
+ggplot(aes(x = day, y = r), data = pil)+geom_line()+facet_wrap(~gmp_indication, scales = "free_y")+theme_bw()+labs(x="Data", y="Procentai", title = "Teigiamų tyrimų procentas")
+```
+
+```{r}
+ggplot(aes(x = day, y = tests), data = pil)+geom_line()+facet_wrap(~gmp_indication, scales = "free_y")+theme_bw()+labs(x="Data", y="Testai", title = "Testų pasiskirstymas")
+```
+
+
+```{r}
+ggplot(aes(x = day, y = tests_positive), data = pil)+geom_line()+facet_wrap(~gmp_indication, scales = "free_y")+theme_bw()+labs(x="Data", y="Teigiami testai", title = "Teigiamų testų pasiskirstymas")
+
 ```
