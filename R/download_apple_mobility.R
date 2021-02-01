@@ -5,8 +5,7 @@ library(glue)
 
 curdate<- ymd(Sys.Date())
 
-dd <- data.frame(date = ymd("2021-01-19")+days(0:20), hotfix =7+0:20)
-
+dd <- data.frame(date = ymd("2021-01-28")+days(0:20), hotfix =17+0:20)
 
 lap <- lapply(curdate - days(0:2), function(curd) {
     cdd <- dd %>% filter(date == curd)
