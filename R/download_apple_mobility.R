@@ -7,7 +7,7 @@ curdate<- ymd(Sys.Date())
 
 dd <- data.frame(date = ymd("2021-02-04")+days(0:20), hotfix =6+0:20)
 
-"https://covid19-static.cdn-apple.com/covid19-mobility-data/2101HotfixDev8/v3/en-us/applemobilitytrends-2021-02-06.csv"
+
 lap <- lapply(curdate - days(0:2), function(curd) {
     cdd <- dd %>% filter(date == curd)
     cd <- as.character(cdd$date)

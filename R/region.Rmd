@@ -8,7 +8,7 @@ output:
     navbar:
       - {title: "Lietuvos regionai", href: "https://mpiktas.github.io/covid19lt/savivaldybes.html", align: right}
 params: 
-   region: "Lietuva"
+   region: "Rietavo"
 ---
 
 ```{r setup, include=FALSE}
@@ -23,6 +23,10 @@ library(gridExtra)
 
 ii <- read.csv("../data/lt-covid19-individual.csv") 
 ad <- read.csv("../data/lt-covid19-agedist.csv")
+
+ii_last_day <- max(ii$day) %>% as.character
+ad_last_day <- max(ad$day) %>% as.character
+
 
 if(grepl("apskr", params$region)) {
   aa <- read.csv("../data/lt-covid19-level2.csv") %>% rename(region = administrative_level_2)
@@ -50,9 +54,9 @@ fixNA <- function(x, value = 0) {
   x
 }
 
-ii_last_day <- max(ii$day) %>% as.character
+#ii_last_day <- max(ii$day) %>% as.character
 aa_last_day <- max(aa$day) %>% as.character
-ad_last_day <- max(ad$day) %>% as.character
+#ad_last_day <- max(ad$day) %>% as.character
 
 view_interval <- c("2020-10-01", aa_last_day)
 vaccine_interval <- c("2020-12-27", aa_last_day)
