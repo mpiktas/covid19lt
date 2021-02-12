@@ -126,7 +126,7 @@ ggplot(aes(x=wday, y= tests, colour = profilaktika),data=pp)+geom_line()+theme_b
 cols <- RColorBrewer::brewer.pal(3, "Set1")[c(1,2)]
 names(cols) <- c("Lietuva","Veikla")
 
-ggplot(aes(x = day, y = tpr1, colour = "Veikla"), data = cmp3 %>% filter(day>="2020-12-01"))+geom_line()+facet_wrap(~veikla) + theme_bw()+labs(x = "Data", y = "Procentai", title = "Teigiamų testų dalis, švietimo sektoriaus veiklos")+geom_line(aes(y = tprl, colour = "Lietuva")) + scale_colour_manual(name = "Spalva", values = cols)
+ggplot(aes(x = day, y = tpr1, colour = "Veikla"), data = cmp3 %>% filter(day>="2021-01-01"))+geom_line()+facet_wrap(~veikla, scales = "free_y") + theme_bw()+labs(x = "Data", y = "Procentai", title = "Teigiamų testų dalis, švietimo sektoriaus veiklos")+geom_line(aes(y = tprl, colour = "Lietuva")) + scale_colour_manual(name = "Spalva", values = cols)
 ```
 
 ```{r}
