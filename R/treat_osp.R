@@ -2,32 +2,6 @@ library(lubridate)
 library(dplyr)
 library(tidyr)
 
-# Create daily files --------------------------------------------
-fns <- dir("raw_data/sam", pattern = "daily", full.names = TRUE)
-
-samd <- lapply(fns, read.csv, stringsAsFactors = FALSE)
-
-pt <- strsplit(fns, "_") %>% lapply(function(x)ymd_hms(paste(x[3:4],collapse="_")))
-
-sam <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm) %>% select(-day), samd, pt, SIMPLIFY = FALSE) %>% bind_rows  %>% mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
-
-dl <-  sam %>% group_by(day) %>%
-    filter(downloaded == max(downloaded)) %>% ungroup %>%
-    mutate(country = "Lithuania") %>%
-    select(country, day, incidence, daily_tests, confirmed, active, deaths, recovered, quarantined, total_tests, deaths_different, imported0601, under_observation, vaccine_daily, vaccine_total) %>%
-    arrange(day)
-
-dd <- read.csv("data/lt-covid19-daily.csv") %>% mutate(day = ymd(day)) %>% arrange(day)
-ld <- dd %>% filter(day == max(day))
-ldl <- dl  %>% filter(day == max(day))
-ss <- identical(ld[1,-2:-1], data.frame(ldl[1,-2:-1]))
-
-if(ss) {
-    cat("\nNo new data for daily\n")
-} else {
-    dl %>% write.csv("data/lt-covid19-daily.csv", row.names = FALSE)
-}
-
 # Do the covid19 totals -------------------------------------------
 
 fn <- dir("raw_data/hospitalization", full.names = TRUE)
