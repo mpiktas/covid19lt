@@ -61,7 +61,7 @@ lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3, mu
                     recovered = recovered_cases_cumulative, active = active_cases,
                     vaccinated_1, vaccinated_2,
                     confirmed_daily = confirmed_cases, tests_daily = tests_total,
-                    tests_positive,
+                    tests_positive_daily = tests_positive,
                     deaths_daily = deaths,
                     recovered_daily = recovered_cases,
                     vaccinated_1_daily, vaccinated_2_daily,
@@ -81,7 +81,7 @@ lvl11 <- lvl1 %>% left_join(hosp1) %>%
 
 
 add_stats <- function(dt) {
-    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive, deaths_daily,
+    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive_daily, deaths_daily,
                   vaccinated_1, vaccinated_2, population) %>%
         arrange(region, day) %>% group_by(region) %>%
         mutate(cases_sum7 = rollsum(confirmed_daily, 7, fill = NA, align = "right"),
@@ -90,8 +90,8 @@ add_stats <- function(dt) {
                test_sum14 = rollsum(tests_daily, 14, fill = NA, align = "right"),
                deaths_sum14 = rollsum(deaths_daily, 14, fill = NA, align = "right"),
                deaths_sum7 = rollsum(deaths_daily, 7, fill = NA, align = "right"),
-               tpn_sum7 = rollsum(tests_positive, 7, fill = NA, align = "right"),
-               tpn_sum14 = rollsum(tests_positive, 14, fill = NA, align = "right"),
+               tpn_sum7 = rollsum(tests_positive_daily, 7, fill = NA, align = "right"),
+               tpn_sum14 = rollsum(tests_positive_daily, 14, fill = NA, align = "right"),
                tpr_confirmed = round(100*cases_sum7/test_sum7,2),
                tpr_tpn =round(100*tpn_sum7/test_sum7,2),
                confirmed_100k = cases_sum14/population*100000,

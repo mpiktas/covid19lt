@@ -43,15 +43,15 @@ view_interval <- c("2020-10-01", aa_last_day)
 aa_stats <- aa %>% select(day,confirmed_growth_weekly, 
                           confirmed_100k, tpr_confirmed, tpr_tpn,
                           tpr_confirmed_diff_weekly, tpr_tpn_diff_weekly,
-                          deaths_100k, other_deaths_100k, all_deaths_100k,
-                          tests_100k, tests_mobile_100k,
-                          tests_growth_weekly, tests_mobile_growth_weekly,
+                          deaths_100k, 
+                          tests_100k, 
+                          tests_growth_weekly, 
                           vaccinated_1_percent, vaccinated_2_percent
                          )
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
 
-xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, tests = tests_daily, mobile_tests = tests_mobile_daily, tpnew = tests_positive_new_daily, other_deaths = other_deaths_daily) %>% mutate(all_deaths = deaths+other_deaths), order.by = aa$day)
+xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, tests = tests_daily,  tpnew = tests_positive_daily), order.by = aa$day)
 
 
 axtt14 <- rollmean(xi, 14, fill = NA, align = "right")
