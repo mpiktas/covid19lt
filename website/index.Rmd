@@ -41,8 +41,8 @@ aa_last_day <- as.character(max(aa$day))
 view_interval <- c("2020-10-01", aa_last_day)
 
 aa_stats <- aa %>% select(day,confirmed_growth_weekly, 
-                          confirmed_100k, tpr_confirmed, tpr_tpn,
-                          tpr_confirmed_diff_weekly, tpr_tpn_diff_weekly,
+                          confirmed_100k,  tpr_tpn,
+                          tpr_tpn_diff_weekly,
                           deaths_100k, 
                           tests_100k, 
                           tests_growth_weekly, 
@@ -196,7 +196,7 @@ grid.arrange(pm,
 
 lv2 <- read.csv("../data/lt-covid19-level2.csv") %>% mutate(day = ymd(day))
 
-ll <- lv2 %>% select(day, Apskritis = administrative_level_2, Atvejai = confirmed_100k, `Teigiamų tyrimų dalis` = tpr_confirmed, Mirtys = deaths_100k, Testai = tests_100k) %>% filter(Apskritis != "Unknown")
+ll <- lv2 %>% select(day, Apskritis = administrative_level_2, Atvejai = confirmed_100k, `Teigiamų tyrimų dalis` = tpr_tpn, Mirtys = deaths_100k, Testai = tests_100k) %>% filter(Apskritis != "Unknown")
 
 mll <- ll %>% pivot_longer(Atvejai:Testai, names_to = "type", values_to = "value")
 
