@@ -1,4 +1,4 @@
-"day","municipality_code","administrative_level_3","confirmed_cases","recovered_cases","active_cases","deaths","confirmed_cases_cumulative","recovered_cases_cumulative","deaths_cumulative","recovered_cases_de_jure","recovered_cases_de_jure_cumulative"
+"day","municipality_code","administrative_level_3","confirmed_cases","recovered_cases","active_cases","dead_cases","confirmed_cases_cumulative","recovered_cases_cumulative","dead_cases_cumulative","recovered_cases_de_jure","recovered_cases_de_jure_cumulative"
 2020-03-20,"00","Lithuania",6,0,7,0,7,0,0,0,0
 2020-03-20,"11","Alytaus m.",0,0,0,0,0,0,0,0,0
 2020-03-20,"12","Birštono",0,0,0,0,0,0,0,0,0

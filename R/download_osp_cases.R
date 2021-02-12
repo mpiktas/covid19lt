@@ -47,8 +47,8 @@ osp3 <- osp2 %>% inner_join(adm %>% select(-population))
 
 if(nrow(osp3) == nrow(osp2)) {
     osp4 <- osp3 %>% select(day, municipality_code, administrative_level_3,
-                    confirmed_cases=incidence, recovered_cases = recovered_sttstcl_today, active_cases=active_sttstcl, deaths = dead_cases_today,
-                    confirmed_cases_cumulative = cumulative_totals, recovered_cases_cumulative = recovered_sttstcl, deaths_cumulative = dead_cases,
+                    confirmed_cases=incidence, recovered_cases = recovered_sttstcl_today, active_cases=active_sttstcl, dead_cases = dead_cases_today,
+                    confirmed_cases_cumulative = cumulative_totals, recovered_cases_cumulative = recovered_sttstcl, dead_cases_cumulative = dead_cases,
                     recovered_cases_de_jure = recovered_de_jure_today, recovered_cases_de_jure_cumulative = recovered_de_jure) %>%
         arrange(day, municipality_code)
     osp4 %>% write.csv("data/lt-covid19-cases.csv", row.names = FALSE)
