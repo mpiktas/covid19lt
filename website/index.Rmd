@@ -43,7 +43,7 @@ view_interval <- c("2020-10-01", aa_last_day)
 aa_stats <- aa %>% select(day,confirmed_growth_weekly, 
                           confirmed_100k,  tpr_tpn,
                           tpr_tpn_diff_weekly,
-                          deaths_100k, 
+                          deaths_100k,  
                           tests_100k, 
                           tests_growth_weekly, 
                           vaccinated_1_percent, vaccinated_2_percent
@@ -51,7 +51,7 @@ aa_stats <- aa %>% select(day,confirmed_growth_weekly,
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
 
-xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, tests = tests_daily,  tpnew = tests_positive_daily), order.by = aa$day)
+xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, deaths_1 = deaths_1_daily, deaths_2 = deaths_2_daily, tests = tests_daily,  tpnew = tests_positive_daily), order.by = aa$day)
 
 
 axtt14 <- rollmean(xi, 14, fill = NA, align = "right")
@@ -92,6 +92,12 @@ dygraph(a714[, c("confirmed", "confirmed7","confirmed14")], main = paste("Nauji 
 dygraph(a714["2020-03-20/",c("deaths","deaths7","deaths14")], main = paste("Mirtys per dieną ir slenkantys vidurkiai",max(aa$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
 ```
 
+```{r}
+bb <- a714["2020-03-20/",c("deaths7","deaths_17","deaths_27")]
+colnames(bb) <- c("deaths3","deaths1","deaths2")
+dygraph(bb, main = paste("Mirčių 7 dienų slenkantys vidurkiai",max(aa$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1,3,2)]) %>% dyRangeSelector(dateWindow = view_interval)
+
+```
 
 ```{r, echo =FALSE}
 

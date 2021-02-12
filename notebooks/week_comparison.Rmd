@@ -15,7 +15,7 @@ Sys.setlocale(locale="lt_LT.UTF-8")
 ```{r}
 lv1 <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
 
-lv11 <- lv1 %>% select(day, tests_daily, tests_mobile_daily, confirmed_daily,deaths_daily, tpr_tpn, tpn = tests_positive_new_daily, hospitalized, icu) %>% mutate(tpr = round(100*tpn/tests_daily,2), tpr2 = round(100*confirmed_daily/tests_daily,2), hospitalized_daily = hospitalized - lag(hospitalized), icu_daily = icu - lag(icu))
+lv11 <- lv1 %>% select(day, tests_daily, confirmed_daily,deaths_daily, tpr_tpn, tpn = tests_positive_daily, hospitalized, icu) %>% mutate(tpr = round(100*tpn/tests_daily,2), tpr2 = round(100*confirmed_daily/tests_daily,2), hospitalized_daily = hospitalized - lag(hospitalized), icu_daily = icu - lag(icu))
 
 lv12 <- lv11 %>% mutate(week = isoweek(day), weekday = weekdays(day), wday = wday(day, week_start = 1))
 
@@ -23,7 +23,7 @@ wf <- lv12 %>% filter(wday %in% (1:7)) %>% slice_head(n=7) %>% arrange(wday) %>%
 
 lv12 <- lv12 %>% mutate(wfday = factor(weekday, levels = wf))
 
-start_day <- "2021-01-04"
+start_day <- "2021-01-11"
 
 ```
 
