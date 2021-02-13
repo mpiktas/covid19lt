@@ -174,9 +174,9 @@ grid.arrange(pm,
 )
 ```
 
-### Istorinis mirčių pasiskirstymas pagal amžių, `r ii_last_day`
+<!-- ### Istorinis mirčių pasiskirstymas pagal amžių, `r ii_last_day` -->
 
-```{r}
+```{r, eval = FALSE}
 last_day <- max(ii$day)
 
 
