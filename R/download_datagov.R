@@ -43,14 +43,14 @@ cnv <- function(x) {
 zz1<- zz1 %>% mutate(actual_day = ifelse(actual_day == "", day, actual_day)) %>%
     mutate(day = cnv(day), actual_day = cnv(actual_day))
 
-oo <- read.csv("data/lt-covid19-individual.csv") %>% mutate(day = ymd(day), actual_day = ymd(actual_day))
+oo <- read.csv("data/nvsc/lt-covid19-individual.csv") %>% mutate(day = ymd(day), actual_day = ymd(actual_day))
 
 ss <- identical(oo, zz1)
 
 if(ss) {
     cat("\nNo new data from data.gov.lt\n")
 } else {
-    zz1 %>% write.csv("data/lt-covid19-individual.csv", row.names = FALSE)
+    zz1 %>% write.csv("data/nvsc/lt-covid19-individual.csv", row.names = FALSE)
 
     iit <- zz1 %>% summarize(confirmed = n(), hospitalized = sum(hospitalized == "Taip" & status == "Gydomas"),
                             intensive = sum(intensive == "Taip" & status == "Gydomas"),
@@ -73,7 +73,7 @@ if(ss) {
 
     fns %>% lapply(read.csv, stringsAsFactor = FALSE) %>%
         bind_rows  %>%
-        write.csv("data/lt-covid19-individual-daily.csv", row.names = FALSE)
+        write.csv("data/nvsc/lt-covid19-individual-daily.csv", row.names = FALSE)
 
 
     # Do death and incidence by age group -------------------------------------
@@ -84,6 +84,6 @@ if(ss) {
 
   #  daily_xtable(zz2, colsums = TRUE) %>% write.csv("data/lt-covid19-age-region-incidence.csv", row.names =  FALSE)
 
-    daily_xtable(zz2 %>% filter(status == "Mirė")) %>% write.csv("data/lt-covid19-age-region-deaths.csv", row.names =  FALSE)
+    daily_xtable(zz2 %>% filter(status == "Mirė")) %>% write.csv("data/nvsc/lt-covid19-age-region-deaths.csv", row.names =  FALSE)
 
 }
