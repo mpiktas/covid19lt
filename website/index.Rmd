@@ -136,7 +136,7 @@ dygraph(xaa["2020-12-27/",c("vaccinated_1_percent","vaccinated_2_percent")], mai
 ```
 
 ```{r, echo = FALSE}
-ii <- read.csv("../data/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
+ii <- read.csv("../data/nvsc/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
 ad <- read.csv("../data/lt-covid19-agedist.csv") %>% mutate(day = ymd(day))
 
 ad_last_day <- max(ad$day)
