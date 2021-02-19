@@ -31,10 +31,12 @@ adm <- adm %>% rbind(
     data.frame(administrative_level_2 = c("Unknown","Lithuania"),
                                 administrative_level_3 = c("Unknown","Lithuania"),
                                 municipality_name = c("nenustatyta","Lietuva"),
-                                population = c(0,sum(adm$population)))
+                                population2020 = c(0,sum(adm$population2020)),
+                                population2021 = c(0,sum(adm$population2021))
+                )
     )
 
-osp3 <- osp2 %>% inner_join(adm %>% select(-population))
+osp3 <- osp2 %>% inner_join(adm)
 
 if(nrow(osp3) == nrow(osp2)) {
     osp4 <- osp3 %>%select(day, municipality_code, administrative_level_2,administrative_level_3,

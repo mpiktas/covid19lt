@@ -2,9 +2,9 @@ library(dplyr)
 library(lubridate)
 library(zoo)
 
-tt <- read.csv("data/lt-covid19-tests.csv") %>% mutate(day = ymd(day))
-cs <- read.csv("data/lt-covid19-cases.csv") %>% mutate(day = ymd(day))
-dd <- read.csv("data/lt-covid19-deaths.csv") %>% mutate(day = ymd(day))
+tt <- read.csv("data/osp/lt-covid19-tests.csv") %>% mutate(day = ymd(day))
+cs <- read.csv("data/osp/lt-covid19-cases.csv") %>% mutate(day = ymd(day))
+dd <- read.csv("data/osp/lt-covid19-deaths.csv") %>% mutate(day = ymd(day))
 
 cvh <- read.csv("data/lt-covid19-hospitalized.csv") %>% mutate(day = ymd(day))
 vcn <- read.csv("data/lt-covid19-vaccinated.csv") %>% mutate(day = ymd(day))

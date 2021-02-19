@@ -23,14 +23,8 @@ osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(confirmation_date)))
 
 adm <- read.csv("raw_data/administrative_levels.csv")
 
-adm <- adm %>% rbind(
-    data.frame(administrative_level_2 = c("Unknown","Lithuania"),
-                                administrative_level_3 = c("Unknown","Lithuania"),
-                                municipality_name = c("nenustatyta","Lietuva"),
-                                population = c(0,sum(adm$population)))
-    )
 
-osp3 <- osp2 %>% inner_join(adm %>% select(-population))
+osp3 <- osp2 %>% inner_join(adm)
 
 if(nrow(osp3) == nrow(osp2)) {
     osp4 <- osp3 %>% select(day, administrative_level_2, administrative_level_3, municipality_code,

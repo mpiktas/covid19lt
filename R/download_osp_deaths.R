@@ -34,19 +34,12 @@ osp2 <- osp1 %>% mutate(day = ymd(date))
 
 adm <- read.csv("raw_data/administrative_levels.csv")
 
-adm <- adm %>% rbind(
-    data.frame(administrative_level_2 = c("Unknown","Lithuania"),
-                                administrative_level_3 = c("Unknown","Lithuania"),
-                                municipality_name = c("nenustatyta","Lietuva"),
-                                population = c(0,sum(adm$population)))
-    )
-
-osp3 <- osp2 %>% inner_join(adm %>% select(-population))
+osp3 <- osp2 %>% inner_join(adm)
 
 if(nrow(osp3) == nrow(osp2)) {
     osp4 <- osp3 %>% select(day, municipality_code, administrative_level_3,
                     tests_daily = dgn_tot_day, tests_positive_daily = dgn_pos_day,
                     deaths_1_daily = daily_deaths_def1, deaths_2_daily= daily_deaths_def2, deaths_3_daily = daily_deaths_def3 ) %>%
         arrange(day, municipality_code)
-    osp4 %>% write.csv("data/lt-covid19-deaths.csv", row.names = FALSE)
+    osp4 %>% write.csv("data/osp/lt-covid19-deaths.csv", row.names = FALSE)
 }
