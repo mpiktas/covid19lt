@@ -5,7 +5,7 @@ library(glue)
 
 curdate<- ymd(Sys.Date())
 
-dd <- data.frame(date = ymd("2021-02-04")+days(0:20), hotfix =6+0:20)
+dd <- data.frame(date = ymd("2021-02-15")+days(0:20), hotfix =18+0:20)
 
 
 lap <- lapply(curdate - days(0:2), function(curd) {
