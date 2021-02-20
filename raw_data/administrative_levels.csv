@@ -1,4 +1,4 @@
-"administrative_level_2","administrative_level_3","municipality_name","population","population2021"
+"administrative_level_2","administrative_level_3","municipality_name","population2020","population2021"
 "Šiaulių apskr.","Akmenės r.","Akmenės r. sav.",18764,18523
 "Alytaus apskr.","Alytaus m.","Alytaus m. sav.",49888,49195
 "Alytaus apskr.","Alytaus r.","Alytaus r. sav.",25887,25837
@@ -59,3 +59,5 @@
 "Vilniaus apskr.","Vilniaus r.","Vilniaus r. sav.",100158,102008
 "Utenos apskr.","Visagino m.","Visagino sav.",18250,18121
 "Utenos apskr.","Zarasų r.","Zarasų r. sav.",14916,14635
+"Unknown","Unknown","nenustatyta",0,0
+"Lithuania","Lithuania","Lietuva",2794329,2795175
