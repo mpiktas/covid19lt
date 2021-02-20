@@ -27,7 +27,6 @@ osp2 <- osp1 %>% mutate(day = ymd(date))
 
 adm <- read.csv("raw_data/administrative_levels.csv")
 
-
 osp3 <- osp2 %>% inner_join(adm)
 
 if(nrow(osp3) == nrow(osp2)) {
