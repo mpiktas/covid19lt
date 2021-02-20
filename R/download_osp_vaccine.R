@@ -27,14 +27,6 @@ osp2 <- osp1 %>% mutate(day = ymd(date))
 
 adm <- read.csv("raw_data/administrative_levels.csv")
 
-adm <- adm %>% rbind(
-    data.frame(administrative_level_2 = c("Unknown","Lithuania"),
-                                administrative_level_3 = c("Unknown","Lithuania"),
-                                municipality_name = c("nenustatyta","Lietuva"),
-                                population2020 = c(0,sum(adm$population2020)),
-                                population2021 = c(0,sum(adm$population2021))
-                )
-    )
 
 osp3 <- osp2 %>% inner_join(adm)
 
