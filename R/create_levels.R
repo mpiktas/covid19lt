@@ -46,7 +46,7 @@ if("Lithuania" %in% cs$administrative_level_3) {
 }
 
 lvl3 <- ss  %>% left_join(cs %>% select(-municipality_code)) %>% left_join(adm %>% select(-municipality_name,-population2020) %>% rename(population = population2021)) %>%
-    left_join(vcn %>% select(-municipality_code) %>% filter(administrative_level_3 != "Lithuania")) %>%
+    left_join(vcn %>% select(-municipality_code)) %>%
     mutate(administrative_level_2 = ifelse(is.na(administrative_level_2), "Unknown",administrative_level_2)) %>%
     mutate(tests_positive = fixNA(tests_positive),
            tests_total= fixNA(tests_total),
