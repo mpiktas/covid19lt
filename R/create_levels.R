@@ -43,7 +43,7 @@ if("Lithuania" %in% cs$administrative_level_3) {
 }
 
 lvl3 <- cs  %>% filter(administrative_level_3 != "Lithuania") %>%
-    left_join(tt %>% select(-municipality_code)) %>% left_join(adm %>% select(-municipality_name)) %>%
+    left_join(tt %>% select(-municipality_code)) %>% left_join(adm %>% select(-municipality_name,-population2020) %>% rename(population = population2021)) %>%
     left_join(vcn %>% select(-municipality_code) %>% filter(administrative_level_3 != "Lithuania")) %>%
     left_join(dd %>% select(-municipality_code, -tests_daily, -tests_positive_daily) %>% filter(administrative_level_3 != "Lithuania")) %>%
     mutate(administrative_level_2 = ifelse(is.na(administrative_level_2), "Unknown",administrative_level_2)) %>%
