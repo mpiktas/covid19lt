@@ -107,7 +107,7 @@ ggplot(aes(x=day,y=p, fill=levels), data = vv3)+geom_col() + scale_fill_manual(n
 ```{r}
 ppt <- evrk %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% group_by(wday) %>% summarise(tests_positive = sum(tests_positive), tests = sum(tests)) %>% arrange(wday) %>% mutate(r = round(100 * tests_positive/tests,2))
 
-plv1 <- lv1 %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% select(wday, tests_daily, tests_positive_new_daily) %>% group_by(wday) %>% summarize( tests_positive = sum(tests_positive_new_daily),tests = sum(tests_daily)) %>% mutate(r = round(100 * tests_positive/tests,2))
+plv1 <- lv1 %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% select(wday, tests_daily, tests_positive_daily) %>% group_by(wday) %>% summarize( tests_positive = sum(tests_positive_daily),tests = sum(tests_daily)) %>% mutate(r = round(100 * tests_positive/tests,2))
 
 pp <- evrk %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% group_by(profilaktika = evrk_group_code %in% c(861, 862), wday) %>% summarise(tests_positive = sum(tests_positive), tests = sum(tests)) %>% arrange(wday) %>% mutate(r = round(100 * tests_positive/tests,2))
 
@@ -118,7 +118,8 @@ ggplot(aes(x=wday, y= r, colour = profilaktika),data=pp)+geom_line()+theme_bw()
 ```
 
 ```{r}
-ggplot(aes(x=wday, y= tests, colour = profilaktika),data=pp)+geom_line()+theme_bw()
+pp1 <- pp %>% mutate(ligoninės = ifelse(profilaktika,"Taip","Ne"))
+ggplot(aes(x=wday, y= tests, colour = ligoninės),data=pp1)+geom_line()+theme_bw() +labs(x = "Savaitės", y = "Testai", title = "Testavimo apimtys sveikatos priežiūros sektoriuje ir kitur") +scale_colour_manual(name = "Sveikatos įstaigos", values = RColorBrewer::brewer.pal(3,"Set1")[c(3,2)])
 ```
 
 

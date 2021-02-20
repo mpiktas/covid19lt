@@ -2,9 +2,12 @@ library(dplyr)
 library(lubridate)
 library(zoo)
 
-tt <- read.csv("data/osp/lt-covid19-tests.csv") %>% mutate(day = ymd(day))
-cs <- read.csv("data/osp/lt-covid19-cases.csv") %>% mutate(day = ymd(day))
-dd <- read.csv("data/osp/lt-covid19-deaths.csv") %>% mutate(day = ymd(day))
+#tt <- read.csv("data/osp/lt-covid19-tests.csv") %>% mutate(day = ymd(day))
+cs <- read.csv("data/osp/lt-covid19-cases.csv") %>% mutate(day = ymd(day)) %>%
+    select(day, municipality_code, administrative_level_3,recovered_cases,dead_cases,recovered_cases_de_jure)
+#dd <- read.csv("data/osp/lt-covid19-deaths.csv") %>% mutate(day = ymd(day))
+ss <- read.csv("data/osp/lt-covid19-stats.csv") %>% mutate(day = ymd(day))
+
 
 cvh <- read.csv("data/lt-covid19-hospitalized.csv") %>% mutate(day = ymd(day))
 vcn <- read.csv("data/lt-covid19-vaccinated.csv") %>% mutate(day = ymd(day))
@@ -26,26 +29,22 @@ fixNA <- function(x, fix = 0) {
 
 adm <- read.csv("raw_data/administrative_levels.csv")
 
-tt <- tt %>% arrange(administrative_level_3, day) %>% group_by(administrative_level_3) %>% mutate(cumulative_tests = cumsum(tests_total))
-dd <- dd %>%  arrange(administrative_level_3, day) %>% group_by(administrative_level_3) %>% mutate(deaths_1 = cumsum(deaths_1_daily),
-                                                                                                   deaths_2 = cumsum(deaths_2_daily),
-                                                                                                   deaths_3 = cumsum(deaths_3_daily))
-#cs %>% filter(administrative_level_3 == "Lithuania") %>%
-#    select(day, confirmed_cases_cumulative, deaths_cumulative) %>%
-#    left_join(aa %>% select(day, confirmed, deaths)) %>%
-#    mutate(dc = confirmed_cases_cumulative - confirmed, dd = deaths_cumulative -deaths)
+ss <- ss %>% arrange(administrative_level_3, day) %>% group_by(administrative_level_3) %>%
+    mutate(cumulative_tests = cumsum(tests_total),
+           deaths_1 = cumsum(deaths_1_daily),
+           deaths_2 = cumsum(deaths_2_daily),
+           deaths_3 = cumsum(deaths_3_daily)
+           ) %>% ungroup
 
-oo <- cs %>%   filter(administrative_level_3!= "Lithuania") %>%select(-municipality_code,-administrative_level_3) %>%
+oo <- ss %>% filter(administrative_level_3!= "Lithuania") %>%select(-municipality_code,-administrative_level_3) %>%
     group_by(day) %>% summarise_all(sum)
 
 if("Lithuania" %in% cs$administrative_level_3) {
-    sum(abs(cs %>% filter(administrative_level_3 == "Lithuania") %>% select(-administrative_level_3, - municipality_code, - day) - oo %>% select(-day)))
+    sum(abs(ss %>% filter(administrative_level_3 == "Lithuania") %>% select(-administrative_level_3, - municipality_code, - day) - oo %>% select(-day)))
 }
 
-lvl3 <- cs  %>% filter(administrative_level_3 != "Lithuania") %>%
-    left_join(tt %>% select(-municipality_code)) %>% left_join(adm %>% select(-municipality_name,-population2020) %>% rename(population = population2021)) %>%
+lvl3 <- ss  %>% left_join(cs %>% select(-municipality_code)) %>% left_join(adm %>% select(-municipality_name,-population2020) %>% rename(population = population2021)) %>%
     left_join(vcn %>% select(-municipality_code) %>% filter(administrative_level_3 != "Lithuania")) %>%
-    left_join(dd %>% select(-municipality_code, -tests_daily, -tests_positive_daily) %>% filter(administrative_level_3 != "Lithuania")) %>%
     mutate(administrative_level_2 = ifelse(is.na(administrative_level_2), "Unknown",administrative_level_2)) %>%
     mutate(tests_positive = fixNA(tests_positive),
            tests_total= fixNA(tests_total),
@@ -56,7 +55,6 @@ lvl3 <- cs  %>% filter(administrative_level_3 != "Lithuania") %>%
            vaccinated_2 = fixNA(vaccinated_2),
            vaccinated_1_daily = fixNA(vaccinated_1_daily),
            vaccinated_2_daily = fixNA(vaccinated_2_daily))
-
 
 
 lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3, municipality_code,
@@ -77,10 +75,11 @@ lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3, mu
                     vaccinated_1_daily, vaccinated_2_daily,
                     population)
 
-lvl2 <- lvl31 %>% select(-administrative_level_3, -municipality_code) %>%
+lvl2 <- lvl31 %>% filter(administrative_level_3 != "Lithuania") %>%  select(-administrative_level_3, -municipality_code) %>%
     group_by(day, administrative_level_2) %>% summarise_all(sum)
 
-lvl1 <- lvl2 %>% select(-administrative_level_2) %>% summarise_all(sum)
+#lvl1 <- lvl2 %>% select(-administrative_level_2) %>% summarise_all(sum)
+lvl1 <- lvl31 %>% filter(administrative_level_3 == "Lithuania") %>% select(-administrative_level_3, -municipality_code, -administrative_level_2)
 
 lvl11 <- lvl1 %>% left_join(hosp1) %>%
     mutate(hospitalized = fixNA(hospitalized),
