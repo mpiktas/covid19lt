@@ -40,7 +40,9 @@ oo <- ss %>% filter(administrative_level_3!= "Lithuania") %>%select(-municipalit
     group_by(day) %>% summarise_all(sum)
 
 if("Lithuania" %in% cs$administrative_level_3) {
-    sum(abs(ss %>% filter(administrative_level_3 == "Lithuania") %>% select(-administrative_level_3, - municipality_code, - day) - oo %>% select(-day)))
+    zz <- ss %>% filter(administrative_level_3 == "Lithuania") %>% select(-administrative_level_3, - municipality_code, - day) - oo %>% select(-day)
+    zz1 <- bind_cols(oo %>% select(day), zz)
+    zz1 %>% write.csv("data/osp/lt-covid19-unassigned.csv", row.names = FALSE)
 }
 
 lvl3 <- ss  %>% left_join(cs %>% select(-municipality_code)) %>% left_join(adm %>% select(-municipality_name,-population2020) %>% rename(population = population2021)) %>%
@@ -66,10 +68,18 @@ lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3, mu
                     dead_cases = dead_cases_cumulative,
                     vaccinated_1, vaccinated_2,
                     confirmed_daily = confirmed_cases, tests_daily = tests_total,
+                    tests_mobile_daily = tests_mobile,
+                    tests_pcr_daily = tests_pcr,
+                    tests_ag_daily = tests_ag,
+                    tests_ab_daily = tests_ab,
                     tests_positive_daily = tests_positive,
+                    tests_pcr_positive_daily = tests_pcr_positive,
+                    tests_ag_positive_daily = tests_ag_positive,
+                    tests_ab_positive_daily = tests_ab_positive,
                     deaths_daily = deaths_3_daily,
                     deaths_1_daily,
                     deaths_2_daily,
+                    deaths_population_daily,
                     recovered_daily = recovered_cases,
                     dead_cases_daily = dead_cases,
                     vaccinated_1_daily, vaccinated_2_daily,
@@ -90,40 +100,55 @@ lvl11 <- lvl1 %>% left_join(hosp1) %>%
 
 
 add_stats <- function(dt) {
-    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive_daily, deaths_daily, deaths_1_daily, deaths_2_daily,
+    dt %>% select(day,region, confirmed_daily, tests_daily, tests_positive_daily,
+                  tests_mobile_daily,
+                  tests_pcr_daily, tests_ag_daily, tests_ab_daily,
+                  tests_pcr_positive_daily,tests_ag_positive_daily,tests_ab_positive_daily,
+                  deaths_daily, deaths_1_daily, deaths_2_daily,
                   vaccinated_1, vaccinated_2, population) %>%
         arrange(region, day) %>% group_by(region) %>%
         mutate(cases_sum7 = rollsum(confirmed_daily, 7, fill = NA, align = "right"),
                cases_sum14 = rollsum(confirmed_daily, 14, fill = NA, align = "right"),
                test_sum7 = rollsum(tests_daily, 7, fill = NA, align = "right"),
+               test_pcr_sum7 = rollsum(tests_pcr_daily, 7, fill = NA, align = "right"),
+               test_ag_sum7 = rollsum(tests_ag_daily, 7, fill = NA, align = "right"),
+               test_ab_sum7 = rollsum(tests_ab_daily, 7, fill = NA, align = "right"),
                test_sum14 = rollsum(tests_daily, 14, fill = NA, align = "right"),
+               test_mobile_sum14 = rollsum(tests_mobile_daily, 14, fill = NA, align = "right"),
                deaths_sum14 = rollsum(deaths_daily, 14, fill = NA, align = "right"),
                deaths_sum7 = rollsum(deaths_daily, 7, fill = NA, align = "right"),
                deaths_1_sum14 = rollsum(deaths_1_daily, 14, fill = NA, align = "right"),
                deaths_1_sum7 = rollsum(deaths_1_daily, 7, fill = NA, align = "right"),
                deaths_2_sum14 = rollsum(deaths_2_daily, 14, fill = NA, align = "right"),
                deaths_2_sum7 = rollsum(deaths_2_daily, 7, fill = NA, align = "right"),
-               tpn_sum7 = rollsum(tests_positive_daily, 7, fill = NA, align = "right"),
-               tpn_sum14 = rollsum(tests_positive_daily, 14, fill = NA, align = "right"),
-               tpr_tpn =round(100*tpn_sum7/test_sum7,2),
+               dgn_sum7 = rollsum(tests_positive_daily, 7, fill = NA, align = "right"),
+               pcr_sum7 = rollsum(tests_pcr_positive_daily, 7, fill = NA, align = "right"),
+               ag_sum7 = rollsum(tests_ag_positive_daily, 7, fill = NA, align = "right"),
+               ab_sum7 = rollsum(tests_ab_positive_daily, 7, fill = NA, align = "right"),
+               dgn_sum14 = rollsum(tests_positive_daily, 14, fill = NA, align = "right"),
+               tpr_dgn =round(100*dgn_sum7/test_sum7,2),
+               tpr_pcr =round(100*pcr_sum7/test_pcr_sum7,2),
+               tpr_ag =round(100*ag_sum7/test_ag_sum7,2),
+               tpr_ab =round(100*ab_sum7/test_ab_sum7,2),
                confirmed_100k = cases_sum14/population*100000,
-               tpn_100k = tpn_sum14/population*100000,
+               dgn_100k = dgn_sum14/population*100000,
                deaths_100k = deaths_sum14/population*100000,
                deaths_1_100k = deaths_1_sum14/population*100000,
                deaths_2_100k = deaths_2_sum14/population*100000,
                tests_100k = test_sum14/population*100000,
+               tests_mobile_100k = test_mobile_sum14/population*100000,
                confirmed_growth_weekly = round(100*(cases_sum7/lag(cases_sum7,7)-1),2),
-               tpn_growth_weekly = round(100*(tpn_sum7/lag(tpn_sum7,7)-1),2),
-               tpr_tpn_diff_weekly = tpr_tpn - lag(tpr_tpn, 7),
-               confirmed_100k_growth_weekly=round(100*(confirmed_100k/lag(confirmed_100k,7) - 1),2),
-               tpn_100k_growth_weekly=round(100*(tpn_100k/lag(tpn_100k,7) - 1),2),
+               dgn_growth_weekly = round(100*(dgn_sum7/lag(dgn_sum7,7)-1),2),
+               tpr_dgn_diff_weekly = tpr_dgn - lag(tpr_dgn, 7),
+               tpr_pcr_diff_weekly = tpr_pcr - lag(tpr_pcr, 7),
+               tpr_ag_diff_weekly = tpr_ag- lag(tpr_ag, 7),
+               tpr_ab_diff_weekly = tpr_ab - lag(tpr_ab, 7),
                deaths_growth_weekly=round(100*(deaths_sum7/lag(deaths_sum7,7) - 1),2),
                deaths_1_growth_weekly=round(100*(deaths_1_sum7/lag(deaths_1_sum7,7) - 1),2),
                deaths_2_growth_weekly=round(100*(deaths_2_sum7/lag(deaths_2_sum7,7) - 1),2),
-               tests_growth_weekly = round(100*(test_sum7/lag(test_sum7,7)-1),2),
                vaccinated_1_percent = round(vaccinated_1/population*100,2),
                vaccinated_2_percent = round(vaccinated_2/population*100,2)
-        ) %>% select(-(confirmed_daily:tpn_sum14)) %>% ungroup
+        ) %>% select(-(confirmed_daily:dgn_sum14)) %>% ungroup
 }
 
 lvl31_stats <- lvl31 %>% rename(region = administrative_level_3) %>% add_stats %>% rename(administrative_level_3 = region)
