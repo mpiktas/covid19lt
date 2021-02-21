@@ -91,6 +91,8 @@ lvl2 <- lvl31 %>% filter(administrative_level_3 != "Lithuania") %>%  select(-adm
 #lvl1 <- lvl2 %>% select(-administrative_level_2) %>% summarise_all(sum)
 lvl1 <- lvl31 %>% filter(administrative_level_3 == "Lithuania") %>% select(-administrative_level_3, -municipality_code, -administrative_level_2)
 
+lvl31 <- lvl31 %>% filter(administrative_level_3 != "Lithuania")
+
 lvl11 <- lvl1 %>% left_join(hosp1) %>%
     mutate(hospitalized = fixNA(hospitalized),
            icu = fixNA(icu),
