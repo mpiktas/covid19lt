@@ -26,7 +26,7 @@ if(nrow(osp3) == nrow(osp2)) {
                             deaths_1_daily = daily_deaths_def1, deaths_2_daily= daily_deaths_def2, deaths_3_daily = daily_deaths_def3, deaths_population_daily = daily_deaths_all,
                     tests_positive = dgn_pos_day, tests_total = dgn_tot_day, tests_mobile = dgn_tot_day_gmp,
                     tests_pcr = pcr_tot_day, tests_ag = ag_tot_day, tests_ab = ab_tot_day,
-                    tests_pcr_positive = pcr_pos_day, tests_ag_positive = ag_pos_day, tests_ab_positive = ab_tot_day) %>%
+                    tests_pcr_positive = pcr_pos_day, tests_ag_positive = ag_pos_day, tests_ab_positive = ab_pos_day) %>%
         arrange(day, municipality_code)
 
     osp4 %>% write.csv("data/osp/lt-covid19-stats.csv", row.names = FALSE)
