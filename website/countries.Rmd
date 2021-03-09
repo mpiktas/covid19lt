@@ -31,7 +31,7 @@ x <- covid19(cn$ISO.alpha.3, verbose = FALSE, cache = FALSE)
 
 Čia pateikiamas sąrašas Europos šalių ir atvejų skaičius 100 tūkst gyventojų nuo `r max(x$date) - days(14)` iki `r max(x$date)-days(1)`.
 
-```{r}
+```{r, echo = FALSE}
 
 x  %>% filter(date == max(date)-days(1) | date == max(date) - days(14)) %>% group_by(administrative_area_level_1) %>% 
     summarize(cases14 = round(diff(confirmed)/unique(population)*1e5,2)) %>% 
@@ -68,6 +68,7 @@ i14x <- xts(i14 %>% select(-date), order.by= ymd(i14$date))
 
 dygraph(i14x[,c("Lithuania","Latvia","Estonia","Poland", "Germany")],  main = "Cases per 100k population for the last 14 days") %>% 
     dyOptions(colors = c("#046A38","#A4343A","#0072CE","#D22630","#FFCD00")) %>% 
+    dySeries("Poland",strokePattern = "dashed") %>% 
     dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>% 
     dyRangeSelector
 
