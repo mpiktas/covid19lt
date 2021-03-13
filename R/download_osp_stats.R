@@ -34,4 +34,29 @@ if(nrow(osp3) == nrow(osp2)) {
 
 }
 
+if(FALSE) {
+    bb <- osp2
+    zz <- bb %>% filter(day == max(day)) %>% select(municipality_code, municipality_name, map_colors) %>% inner_join(adm)
+    dp0 <- read.csv("data/lt-covid19-level3.csv") %>% mutate(day = ymd(day)) %>% filter(day == max(day))
+    cn <- read.csv("data/lt-covid19-country.csv") %>% mutate(day = ymd(day)) %>% filter(day == max(day)) %>% mutate(administrative_level_3 = "Lietuva", administrative_level_2 = "Lietuva")
 
+    dp00 <- dp0 %>% bind_rows(cn)
+
+    dp <- dp00 %>% filter(administrative_level_3!="Unknown") %>% select(Savivaldybė = administrative_level_3,
+                                                                        Apskritis = administrative_level_2,
+                                                                        `Atvejai_100k` = confirmed_100k,
+                                                                        `Atvejų augimas` = confirmed_growth_weekly,
+                                                                        `Teigiamų tyrimų dalis` = tpr_dgn,
+                                                                        `Mirtys_100k` = deaths_100k,
+                                                                        `Testai_100k` = tests_100k,
+                                                                        `Paskiepyta pirma doze (%)` = vaccinated_1_percent, `Paskiepyta (%)`= vaccinated_2_percent, Populiacija = population ) %>% arrange(-Populiacija)
+
+    zz <- zz %>% mutate(administrative_level_3  =ifelse(administrative_level_3 == "Lithuania","Lietuva",administrative_level_3))
+    dp1 <- dp %>% left_join(zz %>% select(Savivaldybė = administrative_level_3, Spalva = map_colors))
+
+    dp2 <- dp1 %>% mutate(`Pradinis ugdymas` = ifelse(Spalva %in% c("Žalia A","Geltona B1", "Geltona B2", "Raudona C2", "Raudona C1"),"Taip","Ne"),
+                          `Pagrindinis, vidurinis ugdymas` = ifelse(Spalva %in% c("Žalia A","Geltona B1", "Geltona B2"),"Taip","Ne"),
+                          `Abiturientai` = ifelse(Spalva %in% c("Žalia A","Geltona B1", "Geltona B2","Raudona C1"),"Taip","Ne"),
+                          )
+
+}
