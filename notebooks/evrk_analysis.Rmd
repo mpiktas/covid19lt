@@ -51,7 +51,7 @@ lv1 <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
 top15 <- tt %>% arrange(-tests) %>% slice_head(n=15) %>% .$evrk_group_code
 top16 <- tt %>% arrange(-tests) %>% slice_head(n=16) %>% .$evrk_group_code
 cmp <- evrk1 %>% select(day, evrk_group_code, evrk_group_title, tpr = tpr7) %>% filter(evrk_group_code %in% top15)
-lvt <- lv1 %>% select(day, tpr=tpr_tpn) %>% mutate(evrk_group_code = 0, evrk_group_title = "Lietuva")
+lvt <- lv1 %>% select(day, tpr=tpr_dgn) %>% mutate(evrk_group_code = 0, evrk_group_title = "Lietuva")
 cmp1 <- cmp %>% bind_rows(lvt)
 cmp2 <- evrk1 %>%select(day, evrk_group_code, evrk_group_title, tpr = tpr7, tpr1 = tpr1) %>% filter(evrk_group_code %in% top16) %>% 
     inner_join(tt %>% select(evrk_group_code, total = tests)) %>% inner_join(lvt %>% select(day, tprl = tpr)) %>% mutate(veikla = paste0(str_trunc(evrk_group_title,30), " (", round(total/1000,1),"k)"))
