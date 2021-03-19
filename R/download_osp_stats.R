@@ -3,15 +3,32 @@ library(rvest)
 library(dplyr)
 library(lubridate)
 library(stringr)
+library(jsonlite)
+library(bit64)
 
 source("R/functions.R")
 
-osp1 <- read.csv("https://opendata.arcgis.com/datasets/d49a63c934be4f65a93b6273785a8449_0.csv")
+httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
+
+posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/COVID19_statistika_dashboards/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=")
+
+posp1 <- fix_esridate(rawToChar(posp$content))
+posp2 <- posp1 %>% mutate(day = ymd(date))
+
+alls <- lapply(unique(posp2$municipality_name), function(x) {
+    sav <- URLencode(x)
+    try(tryget(glue::glue("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/COVID19_statistika_dashboards/FeatureServer/0/query?where=municipality_name%3D%27{sav}%27&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=")))
+})
+
+osp1 <- lapply(alls, function(l)fix_esridate(rawToChar(l$content))) %>% bind_rows
+
+#zz <-   read.csv("https://opendata.arcgis.com/datasets/d49a63c934be4f65a93b6273785a8449_0.csv")
+#osp1 <- read.csv("https://opendata.arcgis.com/datasets/d49a63c934be4f65a93b6273785a8449_0.csv")
 
 osp1 %>% arrange(date, municipality_code) %>% write.csv("raw_data/osp/osp_covid19_stats.csv", row.names = FALSE)
 
 
-osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(date)))
+osp2 <- osp1 %>% mutate(day = ymd(date))
 
 adm <- read.csv("raw_data/administrative_levels.csv")
 

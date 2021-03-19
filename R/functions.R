@@ -92,6 +92,10 @@ push_to_github <- function(dirs, commit_message, push = TRUE) {
 
 }
 
+fixNA <- function(x, value = 0) {
+    x[is.na(x)] <- value
+    x
+}
 
 scenABCD <- function(c100k, tpr, t100k) {
     res <- rep(0, length(c100k))
