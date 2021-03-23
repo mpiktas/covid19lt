@@ -5,16 +5,15 @@ library(glue)
 
 curdate<- ymd(Sys.Date())
 
-dd <- data.frame(date = ymd("2021-03-09")+days(0:20), hotfix =16+0:20)
+dd <- data.frame(date = ymd("2021-03-21")+days(0:20), hotfix =11+0:20)
+#"https://covid19-static.cdn-apple.com/covid19-mobility-data/2104HotfixDev11/v3/en-us/applemobilitytrends-2021-03-21.csv"
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2102HotfixDev17/v3/en-us/applemobilitytrends-2021-02-26.csv"
-#<a href="https://covid19-static.cdn-apple.com/covid19-mobility-data/2103HotfixDev18/v3/en-us/applemobilitytrends-2021-03-11.csv"></a>
-#
 
-lap <- lapply(curdate - days(0:3), function(curd) {
+lap <- lapply(curdate - days(0:2), function(curd) {
     cdd <- dd %>% filter(date == curd)
     cd <- as.character(cdd$date)
     hf <- as.character(cdd$hotfix)
-    lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2103HotfixDev{hf}/v3/en-us/applemobilitytrends-{cd}.csv")
+    lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2104HotfixDev{hf}/v3/en-us/applemobilitytrends-{cd}.csv")
     print(lnk)
     try(read.csv(lnk))
 })
