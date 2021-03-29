@@ -135,11 +135,9 @@ dygraph(xaa["2020-12-27/",c("vaccinated_1_percent","vaccinated_2_percent")], mai
 ```
 
 ```{r, echo = FALSE}
-ii <- read.csv("../data/nvsc/lt-covid19-individual.csv") %>% mutate(day = ymd(day))
 ad <- read.csv("../data/lt-covid19-agedist.csv") %>% mutate(day = ymd(day))
 
 ad_last_day <- max(ad$day)
-ii_last_day <- max(ii$day)
 ld_stats <- aa %>% filter(day == max(day))
 
 p100k <- round(ld_stats$confirmed_100k[1],2)
@@ -154,10 +152,10 @@ pr <- round(ld_stats$tpr_dgn[1],2)
 Lietuvoje 100k gyventojų per pastarąsias 14 dienų tenka **`r p100k`** atvejų. Testų pozityvumo norma ([test positivity rate](https://ec.europa.eu/info/live-work-travel-eu/health/coronavirus-response/travel-during-coronavirus-pandemic/common-approach-travel-measures-eu_en)) **`r pr`**.
 
 ```{r}
-agr <- read.csv("../raw_data/agegroups.csv")
+agr <- read.csv("../raw_data/agegroups2.csv")
 as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras","Moteris")) %>% mutate(n1 = 0)
 
-oo <- ad%>% filter(day >= ad_last_day- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
+oo <- ad%>% filter(day >= ad_last_day- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% group_by(age, sex) %>% summarise(n = sum(confirmed_daily)) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
 
 ld14 <- max(ad$day)-days(13)
 
@@ -173,16 +171,15 @@ grid.arrange(pm,
 )
 ```
 
-<!-- ### Istorinis mirčių pasiskirstymas pagal amžių, `r ii_last_day` -->
+### Mirčių pasiskirstymas pagal amžių per pastarąsias 14 dienų, `r ad_last_day`
 
-```{r, eval = FALSE}
-last_day <- max(ii$day)
+```{r}
 
+agr <- read.csv("../raw_data/agegroups2.csv")
+as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras","Moteris")) %>% mutate(n1 = 0)
 
-oo <- ii%>% filter(status == "Mirė") %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n))
+oo <- ad%>% filter(day >= ad_last_day- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% group_by(age, sex) %>% summarise(n = sum(deaths_3_daily)) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
 
-
-oo <- oo %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
 
 
 pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.1, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
