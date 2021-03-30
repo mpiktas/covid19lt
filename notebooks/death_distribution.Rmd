@@ -28,3 +28,8 @@ ggplot(aes(x = day, y = deaths_population_daily), data = tad)+geom_line()+geom_l
 ```{r}
 ggplot(aes(x = day, y = p1), data = tad)+geom_line()+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Procentai", title = "Covid-19 mirčių procentas tarp visų mirčių pagal amžiaus grupes (7 dienų vidurkis)")
 ```
+
+
+```{r}
+ggplot(aes(x = day, y = p), data = tad)+geom_line()+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Procentai", title = "Covid-19 mirčių procentas tarp visų mirčių pagal amžiaus grupes")
+```
