@@ -44,10 +44,10 @@ if(nrow(osp3) == nrow(osp2)) {
 }
 
 #-------- Individual data
-
-vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv")
-write.csv(vcfd, "raw_data/osp/osp_covid19_vaccine_individual.csv", row.names = FALSE)
-
+if(FALSE) {
+    vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv")
+    write.csv(vcfd, "raw_data/osp/osp_covid19_vaccine_individual.csv", row.names = FALSE)
+}
 #--- Deliveries
 
 
