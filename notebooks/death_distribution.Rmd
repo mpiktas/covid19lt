@@ -1,0 +1,19 @@
+---
+title: "Death distribution"
+output: html_notebook
+---
+```{r}
+library(dplyr)
+library(lubridate)
+ad <- read.csv("../data/lt-covid19-agedist.csv") %>% mutate(day = ymd(day))
+agr <- read.csv("../raw_data/agegroups2.csv")
+```
+
+```{r}
+tad <- ad %>% inner_join(agr) %>% group_by(day, age1) %>% summarise(deaths_population_daily = sum(deaths_population_daily), deaths = sum(deaths_3_daily))
+
+```
+
+```{r}
+ggplot(aes(x = day, y = deaths_population_daily), data = tad)+geom_line()+geom_line(aes(y=deaths), colour ="red")+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Mirtys", title = "Visos mirtys Lietuvoje ir mirtys nuo covid-19 pagal amžiaus grupes")
+```
