@@ -19,7 +19,7 @@ osp1 <- read.csv("https://opendata.arcgis.com/datasets/6823776c487a413f801422a8b
 osp1 %>% arrange(date, municipality_name) %>% select(-object_id) %>%
     write.csv("raw_data/osp/osp_covid19_agedist.csv", row.names = FALSE)
 
-osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(date)))
+osp2 <- osp1 %>% mutate(day = ymd(date))
 
 adm <- read.csv("raw_data/administrative_levels.csv")
 
