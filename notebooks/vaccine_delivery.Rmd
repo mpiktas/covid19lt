@@ -7,12 +7,14 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(lubridate)
 library(dplyr)
+library(ggplot2)
 Sys.setlocale(locale = "lt_LT.UTF-8")
+source("../R/functions.R")
 ```
 
 ```{r}
 
-vcfd <- read.csv("../raw_data/osp/osp_covid19_vaccine_individual.csv") 
+vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") 
 dlv <- read.csv("../data/lt-covid19-vaccine-deliveries.csv") %>% mutate(day = ymd(day))
 ```
 
