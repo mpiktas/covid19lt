@@ -14,7 +14,7 @@ source("R/functions.R")
 #osp <- tryget("https://opendata.arcgis.com/datasets/034590b3317d46c0aa2717d0e87760d8_0.geojson")
 #osp1 <- fromJSON(rawToChar(osp$content))$features$properties
 
-osp1 <- read.csv("https://opendata.arcgis.com/datasets/6823776c487a413f801422a8bcbdcc8b_0.csv")
+osp1 <- read.csv("https://opendata.arcgis.com/datasets/ba35de03e111430f88a86f7d1f351de6_0.csv")
 
 osp1 %>% arrange(date, municipality_name) %>% select(-object_id) %>%
     write.csv("raw_data/osp/osp_covid19_agedist.csv", row.names = FALSE)
