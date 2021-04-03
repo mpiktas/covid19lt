@@ -236,10 +236,10 @@ dygraph(xam, main = "Apple mobilumo duomenys") %>% dyRangeSelector %>% dyOptions
 ggplot(aes(x = day, y = value, group =Apskritis, colour = Apskritis), data =mll %>% filter(day >= "2020-10-01"))+geom_line()+theme_bw()+scale_colour_manual(values= RColorBrewer::brewer.pal(10, "Paired"))+facet_wrap(~type, scales= "free_y")+labs(x="Data", y  = "")
 ```
 
-<!--
+
 ## Atvejų pasiskirstymas pagal amžių ir savivaldybes `r ad_last_day` 
 
-```{r, eval =FALSE}
+```{r}
 agre <- read.csv("../data/lt-covid19-age-region-incidence.csv", check.names =  FALSE) 
 
 agre1 <- agre %>% filter(day == max(day)) %>% select(-day) 
@@ -263,4 +263,3 @@ agre2 %>% datatable(
                          paging=FALSE,
                          fixedHeader=TRUE))
 ```
--->
