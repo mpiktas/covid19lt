@@ -5,11 +5,17 @@ library(glue)
 library(curl)
 
 
+
 curl_download("https://www.gstatic.com/covid19/mobility/Region_Mobility_Report_CSVs.zip", destfile = "gm.zip")
 unzip("gm.zip",exdir = "gmtmp")
 
-go <- read.csv("gmtmp/2020_LT_Region_Mobility_Report.csv") %>%
+go1 <- read.csv("gmtmp/2020_LT_Region_Mobility_Report.csv") %>%
     mutate(day = ymd(date))
+
+go2 <- read.csv("gmtmp/2021_LT_Region_Mobility_Report.csv") %>%
+    mutate(day = ymd(date))
+
+go <- bind_rows(go1, go2)
 
 file.remove("gm.zip")
 unlink("gmtmp",recursive = TRUE)
