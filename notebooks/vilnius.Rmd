@@ -1,0 +1,69 @@
+---
+title: "Vilnius issue"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+Sys.setlocale(locale="lt_LT.UTF-8")
+```
+
+```{r}
+lv3 <- read.csv("../data/lt-covid19-level3.csv") %>% mutate(day = ymd(day))
+
+lv3b <- lv3 %>% filter(administrative_level_3!="Vilniaus m.") %>% group_by(day) %>%
+        summarise(confirmed_daily = sum(confirmed_daily),
+                  deaths_daily = sum(deaths_daily),
+                  population = sum(population)) %>%
+    mutate(administrative_level_3 ="Lietuva be Vilniaus miesto")
+
+lv3b1 <- lv3 %>% filter(administrative_level_2!="Vilniaus apskr.") %>% group_by(day) %>%
+  summarise(confirmed_daily = sum(confirmed_daily),
+                deaths_daily = sum(deaths_daily),
+                population = sum(population)) %>%
+    mutate(administrative_level_3 = "Lietuva be Vilniaus apskrities")
+
+
+lvv <- bind_rows(lv3b, lv3b1) %>% arrange(administrative_level_3, day) %>%
+    group_by(administrative_level_3) %>%
+    mutate(cases_sum14 = rollsum(confirmed_daily, 14, fill = NA, align = "right"),
+           deaths_sum14 = rollsum(deaths_daily, 14, fill = NA, align = "right"),
+           confirmed_100k = cases_sum14/population*100000,
+           deaths_100k = deaths_sum14/population*100000)
+
+lvv1 <- lvv %>% select(administrative_level_3, day, confirmed_100k, deaths_100k)
+
+
+lv1 <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
+lv2 <- read.csv("../data/lt-covid19-level2.csv") %>% mutate(day = ymd(day))
+
+lv1l <- lv1 %>% mutate(administrative_level_3 = "Lietuva") %>% select(administrative_level_3, day, confirmed_100k, deaths_100k)
+lv2v <- lv2 %>% mutate(administrative_level_3 = administrative_level_2) %>%
+    filter(administrative_level_2 == "Vilniaus apskr.") %>%
+    select(administrative_level_3, day, confirmed_100k, deaths_100k)
+
+vv <- lv3 %>% filter(administrative_level_3 == "Vilniaus m.") %>%
+    select(administrative_level_3, day, confirmed_100k, deaths_100k)
+
+cmp <- bind_rows(lvv1, lv1l, lv2v, vv)
+cmp1 <- cmp %>% filter(administrative_level_3 %in% c("Vilniaus apskr.", "Lietuva", "Lietuva be Vilniaus apskrities"))
+
+```
+
+```{r}
+ggplot(aes(x = day, y = confirmed_100k, colour = administrative_level_3),
+       data = cmp1 %>% filter(day>="2021-02-01")) + geom_line()+
+    theme_bw()+scale_colour_manual(name = "Regionai", values = RColorBrewer::brewer.pal(3, "Set1")[c(2,3,1)]) +
+    labs(x="Diena", y = "Atvejų skaičius per 14 dienų 100k gyventojų", title = "Atvejų skaičius per 14 dienų 100k gyventojų")
+```
+
+
+```{r}
+ggplot(aes(x = day, y = deaths_100k, colour = administrative_level_3),
+       data = cmp1 %>% filter(day>="2021-02-01" & day <="2021-04-01")) + geom_line()+
+    theme_bw()+scale_colour_manual(name = "Regionai", values = RColorBrewer::brewer.pal(3, "Set1")[c(2,3,1)]) +
+    labs(x="Diena", y = "Mirčių skaičius per 14 dienų 100k gyventojų", title = "Mirčių skaičius per 14 dienų 100k gyventojų")
+
+```
