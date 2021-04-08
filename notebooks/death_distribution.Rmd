@@ -1,35 +1,72 @@
 ---
 title: "Death distribution"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  pdf_document: default
 ---
-```{r}
+```{r, echo = FALSE, message = FALSE, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE,warning = FALSE)
 library(dplyr)
 library(lubridate)
 library(zoo)
+library(ggplot2)
+Sys.setlocale(locale="lt_LT.UTF-8")
 ad <- read.csv("../data/lt-covid19-agedist.csv") %>% mutate(day = ymd(day))
 agr <- read.csv("../raw_data/agegroups2.csv")
 ```
 
-```{r}
-tad <- ad %>% inner_join(agr) %>% group_by(day, age1) %>% summarise(deaths_population_daily = sum(deaths_population_daily), deaths = sum(deaths_3_daily)) %>% ungroup %>% 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+tad <- ad %>% inner_join(agr) %>% group_by(day, age1) %>% summarise(deaths_population_daily = sum(deaths_population_daily), deaths = sum(deaths_3_daily), confirmed_daily =sum(confirmed_daily)) %>% ungroup %>% 
     arrange(age1, day) %>% group_by(age1) %>% 
     mutate(dp = rollsum(deaths_population_daily, 7, fill = NA, align = "right"),
-           dc = rollsum(deaths, 7, fill = NA, align = "right")) %>% 
+           dc = rollsum(deaths, 7, fill = NA, align = "right"),
+           cc = rollmean(confirmed_daily, 7, fill = NA, align = "right")) %>% 
+    ungroup %>%     
+    mutate(p = ifelse( deaths_population_daily>0, round(100*deaths/deaths_population_daily,2),0),
+           p1= ifelse( dp>0, round(100*dc/dp,2),0) )
+
+tad1 <- ad %>% inner_join(agr) %>% group_by(administrative_level_2, day, age1) %>% summarise(deaths_population_daily = sum(deaths_population_daily), deaths = sum(deaths_3_daily), confirmed_daily =sum(confirmed_daily)) %>% ungroup %>% 
+    arrange(age1, administrative_level_2, day) %>% group_by(administrative_level_2, age1) %>% 
+    mutate(dp = rollsum(deaths_population_daily, 7, fill = NA, align = "right"),
+           dc = rollsum(deaths, 7, fill = NA, align = "right"),
+           cc = rollmean(confirmed_daily, 7, fill = NA, align = "right")) %>% 
     ungroup %>%     
     mutate(p = ifelse( deaths_population_daily>0, round(100*deaths/deaths_population_daily,2),0),
            p1= ifelse( dp>0, round(100*dc/dp,2),0) )
 
 ```
 
-```{r}
+```{r, echo=FALSE,message=FALSE}
 ggplot(aes(x = day, y = deaths_population_daily), data = tad)+geom_line()+geom_line(aes(y=deaths), colour ="red")+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Mirtys", title = "Visos mirtys Lietuvoje ir mirtys nuo covid-19 pagal amžiaus grupes")
 ```
 
 ```{r}
-ggplot(aes(x = day, y = p1), data = tad)+geom_line()+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Procentai", title = "Covid-19 mirčių procentas tarp visų mirčių pagal amžiaus grupes (7 dienų vidurkis)")
+ggplot(aes(x = day, y = p1), data = tad)+geom_line()+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Procentai", title = "Covid-19 mirčių procentas Lietuvoje tarp visų mirčių pagal amžiaus grupes (7 dienų vidurkis)")
 ```
 
 
 ```{r}
-ggplot(aes(x = day, y = p), data = tad)+geom_line()+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Procentai", title = "Covid-19 mirčių procentas tarp visų mirčių pagal amžiaus grupes")
+ggplot(aes(x = day, y = p), data = tad)+geom_line()+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Procentai", title = "Covid-19 mirčių procentas Lietuvoje tarp visų mirčių pagal amžiaus grupes")
+```
+
+
+```{r}
+ggplot(aes(x = day, y = cc), data = tad %>% filter(day>="2021-02-01"))+geom_line()+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Atvejai, 7 dienų vidurkis", title = "Covid-19 atvejai pagal amžiaus grupes Lietuvoje")
+
+```
+
+```{r}
+ggplot(aes(x = day, y = cc), data = tad1 %>% filter(day>="2021-02-01", age1 == "0-9"))+geom_line()+facet_wrap(~administrative_level_2, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Atvejai, 7 dienų vidurkis", title = "Covid-19 atvejai apskrityse, amžiaus grupė 0-9")
+
+```
+
+```{r}
+ggplot(aes(x = day, y = cc), data = tad1 %>% filter(day>="2021-02-01", age1 == "10-19"))+geom_line()+facet_wrap(~administrative_level_2, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Atvejai, 7 dienų vidurkis", title = "Covid-19 atvejai apskrityse 10-19")
+```
+
+
+```{r}
+ggplot(aes(x = day, y = cc), data = tad1 %>% filter(day>="2021-02-01", administrative_level_2 == "Vilniaus apskr."))+geom_line()+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Atvejai, 7 dienų vidurkis", title = "Covid-19 atvejai Vilniaus apskrityje pagal amžiaus grupes")
 ```

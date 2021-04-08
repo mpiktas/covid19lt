@@ -23,7 +23,9 @@ wf <- lv12 %>% filter(wday %in% (1:7)) %>% slice_head(n=7) %>% arrange(wday) %>%
 
 lv12 <- lv12 %>% mutate(wfday = factor(weekday, levels = wf))
 
-start_day <- "2021-01-25"
+std <- lv12 %>% filter(day>="2021-01-13") %>%  select(week, day) %>%  group_by(week) %>% summarise(s = min(day))
+
+start_day <- std$s[std$week == (max(std$week)-4)]
 
 ```
 

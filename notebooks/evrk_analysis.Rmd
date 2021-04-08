@@ -1,6 +1,8 @@
 ---
 title: "EVRK analysis"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r}
@@ -111,8 +113,8 @@ plv1 <- lv1 %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% select(wday, 
 
 pp <- evrk %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% group_by(profilaktika = evrk_group_code %in% c(861, 862), wday) %>% summarise(tests_positive = sum(tests_positive), tests = sum(tests)) %>% arrange(wday) %>% mutate(r = round(100 * tests_positive/tests,2))
 
-ss
 ```
+
 ```{r}
 ggplot(aes(x=wday, y= r, colour = profilaktika),data=pp)+geom_line()+theme_bw()
 ```

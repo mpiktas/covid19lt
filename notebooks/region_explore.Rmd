@@ -6,7 +6,7 @@ output: html_notebook
 ```{r}
 lv3 <- read.csv("../data/lt-covid19-level3.csv") %>% mutate(day = ymd(day))
 
-pl <- lv3 %>% select(day,administrative_level_2, administrative_level_3, confirmed_100k, tpr_tpn, confirmed_growth_weekly, population)
+pl <- lv3 %>% select(day,administrative_level_2, administrative_level_3, confirmed_100k, tpr_dgn, confirmed_growth_weekly, population)
 
 levs <- as.integer(c(0, 25, 100, 200, 300, 400, 500, 750, 1000, 3000))
 pld0 <- pl  %>% filter(administrative_level_3!="Unknown") %>% mutate(Scenario = cut(confirmed_100k, levs, right  = TRUE, include.lowest = TRUE))
@@ -27,14 +27,17 @@ names(cols) <- flevs
 ```
 
 ```{r}
-ggplot(aes(x = tpr_tpn, y = confirmed_growth_weekly, colour = Scenario, size = population), data = pld1) + geom_point()+geom_text(aes(label = administrative_level_3), size = 3, nudge_x = 0.8, check_overlap = TRUE)+theme_bw()+scale_colour_manual(name = "100k rodiklis", values =cols) + scale_size_continuous(name = "Populiacija")+geom_hline(yintercept = 0) + geom_vline(xintercept = 4)+labs(x = "Teigiama tyrimų dalis, procentai",  y = "Savaitinis augimas, procentai", title = paste("Lietuvos rodikliai,",max(pld1$day)))
+ggplot(aes(x = tpr_dgn, y = confirmed_growth_weekly, colour = Scenario, size = population), data = pld1) + geom_point()+geom_text(aes(label = administrative_level_3), size = 3, nudge_x = 0.8, check_overlap = TRUE)+theme_bw()+scale_colour_manual(name = "100k rodiklis", values =cols) + scale_size_continuous(name = "Populiacija")+geom_hline(yintercept = 0) + geom_vline(xintercept = 4)+labs(x = "Teigiama tyrimų dalis, procentai",  y = "Savaitinis augimas, procentai", title = paste("Lietuvos rodikliai,",max(pld1$day)))
+```
+```{r}
+ggplot(aes(x = tpr_dgn, y = confirmed_100k, colour = Scenario, size = population), data = pld1) + geom_point()+geom_text(aes(label = administrative_level_3), size = 3, nudge_x = 0.8, check_overlap = TRUE)+theme_bw()+scale_colour_manual(name = "100k rodiklis", values =cols) + scale_size_continuous(name = "Populiacija")+geom_hline(yintercept = 100) + geom_vline(xintercept = 4)+labs(x = "Teigiama tyrimų dalis, procentai",  y = "Savaitinis augimas, procentai", title = paste("Lietuvos rodikliai,",max(pld1$day)))
 ```
 
 
 ```{r}
-ggplot(aes(x = tpr_tpn, y = confirmed_growth_weekly, colour = Scenario, size = population), data = pld2) + geom_point()+geom_text(aes(label = administrative_level_3), size = 4, nudge_x = 1.3, check_overlap = TRUE)+theme_bw()+scale_colour_manual(name = "100k rodiklis", values =cols) + scale_size_continuous(name = "Populiacija")+geom_hline(yintercept = 0) + geom_vline(xintercept = 4)+labs(x = "Teigiama tyrimų dalis, procentai",  y = "Savaitinis augimas, procentai", title = paste("Lietuvos rodikliai,",max(pld2$day)))
+ggplot(aes(x = tpr_dgn, y = confirmed_growth_weekly, colour = Scenario, size = population), data = pld2) + geom_point()+geom_text(aes(label = administrative_level_3), size = 4, nudge_x = 1.3, check_overlap = TRUE)+theme_bw()+scale_colour_manual(name = "100k rodiklis", values =cols) + scale_size_continuous(name = "Populiacija")+geom_hline(yintercept = 0) + geom_vline(xintercept = 4)+labs(x = "Teigiama tyrimų dalis, procentai",  y = "Savaitinis augimas, procentai", title = paste("Lietuvos rodikliai,",max(pld2$day)))
 ```
 
 ```{r}
-ggplot(aes(x = tpr_tpn, y = confirmed_growth_weekly, colour = Scenario, size = population), data = pld3) + geom_point()+geom_text(aes(label = administrative_level_3), size = 4, nudge_x = 1.3, check_overlap = TRUE)+theme_bw()+scale_colour_manual(name = "100k rodiklis", values =cols) + scale_size_continuous(name = "Populiacija")+geom_hline(yintercept = 0) + geom_vline(xintercept = 4)+labs(x = "Teigiama tyrimų dalis, procentai",  y = "Savaitinis augimas, procentai", title = paste("Lietuvos rodikliai,",max(pld3$day)))
+ggplot(aes(x = tpr_dgn, y = confirmed_growth_weekly, colour = Scenario, size = population), data = pld3) + geom_point()+geom_text(aes(label = administrative_level_3), size = 4, nudge_x = 1.3, check_overlap = TRUE)+theme_bw()+scale_colour_manual(name = "100k rodiklis", values =cols) + scale_size_continuous(name = "Populiacija")+geom_hline(yintercept = 0) + geom_vline(xintercept = 4)+labs(x = "Teigiama tyrimų dalis, procentai",  y = "Savaitinis augimas, procentai", title = paste("Lietuvos rodikliai,",max(pld3$day)))
 ```
