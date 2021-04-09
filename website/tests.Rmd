@@ -1,0 +1,50 @@
+---
+title: "COVID-19 įvairūs testų pjūviai"
+output: distill::distill_article
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(lubridate)
+library(ggplot2)
+library(zoo)
+library(stringr)
+evrk <- read.csv("../data/lt-covid19-evrk.csv") %>% mutate(day = ymd(day))
+evrk_meta <- read.csv("../raw_data/osp/evrk_meta.csv")
+Sys.setlocale(locale = "lt_LT.UTF-8")
+```
+### Teigiamų tyrimų dalis pagal EVRK veiklas
+
+```{r}
+wk2date <- function(year, week) {
+    week[year == 2020] <- week[year == 2020]-1
+    year[year == 2021 & week == 53] <- 2020
+    week[week == 53] <- 52
+    ymd(parse_date_time(paste(year, week, 1, sep="/"),'Y/W/u'))
+}
+
+vv <- evrk %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% group_by(evrk_group_title, evrk_group_code, wday) %>% summarise(tests = sum(tests), r = round(100*sum(tests_positive)/sum(tests),2)) %>% mutate( levels = cut(r,c(0,5,10,15,20,25,100), include.lowest = TRUE))
+
+vv1 <- vv %>% ungroup %>% count(wday,levels) %>% ungroup %>% group_by(wday) %>% mutate(p = round(100*n/sum(n),2))
+
+vv2 <- vv %>% ungroup %>% filter(tests>=10) %>% count(wday, levels) %>% ungroup %>% group_by(wday) %>% mutate(p = round(100*n/sum(n),2))
+
+
+vv3 <- vv2 %>% mutate(day = wday)
+```
+
+```{r}
+ggplot(aes(x=day,y=p, fill=levels), data = vv3)+geom_col() + scale_fill_manual(name = "Intervalai", values = RColorBrewer::brewer.pal(6, "Set1")[c(3,2,4,6, 5,1)]) + theme_bw()+ labs(y = "Procentai", x = "Data", title = "EVRK veiklų teigiamų tyrimų dalis savaitėmis")
+```
+
+
+
+
+
+
+
+
+
+
+

@@ -62,7 +62,7 @@ ggplot(aes(x = day, y = confirmed_100k, colour = administrative_level_3),
 
 ```{r}
 ggplot(aes(x = day, y = deaths_100k, colour = administrative_level_3),
-       data = cmp1 %>% filter(day>="2021-02-01" & day <="2021-04-01")) + geom_line()+
+       data = cmp1 %>% filter(day>="2021-02-01" & day <="2021-04-05")) + geom_line()+
     theme_bw()+scale_colour_manual(name = "Regionai", values = RColorBrewer::brewer.pal(3, "Set1")[c(2,3,1)]) +
     labs(x="Diena", y = "Mirčių skaičius per 14 dienų 100k gyventojų", title = "Mirčių skaičius per 14 dienų 100k gyventojų")
 

@@ -70,3 +70,11 @@ ggplot(aes(x = day, y = cc), data = tad1 %>% filter(day>="2021-02-01", age1 == "
 ```{r}
 ggplot(aes(x = day, y = cc), data = tad1 %>% filter(day>="2021-02-01", administrative_level_2 == "Vilniaus apskr."))+geom_line()+facet_wrap(~age1, scales = "free_y")+theme_bw() + labs(x = "Data", y = "Atvejai, 7 dienų vidurkis", title = "Covid-19 atvejai Vilniaus apskrityje pagal amžiaus grupes")
 ```
+
+```{r}
+ggplot(aes(x = day, y = dc, colour =age1), data =tad1 %>% filter(administrative_level_2!="Unknown", age1 %in% c("60-69","70-79","80+"), day>="2021-02-01") %>% mutate(dc = dc/7))+geom_line()+facet_wrap(~administrative_level_2, scales = "free_y") + theme_bw() + scale_colour_manual(name = "Amžius", values =  RColorBrewer::brewer.pal(3, "Set1"))
+```
+
+```{r}
+ggplot(aes(x = day, y = dd, colour =age1), data =tad1 %>% filter(administrative_level_2!="Unknown", age1 %in% c("60-69","70-79","80+"), day>="2021-02-01") %>% mutate(dc = dc/7))+geom_line()+facet_wrap(~administrative_level_2, scales = "free_y") + theme_bw() + scale_colour_manual(name = "Amžius", values =  RColorBrewer::brewer.pal(3, "Set1"))
+```
