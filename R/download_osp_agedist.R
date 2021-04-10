@@ -9,12 +9,19 @@ library(tidyr)
 
 source("R/functions.R")
 
+httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
 
-#osp <- tryget("https://opendata.arcgis.com/datasets/064ca1d6b0504082acb1c82840e79ce0_0.geojson")
-#osp <- tryget("https://opendata.arcgis.com/datasets/034590b3317d46c0aa2717d0e87760d8_0.geojson")
-#osp1 <- fromJSON(rawToChar(osp$content))$features$properties
+posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/Agreguoti_COVID19_atvejai_ir_mirtys/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=")
 
-osp1 <- read.csv("https://opendata.arcgis.com/datasets/ba35de03e111430f88a86f7d1f351de6_0.csv")
+posp1 <- fix_esridate(rawToChar(posp$content))
+posp2 <- posp1 %>% mutate(day = ymd(date))
+
+alls <- lapply(unique(posp2$municipality_name), function(x) {
+    sav <- URLencode(x)
+    try(tryget(glue::glue("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/Agreguoti_COVID19_atvejai_ir_mirtys/FeatureServer/0/query?where=municipality_name%3D%27{sav}%27&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=")))
+})
+
+osp1 <- lapply(alls, function(l)fix_esridate(rawToChar(l$content))) %>% bind_rows
 
 osp1 %>% arrange(date, municipality_name) %>% select(-object_id) %>%
     write.csv("raw_data/osp/osp_covid19_agedist.csv", row.names = FALSE)
