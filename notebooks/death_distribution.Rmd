@@ -72,9 +72,9 @@ ggplot(aes(x = day, y = cc), data = tad1 %>% filter(day>="2021-02-01", administr
 ```
 
 ```{r}
-ggplot(aes(x = day, y = dc, colour =age1), data =tad1 %>% filter(administrative_level_2!="Unknown", age1 %in% c("60-69","70-79","80+"), day>="2021-02-01") %>% mutate(dc = dc/7))+geom_line()+facet_wrap(~administrative_level_2, scales = "free_y") + theme_bw() + scale_colour_manual(name = "Amžius", values =  RColorBrewer::brewer.pal(3, "Set1"))
+ggplot(aes(x = day, y = dc, colour =age1), data =tad1 %>% filter(administrative_level_2!="Unknown", age1 %in% c("60-69","70-79","80+"), day>="2021-02-01") %>% mutate(dc = dc/7))+geom_line()+facet_wrap(~administrative_level_2, scales = "free_y") + theme_bw() + scale_colour_manual(name = "Amžius", values =  RColorBrewer::brewer.pal(3, "Set1"))+labs(x = "Diena", y = "7 dienų mirčių vidurkis", title = "Mirčių savaitinis vidurkis Lietuvoje")
 ```
 
 ```{r}
-ggplot(aes(x = day, y = dd, colour =age1), data =tad1 %>% filter(administrative_level_2!="Unknown", age1 %in% c("60-69","70-79","80+"), day>="2021-02-01") %>% mutate(dc = dc/7))+geom_line()+facet_wrap(~administrative_level_2, scales = "free_y") + theme_bw() + scale_colour_manual(name = "Amžius", values =  RColorBrewer::brewer.pal(3, "Set1"))
+ggplot(aes(x = day, y = cc, colour =age1), data =tad1 %>% filter(administrative_level_2!="Unknown", age1 %in% c("60-69","70-79","80+"), day>="2021-02-01") %>% mutate(dc = dc/7))+geom_line()+facet_wrap(~administrative_level_2, scales = "free_y") + theme_bw() + scale_colour_manual(name = "Amžius", values =  RColorBrewer::brewer.pal(3, "Set1")) + labs(x = "Diena", y = "7 dienų atvejų vidurkis", title = "Atvejų savaitinis vidurkis Lietuvoje")
 ```
