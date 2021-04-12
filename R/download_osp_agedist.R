@@ -34,7 +34,7 @@ ld <- ymd(posp3$date %>% unique)
 if(!(ld %in% dd)) {
     warning("Last day not present, adding a new day from another source")
     osp1 <- bind_rows(osp0,posp3 %>% select(-day))
-}
+} else osp1 <- osp0
 
 osp1 %>% arrange(date, municipality_name) %>% select(-object_id) %>%
     write.csv("raw_data/osp/osp_covid19_agedist.csv", row.names = FALSE)
