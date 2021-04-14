@@ -9,11 +9,11 @@ curdate<- ymd(Sys.Date())
 #oo <- read_html(bb)
 #cd <- html_nodes(oo,"div")
 
-dd <- data.frame(date = ymd("2021-03-30")+days(0:20), hotfix =5+0:20)
+dd <- data.frame(date = ymd("2021-04-09")+days(0:20), hotfix =16+0:20)
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2105HotfixDev8/v3/en-us/applemobilitytrends-2021-04-02.csv"
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2104HotfixDev11/v3/en-us/applemobilitytrends-2021-03-21.csv"
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2102HotfixDev17/v3/en-us/applemobilitytrends-2021-02-26.csv"
-
+#"https://covid19-static.cdn-apple.com/covid19-mobility-data/2105HotfixDev19/v3/en-us/applemobilitytrends-2021-04-12.csv"
 lap <- lapply(curdate - days(0:2), function(curd) {
     cdd <- dd %>% filter(date == curd)
     cd <- as.character(cdd$date)
