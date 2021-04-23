@@ -17,7 +17,7 @@ Sys.setlocale(locale="lt_LT.UTF-8")
 x <- covid19(verbose = FALSE, cache = FALSE)
 ```
 
-```{r}
+```{r, include = FALSE}
 x1 <- x %>% select(date,administrative_area_level_1,confirmed, tests, deaths, population,hosp) %>% arrange(administrative_area_level_1, date)
 
 x2 <- x1 %>% group_by(administrative_area_level_1) %>% 
@@ -54,5 +54,3 @@ ggplot(aes(x = date, y = tests_1m, colour = administrative_area_level_1), data =
 ```{r}
 ggplot(aes(x = date, y = hosp_1m, colour = administrative_area_level_1), data = x2 %>% filter(administrative_area_level_1 %in% c("Lithuania", "Denmark"), date>="2021-02-01" & date<="2021-04-15"))+geom_line() + theme_bw() + labs(x = "Data", y ="", title = "COVID-19 hospitalizacijos milijonui gyventojų") + scale_colour_manual(name = "Šalis",  values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
 ```
-
-```{}
