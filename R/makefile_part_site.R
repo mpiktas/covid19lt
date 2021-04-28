@@ -3,8 +3,6 @@ library(dplyr)
 library(lubridate)
 
 rmarkdown::render_site("website/index.Rmd")
-rmarkdown::render_site("website/stats.Rmd")
-rmarkdown::render_site("website/hospital.Rmd")
 rmarkdown::render_site("website/Re.Rmd")
 
 
