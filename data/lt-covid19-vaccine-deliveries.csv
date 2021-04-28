@@ -23,8 +23,8 @@
 2021-02-12,"AstraZeneca",NA,1400
 2021-02-13,"Pfizer-BioNTech",29250,NA
 2021-02-15,"Pfizer-BioNTech",NA,29250
-2021-02-15,"AstraZeneca",NA,5600
 2021-02-15,"Moderna",NA,1900
+2021-02-15,"AstraZeneca",NA,5600
 2021-02-17,"AstraZeneca",NA,5600
 2021-02-19,"AstraZeneca",23900,300
 2021-02-22,"Pfizer-BioNTech",28080,28080
@@ -58,8 +58,8 @@
 2021-04-02,"AstraZeneca",NA,32000
 2021-04-07,"Pfizer-BioNTech",74880,74880
 2021-04-12,"Pfizer-BioNTech",74880,74880
-2021-04-13,"Johnson & Johnson",4800,NA
 2021-04-13,"AstraZeneca",9600,NA
+2021-04-13,"Johnson & Johnson",4800,NA
 2021-04-14,"AstraZeneca",NA,5600
 2021-04-15,"AstraZeneca",NA,4000
 2021-04-18,"Moderna",19200,NA
@@ -72,3 +72,4 @@
 2021-04-22,"AstraZeneca",NA,8900
 2021-04-25,"Moderna",10800,NA
 2021-04-26,"Pfizer-BioNTech",105300,105300
+2021-04-27,"AstraZeneca",4800,NA
