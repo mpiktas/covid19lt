@@ -14,9 +14,9 @@ source("../R/functions.R")
 
 ```{r}
 
-vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") 
-dlv <- read.csv("../data/lt-covid19-vaccine-deliveries.csv") %>% mutate(day = ymd(day))
-lv3 <- read.csv("../data/archive/lt-covid19-level3.csv") %>% mutate(day = ymd(day))
+#vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") 
+#dlv <- read.csv("../data/lt-covid19-vaccine-deliveries.csv") %>% mutate(day = ymd(day))
+lv3 <- read.csv("../data/lt-covid19-level3.csv") %>% mutate(day = ymd(day))
 ```
 
 ```{r}
@@ -29,15 +29,24 @@ vsp1 <- vsp %>% group_by(region, week = floor_date(day, unit = "week",week_start
     mutate(p1 = v1/population*100, p = (v1+v2)/population*100) %>% ungroup %>% group_by(region) %>% 
     mutate(cp1 = cumsum(p1))
 
+nod <- as.integer(max(vsp$day) - max(vsp1$week)+1)
+
 ```
 
 ```{r}
-ggplot(aes(x = week, y = p1, colour = region), data = vsp1 %>% filter(week>"2020-12-25" & week <"2021-04-26")) + 
+ggplot(aes(x = week, y = p1, colour = region), data = vsp1 %>% filter(week>"2020-12-25")) +
     geom_line() + theme_bw() + labs(y = "Procentai nuo populiacijos", x = "Savaitės", title = "Vakcinavimo pirma vakcina savaitinis greitis")+
     scale_colour_manual(name = "Savivaldybės", values = RColorBrewer::brewer.pal(4, "Set1"))
 ```
 ```{r}
-ggplot(aes(x = week, y = cp1, colour = region), data = vsp1 %>% filter(week>"2020-12-25" & week <"2021-04-26")) + 
+ggplot(aes(x = week, y = p, colour = region), data = vsp1 %>% filter(week>"2020-12-25")) +
+    geom_line() + theme_bw() + labs(y = "Procentai nuo populiacijos", x = "Savaitės", title = "Vakcinų sunaudojimo greitis")+
+    scale_colour_manual(name = "Savivaldybės", values = RColorBrewer::brewer.pal(4, "Set1"))
+```
+
+
+```{r}
+ggplot(aes(x = week, y = cp1, colour = region), data = vsp1 %>% filter(week>"2020-12-25")) + 
     geom_line() + theme_bw() + labs(y = "Procentai nuo populiacijos", x = "Savaitės", title = "Vakcinavimas pirma vakcina")+
     scale_colour_manual(name = "Savivaldybės", values = RColorBrewer::brewer.pal(4, "Set1"))
 ```
