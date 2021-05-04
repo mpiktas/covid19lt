@@ -9,7 +9,7 @@ curdate<- ymd(Sys.Date())
 #oo <- read_html(bb)
 #cd <- html_nodes(oo,"div")
 
-dd <- data.frame(date = ymd("2021-04-13")+days(0:20), hotfix =8+0:20)
+dd <- data.frame(date = ymd("2021-04-29")+days(0:20), hotfix =4+0:20)
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2105HotfixDev8/v3/en-us/applemobilitytrends-2021-04-02.csv"
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2104HotfixDev11/v3/en-us/applemobilitytrends-2021-03-21.csv"
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2102HotfixDev17/v3/en-us/applemobilitytrends-2021-02-26.csv"
@@ -20,7 +20,7 @@ lap <- lapply(curdate - days(0:2), function(curd) {
     cdd <- dd %>% filter(date == curd)
     cd <- as.character(cdd$date)
     hf <- as.character(cdd$hotfix)
-    lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2106HotfixDev{hf}/v3/en-us/applemobilitytrends-{cd}.csv")
+    lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2107HotfixDev{hf}/v3/en-us/applemobilitytrends-{cd}.csv")
     print(lnk)
     try(read.csv(lnk))
 })
