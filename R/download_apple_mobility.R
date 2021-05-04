@@ -15,6 +15,7 @@ dd <- data.frame(date = ymd("2021-04-13")+days(0:20), hotfix =8+0:20)
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2102HotfixDev17/v3/en-us/applemobilitytrends-2021-02-26.csv"
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2105HotfixDev19/v3/en-us/applemobilitytrends-2021-04-12.csv"
 #"https://covid19-static.cdn-apple.com/covid19-mobility-data/2106HotfixDev12/v3/en-us/applemobilitytrends-2021-04-17.csv"
+#"https://covid19-static.cdn-apple.com/covid19-mobility-data/2107HotfixDev7/v3/en-us/applemobilitytrends-2021-05-02.csv"
 lap <- lapply(curdate - days(0:2), function(curd) {
     cdd <- dd %>% filter(date == curd)
     cd <- as.character(cdd$date)
