@@ -22,6 +22,6 @@ osp2 <- osp1 %>% mutate(day = ymd(date)) %>% select(-object_id,-date)
 osp3 <- osp2 %>% arrange(day,healthcare_region)
 osp3 <- osp3[,c(ncol(osp3),1:(ncol(osp3)-1))]
 
-osp3 %>%  write.csv("data/lt-covid19-hospitals.csv", row.names = FALSE)
+osp3 %>%  write.csv("data/lt-covid19-hospitals-region.csv", row.names = FALSE)
 
 
