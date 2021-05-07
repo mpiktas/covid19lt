@@ -9,7 +9,7 @@ cs <- read.csv("data/osp/lt-covid19-cases.csv") %>% mutate(day = ymd(day)) %>%
 ss <- read.csv("data/osp/lt-covid19-stats.csv") %>% mutate(day = ymd(day))
 
 
-cvh <- read.csv("data/lt-covid19-hospitalized.csv") %>% mutate(day = ymd(day))
+cvh <- read.csv("data/lt-covid19-hospitals-country.csv") %>% mutate(day = ymd(day))
 vcn <- read.csv("data/lt-covid19-vaccinated.csv") %>% mutate(day = ymd(day))
 vlk <- read.csv("raw_data/vlk_historical.csv") %>% mutate(day = ymd(day))
 
