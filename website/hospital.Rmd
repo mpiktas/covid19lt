@@ -9,12 +9,12 @@ library(dplyr)
 library(ggplot2)
 library(readr)
 library(tidyr)
-library(COVID19)
 library(rmarkdown)
 library(lubridate)
 library(DT)
 library(xts)
 library(dygraphs)
+library(zoo)
 Sys.setlocale(locale = "lt_LT.UTF-8")
 ```
 
@@ -32,23 +32,94 @@ toxts <- function(d, cols) {
     out
     
 }
+inNA <- function(x) {
+    x[x==0] <- NA    
+    x
+}
+
+pivot_one <- function(d, col) {
+    
+    d1 <- d %>% pivot_wider(id_cols = "day", names_from = "region", values_from =all_of(col))
+    toxts(d1, colnames(d1)[-1])
+}
+
+tlkn <- read.csv("../raw_data/tlk_nice.csv", stringsAsFactors = FALSE)
 aa <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
+hh <- read.csv("../data/lt-covid19-hospitals-region.csv") %>% mutate(day = ymd(day)) %>% 
+    left_join(tlkn) %>% 
+    mutate(cv19_deaths = ifelse(region == "Kaunas"& day =="2021-03-22",NA,cv19_deaths),
+           cv19_deaths = ifelse(region == "Kaunas"& day =="2021-02-18",NA,cv19_deaths),
+           cv19_deaths = ifelse(region == "Panevėžys"& day =="2021-02-05",NA,cv19_deaths))
+
+
+hha <- hh %>% select(-healthcare_region,-region) %>% group_by(day) %>% summarise_all(sum) 
+
+cvha <- hha %>% select(day,cv19_admissions,cv19_discharges,cv19_deaths) %>% 
+    mutate_at(inNA,.vars=c("cv19_admissions","cv19_discharges","cv19_deaths"))
 
 cvhx <- toxts(aa, c("hospitalized", "icu","ventilated","oxygen"))
+cvhax <- toxts(cvha, c("cv19_admissions","cv19_discharges","cv19_deaths"))
+colnames(cvhax) <- c("nauji","išrašyti","mirę")
 
+```
+
+## Pagrindinių rodiklių tendencijos
+
+Duomenys yra sugrupuoti pagal teritorines ligonių kasas. Vilniaus duomenyse bus ir Alytus, Kauno duomenyse bus Marijampolė ir t.t.
+
+```{r}
 dygraph(cvhx["2020-10-01/","hospitalized"], main = "Covid-19 ligonių skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1,2)]) %>% dyRangeSelector     
 ```
+
+```{r}
+dygraph(pivot_one(hh,"cv19_hospital_beds_assigned"), main = "Covid-19 lovų skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>% dyRangeSelector    
+```
+
+
+```{r}
+dygraph(pivot_one(hh,"cv19_hospital_beds_occupied"), main = "Covid-19 ligonių skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>% dyRangeSelector    
+```
+
 
 ```{r}
 dygraph(cvhx["2020-10-01/","icu"], main = "Covid-19 ligonių reanimacijoje skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector    
 ```
 
 ```{r}
-dygraph(cvhx["2020-10-01/","ventilated"], main = "Covid-19 ventiliuojami ligoniai") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector    
+dygraph(pivot_one(hh,"cv19_icu_beds_assigned"), main = "Covid-19 RITS lovų skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>% dyRangeSelector    
+```
+
+```{r}
+dygraph(pivot_one(hh,"cv19_icu_beds_occupied"), main = "Covid-19 RITS ligonių skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>% dyRangeSelector    
+```
+
+## Priėmimo ir išrašymo dinamika
+
+Panevėžio ir Kauno duomenyse iš mirčių išimtos išskirtys. Kaune 2021-02-18 ir 2021-03-22 dienos su atitinkamai 28 ir 123 mirtys, Panevėžyje 2021-02-05 diena su 48 mirtimis. Dėl sezoniškumo visur imami 7 dienų vidurkiai. Paskutinės dienos duomenys paprastai būna nepilni.
+
+```{r}
+dygraph(cvhax["2021-01-18/",1], main = "Covid-19 naujai paguldyti ligoniai") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector %>% dyRoller(rollPeriod = 7)   
+```
+```{r}
+dygraph(pivot_one(hh,"cv19_admissions")["2021-01-18/"]  , main = "Covid-19 naujai paguldyti ligoniai") %>% dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>% dyRangeSelector %>% dyRoller(rollPeriod = 7) %>% dyCSS("left_legend.css")
 ```
 
 
 ```{r}
-dygraph(cvhx["2020-10-01/","oxygen"], main = "Covid-19 ligonių su deguonies kaukėm skaičius") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector    
+dygraph(cvhax["2021-01-18/",2], main = "Covid-19 išrašyti ligoniai") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector  %>%  dyRoller(rollPeriod = 7)    
 ```
+
+```{r}
+dygraph(pivot_one(hh,"cv19_discharges")["2021-01-18/"], main = "Covid-19 išrašyti ligoniai") %>% dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>% dyRangeSelector  %>% dyRoller(rollPeriod = 7)  %>% dyCSS("left_legend.css")
+```
+
+```{r}
+dygraph(cvhax["2021-01-18/",3], main = "Covid-19 mirę ligoniai") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector    %>% dyRoller(rollPeriod = 7)    
+```
+
+```{r}
+dygraph(pivot_one(hh,"cv19_deaths")["2021-01-18/"], main = "Covid-19 mirę ligoniai") %>% dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>% dyRangeSelector   %>% dyRoller(rollPeriod = 7) %>% dyCSS("left_legend.css")
+```
+
+
 

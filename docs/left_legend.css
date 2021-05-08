@@ -1,0 +1,13 @@
+  .dygraph-legend{
+	  top:-5px !important;
+  }
+
+
+  .dygraph-title{
+      position:absolute !important;
+	  top:-35px !important;
+  }
+
+  .l-body{
+	  margin-top: 35px !important;
+  }
