@@ -4,6 +4,7 @@ output: distill::distill_article
 ---
 
 ```{r, echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
 library(dplyr)
 library(ggplot2)
 library(readr)
