@@ -3,7 +3,7 @@ library(dplyr)
 library(lubridate)
 
 rmarkdown::render_site("website/index.Rmd")
-rmarkdown::render_site("website/Re.Rmd")
+#rmarkdown::render_site("website/Re.Rmd")
 
 
 cat("\nSending the site downstream\n")
