@@ -31,12 +31,13 @@ osp3 <- osp2 %>% inner_join(adm)
 
 if(nrow(osp3) == nrow(osp2)) {
     osp4 <- osp3 %>%select(day, municipality_code, administrative_level_2,administrative_level_3,
-                    dose_number = vaccination_state,  vaccinated = all_cum, vaccinated_daily = all_day
-                    )
+                    dose_number = vaccination_state,  vaccinated = all_cum)
     dosed <- data.frame(dose_number=c("Visi", "Pilnai"), dose = c(1,2))
     osp5 <- osp4 %>% inner_join(dosed) %>% select(-dose_number)
     osp6 <- osp5 %>% pivot_wider(id_cols = day:administrative_level_3, names_from = "dose",
-                                  values_from  = vaccinated:vaccinated_daily) %>% arrange(day, municipality_code)
+                                  values_from  = vaccinated, names_sort = TRUE) %>% arrange(day, municipality_code) %>%
+    rename(vaccinated_1 = `1`, vaccinated_2 = `2`) %>% group_by(administrative_level_3) %>%
+        mutate(vaccinated_daily_1 = ddiff(vaccinated_1), vaccinated_daily_2 = ddiff(vaccinated_2))
 
     osp6 %>%  write.csv("data/lt-covid19-vaccinated.csv", row.names = FALSE)
 
