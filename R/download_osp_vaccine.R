@@ -33,7 +33,7 @@ if(nrow(osp3) == nrow(osp2)) {
     osp4 <- osp3 %>%select(day, municipality_code, administrative_level_2,administrative_level_3,
                     dose_number = vaccination_state,  vaccinated = all_cum, vaccinated_daily = all_day
                     )
-    dosed <- data.frame(dose_number=c("Dalinai", "Pilnai"), dose = c(1,2))
+    dosed <- data.frame(dose_number=c("Visi", "Pilnai"), dose = c(1,2))
     osp5 <- osp4 %>% inner_join(dosed) %>% select(-dose_number)
     osp6 <- osp5 %>% pivot_wider(id_cols = day:administrative_level_3, names_from = "dose",
                                   values_from  = vaccinated:vaccinated_daily) %>% arrange(day, municipality_code)
