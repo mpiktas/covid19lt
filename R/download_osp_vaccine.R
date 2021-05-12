@@ -64,7 +64,7 @@ osp1 <- lapply(alls, function(l)fix_esridate(rawToChar(l$content))) %>% bind_row
 
 osp1 %>% arrange(date, municipality_code) %>% write.csv("raw_data/osp/osp_covid19_vaccine_supply.csv", row.names = FALSE)
 
-osp2 <- osp1 %>% mutate(day = ymd(date)) %>% filter(municipality_name == "Lietuva", dose_number == "Pirma dozė") %>%
-    filter(!is.na(vaccines_arrived) | !is.na(vaccines_allocated)) %>% select(day, vaccine_name, vaccines_arrived, vaccines_allocated) %>% arrange(day)
+osp2 <- osp1 %>% mutate(day = ymd(date)) %>% filter(municipality_name == "Lietuva", vaccination_state == "Pilnai") %>%
+    filter(!is.na(vaccines_arrived_day) | !is.na(vaccines_allocated_day)) %>% select(day, vaccine_name, vaccines_arrived = vaccines_arrived_day, vaccines_allocated = vaccines_allocated_day) %>% arrange(day)
 
 osp2 %>% write.csv("data/lt-covid19-vaccine-deliveries.csv", row.names  = FALSE)
