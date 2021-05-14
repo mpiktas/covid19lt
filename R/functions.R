@@ -131,6 +131,10 @@ fixNA <- function(x, value = 0) {
     x
 }
 
+ddiff <- function(x) {
+    c(0, diff(x))
+}
+
 scenABCD <- function(c100k, tpr, t100k) {
     res <- rep(0, length(c100k))
     res[c100k<25 & tpr<4] <- 1
