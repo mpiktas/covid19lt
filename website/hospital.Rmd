@@ -49,6 +49,7 @@ hh <- read.csv("../data/lt-covid19-hospitals-region.csv") %>% mutate(day = ymd(d
     left_join(tlkn) %>% 
     mutate(cv19_deaths = ifelse(region == "Kaunas"& day =="2021-03-22",NA,cv19_deaths),
            cv19_deaths = ifelse(region == "Kaunas"& day =="2021-02-18",NA,cv19_deaths),
+           cv19_deaths = ifelse(region == "Kaunas"& day =="2021-05-10",NA,cv19_deaths),
            cv19_deaths = ifelse(region == "Panevėžys"& day =="2021-02-05",NA,cv19_deaths))
 
 
@@ -95,7 +96,7 @@ dygraph(pivot_one(hh,"cv19_icu_beds_occupied"), main = "Covid-19 RITS ligonių s
 
 ## Priėmimo ir išrašymo dinamika
 
-Panevėžio ir Kauno duomenyse iš mirčių išimtos išskirtys. Kaune 2021-02-18 ir 2021-03-22 dienos su atitinkamai 28 ir 123 mirtys, Panevėžyje 2021-02-05 diena su 48 mirtimis. Dėl sezoniškumo visur imami 7 dienų vidurkiai. Paskutinės dienos duomenys paprastai būna nepilni.
+Panevėžio ir Kauno duomenyse iš mirčių išimtos išskirtys. Kaune 2021-02-18,  2021-03-22 ir 2021-05-10 dienos su atitinkamai 28, 123 ir 31 mirtimis, Panevėžyje 2021-02-05 diena su 48 mirtimis. Dėl sezoniškumo visur imami 7 dienų vidurkiai. Paskutinės dienos duomenys paprastai būna nepilni.
 
 ```{r}
 dygraph(cvhax["2021-01-18/",1], main = "Covid-19 naujai paguldyti ligoniai") %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector %>% dyRoller(rollPeriod = 7)   
