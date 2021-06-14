@@ -21,6 +21,8 @@ osp:
       paths:
         - data
       expire_in: 1 day
+    retry: 2
+
 
 mobility:
     stage: download
@@ -38,23 +40,6 @@ mobility:
       paths:
         - data
       expire_in: 1 day
-
-datagov:
-    stage: download
-    only:
-      refs :
-        - master
-        - schedules
-      variables:
-        - $SOURCE == "datagov"
-    script:
-      - R -e "install.packages(c('gert', 'zoo'))"
-      - R -e "source('R/makefile_datagov.R')"
-    artifacts:
-      paths:
-        - data
-      expire_in: 1 day
-
 
 update_site:
     stage: site
