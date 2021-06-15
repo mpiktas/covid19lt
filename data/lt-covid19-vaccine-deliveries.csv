@@ -9,8 +9,8 @@
 2021-01-25,"Pfizer-BioNTech",25740,33930
 2021-01-28,"Pfizer-BioNTech",NA,1170
 2021-01-31,"Moderna",3600,NA
-2021-02-01,"Pfizer-BioNTech",22230,25740
 2021-02-01,"Moderna",NA,2400
+2021-02-01,"Pfizer-BioNTech",22230,25740
 2021-02-06,"AstraZeneca",12000,NA
 2021-02-08,"AstraZeneca",NA,6600
 2021-02-08,"Moderna",NA,1200
@@ -125,3 +125,6 @@
 2021-06-10,"Johnson & Johnson",9400,NA
 2021-06-11,"Moderna",NA,15400
 2021-06-11,"Johnson & Johnson",NA,8600
+2021-06-14,"Moderna",NA,2600
+2021-06-14,"Pfizer-BioNTech",142740,142740
+2021-06-14,"Johnson & Johnson",NA,800
