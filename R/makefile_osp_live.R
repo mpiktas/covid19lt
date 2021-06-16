@@ -41,7 +41,7 @@ modf <- git_status() %>% .$file %>% find_root %>% unique
 if(!("data" %in% modf)) {
     cat("\nNo new data, not pushing anything\n")
 } else {
-    push_to_github(c("data","raw_data"), "Update OSP data", push = TRUE)
+    push_to_github(c("data","raw_data"), "Update OSP data", push = FALSE)
 }
 
 
