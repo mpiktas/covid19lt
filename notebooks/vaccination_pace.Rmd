@@ -1,6 +1,8 @@
 ---
 title: "Vaccination weekly pace"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -14,39 +16,48 @@ source("../R/functions.R")
 
 ```{r}
 
-#vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") 
-#dlv <- read.csv("../data/lt-covid19-vaccine-deliveries.csv") %>% mutate(day = ymd(day))
+# vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv")
+# dlv <- read.csv("../data/lt-covid19-vaccine-deliveries.csv") %>% mutate(day = ymd(day))
 lv3 <- read.csv("../data/lt-covid19-level3.csv") %>% mutate(day = ymd(day))
 ```
 
 ```{r}
-vsp <- lv3 %>% mutate(region = ifelse(administrative_level_3 %in% c("Vilniaus m.", "Kauno m.","Klaipėdos m."), administrative_level_3, "Likusi Lietuva")) %>% 
-    group_by(region, day) %>% 
-    summarise(v1 = sum(vaccinated_1_daily), v2 = sum(vaccinated_2_daily), population  = sum(population))
+vsp <- lv3 %>%
+  mutate(region = ifelse(administrative_level_3 %in% c("Vilniaus m.", "Kauno m.", "Klaipėdos m."), administrative_level_3, "Likusi Lietuva")) %>%
+  group_by(region, day) %>%
+  summarise(v1 = sum(vaccinated_1_daily), v2 = sum(vaccinated_2_daily), population = sum(population))
 
-vsp1 <- vsp %>% group_by(region, week = floor_date(day, unit = "week",week_start = 1)) %>% 
-    summarise(v1 = sum(v1), v2 = sum(v2), population = unique(population)) %>% 
-    mutate(p1 = v1/population*100, p = (v1+v2)/population*100) %>% ungroup %>% group_by(region) %>% 
-    mutate(cp1 = cumsum(p1))
+vsp1 <- vsp %>%
+  group_by(region, week = floor_date(day, unit = "week", week_start = 1)) %>%
+  summarise(v1 = sum(v1), v2 = sum(v2), population = unique(population)) %>%
+  mutate(p1 = (v1) / population * 100, p = (v1 + v2) / population * 100) %>%
+  ungroup() %>%
+  group_by(region) %>%
+  mutate(cp1 = cumsum(p1))
 
-nod <- as.integer(max(vsp$day) - max(vsp1$week)+1)
-
+nod <- as.integer(max(vsp$day) - max(vsp1$week) + 1)
 ```
 
 ```{r}
-ggplot(aes(x = week, y = p1, colour = region), data = vsp1 %>% filter(week>"2020-12-25")) +
-    geom_line() + theme_bw() + labs(y = "Procentai nuo populiacijos", x = "Savaitės", title = "Vakcinavimo pirma vakcina savaitinis greitis")+
-    scale_colour_manual(name = "Savivaldybės", values = RColorBrewer::brewer.pal(4, "Set1"))
+ggplot(aes(x = week, y = p1, colour = region), data = vsp1 %>% filter(week > "2020-12-25")) +
+  geom_line() +
+  theme_bw() +
+  labs(y = "Procentai nuo populiacijos", x = "Savaitės", title = "Vakcinavimo pirma vakcina savaitinis greitis") +
+  scale_colour_manual(name = "Savivaldybės", values = RColorBrewer::brewer.pal(4, "Set1"))
 ```
 ```{r}
-ggplot(aes(x = week, y = p, colour = region), data = vsp1 %>% filter(week>"2020-12-25")) +
-    geom_line() + theme_bw() + labs(y = "Procentai nuo populiacijos", x = "Savaitės", title = "Vakcinų sunaudojimo greitis")+
-    scale_colour_manual(name = "Savivaldybės", values = RColorBrewer::brewer.pal(4, "Set1"))
+ggplot(aes(x = week, y = p, colour = region), data = vsp1 %>% filter(week > "2020-12-25")) +
+  geom_line() +
+  theme_bw() +
+  labs(y = "Procentai nuo populiacijos", x = "Savaitės", title = "Vakcinų sunaudojimo greitis") +
+  scale_colour_manual(name = "Savivaldybės", values = RColorBrewer::brewer.pal(4, "Set1"))
 ```
 
 
 ```{r}
-ggplot(aes(x = week, y = cp1, colour = region), data = vsp1 %>% filter(week>"2020-12-25")) + 
-    geom_line() + theme_bw() + labs(y = "Procentai nuo populiacijos", x = "Savaitės", title = "Vakcinavimas pirma vakcina")+
-    scale_colour_manual(name = "Savivaldybės", values = RColorBrewer::brewer.pal(4, "Set1"))
+ggplot(aes(x = week, y = cp1, colour = region), data = vsp1 %>% filter(week > "2020-12-25")) +
+  geom_line() +
+  theme_bw() +
+  labs(y = "Procentai nuo populiacijos", x = "Savaitės", title = "Vakcinavimas pirma vakcina") +
+  scale_colour_manual(name = "Savivaldybės", values = RColorBrewer::brewer.pal(4, "Set1"))
 ```

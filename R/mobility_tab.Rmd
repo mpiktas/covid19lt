@@ -5,5 +5,7 @@ output: html_document
 ### `r tab_report$tbname`
 
 ```{r}
-dygraph(tab_report$x, main = tab_report$plotname) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector
+dygraph(tab_report$x, main = tab_report$plotname) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
+  dyRangeSelector()
 ```

@@ -11,7 +11,7 @@ library(tidyr)
 library(dygraphs)
 library(xts)
 library(lubridate)
-tt <- read_csv("../data/archive/lt-covid19-total.csv") 
+tt <- read_csv("../data/archive/lt-covid19-total.csv")
 ```
 
 ```{r include = FALSE}
@@ -28,27 +28,40 @@ Nuo balandžio 1 d. pradėjus skelbti laboratorijų testų skaičius, dieninis s
 
 ```{r, echo = FALSE}
 library(lubridate)
-ag <- function(x)c(x[1],diff(x))
+ag <- function(x) c(x[1], diff(x))
 labs <- read.csv("../data/archive/lt-covid19-laboratory-total.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
 
-lbt <- labs %>% group_by(day) %>% summarise(daily_tests = sum(tested_all))
-ltt <- tt %>% mutate(daily_tests = ag(tested)) %>% select(day, daily_tests)
+lbt <- labs %>%
+  group_by(day) %>%
+  summarise(daily_tests = sum(tested_all))
+ltt <- tt %>%
+  mutate(daily_tests = ag(tested)) %>%
+  select(day, daily_tests)
 
-lct <- ltt %>% left_join(lbt %>% rename(laboratory_tests = daily_tests), by = "day") %>% 
-    mutate(sam_daily_tests = daily_tests, 
-           daily_tests = ifelse(is.na(laboratory_tests), sam_daily_tests, laboratory_tests)) 
+lct <- ltt %>%
+  left_join(lbt %>% rename(laboratory_tests = daily_tests), by = "day") %>%
+  mutate(
+    sam_daily_tests = daily_tests,
+    daily_tests = ifelse(is.na(laboratory_tests), sam_daily_tests, laboratory_tests)
+  )
 
 xdt <- xts(lct$daily_tests, order.by = lct$day)
 colnames(xdt) <- "tested"
 dyBarChart <- function(dygraph) {
-  dyPlotter(dygraph = dygraph,
-            name = "BarChart",
-            path = system.file("plotters/barchart.js",
-                               package = "dygraphs"))
+  dyPlotter(
+    dygraph = dygraph,
+    name = "BarChart",
+    path = system.file("plotters/barchart.js",
+      package = "dygraphs"
+    )
+  )
 }
 
-dygraph(xdt, main =  paste("Daily tests: ", max(tt$day))) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>% dyRangeSelector %>% dyBarChart
-#ggplot(aes(x = day, y = daily_tests), data = lct) +geom_col() + labs(title = paste("Daily tests: ", max(tt$day)), y="tested")
+dygraph(xdt, main = paste("Daily tests: ", max(tt$day))) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2]) %>%
+  dyRangeSelector() %>%
+  dyBarChart()
+# ggplot(aes(x = day, y = daily_tests), data = lct) +geom_col() + labs(title = paste("Daily tests: ", max(tt$day)), y="tested")
 ```
 
 # Atvejų skaičius tenkantis 100 testų
@@ -56,18 +69,23 @@ dygraph(xdt, main =  paste("Daily tests: ", max(tt$day))) %>%  dyOptions(colors 
 Pateikiama istorinė eilutė ir dviejų savaičių slenkanti suma (normalizuojami paskutinių 14 dienų testų ir atvejų skaičiai).
 
 ```{r}
-tpd <- tt %>% select(day, confirmed) %>% left_join(lct, by = "day") %>% 
-    mutate(incidence = ag(confirmed), normalized = incidence*100/daily_tests, 
-           incidence14 = rollsum(incidence, k = 14, fill = NA, align = "right"),
-           tests14 = rollsum(daily_tests, k = 14, fill = NA, align = "right"),
-           normalized14 = incidence14*100/tests14
-           )  
-    
-#ggplot(aes(x = day, y = normalized), data = tpd) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 100 tests", max(tt$day)),  y = "")
+tpd <- tt %>%
+  select(day, confirmed) %>%
+  left_join(lct, by = "day") %>%
+  mutate(
+    incidence = ag(confirmed), normalized = incidence * 100 / daily_tests,
+    incidence14 = rollsum(incidence, k = 14, fill = NA, align = "right"),
+    tests14 = rollsum(daily_tests, k = 14, fill = NA, align = "right"),
+    normalized14 = incidence14 * 100 / tests14
+  )
+
+# ggplot(aes(x = day, y = normalized), data = tpd) +geom_point() + geom_line() + labs(title = paste("Confirmed daily cases per 100 tests", max(tt$day)),  y = "")
 
 xtpd <- xts(tpd %>% select(normalized, normalized14), order.by = tpd$day)
 
-dygraph(xtpd, main = paste("Confirmed daily cases per 100 tests", max(tt$day))) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2:3]) %>% dyRangeSelector 
+dygraph(xtpd, main = paste("Confirmed daily cases per 100 tests", max(tt$day))) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2:3]) %>%
+  dyRangeSelector()
 ```
 
 
@@ -77,10 +95,17 @@ dygraph(xtpd, main = paste("Confirmed daily cases per 100 tests", max(tt$day))) 
 ```{r, echo = FALSE, fig.height=10, fig.width=10}
 
 
-labst <- labs %>% select(day, laboratory, tested_all, not_tested) %>% pivot_longer(tested_all:not_tested, "type")
+labst <- labs %>%
+  select(day, laboratory, tested_all, not_tested) %>%
+  pivot_longer(tested_all:not_tested, "type")
 
 
-ggplot(aes(x = day, y = value, group = type), data = labst %>% filter(day>="2020-10-01")) + geom_col(aes(fill=type),position = "dodge")+ facet_wrap(~laboratory, scales = "free_y")+labs(title = paste("Laboratory tests:",max(labs$day)))+theme_bw() + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
+ggplot(aes(x = day, y = value, group = type), data = labst %>% filter(day >= "2020-10-01")) +
+  geom_col(aes(fill = type), position = "dodge") +
+  facet_wrap(~laboratory, scales = "free_y") +
+  labs(title = paste("Laboratory tests:", max(labs$day))) +
+  theme_bw() +
+  scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
 ```
 
 
@@ -91,19 +116,31 @@ Visų laboratorijų pajėgumai yra kiekvienos laboratorijos pajėgumų suma. Gra
 
 ```{r, echo = FALSE}
 
-totc <- labs %>% group_by(laboratory) %>% summarize(m = max(tested_all, na.rm = TRUE)) %>% .$m %>% sum(na.rm = TRUE)
-daily <- labs %>% group_by(day) %>% summarise(all = sum(tested_all, na.rm = TRUE)) %>% ungroup %>% mutate(capacity = 100*all/totc)
+totc <- labs %>%
+  group_by(laboratory) %>%
+  summarize(m = max(tested_all, na.rm = TRUE)) %>%
+  .$m %>%
+  sum(na.rm = TRUE)
+daily <- labs %>%
+  group_by(day) %>%
+  summarise(all = sum(tested_all, na.rm = TRUE)) %>%
+  ungroup() %>%
+  mutate(capacity = 100 * all / totc)
 
-xdaily <- xts(daily$capacity, order.by=daily$day)
+xdaily <- xts(daily$capacity, order.by = daily$day)
 colnames(xdaily) <- "capacity"
 
-dm <- labs %>% group_by(day) %>% summarise(untested = 100*sum(not_tested, na.rm = TRUE)/(sum(tested_all, na.rm = TRUE)+sum(not_tested, na.rm = TRUE)))
+dm <- labs %>%
+  group_by(day) %>%
+  summarise(untested = 100 * sum(not_tested, na.rm = TRUE) / (sum(tested_all, na.rm = TRUE) + sum(not_tested, na.rm = TRUE)))
 
 xdm <- xts(dm$untested, order.by = dm$day)
 colnames(xdm) <- "untested"
 
 xdmd <- cbind(xdaily, xdm)
 
-dygraph(xdmd, main = paste("Capacity and not tested percentages:",max(labs$day)) ) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2:1]) %>% dyRangeSelector
-#ggplot(aes(x = day, y = capacity) , data = daily) + geom_line() + geom_point()+labs(title = paste("Total capacity percentage:",max(labs$day)))
+dygraph(xdmd, main = paste("Capacity and not tested percentages:", max(labs$day))) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[2:1]) %>%
+  dyRangeSelector()
+# ggplot(aes(x = day, y = capacity) , data = daily) + geom_line() + geom_point()+labs(title = paste("Total capacity percentage:",max(labs$day)))
 ```

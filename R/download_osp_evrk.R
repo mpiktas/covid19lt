@@ -14,8 +14,10 @@ osp1 <- fromJSON(rawToChar(osp$content))$features$properties
 
 
 
-osp1 %>% arrange(test_date, evrk_group_code) %>% select(-object_id) %>%
-    write.csv("raw_data/osp/osp_covid19_evrk.csv", row.names = FALSE)
+osp1 %>%
+  arrange(test_date, evrk_group_code) %>%
+  select(-object_id) %>%
+  write.csv("raw_data/osp/osp_covid19_evrk.csv", row.names = FALSE)
 
 osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(test_date)))
 
@@ -23,15 +25,18 @@ osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(test_date)))
 evrk <- tryget("https://opendata.arcgis.com/datasets/161c571cb56c4f9da294c0133a9d8766_0.geojson")
 evrk1 <- fromJSON(rawToChar(evrk$content))$features$properties
 
-evrk1 %>% select(-object_id) %>%  write.csv("raw_data/osp/evrk_meta.csv", row.names = FALSE)
+evrk1 %>%
+  select(-object_id) %>%
+  write.csv("raw_data/osp/evrk_meta.csv", row.names = FALSE)
 
-osp3 <- osp2 %>% inner_join(evrk1 %>% select(evrk_group_code, evrk_group_title) %>% unique)
+osp3 <- osp2 %>% inner_join(evrk1 %>% select(evrk_group_code, evrk_group_title) %>% unique())
 
-if(nrow(osp3) == nrow(osp2)) {
-    osp4 <- osp3 %>% select(day, evrk_group_code, evrk_group_title, tests_positive, tests_negative) %>%
-        mutate(tests = tests_positive + tests_negative) %>% select(-tests_negative) %>%
-        arrange(day, evrk_group_code)
+if (nrow(osp3) == nrow(osp2)) {
+  osp4 <- osp3 %>%
+    select(day, evrk_group_code, evrk_group_title, tests_positive, tests_negative) %>%
+    mutate(tests = tests_positive + tests_negative) %>%
+    select(-tests_negative) %>%
+    arrange(day, evrk_group_code)
 
-    osp4 %>%  write.csv("data/lt-covid19-evrk.csv", row.names = FALSE)
+  osp4 %>% write.csv("data/lt-covid19-evrk.csv", row.names = FALSE)
 }
-

@@ -14,7 +14,7 @@ library(DiagrammeR)
 
 ```{r}
 DiagrammeR::mermaid("
-graph LR 
+graph LR
   A[Įtariamas]-->B[Testas]
   B-->C[Neigiamas]
   B-->D[Teigiamas]

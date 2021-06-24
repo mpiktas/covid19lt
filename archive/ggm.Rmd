@@ -16,113 +16,115 @@ library(config)
 options(max.print = 100000)
 
 ggm <- function(t, state, parameters) {
-    with(as.list(c(state, parameters)), {
-        list(r*C^p)
-    })
+  with(as.list(c(state, parameters)), {
+    list(r * C^p)
+  })
 }
 
-incidence_ggm <-  function(times, p) {
-    out <- cases_ggm(times ,p )
-    c(out[1], diff(out))
+incidence_ggm <- function(times, p) {
+  out <- cases_ggm(times, p)
+  c(out[1], diff(out))
 }
 
 cases_ggm <- function(times, p) {
-    state <- c(C = p[1])
-    parms <- c(r = p[2], p = p[3])
-    out <- ode(y = state, time = times, func = ggm, parms = parms)
-    out[,2]
+  state <- c(C = p[1])
+  parms <- c(r = p[2], p = p[3])
+  out <- ode(y = state, time = times, func = ggm, parms = parms)
+  out[, 2]
 }
 
 
 
 glmde <- function(t, state, parameters) {
-    with(as.list(c(state, parameters)), {
-        list(r*C^p*(1 - C/K))
-    })
+  with(as.list(c(state, parameters)), {
+    list(r * C^p * (1 - C / K))
+  })
 }
 
-incidence_glmde <-  function(times, p) {
-    out <- cases_glmde(times ,p )
-    c(out[1], diff(out))
+incidence_glmde <- function(times, p) {
+  out <- cases_glmde(times, p)
+  c(out[1], diff(out))
 }
 
 cases_glmde <- function(times, p) {
-    state <- c(C = p[1])
-    parms <- c(r = p[2], p = p[3], K = p[4])
-    out <- ode(y = state, time = times, func = glmde, parms = parms)
-    out[,2]
+  state <- c(C = p[1])
+  parms <- c(r = p[2], p = p[3], K = p[4])
+  out <- ode(y = state, time = times, func = glmde, parms = parms)
+  out[, 2]
 }
 
-fit_incidence <- function(p , times, y) {
-    if (p[1] > 0 & p[2] > 0 & p[2] <= 1) {
-        sum((y - incidence_glmde(times, c(y[1], p)))^2)
-    } else NA
+fit_incidence <- function(p, times, y) {
+  if (p[1] > 0 & p[2] > 0 & p[2] <= 1) {
+    sum((y - incidence_glmde(times, c(y[1], p)))^2)
+  } else {
+    NA
+  }
 }
 
-fit_incidence_ggm <- function(p , times, y, w) {
-    if (p[1] > 0 & p[2] > 0 & p[2] <= 1) {
-        sum(w*(y - incidence_ggm(times, c(y[1], p)))^2)
-    } else NA
+fit_incidence_ggm <- function(p, times, y, w) {
+  if (p[1] > 0 & p[2] > 0 & p[2] <= 1) {
+    sum(w * (y - incidence_ggm(times, c(y[1], p)))^2)
+  } else {
+    NA
+  }
 }
 
 
 grid_search <- function(times, y, start_r, start_p, start_K) {
-    pp <- expand.grid(start_r,start_p,start_K)
-    pp <- as.matrix(pp)
-    colnames(pp) <- NULL
-    grid_p <- apply(pp, 1, function(p) {
-        out <- optim(p, fit_incidence, times = times, y = y)
-        c(out$par, out$value)
-    }) 
-    grid_p <- t(grid_p)
-    list(p = grid_p[which.min(grid_p[,4]),1:3], grid = grid_p)
+  pp <- expand.grid(start_r, start_p, start_K)
+  pp <- as.matrix(pp)
+  colnames(pp) <- NULL
+  grid_p <- apply(pp, 1, function(p) {
+    out <- optim(p, fit_incidence, times = times, y = y)
+    c(out$par, out$value)
+  })
+  grid_p <- t(grid_p)
+  list(p = grid_p[which.min(grid_p[, 4]), 1:3], grid = grid_p)
 }
 
 grid_search_ggm <- function(times, y, w, start_r, start_p) {
-    pp <- expand.grid(start_r,start_p)
-    pp <- as.matrix(pp)
-    colnames(pp) <- NULL
-    grid_p <- apply(pp, 1, function(p) {
-        out <- optim(p, fit_incidence_ggm, times = times, y = y, w = w)
-        c(out$par, out$value)
-    }) 
-    grid_p <- t(grid_p)
-    list(p = grid_p[which.min(grid_p[,3]),1:2], grid = grid_p)
+  pp <- expand.grid(start_r, start_p)
+  pp <- as.matrix(pp)
+  colnames(pp) <- NULL
+  grid_p <- apply(pp, 1, function(p) {
+    out <- optim(p, fit_incidence_ggm, times = times, y = y, w = w)
+    c(out$par, out$value)
+  })
+  grid_p <- t(grid_p)
+  list(p = grid_p[which.min(grid_p[, 3]), 1:2], grid = grid_p)
 }
 
 
 forecast_glmde <- function(dt, p, ahead) {
-    tm <- min(dt$times):(max(dt$times) + ahead)
-   
-    out_days <- dt$day[dt$times == min(tm)] + days(1:length(tm) - 1)
-  
-    out_f <- incidence_glmde(tm, c(dt$incidence[1], p))
-    
-    data.frame(day = out_days, incidence = out_f)
-    
+  tm <- min(dt$times):(max(dt$times) + ahead)
+
+  out_days <- dt$day[dt$times == min(tm)] + days(1:length(tm) - 1)
+
+  out_f <- incidence_glmde(tm, c(dt$incidence[1], p))
+
+  data.frame(day = out_days, incidence = out_f)
 }
 
 forecast_ggm <- function(dt, p, ahead) {
-    tm <- min(dt$times):(max(dt$times) + ahead)
-   
-    out_days <- dt$day[dt$times == min(tm)] + days(1:length(tm) - 1)
-  
-    out_f <- incidence_ggm(tm, c(dt$incidence[1], p))
-    
-    data.frame(day = out_days, incidence = out_f)
-    
+  tm <- min(dt$times):(max(dt$times) + ahead)
+
+  out_days <- dt$day[dt$times == min(tm)] + days(1:length(tm) - 1)
+
+  out_f <- incidence_ggm(tm, c(dt$incidence[1], p))
+
+  data.frame(day = out_days, incidence = out_f)
 }
 
 
 plot_f <- function(dt, fr) {
-    plot(fr$day, fr$incidence, type = "l", xlab = "day", ylab = "incidence", main = paste(max(dt$day)))
-    points(dt$day, dt$incidence)
+  plot(fr$day, fr$incidence, type = "l", xlab = "day", ylab = "incidence", main = paste(max(dt$day)))
+  points(dt$day, dt$incidence)
 }
 ```
 
 ```{r include = FALSE}
 mc <- config::get(file = "_model.yml")
-#data <- Sys.time()
+# data <- Sys.time()
 data <- "2020-07-16"
 ```
 
@@ -133,8 +135,11 @@ Atnaujinta: `r data`.
 
 ```{r,  echo = FALSE}
 dt <- read.csv("data/lt-covid19-total.csv", stringsAsFactors = FALSE)
-ag <- function(x)(c(x[1],diff(x)))
-dt <- dt %>% mutate(incidence = ag(confirmed), times = 1:n()) %>% select(day, confirmed, incidence, times) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
+ag <- function(x) (c(x[1], diff(x)))
+dt <- dt %>%
+  mutate(incidence = ag(confirmed), times = 1:n()) %>%
+  select(day, confirmed, incidence, times) %>%
+  mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
 dtf <- dt
 dt <- dt %>% filter(day >= "2020-03-11")
 paged_table(dt %>% select(-w))
@@ -146,31 +151,39 @@ paged_table(dt %>% select(-w))
 
 TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
-one_day <- lapply(TT, function(end) { 
-    dt19 <- dt %>% filter(day <= end)
-    r19 <- grid_search_ggm(dt19$times, dt19$incidence, dt19$w, c(0.3, 0.6, 0.9), c(0.3, 0.6, 0.9))
-    p19 <- r19$p
-    fr19 <- forecast_ggm(dt19, p19, ahead = 20) 
-    list(dt = dt19, grid = r19, p = p19, forecast = fr19)
-}
-)
+one_day <- lapply(TT, function(end) {
+  dt19 <- dt %>% filter(day <= end)
+  r19 <- grid_search_ggm(dt19$times, dt19$incidence, dt19$w, c(0.3, 0.6, 0.9), c(0.3, 0.6, 0.9))
+  p19 <- r19$p
+  fr19 <- forecast_ggm(dt19, p19, ahead = 20)
+  list(dt = dt19, grid = r19, p = p19, forecast = fr19)
+})
 ```
 
 ```{r, echo = FALSE, eval = FALSE}
-odf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
-odf <- odf %>% mutate(end = as.character(end)) %>% mutate(incidence = round(incidence))
+odf <- lapply(one_day, function(o) o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows()
+odf <- odf %>%
+  mutate(end = as.character(end)) %>%
+  mutate(incidence = round(incidence))
 
-codf <- odf %>% arrange(end, day) %>% group_by(end) %>% mutate(confirmed = cumsum(incidence) + 1) %>% ungroup %>% select(day, end, incidence, confirmed)
+codf <- odf %>%
+  arrange(end, day) %>%
+  group_by(end) %>%
+  mutate(confirmed = cumsum(incidence) + 1) %>%
+  ungroup() %>%
+  select(day, end, incidence, confirmed)
 
 fcodf <- read.csv("forecasts/forecasts_ggm.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day), end = ymd(end))
 mf <- max(min(codf$end), min(fcodf$end))
 
-if ( mf > min(fcodf$end)) {
+if (mf > min(fcodf$end)) {
   codf <- bind_rows(fcodf %>% filter(end < mf), codf %>% mutate(end = ymd(end)))
   write.csv(codf, "forecasts/forecasts_ggm.csv", row.names = FALSE)
-} 
+}
 
-coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day), r = l$p[1], p = l$p[2])) %>% bind_rows()
+coefs <- one_day %>%
+  lapply(function(l) data.frame(end = max(l$dt$day), r = l$p[1], p = l$p[2])) %>%
+  bind_rows()
 
 fcoefs <- read.csv("forecasts/models_ggm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
 
@@ -180,7 +193,6 @@ if (mf > min(fcoefs$end)) {
   coefs <- bind_rows(fcoefs %>% filter(end < mf), coefs %>% mutate(end = ymd(end)))
   write.csv(coefs, "forecasts/models_ggm.csv", row.names = FALSE)
 }
-
 ```
 
 
@@ -195,30 +207,42 @@ Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
 
 
 ```{r, echo = FALSE}
-codf <- read.csv("forecasts/forecasts_ggm.csv", colClasses = c("Date","character","integer","integer"), stringsAsFactors = FALSE)
+codf <- read.csv("forecasts/forecasts_ggm.csv", colClasses = c("Date", "character", "integer", "integer"), stringsAsFactors = FALSE)
 
-ggplot(aes(x = day, y = incidence, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = incidence, group = end, colour = end), data = codf %>% filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) +
+  geom_line() +
+  geom_point(aes(x = day, y = incidence, group = NULL), colour = "black", data = dt)
 ```
 
 
 ## Viso atvejų
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>% filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) +
+  geom_line() +
+  geom_point(aes(x = day, y = confirmed, group = NULL), colour = "black", data = dt)
 ```
 
 # Prognozių lentelė. 
 
 ```{r, echo = FALSE}
-codf %>% select(-confirmed) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, incidence) %>% left_join(dt %>% select(day, historic = incidence), by ="day") %>% paged_table
+codf %>%
+  select(-confirmed) %>%
+  filter(end >= max(dt$day) - days(2)) %>%
+  spread(end, incidence) %>%
+  left_join(dt %>% select(day, historic = incidence), by = "day") %>%
+  paged_table()
 ```
 
 Viso atvejų
 
 ```{r, echo = FALSE}
-codf %>% select(-incidence) %>% filter(end >= max(dt$day)-days(2)) %>%  spread(end, confirmed) %>% left_join(dt %>% select(day, historic = confirmed), by ="day") %>% paged_table
+codf %>%
+  select(-incidence) %>%
+  filter(end >= max(dt$day) - days(2)) %>%
+  spread(end, confirmed) %>%
+  left_join(dt %>% select(day, historic = confirmed), by = "day") %>%
+  paged_table()
 ```
 
 
@@ -228,7 +252,9 @@ Eksponentinis augimas yra $p = 1$.
 
 ```{r, echo = FALSE} 
 coefs <- read.csv("forecasts/models_ggm.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
-df <- coefs %>% filter(end >= max(end)- days(mc$show - 1)) %>% mutate(r = round(r, 2), p = round(p, 2))
+df <- coefs %>%
+  filter(end >= max(end) - days(mc$show - 1)) %>%
+  mutate(r = round(r, 2), p = round(p, 2))
 
-df %>% paged_table
+df %>% paged_table()
 ```

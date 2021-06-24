@@ -13,44 +13,66 @@ library(COVID19)
 library(DT)
 library(ggplot2)
 library(dplyr)
-Sys.setlocale(locale="lt_LT.UTF-8")
+Sys.setlocale(locale = "lt_LT.UTF-8")
 x <- covid19(verbose = FALSE, cache = FALSE)
 ```
 
 ```{r, include = FALSE}
-x1 <- x %>% select(date,administrative_area_level_1,confirmed, tests, deaths, population,hosp) %>% arrange(administrative_area_level_1, date)
+x1 <- x %>%
+  select(date, administrative_area_level_1, confirmed, tests, deaths, population, hosp) %>%
+  arrange(administrative_area_level_1, date)
 
-x2 <- x1 %>% group_by(administrative_area_level_1) %>% 
-    mutate(incidence = confirmed -lag(confirmed,1), 
-           deaths_daily = deaths - lag(deaths,1),
-           tests_daily = tests -lag(tests,1),
+x2 <- x1 %>%
+  group_by(administrative_area_level_1) %>%
+  mutate(
+    incidence = confirmed - lag(confirmed, 1),
+    deaths_daily = deaths - lag(deaths, 1),
+    tests_daily = tests - lag(tests, 1),
     incidence7 = rollmean(incidence, 7, fill = NA, align = "right"),
     incidence14 = rollsum(incidence, 14, fill = NA, align = "right"),
     deaths7 = rollmean(deaths_daily, 7, fill = NA, align = "right"),
     deaths14 = rollsum(deaths_daily, 14, fill = NA, align = "right"),
-    tests7 = rollmean(tests_daily,7 , fill = NA, align = "right"),
-    cases_100k = incidence14/population*100*1000,
-    deaths_100k = deaths14/population*100*1000,
-    cases_1m = incidence7/population*1000^2,
-    deaths_1m = deaths7/population*1000^2,
-    tests_1m = tests7/population*1000^2,
-    hosp_1m = hosp/population*1000^2,
-    tpr = round(100*incidence7/tests7,2)
-    ) %>% ungroup
+    tests7 = rollmean(tests_daily, 7, fill = NA, align = "right"),
+    cases_100k = incidence14 / population * 100 * 1000,
+    deaths_100k = deaths14 / population * 100 * 1000,
+    cases_1m = incidence7 / population * 1000^2,
+    deaths_1m = deaths7 / population * 1000^2,
+    tests_1m = tests7 / population * 1000^2,
+    hosp_1m = hosp / population * 1000^2,
+    deaths_total1m = deaths / population * 1000^2,
+    tpr = round(100 * incidence7 / tests7, 2)
+  ) %>%
+  ungroup()
 ```
 
 ```{r}
-ggplot(aes(x = date, y = cases_1m, colour = administrative_area_level_1), data = x2 %>% filter(administrative_area_level_1 %in% c("Lithuania", "Denmark"), date>="2021-02-01" & date<="2021-04-20"))+geom_line() + theme_bw() + labs(x = "Data", y ="", title = "7 dienų atvejai milijonui gyventojų") + scale_colour_manual(name = "Šalis",  values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
+ggplot(aes(x = date, y = cases_1m, colour = administrative_area_level_1), data = x2 %>% filter(administrative_area_level_1 %in% c("Lithuania", "Denmark"), date >= "2021-02-01" & date <= "2021-04-20")) +
+  geom_line() +
+  theme_bw() +
+  labs(x = "Data", y = "", title = "7 dienų atvejai milijonui gyventojų") +
+  scale_colour_manual(name = "Šalis", values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
 ```
 
 ```{r}
-ggplot(aes(x = date, y = deaths_1m, colour = administrative_area_level_1), data = x2 %>% filter(administrative_area_level_1 %in% c("Lithuania", "Denmark"), date>="2021-02-01" & date<="2021-04-20"))+geom_line() + theme_bw() + labs(x = "Data", y ="", title = "7 dienų mirtys milijonui gyventojų") + scale_colour_manual(name = "Šalis",  values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
+ggplot(aes(x = date, y = deaths_1m, colour = administrative_area_level_1), data = x2 %>% filter(administrative_area_level_1 %in% c("Lithuania", "Denmark"), date >= "2021-02-01" & date <= "2021-04-20")) +
+  geom_line() +
+  theme_bw() +
+  labs(x = "Data", y = "", title = "7 dienų mirtys milijonui gyventojų") +
+  scale_colour_manual(name = "Šalis", values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
 ```
 
 ```{r}
-ggplot(aes(x = date, y = tests_1m, colour = administrative_area_level_1), data = x2 %>% filter(administrative_area_level_1 %in% c("Lithuania", "Denmark"), date>="2021-02-01" & date<="2021-04-15"))+geom_line() + theme_bw() + labs(x = "Data", y ="", title = "7 dienų testai milijonui gyventojų") + scale_colour_manual(name = "Šalis",  values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
+ggplot(aes(x = date, y = tests_1m, colour = administrative_area_level_1), data = x2 %>% filter(administrative_area_level_1 %in% c("Lithuania", "Denmark"), date >= "2021-02-01" & date <= "2021-04-15")) +
+  geom_line() +
+  theme_bw() +
+  labs(x = "Data", y = "", title = "7 dienų testai milijonui gyventojų") +
+  scale_colour_manual(name = "Šalis", values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
 ```
 
 ```{r}
-ggplot(aes(x = date, y = hosp_1m, colour = administrative_area_level_1), data = x2 %>% filter(administrative_area_level_1 %in% c("Lithuania", "Denmark"), date>="2021-02-01" & date<="2021-04-15"))+geom_line() + theme_bw() + labs(x = "Data", y ="", title = "COVID-19 hospitalizacijos milijonui gyventojų") + scale_colour_manual(name = "Šalis",  values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
+ggplot(aes(x = date, y = hosp_1m, colour = administrative_area_level_1), data = x2 %>% filter(administrative_area_level_1 %in% c("Lithuania", "Denmark"), date >= "2021-02-01" & date <= "2021-04-15")) +
+  geom_line() +
+  theme_bw() +
+  labs(x = "Data", y = "", title = "COVID-19 hospitalizacijos milijonui gyventojų") +
+  scale_colour_manual(name = "Šalis", values = RColorBrewer::brewer.pal(3, "Set1")[1:2])
 ```

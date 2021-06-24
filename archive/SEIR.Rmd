@@ -18,85 +18,88 @@ options(max.print = 100000)
 
 
 seir <- function(t, state, parameters) {
-    with(as.list(c(state, parameters)), {
+  with(as.list(c(state, parameters)), {
+    drs <- 1 / D_recovery_severe
+    beta <- R0 / D_infectious
+    if (t > t_N) {
+      beta <- R0 / D_infectious * exp(-mu * (t - t_N))
+      # print(c(t, beta*D_infectious))
+    }
 
-        drs <- 1/D_recovery_severe
-        beta <- R0/D_infectious
-        if (t > t_N)  {
-            beta <- R0/D_infectious*exp(-mu*(t - t_N))
-            #print(c(t, beta*D_infectious))
-        }
+    gamma <- 1 / D_infectious
+    a <- 1 / D_incubation
 
-        gamma <- 1/D_infectious
-        a <-  1/D_incubation
-        
-        dS  <-   -beta*I*S
-        dE        <-   beta*I*S - a*E
-        dI        <-  a*E - gamma*I
-        dMild     <-   p_mild*gamma*I   - (1/D_recovery_mild)*Mild
-        dSevere   <-   p_severe*(1 - p_fatal/p_severe)*gamma*I - (1/D_hospital_lag)*Severe
-        dSevere_H <-   (1/D_hospital_lag)*Severe - drs*Severe_H
-        dFatal    <-   p_fatal*gamma*I - (1/D_death)*Fatal
-        dR_Mild   <-   (1/D_recovery_mild)*Mild
-        dR_Severe <-   drs*Severe_H
-        dR_Fatal  <-  (1/D_death)*Fatal
+    dS <- -beta * I * S
+    dE <- beta * I * S - a * E
+    dI <- a * E - gamma * I
+    dMild <- p_mild * gamma * I - (1 / D_recovery_mild) * Mild
+    dSevere <- p_severe * (1 - p_fatal / p_severe) * gamma * I - (1 / D_hospital_lag) * Severe
+    dSevere_H <- (1 / D_hospital_lag) * Severe - drs * Severe_H
+    dFatal <- p_fatal * gamma * I - (1 / D_death) * Fatal
+    dR_Mild <- (1 / D_recovery_mild) * Mild
+    dR_Severe <- drs * Severe_H
+    dR_Fatal <- (1 / D_death) * Fatal
 
-        conf.flow <- gamma*I  
-        list(c(dS, dE, dI, dMild, dSevere, dSevere_H, dFatal, dR_Mild, dR_Severe, dR_Fatal, conf.flow))
-    })
+    conf.flow <- gamma * I
+    list(c(dS, dE, dI, dMild, dSevere, dSevere_H, dFatal, dR_Mild, dR_Severe, dR_Fatal, conf.flow))
+  })
 }
 
 mseir <- function(times, init, param) {
-    out <- ode(y = init, time = times, func = seir, parms = param)
-    out
+  out <- ode(y = init, time = times, func = seir, parms = param)
+  out
 }
 
-mseir_param <- function(times, R0 = 2, mu = 0.01, D_infectious = 2.9, D_incubation = 5.2, t_N = round(times[1] + range(times)/2), I0 = 1, N = 2793196) {
+mseir_param <- function(times, R0 = 2, mu = 0.01, D_infectious = 2.9, D_incubation = 5.2, t_N = round(times[1] + range(times) / 2), I0 = 1, N = 2793196) {
+  Time_to_death <- 32
+  p_severe <- 0.2
+  death_rate <- 0.02
 
+  params <- c(
+    R0 = R0, mu = mu, t_N = t_N,
+    p_severe = p_severe, p_fatal = death_rate, p_mild = 1 - p_severe,
+    D_recovery_mild = (14 - D_infectious),
+    D_recovery_severe = (31.5 - D_infectious),
+    D_hospital_lag = 5,
+    D_death = Time_to_death - D_infectious,
+    D_infectious = D_infectious,
+    D_incubation = D_incubation
+  )
 
-    Time_to_death <- 32
-    p_severe <-  0.2
-    death_rate = 0.02
-
-    params = c(R0 = R0, mu = mu, t_N = t_N,
-               p_severe = p_severe, p_fatal = death_rate, p_mild = 1 - p_severe,
-               D_recovery_mild   = (14 - D_infectious),
-               D_recovery_severe = (31.5 - D_infectious),
-               D_hospital_lag    = 5,
-               D_death           = Time_to_death - D_infectious,
-               D_infectious = D_infectious,
-               D_incubation = D_incubation)
-
-    init <- c(S = 1 - I0/N,
-              E = 0,
-              I = I0/N,
-              Mild = 0,
-              Severe = 0,
-              Severe_H = 0 ,
-              Fatal = 0,
-              R_Mild = 0,
-              R_Severe = 0,
-              R_Fatal = 0, conf.flow = 0)
-    out <- mseir(times, init, params)
-    out[,-1] <- out[,-1]*N
-    out
+  init <- c(
+    S = 1 - I0 / N,
+    E = 0,
+    I = I0 / N,
+    Mild = 0,
+    Severe = 0,
+    Severe_H = 0,
+    Fatal = 0,
+    R_Mild = 0,
+    R_Severe = 0,
+    R_Fatal = 0, conf.flow = 0
+  )
+  out <- mseir(times, init, params)
+  out[, -1] <- out[, -1] * N
+  out
 }
 
 fit_seir1 <- function(p, times, y, t_N, I0, N) {
-    if (p[1] > 0 & p[2] > 0 ) {
-        out <- mseirp1(times, p = p, t_N = t_N, I0 = I0, N = N)
-        cc <- out[, "conf.flow"]
-        sum((diff(y) - diff(cc))^2)/length(y)
-    } else  NA
+  if (p[1] > 0 & p[2] > 0) {
+    out <- mseirp1(times, p = p, t_N = t_N, I0 = I0, N = N)
+    cc <- out[, "conf.flow"]
+    sum((diff(y) - diff(cc))^2) / length(y)
+  } else {
+    NA
+  }
 }
 
 
 
-mseirp1 <- function(times, p, t_N, I0, N ) {
-    mseir_param(times, R0 = p[1], mu = p[2], D_infectious = 2.9, D_incubation = 5.2, t_N = t_N , I0 = I0, N = N)
+mseirp1 <- function(times, p, t_N, I0, N) {
+  mseir_param(times, R0 = p[1], mu = p[2], D_infectious = 2.9, D_incubation = 5.2, t_N = t_N, I0 = I0, N = N)
 }
 
-#data <- Sys.time()
+# data <- Sys.time()
 data <- "2020-07-16"
 mc <- config::get(file = "_model.yml")
 ```
@@ -107,10 +110,15 @@ Atnaujinta: `r data`
 
 ```{r,  echo = FALSE}
 dt <- read.csv("data/lt-covid19-total.csv", stringsAsFactors = FALSE)
-ag <- function(x)(c(x[1],diff(x)))
-dt <- dt %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence, Recovered = recovered, Deaths  = deaths ) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
+ag <- function(x) (c(x[1], diff(x)))
+dt <- dt %>%
+  mutate(incidence = ag(confirmed)) %>%
+  select(day, confirmed, incidence, Recovered = recovered, Deaths = deaths) %>%
+  mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
 dtf <- dt
-dt <- dt %>% filter(day >= "2020-03-08") %>% mutate(times = 1:n())
+dt <- dt %>%
+  filter(day >= "2020-03-08") %>%
+  mutate(times = 1:n())
 paged_table(dt %>% select(-w))
 ```
 
@@ -139,39 +147,42 @@ Lietuvos duomenimis įvertinti koeficientai yra tokie:
 
 TT <- dt$day[dt$day >= max(dt$day) - days(mc$calculate)]
 
-#TT <- dt$day[dt$day >= max(dt$day) - 10]
+# TT <- dt$day[dt$day >= max(dt$day) - 10]
 
 
-one_day <- lapply(TT, function(end) { 
-    dt19 <- dt %>% filter(day <= end)
-    m1 <- optim(c(2,0.1), fit_seir1, y = dt19$confirmed, times = dt19$times, t_N = 9,  I0 = 1, N = 2793196)
+one_day <- lapply(TT, function(end) {
+  dt19 <- dt %>% filter(day <= end)
+  m1 <- optim(c(2, 0.1), fit_seir1, y = dt19$confirmed, times = dt19$times, t_N = 9, I0 = 1, N = 2793196)
 
-    tm <- min(dt19$times):(max(dt19$times) + 30)
-    fday <- dt19$day[1] + days(1:length(tm) - 1)
+  tm <- min(dt19$times):(max(dt19$times) + 30)
+  fday <- dt19$day[1] + days(1:length(tm) - 1)
 
-m1r <- mseirp1(tm, m1$par, t_N = 9, I0 = 1, N = 2793196) %>% data.frame %>% mutate(day = fday, incidence = c(0, round(diff(conf.flow)))) %>% mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed =  round(conf.flow), Hospital = round(Severe_H+Fatal), Recovered = round(R_Mild+R_Severe)) %>% select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
+  m1r <- mseirp1(tm, m1$par, t_N = 9, I0 = 1, N = 2793196) %>%
+    data.frame() %>%
+    mutate(day = fday, incidence = c(0, round(diff(conf.flow)))) %>%
+    mutate(Dead = round(R_Fatal), Infectious = round(I), Exposed = round(E), confirmed = round(conf.flow), Hospital = round(Severe_H + Fatal), Recovered = round(R_Mild + R_Severe)) %>%
+    select(day, time, confirmed, incidence, Infectious, Exposed, Hospital, Dead, Recovered)
 
 
-    list(dt = dt19, p = m1$par, opt = m1, forecast = m1r)
-    
-}
-)
-
+  list(dt = dt19, p = m1$par, opt = m1, forecast = m1r)
+})
 ```
 
 ```{r, echo = FALSE, eval = FALSE}
-codf <- lapply(one_day, function(o)o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows
-codf <- codf %>% mutate(end = as.character(end)) 
+codf <- lapply(one_day, function(o) o$forecast %>% mutate(end = max(o$dt$day))) %>% bind_rows()
+codf <- codf %>% mutate(end = as.character(end))
 
 fcodf <- read.csv("forecasts/forecasts_seir.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day), end = ymd(end))
 mf <- max(min(codf$end), min(fcodf$end))
 
-if ( mf > min(fcodf$end)) {
+if (mf > min(fcodf$end)) {
   codf <- bind_rows(fcodf %>% filter(end < mf), codf %>% mutate(end = ymd(end)))
   write.csv(codf, "forecasts/forecasts_seir.csv", row.names = FALSE)
-} 
+}
 
-coefs <- one_day %>% lapply(function(l)data.frame(end = max(l$dt$day), R = l$p[1], mu = l$p[2])) %>% bind_rows()
+coefs <- one_day %>%
+  lapply(function(l) data.frame(end = max(l$dt$day), R = l$p[1], mu = l$p[2])) %>%
+  bind_rows()
 
 fcoefs <- read.csv("forecasts/models_seir.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
 
@@ -192,17 +203,19 @@ Juoda spalva SAM skelbti užsikrėtusių per dieną skaičiai.
 ## Dieniniai atvejai
 
 ```{r, echo = FALSE}
-codf <- read.csv("forecasts/forecasts_seir.csv", colClasses = c("Date",rep("integer",8),"character"), stringsAsFactors = FALSE)
+codf <- read.csv("forecasts/forecasts_seir.csv", colClasses = c("Date", rep("integer", 8), "character"), stringsAsFactors = FALSE)
 
-ggplot(aes(x = day, y = incidence, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = incidence, group = end, colour = end), data = codf %>% filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) +
+  geom_line() +
+  geom_point(aes(x = day, y = incidence, group = NULL), colour = "black", data = dt)
 ```
 
 ## Viso atvejų
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>% filter(end >= max(dt$day) - days(mc$show - 1), day <= max(dt$day) + days(5))) +
+  geom_line() +
+  geom_point(aes(x = day, y = confirmed, group = NULL), colour = "black", data = dt)
 ```
 
 # Modelių koeficentai 
@@ -210,9 +223,11 @@ ggplot(aes(x = day, y = confirmed, group = end, colour = end), data = codf %>%  
 
 ```{r, echo = FALSE}
 coefs <- read.csv("forecasts/models_seir.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end))
-df <- coefs %>% filter(end >= max(end) - days(mc$show - 1)) %>% mutate(R = round(R, 2), mu = round(mu, 2))
+df <- coefs %>%
+  filter(end >= max(end) - days(mc$show - 1)) %>%
+  mutate(R = round(R, 2), mu = round(mu, 2))
 
-df %>% paged_table
+df %>% paged_table()
 ```
 
 
@@ -224,68 +239,92 @@ Taip atrodo modeliuojami intervencijos efektai. $R < 1$  reiškia kad epidemija 
 
 tm <- min(dt$times):(max(dt$times) + 30)
 fday <- dt$day[1] + days(1:length(tm) - 1)
-tmm <- tm - 9 
+tmm <- tm - 9
 tmm[tmm <= 0] <- 0
 
-Re <- split(df, df$end) %>% lapply(function(d) {
-      data.frame(day = fday, end =as.character(d$end), Re= d$R[1]*exp(-d$mu[1] * tmm), stringsAsFactors = FALSE)
-      
-}) %>% bind_rows()
+Re <- split(df, df$end) %>%
+  lapply(function(d) {
+    data.frame(day = fday, end = as.character(d$end), Re = d$R[1] * exp(-d$mu[1] * tmm), stringsAsFactors = FALSE)
+  }) %>%
+  bind_rows()
 
-ggplot(aes(x = day, y = Re, group = end, colour = end), data = Re) + geom_line() + geom_hline(yintercept = 1)
-
+ggplot(aes(x = day, y = Re, group = end, colour = end), data = Re) +
+  geom_line() +
+  geom_hline(yintercept = 1)
 ```
 
 Data kai modelis rodo, kad krizė suvaldyta
 
 ```{r, echo = FALSE}
-Re %>% group_by(end) %>% filter(Re<1) %>% filter(day == min(day)) %>% select(end, day, Re) %>% paged_table
+Re %>%
+  group_by(end) %>%
+  filter(Re < 1) %>%
+  filter(day == min(day)) %>%
+  select(end, day, Re) %>%
+  paged_table()
 ```
 
 
 ## Visos istorinės prognozės
 ```{r}
-fr <- read.csv("forecasts/forecasts_seir.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end), day = ymd(day)) 
+fr <- read.csv("forecasts/forecasts_seir.csv", stringsAsFactors = FALSE) %>% mutate(end = ymd(end), day = ymd(day))
 
-ggplot(aes(x= day, y = incidence, group = end, colour =end), data = fr %>% filter(end >="2020-03-27")) + geom_line() +geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
+ggplot(aes(x = day, y = incidence, group = end, colour = end), data = fr %>% filter(end >= "2020-03-27")) +
+  geom_line() +
+  geom_point(aes(x = day, y = incidence, group = NULL), colour = "black", data = dt)
 ```
 
 
 # Epidemijos pabaigos ir viso susirgusių prognozės 
 
 ```{r}
-zz <- fr %>% group_by(end) %>% filter(day >= "2020-03-16") %>% filter(incidence == min(incidence)) %>% arrange(day) %>% slice(1) %>% select(forecast_day = end, epidemic_end = day,  confirmed_total = confirmed)
+zz <- fr %>%
+  group_by(end) %>%
+  filter(day >= "2020-03-16") %>%
+  filter(incidence == min(incidence)) %>%
+  arrange(day) %>%
+  slice(1) %>%
+  select(forecast_day = end, epidemic_end = day, confirmed_total = confirmed)
 
 zz <- zz[order(zz$forecast_day, decreasing = TRUE), ]
-zz %>% paged_table
+zz %>% paged_table()
 ```
 
 # SEIR compartments
 
 ```{r, echo = FALSE} 
-pm1r <- codf %>% filter(end == max(end)) %>% select(day, Infectious, Exposed, Hospitalized = Hospital, Fatalities = Dead) %>% pivot_longer(Infectious:Fatalities,"Compartment") %>% mutate(Compartment = factor(Compartment, levels = c("Exposed", "Infectious","Hospitalized","Fatalities")))
-ggplot(aes(x= day, y = value, group = Compartment), data = pm1r)+ geom_col(aes(fill = Compartment)) + scale_fill_manual(values = c("Exposed" = "yellow", "Infectious" = "red", "Hospitalized" = "blue", "Fatalities" = "black"))
+pm1r <- codf %>%
+  filter(end == max(end)) %>%
+  select(day, Infectious, Exposed, Hospitalized = Hospital, Fatalities = Dead) %>%
+  pivot_longer(Infectious:Fatalities, "Compartment") %>%
+  mutate(Compartment = factor(Compartment, levels = c("Exposed", "Infectious", "Hospitalized", "Fatalities")))
+ggplot(aes(x = day, y = value, group = Compartment), data = pm1r) +
+  geom_col(aes(fill = Compartment)) +
+  scale_fill_manual(values = c("Exposed" = "yellow", "Infectious" = "red", "Hospitalized" = "blue", "Fatalities" = "black"))
 ```
 
 
 # Mirčių prognozė
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = Deaths, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>%  filter(end >= max(dt$day) - days(mc$show - 1))) + geom_line() + geom_point(aes(x = day,  y = Deaths, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = Deaths, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>% filter(end >= max(dt$day) - days(mc$show - 1))) +
+  geom_line() +
+  geom_point(aes(x = day, y = Deaths, group = NULL), colour = "black", data = dt)
 ```
 
 
 # Pasveikusių prognozė
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = Recovered, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>%  filter(end >= max(dt$day) - days(mc$show - 1))) + geom_line() + geom_point(aes(x = day,  y = Recovered, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = Recovered, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>% filter(end >= max(dt$day) - days(mc$show - 1))) +
+  geom_line() +
+  geom_point(aes(x = day, y = Recovered, group = NULL), colour = "black", data = dt)
 ```
 
 ## Hospitalizuotų pacientų prognozės
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = Hospital, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>%  filter(end >= max(dt$day) - days(mc$show - 1))) + geom_line() 
+ggplot(aes(x = day, y = Hospital, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>% filter(end >= max(dt$day) - days(mc$show - 1))) +
+  geom_line()
 ```
 

@@ -21,32 +21,46 @@ library(lubridate)
 library(tidyr)
 library(gridExtra)
 
-ii <- read.csv("../data/lt-covid19-individual.csv") 
+ii <- read.csv("../data/lt-covid19-individual.csv")
 ad <- read.csv("../data/lt-covid19-agedist.csv")
 
-ii_last_day <- max(ii$day) %>% as.character
-ad_last_day <- max(ad$day) %>% as.character
+ii_last_day <- max(ii$day) %>% as.character()
+ad_last_day <- max(ad$day) %>% as.character()
 
 
-if(grepl("apskr", params$region)) {
+if (grepl("apskr", params$region)) {
   aa <- read.csv("../data/lt-covid19-level2.csv") %>% rename(region = administrative_level_2)
-  adm <- read.csv("../raw_data/administrative_levels.csv") %>% 
+  adm <- read.csv("../raw_data/administrative_levels.csv") %>%
     filter(administrative_level_2 == params$region)
-  
-  ii <- ii %>% filter(administrative_level_3 %in% adm$administrative_level_3) %>% mutate(day = ymd(day))
-  ad <- ad %>% filter(administrative_level_3 %in% adm$administrative_level_3) %>% mutate(day = ymd(day))
-  gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania_level2.csv") %>% filter(administrative_level_2 == params$region) %>% mutate(day = ymd(day)) %>% select(-administrative_level_2)
+
+  ii <- ii %>%
+    filter(administrative_level_3 %in% adm$administrative_level_3) %>%
+    mutate(day = ymd(day))
+  ad <- ad %>%
+    filter(administrative_level_3 %in% adm$administrative_level_3) %>%
+    mutate(day = ymd(day))
+  gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania_level2.csv") %>%
+    filter(administrative_level_2 == params$region) %>%
+    mutate(day = ymd(day)) %>%
+    select(-administrative_level_2)
 } else {
-  if(params$region == "Lietuva") {
-      aa <- read.csv("../data/lt-covid19-country.csv") %>% mutate(region = "Lietuva") 
-      ii <- ii %>% mutate(day = ymd(day))
-      ad <- ad %>% mutate(day = ymd(day))
-      gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania.csv") %>% mutate(day = ymd(day))
+  if (params$region == "Lietuva") {
+    aa <- read.csv("../data/lt-covid19-country.csv") %>% mutate(region = "Lietuva")
+    ii <- ii %>% mutate(day = ymd(day))
+    ad <- ad %>% mutate(day = ymd(day))
+    gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania.csv") %>% mutate(day = ymd(day))
   } else {
-      aa <- read.csv("../data/lt-covid19-level3.csv") %>% rename(region = administrative_level_3)
-      ii <- ii %>% filter(administrative_level_3 == params$region) %>% mutate(day = ymd(day))
-      ad <- ad %>% filter(administrative_level_3 == params$region) %>% mutate(day = ymd(day))
-      gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania_level3.csv") %>% filter(administrative_level_3 == params$region) %>% mutate(day = ymd(day)) %>% select(-administrative_level_2, - administrative_level_3)
+    aa <- read.csv("../data/lt-covid19-level3.csv") %>% rename(region = administrative_level_3)
+    ii <- ii %>%
+      filter(administrative_level_3 == params$region) %>%
+      mutate(day = ymd(day))
+    ad <- ad %>%
+      filter(administrative_level_3 == params$region) %>%
+      mutate(day = ymd(day))
+    gm <- read.csv("../raw_data/google_mobility_lithuania/google_mobility_lithuania_level3.csv") %>%
+      filter(administrative_level_3 == params$region) %>%
+      mutate(day = ymd(day)) %>%
+      select(-administrative_level_2, -administrative_level_3)
   }
 }
 fixNA <- function(x, value = 0) {
@@ -54,28 +68,32 @@ fixNA <- function(x, value = 0) {
   x
 }
 
-#ii_last_day <- max(ii$day) %>% as.character
-aa_last_day <- max(aa$day) %>% as.character
-#ad_last_day <- max(ad$day) %>% as.character
+# ii_last_day <- max(ii$day) %>% as.character
+aa_last_day <- max(aa$day) %>% as.character()
+# ad_last_day <- max(ad$day) %>% as.character
 
 view_interval <- c("2020-10-01", aa_last_day)
 vaccine_interval <- c("2020-12-27", aa_last_day)
 
 
-aa <- aa %>% filter(region == params$region) %>% mutate(day = ymd(day)) %>% filter(day>="2020-02-28")
+aa <- aa %>%
+  filter(region == params$region) %>%
+  mutate(day = ymd(day)) %>%
+  filter(day >= "2020-02-28")
 
-aa_stats <- aa %>% select(day,confirmed_growth_weekly, tpn_growth_weekly,
-                          confirmed_100k, tpr_confirmed, tpr_tpn,
-                          tpr_confirmed_diff_weekly, tpr_tpn_diff_weekly,
-                          deaths_100k,
-                          tests_100k, 
-                          tests_growth_weekly, 
-                          deaths_growth_weekly, vaccinated_1, vaccinated_2, vaccinated_1_percent, vaccinated_2_percent, vaccinated_1_daily, vaccinated_2_daily)
+aa_stats <- aa %>% select(
+  day, confirmed_growth_weekly, tpn_growth_weekly,
+  confirmed_100k, tpr_confirmed, tpr_tpn,
+  tpr_confirmed_diff_weekly, tpr_tpn_diff_weekly,
+  deaths_100k,
+  tests_100k,
+  tests_growth_weekly,
+  deaths_growth_weekly, vaccinated_1, vaccinated_2, vaccinated_1_percent, vaccinated_2_percent, vaccinated_1_daily, vaccinated_2_daily
+)
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
 
 xi <- xts(aa %>% select(confirmed = confirmed_daily, deaths = deaths_daily, tests = tests_daily, tpnew = tests_positive), order.by = aa$day)
-
 ```
 
 ---
@@ -93,18 +111,20 @@ Column {data-width=650 .tabset}
 ```{r}
 
 
-if(nrow(xi) > 6) {
-    axtt14 <- rollmean(xi, 14, fill = NA, align = "right")
-    axtt7 <- rollmean(xi, 7, fill = NA, align = "right")
-    colnames(axtt7) <- paste0(colnames(axtt7),"7")
-    colnames(axtt14) <- paste0(colnames(axtt14),"14")
-    a714 <- cbind(xi, axtt7, axtt14)
+if (nrow(xi) > 6) {
+  axtt14 <- rollmean(xi, 14, fill = NA, align = "right")
+  axtt7 <- rollmean(xi, 7, fill = NA, align = "right")
+  colnames(axtt7) <- paste0(colnames(axtt7), "7")
+  colnames(axtt14) <- paste0(colnames(axtt14), "14")
+  a714 <- cbind(xi, axtt7, axtt14)
 } else {
-    a714 <- xi
+  a714 <- xi
 }
 
 
-dygraph(a714[,c("confirmed","confirmed7","confirmed14")], main = paste("Nauji atvejai ir slenkantys vidurkiai:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(a714[, c("confirmed", "confirmed7", "confirmed14")], main = paste("Nauji atvejai ir slenkantys vidurkiai:", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3, 1, 2)]) %>%
+  dyRangeSelector(dateWindow = view_interval)
 ```
 
 
@@ -112,7 +132,9 @@ dygraph(a714[,c("confirmed","confirmed7","confirmed14")], main = paste("Nauji at
 ### Savaitinis augimas
 
 ```{r}
-dygraph(xaa[,"confirmed_growth_weekly"], main = paste("Savaitinis naujų atvejų augimas:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval) %>% 
+dygraph(xaa[, "confirmed_growth_weekly"], main = paste("Savaitinis naujų atvejų augimas:", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>%
+  dyRangeSelector(dateWindow = view_interval) %>%
   dyLimit(0)
 ```
 
@@ -120,7 +142,9 @@ dygraph(xaa[,"confirmed_growth_weekly"], main = paste("Savaitinis naujų atvejų
 ### 100k dinamika
 
 ```{r}
-dygraph(xaa[,"confirmed_100k"], main = paste("Atvejų skaičius 100k gyventojų per 14 dienų:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(xaa[, "confirmed_100k"], main = paste("Atvejų skaičius 100k gyventojų per 14 dienų:", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>%
+  dyRangeSelector(dateWindow = view_interval)
 ```
 
 Column {data-width=350}
@@ -130,22 +154,48 @@ Column {data-width=350}
 
 ```{r}
 agr <- read.csv("../raw_data/agegroups.csv")
-as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras","Moteris")) %>% mutate(n1 = 0)
+as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras", "Moteris")) %>% mutate(n1 = 0)
 ii <- ii %>% filter(sex %in% c("Vyras", "Moteris"))
 ad <- ad %>% filter(sex %in% c("Vyras", "Moteris"))
 
-oo <- ad%>% filter(day >= ymd(ad_last_day)- days(13)) %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n)) %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
+oo <- ad %>%
+  filter(day >= ymd(ad_last_day) - days(13)) %>%
+  inner_join(agr, by = "age") %>%
+  select(-age) %>%
+  rename(age = age1) %>%
+  count(age, sex) %>%
+  right_join(as_all, by = c("age", "sex")) %>%
+  select(-n1) %>%
+  mutate(n = fixNA(n)) %>%
+  rename(Atvejai = n, Amžius = age) %>%
+  pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
 
 
-cols<-RColorBrewer::brewer.pal(3, "Set1")
+cols <- RColorBrewer::brewer.pal(3, "Set1")
 
-pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.2, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
+pm <- ggplot(aes(x = Amžius, y = Atvejai), data = oo %>% rename(Atvejai = Moteris)) +
+  geom_col(fill = cols[1]) +
+  geom_text(aes(label = Atvejai), hjust = 1.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(trans = "reverse", expand = expansion(mult = c(0.2, 0))) +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02), "npc")) +
+  labs(title = "Moterys")
 
-pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.1)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.2)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
+pv <- ggplot(aes(x = Amžius, y = Atvejai), data = oo %>% rename(Atvejai = Vyras)) +
+  geom_col(fill = cols[2]) +
+  geom_text(aes(label = Atvejai), hjust = -0.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.2))) +
+  theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03), "npc"), plot.title = element_text(hjust = 1)) +
+  labs(title = "Vyrai")
 
 grid.arrange(pm,
-    pv,
-    ncol=2
+  pv,
+  ncol = 2
 )
 ```
 
@@ -153,21 +203,46 @@ grid.arrange(pm,
 
 ```{r}
 
-oo <- ii%>% filter(status == "Mirė") %>% inner_join(agr, by = "age") %>% select(-age) %>% rename(age=age1) %>% count(age, sex) %>% right_join(as_all, by = c("age", "sex")) %>% select(-n1) %>% mutate(n = fixNA(n))
+oo <- ii %>%
+  filter(status == "Mirė") %>%
+  inner_join(agr, by = "age") %>%
+  select(-age) %>%
+  rename(age = age1) %>%
+  count(age, sex) %>%
+  right_join(as_all, by = c("age", "sex")) %>%
+  select(-n1) %>%
+  mutate(n = fixNA(n))
 
 
-oo <- oo %>% rename(Atvejai = n, Amžius = age) %>% pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
+oo <- oo %>%
+  rename(Atvejai = n, Amžius = age) %>%
+  pivot_wider(names_from = "sex", values_from = "Atvejai", values_fill = 0)
 
 
-pm <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Moteris)) + geom_col(fill = cols[1]) + geom_text(aes(label = Atvejai), hjust = 1.1) + coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous(trans = "reverse", expand = expansion(mult=c(0.13, 0))) +  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02),"npc")) + labs(title = "Moterys")
+pm <- ggplot(aes(x = Amžius, y = Atvejai), data = oo %>% rename(Atvejai = Moteris)) +
+  geom_col(fill = cols[1]) +
+  geom_text(aes(label = Atvejai), hjust = 1.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(trans = "reverse", expand = expansion(mult = c(0.13, 0))) +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02), "npc")) +
+  labs(title = "Moterys")
 
-pv <- ggplot(aes(x=Amžius, y =Atvejai), data =oo %>% rename(Atvejai = Vyras)) + geom_col(fill = cols[2]) + geom_text(aes(label = Atvejai), hjust = -0.1)+coord_flip()+labs(y = "", x= "") + theme_bw() + scale_y_continuous( expand = expansion(mult=c(0, 0.13)))+theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03),"npc"), plot.title = element_text(hjust = 1)) + labs(title = "Vyrai")
+pv <- ggplot(aes(x = Amžius, y = Atvejai), data = oo %>% rename(Atvejai = Vyras)) +
+  geom_col(fill = cols[2]) +
+  geom_text(aes(label = Atvejai), hjust = -0.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.13))) +
+  theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03), "npc"), plot.title = element_text(hjust = 1)) +
+  labs(title = "Vyrai")
 
 grid.arrange(pm,
-    pv,
-    ncol=2
+  pv,
+  ncol = 2
 )
-
 ```
 
 Tyrimų dalis
@@ -179,14 +254,16 @@ Column {data-width=500 .tabset}
 ### Teigiamų tyrimų dalis
 
 ```{r}
-ttn1 <- 100*a714[,"tpnew"]/a714[,"tests"]
+ttn1 <- 100 * a714[, "tpnew"] / a714[, "tests"]
 
-ttn7 <- 100*a714[,"tpnew7"]/a714[,"tests7"]
+ttn7 <- 100 * a714[, "tpnew7"] / a714[, "tests7"]
 
 ttn <- cbind(ttn1, ttn7)
 colnames(ttn) <- c("ttn", "ttn7")
 
-dygraph(ttn[,c("ttn","ttn7")], main = paste("Teigiamų tyrimų dalis:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(ttn[, c("ttn", "ttn7")], main = paste("Teigiamų tyrimų dalis:", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3, 1)]) %>%
+  dyRangeSelector(dateWindow = view_interval)
 ```
 
 Column {data-width=500 .tabset}
@@ -196,7 +273,10 @@ Column {data-width=500 .tabset}
 ### Teigiamų tyrimų dalies augimas
 
 ```{r}
-dygraph(xaa[,"tpr_tpn_diff_weekly"], main = paste(" Teigiamų tyrimų dalies augimas:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
+dygraph(xaa[, "tpr_tpn_diff_weekly"], main = paste(" Teigiamų tyrimų dalies augimas:", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>%
+  dyRangeSelector(dateWindow = view_interval) %>%
+  dyLimit(0)
 ```
 
 
@@ -210,8 +290,9 @@ Column {data-width=500 .tabset}
 ### Viso testų
 
 ```{r}
-dygraph(a714[,c("tests","tests7","tests14")], main =  paste("Viso testų per dieną ", aa_last_day)) %>%dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1,2)]) %>% dyRangeSelector(dateWindow = view_interval)
-
+dygraph(a714[, c("tests", "tests7", "tests14")], main = paste("Viso testų per dieną ", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3, 1, 2)]) %>%
+  dyRangeSelector(dateWindow = view_interval)
 ```
 
 
@@ -220,7 +301,10 @@ dygraph(a714[,c("tests","tests7","tests14")], main =  paste("Viso testų per die
 ### 100k dinamika
 
 ```{r}
-dygraph(xaa[,"tests_100k"], main =  paste("Testų skaičius 100k gyventojų per 14 dienų ", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
+dygraph(xaa[, "tests_100k"], main = paste("Testų skaičius 100k gyventojų per 14 dienų ", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
+  dyRangeSelector(dateWindow = view_interval) %>%
+  dyLimit(0)
 ```
 
 
@@ -230,7 +314,10 @@ Column {data-width=500 .tabset}
 ### Testavimo savaitinis augimas
 
 ```{r}
-dygraph(xaa[,"tests_growth_weekly"], main =  paste("Testų savaitinis augimas ", aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
+dygraph(xaa[, "tests_growth_weekly"], main = paste("Testų savaitinis augimas ", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
+  dyRangeSelector(dateWindow = view_interval) %>%
+  dyLimit(0)
 ```
 
 
@@ -245,7 +332,9 @@ Column {data-width=500 .tabset}
 ### Mirtys
 
 ```{r}
-dygraph(a714[,c("deaths","deaths7")], main = paste("Mirtys ir slenkantys vidurkiai:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3,1)]) %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(a714[, c("deaths", "deaths7")], main = paste("Mirtys ir slenkantys vidurkiai:", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3, 1)]) %>%
+  dyRangeSelector(dateWindow = view_interval)
 ```
 
 
@@ -255,7 +344,10 @@ Column {data-width=500, .tabset}
 ### Mirtys
 
 ```{r}
-dygraph(xaa[,"deaths_growth_weekly"], main = paste("Savaitinis mirčių augimas:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval) %>% dyLimit(0)
+dygraph(xaa[, "deaths_growth_weekly"], main = paste("Savaitinis mirčių augimas:", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>%
+  dyRangeSelector(dateWindow = view_interval) %>%
+  dyLimit(0)
 ```
 
 
@@ -263,7 +355,9 @@ dygraph(xaa[,"deaths_growth_weekly"], main = paste("Savaitinis mirčių augimas:
 ### Mirtys 100k
 
 ```{r}
-dygraph(xaa[,"deaths_100k"], main = paste("Mirčių skaičius 100k gyventojų per 14 dienų:",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(xaa[, "deaths_100k"], main = paste("Mirčių skaičius 100k gyventojų per 14 dienų:", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>%
+  dyRangeSelector(dateWindow = view_interval)
 ```
 
 Vakcinos
@@ -276,19 +370,25 @@ Column {.tabset}
 ### Viso
 
 ```{r}
-dygraph(xaa["2020-12-27/",c("vaccinated_1","vaccinated_2")], main = paste("Pirmą ir antrą skiepų dozę gavusių žmonių skaičius",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1,3)]) %>% dyRangeSelector(dateWindow = vaccine_interval)
+dygraph(xaa["2020-12-27/", c("vaccinated_1", "vaccinated_2")], main = paste("Pirmą ir antrą skiepų dozę gavusių žmonių skaičius", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1, 3)]) %>%
+  dyRangeSelector(dateWindow = vaccine_interval)
 ```
 
 ### Per dieną
 
 ```{r}
-dygraph(xaa["2020-12-27/",c("vaccinated_1_daily","vaccinated_2_daily")], main = paste("Pirmos ir antros dozės per dieną",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1,3)]) %>% dyRangeSelector(dateWindow = vaccine_interval)
+dygraph(xaa["2020-12-27/", c("vaccinated_1_daily", "vaccinated_2_daily")], main = paste("Pirmos ir antros dozės per dieną", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1, 3)]) %>%
+  dyRangeSelector(dateWindow = vaccine_interval)
 ```
 
 ### Procentas paskiepytų
 
 ```{r}
-dygraph(xaa["2020-12-27/",c("vaccinated_1_percent","vaccinated_2_percent")], main = paste("Pirmą ir antrą dozę gavusių procentas",aa_last_day)) %>% dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1,3)]) %>% dyRangeSelector(dateWindow = vaccine_interval)
+dygraph(xaa["2020-12-27/", c("vaccinated_1_percent", "vaccinated_2_percent")], main = paste("Pirmą ir antrą dozę gavusių procentas", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1, 3)]) %>%
+  dyRangeSelector(dateWindow = vaccine_interval)
 ```
 
 Mobilumo duomenys
@@ -298,34 +398,39 @@ Column {.tabset}
 -----------------------------------------------------------------------
 
 ```{r}
-if(nrow(gm)>0) {
-xgm <- xts(gm %>% select(-day), gm$day )
+if (nrow(gm) > 0) {
+  xgm <- xts(gm %>% select(-day), gm$day)
 
-gmt <- mapply(function(x, tbname, plotname)list(x = x, tbname = tbname, plotname = plotname),
-              as.list(xgm), 
-              c("Prekybos centrai",
-                "Maisto parduotuvės ir vaistinės",
-                "Parkai",
-                "Viešasis transportas", 
-                "Darbovietės", 
-                "Gyvenamosios vietos"),
-              c("Google mobilumas, prekybos centrai ir pramogų vietos",
-                "Google mobilumas, maisto parduotuvės ir vaistinės",
-                "Google mobilumas, parkai",
-                "Google mobilumo duomenys, viešasis transportas",
-                "Google mobilumo duomenys, darbovietės",
-                "Google mobilumo duomenys, gyvenamosios vietos"),
-                SIMPLIFY =  FALSE)
+  gmt <- mapply(function(x, tbname, plotname) list(x = x, tbname = tbname, plotname = plotname),
+    as.list(xgm),
+    c(
+      "Prekybos centrai",
+      "Maisto parduotuvės ir vaistinės",
+      "Parkai",
+      "Viešasis transportas",
+      "Darbovietės",
+      "Gyvenamosios vietos"
+    ),
+    c(
+      "Google mobilumas, prekybos centrai ir pramogų vietos",
+      "Google mobilumas, maisto parduotuvės ir vaistinės",
+      "Google mobilumas, parkai",
+      "Google mobilumo duomenys, viešasis transportas",
+      "Google mobilumo duomenys, darbovietės",
+      "Google mobilumo duomenys, gyvenamosios vietos"
+    ),
+    SIMPLIFY = FALSE
+  )
 }
 ```
 
 ```{r, include=FALSE}
-if(nrow(gm)>0) {
-tabs <- sapply(gmt, function(tab_report) { 
+if (nrow(gm) > 0) {
+  tabs <- sapply(gmt, function(tab_report) {
     nn <- new.env()
     nn$tab_report <- tab_report
-    knitr::knit_child('mobility_tab.Rmd', envir = nn)
-})
+    knitr::knit_child("mobility_tab.Rmd", envir = nn)
+  })
 } else {
   tabs <- "Nėra duomenų"
 }

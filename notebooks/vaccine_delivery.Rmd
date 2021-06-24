@@ -14,56 +14,84 @@ source("../R/functions.R")
 
 ```{r}
 
-vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") 
+vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv")
 dlv <- read.csv("../data/lt-covid19-vaccine-deliveries.csv") %>% mutate(day = ymd(day))
 ```
 
 ```{r}
-dlv1 <- dlv %>% group_by(vaccine_name) %>% summarise(vaccines_arrived  = sum(vaccines_arrived, na.rm = TRUE), vaccines_allocated = sum(vaccines_allocated, na.rm = TRUE))
+dlv1 <- dlv %>%
+  group_by(vaccine_name) %>%
+  summarise(vaccines_arrived = sum(vaccines_arrived, na.rm = TRUE), vaccines_allocated = sum(vaccines_allocated, na.rm = TRUE))
 
-d1 <- vcfd %>% count(vaccine_name = vacc_type_1) %>% rename(first_dose = n)
-d2 <- vcfd %>% filter(vacc_type_2!="") %>% count(vaccine_name = vacc_type_2) %>% rename(second_dose = n)
-da <- d1 %>% left_join(d2) %>% mutate(used = first_dose+second_dose)
+d1 <- vcfd %>%
+  count(vaccine_name = vacc_type_1) %>%
+  rename(first_dose = n)
+d2 <- vcfd %>%
+  filter(vacc_type_2 != "") %>%
+  count(vaccine_name = vacc_type_2) %>%
+  rename(second_dose = n)
+da <- d1 %>%
+  left_join(d2) %>%
+  mutate(second_dose = ifelse(is.na(second_dose), 0, second_dose)) %>%
+  mutate(used = first_dose + second_dose)
 
-avd <- da %>% left_join(dlv1) %>% mutate(unallocated = vaccines_arrived- vaccines_allocated, unused = vaccines_allocated - used, p = round(100*unused/vaccines_allocated,2))
-
+avd <- da %>%
+  left_join(dlv1) %>%
+  mutate(unallocated = vaccines_arrived - vaccines_allocated, unused = vaccines_allocated - used, p = round(100 * unused / vaccines_allocated, 2))
 ```
 
-```{r}
-dlv1 <- dlv %>% group_by(vaccine_name) %>% summarise(vaccines_arrived  = sum(vaccines_arrived, na.rm = TRUE), vaccines_allocated = sum(vaccines_allocated, na.rm = TRUE))
 
-d1 <- vcfd %>% count(vaccine_name = vacc_type_1) %>% rename(first_dose = n)
-d2 <- vcfd %>% filter(vacc_type_2!="") %>% count(vaccine_name = vacc_type_2) %>% rename(second_dose = n)
-da <- d1 %>% left_join(d2) %>% mutate(used = first_dose+second_dose)
-
-avd <- da %>% left_join(dlv1) %>% mutate(unallocated = vaccines_arrived- vaccines_allocated, unused = vaccines_allocated - used, p = round(100*unused/vaccines_allocated,2))
-
-```
-
-```{r}
-
-d1c <- vcfd %>% mutate(day = ymd(ymd_hms(vacc_date_1))) %>% group_by(day,vaccine_name = vacc_type_1) %>% summarise(first_dose = n())
-
-d2c <- vcfd %>% mutate(day = ymd(ymd_hms(vacc_date_2))) %>% filter(vacc_type_2!="") %>% count(day, vaccine_name = vacc_type_2) %>% rename(second_dose = n)
-
-dac <- d1c %>% left_join(d2c) 
-
-smd <- expand.grid(day=ymd("2020-12-26")+days(0:as.integer(ymd(Sys.Date())-ymd("2020-12-26"))), vaccine_name = unique(dac$vaccine_name))
-
-dac1 <- smd %>% left_join(dac) %>% mutate(first_dose = fixNA(first_dose),second_dose = fixNA(second_dose)) %>% mutate(used = first_dose+second_dose) %>% ungroup %>% group_by(vaccine_name) %>% mutate(cumulative_use = cumsum(used)) %>% ungroup
-
-avdc <- dac1 %>% left_join(dlv) %>% 
-    mutate(vaccines_arrived = fixNA(vaccines_arrived), vaccines_allocated = fixNA(vaccines_allocated)) %>% group_by(vaccine_name) %>% 
-    mutate(arrived  = cumsum(vaccines_arrived),allocated = cumsum(vaccines_arrived)) %>% 
-    ungroup %>% mutate(p = round(100*cumulative_use/allocated,2))
-
-
-
-```
 
 ```{r}
 
-ggplot(aes(x = day, y = p, colour = vaccine_name), data = avdc %>% filter(p<Inf)) + 
-    geom_line() + theme_bw() + labs(y = "Procentai", x = "Data", title = "Vakcinų sunaudojimo procentas Lietuvoje")+
-    scale_colour_manual(name = "Vakcina", values = RColorBrewer::brewer.pal(3, "Set1"))
+d1c <- vcfd %>%
+  mutate(day = ymd(ymd_hms(vacc_date_1))) %>%
+  group_by(day, vaccine_name = vacc_type_1) %>%
+  summarise(first_dose = n())
+
+d2c <- vcfd %>%
+  mutate(day = ymd(ymd_hms(vacc_date_2))) %>%
+  filter(vacc_type_2 != "") %>%
+  count(day, vaccine_name = vacc_type_2) %>%
+  rename(second_dose = n)
+
+dac <- d1c %>% left_join(d2c)
+
+smd <- expand.grid(day = ymd("2020-12-26") + days(0:as.integer(ymd(Sys.Date()) - ymd("2020-12-26"))), vaccine_name = unique(dac$vaccine_name))
+
+dac1 <- smd %>%
+  left_join(dac) %>%
+  mutate(first_dose = fixNA(first_dose), second_dose = fixNA(second_dose)) %>%
+  mutate(used = first_dose + second_dose) %>%
+  ungroup() %>%
+  group_by(vaccine_name) %>%
+  mutate(cumulative_use = cumsum(used)) %>%
+  ungroup()
+
+avdc <- dac1 %>%
+  left_join(dlv) %>%
+  mutate(vaccines_arrived = fixNA(vaccines_arrived), vaccines_allocated = fixNA(vaccines_allocated)) %>%
+  group_by(vaccine_name) %>%
+  mutate(arrived = cumsum(vaccines_arrived), allocated = cumsum(vaccines_arrived)) %>%
+  ungroup() %>%
+  mutate(p = round(100 * cumulative_use / allocated, 2))
+```
+
+```{r}
+
+ggplot(aes(x = day, y = p, colour = vaccine_name), data = avdc %>% filter(p < Inf)) +
+  geom_line() +
+  theme_bw() +
+  labs(y = "Procentai", x = "Data", title = "Vakcinų sunaudojimo procentas Lietuvoje") +
+  scale_colour_manual(name = "Vakcina", values = RColorBrewer::brewer.pal(4, "Set1"))
+```
+```{r}
+aav <- dlv %>%
+  group_by(week = floor_date(day, unit = "week", week_start = 1)) %>%
+  summarise(arrived = sum(vaccines_arrived, na.rm = TRUE), allocated = sum(vaccines_allocated, na.rm = TRUE))
+
+ggplot(aes(x = week, y = arrived), data = aav) +
+  geom_line() +
+  theme_bw() +
+  labs(y = "Dozės", x = "Savaitės", title = "Savaitiniai pristatytų vakcinų kiekiai Lietuvoje")
 ```

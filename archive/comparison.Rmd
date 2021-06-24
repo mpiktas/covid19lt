@@ -21,11 +21,16 @@ Atnaujinta: `r data`.
 
 ```{r,  echo = FALSE}
 dt <- read.csv("data/lt-covid19-total.csv", stringsAsFactors = FALSE)
-ag <- function(x)(c(x[1],diff(x)))
-dt <- dt %>% mutate(incidence = ag(confirmed)) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
+ag <- function(x) (c(x[1], diff(x)))
+dt <- dt %>%
+  mutate(incidence = ag(confirmed)) %>%
+  select(day, confirmed, incidence) %>%
+  mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
 dtf <- dt
-dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
-#paged_table(dt %>% select(-w))
+dt <- dt %>%
+  filter(day >= "2020-03-11") %>%
+  mutate(times = 1:n())
+# paged_table(dt %>% select(-w))
 ```
 
 # Vieno žingsnio prognozių palyginimas
@@ -34,29 +39,37 @@ dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
 fns <- dir("forecasts", pattern = "forecast*", full.names = TRUE)
 
 mod <- lapply(fns, function(x) {
-    mod <- strsplit(x, "(_)|([.])")[[1]][2]
-    read.csv(x, stringsAsFactors = FALSE) %>% select(day, end, incidence, confirmed) %>% 
-        mutate(model = mod)
-}) %>% bind_rows %>%  mutate(day = ymd(day), end = ymd(end))
+  mod <- strsplit(x, "(_)|([.])")[[1]][2]
+  read.csv(x, stringsAsFactors = FALSE) %>%
+    select(day, end, incidence, confirmed) %>%
+    mutate(model = mod)
+}) %>%
+  bind_rows() %>%
+  mutate(day = ymd(day), end = ymd(end))
 
-t1 <- mod %>% group_by(model, end) %>% filter(day == end + days(1))
-t3 <- mod %>% group_by(model, end) %>% filter(day == end + days(3))
-
+t1 <- mod %>%
+  group_by(model, end) %>%
+  filter(day == end + days(1))
+t3 <- mod %>%
+  group_by(model, end) %>%
+  filter(day == end + days(3))
 ```
 
 ## Dieniniai atvejai
 
 ```{r, echo = FALSE}
 
-ggplot(aes(x = day, y = incidence, group = model, colour = model), data = t1) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = incidence, group = model, colour = model), data = t1) +
+  geom_line() +
+  geom_point(aes(x = day, y = incidence, group = NULL), colour = "black", data = dt)
 ```
 
 ## Viso atvejų
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = confirmed, group = model, colour = model), data = t1) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = confirmed, group = model, colour = model), data = t1) +
+  geom_line() +
+  geom_point(aes(x = day, y = confirmed, group = NULL), colour = "black", data = dt)
 ```
 
 
@@ -66,14 +79,16 @@ ggplot(aes(x = day, y = confirmed, group = model, colour = model), data = t1) + 
 
 ```{r, echo = FALSE}
 
-ggplot(aes(x = day, y = incidence, group = model, colour = model), data = t3) + geom_line() + geom_point(aes(x = day,  y = incidence, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = incidence, group = model, colour = model), data = t3) +
+  geom_line() +
+  geom_point(aes(x = day, y = incidence, group = NULL), colour = "black", data = dt)
 ```
 
 ## Viso atvejų
 
 ```{r, echo = FALSE}
-ggplot(aes(x = day, y = confirmed, group = model, colour = model), data = t3) + geom_line() + geom_point(aes(x = day,  y = confirmed, group = NULL), colour = "black", data = dt)
-
+ggplot(aes(x = day, y = confirmed, group = model, colour = model), data = t3) +
+  geom_line() +
+  geom_point(aes(x = day, y = confirmed, group = NULL), colour = "black", data = dt)
 ```
 
