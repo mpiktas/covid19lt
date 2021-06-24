@@ -25,10 +25,15 @@ Atnaujinta: `r data`.
 
 ```{r,  echo = FALSE}
 aa <- read.csv("../data/lt-covid19-country.csv", stringsAsFactors = FALSE)
-ag <- function(x)(c(x[1],diff(x)))
-dt <- aa %>% mutate(incidence = confirmed_daily) %>% select(day, confirmed, incidence) %>% mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1)) 
+ag <- function(x) (c(x[1], diff(x)))
+dt <- aa %>%
+  mutate(incidence = confirmed_daily) %>%
+  select(day, confirmed, incidence) %>%
+  mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
 dtf <- dt
-dt <- dt %>% filter(day >= "2020-03-11") %>% mutate(times = 1:n())
+dt <- dt %>%
+  filter(day >= "2020-03-11") %>%
+  mutate(times = 1:n())
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning=FALSE}
@@ -43,9 +48,13 @@ $R < 1$ reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą [straips
 
 
 ```{r, echo = FALSE}
-oo <- ltR$R %>% inner_join(dt %>% rename(t_end=times), by ="t_end") %>% select(day, R = `Mean(R)`, lwr = `Quantile.0.025(R)`,upr = `Quantile.0.975(R)`)
-bb <- xts(oo %>% select(-day), order.by=ymd(oo$day))
-dygraph(bb, main = "Effective R in Lithuania") %>% dySeries(c("lwr","R","upr"), label = "R") %>% dyRangeSelector()
+oo <- ltR$R %>%
+  inner_join(dt %>% rename(t_end = times), by = "t_end") %>%
+  select(day, R = `Mean(R)`, lwr = `Quantile.0.025(R)`, upr = `Quantile.0.975(R)`)
+bb <- xts(oo %>% select(-day), order.by = ymd(oo$day))
+dygraph(bb, main = "Effective R in Lithuania") %>%
+  dySeries(c("lwr", "R", "upr"), label = "R") %>%
+  dyRangeSelector()
 ```
 
 $x$-ašyje yra dienos nuo epidemijos pradžios. Epidemijos pradžia pasirinkta 2020-03-11, tai pirma diena. 
@@ -56,11 +65,14 @@ Ta pati informacija lentelėje
 
 RR <- read.csv("../data/lt-covid19-effective-R.csv")
 
-RR %>% datatable( 
-         extensions = c('FixedColumns',"FixedHeader"),
-          options = list(scrollX = TRUE, 
-                         paging=FALSE,
-                         fixedHeader=TRUE))
+RR %>% datatable(
+  extensions = c("FixedColumns", "FixedHeader"),
+  options = list(
+    scrollX = TRUE,
+    paging = FALSE,
+    fixedHeader = TRUE
+  )
+)
 ```
 
 

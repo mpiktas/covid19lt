@@ -28,7 +28,9 @@ mobility:
 lint:
 		echo "---------Style the files-------------------------"
 		echo "If the following test fails, run styler::style_dir('.', filetype = c('R', 'Rmd', 'Rprofile'))"
-		Rscript -e "sessionInfo();styler::style_dir('.', filetype = c('R', 'Rmd', 'Rprofile'), dry = 'fail')"
+		Rscript -e "sessionInfo();styler::style_dir('R', filetype = c('R', 'Rmd', 'Rprofile'), dry = 'fail')"
+		Rscript -e "styler::style_dir('notebooks', filetype = c('R', 'Rmd', 'Rprofile'), dry = 'fail')"
+		Rscript -e "styler::style_dir('website', filetype = c('R', 'Rmd', 'Rprofile'), dry = 'fail')"
 		echo "---------Linting starts--------------------------"
 		Rscript -e "errors <- lintr::lint_dir('.'); print(errors); quit(save = 'no', status = length(errors))"
 

@@ -34,34 +34,47 @@ x <- covid19(cn$ISO.alpha.3, verbose = FALSE, cache = FALSE)
 
 ```{r, echo = FALSE}
 
-x  %>% filter(date == max(date)-days(1) | date == max(date) - days(14)) %>% group_by(administrative_area_level_1) %>% 
-    summarize(cases14 = round(diff(confirmed)/unique(population)*1e5,2)) %>% 
-    arrange(cases14) %>% rename(country = administrative_area_level_1) %>% mutate(rank = 1:n()) %>% select(country, cases14) %>% datatable( 
-         extensions = c('FixedColumns',"FixedHeader"),
-          options = list(scrollX = TRUE, 
-                         paging=FALSE,
-                         fixedHeader=TRUE))
-
-
+x %>%
+  filter(date == max(date) - days(1) | date == max(date) - days(14)) %>%
+  group_by(administrative_area_level_1) %>%
+  summarize(cases14 = round(diff(confirmed) / unique(population) * 1e5, 2)) %>%
+  arrange(cases14) %>%
+  rename(country = administrative_area_level_1) %>%
+  mutate(rank = 1:n()) %>%
+  select(country, cases14) %>%
+  datatable(
+    extensions = c("FixedColumns", "FixedHeader"),
+    options = list(
+      scrollX = TRUE,
+      paging = FALSE,
+      fixedHeader = TRUE
+    )
+  )
 ```
 
 ```{r echo = FALSE}
-xx <- x %>% ungroup %>% select(date, confirmed, tests,deaths, vaccines,hosp, population, country = administrative_area_level_1)
-ddiff <- function(x)c(0, diff(x))
-xx1 <- xx %>% filter(date!=max(date)) %>% arrange(country, date) %>%  group_by(country) %>%
-    mutate(incidence = ddiff(confirmed), tests_daily = ddiff(tests),
-           deaths_daily = ddiff(deaths),
-           vaccines_daily = ddiff(vaccines),
-           incidence14 = rollsum(incidence, k = 14, fill = NA, align = "right"),
-           deaths14 = rollsum(deaths_daily, k = 14, fill = NA, align = "right"),
-           tests14 = rollsum(tests_daily, k = 14, fill = NA, align = "right"),
-           vaccines14 = rollsum(vaccines_daily, k = 14, fill = NA, align = "right"),
-           incidence14_100k = round(incidence14/unique(population)*1e5,2),
-           tests14_100k = round(tests14/unique(population)*1e5,2),
-           deaths14_100k = round(deaths14/unique(population)*1e5,2),
-           vaccines14_100k = round(vaccines14/unique(population)*1e5,2),
-           hosp_100k = hosp/population*1e5
-           )
+xx <- x %>%
+  ungroup() %>%
+  select(date, confirmed, tests, deaths, vaccines, hosp, population, country = administrative_area_level_1)
+ddiff <- function(x) c(0, diff(x))
+xx1 <- xx %>%
+  filter(date != max(date)) %>%
+  arrange(country, date) %>%
+  group_by(country) %>%
+  mutate(
+    incidence = ddiff(confirmed), tests_daily = ddiff(tests),
+    deaths_daily = ddiff(deaths),
+    vaccines_daily = ddiff(vaccines),
+    incidence14 = rollsum(incidence, k = 14, fill = NA, align = "right"),
+    deaths14 = rollsum(deaths_daily, k = 14, fill = NA, align = "right"),
+    tests14 = rollsum(tests_daily, k = 14, fill = NA, align = "right"),
+    vaccines14 = rollsum(vaccines_daily, k = 14, fill = NA, align = "right"),
+    incidence14_100k = round(incidence14 / unique(population) * 1e5, 2),
+    tests14_100k = round(tests14 / unique(population) * 1e5, 2),
+    deaths14_100k = round(deaths14 / unique(population) * 1e5, 2),
+    vaccines14_100k = round(vaccines14 / unique(population) * 1e5, 2),
+    hosp_100k = hosp / population * 1e5
+  )
 ```
 
 ## Kaimyninių šalių palyginimas
@@ -71,68 +84,64 @@ xx1 <- xx %>% filter(date!=max(date)) %>% arrange(country, date) %>%  group_by(c
 ```{r echo = FALSE}
 
 toxts <- function(d, cols) {
-    out <- xts(d[,cols], order.by = d$date)
-    colnames(out) <- cols
-    out
-    
+  out <- xts(d[, cols], order.by = d$date)
+  colnames(out) <- cols
+  out
 }
 inNA <- function(x) {
-    x[x==0] <- NA    
-    x
+  x[x == 0] <- NA
+  x
 }
 
 pivot_one <- function(d, col) {
-    
-    d1 <- d %>% pivot_wider(id_cols = "date", names_from = "country", values_from =all_of(col))
-    toxts(d1, colnames(d1)[-1])
+  d1 <- d %>% pivot_wider(id_cols = "date", names_from = "country", values_from = all_of(col))
+  toxts(d1, colnames(d1)[-1])
 }
 
-xx2 <- xx1 %>% filter(country %in% c("Lithuania","Latvia","Estonia","Poland", "Germany")) %>% mutate(date = ymd(date))
+xx2 <- xx1 %>%
+  filter(country %in% c("Lithuania", "Latvia", "Estonia", "Poland", "Germany")) %>%
+  mutate(date = ymd(date))
 
-cns <- c("Lithuania","Latvia","Estonia","Poland", "Germany")
+cns <- c("Lithuania", "Latvia", "Estonia", "Poland", "Germany")
 ```
 
 ```{r}
-dygraph(pivot_one(xx2,"incidence14_100k")[,cns],  main = "Cases per 100k population for the last 14 days") %>% 
-    dyOptions(colors = c("#046A38","#A4343A","#0072CE","#D22630","#FFCD00")) %>% 
-    dySeries("Poland",strokePattern = "dashed") %>% 
-    dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>% 
-    dyRangeSelector %>% dyCSS("left_legend.css")
-
+dygraph(pivot_one(xx2, "incidence14_100k")[, cns], main = "Cases per 100k population for the last 14 days") %>%
+  dyOptions(colors = c("#046A38", "#A4343A", "#0072CE", "#D22630", "#FFCD00")) %>%
+  dySeries("Poland", strokePattern = "dashed") %>%
+  dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>%
+  dyRangeSelector() %>%
+  dyCSS("left_legend.css")
 ```
 
 ```{r}
-dygraph(pivot_one(xx2,"tests14_100k")[,cns],  main = "Tests per 100k population for the last 14 days") %>% 
-    dyOptions(colors = c("#046A38","#A4343A","#0072CE","#D22630","#FFCD00")) %>% 
-    dySeries("Poland",strokePattern = "dashed") %>% 
-    dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>% 
-    dyRangeSelector
-
+dygraph(pivot_one(xx2, "tests14_100k")[, cns], main = "Tests per 100k population for the last 14 days") %>%
+  dyOptions(colors = c("#046A38", "#A4343A", "#0072CE", "#D22630", "#FFCD00")) %>%
+  dySeries("Poland", strokePattern = "dashed") %>%
+  dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>%
+  dyRangeSelector()
 ```
 
 ```{r}
-dygraph(pivot_one(xx2,"vaccines14_100k")["2021-01-01/",cns],  main = "Vaccines per 100k population for the last 14 days") %>% 
-    dyOptions(colors = c("#046A38","#A4343A","#0072CE","#D22630","#FFCD00")) %>% 
-    dySeries("Poland",strokePattern = "dashed") %>% 
-    dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>% 
-    dyRangeSelector
-
+dygraph(pivot_one(xx2, "vaccines14_100k")["2021-01-01/", cns], main = "Vaccines per 100k population for the last 14 days") %>%
+  dyOptions(colors = c("#046A38", "#A4343A", "#0072CE", "#D22630", "#FFCD00")) %>%
+  dySeries("Poland", strokePattern = "dashed") %>%
+  dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>%
+  dyRangeSelector()
 ```
 
 ```{r}
-dygraph(pivot_one(xx2,"deaths14_100k")[,cns],  main = "Deaths per 100k population for the last 14 days") %>% 
-    dyOptions(colors = c("#046A38","#A4343A","#0072CE","#D22630","#FFCD00")) %>% 
-    dySeries("Poland",strokePattern = "dashed") %>% 
-    dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>% 
-    dyRangeSelector
-
+dygraph(pivot_one(xx2, "deaths14_100k")[, cns], main = "Deaths per 100k population for the last 14 days") %>%
+  dyOptions(colors = c("#046A38", "#A4343A", "#0072CE", "#D22630", "#FFCD00")) %>%
+  dySeries("Poland", strokePattern = "dashed") %>%
+  dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>%
+  dyRangeSelector()
 ```
 
 ```{r}
-dygraph(pivot_one(xx2,"hosp_100k")[,cns],  main = "Hospitalizations per 100k population") %>% 
-    dyOptions(colors = c("#046A38","#A4343A","#0072CE","#D22630","#FFCD00")) %>% 
-    dySeries("Poland",strokePattern = "dashed") %>% 
-    dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>% 
-    dyRangeSelector
-
+dygraph(pivot_one(xx2, "hosp_100k")[, cns], main = "Hospitalizations per 100k population") %>%
+  dyOptions(colors = c("#046A38", "#A4343A", "#0072CE", "#D22630", "#FFCD00")) %>%
+  dySeries("Poland", strokePattern = "dashed") %>%
+  dyHighlight(highlightSeriesOpts = list(strokeWidth = 3)) %>%
+  dyRangeSelector()
 ```

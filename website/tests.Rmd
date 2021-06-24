@@ -21,58 +21,88 @@ Sys.setlocale(locale = "lt_LT.UTF-8")
 
 ```{r}
 wk2date <- function(year, week) {
-    week[year == 2020] <- week[year == 2020]-1
-    year[year == 2021 & week == 53] <- 2020
-    week[week == 53] <- 52
-    ymd(parse_date_time(paste(year, week, 1, sep="/"),'Y/W/u'))
+  week[year == 2020] <- week[year == 2020] - 1
+  year[year == 2021 & week == 53] <- 2020
+  week[week == 53] <- 52
+  ymd(parse_date_time(paste(year, week, 1, sep = "/"), "Y/W/u"))
 }
 
-vv <- evrk %>% mutate(wday = wk2date(year(day),isoweek(day))) %>% group_by(evrk_group_title, evrk_group_code, wday) %>% summarise(tests = sum(tests), r = round(100*sum(tests_positive)/sum(tests),2)) %>% mutate( levels = cut(r,c(0,5,10,15,20,25,100), include.lowest = TRUE))
+vv <- evrk %>%
+  mutate(wday = wk2date(year(day), isoweek(day))) %>%
+  group_by(evrk_group_title, evrk_group_code, wday) %>%
+  summarise(tests = sum(tests), r = round(100 * sum(tests_positive) / sum(tests), 2)) %>%
+  mutate(levels = cut(r, c(0, 5, 10, 15, 20, 25, 100), include.lowest = TRUE))
 
-vv1 <- vv %>% ungroup %>% count(wday,levels) %>% ungroup %>% group_by(wday) %>% mutate(p = round(100*n/sum(n),2))
+vv1 <- vv %>%
+  ungroup() %>%
+  count(wday, levels) %>%
+  ungroup() %>%
+  group_by(wday) %>%
+  mutate(p = round(100 * n / sum(n), 2))
 
-vv2 <- vv %>% ungroup %>% filter(tests>=10) %>% count(wday, levels) %>% ungroup %>% group_by(wday) %>% mutate(p = round(100*n/sum(n),2))
+vv2 <- vv %>%
+  ungroup() %>%
+  filter(tests >= 10) %>%
+  count(wday, levels) %>%
+  ungroup() %>%
+  group_by(wday) %>%
+  mutate(p = round(100 * n / sum(n), 2))
 
 
 vv3 <- vv2 %>% mutate(day = wday)
 ```
 
 ```{r}
-ggplot(aes(x=day,y=p, fill=levels), data = vv3)+geom_col() + scale_fill_manual(name = "Intervalai", values = RColorBrewer::brewer.pal(6, "Set1")[c(3,2,4,6, 5,1)]) + theme_bw()+ labs(y = "Procentai", x = "Data", title = "EVRK veiklų teigiamų tyrimų dalis savaitėmis")
+ggplot(aes(x = day, y = p, fill = levels), data = vv3) +
+  geom_col() +
+  scale_fill_manual(name = "Intervalai", values = RColorBrewer::brewer.pal(6, "Set1")[c(3, 2, 4, 6, 5, 1)]) +
+  theme_bw() +
+  labs(y = "Procentai", x = "Data", title = "EVRK veiklų teigiamų tyrimų dalis savaitėmis")
 ```
 
 ```{r}
 labs <- read.csv("../data/lt-covid19-laboratory.csv") %>% mutate(day = ymd(day))
-pil <-  labs %>% group_by(day, gmp_indication) %>% summarise(tests_positive = sum(tests_positive),tests = sum(tests)) %>% group_by(gmp_indication) %>% 
-    mutate(tests_sum7 = rollsum(tests, 7, fill = NA, align = "right"),
-           tests_sum14 = rollsum(tests, 14, fill = NA, align = "right"),
-           tests_positive_sum7 = rollsum(tests_positive, 7, fill = NA, align = "right"),
-           tpn7 = round(100 * tests_positive_sum7/tests_sum7,2),
-           tests7 = tests_sum7/7,
-           tpn = round(100 * tests_positive/tests,2)) %>% 
-    ungroup %>% group_by(day) %>% 
-    mutate(p7 = round(100 * tests7/sum(tests7),2))
-           
+pil <- labs %>%
+  group_by(day, gmp_indication) %>%
+  summarise(tests_positive = sum(tests_positive), tests = sum(tests)) %>%
+  group_by(gmp_indication) %>%
+  mutate(
+    tests_sum7 = rollsum(tests, 7, fill = NA, align = "right"),
+    tests_sum14 = rollsum(tests, 14, fill = NA, align = "right"),
+    tests_positive_sum7 = rollsum(tests_positive, 7, fill = NA, align = "right"),
+    tpn7 = round(100 * tests_positive_sum7 / tests_sum7, 2),
+    tests7 = tests_sum7 / 7,
+    tpn = round(100 * tests_positive / tests, 2)
+  ) %>%
+  ungroup() %>%
+  group_by(day) %>%
+  mutate(p7 = round(100 * tests7 / sum(tests7), 2))
 
-pil1 <- pil %>% select(day, gmp_indication, tpn7) %>% 
-    pivot_wider(id_cols = "day",names_from = "gmp_indication", values_from = "tpn7")
 
-pil2 <- pil %>% select(day, gmp_indication, p7) %>% 
-    pivot_wider(id_cols = "day",names_from = "gmp_indication", values_from = "p7")
+pil1 <- pil %>%
+  select(day, gmp_indication, tpn7) %>%
+  pivot_wider(id_cols = "day", names_from = "gmp_indication", values_from = "tpn7")
 
-pil3 <- pil %>% select(day, gmp_indication, tests7) %>% 
-    pivot_wider(id_cols = "day",names_from = "gmp_indication", values_from = "tests7")
+pil2 <- pil %>%
+  select(day, gmp_indication, p7) %>%
+  pivot_wider(id_cols = "day", names_from = "gmp_indication", values_from = "p7")
+
+pil3 <- pil %>%
+  select(day, gmp_indication, tests7) %>%
+  pivot_wider(id_cols = "day", names_from = "gmp_indication", values_from = "tests7")
 
 
 xpil1 <- xts(pil1 %>% select(-day), order = pil1$day)
 xpil2 <- xts(pil2 %>% select(-day), order = pil2$day)
 xpil3 <- xts(pil3 %>% select(-day), order = pil3$day)
 aa_last_day <- as.character(max(pil1$day))
-view_interval <-  c("2020-10-01", aa_last_day)
+view_interval <- c("2020-10-01", aa_last_day)
 ```
 
 ```{r}
-dygraph(xpil1, main = paste("Teigiamų tyrimų dalys ",aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(4, "Set1")) %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(xpil1, main = paste("Teigiamų tyrimų dalys ", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(4, "Set1")) %>%
+  dyRangeSelector(dateWindow = view_interval)
 ```
 
 
@@ -80,7 +110,9 @@ dygraph(xpil1, main = paste("Teigiamų tyrimų dalys ",aa_last_day)) %>%  dyOpti
 
 
 ```{r}
-dygraph(xpil3, main = paste("Testavimo apimtys ",aa_last_day)) %>%  dyOptions(colors = RColorBrewer::brewer.pal(4, "Set1")) %>% dyRangeSelector(dateWindow = view_interval)
+dygraph(xpil3, main = paste("Testavimo apimtys ", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(4, "Set1")) %>%
+  dyRangeSelector(dateWindow = view_interval)
 ```
 
 
