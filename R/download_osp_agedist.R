@@ -11,23 +11,15 @@ source("R/functions.R")
 
 httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
 
-posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/Agreguoti_COVID19_atvejai_ir_mirtys/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=")
+posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/Agreguoti_COVID19_atvejai_ir_mirtys/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # Exclude linting
 
 posp1 <- fix_esridate(rawToChar(posp$content))
 posp2 <- posp1 %>% mutate(day = ymd(date))
 
 posp3 <- posp2 %>% filter(day == max(day))
 
-# alls <- lapply(unique(posp2$municipality_name), function(x) {
-#    sav <- URLencode(x)
-#    try(tryget(glue::glue("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/Agreguoti_COVID19_atvejai_ir_mirtys/FeatureServer/0/query?where=municipality_name%3D%27{sav}%27&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=")))
-# })
 
-# osp1 <- lapply(alls, function(l)fix_esridate(rawToChar(l$content))) %>% bind_rows
-
-
-osp0 <- read.csv("https://opendata.arcgis.com/datasets/ba35de03e111430f88a86f7d1f351de6_0.csv")
-
+osp0 <- read.csv("https://opendata.arcgis.com/datasets/ba35de03e111430f88a86f7d1f351de6_0.csv") # Exclude linting
 
 dd <- ymd(unique(osp0$date))
 ld <- ymd(posp3$date %>% unique())

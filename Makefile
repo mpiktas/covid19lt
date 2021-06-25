@@ -32,7 +32,9 @@ lint:
 		Rscript -e "styler::style_dir('notebooks', filetype = c('R', 'Rmd', 'Rprofile'), dry = 'fail')"
 		Rscript -e "styler::style_dir('website', filetype = c('R', 'Rmd', 'Rprofile'), dry = 'fail')"
 		echo "---------Linting starts--------------------------"
-		Rscript -e "errors <- lintr::lint_dir('.'); print(errors); quit(save = 'no', status = length(errors))"
+		Rscript -e "errors <- lintr::lint_dir('R'); print(errors); quit(save = 'no', status = length(errors))"
+		Rscript -e "errors <- lintr::lint_dir('notebooks'); print(errors); quit(save = 'no', status = length(errors))"
+		Rscript -e "errors <- lintr::lint_dir('website'); print(errors); quit(save = 'no', status = length(errors))"
 
 ## Run the tests.
 test:
