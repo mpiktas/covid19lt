@@ -23,8 +23,10 @@ osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(test_performed)))
 
 
 osp3 <- osp2 %>%
-  select(lab_name, day, test_type,
-         tests_positive, tests_negative, gmp_indication) %>%
+  select(
+    lab_name, day, test_type,
+    tests_positive, tests_negative, gmp_indication
+  ) %>%
   mutate(tests = tests_positive + tests_negative) %>%
   select(-tests_negative) %>%
   arrange(lab_name, day)

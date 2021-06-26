@@ -11,9 +11,13 @@ last_day <- max(aa$day)
 
 dt0 <- aa %>%
   select(day, deaths_daily, other_deaths_daily) %>%
-  mutate(d7 = rollsum(deaths_daily, 7, fill = 0, align = "right"),
-         a7 = rollsum(deaths_daily + other_deaths_daily, 7, fill = 0,
-                      align = "right"))
+  mutate(
+    d7 = rollsum(deaths_daily, 7, fill = 0, align = "right"),
+    a7 = rollsum(deaths_daily + other_deaths_daily, 7,
+      fill = 0,
+      align = "right"
+    )
+  )
 
 dt <- dt0 %>% select(day, incidence = d7, incidence1 = a7)
 
@@ -60,9 +64,9 @@ rr1 <- rr1[, -1]
 cmp <- rr %>%
   select(day, deaths = `Mean(R)`) %>%
   inner_join(rr1 %>%
-               select(day, cases = `Mean(R)`)) %>%
+    select(day, cases = `Mean(R)`)) %>%
   inner_join(rr1 %>%
-               select(day, all_deaths = `Mean(R)`))
+    select(day, all_deaths = `Mean(R)`))
 
 xcmp <- xts(cmp %>% select(-day), order.by = cmp$day)
 

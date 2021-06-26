@@ -53,7 +53,7 @@ test_that("Deaths_different match for daily and aggregate", {
 test_that("Imported for the day coincide for daily and aggregate", {
   if (nrow(aal) > 0) {
     expect_true(aal$imported_daily[1] == ld$imported0601[2] -
-                    ld$imported0601[1])
+      ld$imported0601[1])
   }
 })
 
@@ -69,7 +69,7 @@ test_that("Daily tests match with laboratory tests", {
 
 test_that("Decomposition is valid for daily", {
   expect_true(ld$confirmed[2] == ld$active[2] + ld$deaths[2] + ld$recovered[2] +
-                  ld$deaths_different[2])
+    ld$deaths_different[2])
 })
 
 test_that("There are more positive tests than incidence", {

@@ -34,8 +34,10 @@ osp3 <- osp2 %>%
 
 if (nrow(osp3) == nrow(osp2)) {
   osp4 <- osp3 %>%
-    select(day, evrk_group_code, evrk_group_title,
-           tests_positive, tests_negative) %>%
+    select(
+      day, evrk_group_code, evrk_group_title,
+      tests_positive, tests_negative
+    ) %>%
     mutate(tests = tests_positive + tests_negative) %>%
     select(-tests_negative) %>%
     arrange(day, evrk_group_code)

@@ -31,5 +31,6 @@ cvh <- data.frame(
 )
 
 write.csv(cvh,
-          glue::glue("raw_data/hospitalization/covid_hospitalization_{dd}.csv"),
-          row.names = FALSE)
+  glue::glue("raw_data/hospitalization/covid_hospitalization_{dd}.csv"),
+  row.names = FALSE
+)

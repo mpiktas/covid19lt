@@ -35,11 +35,11 @@ osp3 <- osp2 %>% inner_join(adm)
 if (nrow(osp3) == nrow(osp2)) {
   osp4 <- osp3 %>%
     select(day, municipality_code,
-           administrative_level_2,
-           administrative_level_3,
-           dose_number = vaccination_state,
-           vaccinated = all_cum
-  )
+      administrative_level_2,
+      administrative_level_3,
+      dose_number = vaccination_state,
+      vaccinated = all_cum
+    )
   dosed <- data.frame(dose_number = c("Visi", "Pilnai"), dose = c(1, 2))
   osp5 <- osp4 %>%
     inner_join(dosed) %>%
@@ -52,8 +52,10 @@ if (nrow(osp3) == nrow(osp2)) {
     arrange(day, municipality_code) %>%
     rename(vaccinated_1 = `1`, vaccinated_2 = `2`) %>%
     group_by(administrative_level_3) %>%
-    mutate(vaccinated_daily_1 = ddiff(vaccinated_1),
-           vaccinated_daily_2 = ddiff(vaccinated_2))
+    mutate(
+      vaccinated_daily_1 = ddiff(vaccinated_1),
+      vaccinated_daily_2 = ddiff(vaccinated_2)
+    )
 
   osp6 %>% write.csv("data/lt-covid19-vaccinated.csv", row.names = FALSE)
 }
@@ -62,7 +64,8 @@ if (nrow(osp3) == nrow(osp2)) {
 if (FALSE) {
   vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") # Exclude Linting
   write.csv(vcfd, "raw_data/osp/osp_covid19_vaccine_individual.csv",
-            row.names = FALSE)
+    row.names = FALSE
+  )
 }
 #--- Deliveries
 
@@ -88,8 +91,9 @@ osp2 <- osp1 %>%
   filter(municipality_name == "Lietuva", vaccination_state == "Pilnai") %>%
   filter(!is.na(vaccines_arrived_day) | !is.na(vaccines_allocated_day)) %>%
   select(day, vaccine_name,
-         vaccines_arrived = vaccines_arrived_day,
-         vaccines_allocated = vaccines_allocated_day) %>%
+    vaccines_arrived = vaccines_arrived_day,
+    vaccines_allocated = vaccines_allocated_day
+  ) %>%
   arrange(day)
 
 osp2 %>% write.csv("data/lt-covid19-vaccine-deliveries.csv", row.names = FALSE)

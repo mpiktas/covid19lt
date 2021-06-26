@@ -31,8 +31,9 @@ ap <- lap[[min(which(sapply(lap, class) != "try-error"))]]
 
 ap1 <- ap %>% filter(region == "Lithuania")
 
-ap2 <- ap1 %>% pivot_longer(- (geo_type:country),
-                            names_to = "date", values_to = "value")
+ap2 <- ap1 %>% pivot_longer(-(geo_type:country),
+  names_to = "date", values_to = "value"
+)
 
 ap3 <- ap2 %>% mutate(day = ymd(gsub("X", "", date)))
 

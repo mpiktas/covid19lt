@@ -63,8 +63,10 @@ if (nrow(osp3) == nrow(osp2)) {
     select(-age) %>%
     rename(age = age1)
   zz2 <- zz2 %>%
-    mutate(administrative_level_3 =
-        ifelse(administrative_level_3 == "Unknown", "", administrative_level_3))
+    mutate(
+      administrative_level_3 =
+        ifelse(administrative_level_3 == "Unknown", "", administrative_level_3)
+    )
   zz2 <- zz2 %>%
     group_by(day, administrative_level_3, age) %>%
     summarise(
@@ -73,11 +75,15 @@ if (nrow(osp3) == nrow(osp2)) {
     ) %>%
     ungroup()
   bb <- daily_xtable2(zz2 %>% rename(indicator = confirmed_daily),
-                      colsums = TRUE)
+    colsums = TRUE
+  )
   bb1 <- daily_xtable2(zz2 %>% rename(indicator = deaths_3_daily),
-                       colsums = TRUE)
+    colsums = TRUE
+  )
   bb %>% write.csv("data/lt-covid19-age-region-incidence.csv",
-                   row.names = FALSE)
+    row.names = FALSE
+  )
   bb1 %>% write.csv("data/lt-covid19-age-region-deaths.csv",
-                    row.names = FALSE)
+    row.names = FALSE
+  )
 }

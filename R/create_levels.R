@@ -4,8 +4,10 @@ library(zoo)
 
 cs <- read.csv("data/osp/lt-covid19-cases.csv") %>%
   mutate(day = ymd(day)) %>%
-  select(day, municipality_code, administrative_level_3, recovered_cases,
-         dead_cases, recovered_cases_de_jure)
+  select(
+    day, municipality_code, administrative_level_3, recovered_cases,
+    dead_cases, recovered_cases_de_jure
+  )
 ss <- read.csv("data/osp/lt-covid19-stats.csv") %>% mutate(day = ymd(day))
 
 
@@ -62,14 +64,15 @@ if ("Lithuania" %in% cs$administrative_level_3) {
 
 lvl3 <- ss %>%
   left_join(cs %>%
-              select(-municipality_code)) %>%
+    select(-municipality_code)) %>%
   left_join(adm %>%
-              select(-municipality_name, -population2020) %>%
-              rename(population = population2021)) %>%
+    select(-municipality_name, -population2020) %>%
+    rename(population = population2021)) %>%
   left_join(vcn %>%
-              select(-municipality_code)) %>%
+    select(-municipality_code)) %>%
   mutate(administrative_level_2 = ifelse(is.na(administrative_level_2),
-                                         "Unknown", administrative_level_2)) %>%
+    "Unknown", administrative_level_2
+  )) %>%
   mutate(
     tests_positive = fix_na(tests_positive),
     tests_total = fix_na(tests_total),
@@ -88,7 +91,7 @@ lvl3 <- ss %>%
 
 
 lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3,
-                         municipality_code,
+  municipality_code,
   confirmed = confirmed_cases_cumulative, tests = cumulative_tests,
   deaths = deaths_3,
   deaths_1,
@@ -159,8 +162,10 @@ add_stats <- function(dt) {
       test_ag_sum7 = rollsum(tests_ag_daily, 7, fill = NA, align = "right"),
       test_ab_sum7 = rollsum(tests_ab_daily, 7, fill = NA, align = "right"),
       test_sum14 = rollsum(tests_daily, 14, fill = NA, align = "right"),
-      test_mobile_sum14 = rollsum(tests_mobile_daily, 14, fill = NA,
-                                  align = "right"),
+      test_mobile_sum14 = rollsum(tests_mobile_daily, 14,
+        fill = NA,
+        align = "right"
+      ),
       deaths_sum14 = rollsum(deaths_daily, 14, fill = NA, align = "right"),
       deaths_sum7 = rollsum(deaths_daily, 7, fill = NA, align = "right"),
       deaths_1_sum14 = rollsum(deaths_1_daily, 14, fill = NA, align = "right"),
@@ -168,8 +173,10 @@ add_stats <- function(dt) {
       deaths_2_sum14 = rollsum(deaths_2_daily, 14, fill = NA, align = "right"),
       deaths_2_sum7 = rollsum(deaths_2_daily, 7, fill = NA, align = "right"),
       dgn_sum7 = rollsum(tests_positive_daily, 7, fill = NA, align = "right"),
-      pcr_sum7 = rollsum(tests_pcr_positive_daily, 7, fill = NA,
-                         align = "right"),
+      pcr_sum7 = rollsum(tests_pcr_positive_daily, 7,
+        fill = NA,
+        align = "right"
+      ),
       ag_sum7 = rollsum(tests_ag_positive_daily, 7, fill = NA, align = "right"),
       ab_sum7 = rollsum(tests_ab_positive_daily, 7, fill = NA, align = "right"),
       dgn_sum14 = rollsum(tests_positive_daily, 14, fill = NA, align = "right"),
@@ -200,7 +207,7 @@ add_stats <- function(dt) {
       vaccinated_1_percent = round(vaccinated_1 / population * 100, 2),
       vaccinated_2_percent = round(vaccinated_2 / population * 100, 2)
     ) %>%
-    select(- (confirmed_daily:dgn_sum14)) %>%
+    select(-(confirmed_daily:dgn_sum14)) %>%
     ungroup()
 }
 

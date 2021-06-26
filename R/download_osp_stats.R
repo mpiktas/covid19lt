@@ -27,14 +27,15 @@ if (FALSE) {
   osp1 %>%
     arrange(date, municipality_code) %>%
     write.csv("raw_data/osp/osp_covid19_stats.csv", row.names = FALSE)
-
 }
 
 osp0 <- read.csv("https://get.data.gov.lt/datasets/gov/lsd/covid-19/svieslenciu_statistika/SvieslenciuStatistika/:format/csv") # Exclude Linting
 osp1 <- osp0 %>%
   mutate(municipality_code = as.character(municipality_code)) %>%
-  mutate(municipality_code =
-           ifelse(municipality_code == "0", "00", municipality_code))
+  mutate(
+    municipality_code =
+      ifelse(municipality_code == "0", "00", municipality_code)
+  )
 
 osp1 %>%
   select(-X_type, -X_id, -X_revision) %>%

@@ -14,7 +14,8 @@ pt <- strsplit(fns, "_") %>%
   lapply(function(x) ymd_hms(paste(x[4:5], collapse = "_")))
 
 cvh1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), cvh, pt,
-               SIMPLIFY = FALSE) %>%
+  SIMPLIFY = FALSE
+) %>%
   bind_rows() %>%
   mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
 
