@@ -10,7 +10,6 @@ repos:
     -   id: readme-rmd-rendered
     -   id: parsable-R
     -   id: no-browser-statement
-        exclude: ^raw_data/
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks: 

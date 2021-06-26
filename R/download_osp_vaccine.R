@@ -6,6 +6,7 @@ library(lubridate)
 library(stringr)
 library(bit64)
 library(tidyr)
+library(readr)
 
 source("R/functions.R")
 
@@ -62,10 +63,29 @@ if (nrow(osp3) == nrow(osp2)) {
 
 #-------- Individual data
 if (FALSE) {
-  vcfd <- read.csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") # Exclude Linting
-  write.csv(vcfd, "raw_data/osp/osp_covid19_vaccine_individual.csv",
-    row.names = FALSE
+  vcfd <- readr::read_csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") # Exclude Linting
+
+  vcfd <- vcfd %>% mutate(
+    day1 = ymd(ymd_hms(vacc_date_1)),
+    day2 = ymd(ymd_hms(vacc_date_2))
   )
+  v1 <- vcfd %>%
+    group_by(
+      municipality_name = municip_a, day = day1,
+      age_group, sex
+    ) %>%
+    summarise(dose1 = n())
+
+  v2 <- vcfd %>%
+    filter(vacc_type_2 != "") %>%
+    group_by(
+      municipality_name = municip_b, day = day2,
+      age_group, sex
+    ) %>%
+    summarise(dose2 = n())
+  vv <- v1 %>%
+    full_join(v2) %>%
+    mutate(dose1 = fix_na(dose1), dose2 = fix_na(dose2))
 }
 #--- Deliveries
 
