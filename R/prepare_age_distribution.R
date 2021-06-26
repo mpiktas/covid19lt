@@ -104,7 +104,7 @@ ards2 %>%
   )
 
 ards2 %>%
-  filter(sex == "Viso") %>%
+  filter(sex != "Viso") %>%
   select(
     administrative_level_2, administrative_level_3,
     age, age10, sex, population
