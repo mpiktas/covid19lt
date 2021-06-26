@@ -37,7 +37,7 @@ prepare_data <- function(x, sex = "Moteris") {
   x <- x %>% mutate(sex = sex)
 }
 
-arsd <- mapply(prepare_data, list(both, male, female),
+arsd <- mapply(prepare_data, list(both, female, male),
   c("Viso", "Moteris", "Vyras"),
   SIMPLIFY = FALSE
 ) %>%
