@@ -63,7 +63,6 @@ a714 <- cbind(xi, axtt7, axtt14)
 ```
 
 ```{r}
-
 ltR <- dget("../raw_data/effectiveR/ltR")
 ag <- function(x) (c(x[1], diff(x)))
 dt <- aa %>%
@@ -266,6 +265,93 @@ grid.arrange(pm,
 )
 ```
 
+### Vakcinuotų pirma doze procentai amžiaus grupėse, `r ad_last_day`
+
+```{r}
+vv <- read.csv("../data/lt-covid19-vaccinated-agedist10-level3.csv")
+agrd <- read.csv("../data/age_distribution/lt-age-sex-dist10-level3.csv")
+
+agrd1 <- agrd %>%
+  group_by(age, sex) %>%
+  summarise(population = sum(population))
+
+vv1 <- vv %>%
+  group_by(age, sex) %>%
+  summarise(dose1 = sum(dose1), dose2 = sum(dose2))
+
+vv2 <- vv1 %>%
+  left_join(agrd1) %>%
+  mutate(
+    p1 = round(dose1 / population * 100, 0),
+    p2 = round(dose2 / population * 100, 0)
+  )
+
+dose1 <- vv2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "p1")
+dose2 <- vv2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "p2")
+
+
+pm1 <- ggplot(aes(x = Amžius, y = Atvejai),
+  data = dose1 %>% rename(Amžius = age, Atvejai = Moteris)
+) +
+  geom_col(fill = cols[1]) +
+  geom_text(aes(label = Atvejai), hjust = 1.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(trans = "reverse", expand = expansion(mult = c(0.1, 0))) +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02), "npc")) +
+  labs(title = "Moterys")
+
+pv1 <- ggplot(aes(x = Amžius, y = Atvejai),
+  data = dose1 %>% rename(Amžius = age, Atvejai = Vyras)
+) +
+  geom_col(fill = cols[2]) +
+  geom_text(aes(label = Atvejai), hjust = -0.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
+  theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03), "npc"), plot.title = element_text(hjust = 1)) +
+  labs(title = "Vyrai")
+
+grid.arrange(pm1,
+  pv1,
+  ncol = 2
+)
+```
+
+### Vakcinuotų dviem dozėm procentai amžiaus grupėse, `r ad_last_day`
+
+```{r}
+pm2 <- ggplot(aes(x = Amžius, y = Atvejai),
+  data = dose2 %>% rename(Amžius = age, Atvejai = Moteris)
+) +
+  geom_col(fill = cols[1]) +
+  geom_text(aes(label = Atvejai), hjust = 1.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(trans = "reverse", expand = expansion(mult = c(0.1, 0))) +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02), "npc")) +
+  labs(title = "Moterys")
+
+pv2 <- ggplot(aes(x = Amžius, y = Atvejai),
+  data = dose2 %>% rename(Amžius = age, Atvejai = Vyras)
+) +
+  geom_col(fill = cols[2]) +
+  geom_text(aes(label = Atvejai), hjust = -0.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
+  theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03), "npc"), plot.title = element_text(hjust = 1)) +
+  labs(title = "Vyrai")
+
+grid.arrange(pm2,
+  pv2,
+  ncol = 2
+)
+```
 
 ```{r}
 
