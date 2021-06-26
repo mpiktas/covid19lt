@@ -1,541 +1,541 @@
-"","administrative_level_2","administrative_level_3","age","sex","population"
-"1","Alytaus apskr.","Alytaus m.","0-10","Viso",4299
-"2","Alytaus apskr.","Alytaus m.","10-20","Viso",4316
-"3","Alytaus apskr.","Alytaus m.","20-30","Viso",5951
-"4","Alytaus apskr.","Alytaus m.","30-40","Viso",4903
-"5","Alytaus apskr.","Alytaus m.","40-50","Viso",6576
-"6","Alytaus apskr.","Alytaus m.","50-60","Viso",8022
-"7","Alytaus apskr.","Alytaus m.","60-70","Viso",7406
-"8","Alytaus apskr.","Alytaus m.","70-80","Viso",4863
-"9","Alytaus apskr.","Alytaus m.","80+","Viso",2869
-"10","Alytaus apskr.","Alytaus r.","0-10","Viso",2169
-"11","Alytaus apskr.","Alytaus r.","10-20","Viso",2486
-"12","Alytaus apskr.","Alytaus r.","20-30","Viso",3150
-"13","Alytaus apskr.","Alytaus r.","30-40","Viso",2380
-"14","Alytaus apskr.","Alytaus r.","40-50","Viso",3086
-"15","Alytaus apskr.","Alytaus r.","50-60","Viso",4337
-"16","Alytaus apskr.","Alytaus r.","60-70","Viso",3715
-"17","Alytaus apskr.","Alytaus r.","70-80","Viso",2524
-"18","Alytaus apskr.","Alytaus r.","80+","Viso",1995
-"19","Alytaus apskr.","Druskininkų","0-10","Viso",1798
-"20","Alytaus apskr.","Druskininkų","10-20","Viso",1510
-"21","Alytaus apskr.","Druskininkų","20-30","Viso",2198
-"22","Alytaus apskr.","Druskininkų","30-40","Viso",1786
-"23","Alytaus apskr.","Druskininkų","40-50","Viso",2123
-"24","Alytaus apskr.","Druskininkų","50-60","Viso",3327
-"25","Alytaus apskr.","Druskininkų","60-70","Viso",2872
-"26","Alytaus apskr.","Druskininkų","70-80","Viso",1977
-"27","Alytaus apskr.","Druskininkų","80+","Viso",1425
-"28","Alytaus apskr.","Lazdijų r.","0-10","Viso",1534
-"29","Alytaus apskr.","Lazdijų r.","10-20","Viso",1548
-"30","Alytaus apskr.","Lazdijų r.","20-30","Viso",2320
-"31","Alytaus apskr.","Lazdijų r.","30-40","Viso",1413
-"32","Alytaus apskr.","Lazdijų r.","40-50","Viso",2029
-"33","Alytaus apskr.","Lazdijų r.","50-60","Viso",3138
-"34","Alytaus apskr.","Lazdijų r.","60-70","Viso",2506
-"35","Alytaus apskr.","Lazdijų r.","70-80","Viso",1733
-"36","Alytaus apskr.","Lazdijų r.","80+","Viso",1618
-"37","Alytaus apskr.","Varėnos r.","0-10","Viso",1749
-"38","Alytaus apskr.","Varėnos r.","10-20","Viso",1759
-"39","Alytaus apskr.","Varėnos r.","20-30","Viso",2557
-"40","Alytaus apskr.","Varėnos r.","30-40","Viso",1549
-"41","Alytaus apskr.","Varėnos r.","40-50","Viso",2318
-"42","Alytaus apskr.","Varėnos r.","50-60","Viso",3556
-"43","Alytaus apskr.","Varėnos r.","60-70","Viso",3144
-"44","Alytaus apskr.","Varėnos r.","70-80","Viso",2133
-"45","Alytaus apskr.","Varėnos r.","80+","Viso",1755
-"46","Kauno apskr.","Birštono","0-10","Viso",376
-"47","Kauno apskr.","Birštono","10-20","Viso",336
-"48","Kauno apskr.","Birštono","20-30","Viso",447
-"49","Kauno apskr.","Birštono","30-40","Viso",388
-"50","Kauno apskr.","Birštono","40-50","Viso",433
-"51","Kauno apskr.","Birštono","50-60","Viso",651
-"52","Kauno apskr.","Birštono","60-70","Viso",686
-"53","Kauno apskr.","Birštono","70-80","Viso",383
-"54","Kauno apskr.","Birštono","80+","Viso",337
-"55","Kauno apskr.","Jonavos r.","0-10","Viso",4112
-"56","Kauno apskr.","Jonavos r.","10-20","Viso",4315
-"57","Kauno apskr.","Jonavos r.","20-30","Viso",5230
-"58","Kauno apskr.","Jonavos r.","30-40","Viso",4160
-"59","Kauno apskr.","Jonavos r.","40-50","Viso",5318
-"60","Kauno apskr.","Jonavos r.","50-60","Viso",6164
-"61","Kauno apskr.","Jonavos r.","60-70","Viso",5545
-"62","Kauno apskr.","Jonavos r.","70-80","Viso",3714
-"63","Kauno apskr.","Jonavos r.","80+","Viso",2192
-"64","Kauno apskr.","Kaišiadorių r.","0-10","Viso",2480
-"65","Kauno apskr.","Kaišiadorių r.","10-20","Viso",2733
-"66","Kauno apskr.","Kaišiadorių r.","20-30","Viso",3619
-"67","Kauno apskr.","Kaišiadorių r.","30-40","Viso",3908
-"68","Kauno apskr.","Kaišiadorių r.","40-50","Viso",3938
-"69","Kauno apskr.","Kaišiadorių r.","50-60","Viso",4562
-"70","Kauno apskr.","Kaišiadorių r.","60-70","Viso",3767
-"71","Kauno apskr.","Kaišiadorių r.","70-80","Viso",2479
-"72","Kauno apskr.","Kaišiadorių r.","80+","Viso",1705
-"73","Kauno apskr.","Kauno m.","0-10","Viso",31061
-"74","Kauno apskr.","Kauno m.","10-20","Viso",25218
-"75","Kauno apskr.","Kauno m.","20-30","Viso",35343
-"76","Kauno apskr.","Kauno m.","30-40","Viso",49025
-"77","Kauno apskr.","Kauno m.","40-50","Viso",35501
-"78","Kauno apskr.","Kauno m.","50-60","Viso",37437
-"79","Kauno apskr.","Kauno m.","60-70","Viso",35474
-"80","Kauno apskr.","Kauno m.","70-80","Viso",26025
-"81","Kauno apskr.","Kauno m.","80+","Viso",18193
-"82","Kauno apskr.","Kauno r.","0-10","Viso",9932
-"83","Kauno apskr.","Kauno r.","10-20","Viso",10484
-"84","Kauno apskr.","Kauno r.","20-30","Viso",12523
-"85","Kauno apskr.","Kauno r.","30-40","Viso",14878
-"86","Kauno apskr.","Kauno r.","40-50","Viso",13977
-"87","Kauno apskr.","Kauno r.","50-60","Viso",13734
-"88","Kauno apskr.","Kauno r.","60-70","Viso",10956
-"89","Kauno apskr.","Kauno r.","70-80","Viso",6612
-"90","Kauno apskr.","Kauno r.","80+","Viso",4453
-"91","Kauno apskr.","Kėdainių r.","0-10","Viso",4141
-"92","Kauno apskr.","Kėdainių r.","10-20","Viso",4479
-"93","Kauno apskr.","Kėdainių r.","20-30","Viso",5406
-"94","Kauno apskr.","Kėdainių r.","30-40","Viso",4001
-"95","Kauno apskr.","Kėdainių r.","40-50","Viso",5669
-"96","Kauno apskr.","Kėdainių r.","50-60","Viso",7313
-"97","Kauno apskr.","Kėdainių r.","60-70","Viso",6304
-"98","Kauno apskr.","Kėdainių r.","70-80","Viso",4425
-"99","Kauno apskr.","Kėdainių r.","80+","Viso",3012
-"100","Kauno apskr.","Prienų r.","0-10","Viso",2314
-"101","Kauno apskr.","Prienų r.","10-20","Viso",2405
-"102","Kauno apskr.","Prienų r.","20-30","Viso",3188
-"103","Kauno apskr.","Prienų r.","30-40","Viso",2329
-"104","Kauno apskr.","Prienų r.","40-50","Viso",3047
-"105","Kauno apskr.","Prienų r.","50-60","Viso",4109
-"106","Kauno apskr.","Prienų r.","60-70","Viso",3678
-"107","Kauno apskr.","Prienų r.","70-80","Viso",2394
-"108","Kauno apskr.","Prienų r.","80+","Viso",2002
-"109","Kauno apskr.","Raseinių r.","0-10","Viso",2785
-"110","Kauno apskr.","Raseinių r.","10-20","Viso",3009
-"111","Kauno apskr.","Raseinių r.","20-30","Viso",3949
-"112","Kauno apskr.","Raseinių r.","30-40","Viso",2576
-"113","Kauno apskr.","Raseinių r.","40-50","Viso",3738
-"114","Kauno apskr.","Raseinių r.","50-60","Viso",5028
-"115","Kauno apskr.","Raseinių r.","60-70","Viso",4282
-"116","Kauno apskr.","Raseinių r.","70-80","Viso",3006
-"117","Kauno apskr.","Raseinių r.","80+","Viso",2235
-"118","Klaipėdos apskr.","Klaipėdos m.","0-10","Viso",17152
-"119","Klaipėdos apskr.","Klaipėdos m.","10-20","Viso",13525
-"120","Klaipėdos apskr.","Klaipėdos m.","20-30","Viso",16150
-"121","Klaipėdos apskr.","Klaipėdos m.","30-40","Viso",23123
-"122","Klaipėdos apskr.","Klaipėdos m.","40-50","Viso",19301
-"123","Klaipėdos apskr.","Klaipėdos m.","50-60","Viso",19561
-"124","Klaipėdos apskr.","Klaipėdos m.","60-70","Viso",19323
-"125","Klaipėdos apskr.","Klaipėdos m.","70-80","Viso",12012
-"126","Klaipėdos apskr.","Klaipėdos m.","80+","Viso",8909
-"127","Klaipėdos apskr.","Klaipėdos r.","0-10","Viso",6741
-"128","Klaipėdos apskr.","Klaipėdos r.","10-20","Viso",6789
-"129","Klaipėdos apskr.","Klaipėdos r.","20-30","Viso",7617
-"130","Klaipėdos apskr.","Klaipėdos r.","30-40","Viso",9205
-"131","Klaipėdos apskr.","Klaipėdos r.","40-50","Viso",9664
-"132","Klaipėdos apskr.","Klaipėdos r.","50-60","Viso",9319
-"133","Klaipėdos apskr.","Klaipėdos r.","60-70","Viso",6949
-"134","Klaipėdos apskr.","Klaipėdos r.","70-80","Viso",3814
-"135","Klaipėdos apskr.","Klaipėdos r.","80+","Viso",2550
-"136","Klaipėdos apskr.","Kretingos r.","0-10","Viso",3924
-"137","Klaipėdos apskr.","Kretingos r.","10-20","Viso",3846
-"138","Klaipėdos apskr.","Kretingos r.","20-30","Viso",4830
-"139","Klaipėdos apskr.","Kretingos r.","30-40","Viso",3820
-"140","Klaipėdos apskr.","Kretingos r.","40-50","Viso",4743
-"141","Klaipėdos apskr.","Kretingos r.","50-60","Viso",5922
-"142","Klaipėdos apskr.","Kretingos r.","60-70","Viso",4808
-"143","Klaipėdos apskr.","Kretingos r.","70-80","Viso",3149
-"144","Klaipėdos apskr.","Kretingos r.","80+","Viso",2281
-"145","Klaipėdos apskr.","Neringos","0-10","Viso",384
-"146","Klaipėdos apskr.","Neringos","10-20","Viso",272
-"147","Klaipėdos apskr.","Neringos","20-30","Viso",393
-"148","Klaipėdos apskr.","Neringos","30-40","Viso",570
-"149","Klaipėdos apskr.","Neringos","40-50","Viso",620
-"150","Klaipėdos apskr.","Neringos","50-60","Viso",635
-"151","Klaipėdos apskr.","Neringos","60-70","Viso",455
-"152","Klaipėdos apskr.","Neringos","70-80","Viso",205
-"153","Klaipėdos apskr.","Neringos","80+","Viso",107
-"154","Klaipėdos apskr.","Palangos m.","0-10","Viso",1556
-"155","Klaipėdos apskr.","Palangos m.","10-20","Viso",1401
-"156","Klaipėdos apskr.","Palangos m.","20-30","Viso",1641
-"157","Klaipėdos apskr.","Palangos m.","30-40","Viso",1703
-"158","Klaipėdos apskr.","Palangos m.","40-50","Viso",2096
-"159","Klaipėdos apskr.","Palangos m.","50-60","Viso",2556
-"160","Klaipėdos apskr.","Palangos m.","60-70","Viso",2671
-"161","Klaipėdos apskr.","Palangos m.","70-80","Viso",1726
-"162","Klaipėdos apskr.","Palangos m.","80+","Viso",1079
-"163","Klaipėdos apskr.","Šilutės r.","0-10","Viso",4022
-"164","Klaipėdos apskr.","Šilutės r.","10-20","Viso",3778
-"165","Klaipėdos apskr.","Šilutės r.","20-30","Viso",4952
-"166","Klaipėdos apskr.","Šilutės r.","30-40","Viso",3194
-"167","Klaipėdos apskr.","Šilutės r.","40-50","Viso",4319
-"168","Klaipėdos apskr.","Šilutės r.","50-60","Viso",6227
-"169","Klaipėdos apskr.","Šilutės r.","60-70","Viso",5126
-"170","Klaipėdos apskr.","Šilutės r.","70-80","Viso",3172
-"171","Klaipėdos apskr.","Šilutės r.","80+","Viso",2297
-"172","Klaipėdos apskr.","Skuodo r.","0-10","Viso",1524
-"173","Klaipėdos apskr.","Skuodo r.","10-20","Viso",1502
-"174","Klaipėdos apskr.","Skuodo r.","20-30","Viso",2128
-"175","Klaipėdos apskr.","Skuodo r.","30-40","Viso",757
-"176","Klaipėdos apskr.","Skuodo r.","40-50","Viso",1671
-"177","Klaipėdos apskr.","Skuodo r.","50-60","Viso",2779
-"178","Klaipėdos apskr.","Skuodo r.","60-70","Viso",2499
-"179","Klaipėdos apskr.","Skuodo r.","70-80","Viso",1790
-"180","Klaipėdos apskr.","Skuodo r.","80+","Viso",1015
-"181","Marijampolės apskr.","Kalvarijos","0-10","Viso",1067
-"182","Marijampolės apskr.","Kalvarijos","10-20","Viso",1125
-"183","Marijampolės apskr.","Kalvarijos","20-30","Viso",1408
-"184","Marijampolės apskr.","Kalvarijos","30-40","Viso",919
-"185","Marijampolės apskr.","Kalvarijos","40-50","Viso",1218
-"186","Marijampolės apskr.","Kalvarijos","50-60","Viso",1601
-"187","Marijampolės apskr.","Kalvarijos","60-70","Viso",1285
-"188","Marijampolės apskr.","Kalvarijos","70-80","Viso",722
-"189","Marijampolės apskr.","Kalvarijos","80+","Viso",608
-"190","Marijampolės apskr.","Kazlų Rūdos","0-10","Viso",1090
-"191","Marijampolės apskr.","Kazlų Rūdos","10-20","Viso",1200
-"192","Marijampolės apskr.","Kazlų Rūdos","20-30","Viso",1364
-"193","Marijampolės apskr.","Kazlų Rūdos","30-40","Viso",1110
-"194","Marijampolės apskr.","Kazlų Rūdos","40-50","Viso",1410
-"195","Marijampolės apskr.","Kazlų Rūdos","50-60","Viso",1718
-"196","Marijampolės apskr.","Kazlų Rūdos","60-70","Viso",1473
-"197","Marijampolės apskr.","Kazlų Rūdos","70-80","Viso",1057
-"198","Marijampolės apskr.","Kazlų Rūdos","80+","Viso",717
-"199","Marijampolės apskr.","Marijampolės","0-10","Viso",5382
-"200","Marijampolės apskr.","Marijampolės","10-20","Viso",5217
-"201","Marijampolės apskr.","Marijampolės","20-30","Viso",6540
-"202","Marijampolės apskr.","Marijampolės","30-40","Viso",6227
-"203","Marijampolės apskr.","Marijampolės","40-50","Viso",6830
-"204","Marijampolės apskr.","Marijampolės","50-60","Viso",8654
-"205","Marijampolės apskr.","Marijampolės","60-70","Viso",7273
-"206","Marijampolės apskr.","Marijampolės","70-80","Viso",4280
-"207","Marijampolės apskr.","Marijampolės","80+","Viso",3077
-"208","Marijampolės apskr.","Šakių r.","0-10","Viso",2434
-"209","Marijampolės apskr.","Šakių r.","10-20","Viso",2592
-"210","Marijampolės apskr.","Šakių r.","20-30","Viso",3679
-"211","Marijampolės apskr.","Šakių r.","30-40","Viso",2012
-"212","Marijampolės apskr.","Šakių r.","40-50","Viso",2987
-"213","Marijampolės apskr.","Šakių r.","50-60","Viso",4426
-"214","Marijampolės apskr.","Šakių r.","60-70","Viso",3585
-"215","Marijampolės apskr.","Šakių r.","70-80","Viso",2416
-"216","Marijampolės apskr.","Šakių r.","80+","Viso",1939
-"217","Marijampolės apskr.","Vilkaviškio r.","0-10","Viso",3256
-"218","Marijampolės apskr.","Vilkaviškio r.","10-20","Viso",3450
-"219","Marijampolės apskr.","Vilkaviškio r.","20-30","Viso",4524
-"220","Marijampolės apskr.","Vilkaviškio r.","30-40","Viso",2753
-"221","Marijampolės apskr.","Vilkaviškio r.","40-50","Viso",4257
-"222","Marijampolės apskr.","Vilkaviškio r.","50-60","Viso",5593
-"223","Marijampolės apskr.","Vilkaviškio r.","60-70","Viso",4868
-"224","Marijampolės apskr.","Vilkaviškio r.","70-80","Viso",3288
-"225","Marijampolės apskr.","Vilkaviškio r.","80+","Viso",2242
-"226","Panevėžio apskr.","Biržų r.","0-10","Viso",1900
-"227","Panevėžio apskr.","Biržų r.","10-20","Viso",2028
-"228","Panevėžio apskr.","Biržų r.","20-30","Viso",2990
-"229","Panevėžio apskr.","Biržų r.","30-40","Viso",1457
-"230","Panevėžio apskr.","Biržų r.","40-50","Viso",2599
-"231","Panevėžio apskr.","Biržų r.","50-60","Viso",3782
-"232","Panevėžio apskr.","Biržų r.","60-70","Viso",3224
-"233","Panevėžio apskr.","Biržų r.","70-80","Viso",2399
-"234","Panevėžio apskr.","Biržų r.","80+","Viso",1926
-"235","Panevėžio apskr.","Kupiškio r.","0-10","Viso",1397
-"236","Panevėžio apskr.","Kupiškio r.","10-20","Viso",1489
-"237","Panevėžio apskr.","Kupiškio r.","20-30","Viso",2049
-"238","Panevėžio apskr.","Kupiškio r.","30-40","Viso",1086
-"239","Panevėžio apskr.","Kupiškio r.","40-50","Viso",1809
-"240","Panevėžio apskr.","Kupiškio r.","50-60","Viso",2928
-"241","Panevėžio apskr.","Kupiškio r.","60-70","Viso",2301
-"242","Panevėžio apskr.","Kupiškio r.","70-80","Viso",1688
-"243","Panevėžio apskr.","Kupiškio r.","80+","Viso",1315
-"244","Panevėžio apskr.","Panevėžio m.","0-10","Viso",7929
-"245","Panevėžio apskr.","Panevėžio m.","10-20","Viso",7546
-"246","Panevėžio apskr.","Panevėžio m.","20-30","Viso",9658
-"247","Panevėžio apskr.","Panevėžio m.","30-40","Viso",8205
-"248","Panevėžio apskr.","Panevėžio m.","40-50","Viso",10458
-"249","Panevėžio apskr.","Panevėžio m.","50-60","Viso",14171
-"250","Panevėžio apskr.","Panevėžio m.","60-70","Viso",12187
-"251","Panevėžio apskr.","Panevėžio m.","70-80","Viso",8489
-"252","Panevėžio apskr.","Panevėžio m.","80+","Viso",5970
-"253","Panevėžio apskr.","Panevėžio r.","0-10","Viso",3237
-"254","Panevėžio apskr.","Panevėžio r.","10-20","Viso",3658
-"255","Panevėžio apskr.","Panevėžio r.","20-30","Viso",4520
-"256","Panevėžio apskr.","Panevėžio r.","30-40","Viso",3259
-"257","Panevėžio apskr.","Panevėžio r.","40-50","Viso",4352
-"258","Panevėžio apskr.","Panevėžio r.","50-60","Viso",6073
-"259","Panevėžio apskr.","Panevėžio r.","60-70","Viso",4836
-"260","Panevėžio apskr.","Panevėžio r.","70-80","Viso",3105
-"261","Panevėžio apskr.","Panevėžio r.","80+","Viso",2142
-"262","Panevėžio apskr.","Pasvalio r.","0-10","Viso",2118
-"263","Panevėžio apskr.","Pasvalio r.","10-20","Viso",2184
-"264","Panevėžio apskr.","Pasvalio r.","20-30","Viso",3004
-"265","Panevėžio apskr.","Pasvalio r.","30-40","Viso",1581
-"266","Panevėžio apskr.","Pasvalio r.","40-50","Viso",2644
-"267","Panevėžio apskr.","Pasvalio r.","50-60","Viso",3931
-"268","Panevėžio apskr.","Pasvalio r.","60-70","Viso",3070
-"269","Panevėžio apskr.","Pasvalio r.","70-80","Viso",2240
-"270","Panevėžio apskr.","Pasvalio r.","80+","Viso",1567
-"271","Panevėžio apskr.","Rokiškio r.","0-10","Viso",2169
-"272","Panevėžio apskr.","Rokiškio r.","10-20","Viso",2456
-"273","Panevėžio apskr.","Rokiškio r.","20-30","Viso",3366
-"274","Panevėžio apskr.","Rokiškio r.","30-40","Viso",1863
-"275","Panevėžio apskr.","Rokiškio r.","40-50","Viso",3321
-"276","Panevėžio apskr.","Rokiškio r.","50-60","Viso",4953
-"277","Panevėžio apskr.","Rokiškio r.","60-70","Viso",4280
-"278","Panevėžio apskr.","Rokiškio r.","70-80","Viso",2770
-"279","Panevėžio apskr.","Rokiškio r.","80+","Viso",2337
-"280","Šiaulių apskr.","Akmenės r.","0-10","Viso",1767
-"281","Šiaulių apskr.","Akmenės r.","10-20","Viso",1738
-"282","Šiaulių apskr.","Akmenės r.","20-30","Viso",2374
-"283","Šiaulių apskr.","Akmenės r.","30-40","Viso",1303
-"284","Šiaulių apskr.","Akmenės r.","40-50","Viso",1980
-"285","Šiaulių apskr.","Akmenės r.","50-60","Viso",3141
-"286","Šiaulių apskr.","Akmenės r.","60-70","Viso",2914
-"287","Šiaulių apskr.","Akmenės r.","70-80","Viso",1965
-"288","Šiaulių apskr.","Akmenės r.","80+","Viso",1355
-"289","Šiaulių apskr.","Joniškio r.","0-10","Viso",1768
-"290","Šiaulių apskr.","Joniškio r.","10-20","Viso",2003
-"291","Šiaulių apskr.","Joniškio r.","20-30","Viso",2604
-"292","Šiaulių apskr.","Joniškio r.","30-40","Viso",1314
-"293","Šiaulių apskr.","Joniškio r.","40-50","Viso",2499
-"294","Šiaulių apskr.","Joniškio r.","50-60","Viso",3601
-"295","Šiaulių apskr.","Joniškio r.","60-70","Viso",3041
-"296","Šiaulių apskr.","Joniškio r.","70-80","Viso",2170
-"297","Šiaulių apskr.","Joniškio r.","80+","Viso",1344
-"298","Šiaulių apskr.","Kelmės r.","0-10","Viso",2095
-"299","Šiaulių apskr.","Kelmės r.","10-20","Viso",2338
-"300","Šiaulių apskr.","Kelmės r.","20-30","Viso",3213
-"301","Šiaulių apskr.","Kelmės r.","30-40","Viso",1639
-"302","Šiaulių apskr.","Kelmės r.","40-50","Viso",2964
-"303","Šiaulių apskr.","Kelmės r.","50-60","Viso",4252
-"304","Šiaulių apskr.","Kelmės r.","60-70","Viso",3771
-"305","Šiaulių apskr.","Kelmės r.","70-80","Viso",2593
-"306","Šiaulių apskr.","Kelmės r.","80+","Viso",1961
-"307","Šiaulių apskr.","Pakruojo r.","0-10","Viso",1589
-"308","Šiaulių apskr.","Pakruojo r.","10-20","Viso",1831
-"309","Šiaulių apskr.","Pakruojo r.","20-30","Viso",2391
-"310","Šiaulių apskr.","Pakruojo r.","30-40","Viso",1147
-"311","Šiaulių apskr.","Pakruojo r.","40-50","Viso",2320
-"312","Šiaulių apskr.","Pakruojo r.","50-60","Viso",3168
-"313","Šiaulių apskr.","Pakruojo r.","60-70","Viso",2680
-"314","Šiaulių apskr.","Pakruojo r.","70-80","Viso",1886
-"315","Šiaulių apskr.","Pakruojo r.","80+","Viso",1203
-"316","Šiaulių apskr.","Radviliškio r.","0-10","Viso",3264
-"317","Šiaulių apskr.","Radviliškio r.","10-20","Viso",3596
-"318","Šiaulių apskr.","Radviliškio r.","20-30","Viso",4311
-"319","Šiaulių apskr.","Radviliškio r.","30-40","Viso",2905
-"320","Šiaulių apskr.","Radviliškio r.","40-50","Viso",4034
-"321","Šiaulių apskr.","Radviliškio r.","50-60","Viso",6039
-"322","Šiaulių apskr.","Radviliškio r.","60-70","Viso",4952
-"323","Šiaulių apskr.","Radviliškio r.","70-80","Viso",3224
-"324","Šiaulių apskr.","Radviliškio r.","80+","Viso",2251
-"325","Šiaulių apskr.","Šiaulių m.","0-10","Viso",10370
-"326","Šiaulių apskr.","Šiaulių m.","10-20","Viso",8216
-"327","Šiaulių apskr.","Šiaulių m.","20-30","Viso",11334
-"328","Šiaulių apskr.","Šiaulių m.","30-40","Viso",14957
-"329","Šiaulių apskr.","Šiaulių m.","40-50","Viso",14258
-"330","Šiaulių apskr.","Šiaulių m.","50-60","Viso",15217
-"331","Šiaulių apskr.","Šiaulių m.","60-70","Viso",13138
-"332","Šiaulių apskr.","Šiaulių m.","70-80","Viso",8426
-"333","Šiaulių apskr.","Šiaulių m.","80+","Viso",5968
-"334","Šiaulių apskr.","Šiaulių r.","0-10","Viso",3794
-"335","Šiaulių apskr.","Šiaulių r.","10-20","Viso",4387
-"336","Šiaulių apskr.","Šiaulių r.","20-30","Viso",5146
-"337","Šiaulių apskr.","Šiaulių r.","30-40","Viso",4156
-"338","Šiaulių apskr.","Šiaulių r.","40-50","Viso",5495
-"339","Šiaulių apskr.","Šiaulių r.","50-60","Viso",6882
-"340","Šiaulių apskr.","Šiaulių r.","60-70","Viso",5721
-"341","Šiaulių apskr.","Šiaulių r.","70-80","Viso",3609
-"342","Šiaulių apskr.","Šiaulių r.","80+","Viso",2364
-"343","Tauragės apskr.","Jurbarko r.","0-10","Viso",2197
-"344","Tauragės apskr.","Jurbarko r.","10-20","Viso",2497
-"345","Tauragės apskr.","Jurbarko r.","20-30","Viso",3144
-"346","Tauragės apskr.","Jurbarko r.","30-40","Viso",1805
-"347","Tauragės apskr.","Jurbarko r.","40-50","Viso",2833
-"348","Tauragės apskr.","Jurbarko r.","50-60","Viso",4079
-"349","Tauragės apskr.","Jurbarko r.","60-70","Viso",3567
-"350","Tauragės apskr.","Jurbarko r.","70-80","Viso",2518
-"351","Tauragės apskr.","Jurbarko r.","80+","Viso",1596
-"352","Tauragės apskr.","Pagėgių","0-10","Viso",775
-"353","Tauragės apskr.","Pagėgių","10-20","Viso",660
-"354","Tauragės apskr.","Pagėgių","20-30","Viso",1018
-"355","Tauragės apskr.","Pagėgių","30-40","Viso",553
-"356","Tauragės apskr.","Pagėgių","40-50","Viso",832
-"357","Tauragės apskr.","Pagėgių","50-60","Viso",1225
-"358","Tauragės apskr.","Pagėgių","60-70","Viso",1040
-"359","Tauragės apskr.","Pagėgių","70-80","Viso",591
-"360","Tauragės apskr.","Pagėgių","80+","Viso",432
-"361","Tauragės apskr.","Šilalės r.","0-10","Viso",2234
-"362","Tauragės apskr.","Šilalės r.","10-20","Viso",2181
-"363","Tauragės apskr.","Šilalės r.","20-30","Viso",3234
-"364","Tauragės apskr.","Šilalės r.","30-40","Viso",1668
-"365","Tauragės apskr.","Šilalės r.","40-50","Viso",2551
-"366","Tauragės apskr.","Šilalės r.","50-60","Viso",3629
-"367","Tauragės apskr.","Šilalės r.","60-70","Viso",2890
-"368","Tauragės apskr.","Šilalės r.","70-80","Viso",1787
-"369","Tauragės apskr.","Šilalės r.","80+","Viso",1262
-"370","Tauragės apskr.","Tauragės r.","0-10","Viso",3957
-"371","Tauragės apskr.","Tauragės r.","10-20","Viso",3484
-"372","Tauragės apskr.","Tauragės r.","20-30","Viso",4725
-"373","Tauragės apskr.","Tauragės r.","30-40","Viso",3449
-"374","Tauragės apskr.","Tauragės r.","40-50","Viso",4721
-"375","Tauragės apskr.","Tauragės r.","50-60","Viso",6024
-"376","Tauragės apskr.","Tauragės r.","60-70","Viso",5166
-"377","Tauragės apskr.","Tauragės r.","70-80","Viso",3453
-"378","Tauragės apskr.","Tauragės r.","80+","Viso",2352
-"379","Telšių apskr.","Mažeikių r.","0-10","Viso",5449
-"380","Telšių apskr.","Mažeikių r.","10-20","Viso",5281
-"381","Telšių apskr.","Mažeikių r.","20-30","Viso",6454
-"382","Telšių apskr.","Mažeikių r.","30-40","Viso",4906
-"383","Telšių apskr.","Mažeikių r.","40-50","Viso",6829
-"384","Telšių apskr.","Mažeikių r.","50-60","Viso",8262
-"385","Telšių apskr.","Mažeikių r.","60-70","Viso",7100
-"386","Telšių apskr.","Mažeikių r.","70-80","Viso",4109
-"387","Telšių apskr.","Mažeikių r.","80+","Viso",2399
-"388","Telšių apskr.","Plungės r.","0-10","Viso",3466
-"389","Telšių apskr.","Plungės r.","10-20","Viso",3306
-"390","Telšių apskr.","Plungės r.","20-30","Viso",4483
-"391","Telšių apskr.","Plungės r.","30-40","Viso",2846
-"392","Telšių apskr.","Plungės r.","40-50","Viso",4063
-"393","Telšių apskr.","Plungės r.","50-60","Viso",5304
-"394","Telšių apskr.","Plungės r.","60-70","Viso",4231
-"395","Telšių apskr.","Plungės r.","70-80","Viso",2891
-"396","Telšių apskr.","Plungės r.","80+","Viso",2045
-"397","Telšių apskr.","Rietavo","0-10","Viso",774
-"398","Telšių apskr.","Rietavo","10-20","Viso",698
-"399","Telšių apskr.","Rietavo","20-30","Viso",1053
-"400","Telšių apskr.","Rietavo","30-40","Viso",660
-"401","Telšių apskr.","Rietavo","40-50","Viso",783
-"402","Telšių apskr.","Rietavo","50-60","Viso",1191
-"403","Telšių apskr.","Rietavo","60-70","Viso",961
-"404","Telšių apskr.","Rietavo","70-80","Viso",587
-"405","Telšių apskr.","Rietavo","80+","Viso",471
-"406","Telšių apskr.","Telšių r.","0-10","Viso",3836
-"407","Telšių apskr.","Telšių r.","10-20","Viso",3911
-"408","Telšių apskr.","Telšių r.","20-30","Viso",5046
-"409","Telšių apskr.","Telšių r.","30-40","Viso",3396
-"410","Telšių apskr.","Telšių r.","40-50","Viso",4716
-"411","Telšių apskr.","Telšių r.","50-60","Viso",6051
-"412","Telšių apskr.","Telšių r.","60-70","Viso",5512
-"413","Telšių apskr.","Telšių r.","70-80","Viso",3694
-"414","Telšių apskr.","Telšių r.","80+","Viso",2597
-"415","Utenos apskr.","Anykščių r.","0-10","Viso",1696
-"416","Utenos apskr.","Anykščių r.","10-20","Viso",1811
-"417","Utenos apskr.","Anykščių r.","20-30","Viso",2756
-"418","Utenos apskr.","Anykščių r.","30-40","Viso",1654
-"419","Utenos apskr.","Anykščių r.","40-50","Viso",2484
-"420","Utenos apskr.","Anykščių r.","50-60","Viso",4175
-"421","Utenos apskr.","Anykščių r.","60-70","Viso",3426
-"422","Utenos apskr.","Anykščių r.","70-80","Viso",2542
-"423","Utenos apskr.","Anykščių r.","80+","Viso",2079
-"424","Utenos apskr.","Ignalinos r.","0-10","Viso",1028
-"425","Utenos apskr.","Ignalinos r.","10-20","Viso",1168
-"426","Utenos apskr.","Ignalinos r.","20-30","Viso",1611
-"427","Utenos apskr.","Ignalinos r.","30-40","Viso",1019
-"428","Utenos apskr.","Ignalinos r.","40-50","Viso",1676
-"429","Utenos apskr.","Ignalinos r.","50-60","Viso",2403
-"430","Utenos apskr.","Ignalinos r.","60-70","Viso",2183
-"431","Utenos apskr.","Ignalinos r.","70-80","Viso",1731
-"432","Utenos apskr.","Ignalinos r.","80+","Viso",1312
-"433","Utenos apskr.","Molėtų r.","0-10","Viso",1282
-"434","Utenos apskr.","Molėtų r.","10-20","Viso",1396
-"435","Utenos apskr.","Molėtų r.","20-30","Viso",2241
-"436","Utenos apskr.","Molėtų r.","30-40","Viso",1432
-"437","Utenos apskr.","Molėtų r.","40-50","Viso",2091
-"438","Utenos apskr.","Molėtų r.","50-60","Viso",2930
-"439","Utenos apskr.","Molėtų r.","60-70","Viso",2394
-"440","Utenos apskr.","Molėtų r.","70-80","Viso",1745
-"441","Utenos apskr.","Molėtų r.","80+","Viso",1365
-"442","Utenos apskr.","Utenos r.","0-10","Viso",2921
-"443","Utenos apskr.","Utenos r.","10-20","Viso",2984
-"444","Utenos apskr.","Utenos r.","20-30","Viso",4375
-"445","Utenos apskr.","Utenos r.","30-40","Viso",3902
-"446","Utenos apskr.","Utenos r.","40-50","Viso",4683
-"447","Utenos apskr.","Utenos r.","50-60","Viso",6455
-"448","Utenos apskr.","Utenos r.","60-70","Viso",5495
-"449","Utenos apskr.","Utenos r.","70-80","Viso",3659
-"450","Utenos apskr.","Utenos r.","80+","Viso",2607
-"451","Utenos apskr.","Visagino m.","0-10","Viso",1894
-"452","Utenos apskr.","Visagino m.","10-20","Viso",1622
-"453","Utenos apskr.","Visagino m.","20-30","Viso",1549
-"454","Utenos apskr.","Visagino m.","30-40","Viso",1319
-"455","Utenos apskr.","Visagino m.","40-50","Viso",1838
-"456","Utenos apskr.","Visagino m.","50-60","Viso",3293
-"457","Utenos apskr.","Visagino m.","60-70","Viso",4347
-"458","Utenos apskr.","Visagino m.","70-80","Viso",1508
-"459","Utenos apskr.","Visagino m.","80+","Viso",764
-"460","Utenos apskr.","Zarasų r.","0-10","Viso",1200
-"461","Utenos apskr.","Zarasų r.","10-20","Viso",1276
-"462","Utenos apskr.","Zarasų r.","20-30","Viso",1749
-"463","Utenos apskr.","Zarasų r.","30-40","Viso",1106
-"464","Utenos apskr.","Zarasų r.","40-50","Viso",1670
-"465","Utenos apskr.","Zarasų r.","50-60","Viso",2600
-"466","Utenos apskr.","Zarasų r.","60-70","Viso",2245
-"467","Utenos apskr.","Zarasų r.","70-80","Viso",1578
-"468","Utenos apskr.","Zarasų r.","80+","Viso",1214
-"469","Vilniaus apskr.","Elektrėnų","0-10","Viso",2386
-"470","Vilniaus apskr.","Elektrėnų","10-20","Viso",2079
-"471","Vilniaus apskr.","Elektrėnų","20-30","Viso",2738
-"472","Vilniaus apskr.","Elektrėnų","30-40","Viso",3261
-"473","Vilniaus apskr.","Elektrėnų","40-50","Viso",3409
-"474","Vilniaus apskr.","Elektrėnų","50-60","Viso",3804
-"475","Vilniaus apskr.","Elektrėnų","60-70","Viso",3147
-"476","Vilniaus apskr.","Elektrėnų","70-80","Viso",2027
-"477","Vilniaus apskr.","Elektrėnų","80+","Viso",1257
-"478","Vilniaus apskr.","Šalčininkų r.","0-10","Viso",3218
-"479","Vilniaus apskr.","Šalčininkų r.","10-20","Viso",3289
-"480","Vilniaus apskr.","Šalčininkų r.","20-30","Viso",3899
-"481","Vilniaus apskr.","Šalčininkų r.","30-40","Viso",3683
-"482","Vilniaus apskr.","Šalčininkų r.","40-50","Viso",4194
-"483","Vilniaus apskr.","Šalčininkų r.","50-60","Viso",4693
-"484","Vilniaus apskr.","Šalčininkų r.","60-70","Viso",3676
-"485","Vilniaus apskr.","Šalčininkų r.","70-80","Viso",2099
-"486","Vilniaus apskr.","Šalčininkų r.","80+","Viso",1523
-"487","Vilniaus apskr.","Širvintų r.","0-10","Viso",1391
-"488","Vilniaus apskr.","Širvintų r.","10-20","Viso",1288
-"489","Vilniaus apskr.","Širvintų r.","20-30","Viso",1858
-"490","Vilniaus apskr.","Širvintų r.","30-40","Viso",1540
-"491","Vilniaus apskr.","Širvintų r.","40-50","Viso",1872
-"492","Vilniaus apskr.","Širvintų r.","50-60","Viso",2547
-"493","Vilniaus apskr.","Širvintų r.","60-70","Viso",2048
-"494","Vilniaus apskr.","Širvintų r.","70-80","Viso",1397
-"495","Vilniaus apskr.","Širvintų r.","80+","Viso",969
-"496","Vilniaus apskr.","Švenčionių r.","0-10","Viso",1817
-"497","Vilniaus apskr.","Švenčionių r.","10-20","Viso",2031
-"498","Vilniaus apskr.","Švenčionių r.","20-30","Viso",2672
-"499","Vilniaus apskr.","Švenčionių r.","30-40","Viso",2114
-"500","Vilniaus apskr.","Švenčionių r.","40-50","Viso",2902
-"501","Vilniaus apskr.","Švenčionių r.","50-60","Viso",3734
-"502","Vilniaus apskr.","Švenčionių r.","60-70","Viso",3362
-"503","Vilniaus apskr.","Švenčionių r.","70-80","Viso",2279
-"504","Vilniaus apskr.","Švenčionių r.","80+","Viso",1582
-"505","Vilniaus apskr.","Trakų r.","0-10","Viso",3294
-"506","Vilniaus apskr.","Trakų r.","10-20","Viso",3217
-"507","Vilniaus apskr.","Trakų r.","20-30","Viso",4047
-"508","Vilniaus apskr.","Trakų r.","30-40","Viso",4630
-"509","Vilniaus apskr.","Trakų r.","40-50","Viso",4646
-"510","Vilniaus apskr.","Trakų r.","50-60","Viso",5137
-"511","Vilniaus apskr.","Trakų r.","60-70","Viso",4098
-"512","Vilniaus apskr.","Trakų r.","70-80","Viso",2405
-"513","Vilniaus apskr.","Trakų r.","80+","Viso",1739
-"514","Vilniaus apskr.","Ukmergės r.","0-10","Viso",2958
-"515","Vilniaus apskr.","Ukmergės r.","10-20","Viso",2911
-"516","Vilniaus apskr.","Ukmergės r.","20-30","Viso",3849
-"517","Vilniaus apskr.","Ukmergės r.","30-40","Viso",3043
-"518","Vilniaus apskr.","Ukmergės r.","40-50","Viso",3886
-"519","Vilniaus apskr.","Ukmergės r.","50-60","Viso",5697
-"520","Vilniaus apskr.","Ukmergės r.","60-70","Viso",4652
-"521","Vilniaus apskr.","Ukmergės r.","70-80","Viso",3494
-"522","Vilniaus apskr.","Ukmergės r.","80+","Viso",2562
-"523","Vilniaus apskr.","Vilniaus m.","0-10","Viso",68014
-"524","Vilniaus apskr.","Vilniaus m.","10-20","Viso",51402
-"525","Vilniaus apskr.","Vilniaus m.","20-30","Viso",61835
-"526","Vilniaus apskr.","Vilniaus m.","30-40","Viso",116104
-"527","Vilniaus apskr.","Vilniaus m.","40-50","Viso",80912
-"528","Vilniaus apskr.","Vilniaus m.","50-60","Viso",66401
-"529","Vilniaus apskr.","Vilniaus m.","60-70","Viso",59823
-"530","Vilniaus apskr.","Vilniaus m.","70-80","Viso",38612
-"531","Vilniaus apskr.","Vilniaus m.","80+","Viso",26799
-"532","Vilniaus apskr.","Vilniaus r.","0-10","Viso",9977
-"533","Vilniaus apskr.","Vilniaus r.","10-20","Viso",11946
-"534","Vilniaus apskr.","Vilniaus r.","20-30","Viso",11872
-"535","Vilniaus apskr.","Vilniaus r.","30-40","Viso",14923
-"536","Vilniaus apskr.","Vilniaus r.","40-50","Viso",15997
-"537","Vilniaus apskr.","Vilniaus r.","50-60","Viso",14821
-"538","Vilniaus apskr.","Vilniaus r.","60-70","Viso",11925
-"539","Vilniaus apskr.","Vilniaus r.","70-80","Viso",6671
-"540","Vilniaus apskr.","Vilniaus r.","80+","Viso",3899
+"administrative_level_2","administrative_level_3","age","sex","population"
+"Alytaus apskr.","Alytaus m.","0-10","Viso",4299
+"Alytaus apskr.","Alytaus m.","10-20","Viso",4316
+"Alytaus apskr.","Alytaus m.","20-30","Viso",5951
+"Alytaus apskr.","Alytaus m.","30-40","Viso",4903
+"Alytaus apskr.","Alytaus m.","40-50","Viso",6576
+"Alytaus apskr.","Alytaus m.","50-60","Viso",8022
+"Alytaus apskr.","Alytaus m.","60-70","Viso",7406
+"Alytaus apskr.","Alytaus m.","70-80","Viso",4863
+"Alytaus apskr.","Alytaus m.","80+","Viso",2869
+"Alytaus apskr.","Alytaus r.","0-10","Viso",2169
+"Alytaus apskr.","Alytaus r.","10-20","Viso",2486
+"Alytaus apskr.","Alytaus r.","20-30","Viso",3150
+"Alytaus apskr.","Alytaus r.","30-40","Viso",2380
+"Alytaus apskr.","Alytaus r.","40-50","Viso",3086
+"Alytaus apskr.","Alytaus r.","50-60","Viso",4337
+"Alytaus apskr.","Alytaus r.","60-70","Viso",3715
+"Alytaus apskr.","Alytaus r.","70-80","Viso",2524
+"Alytaus apskr.","Alytaus r.","80+","Viso",1995
+"Alytaus apskr.","Druskininkų","0-10","Viso",1798
+"Alytaus apskr.","Druskininkų","10-20","Viso",1510
+"Alytaus apskr.","Druskininkų","20-30","Viso",2198
+"Alytaus apskr.","Druskininkų","30-40","Viso",1786
+"Alytaus apskr.","Druskininkų","40-50","Viso",2123
+"Alytaus apskr.","Druskininkų","50-60","Viso",3327
+"Alytaus apskr.","Druskininkų","60-70","Viso",2872
+"Alytaus apskr.","Druskininkų","70-80","Viso",1977
+"Alytaus apskr.","Druskininkų","80+","Viso",1425
+"Alytaus apskr.","Lazdijų r.","0-10","Viso",1534
+"Alytaus apskr.","Lazdijų r.","10-20","Viso",1548
+"Alytaus apskr.","Lazdijų r.","20-30","Viso",2320
+"Alytaus apskr.","Lazdijų r.","30-40","Viso",1413
+"Alytaus apskr.","Lazdijų r.","40-50","Viso",2029
+"Alytaus apskr.","Lazdijų r.","50-60","Viso",3138
+"Alytaus apskr.","Lazdijų r.","60-70","Viso",2506
+"Alytaus apskr.","Lazdijų r.","70-80","Viso",1733
+"Alytaus apskr.","Lazdijų r.","80+","Viso",1618
+"Alytaus apskr.","Varėnos r.","0-10","Viso",1749
+"Alytaus apskr.","Varėnos r.","10-20","Viso",1759
+"Alytaus apskr.","Varėnos r.","20-30","Viso",2557
+"Alytaus apskr.","Varėnos r.","30-40","Viso",1549
+"Alytaus apskr.","Varėnos r.","40-50","Viso",2318
+"Alytaus apskr.","Varėnos r.","50-60","Viso",3556
+"Alytaus apskr.","Varėnos r.","60-70","Viso",3144
+"Alytaus apskr.","Varėnos r.","70-80","Viso",2133
+"Alytaus apskr.","Varėnos r.","80+","Viso",1755
+"Kauno apskr.","Birštono","0-10","Viso",376
+"Kauno apskr.","Birštono","10-20","Viso",336
+"Kauno apskr.","Birštono","20-30","Viso",447
+"Kauno apskr.","Birštono","30-40","Viso",388
+"Kauno apskr.","Birštono","40-50","Viso",433
+"Kauno apskr.","Birštono","50-60","Viso",651
+"Kauno apskr.","Birštono","60-70","Viso",686
+"Kauno apskr.","Birštono","70-80","Viso",383
+"Kauno apskr.","Birštono","80+","Viso",337
+"Kauno apskr.","Jonavos r.","0-10","Viso",4112
+"Kauno apskr.","Jonavos r.","10-20","Viso",4315
+"Kauno apskr.","Jonavos r.","20-30","Viso",5230
+"Kauno apskr.","Jonavos r.","30-40","Viso",4160
+"Kauno apskr.","Jonavos r.","40-50","Viso",5318
+"Kauno apskr.","Jonavos r.","50-60","Viso",6164
+"Kauno apskr.","Jonavos r.","60-70","Viso",5545
+"Kauno apskr.","Jonavos r.","70-80","Viso",3714
+"Kauno apskr.","Jonavos r.","80+","Viso",2192
+"Kauno apskr.","Kaišiadorių r.","0-10","Viso",2480
+"Kauno apskr.","Kaišiadorių r.","10-20","Viso",2733
+"Kauno apskr.","Kaišiadorių r.","20-30","Viso",3619
+"Kauno apskr.","Kaišiadorių r.","30-40","Viso",3908
+"Kauno apskr.","Kaišiadorių r.","40-50","Viso",3938
+"Kauno apskr.","Kaišiadorių r.","50-60","Viso",4562
+"Kauno apskr.","Kaišiadorių r.","60-70","Viso",3767
+"Kauno apskr.","Kaišiadorių r.","70-80","Viso",2479
+"Kauno apskr.","Kaišiadorių r.","80+","Viso",1705
+"Kauno apskr.","Kauno m.","0-10","Viso",31061
+"Kauno apskr.","Kauno m.","10-20","Viso",25218
+"Kauno apskr.","Kauno m.","20-30","Viso",35343
+"Kauno apskr.","Kauno m.","30-40","Viso",49025
+"Kauno apskr.","Kauno m.","40-50","Viso",35501
+"Kauno apskr.","Kauno m.","50-60","Viso",37437
+"Kauno apskr.","Kauno m.","60-70","Viso",35474
+"Kauno apskr.","Kauno m.","70-80","Viso",26025
+"Kauno apskr.","Kauno m.","80+","Viso",18193
+"Kauno apskr.","Kauno r.","0-10","Viso",9932
+"Kauno apskr.","Kauno r.","10-20","Viso",10484
+"Kauno apskr.","Kauno r.","20-30","Viso",12523
+"Kauno apskr.","Kauno r.","30-40","Viso",14878
+"Kauno apskr.","Kauno r.","40-50","Viso",13977
+"Kauno apskr.","Kauno r.","50-60","Viso",13734
+"Kauno apskr.","Kauno r.","60-70","Viso",10956
+"Kauno apskr.","Kauno r.","70-80","Viso",6612
+"Kauno apskr.","Kauno r.","80+","Viso",4453
+"Kauno apskr.","Kėdainių r.","0-10","Viso",4141
+"Kauno apskr.","Kėdainių r.","10-20","Viso",4479
+"Kauno apskr.","Kėdainių r.","20-30","Viso",5406
+"Kauno apskr.","Kėdainių r.","30-40","Viso",4001
+"Kauno apskr.","Kėdainių r.","40-50","Viso",5669
+"Kauno apskr.","Kėdainių r.","50-60","Viso",7313
+"Kauno apskr.","Kėdainių r.","60-70","Viso",6304
+"Kauno apskr.","Kėdainių r.","70-80","Viso",4425
+"Kauno apskr.","Kėdainių r.","80+","Viso",3012
+"Kauno apskr.","Prienų r.","0-10","Viso",2314
+"Kauno apskr.","Prienų r.","10-20","Viso",2405
+"Kauno apskr.","Prienų r.","20-30","Viso",3188
+"Kauno apskr.","Prienų r.","30-40","Viso",2329
+"Kauno apskr.","Prienų r.","40-50","Viso",3047
+"Kauno apskr.","Prienų r.","50-60","Viso",4109
+"Kauno apskr.","Prienų r.","60-70","Viso",3678
+"Kauno apskr.","Prienų r.","70-80","Viso",2394
+"Kauno apskr.","Prienų r.","80+","Viso",2002
+"Kauno apskr.","Raseinių r.","0-10","Viso",2785
+"Kauno apskr.","Raseinių r.","10-20","Viso",3009
+"Kauno apskr.","Raseinių r.","20-30","Viso",3949
+"Kauno apskr.","Raseinių r.","30-40","Viso",2576
+"Kauno apskr.","Raseinių r.","40-50","Viso",3738
+"Kauno apskr.","Raseinių r.","50-60","Viso",5028
+"Kauno apskr.","Raseinių r.","60-70","Viso",4282
+"Kauno apskr.","Raseinių r.","70-80","Viso",3006
+"Kauno apskr.","Raseinių r.","80+","Viso",2235
+"Klaipėdos apskr.","Klaipėdos m.","0-10","Viso",17152
+"Klaipėdos apskr.","Klaipėdos m.","10-20","Viso",13525
+"Klaipėdos apskr.","Klaipėdos m.","20-30","Viso",16150
+"Klaipėdos apskr.","Klaipėdos m.","30-40","Viso",23123
+"Klaipėdos apskr.","Klaipėdos m.","40-50","Viso",19301
+"Klaipėdos apskr.","Klaipėdos m.","50-60","Viso",19561
+"Klaipėdos apskr.","Klaipėdos m.","60-70","Viso",19323
+"Klaipėdos apskr.","Klaipėdos m.","70-80","Viso",12012
+"Klaipėdos apskr.","Klaipėdos m.","80+","Viso",8909
+"Klaipėdos apskr.","Klaipėdos r.","0-10","Viso",6741
+"Klaipėdos apskr.","Klaipėdos r.","10-20","Viso",6789
+"Klaipėdos apskr.","Klaipėdos r.","20-30","Viso",7617
+"Klaipėdos apskr.","Klaipėdos r.","30-40","Viso",9205
+"Klaipėdos apskr.","Klaipėdos r.","40-50","Viso",9664
+"Klaipėdos apskr.","Klaipėdos r.","50-60","Viso",9319
+"Klaipėdos apskr.","Klaipėdos r.","60-70","Viso",6949
+"Klaipėdos apskr.","Klaipėdos r.","70-80","Viso",3814
+"Klaipėdos apskr.","Klaipėdos r.","80+","Viso",2550
+"Klaipėdos apskr.","Kretingos r.","0-10","Viso",3924
+"Klaipėdos apskr.","Kretingos r.","10-20","Viso",3846
+"Klaipėdos apskr.","Kretingos r.","20-30","Viso",4830
+"Klaipėdos apskr.","Kretingos r.","30-40","Viso",3820
+"Klaipėdos apskr.","Kretingos r.","40-50","Viso",4743
+"Klaipėdos apskr.","Kretingos r.","50-60","Viso",5922
+"Klaipėdos apskr.","Kretingos r.","60-70","Viso",4808
+"Klaipėdos apskr.","Kretingos r.","70-80","Viso",3149
+"Klaipėdos apskr.","Kretingos r.","80+","Viso",2281
+"Klaipėdos apskr.","Neringos","0-10","Viso",384
+"Klaipėdos apskr.","Neringos","10-20","Viso",272
+"Klaipėdos apskr.","Neringos","20-30","Viso",393
+"Klaipėdos apskr.","Neringos","30-40","Viso",570
+"Klaipėdos apskr.","Neringos","40-50","Viso",620
+"Klaipėdos apskr.","Neringos","50-60","Viso",635
+"Klaipėdos apskr.","Neringos","60-70","Viso",455
+"Klaipėdos apskr.","Neringos","70-80","Viso",205
+"Klaipėdos apskr.","Neringos","80+","Viso",107
+"Klaipėdos apskr.","Palangos m.","0-10","Viso",1556
+"Klaipėdos apskr.","Palangos m.","10-20","Viso",1401
+"Klaipėdos apskr.","Palangos m.","20-30","Viso",1641
+"Klaipėdos apskr.","Palangos m.","30-40","Viso",1703
+"Klaipėdos apskr.","Palangos m.","40-50","Viso",2096
+"Klaipėdos apskr.","Palangos m.","50-60","Viso",2556
+"Klaipėdos apskr.","Palangos m.","60-70","Viso",2671
+"Klaipėdos apskr.","Palangos m.","70-80","Viso",1726
+"Klaipėdos apskr.","Palangos m.","80+","Viso",1079
+"Klaipėdos apskr.","Šilutės r.","0-10","Viso",4022
+"Klaipėdos apskr.","Šilutės r.","10-20","Viso",3778
+"Klaipėdos apskr.","Šilutės r.","20-30","Viso",4952
+"Klaipėdos apskr.","Šilutės r.","30-40","Viso",3194
+"Klaipėdos apskr.","Šilutės r.","40-50","Viso",4319
+"Klaipėdos apskr.","Šilutės r.","50-60","Viso",6227
+"Klaipėdos apskr.","Šilutės r.","60-70","Viso",5126
+"Klaipėdos apskr.","Šilutės r.","70-80","Viso",3172
+"Klaipėdos apskr.","Šilutės r.","80+","Viso",2297
+"Klaipėdos apskr.","Skuodo r.","0-10","Viso",1524
+"Klaipėdos apskr.","Skuodo r.","10-20","Viso",1502
+"Klaipėdos apskr.","Skuodo r.","20-30","Viso",2128
+"Klaipėdos apskr.","Skuodo r.","30-40","Viso",757
+"Klaipėdos apskr.","Skuodo r.","40-50","Viso",1671
+"Klaipėdos apskr.","Skuodo r.","50-60","Viso",2779
+"Klaipėdos apskr.","Skuodo r.","60-70","Viso",2499
+"Klaipėdos apskr.","Skuodo r.","70-80","Viso",1790
+"Klaipėdos apskr.","Skuodo r.","80+","Viso",1015
+"Marijampolės apskr.","Kalvarijos","0-10","Viso",1067
+"Marijampolės apskr.","Kalvarijos","10-20","Viso",1125
+"Marijampolės apskr.","Kalvarijos","20-30","Viso",1408
+"Marijampolės apskr.","Kalvarijos","30-40","Viso",919
+"Marijampolės apskr.","Kalvarijos","40-50","Viso",1218
+"Marijampolės apskr.","Kalvarijos","50-60","Viso",1601
+"Marijampolės apskr.","Kalvarijos","60-70","Viso",1285
+"Marijampolės apskr.","Kalvarijos","70-80","Viso",722
+"Marijampolės apskr.","Kalvarijos","80+","Viso",608
+"Marijampolės apskr.","Kazlų Rūdos","0-10","Viso",1090
+"Marijampolės apskr.","Kazlų Rūdos","10-20","Viso",1200
+"Marijampolės apskr.","Kazlų Rūdos","20-30","Viso",1364
+"Marijampolės apskr.","Kazlų Rūdos","30-40","Viso",1110
+"Marijampolės apskr.","Kazlų Rūdos","40-50","Viso",1410
+"Marijampolės apskr.","Kazlų Rūdos","50-60","Viso",1718
+"Marijampolės apskr.","Kazlų Rūdos","60-70","Viso",1473
+"Marijampolės apskr.","Kazlų Rūdos","70-80","Viso",1057
+"Marijampolės apskr.","Kazlų Rūdos","80+","Viso",717
+"Marijampolės apskr.","Marijampolės","0-10","Viso",5382
+"Marijampolės apskr.","Marijampolės","10-20","Viso",5217
+"Marijampolės apskr.","Marijampolės","20-30","Viso",6540
+"Marijampolės apskr.","Marijampolės","30-40","Viso",6227
+"Marijampolės apskr.","Marijampolės","40-50","Viso",6830
+"Marijampolės apskr.","Marijampolės","50-60","Viso",8654
+"Marijampolės apskr.","Marijampolės","60-70","Viso",7273
+"Marijampolės apskr.","Marijampolės","70-80","Viso",4280
+"Marijampolės apskr.","Marijampolės","80+","Viso",3077
+"Marijampolės apskr.","Šakių r.","0-10","Viso",2434
+"Marijampolės apskr.","Šakių r.","10-20","Viso",2592
+"Marijampolės apskr.","Šakių r.","20-30","Viso",3679
+"Marijampolės apskr.","Šakių r.","30-40","Viso",2012
+"Marijampolės apskr.","Šakių r.","40-50","Viso",2987
+"Marijampolės apskr.","Šakių r.","50-60","Viso",4426
+"Marijampolės apskr.","Šakių r.","60-70","Viso",3585
+"Marijampolės apskr.","Šakių r.","70-80","Viso",2416
+"Marijampolės apskr.","Šakių r.","80+","Viso",1939
+"Marijampolės apskr.","Vilkaviškio r.","0-10","Viso",3256
+"Marijampolės apskr.","Vilkaviškio r.","10-20","Viso",3450
+"Marijampolės apskr.","Vilkaviškio r.","20-30","Viso",4524
+"Marijampolės apskr.","Vilkaviškio r.","30-40","Viso",2753
+"Marijampolės apskr.","Vilkaviškio r.","40-50","Viso",4257
+"Marijampolės apskr.","Vilkaviškio r.","50-60","Viso",5593
+"Marijampolės apskr.","Vilkaviškio r.","60-70","Viso",4868
+"Marijampolės apskr.","Vilkaviškio r.","70-80","Viso",3288
+"Marijampolės apskr.","Vilkaviškio r.","80+","Viso",2242
+"Panevėžio apskr.","Biržų r.","0-10","Viso",1900
+"Panevėžio apskr.","Biržų r.","10-20","Viso",2028
+"Panevėžio apskr.","Biržų r.","20-30","Viso",2990
+"Panevėžio apskr.","Biržų r.","30-40","Viso",1457
+"Panevėžio apskr.","Biržų r.","40-50","Viso",2599
+"Panevėžio apskr.","Biržų r.","50-60","Viso",3782
+"Panevėžio apskr.","Biržų r.","60-70","Viso",3224
+"Panevėžio apskr.","Biržų r.","70-80","Viso",2399
+"Panevėžio apskr.","Biržų r.","80+","Viso",1926
+"Panevėžio apskr.","Kupiškio r.","0-10","Viso",1397
+"Panevėžio apskr.","Kupiškio r.","10-20","Viso",1489
+"Panevėžio apskr.","Kupiškio r.","20-30","Viso",2049
+"Panevėžio apskr.","Kupiškio r.","30-40","Viso",1086
+"Panevėžio apskr.","Kupiškio r.","40-50","Viso",1809
+"Panevėžio apskr.","Kupiškio r.","50-60","Viso",2928
+"Panevėžio apskr.","Kupiškio r.","60-70","Viso",2301
+"Panevėžio apskr.","Kupiškio r.","70-80","Viso",1688
+"Panevėžio apskr.","Kupiškio r.","80+","Viso",1315
+"Panevėžio apskr.","Panevėžio m.","0-10","Viso",7929
+"Panevėžio apskr.","Panevėžio m.","10-20","Viso",7546
+"Panevėžio apskr.","Panevėžio m.","20-30","Viso",9658
+"Panevėžio apskr.","Panevėžio m.","30-40","Viso",8205
+"Panevėžio apskr.","Panevėžio m.","40-50","Viso",10458
+"Panevėžio apskr.","Panevėžio m.","50-60","Viso",14171
+"Panevėžio apskr.","Panevėžio m.","60-70","Viso",12187
+"Panevėžio apskr.","Panevėžio m.","70-80","Viso",8489
+"Panevėžio apskr.","Panevėžio m.","80+","Viso",5970
+"Panevėžio apskr.","Panevėžio r.","0-10","Viso",3237
+"Panevėžio apskr.","Panevėžio r.","10-20","Viso",3658
+"Panevėžio apskr.","Panevėžio r.","20-30","Viso",4520
+"Panevėžio apskr.","Panevėžio r.","30-40","Viso",3259
+"Panevėžio apskr.","Panevėžio r.","40-50","Viso",4352
+"Panevėžio apskr.","Panevėžio r.","50-60","Viso",6073
+"Panevėžio apskr.","Panevėžio r.","60-70","Viso",4836
+"Panevėžio apskr.","Panevėžio r.","70-80","Viso",3105
+"Panevėžio apskr.","Panevėžio r.","80+","Viso",2142
+"Panevėžio apskr.","Pasvalio r.","0-10","Viso",2118
+"Panevėžio apskr.","Pasvalio r.","10-20","Viso",2184
+"Panevėžio apskr.","Pasvalio r.","20-30","Viso",3004
+"Panevėžio apskr.","Pasvalio r.","30-40","Viso",1581
+"Panevėžio apskr.","Pasvalio r.","40-50","Viso",2644
+"Panevėžio apskr.","Pasvalio r.","50-60","Viso",3931
+"Panevėžio apskr.","Pasvalio r.","60-70","Viso",3070
+"Panevėžio apskr.","Pasvalio r.","70-80","Viso",2240
+"Panevėžio apskr.","Pasvalio r.","80+","Viso",1567
+"Panevėžio apskr.","Rokiškio r.","0-10","Viso",2169
+"Panevėžio apskr.","Rokiškio r.","10-20","Viso",2456
+"Panevėžio apskr.","Rokiškio r.","20-30","Viso",3366
+"Panevėžio apskr.","Rokiškio r.","30-40","Viso",1863
+"Panevėžio apskr.","Rokiškio r.","40-50","Viso",3321
+"Panevėžio apskr.","Rokiškio r.","50-60","Viso",4953
+"Panevėžio apskr.","Rokiškio r.","60-70","Viso",4280
+"Panevėžio apskr.","Rokiškio r.","70-80","Viso",2770
+"Panevėžio apskr.","Rokiškio r.","80+","Viso",2337
+"Šiaulių apskr.","Akmenės r.","0-10","Viso",1767
+"Šiaulių apskr.","Akmenės r.","10-20","Viso",1738
+"Šiaulių apskr.","Akmenės r.","20-30","Viso",2374
+"Šiaulių apskr.","Akmenės r.","30-40","Viso",1303
+"Šiaulių apskr.","Akmenės r.","40-50","Viso",1980
+"Šiaulių apskr.","Akmenės r.","50-60","Viso",3141
+"Šiaulių apskr.","Akmenės r.","60-70","Viso",2914
+"Šiaulių apskr.","Akmenės r.","70-80","Viso",1965
+"Šiaulių apskr.","Akmenės r.","80+","Viso",1355
+"Šiaulių apskr.","Joniškio r.","0-10","Viso",1768
+"Šiaulių apskr.","Joniškio r.","10-20","Viso",2003
+"Šiaulių apskr.","Joniškio r.","20-30","Viso",2604
+"Šiaulių apskr.","Joniškio r.","30-40","Viso",1314
+"Šiaulių apskr.","Joniškio r.","40-50","Viso",2499
+"Šiaulių apskr.","Joniškio r.","50-60","Viso",3601
+"Šiaulių apskr.","Joniškio r.","60-70","Viso",3041
+"Šiaulių apskr.","Joniškio r.","70-80","Viso",2170
+"Šiaulių apskr.","Joniškio r.","80+","Viso",1344
+"Šiaulių apskr.","Kelmės r.","0-10","Viso",2095
+"Šiaulių apskr.","Kelmės r.","10-20","Viso",2338
+"Šiaulių apskr.","Kelmės r.","20-30","Viso",3213
+"Šiaulių apskr.","Kelmės r.","30-40","Viso",1639
+"Šiaulių apskr.","Kelmės r.","40-50","Viso",2964
+"Šiaulių apskr.","Kelmės r.","50-60","Viso",4252
+"Šiaulių apskr.","Kelmės r.","60-70","Viso",3771
+"Šiaulių apskr.","Kelmės r.","70-80","Viso",2593
+"Šiaulių apskr.","Kelmės r.","80+","Viso",1961
+"Šiaulių apskr.","Pakruojo r.","0-10","Viso",1589
+"Šiaulių apskr.","Pakruojo r.","10-20","Viso",1831
+"Šiaulių apskr.","Pakruojo r.","20-30","Viso",2391
+"Šiaulių apskr.","Pakruojo r.","30-40","Viso",1147
+"Šiaulių apskr.","Pakruojo r.","40-50","Viso",2320
+"Šiaulių apskr.","Pakruojo r.","50-60","Viso",3168
+"Šiaulių apskr.","Pakruojo r.","60-70","Viso",2680
+"Šiaulių apskr.","Pakruojo r.","70-80","Viso",1886
+"Šiaulių apskr.","Pakruojo r.","80+","Viso",1203
+"Šiaulių apskr.","Radviliškio r.","0-10","Viso",3264
+"Šiaulių apskr.","Radviliškio r.","10-20","Viso",3596
+"Šiaulių apskr.","Radviliškio r.","20-30","Viso",4311
+"Šiaulių apskr.","Radviliškio r.","30-40","Viso",2905
+"Šiaulių apskr.","Radviliškio r.","40-50","Viso",4034
+"Šiaulių apskr.","Radviliškio r.","50-60","Viso",6039
+"Šiaulių apskr.","Radviliškio r.","60-70","Viso",4952
+"Šiaulių apskr.","Radviliškio r.","70-80","Viso",3224
+"Šiaulių apskr.","Radviliškio r.","80+","Viso",2251
+"Šiaulių apskr.","Šiaulių m.","0-10","Viso",10370
+"Šiaulių apskr.","Šiaulių m.","10-20","Viso",8216
+"Šiaulių apskr.","Šiaulių m.","20-30","Viso",11334
+"Šiaulių apskr.","Šiaulių m.","30-40","Viso",14957
+"Šiaulių apskr.","Šiaulių m.","40-50","Viso",14258
+"Šiaulių apskr.","Šiaulių m.","50-60","Viso",15217
+"Šiaulių apskr.","Šiaulių m.","60-70","Viso",13138
+"Šiaulių apskr.","Šiaulių m.","70-80","Viso",8426
+"Šiaulių apskr.","Šiaulių m.","80+","Viso",5968
+"Šiaulių apskr.","Šiaulių r.","0-10","Viso",3794
+"Šiaulių apskr.","Šiaulių r.","10-20","Viso",4387
+"Šiaulių apskr.","Šiaulių r.","20-30","Viso",5146
+"Šiaulių apskr.","Šiaulių r.","30-40","Viso",4156
+"Šiaulių apskr.","Šiaulių r.","40-50","Viso",5495
+"Šiaulių apskr.","Šiaulių r.","50-60","Viso",6882
+"Šiaulių apskr.","Šiaulių r.","60-70","Viso",5721
+"Šiaulių apskr.","Šiaulių r.","70-80","Viso",3609
+"Šiaulių apskr.","Šiaulių r.","80+","Viso",2364
+"Tauragės apskr.","Jurbarko r.","0-10","Viso",2197
+"Tauragės apskr.","Jurbarko r.","10-20","Viso",2497
+"Tauragės apskr.","Jurbarko r.","20-30","Viso",3144
+"Tauragės apskr.","Jurbarko r.","30-40","Viso",1805
+"Tauragės apskr.","Jurbarko r.","40-50","Viso",2833
+"Tauragės apskr.","Jurbarko r.","50-60","Viso",4079
+"Tauragės apskr.","Jurbarko r.","60-70","Viso",3567
+"Tauragės apskr.","Jurbarko r.","70-80","Viso",2518
+"Tauragės apskr.","Jurbarko r.","80+","Viso",1596
+"Tauragės apskr.","Pagėgių","0-10","Viso",775
+"Tauragės apskr.","Pagėgių","10-20","Viso",660
+"Tauragės apskr.","Pagėgių","20-30","Viso",1018
+"Tauragės apskr.","Pagėgių","30-40","Viso",553
+"Tauragės apskr.","Pagėgių","40-50","Viso",832
+"Tauragės apskr.","Pagėgių","50-60","Viso",1225
+"Tauragės apskr.","Pagėgių","60-70","Viso",1040
+"Tauragės apskr.","Pagėgių","70-80","Viso",591
+"Tauragės apskr.","Pagėgių","80+","Viso",432
+"Tauragės apskr.","Šilalės r.","0-10","Viso",2234
+"Tauragės apskr.","Šilalės r.","10-20","Viso",2181
+"Tauragės apskr.","Šilalės r.","20-30","Viso",3234
+"Tauragės apskr.","Šilalės r.","30-40","Viso",1668
+"Tauragės apskr.","Šilalės r.","40-50","Viso",2551
+"Tauragės apskr.","Šilalės r.","50-60","Viso",3629
+"Tauragės apskr.","Šilalės r.","60-70","Viso",2890
+"Tauragės apskr.","Šilalės r.","70-80","Viso",1787
+"Tauragės apskr.","Šilalės r.","80+","Viso",1262
+"Tauragės apskr.","Tauragės r.","0-10","Viso",3957
+"Tauragės apskr.","Tauragės r.","10-20","Viso",3484
+"Tauragės apskr.","Tauragės r.","20-30","Viso",4725
+"Tauragės apskr.","Tauragės r.","30-40","Viso",3449
+"Tauragės apskr.","Tauragės r.","40-50","Viso",4721
+"Tauragės apskr.","Tauragės r.","50-60","Viso",6024
+"Tauragės apskr.","Tauragės r.","60-70","Viso",5166
+"Tauragės apskr.","Tauragės r.","70-80","Viso",3453
+"Tauragės apskr.","Tauragės r.","80+","Viso",2352
+"Telšių apskr.","Mažeikių r.","0-10","Viso",5449
+"Telšių apskr.","Mažeikių r.","10-20","Viso",5281
+"Telšių apskr.","Mažeikių r.","20-30","Viso",6454
+"Telšių apskr.","Mažeikių r.","30-40","Viso",4906
+"Telšių apskr.","Mažeikių r.","40-50","Viso",6829
+"Telšių apskr.","Mažeikių r.","50-60","Viso",8262
+"Telšių apskr.","Mažeikių r.","60-70","Viso",7100
+"Telšių apskr.","Mažeikių r.","70-80","Viso",4109
+"Telšių apskr.","Mažeikių r.","80+","Viso",2399
+"Telšių apskr.","Plungės r.","0-10","Viso",3466
+"Telšių apskr.","Plungės r.","10-20","Viso",3306
+"Telšių apskr.","Plungės r.","20-30","Viso",4483
+"Telšių apskr.","Plungės r.","30-40","Viso",2846
+"Telšių apskr.","Plungės r.","40-50","Viso",4063
+"Telšių apskr.","Plungės r.","50-60","Viso",5304
+"Telšių apskr.","Plungės r.","60-70","Viso",4231
+"Telšių apskr.","Plungės r.","70-80","Viso",2891
+"Telšių apskr.","Plungės r.","80+","Viso",2045
+"Telšių apskr.","Rietavo","0-10","Viso",774
+"Telšių apskr.","Rietavo","10-20","Viso",698
+"Telšių apskr.","Rietavo","20-30","Viso",1053
+"Telšių apskr.","Rietavo","30-40","Viso",660
+"Telšių apskr.","Rietavo","40-50","Viso",783
+"Telšių apskr.","Rietavo","50-60","Viso",1191
+"Telšių apskr.","Rietavo","60-70","Viso",961
+"Telšių apskr.","Rietavo","70-80","Viso",587
+"Telšių apskr.","Rietavo","80+","Viso",471
+"Telšių apskr.","Telšių r.","0-10","Viso",3836
+"Telšių apskr.","Telšių r.","10-20","Viso",3911
+"Telšių apskr.","Telšių r.","20-30","Viso",5046
+"Telšių apskr.","Telšių r.","30-40","Viso",3396
+"Telšių apskr.","Telšių r.","40-50","Viso",4716
+"Telšių apskr.","Telšių r.","50-60","Viso",6051
+"Telšių apskr.","Telšių r.","60-70","Viso",5512
+"Telšių apskr.","Telšių r.","70-80","Viso",3694
+"Telšių apskr.","Telšių r.","80+","Viso",2597
+"Utenos apskr.","Anykščių r.","0-10","Viso",1696
+"Utenos apskr.","Anykščių r.","10-20","Viso",1811
+"Utenos apskr.","Anykščių r.","20-30","Viso",2756
+"Utenos apskr.","Anykščių r.","30-40","Viso",1654
+"Utenos apskr.","Anykščių r.","40-50","Viso",2484
+"Utenos apskr.","Anykščių r.","50-60","Viso",4175
+"Utenos apskr.","Anykščių r.","60-70","Viso",3426
+"Utenos apskr.","Anykščių r.","70-80","Viso",2542
+"Utenos apskr.","Anykščių r.","80+","Viso",2079
+"Utenos apskr.","Ignalinos r.","0-10","Viso",1028
+"Utenos apskr.","Ignalinos r.","10-20","Viso",1168
+"Utenos apskr.","Ignalinos r.","20-30","Viso",1611
+"Utenos apskr.","Ignalinos r.","30-40","Viso",1019
+"Utenos apskr.","Ignalinos r.","40-50","Viso",1676
+"Utenos apskr.","Ignalinos r.","50-60","Viso",2403
+"Utenos apskr.","Ignalinos r.","60-70","Viso",2183
+"Utenos apskr.","Ignalinos r.","70-80","Viso",1731
+"Utenos apskr.","Ignalinos r.","80+","Viso",1312
+"Utenos apskr.","Molėtų r.","0-10","Viso",1282
+"Utenos apskr.","Molėtų r.","10-20","Viso",1396
+"Utenos apskr.","Molėtų r.","20-30","Viso",2241
+"Utenos apskr.","Molėtų r.","30-40","Viso",1432
+"Utenos apskr.","Molėtų r.","40-50","Viso",2091
+"Utenos apskr.","Molėtų r.","50-60","Viso",2930
+"Utenos apskr.","Molėtų r.","60-70","Viso",2394
+"Utenos apskr.","Molėtų r.","70-80","Viso",1745
+"Utenos apskr.","Molėtų r.","80+","Viso",1365
+"Utenos apskr.","Utenos r.","0-10","Viso",2921
+"Utenos apskr.","Utenos r.","10-20","Viso",2984
+"Utenos apskr.","Utenos r.","20-30","Viso",4375
+"Utenos apskr.","Utenos r.","30-40","Viso",3902
+"Utenos apskr.","Utenos r.","40-50","Viso",4683
+"Utenos apskr.","Utenos r.","50-60","Viso",6455
+"Utenos apskr.","Utenos r.","60-70","Viso",5495
+"Utenos apskr.","Utenos r.","70-80","Viso",3659
+"Utenos apskr.","Utenos r.","80+","Viso",2607
+"Utenos apskr.","Visagino m.","0-10","Viso",1894
+"Utenos apskr.","Visagino m.","10-20","Viso",1622
+"Utenos apskr.","Visagino m.","20-30","Viso",1549
+"Utenos apskr.","Visagino m.","30-40","Viso",1319
+"Utenos apskr.","Visagino m.","40-50","Viso",1838
+"Utenos apskr.","Visagino m.","50-60","Viso",3293
+"Utenos apskr.","Visagino m.","60-70","Viso",4347
+"Utenos apskr.","Visagino m.","70-80","Viso",1508
+"Utenos apskr.","Visagino m.","80+","Viso",764
+"Utenos apskr.","Zarasų r.","0-10","Viso",1200
+"Utenos apskr.","Zarasų r.","10-20","Viso",1276
+"Utenos apskr.","Zarasų r.","20-30","Viso",1749
+"Utenos apskr.","Zarasų r.","30-40","Viso",1106
+"Utenos apskr.","Zarasų r.","40-50","Viso",1670
+"Utenos apskr.","Zarasų r.","50-60","Viso",2600
+"Utenos apskr.","Zarasų r.","60-70","Viso",2245
+"Utenos apskr.","Zarasų r.","70-80","Viso",1578
+"Utenos apskr.","Zarasų r.","80+","Viso",1214
+"Vilniaus apskr.","Elektrėnų","0-10","Viso",2386
+"Vilniaus apskr.","Elektrėnų","10-20","Viso",2079
+"Vilniaus apskr.","Elektrėnų","20-30","Viso",2738
+"Vilniaus apskr.","Elektrėnų","30-40","Viso",3261
+"Vilniaus apskr.","Elektrėnų","40-50","Viso",3409
+"Vilniaus apskr.","Elektrėnų","50-60","Viso",3804
+"Vilniaus apskr.","Elektrėnų","60-70","Viso",3147
+"Vilniaus apskr.","Elektrėnų","70-80","Viso",2027
+"Vilniaus apskr.","Elektrėnų","80+","Viso",1257
+"Vilniaus apskr.","Šalčininkų r.","0-10","Viso",3218
+"Vilniaus apskr.","Šalčininkų r.","10-20","Viso",3289
+"Vilniaus apskr.","Šalčininkų r.","20-30","Viso",3899
+"Vilniaus apskr.","Šalčininkų r.","30-40","Viso",3683
+"Vilniaus apskr.","Šalčininkų r.","40-50","Viso",4194
+"Vilniaus apskr.","Šalčininkų r.","50-60","Viso",4693
+"Vilniaus apskr.","Šalčininkų r.","60-70","Viso",3676
+"Vilniaus apskr.","Šalčininkų r.","70-80","Viso",2099
+"Vilniaus apskr.","Šalčininkų r.","80+","Viso",1523
+"Vilniaus apskr.","Širvintų r.","0-10","Viso",1391
+"Vilniaus apskr.","Širvintų r.","10-20","Viso",1288
+"Vilniaus apskr.","Širvintų r.","20-30","Viso",1858
+"Vilniaus apskr.","Širvintų r.","30-40","Viso",1540
+"Vilniaus apskr.","Širvintų r.","40-50","Viso",1872
+"Vilniaus apskr.","Širvintų r.","50-60","Viso",2547
+"Vilniaus apskr.","Širvintų r.","60-70","Viso",2048
+"Vilniaus apskr.","Širvintų r.","70-80","Viso",1397
+"Vilniaus apskr.","Širvintų r.","80+","Viso",969
+"Vilniaus apskr.","Švenčionių r.","0-10","Viso",1817
+"Vilniaus apskr.","Švenčionių r.","10-20","Viso",2031
+"Vilniaus apskr.","Švenčionių r.","20-30","Viso",2672
+"Vilniaus apskr.","Švenčionių r.","30-40","Viso",2114
+"Vilniaus apskr.","Švenčionių r.","40-50","Viso",2902
+"Vilniaus apskr.","Švenčionių r.","50-60","Viso",3734
+"Vilniaus apskr.","Švenčionių r.","60-70","Viso",3362
+"Vilniaus apskr.","Švenčionių r.","70-80","Viso",2279
+"Vilniaus apskr.","Švenčionių r.","80+","Viso",1582
+"Vilniaus apskr.","Trakų r.","0-10","Viso",3294
+"Vilniaus apskr.","Trakų r.","10-20","Viso",3217
+"Vilniaus apskr.","Trakų r.","20-30","Viso",4047
+"Vilniaus apskr.","Trakų r.","30-40","Viso",4630
+"Vilniaus apskr.","Trakų r.","40-50","Viso",4646
+"Vilniaus apskr.","Trakų r.","50-60","Viso",5137
+"Vilniaus apskr.","Trakų r.","60-70","Viso",4098
+"Vilniaus apskr.","Trakų r.","70-80","Viso",2405
+"Vilniaus apskr.","Trakų r.","80+","Viso",1739
+"Vilniaus apskr.","Ukmergės r.","0-10","Viso",2958
+"Vilniaus apskr.","Ukmergės r.","10-20","Viso",2911
+"Vilniaus apskr.","Ukmergės r.","20-30","Viso",3849
+"Vilniaus apskr.","Ukmergės r.","30-40","Viso",3043
+"Vilniaus apskr.","Ukmergės r.","40-50","Viso",3886
+"Vilniaus apskr.","Ukmergės r.","50-60","Viso",5697
+"Vilniaus apskr.","Ukmergės r.","60-70","Viso",4652
+"Vilniaus apskr.","Ukmergės r.","70-80","Viso",3494
+"Vilniaus apskr.","Ukmergės r.","80+","Viso",2562
+"Vilniaus apskr.","Vilniaus m.","0-10","Viso",68014
+"Vilniaus apskr.","Vilniaus m.","10-20","Viso",51402
+"Vilniaus apskr.","Vilniaus m.","20-30","Viso",61835
+"Vilniaus apskr.","Vilniaus m.","30-40","Viso",116104
+"Vilniaus apskr.","Vilniaus m.","40-50","Viso",80912
+"Vilniaus apskr.","Vilniaus m.","50-60","Viso",66401
+"Vilniaus apskr.","Vilniaus m.","60-70","Viso",59823
+"Vilniaus apskr.","Vilniaus m.","70-80","Viso",38612
+"Vilniaus apskr.","Vilniaus m.","80+","Viso",26799
+"Vilniaus apskr.","Vilniaus r.","0-10","Viso",9977
+"Vilniaus apskr.","Vilniaus r.","10-20","Viso",11946
+"Vilniaus apskr.","Vilniaus r.","20-30","Viso",11872
+"Vilniaus apskr.","Vilniaus r.","30-40","Viso",14923
+"Vilniaus apskr.","Vilniaus r.","40-50","Viso",15997
+"Vilniaus apskr.","Vilniaus r.","50-60","Viso",14821
+"Vilniaus apskr.","Vilniaus r.","60-70","Viso",11925
+"Vilniaus apskr.","Vilniaus r.","70-80","Viso",6671
+"Vilniaus apskr.","Vilniaus r.","80+","Viso",3899
