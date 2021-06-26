@@ -142,7 +142,7 @@ lvl11 <- lvl1 %>%
 
 
 add_stats <- function(dt) {
-  dt %>%
+  dt <- dt %>%
     select(
       day, region, confirmed_daily, tests_daily, tests_positive_daily,
       tests_mobile_daily,
@@ -206,9 +206,10 @@ add_stats <- function(dt) {
         round(100 * (deaths_2_sum7 / lag(deaths_2_sum7, 7) - 1), 2),
       vaccinated_1_percent = round(vaccinated_1 / population * 100, 2),
       vaccinated_2_percent = round(vaccinated_2 / population * 100, 2)
-    ) %>%
-    select(-(confirmed_daily:dgn_sum14)) %>%
-    ungroup()
+    )
+
+  dt <- dt %>% select(-(confirmed_daily:dgn_sum14)) # Exclude Linting
+  dt %>% ungroup()
 }
 
 lvl31_stats <- lvl31 %>%
