@@ -62,31 +62,59 @@ if (nrow(osp3) == nrow(osp2)) {
 }
 
 #-------- Individual data
-if (FALSE) {
-  vcfd <- readr::read_csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") # Exclude Linting
+vcfd <- readr::read_csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") # Exclude Linting
 
-  vcfd <- vcfd %>% mutate(
-    day1 = ymd(ymd_hms(vacc_date_1)),
-    day2 = ymd(ymd_hms(vacc_date_2))
-  )
-  v1 <- vcfd %>%
-    group_by(
-      municipality_name = municip_a, day = day1,
-      age_group, sex
-    ) %>%
-    summarise(dose1 = n())
+vcfd <- vcfd %>% mutate(
+  day1 = ymd(ymd_hms(vacc_date_1)),
+  day2 = ymd(ymd_hms(vacc_date_2))
+)
+v1 <- vcfd %>%
+  group_by(
+    municipality_name = municip_a, day = day1,
+    age_group, sex
+  ) %>%
+  summarise(dose1 = n())
 
-  v2 <- vcfd %>%
-    filter(vacc_type_2 != "") %>%
-    group_by(
-      municipality_name = municip_b, day = day2,
-      age_group, sex
-    ) %>%
-    summarise(dose2 = n())
-  vv <- v1 %>%
-    full_join(v2) %>%
-    mutate(dose1 = fix_na(dose1), dose2 = fix_na(dose2))
-}
+v2 <- vcfd %>%
+  filter(vacc_type_2 != "") %>%
+  group_by(
+    municipality_name = municip_b, day = day2,
+    age_group, sex
+  ) %>%
+  summarise(dose2 = n())
+vv <- v1 %>%
+  full_join(v2) %>%
+  mutate(dose1 = fix_na(dose1), dose2 = fix_na(dose2))
+vv <- vv %>% mutate(sex = ifelse(sex == "M", "Moteris", "Vyras"))
+
+agd <- data.frame(age_group = sort(unique(vv$age_group))) %>%
+  mutate(
+    age10 =
+      cut(as.numeric(age_group), c(seq(0, 80, by = 10), Inf),
+        include.lowest = TRUE, right = FALSE
+      )
+  ) %>%
+  mutate(age10 = gsub("[[)]", "", age10)) %>%
+  mutate(age10 = gsub(",", "-", age10)) %>%
+  mutate(age10 = ifelse(is.na(age10), "80+", age10)) %>%
+  mutate(age10 = ifelse(age10 == "80-Inf]", "80+", age10))
+
+vv1 <- vv %>%
+  ungroup() %>%
+  inner_join(agd) %>%
+  group_by(municipality_name, day, age = age10, sex) %>%
+  summarise(dose1 = sum(dose1), dose2 = sum(dose2)) %>%
+  ungroup()
+
+
+vv2 <- vv1 %>% inner_join(adm)
+vv2 %>%
+  select(
+    administrative_level_2,
+    administrative_level_3, day, age, sex, dose1, dose2
+  ) %>%
+  write.csv("data/lt-covid19-vaccinated-agedist10-level3.csv", row.names = FALSE)
+
 #--- Deliveries
 
 
