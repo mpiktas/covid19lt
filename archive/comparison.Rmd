@@ -91,4 +91,3 @@ ggplot(aes(x = day, y = confirmed, group = model, colour = model), data = t3) +
   geom_line() +
   geom_point(aes(x = day, y = confirmed, group = NULL), colour = "black", data = dt)
 ```
-

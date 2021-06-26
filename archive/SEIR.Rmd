@@ -327,4 +327,3 @@ ggplot(aes(x = day, y = Recovered, group = end, colour = end), data = codf %>% r
 ggplot(aes(x = day, y = Hospital, group = end, colour = end), data = codf %>% rename(Deaths = Dead) %>% filter(end >= max(dt$day) - days(mc$show - 1))) +
   geom_line()
 ```
-

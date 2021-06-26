@@ -29,7 +29,7 @@ lt_r <- estimate_R(incidence_data,
     n1 = 1000, n2 = 1000
   ))
 )
-dput(lt_r, "raw_data/effectiveR/lt_r.R")
+dput(lt_r, "raw_data/effectiveR/ltR")
 
 rr <- lt_r$R
 

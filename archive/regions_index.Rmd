@@ -107,4 +107,3 @@ dp %>%
   ) %>%
   formatRound(colnames(dp)[2:9], 2)
 ```
-

@@ -114,11 +114,3 @@ dygraph(xpil3, main = paste("Testavimo apimtys ", aa_last_day)) %>%
   dyOptions(colors = RColorBrewer::brewer.pal(4, "Set1")) %>%
   dyRangeSelector(dateWindow = view_interval)
 ```
-
-
-
-
-
-
-
-

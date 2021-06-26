@@ -64,7 +64,7 @@ a714 <- cbind(xi, axtt7, axtt14)
 
 ```{r}
 
-ltR <- dget("../raw_data/effectiveR/ltR.R")
+ltR <- dget("../raw_data/effectiveR/ltR")
 ag <- function(x) (c(x[1], diff(x)))
 dt <- aa %>%
   mutate(incidence = ag(confirmed)) %>%

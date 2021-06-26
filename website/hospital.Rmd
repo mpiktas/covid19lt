@@ -160,6 +160,3 @@ dygraph(pivot_one(hh, "cv19_deaths")["2021-01-18/"], main = "Covid-19 mirę ligo
   dyRoller(rollPeriod = 7) %>%
   dyCSS("left_legend.css")
 ```
-
-
-

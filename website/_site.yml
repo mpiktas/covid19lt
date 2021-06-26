@@ -12,4 +12,3 @@ navbar:
 output: distill::distill_article
 exclude: ["raw_data", "tmp"]
 google_analytics: "G-VCGZFSTG6M"
-
