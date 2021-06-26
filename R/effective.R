@@ -4,7 +4,8 @@ library(tidyr)
 library(lubridate)
 library(EpiEstim)
 
-aa <- read.csv("data/lt-covid19-country.csv", stringsAsFactors = FALSE) %>% mutate(day = ymd(day))
+aa <- read.csv("data/lt-covid19-country.csv", stringsAsFactors = FALSE) %>%
+  mutate(day = ymd(day))
 last_day <- max(aa$day)
 
 ag <- function(x) (c(x[1], diff(x)))
@@ -18,7 +19,7 @@ dt <- dt %>%
   mutate(times = 1:n())
 
 incidence_data <- dt %>% select(date = day, I = incidence)
-ltR <- estimate_R(incidence_data,
+lt_r <- estimate_R(incidence_data,
   method = "uncertain_si",
   config = make_config(list(
     mean_si = 4.8, std_mean_si = 3.0,
@@ -28,13 +29,13 @@ ltR <- estimate_R(incidence_data,
     n1 = 1000, n2 = 1000
   ))
 )
-dput(ltR, "raw_data/effectiveR/ltR.R")
+dput(lt_r, "raw_data/effectiveR/lt_r.R")
 
-RR <- ltR$R
+rr <- lt_r$R
 
-RR[, 1] <- RR[, 2]
-RR[, 2] <- dt$day[RR[, 1]]
+rr[, 1] <- rr[, 2]
+rr[, 2] <- dt$day[rr[, 1]]
 
-colnames(RR)[1:2] <- c("t_end", "day")
-RR <- RR[, -1]
-RR %>% write.csv("data/lt-covid19-effective-R.csv", row.names = FALSE)
+colnames(rr)[1:2] <- c("t_end", "day")
+rr <- rr[, -1]
+rr %>% write.csv("data/lt-covid19-effective-R.csv", row.names = FALSE)

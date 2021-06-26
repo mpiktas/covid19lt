@@ -9,7 +9,7 @@ library(tidyr)
 
 source("R/functions.R")
 
-osp <- tryget("https://opendata.arcgis.com/datasets/7c4b3397dc2c424aa400a5d1aed1fcc7_0.geojson")
+osp <- tryget("https://opendata.arcgis.com/datasets/7c4b3397dc2c424aa400a5d1aed1fcc7_0.geojson") # Exclude Linting
 osp1 <- fromJSON(rawToChar(osp$content))$features$properties
 
 
@@ -23,7 +23,8 @@ osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(test_performed)))
 
 
 osp3 <- osp2 %>%
-  select(lab_name, day, test_type, tests_positive, tests_negative, gmp_indication) %>%
+  select(lab_name, day, test_type,
+         tests_positive, tests_negative, gmp_indication) %>%
   mutate(tests = tests_positive + tests_negative) %>%
   select(-tests_negative) %>%
   arrange(lab_name, day)

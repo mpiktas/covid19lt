@@ -10,7 +10,7 @@ library(tidyr)
 source("R/functions.R")
 
 
-osp1 <- read.csv("https://opendata.arcgis.com/datasets/97efefc004af4ef3a23158aec14a1363_0.csv")
+osp1 <- read.csv("https://opendata.arcgis.com/datasets/97efefc004af4ef3a23158aec14a1363_0.csv") # Exclude Linting
 
 
 osp1 %>%

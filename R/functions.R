@@ -1,13 +1,16 @@
+globalVariables(c(".", "age", "administrative_level_3"))
+
 daily_xtable <- function(zz1, colsums = FALSE) {
   ## input is one person per line
   ##
   agad <- zz1 %>%
     count(day, administrative_level_3, age) %>%
-    pivot_wider(names_from = "age", values_from = "n", values_fill = 0, names_sort = TRUE) %>%
+    pivot_wider(names_from = "age", values_from = "n", values_fill = 0,
+                names_sort = TRUE) %>%
     arrange(day, administrative_level_3)
 
   agr <- zz1$age %>% unique()
-  sagr <- sapply(strsplit(agr, "-"), "[[", 1) %>% gsub("[+]", "", .)
+  sagr <- sapply(strsplit(agr, "-"), "[[", 1) %>% gsub("[+]", "", .) # Exclude Linting
   agr_sorted <- agr[order(sagr)]
 
   ad <- zz1 %>%
@@ -17,21 +20,24 @@ daily_xtable <- function(zz1, colsums = FALSE) {
   agad1 <- agad %>% inner_join(ad, by = c("day", "administrative_level_3"))
 
   if (colsums) {
-    ag <- zz1 %>% count(day, age)
+    ag <- zz1 %>% count(day, age) # Exclude Linting
     ag1 <- ag %>%
       group_by(day) %>%
       summarise(n = sum(n))
     ag2 <- ag %>%
-      bind_rows(ag1 %>% mutate(age = "Total")) %>%
-      pivot_wider(names_from = "age", values_from = "n", values_fill = 0, names_sort = TRUE) %>%
+      bind_rows(ag1 %>%
+                    mutate(age = "Total")) %>%
+      pivot_wider(names_from = "age", values_from = "n", values_fill = 0,
+                  names_sort = TRUE) %>%
       mutate(administrative_level_3 = "ZTotal")
 
     agad2 <- agad1 %>%
       bind_rows(ag2) %>%
       arrange(day, administrative_level_3) %>%
-      mutate(administrative_level_3 = gsub("ZTotal", "Total", administrative_level_3))
+      mutate(administrative_level_3 =
+                 gsub("ZTotal", "Total", administrative_level_3))
   } else {
-    agad2 <- agad1 %>% arrange(day, administrative_level_3)
+    agad2 <- agad1 %>% arrange(day, administrative_level_3) # Exclude Linting
   }
 
   agad2[, c("day", "administrative_level_3", agr_sorted, "Total")]
@@ -42,11 +48,12 @@ daily_xtable2 <- function(zz1, colsums = FALSE) {
   ## Input is one administrative level, day, age per line
   agad <- zz1 %>%
     select(day, administrative_level_3, age, indicator) %>%
-    pivot_wider(names_from = "age", values_from = "indicator", values_fill = 0, names_sort = TRUE) %>%
+    pivot_wider(names_from = "age", values_from = "indicator",
+                values_fill = 0, names_sort = TRUE) %>%
     arrange(day, administrative_level_3)
 
   agr <- zz1$age %>% unique()
-  sagr <- sapply(strsplit(agr, "-"), "[[", 1) %>% gsub("[+]", "", .)
+  sagr <- sapply(strsplit(agr, "-"), "[[", 1) %>% gsub("[+]", "", .) # Exclude Linting
   agr_sorted <- agr[order(sagr)]
 
   ad <- zz1 %>%
@@ -64,16 +71,19 @@ daily_xtable2 <- function(zz1, colsums = FALSE) {
       group_by(day) %>%
       summarise(n = sum(n))
     ag2 <- ag %>%
-      bind_rows(ag1 %>% mutate(age = "Total")) %>%
-      pivot_wider(names_from = "age", values_from = "n", values_fill = 0, names_sort = TRUE) %>%
+      bind_rows(ag1 %>%
+                    mutate(age = "Total")) %>%
+      pivot_wider(names_from = "age", values_from = "n", values_fill = 0,
+                  names_sort = TRUE) %>%
       mutate(administrative_level_3 = "ZTotal")
 
     agad2 <- agad1 %>%
       bind_rows(ag2) %>%
       arrange(day, administrative_level_3) %>%
-      mutate(administrative_level_3 = gsub("ZTotal", "Total", administrative_level_3))
+      mutate(administrative_level_3 =
+                 gsub("ZTotal", "Total", administrative_level_3))
   } else {
-    agad2 <- agad1 %>% arrange(day, administrative_level_3)
+    agad2 <- agad1 %>% arrange(day, administrative_level_3) # Exclude Linting
   }
 
   agad2[, c("day", "administrative_level_3", agr_sorted, "Total")]
@@ -81,7 +91,7 @@ daily_xtable2 <- function(zz1, colsums = FALSE) {
 
 
 fix_esridate <- function(str) {
-  dd <- fromJSON(str)
+  dd <- jsonlite::fromJSON(str)
   fn <- dd$fields %>%
     filter(type == "esriFieldTypeDate") %>%
     .$name
@@ -92,9 +102,9 @@ fix_esridate <- function(str) {
     for (aa in fn) {
       str <- gsub(paste0("(\"", aa, "\": +)([0-9]+)"), "\\1\"\\2\"", str)
     }
-    dd <- fromJSON(str)$features$attributes
+    dd <- jsonlite::fromJSON(str)$features$attributes
     for (aa in fn) {
-      dd[[aa]] <- as_datetime(as.integer64(dd[[aa]]) / 1000)
+      dd[[aa]] <- as_datetime(bit64::as.integer64(dd[[aa]]) / 1000)
     }
   }
   dd
@@ -109,7 +119,7 @@ find_root <- function(x) {
 tryget <- function(link, times = 10) {
   res <- NULL
   for (i in 1:times) {
-    res <- try(GET(link))
+    res <- try(httr::GET(link))
     if (inherits(res, "try-error")) {
       cat("\nFailed to get the data, sleeping for 1 second\n")
       Sys.sleep(1)
@@ -137,7 +147,7 @@ push_to_github <- function(dirs, commit_message, push = TRUE) {
     }
     cat("\nTrying to commit\n")
     git_commit(commit_message)
-    git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
+    git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github") # Exclude Linting
     if (push) git_push(remote = "github")
   } else {
     cat("\nGithub token not found, relying on local git configuration\n")
@@ -149,7 +159,7 @@ push_to_github <- function(dirs, commit_message, push = TRUE) {
   }
 }
 
-fixNA <- function(x, value = 0) {
+fix_na <- function(x, value = 0) {
   x[is.na(x)] <- value
   x
 }
@@ -158,7 +168,7 @@ ddiff <- function(x) {
   c(0, diff(x))
 }
 
-scenABCD <- function(c100k, tpr, t100k) {
+scen_abcd <- function(c100k, tpr, t100k) {
   res <- rep(0, length(c100k))
   res[c100k < 25 & tpr < 4] <- 1
   res[c100k >= 25 & c100k < 100] <- 2

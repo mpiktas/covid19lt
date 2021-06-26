@@ -10,9 +10,11 @@ fns <- c(fn[grepl("covid_", fn)])
 
 cvh <- lapply(fns, read.csv, stringsAsFactors = FALSE)
 
-pt <- strsplit(fns, "_") %>% lapply(function(x) ymd_hms(paste(x[4:5], collapse = "_")))
+pt <- strsplit(fns, "_") %>%
+  lapply(function(x) ymd_hms(paste(x[4:5], collapse = "_")))
 
-cvh1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), cvh, pt, SIMPLIFY = FALSE) %>%
+cvh1 <- mapply(function(dt, tm) dt %>% mutate(downloaded = tm), cvh, pt,
+               SIMPLIFY = FALSE) %>%
   bind_rows() %>%
   mutate(day = ymd(floor_date(downloaded, unit = "day")) - days(1))
 
@@ -27,7 +29,8 @@ cvh2 <- cvh1 %>%
     intensive
   )
 
-cvh <- read.csv("data/lt-covid19-hospitals-country.csv") %>% mutate(day = ymd(day))
+cvh <- read.csv("data/lt-covid19-hospitals-country.csv") %>%
+  mutate(day = ymd(day))
 lcvh <- cvh %>% filter(day == max(day))
 lcvh2 <- cvh2 %>%
   filter(day == max(day)) %>%

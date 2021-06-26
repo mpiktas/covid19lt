@@ -5,7 +5,7 @@ library(glue)
 library(curl)
 
 
-curl_download("https://www.gstatic.com/covid19/mobility/Region_Mobility_Report_CSVs.zip", destfile = "gm.zip") # Exclude linting
+curl_download("https://www.gstatic.com/covid19/mobility/Region_Mobility_Report_CSVs.zip", destfile = "gm.zip") # Exclude Linting
 unzip("gm.zip", exdir = "gmtmp")
 
 go1 <- read.csv("gmtmp/2020_LT_Region_Mobility_Report.csv") %>%
@@ -38,7 +38,7 @@ if (nrow(lv3) == nrow(lv31)) {
     transit_stations, workplaces, residential
   )
 
-  lv32 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania_level3.csv", row.names = FALSE) # Exclude linting
+  lv32 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania_level3.csv", row.names = FALSE) # Exclude Linting
 }
 
 lv2 <- go %>% filter(sub_region_2 == "" & sub_region_1 != "")
@@ -50,7 +50,7 @@ if (nrow(lv2) == nrow(lv21)) {
     transit_stations, workplaces, residential
   )
 
-  lv22 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania_level2.csv", row.names = FALSE) # Exclude linting
+  lv22 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania_level2.csv", row.names = FALSE) # Exclude Linting
 }
 
 
@@ -62,4 +62,4 @@ lv12 <- lv1 %>% select(
   transit_stations, workplaces, residential
 )
 
-lv12 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania.csv", row.names = FALSE) # Exclude linting
+lv12 %>% write.csv("raw_data/google_mobility_lithuania/google_mobility_lithuania.csv", row.names = FALSE) # Exclude Linting

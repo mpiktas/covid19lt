@@ -8,7 +8,7 @@ library(tidyr)
 
 source("R/functions.R")
 
-raw <- tryget("https://atlas.jifo.co/api/connectors/86105d38-f8c5-4578-8477-22ced61ff9bd")
+raw <- tryget("https://atlas.jifo.co/api/connectors/86105d38-f8c5-4578-8477-22ced61ff9bd") # Exclude Linting
 
 
 
@@ -16,7 +16,7 @@ tbs <- rawToChar(raw$content) %>% fromJSON()
 
 dd <- gsub(" ", "_", Sys.time())
 
-# Get covid hospitalisation data ----------------------------------------------------------
+# Get covid hospitalisation data -----------------------------------------------
 
 hdd4 <- data.frame(tbs$data[[10]])
 colnames(hdd4) <- c("actual", "description")
@@ -30,4 +30,6 @@ cvh <- data.frame(
   intensive = hdd4$actual[6]
 )
 
-write.csv(cvh, glue::glue("raw_data/hospitalization/covid_hospitalization_{dd}.csv"), row.names = FALSE)
+write.csv(cvh,
+          glue::glue("raw_data/hospitalization/covid_hospitalization_{dd}.csv"),
+          row.names = FALSE)

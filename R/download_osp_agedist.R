@@ -11,7 +11,7 @@ source("R/functions.R")
 
 httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
 
-posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/Agreguoti_COVID19_atvejai_ir_mirtys/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # Exclude linting
+posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/Agreguoti_COVID19_atvejai_ir_mirtys/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # Exclude Linting
 
 posp1 <- fix_esridate(rawToChar(posp$content))
 posp2 <- posp1 %>% mutate(day = ymd(date))
@@ -19,7 +19,7 @@ posp2 <- posp1 %>% mutate(day = ymd(date))
 posp3 <- posp2 %>% filter(day == max(day))
 
 
-osp0 <- read.csv("https://opendata.arcgis.com/datasets/ba35de03e111430f88a86f7d1f351de6_0.csv") # Exclude linting
+osp0 <- read.csv("https://opendata.arcgis.com/datasets/ba35de03e111430f88a86f7d1f351de6_0.csv") # Exclude Linting
 
 dd <- ymd(unique(osp0$date))
 ld <- ymd(posp3$date %>% unique())
@@ -62,7 +62,9 @@ if (nrow(osp3) == nrow(osp2)) {
     inner_join(agr, by = "age") %>%
     select(-age) %>%
     rename(age = age1)
-  zz2 <- zz2 %>% mutate(administrative_level_3 = ifelse(administrative_level_3 == "Unknown", "", administrative_level_3))
+  zz2 <- zz2 %>%
+    mutate(administrative_level_3 =
+        ifelse(administrative_level_3 == "Unknown", "", administrative_level_3))
   zz2 <- zz2 %>%
     group_by(day, administrative_level_3, age) %>%
     summarise(
@@ -70,8 +72,12 @@ if (nrow(osp3) == nrow(osp2)) {
       deaths_3_daily = sum(deaths_3_daily)
     ) %>%
     ungroup()
-  bb <- daily_xtable2(zz2 %>% rename(indicator = confirmed_daily), colsums = TRUE)
-  bb1 <- daily_xtable2(zz2 %>% rename(indicator = deaths_3_daily), colsums = TRUE)
-  bb %>% write.csv("data/lt-covid19-age-region-incidence.csv", row.names = FALSE)
-  bb1 %>% write.csv("data/lt-covid19-age-region-deaths.csv", row.names = FALSE)
+  bb <- daily_xtable2(zz2 %>% rename(indicator = confirmed_daily),
+                      colsums = TRUE)
+  bb1 <- daily_xtable2(zz2 %>% rename(indicator = deaths_3_daily),
+                       colsums = TRUE)
+  bb %>% write.csv("data/lt-covid19-age-region-incidence.csv",
+                   row.names = FALSE)
+  bb1 %>% write.csv("data/lt-covid19-age-region-deaths.csv",
+                    row.names = FALSE)
 }
