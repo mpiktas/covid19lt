@@ -1,5 +1,3 @@
-globalVariables(c(".", "age", "administrative_level_3"))
-
 daily_xtable <- function(zz1, colsums = FALSE) {
   ## input is one person per line
   ##
