@@ -38,7 +38,7 @@ dt <- dt %>%
 
 ```{r, echo = FALSE, message = FALSE, warning=FALSE}
 library(EpiEstim)
-ltR <- dget("../raw_data/effectiveR/ltR.R")
+ltR <- dget("../raw_data/effectiveR/ltR")
 ```
 
 # Savaitinis R įvertis. 
