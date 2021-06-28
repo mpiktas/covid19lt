@@ -413,7 +413,8 @@ agre <- read.csv("../data/lt-covid19-age-region-incidence.csv", check.names = FA
 
 agre1 <- agre %>%
   filter(day == max(day)) %>%
-  select(-day)
+  select(-day) %>%
+  filter(Total > 0)
 
 regs_n <- paste0(gsub("[.]", "", gsub(" ", "_", agre1$administrative_level_3)), ".html")
 
