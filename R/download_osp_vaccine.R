@@ -97,7 +97,8 @@ agd <- data.frame(age_group = sort(unique(vv$age_group))) %>%
   mutate(age10 = gsub("[[)]", "", age10)) %>%
   mutate(age10 = gsub(",", "-", age10)) %>%
   mutate(age10 = ifelse(is.na(age10), "80+", age10)) %>%
-  mutate(age10 = ifelse(age10 == "80-Inf]", "80+", age10))
+  mutate(age10 = ifelse(age10 == "80-Inf]", "80+", age10)) %>%
+  mutate(age10 = convert_interval(age10))
 
 vv1 <- vv %>%
   ungroup() %>%

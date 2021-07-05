@@ -188,3 +188,14 @@ scen_abcd <- function(c100k, tpr, t100k) {
   res <- res / 4
   res
 }
+
+## Input 0-10, output 0-9
+convert_interval <- function(x) {
+  int <- grepl("-", x)
+  xx <- x[int]
+  spl <- strsplit(xx, "-")
+  left <- as.integer(sapply(spl, "[[", 1))
+  right <- as.integer(sapply(spl, "[[", 2))
+  x[int] <- paste(left, right - 1, sep = "-")
+  x
+}

@@ -3,6 +3,8 @@ library(dplyr)
 library(lubridate)
 library(tidyr)
 
+source("R/functions.R")
+
 rr <- readxl::read_xlsx("raw_data/Lithuania_age_sex_region_2021.xlsx")
 
 ## Find the sex split
@@ -73,6 +75,10 @@ agr <- data.frame(age = aged) %>%
   mutate(age5 = ifelse(is.na(age5), "80+", age5)) %>%
   mutate(age5 = ifelse(age5 == "80-Inf]", "80+", age5))
 
+agr <- agr %>% mutate(
+  age10 = convert_interval(age10),
+  age5 = convert_interval(age5)
+)
 
 ards2 <- arsd1 %>%
   left_join(agr %>%
