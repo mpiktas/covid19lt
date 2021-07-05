@@ -113,7 +113,9 @@ vv2 %>%
     administrative_level_2,
     administrative_level_3, day, age, sex, dose1, dose2
   ) %>%
-  write.csv("data/lt-covid19-vaccinated-agedist10-level3.csv", row.names = FALSE)
+  write.csv("data/lt-covid19-vaccinated-agedist10-level3.csv",
+    row.names = FALSE
+  )
 
 #--- Deliveries
 

@@ -56,22 +56,22 @@ agr <- data.frame(age = aged) %>%
   mutate(agen = ifelse(agen == "85 ir vyresni", "85", agen)) %>%
   mutate(
     age10 =
-      cut(as.numeric(agen), c(seq(0,80, by = 10),Inf),
+      cut(as.numeric(agen), c(seq(0, 80, by = 10), Inf),
         include.lowest = TRUE, right = FALSE
       ),
     age5 =
-        cut(as.numeric(agen), c(seq(0,80, by = 5),Inf),
-            include.lowest = TRUE, right = FALSE
-        )
+      cut(as.numeric(agen), c(seq(0, 80, by = 5), Inf),
+        include.lowest = TRUE, right = FALSE
+      )
   ) %>%
   mutate(age10 = gsub("[[)]", "", age10)) %>%
   mutate(age10 = gsub(",", "-", age10)) %>%
   mutate(age10 = ifelse(is.na(age10), "80+", age10)) %>%
   mutate(age10 = ifelse(age10 == "80-Inf]", "80+", age10)) %>%
   mutate(age5 = gsub("[[)]", "", age5)) %>%
-    mutate(age5 = gsub(",", "-", age5)) %>%
-    mutate(age5 = ifelse(is.na(age5), "80+", age5)) %>%
-    mutate(age5 = ifelse(age5 == "80-Inf]", "80+", age5))
+  mutate(age5 = gsub(",", "-", age5)) %>%
+  mutate(age5 = ifelse(is.na(age5), "80+", age5)) %>%
+  mutate(age5 = ifelse(age5 == "80-Inf]", "80+", age5))
 
 
 ards2 <- arsd1 %>%
@@ -102,16 +102,16 @@ ards2 %>%
   )
 
 ards2 %>%
-    filter(sex == "Viso") %>%
-    select(
-        administrative_level_2, administrative_level_3,
-        age, age5, age10, population
-    ) %>%
-    group_by(administrative_level_2, administrative_level_3, age = age5) %>%
-    summarise(population = sum(population)) %>%
-    write.csv("data/age_distribution/lt-agedist5-level3.csv",
-              row.names = FALSE
-    )
+  filter(sex == "Viso") %>%
+  select(
+    administrative_level_2, administrative_level_3,
+    age, age5, age10, population
+  ) %>%
+  group_by(administrative_level_2, administrative_level_3, age = age5) %>%
+  summarise(population = sum(population)) %>%
+  write.csv("data/age_distribution/lt-agedist5-level3.csv",
+    row.names = FALSE
+  )
 
 
 ards2 %>%
@@ -139,15 +139,15 @@ ards2 %>%
   )
 
 ards2 %>%
-    filter(sex != "Viso") %>%
-    select(
-        administrative_level_2, administrative_level_3,
-        age, age5, age10, sex, population
-    ) %>%
-    group_by(administrative_level_2, administrative_level_3,
-             age = age5, sex
-    ) %>%
-    summarise(population = sum(population)) %>%
-    write.csv("data/age_distribution/lt-age-sex-dist5-level3.csv",
-              row.names = FALSE
-    )
+  filter(sex != "Viso") %>%
+  select(
+    administrative_level_2, administrative_level_3,
+    age, age5, age10, sex, population
+  ) %>%
+  group_by(administrative_level_2, administrative_level_3,
+    age = age5, sex
+  ) %>%
+  summarise(population = sum(population)) %>%
+  write.csv("data/age_distribution/lt-age-sex-dist5-level3.csv",
+    row.names = FALSE
+  )

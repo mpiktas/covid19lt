@@ -1,0 +1,120 @@
+---
+title: "COVID-19 situacijos 2020 ir 2021 metais palyginimas"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(tidyr)
+library(rmarkdown)
+library(lubridate)
+library(DT)
+library(xts)
+library(dygraphs)
+library(zoo)
+```
+
+
+```{r}
+lv1 <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
+
+y2020 <- lv1 %>%
+  filter(day <= "2020-12-31") %>%
+  mutate(yday = yday(day))
+y2021 <- lv1 %>%
+  filter(day >= "2021-01-01") %>%
+  mutate(yday = yday(day))
+
+cc <- y2020 %>%
+  select(yday, `2020` = confirmed_daily) %>%
+  full_join(y2021 %>%
+    select(yday, `2021` = confirmed_daily)) %>%
+  mutate(day = parse_date_time(paste("2020", yday, sep = "-"), "Y/j"))
+
+
+tt <- y2020 %>%
+  select(yday, `2020` = tests_daily) %>%
+  full_join(y2021 %>%
+    select(yday, `2021` = tests_daily)) %>%
+  mutate(day = parse_date_time(paste("2020", yday, sep = "-"), "Y/j"))
+
+
+dd <- y2020 %>%
+  select(yday, `2020` = deaths_daily) %>%
+  full_join(y2021 %>%
+    select(yday, `2021` = deaths_daily)) %>%
+  mutate(day = parse_date_time(paste("2020", yday, sep = "-"), "Y/j"))
+
+tpr <- y2020 %>%
+  select(yday, `2020` = tpr_dgn) %>%
+  full_join(y2021 %>%
+    select(yday, `2021` = tpr_dgn)) %>%
+  mutate(day = parse_date_time(paste("2020", yday, sep = "-"), "Y/j"))
+
+hh <- y2020 %>%
+  select(yday, `2020` = hospitalized) %>%
+  full_join(y2021 %>%
+    select(yday, `2021` = hospitalized)) %>%
+  mutate(day = parse_date_time(paste("2020", yday, sep = "-"), "Y/j"))
+
+icu <- y2020 %>%
+  select(yday, `2020` = icu) %>%
+  full_join(y2021 %>%
+    select(yday, `2021` = icu)) %>%
+  mutate(day = parse_date_time(paste("2020", yday, sep = "-"), "Y/j"))
+```
+
+```{r}
+dw <- c(as.character(ymd(Sys.Date()) + days(-14 - 365)), as.character(ymd(Sys.Date()) + days(28 - 365)))
+xs <- xts(cc %>% select(`2020`, `2021`), order.by = cc$day)
+dygraph(xs, main = "Nauji atvejai Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
+  dyRangeSelector(dateWindow = dw) %>%
+  dyRoller(rollPeriod = 7)
+```
+
+```{r}
+
+xs <- xts(tt %>% select(`2020`, `2021`), order.by = cc$day)
+dygraph(xs, main = "Testų skaičius Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
+  dyRangeSelector(dateWindow = dw) %>%
+  dyRoller(rollPeriod = 7)
+```
+
+```{r}
+
+xs <- xts(tpr %>% select(`2020`, `2021`), order.by = cc$day)
+dygraph(xs, main = "Teigiamų tyrimų dalis Lietuvoje 2020 ir 2021 metais") %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
+  dyRangeSelector(dateWindow = dw)
+```
+
+
+```{r}
+xs <- xts(hh %>% select(`2020`, `2021`), order.by = cc$day)
+dygraph(xs, main = "Ligonių skaičiai 2020 ir 2021 metais") %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
+  dyRangeSelector(dateWindow = dw)
+```
+
+
+```{r}
+xs <- xts(icu %>% select(`2020`, `2021`), order.by = cc$day)
+dygraph(xs, main = "Ligonių skaičiai reanimacijoje 2020 ir 2021 metais") %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
+  dyRangeSelector(dateWindow = dw)
+```
+
+
+
+```{r}
+xs <- xts(dd %>% select(`2020`, `2021`), order.by = cc$day)
+dygraph(xs, main = "Mirtys Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
+  dyRangeSelector(dateWindow = dw) %>%
+  dyRoller(rollPeriod = 7)
+```
