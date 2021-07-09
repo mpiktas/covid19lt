@@ -8,7 +8,7 @@ library(bit64)
 
 source("R/functions.R")
 
-if (FALSE) {
+if (TRUE) {
   httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
 
   posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/COVID19_statistika_dashboards/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # Exclude Linting
@@ -27,22 +27,20 @@ if (FALSE) {
   osp1 %>%
     arrange(date, municipality_code) %>%
     write.csv("raw_data/osp/osp_covid19_stats.csv", row.names = FALSE)
+} else {
+  osp0 <- read.csv("https://get.data.gov.lt/datasets/gov/lsd/covid-19/svieslenciu_statistika/SvieslenciuStatistika/:format/csv") # Exclude Linting
+  osp1 <- osp0 %>%
+    mutate(municipality_code = as.character(municipality_code)) %>%
+    mutate(
+      municipality_code =
+        ifelse(municipality_code == "0", "00", municipality_code)
+    )
+
+  osp1 %>%
+    select(-X_type, -X_id, -X_revision) %>%
+    arrange(date, municipality_code) %>%
+    write.csv("raw_data/osp/osp_covid19_stats.csv", row.names = FALSE)
 }
-
-osp0 <- read.csv("https://get.data.gov.lt/datasets/gov/lsd/covid-19/svieslenciu_statistika/SvieslenciuStatistika/:format/csv") # Exclude Linting
-osp1 <- osp0 %>%
-  mutate(municipality_code = as.character(municipality_code)) %>%
-  mutate(
-    municipality_code =
-      ifelse(municipality_code == "0", "00", municipality_code)
-  )
-
-osp1 %>%
-  select(-X_type, -X_id, -X_revision) %>%
-  arrange(date, municipality_code) %>%
-  write.csv("raw_data/osp/osp_covid19_stats.csv", row.names = FALSE)
-
-
 
 osp2 <- osp1 %>% mutate(day = ymd(date))
 
