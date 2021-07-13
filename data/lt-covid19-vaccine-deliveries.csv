@@ -132,8 +132,8 @@
 2021-06-25,"AstraZeneca",NA,17000
 2021-06-25,"Moderna",NA,6000
 2021-06-25,"Johnson & Johnson",11400,4000
-2021-06-28,"Moderna",NA,3900
 2021-06-28,"AstraZeneca",NA,11800
+2021-06-28,"Moderna",NA,3900
 2021-06-28,"Pfizer-BioNTech",181350,56160
 2021-06-28,"Johnson & Johnson",NA,7400
 2021-06-29,"AstraZeneca",168400,NA
@@ -151,3 +151,7 @@
 2021-07-09,"AstraZeneca",31200,1000
 2021-07-09,"Moderna",NA,1000
 2021-07-09,"Johnson & Johnson",NA,800
+2021-07-12,"AstraZeneca",NA,600
+2021-07-12,"Moderna",NA,1100
+2021-07-12,"Pfizer-BioNTech",105300,15210
+2021-07-12,"Johnson & Johnson",NA,6400
