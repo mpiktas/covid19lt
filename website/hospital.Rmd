@@ -68,6 +68,9 @@ cvha <- hha %>%
 cvhx <- toxts(aa, c("hospitalized", "icu", "ventilated", "oxygen"))
 cvhax <- toxts(cvha, c("cv19_admissions", "cv19_discharges", "cv19_deaths"))
 colnames(cvhax) <- c("nauji", "išrašyti", "mirę")
+
+last_day <- as.character(max(aa$day))
+dw <- c("2020-10-01", last_day)
 ```
 
 ## Pagrindinių rodiklių tendencijos
@@ -75,9 +78,9 @@ colnames(cvhax) <- c("nauji", "išrašyti", "mirę")
 Duomenys yra sugrupuoti pagal teritorines ligonių kasas. Vilniaus duomenyse bus ir Alytus, Kauno duomenyse bus Marijampolė ir t.t.
 
 ```{r}
-dygraph(cvhx["2020-10-01/", "hospitalized"], main = "Covid-19 ligonių skaičius") %>%
+dygraph(cvhx[, "hospitalized"], main = "Covid-19 ligonių skaičius") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1, 2)]) %>%
-  dyRangeSelector()
+  dyRangeSelector(dateWindow = dw)
 ```
 
 ```{r}
@@ -95,9 +98,9 @@ dygraph(pivot_one(hh, "cv19_hospital_beds_occupied"), main = "Covid-19 ligonių 
 
 
 ```{r}
-dygraph(cvhx["2020-10-01/", "icu"], main = "Covid-19 ligonių reanimacijoje skaičius") %>%
+dygraph(cvhx[, "icu"], main = "Covid-19 ligonių reanimacijoje skaičius") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
-  dyRangeSelector()
+  dyRangeSelector(dateWindow = dw)
 ```
 
 ```{r}
