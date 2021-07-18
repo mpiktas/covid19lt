@@ -1,6 +1,5 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
 2021-02-01,"Pfizer-BioNTech",22230,25740
-2021-02-01,"Moderna",NA,2400
 2021-02-06,"AstraZeneca",12000,NA
 2021-02-08,"AstraZeneca",NA,6600
 2021-02-08,"Moderna",NA,1200
