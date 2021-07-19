@@ -428,7 +428,9 @@ agre2 <- agre1
 agre2$administrative_level_3 <- sapply(links2, as.character)
 agre2$administrative_level_3[nrow(agre2)] <- "Total"
 
-agre2 <- agre2 %>% rename(Savivaldybė = administrative_level_3)
+agre2 <- agre2 %>%
+  rename(Savivaldybė = administrative_level_3) %>%
+  arrange(-Total)
 agre2 %>% datatable(
   extensions = c("FixedColumns", "FixedHeader"),
   escape = FALSE,
