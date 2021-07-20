@@ -70,19 +70,19 @@ icu <- y2020 %>%
 ```{r}
 dw <- c(as.character(ymd(Sys.Date()) + days(-14 - 365)), as.character(ymd(Sys.Date()) + days(28 - 365)))
 xs <- xts(cc %>% select(`2020`, `2021`), order.by = cc$day)
-dygraph(xs, main = "Nauji atvejai Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
+xs7 <- xs %>% rollmean(k = 7, fill = NA, align = "right")
+dygraph(xs7, main = "Nauji atvejai Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
-  dyRangeSelector(dateWindow = dw) %>%
-  dyRoller(rollPeriod = 7)
+  dyRangeSelector(dateWindow = dw)
 ```
 
 ```{r}
 
 xs <- xts(tt %>% select(`2020`, `2021`), order.by = cc$day)
-dygraph(xs, main = "Testų skaičius Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
+xs7 <- xs %>% rollmean(k = 7, fill = NA, align = "right")
+dygraph(xs7, main = "Testų skaičius Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
-  dyRangeSelector(dateWindow = dw) %>%
-  dyRoller(rollPeriod = 7)
+  dyRangeSelector(dateWindow = dw)
 ```
 
 ```{r}
