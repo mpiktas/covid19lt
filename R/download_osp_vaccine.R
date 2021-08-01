@@ -90,15 +90,17 @@ v1 <- vcfd %>%
     municipality_name = municip_a, day = day1,
     age_group, sex
   ) %>%
-  summarise(dose1 = n())
+  summarise(dose1 = n()) %>%
+  ungroup()
 
 v2 <- vcfd %>%
-  filter(vacc_type_1 == "Johnson & Johnson" & !is.na(vacc_type_2)) %>%
+  filter(vacc_type_1 == "Johnson & Johnson" | !is.na(vacc_type_2)) %>%
   group_by(
-    municipality_name = municip_b, day = day2,
+    municipality_name = municip_a, day = day2,
     age_group, sex
   ) %>%
-  summarise(dose2 = n())
+  summarise(dose2 = n()) %>%
+  ungroup()
 
 vv <- v1 %>%
   full_join(v2) %>%
