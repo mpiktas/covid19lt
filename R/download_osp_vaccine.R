@@ -66,10 +66,25 @@ vcfd <- readr::read_csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79b
 
 vcfd <- vcfd %>% mutate(age_group = year(Sys.Date()) - birth_year_noisy)
 
+oo <- vcfd %>%
+  count(vacc_type_1, vacc_type_2) %>%
+  arrange(n)
+
+valid <- oo %>%
+  filter(vacc_type_1 == vacc_type_2 | is.na(vacc_type_2)) %>%
+  .$n %>%
+  sum()
+
+cat("\nValid vaccination records:", valid, "out of", nrow(vcfd))
+cat("\nValid vaccination record percentage:", round(100 * valid / nrow(vcfd), 2))
+
+vcfd <- vcfd %>% filter(vacc_type_1 == vacc_type_2 | is.na(vacc_type_2))
+
 vcfd <- vcfd %>% mutate(
   day1 = ymd(ymd_hms(vacc_date_1)),
   day2 = ymd(ymd_hms(vacc_date_2))
 )
+
 v1 <- vcfd %>%
   group_by(
     municipality_name = municip_a, day = day1,
@@ -78,12 +93,13 @@ v1 <- vcfd %>%
   summarise(dose1 = n())
 
 v2 <- vcfd %>%
-  filter(vacc_type_2 != "") %>%
+  filter(vacc_type_1 == "Johnson & Johnson" & !is.na(vacc_type_2)) %>%
   group_by(
     municipality_name = municip_b, day = day2,
     age_group, sex
   ) %>%
   summarise(dose2 = n())
+
 vv <- v1 %>%
   full_join(v2) %>%
   mutate(dose1 = fix_na(dose1), dose2 = fix_na(dose2))
