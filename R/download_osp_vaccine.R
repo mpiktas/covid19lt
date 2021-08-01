@@ -93,6 +93,9 @@ v1 <- vcfd %>%
   summarise(dose1 = n()) %>%
   ungroup()
 
+
+vcfd$day2[vcfd$vacc_type_1 == "Johnson & Johnson"] <- vcfd$day1[vcfd$vacc_type_1 == "Johnson & Johnson"]
+
 v2 <- vcfd %>%
   filter(vacc_type_1 == "Johnson & Johnson" | !is.na(vacc_type_2)) %>%
   group_by(
