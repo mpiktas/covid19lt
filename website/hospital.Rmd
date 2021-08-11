@@ -52,7 +52,8 @@ hh <- read.csv("../data/lt-covid19-hospitals-region.csv") %>%
     cv19_deaths = ifelse(region == "Kaunas" & day == "2021-05-10", NA, cv19_deaths),
     cv19_deaths = ifelse(region == "Kaunas" & day == "2021-06-16", NA, cv19_deaths),
     cv19_deaths = ifelse(region == "Panevėžys" & day == "2021-02-05", NA, cv19_deaths),
-    cv19_deaths = ifelse(region == "Panevėžys" & day == "2021-06-04", NA, cv19_deaths)
+    cv19_deaths = ifelse(region == "Panevėžys" & day == "2021-06-04", NA, cv19_deaths),
+    cv19_deaths = ifelse(region == "Vilnius" & day == "2021-08-01", NA, cv19_deaths)
   )
 
 
