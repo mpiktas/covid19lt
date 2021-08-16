@@ -68,12 +68,15 @@ icu <- y2020 %>%
 ```
 
 ```{r}
-dw <- c(as.character(ymd(Sys.Date()) + days(-14 - 365)), as.character(ymd(Sys.Date()) + days(28 - 365)))
+dw <- c(as.character(ymd(Sys.Date()) + days(-56 - 365)), as.character(ymd(Sys.Date()) + days(7 - 365)))
 xs <- xts(cc %>% select(`2020`, `2021`), order.by = cc$day)
 xs7 <- xs %>% rollmean(k = 7, fill = NA, align = "right")
 dygraph(xs7, main = "Nauji atvejai Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
-  dyRangeSelector(dateWindow = dw)
+  dyRangeSelector(dateWindow = dw) %>%
+  dyAxis("y", label = "2020") %>%
+  dyAxis("y2", label = "2021", independentTicks = TRUE) %>%
+  dySeries("2021", axis = "y2")
 ```
 
 ```{r}
@@ -82,7 +85,10 @@ xs <- xts(tt %>% select(`2020`, `2021`), order.by = cc$day)
 xs7 <- xs %>% rollmean(k = 7, fill = NA, align = "right")
 dygraph(xs7, main = "Testų skaičius Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
-  dyRangeSelector(dateWindow = dw)
+  dyRangeSelector(dateWindow = dw) %>%
+  dyAxis("y", label = "2020") %>%
+  dyAxis("y2", label = "2021", independentTicks = TRUE) %>%
+  dySeries("2021", axis = "y2")
 ```
 
 ```{r}
@@ -90,7 +96,10 @@ dygraph(xs7, main = "Testų skaičius Lietuvoje 2020 ir 2021 metais, 7 dienų vi
 xs <- xts(tpr %>% select(`2020`, `2021`), order.by = cc$day)
 dygraph(xs, main = "Teigiamų tyrimų dalis Lietuvoje 2020 ir 2021 metais") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
-  dyRangeSelector(dateWindow = dw)
+  dyRangeSelector(dateWindow = dw) %>%
+  dyAxis("y", label = "2020") %>%
+  dyAxis("y2", label = "2021", independentTicks = TRUE) %>%
+  dySeries("2021", axis = "y2")
 ```
 
 
@@ -98,7 +107,10 @@ dygraph(xs, main = "Teigiamų tyrimų dalis Lietuvoje 2020 ir 2021 metais") %>%
 xs <- xts(hh %>% select(`2020`, `2021`), order.by = cc$day)
 dygraph(xs, main = "Ligonių skaičiai 2020 ir 2021 metais") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
-  dyRangeSelector(dateWindow = dw)
+  dyRangeSelector(dateWindow = dw) %>%
+  dyAxis("y", label = "2020") %>%
+  dyAxis("y2", label = "2021", independentTicks = TRUE) %>%
+  dySeries("2021", axis = "y2")
 ```
 
 
@@ -106,15 +118,21 @@ dygraph(xs, main = "Ligonių skaičiai 2020 ir 2021 metais") %>%
 xs <- xts(icu %>% select(`2020`, `2021`), order.by = cc$day)
 dygraph(xs, main = "Ligonių skaičiai reanimacijoje 2020 ir 2021 metais") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
-  dyRangeSelector(dateWindow = dw)
+  dyRangeSelector(dateWindow = dw) %>%
+  dyAxis("y", label = "2020") %>%
+  dyAxis("y2", label = "2021", independentTicks = TRUE) %>%
+  dySeries("2021", axis = "y2")
 ```
 
 
 
 ```{r}
 xs <- xts(dd %>% select(`2020`, `2021`), order.by = cc$day)
-dygraph(xs, main = "Mirtys Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
+xs7 <- xs %>% rollmean(k = 7, fill = NA, align = "right")
+dygraph(xs7, main = "Mirtys Lietuvoje 2020 ir 2021 metais, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1:2]) %>%
   dyRangeSelector(dateWindow = dw) %>%
-  dyRoller(rollPeriod = 7)
+  dyAxis("y", label = "2020") %>%
+  dyAxis("y2", label = "2021", independentTicks = TRUE) %>%
+  dySeries("2021", axis = "y2")
 ```
