@@ -9,18 +9,16 @@ library(tidyr)
 
 source("R/functions.R")
 
-
-osp1 <- read.csv("https://opendata.arcgis.com/datasets/97efefc004af4ef3a23158aec14a1363_0.csv") # Exclude Linting
-
+osp1 <- read.csv("https://get.data.gov.lt/datasets/gov/lsd/covid-19/ligoniniu_duomenys/LigoniniuDuomenys/:format/csv")
 
 osp1 %>%
   arrange(date, healthcare_region) %>%
-  select(-object_id) %>%
+  select(-X_type, -X_id, -X_revision) %>%
   write.csv("raw_data/osp/osp_covid19_hospital.csv", row.names = FALSE)
 
 osp2 <- osp1 %>%
   mutate(day = ymd(date)) %>%
-  select(-object_id, -date)
+  select(-date, -X_type, -X_id, -X_revision)
 
 
 osp3 <- osp2 %>% arrange(day, healthcare_region)

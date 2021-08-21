@@ -75,8 +75,8 @@ valid <- oo %>%
   .$n %>%
   sum()
 
-cat("\nValid vaccination records:", valid, "out of", nrow(vcfd))
-cat("\nValid vaccination record percentage:", round(100 * valid / nrow(vcfd), 2))
+cat("\nValid vaccination records:", valid, "out of", nrow(vcfd), "\n")
+cat("\nValid vaccination record percentage:", round(100 * valid / nrow(vcfd), 2), "\n")
 
 vcfd <- vcfd %>% filter(vacc_type_1 == vacc_type_2 | is.na(vacc_type_2))
 
