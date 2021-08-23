@@ -62,7 +62,13 @@ if (nrow(osp3) == nrow(osp2)) {
 }
 
 #-------- Individual data
-vcfd <- readr::read_csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv") # nolint
+vcfd0 <- readr::read_csv2("https://ls-osp-sdg.maps.arcgis.com/sharing/rest/content/items/e714f97f593d49c6b751b4b094ac33d2/data") # nolint
+
+vcfd <- vcfd0 %>% rename(
+  birth_year_noisy = birth_year,
+  vacc_type_1 = vacc_type_, vacc_type_2 = vacc_type1,
+  vacc_date_1 = vacc_date_, vacc_date_2 = vacc_date1
+)
 
 vcfd <- vcfd %>% mutate(age_group = year(Sys.Date()) - birth_year_noisy)
 
