@@ -5,7 +5,7 @@ library(glue)
 
 curdate <- ymd(Sys.Date())
 
-dd <- data.frame(date = ymd("2021-08-19") + days(0:20), hotfix = 7 + 0:20)
+dd <- data.frame(date = ymd("2021-08-29") + days(0:20), hotfix = 4 + 0:20)
 # begin nolint
 # https://covid19-static.cdn-apple.com/covid19-mobility-data/2105HotfixDev8/v3/en-us/applemobilitytrends-2021-04-02.csv
 # https://covid19-static.cdn-apple.com/covid19-mobility-data/2104HotfixDev11/v3/en-us/applemobilitytrends-2021-03-21.csv
@@ -18,13 +18,14 @@ dd <- data.frame(date = ymd("2021-08-19") + days(0:20), hotfix = 7 + 0:20)
 # https://covid19-static.cdn-apple.com/covid19-mobility-data/2110HotfixDev12/v3/en-us/applemobilitytrends-2021-06-18.csv
 # https://covid19-static.cdn-apple.com/covid19-mobility-data/2112HotfixDev22/v3/en-us/applemobilitytrends-2021-07-21.csv
 # https://covid19-static.cdn-apple.com/covid19-mobility-data/2115HotfixDev10/v3/en-us/applemobilitytrends-2021-08-22.csv
+# https://covid19-static.cdn-apple.com/covid19-mobility-data/2116HotfixDev8/v3/en-us/applemobilitytrends-2021-09-02.csv
 # end nolint
 
 lap <- lapply(curdate - days(0:2), function(curd) {
   cdd <- dd %>% filter(date == curd)
   cd <- as.character(cdd$date)
   hf <- as.character(cdd$hotfix)
-  lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2115HotfixDev{hf}/v3/en-us/applemobilitytrends-{cd}.csv") # nolint
+  lnk <- glue::glue("https://covid19-static.cdn-apple.com/covid19-mobility-data/2116HotfixDev{hf}/v3/en-us/applemobilitytrends-{cd}.csv") # nolint
   print(lnk)
   try(read.csv(lnk))
 })
