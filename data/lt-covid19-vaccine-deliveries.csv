@@ -1,5 +1,4 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
-2021-03-22,"AstraZeneca",NA,2400
 2021-03-26,"AstraZeneca",7200,3000
 2021-03-29,"AstraZeneca",NA,4200
 2021-03-29,"Pfizer-BioNTech",44460,44460
