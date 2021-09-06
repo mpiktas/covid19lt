@@ -90,6 +90,7 @@ valid <- oo %>%
 
 cat("\nValid vaccination records:", valid, "out of", nrow(vcfd), "\n")
 cat("\nValid vaccination record percentage:", round(100 * valid / nrow(vcfd), 2), "\n")
+cat("\nLast date of the vaccination records:", max(vcfd$vacc_date_1), "\n")
 
 vcfd <- vcfd %>% filter(vacc_type_1 == vacc_type_2 | is.na(vacc_type_2))
 
