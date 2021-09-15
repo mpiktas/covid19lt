@@ -1,6 +1,4 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
-2021-03-31,"AstraZeneca",64800,NA
-2021-03-31,"Moderna",NA,11800
 2021-04-01,"AstraZeneca",NA,32800
 2021-04-02,"AstraZeneca",NA,32000
 2021-04-07,"Pfizer-BioNTech",74880,74880
@@ -36,9 +34,9 @@
 2021-05-06,"Moderna",NA,2100
 2021-05-07,"Moderna",NA,15900
 2021-05-10,"Pfizer-BioNTech",101790,101790
-2021-05-13,"Johnson & Johnson",6000,NA
 2021-05-13,"AstraZeneca",19200,NA
 2021-05-13,"Moderna",18000,NA
+2021-05-13,"Johnson & Johnson",6000,NA
 2021-05-14,"Johnson & Johnson",NA,1000
 2021-05-14,"AstraZeneca",NA,10800
 2021-05-14,"Moderna",NA,14400
