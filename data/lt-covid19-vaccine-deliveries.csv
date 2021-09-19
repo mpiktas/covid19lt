@@ -1,159 +1,159 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
 2021-04-07,"Pfizer-BioNTech",74880,74880
 2021-04-12,"Pfizer-BioNTech",74880,74880
-2021-04-13,"AstraZeneca",9600,NA
 2021-04-13,"Johnson & Johnson",4800,NA
+2021-04-13,"AstraZeneca",9600,NA
 2021-04-14,"AstraZeneca",NA,5600
 2021-04-15,"AstraZeneca",NA,4000
 2021-04-18,"Moderna",19200,NA
-2021-04-19,"Moderna",NA,6300
 2021-04-19,"Pfizer-BioNTech",74880,74880
+2021-04-19,"Moderna",NA,6300
 2021-04-20,"AstraZeneca",19200,NA
 2021-04-20,"Moderna",NA,12900
-2021-04-21,"AstraZeneca",NA,10300
 2021-04-21,"Johnson & Johnson",NA,4800
+2021-04-21,"AstraZeneca",NA,10300
 2021-04-22,"AstraZeneca",NA,8900
 2021-04-25,"Moderna",10800,NA
 2021-04-26,"Pfizer-BioNTech",105300,105300
 2021-04-27,"AstraZeneca",4800,NA
 2021-04-28,"AstraZeneca",NA,2000
 2021-04-28,"Moderna",NA,1500
+2021-04-29,"Johnson & Johnson",6000,NA
 2021-04-29,"AstraZeneca",91200,2800
 2021-04-29,"Moderna",13200,9300
-2021-04-29,"Johnson & Johnson",6000,NA
+2021-04-30,"Johnson & Johnson",NA,2200
 2021-04-30,"AstraZeneca",NA,57800
 2021-04-30,"Moderna",NA,11500
-2021-04-30,"Johnson & Johnson",NA,2200
-2021-05-03,"AstraZeneca",NA,33400
-2021-05-03,"Moderna",NA,1700
 2021-05-03,"Pfizer-BioNTech",99450,99450
 2021-05-03,"Johnson & Johnson",NA,3800
+2021-05-03,"AstraZeneca",NA,33400
+2021-05-03,"Moderna",NA,1700
 2021-05-05,"Moderna",18000,NA
 2021-05-06,"Moderna",NA,2100
 2021-05-07,"Moderna",NA,15900
 2021-05-10,"Pfizer-BioNTech",101790,101790
+2021-05-13,"Johnson & Johnson",6000,NA
 2021-05-13,"AstraZeneca",19200,NA
 2021-05-13,"Moderna",18000,NA
-2021-05-13,"Johnson & Johnson",6000,NA
+2021-05-14,"Johnson & Johnson",NA,1000
 2021-05-14,"AstraZeneca",NA,10800
 2021-05-14,"Moderna",NA,14400
-2021-05-14,"Johnson & Johnson",NA,1000
-2021-05-17,"Pfizer-BioNTech",101790,101790
-2021-05-17,"Johnson & Johnson",NA,5000
 2021-05-17,"AstraZeneca",NA,8400
 2021-05-17,"Moderna",NA,3600
+2021-05-17,"Pfizer-BioNTech",101790,101790
+2021-05-17,"Johnson & Johnson",NA,5000
 2021-05-20,"Johnson & Johnson",4800,NA
-2021-05-21,"Johnson & Johnson",NA,3600
 2021-05-21,"AstraZeneca",16800,3600
 2021-05-21,"Moderna",18000,1900
-2021-05-24,"Pfizer-BioNTech",101790,101790
-2021-05-24,"Johnson & Johnson",NA,1200
+2021-05-21,"Johnson & Johnson",NA,3600
 2021-05-24,"AstraZeneca",NA,13200
 2021-05-24,"Moderna",NA,16100
+2021-05-24,"Pfizer-BioNTech",101790,101790
+2021-05-24,"Johnson & Johnson",NA,1200
 2021-05-27,"Moderna",18000,NA
-2021-05-28,"Johnson & Johnson",14400,NA
 2021-05-28,"Moderna",NA,14000
-2021-05-31,"Pfizer-BioNTech",160290,160290
+2021-05-28,"Johnson & Johnson",14400,NA
 2021-05-31,"AstraZeneca",81600,NA
 2021-05-31,"Moderna",NA,4000
-2021-06-01,"Johnson & Johnson",NA,12250
+2021-05-31,"Pfizer-BioNTech",160290,160290
 2021-06-01,"AstraZeneca",NA,50100
-2021-06-02,"Johnson & Johnson",7200,2150
+2021-06-01,"Johnson & Johnson",NA,12250
 2021-06-02,"AstraZeneca",NA,31500
+2021-06-02,"Johnson & Johnson",7200,2150
 2021-06-03,"Moderna",18000,NA
-2021-06-04,"Johnson & Johnson",NA,2200
 2021-06-04,"Moderna",NA,5800
+2021-06-04,"Johnson & Johnson",NA,2200
+2021-06-07,"Moderna",NA,12200
 2021-06-07,"Pfizer-BioNTech",141570,141570
 2021-06-07,"Johnson & Johnson",NA,5000
-2021-06-07,"Moderna",NA,12200
-2021-06-10,"Johnson & Johnson",9400,NA
 2021-06-10,"Moderna",18000,NA
-2021-06-11,"Johnson & Johnson",NA,8600
+2021-06-10,"Johnson & Johnson",9400,NA
 2021-06-11,"Moderna",NA,15400
+2021-06-11,"Johnson & Johnson",NA,8600
+2021-06-14,"Moderna",NA,2600
 2021-06-14,"Pfizer-BioNTech",142740,142740
 2021-06-14,"Johnson & Johnson",NA,800
-2021-06-14,"Moderna",NA,2600
 2021-06-16,"AstraZeneca",24000,NA
 2021-06-17,"Moderna",20400,NA
 2021-06-18,"AstraZeneca",NA,15600
 2021-06-18,"Moderna",NA,12700
-2021-06-21,"Pfizer-BioNTech",180180,54990
 2021-06-21,"AstraZeneca",NA,8400
 2021-06-21,"Moderna",NA,7700
+2021-06-21,"Pfizer-BioNTech",180180,54990
 2021-06-22,"AstraZeneca",28800,NA
 2021-06-23,"Moderna",21600,NA
-2021-06-25,"Johnson & Johnson",11400,4000
 2021-06-25,"AstraZeneca",NA,17000
 2021-06-25,"Moderna",NA,6000
+2021-06-25,"Johnson & Johnson",11400,4000
+2021-06-28,"Moderna",NA,3900
+2021-06-28,"AstraZeneca",NA,11800
 2021-06-28,"Pfizer-BioNTech",181350,56160
 2021-06-28,"Johnson & Johnson",NA,7400
-2021-06-28,"AstraZeneca",NA,11800
-2021-06-28,"Moderna",NA,3900
 2021-06-29,"AstraZeneca",168400,NA
 2021-06-29,"Moderna",22800,NA
 2021-07-01,"Johnson & Johnson",12000,NA
-2021-07-02,"Johnson & Johnson",NA,10400
 2021-07-02,"AstraZeneca",NA,22100
 2021-07-02,"Moderna",NA,300
-2021-07-05,"Pfizer-BioNTech",105300,18720
-2021-07-05,"Johnson & Johnson",NA,1600
+2021-07-02,"Johnson & Johnson",NA,10400
 2021-07-05,"AstraZeneca",NA,9100
 2021-07-05,"Moderna",NA,100
+2021-07-05,"Pfizer-BioNTech",105300,18720
+2021-07-05,"Johnson & Johnson",NA,1600
 2021-07-07,"Moderna",15600,NA
 2021-07-08,"Johnson & Johnson",7200,NA
-2021-07-09,"Johnson & Johnson",NA,800
 2021-07-09,"AstraZeneca",31200,1000
 2021-07-09,"Moderna",NA,1000
-2021-07-12,"Pfizer-BioNTech",105300,15210
-2021-07-12,"Johnson & Johnson",NA,6400
+2021-07-09,"Johnson & Johnson",NA,800
 2021-07-12,"AstraZeneca",NA,600
 2021-07-12,"Moderna",NA,1100
+2021-07-12,"Pfizer-BioNTech",105300,15210
+2021-07-12,"Johnson & Johnson",NA,6400
 2021-07-14,"Moderna",15600,NA
 2021-07-16,"AstraZeneca",14400,3300
 2021-07-16,"Moderna",NA,1600
+2021-07-19,"Pfizer-BioNTech",105300,19890
 2021-07-19,"AstraZeneca",NA,600
 2021-07-19,"Moderna",NA,700
-2021-07-19,"Pfizer-BioNTech",105300,19890
 2021-07-20,"Pfizer-BioNTech",NA,2340
-2021-07-22,"AstraZeneca",40800,NA
 2021-07-22,"Pfizer-BioNTech",NA,1170
+2021-07-22,"AstraZeneca",40800,NA
 2021-07-23,"AstraZeneca",NA,8400
 2021-07-23,"Moderna",15600,1200
+2021-07-26,"Pfizer-BioNTech",106470,39780
 2021-07-26,"AstraZeneca",NA,4000
 2021-07-26,"Moderna",NA,1700
-2021-07-26,"Pfizer-BioNTech",106470,39780
 2021-07-27,"Pfizer-BioNTech",NA,5850
-2021-07-28,"Moderna",15600,NA
 2021-07-28,"Pfizer-BioNTech",NA,12870
+2021-07-28,"Moderna",15600,NA
 2021-07-29,"Pfizer-BioNTech",NA,2340
 2021-07-29,"Johnson & Johnson",9600,9600
 2021-07-30,"AstraZeneca",54000,6200
 2021-07-30,"Moderna",NA,4200
-2021-08-02,"AstraZeneca",NA,2600
-2021-08-02,"Moderna",NA,2100
 2021-08-02,"Pfizer-BioNTech",105300,84240
 2021-08-02,"Johnson & Johnson",100000,NA
+2021-08-02,"AstraZeneca",NA,2600
+2021-08-02,"Moderna",NA,2100
 2021-08-03,"Johnson & Johnson",NA,37850
 2021-08-04,"Pfizer-BioNTech",NA,15210
 2021-08-04,"Johnson & Johnson",NA,35300
 2021-08-05,"Moderna",15600,NA
+2021-08-06,"Johnson & Johnson",NA,15300
 2021-08-06,"AstraZeneca",9600,5400
 2021-08-06,"Moderna",NA,6200
-2021-08-06,"Johnson & Johnson",NA,15300
-2021-08-09,"AstraZeneca",NA,3000
-2021-08-09,"Moderna",NA,3200
 2021-08-09,"Pfizer-BioNTech",105300,72540
 2021-08-09,"Johnson & Johnson",NA,11550
+2021-08-09,"AstraZeneca",NA,3000
+2021-08-09,"Moderna",NA,3200
 2021-08-12,"Moderna",15600,NA
+2021-08-13,"Pfizer-BioNTech",NA,2340
 2021-08-13,"AstraZeneca",12000,2700
 2021-08-13,"Moderna",NA,5100
-2021-08-13,"Pfizer-BioNTech",NA,2340
 2021-08-16,"Pfizer-BioNTech",NA,73710
 2021-08-18,"Moderna",31200,NA
 2021-08-19,"AstraZeneca",69600,NA
+2021-08-20,"Pfizer-BioNTech",NA,1170
 2021-08-20,"AstraZeneca",NA,1300
 2021-08-20,"Moderna",NA,6200
-2021-08-20,"Pfizer-BioNTech",NA,1170
 2021-08-23,"Pfizer-BioNTech",NA,64350
 2021-08-24,"Pfizer-BioNTech",106470,NA
 2021-08-25,"Pfizer-BioNTech",NA,2340
@@ -164,13 +164,13 @@
 2021-08-31,"AstraZeneca",98300,NA
 2021-09-03,"AstraZeneca",NA,100
 2021-09-03,"Moderna",NA,5400
-2021-09-06,"AstraZeneca",7200,NA
 2021-09-06,"Pfizer-BioNTech",93600,77220
+2021-09-06,"AstraZeneca",7200,NA
 2021-09-10,"AstraZeneca",7200,200
 2021-09-10,"Moderna",NA,4000
-2021-09-13,"Moderna",8400,NA
 2021-09-13,"Pfizer-BioNTech",63180,52650
+2021-09-13,"Moderna",8400,NA
 2021-09-15,"Johnson & Johnson",4800,NA
+2021-09-17,"Johnson & Johnson",NA,4800
 2021-09-17,"AstraZeneca",36000,NA
 2021-09-17,"Moderna",10000,5300
-2021-09-17,"Johnson & Johnson",NA,4800
