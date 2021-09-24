@@ -90,9 +90,9 @@ vcfd <- vcfd0 %>%
     municip_a = muni_declared, sex, age_group,
     vacc_date_1 = day, vacc_type_1 = drug_manufacturer
   ) %>%
-  left_join(vcfd %>% filter(dose == 2) %>% # nolint
+  left_join(vcfd0 %>% filter(dose == 2) %>% # nolint
     select(pseudo_id, vacc_date_2 = day, vacc_type_2 = drug_manufacturer)) %>%
-  left_join(vcfd %>% filter(dose == 3) %>% # nolint
+  left_join(vcfd0 %>% filter(dose == 3) %>% # nolint
     select(pseudo_id, vacc_date_3 = day, vacc_type_3 = drug_manufacturer)) %>%
   ungroup()
 
