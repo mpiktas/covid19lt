@@ -63,7 +63,7 @@ if (nrow(osp3) == nrow(osp2)) {
 
 #-------- Individual data
 #
-vcfd <- readr::read_csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv")
+vcfd0 <- readr::read_csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv")
 
 if (FALSE) {
   vcfd0 <- read.csv2("https://ls-osp-sdg.maps.arcgis.com/sharing/rest/content/items/e714f97f593d49c6b751b4b094ac33d2/data") # nolint
@@ -77,7 +77,24 @@ if (FALSE) {
     mutate(vacc_type_2 = ifelse(vacc_type_2 == "", NA, vacc_type_2))
 }
 
-vcfd <- vcfd %>% mutate(age_group = year(Sys.Date()) - birth_year_noisy)
+vcfd0 <- vcfd0 %>%
+  mutate(age_group = year(Sys.Date()) - birth_year_noisy) %>%
+  mutate(day = ymd(ymd_hms(vaccination_date))) %>%
+  arrange(pseudo_id, day) %>%
+  group_by(pseudo_id) %>%
+  mutate(dose = 1:n())
+
+vcfd <- vcfd0 %>%
+  filter(dose == 1) %>%
+  select(pseudo_id,
+    municip_a = muni_declared, sex, age_group,
+    vacc_date_1 = day, vacc_type_1 = drug_manufacturer
+  ) %>%
+  left_join(vcfd %>% filter(dose == 2) %>% # nolint
+    select(pseudo_id, vacc_date_2 = day, vacc_type_2 = drug_manufacturer)) %>%
+  left_join(vcfd %>% filter(dose == 3) %>% # nolint
+    select(pseudo_id, vacc_date_3 = day, vacc_type_3 = drug_manufacturer)) %>%
+  ungroup()
 
 oo <- vcfd %>%
   count(vacc_type_1, vacc_type_2) %>%
@@ -90,13 +107,13 @@ valid <- oo %>%
 
 cat("\nValid vaccination records:", valid, "out of", nrow(vcfd), "\n")
 cat("\nValid vaccination record percentage:", round(100 * valid / nrow(vcfd), 2), "\n")
-cat("\nLast date of the vaccination records:", max(vcfd$vacc_date_1), "\n")
+cat("\nLast date of the vaccination records:", as.character(max(vcfd$vacc_date_1)), "\n")
 
 vcfd <- vcfd %>% filter(vacc_type_1 == vacc_type_2 | is.na(vacc_type_2))
 
-vcfd <- vcfd %>% mutate(
-  day1 = ymd(ymd_hms(vacc_date_1)),
-  day2 = ymd(ymd_hms(vacc_date_2))
+vcfd <- vcfd %>% rename(
+  day1 = vacc_date_1,
+  day2 = vacc_date_2
 )
 
 v1 <- vcfd %>%
