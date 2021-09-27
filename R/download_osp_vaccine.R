@@ -11,7 +11,7 @@ library(readr)
 source("R/functions.R")
 
 httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
-posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/ArcGIS/rest/services/covid_vaccinations_chart_new/FeatureServer/0/query?where=vaccination_state%3D%27Visi%27&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # nolint
+posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/ArcGIS/rest/services/covid_vaccinations_chart_new/FeatureServer/0/query?where=vaccination_state%3D%2700visos%27&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # nolint
 posp1 <- fix_esridate(rawToChar(posp$content))
 posp2 <- posp1 %>% mutate(day = ymd(date))
 
@@ -41,7 +41,7 @@ if (nrow(osp3) == nrow(osp2)) {
       dose_number = vaccination_state,
       vaccinated = all_cum
     )
-  dosed <- data.frame(dose_number = c("Visi", "Pilnai"), dose = c(1, 2))
+  dosed <- data.frame(dose_number = c("00visos", "02pilnai"), dose = c(1, 2))
   osp5 <- osp4 %>%
     inner_join(dosed) %>%
     select(-dose_number)
