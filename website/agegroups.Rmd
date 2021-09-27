@@ -126,7 +126,7 @@ dygraph(xpcc[, c("0-9", "10-19", "20-29", "30-39")],
 
 ```{r}
 dygraph(xpcc[, c("40-49", "50-59", "60-69", "70-79", "80+")],
-  main = "Atvejų skaičius 100k gyventojų per 14 dienų amžiaus grupėse <40"
+  main = "Atvejų skaičius 100k gyventojų per 14 dienų amžiaus grupėse >40"
 ) %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
   dyRangeSelector(dateWindow = view_interval)
