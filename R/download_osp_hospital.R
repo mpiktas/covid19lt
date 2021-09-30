@@ -8,8 +8,8 @@ library(bit64)
 library(tidyr)
 
 source("R/functions.R")
+osp1 <- read.csv("https://get.data.gov.lt/datasets/gov/lsd/covid19/LigoniniuDuomenys/:format/csv")
 
-osp1 <- read.csv("https://get.data.gov.lt/datasets/gov/lsd/covid-19/ligoniniu_duomenys/LigoniniuDuomenys/:format/csv")
 
 osp1 %>%
   arrange(date, healthcare_region) %>%
