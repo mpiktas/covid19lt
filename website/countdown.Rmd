@@ -17,6 +17,11 @@ Sys.setlocale(locale = "lt_LT.UTF-8")
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r include=FALSE}
+data <- Sys.time()
+```
+
+
 ```{r echo=FALSE, include=FALSE}
 bb <- read.csv("../data/lt-covid19-vaccinated-agedist10-level3.csv") %>%
   filter(!is.na(day)) %>%
@@ -98,6 +103,8 @@ colnames(status2) <- c(
 )
 ```
 
+
+
 ## Kada baigsis COVID19 epidemija?
 
 Šitie skaičiavimai yra iliustracija ir **nėra prognozė**.
@@ -110,7 +117,10 @@ Prielaidos:
   4.Laikoma, kad kiekvienas naujas atvejis nuo šios dienos bus imunizuotas.
   5. Vakcinacijos tempu laikomas vakcinavimo 1 doze tempas.
   6. Laikoma, kad COVID19 epidemija baigsis, kai amžiaus grupės iki 60 pasieks 90% imunizacijos lygį, o amžiaus grupės virš 60 pasieks 95% imunizacijos lygį.
-  
+
+
+Atnaujinta: `r format(data, usetz = TRUE)`. 
+
 ```{r}
 
 status2 %>%
