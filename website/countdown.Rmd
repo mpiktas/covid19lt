@@ -1,0 +1,125 @@
+---
+title: "COVID-19 pabaiga"
+output: distill::distill_article
+---
+
+```{r, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(lubridate)
+library(tidyr)
+library(DT)
+library(zoo)
+Sys.setlocale(locale = "lt_LT.UTF-8")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r echo=FALSE, include=FALSE}
+bb <- read.csv("../data/lt-covid19-vaccinated-agedist10-level3.csv") %>%
+  filter(!is.na(day)) %>%
+  mutate(day = ymd(day))
+cc <- read.csv("../data/lt-covid19-agedist.csv") %>% mutate(day = ymd(day))
+
+cc1 <- cc %>%
+  group_by(age, day) %>%
+  summarise(cases = sum(confirmed_daily))
+
+agr <- read.csv("../raw_data/agegroups2.csv")
+cc2 <- cc1 %>%
+  inner_join(agr) %>%
+  ungroup() %>%
+  select(-age) %>%
+  rename(age = age1) %>%
+  group_by(day, age) %>%
+  summarise(cases = sum(cases))
+
+
+agrd <- read.csv("../data/age_distribution/lt-age-sex-dist10-level3.csv")
+
+agrd1 <- agrd %>%
+  group_by(age) %>%
+  summarise(population = sum(population))
+
+bb1 <- bb %>%
+  group_by(day, age) %>%
+  summarise(dose1 = sum(dose1), dose2 = sum(dose2)) %>%
+  right_join(cc2) %>%
+  ungroup() %>%
+  arrange(day, age)
+
+bb2 <- bb1 %>%
+  group_by(age) %>%
+  mutate(
+    d1 = rollsum(dose1, 7, fill = NA, align = "right"),
+    c1 = rollsum(cases, 7, fill = NA, align = "right")
+  )
+
+
+
+bb3 <- bb2 %>%
+  left_join(agrd1) %>%
+  mutate(
+    p1 = round(dose1 / population * 100, 0),
+    p2 = round(dose2 / population * 100, 0),
+    p7 = round(d1 / population * 100, 2),
+    c7 = round(c1 / population * 100, 2)
+  )
+
+# dose1 <- bb2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "p1")
+# dose2 <- bb2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "p2")
+
+status <- bb3 %>%
+  group_by(age) %>%
+  summarise(dose1 = sum(dose1, na.rm = TRUE), population = unique(population))
+
+status1 <- status %>% mutate(p = 100 * (dose1 / population))
+
+rates <- bb3 %>%
+  filter(day == max(day)) %>%
+  select(age, p7, c7)
+
+status2 <- status1 %>%
+  left_join(rates) %>%
+  mutate(
+    dose1 = ifelse(age == "0-9", 0, dose1),
+    p7 = ifelse(age == "0-9", 0, p7),
+    p = ifelse(age == "0-9", 0, p)
+  ) %>%
+  mutate(target = ifelse(age %in% c("60-69", "70-79", "80+"), 95, 90)) %>%
+  mutate(weeks = (target - p) / (p7 + c7)) %>%
+  mutate(pool = population - dose1)
+
+colnames(status2) <- c(
+  "Amžiaus grupė", "Vakcinuoti 1 doze", "Populiacija", "Procentas vakcinuotų 1 doze",
+  "Vakcinavimo tempas, proc", "Naujų atvejų tempas, proc", "Tikslas", "Kiek liko savaičių", "Liko imunizuoti"
+)
+```
+
+## Kada baigsis COVID19 epidemija?
+
+Prielaidos:
+
+  1. Laikoma kad dabar imunizuoti yra tie, kurie yra pasiskiepije viena doze.
+  2. Laikoma, kad vakcinacijos ir naujų atvejų tempai išliks tie patys kaip per pastarąsias 7 dienas.
+  3. Vakcinacijos tempu laikomas vakcinavimo 1 doze tempas.
+  4. Laikoma, kad COVID19 epidemija baigsis, kai amžiaus grupės iki 60 pasieks 90% imunizacijos lygį, o amžiaus grupės virš 60 pasieks 95% imunizacijos lygį.
+  
+```{r}
+
+status2 %>%
+  datatable(
+    extensions = c("FixedColumns", "FixedHeader"),
+    escape = FALSE,
+    options = list(
+      scrollX = TRUE,
+      paging = FALSE,
+      fixedHeader = TRUE
+    )
+  ) %>%
+  formatRound(colnames(status2)[c(4:6)], 2) %>%
+  formatRound(colnames(status2)[8], 1) %>%
+  formatRound(colnames(status2)[c(2:3, 9)], 0)
+```
