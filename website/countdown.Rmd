@@ -100,12 +100,16 @@ colnames(status2) <- c(
 
 ## Kada baigsis COVID19 epidemija?
 
+Šitie skaičiavimai yra iliustracija ir **nėra prognozė**.
+
 Prielaidos:
 
-  1. Laikoma kad dabar imunizuoti yra tie, kurie yra pasiskiepije viena doze.
-  2. Laikoma, kad vakcinacijos ir naujų atvejų tempai išliks tie patys kaip per pastarąsias 7 dienas.
-  3. Vakcinacijos tempu laikomas vakcinavimo 1 doze tempas.
-  4. Laikoma, kad COVID19 epidemija baigsis, kai amžiaus grupės iki 60 pasieks 90% imunizacijos lygį, o amžiaus grupės virš 60 pasieks 95% imunizacijos lygį.
+  1. Laikoma, kad dabar imunizuoti yra tie, kurie yra pasiskiepije viena doze.
+  2. Laikoma, kad visi kurie nėra pasiskiepije viena doze neturi imuniteto. 
+  3. Laikoma, kad vakcinacijos ir naujų atvejų tempai išliks tie patys kaip per pastarąsias 7 dienas.
+  4.Laikoma, kad kiekvienas naujas atvejis nuo šios dienos bus imunizuotas.
+  5. Vakcinacijos tempu laikomas vakcinavimo 1 doze tempas.
+  6. Laikoma, kad COVID19 epidemija baigsis, kai amžiaus grupės iki 60 pasieks 90% imunizacijos lygį, o amžiaus grupės virš 60 pasieks 95% imunizacijos lygį.
   
 ```{r}
 
