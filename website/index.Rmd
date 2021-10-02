@@ -29,6 +29,7 @@ data <- Sys.time()
   - [2021 ir 2020 metų palyginimas](yearly_comparison.html)
   - [Ligoninių duomenys](hospital.html)
   - [Efektyvusis R](Re.html)
+  - [Epidemijos pabaiga](countdown.html)
   
 Atnaujinta: `r format(data, usetz = TRUE)`. 
 
