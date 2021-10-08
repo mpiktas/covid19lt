@@ -41,7 +41,7 @@ if (nrow(osp3) == nrow(osp2)) {
       dose_number = vaccination_state,
       vaccinated = all_cum
     )
-  dosed <- data.frame(dose_number = c("00visos", "02pilnai"), dose = c(1, 2))
+  dosed <- data.frame(dose_number = c("00visos", "plinai"), dose = c(1, 2))
   osp5 <- osp4 %>%
     inner_join(dosed) %>%
     select(-dose_number)
@@ -193,7 +193,7 @@ osp1 %>%
 
 osp2 <- osp1 %>%
   mutate(day = ymd(date)) %>%
-  filter(municipality_name == "Lietuva", vaccination_state == "Pilnai") %>%
+  filter(municipality_name == "Lietuva") %>%
   filter(!is.na(vaccines_arrived_day) | !is.na(vaccines_allocated_day)) %>%
   select(day, vaccine_name,
     vaccines_arrived = vaccines_arrived_day,
