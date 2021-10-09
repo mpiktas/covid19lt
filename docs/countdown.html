@@ -444,15 +444,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     top: 0;
   }
 
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -560,21 +553,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
             var results = fuse.search(query, searchOptions);
             callback(results
               .map(function(result) { return result.item; })
+              .filter(function(item) { return !!item.description; })
             );
           },
           templates: {
             suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
               var html = `
                 <div class="search-item">
                   <h3>${suggestion.title}</h3>
                   <div class="search-item-description">
-                    ${suggestion.description || ''}
+                    ${suggestion.description}
                   </div>
                   <div class="search-item-preview">
-                    ${img}
+                    <img src="${suggestion.preview ? offsetURL(suggestion.preview) : ''}"</img>
                   </div>
                 </div>
               `;
@@ -597,10 +588,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
 
   /* Algolioa Autocomplete */
 
@@ -676,7 +663,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
     margin-block-start: 0;
     margin-block-end: 5px;
   }
@@ -904,11 +890,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-decoration: underline;
   }
 
-  d-article details {
-    grid-column: text;
-    margin-bottom: 0.8em;
-  }
-
   @media(min-width: 768px) {
 
   d-article pre,
@@ -1063,17 +1044,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   div.hanging-indent{
     margin-left: 1em; text-indent: -1em;
-  }
-
-  /* Citation hover box */
-
-  .tippy-box[data-theme~=light-border] {
-    background-color: rgba(250, 250, 250, 0.95);
-  }
-
-  .tippy-content > p {
-    margin-bottom: 0;
-    padding: 2px;
   }
 
 
@@ -1741,7 +1711,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       var layout = $(this).attr('data-layout');
 
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      var elements = $(this).children().not('div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -1856,20 +1826,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
-
-      // hoverable references
-      $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
-        window.tippy(this, {
-          allowHTML: true,
-          content: refHtml,
-          maxWidth: 500,
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start'
-        });
-      });
 
       // clear polling timer
       clearInterval(tid);
@@ -2032,7 +1988,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
   <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
   <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
   <script src="site_libs/datatables-binding-0.17/datatables.js"></script>
   <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -2042,19 +1998,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/dt-ext-fixedcolumns-1.10.20/js/dataTables.fixedColumns.min.js"></script>
   <link href="site_libs/dt-ext-fixedheader-1.10.20/css/fixedHeader.dataTables.min.css" rel="stylesheet" />
   <script src="site_libs/dt-ext-fixedheader-1.10.20/js/dataTables.fixedHeader.min.js"></script>
-  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
   <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
   <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <script type="text/javascript" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-VCGZFSTG6M"></script>
-  <script type="text/javascript" cookie-consent="tracking">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCGZFSTG6M"></script>
+  <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -2110,10 +2062,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Vakcinacijos tempu laikomas vakcinavimo 1 doze tempas.</li>
 <li>Laikoma, kad COVID19 epidemija baigsis, kai amžiaus grupės iki 60 pasieks 90% imunizacijos lygį, o amžiaus grupės virš 60 pasieks 95% imunizacijos lygį.</li>
 </ol>
-<p>Atnaujinta: 2021-10-09 07:24:47 UTC.</p>
+<p>Atnaujinta: 2021-10-09 17:20:36 EEST.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-2445c2a4f5039235742a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2445c2a4f5039235742a">{"x":{"filter":"none","extensions":["FixedColumns","FixedHeader"],"data":[["1","2","3","4","5","6","7","8","9"],["0-9","10-19","20-29","30-39","40-49","50-59","60-69","70-79","80+"],[0,90056,223500,272431,269942,311187,290272,188596,110967],[286443,263203,334275,372574,365190,412962,360053,235840,165140],[0,34.2154154777871,66.8611173435046,73.1213128130251,73.9182343437663,75.3548752669737,80.6192421671254,79.9677747625509,67.1957127285939],[0,null,null,null,null,null,null,null,null],[0.56,1.02,0.34,0.64,0.59,0.43,0.35,0.29,0.3],[90,90,90,90,90,90,95,95,95],[160.714285714286,null,null,null,null,null,null,null,null],[286443,173147,110775,100143,95248,101775,69781,47244,54173]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Amžiaus grupė<\/th>\n      <th>Vakcinuoti 1 doze<\/th>\n      <th>Populiacija<\/th>\n      <th>Procentas vakcinuotų 1 doze<\/th>\n      <th>Vakcinavimo tempas, proc<\/th>\n      <th>Naujų atvejų tempas, proc<\/th>\n      <th>Tikslas<\/th>\n      <th>Kiek liko savaičių<\/th>\n      <th>Liko imunizuoti<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"paging":false,"fixedHeader":true,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\");\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\");\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\");\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\");\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\");\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\");\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\");\n  }"},{"className":"dt-right","targets":[2,3,4,5,6,7,8,9]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render"],"jsHooks":[]}</script>
+<div id="htmlwidget-80ae665fd5851afb3159" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-80ae665fd5851afb3159">{"x":{"filter":"none","extensions":["FixedColumns","FixedHeader"],"data":[["1","2","3","4","5","6","7","8","9"],["0-9","10-19","20-29","30-39","40-49","50-59","60-69","70-79","80+"],[0,46915,115360,140950,140676,163414,152345,98445,58002],[286443,263203,334275,372574,365190,412962,360053,235840,165140],[0,17.8246448558717,34.5105078154214,37.8314106727791,38.5213176702538,39.571195412653,42.3118263144593,41.7422829036635,35.12292600218],[0,0.26,0.34,0.39,0.31,0.26,0.18,0.12,0.2],[0.56,1.02,0.34,0.64,0.59,0.43,0.35,0.29,0.3],[90,90,90,90,90,90,95,95,95],[160.714285714286,56.3869962063502,81.6021943890861,50.6491158516708,57.1985359219402,73.0852240396334,99.4116484632844,129.896870966674,119.75414799564],[286443,216288,218915,231624,224514,249548,207708,137395,107138]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Amžiaus grupė<\/th>\n      <th>Vakcinuoti 1 doze<\/th>\n      <th>Populiacija<\/th>\n      <th>Procentas vakcinuotų 1 doze<\/th>\n      <th>Vakcinavimo tempas, proc<\/th>\n      <th>Naujų atvejų tempas, proc<\/th>\n      <th>Tikslas<\/th>\n      <th>Kiek liko savaičių<\/th>\n      <th>Liko imunizuoti<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"paging":false,"fixedHeader":true,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\");\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\");\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\");\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\");\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\");\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\");\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\");\n  }"},{"className":"dt-right","targets":[2,3,4,5,6,7,8,9]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render"],"jsHooks":[]}</script>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

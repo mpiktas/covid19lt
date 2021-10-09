@@ -104,9 +104,9 @@ ggplot(aes(x = wfday, y = vaccinated_1_daily, group = week, colour = as.characte
 ```
 
 ```{r}
-ggplot(aes(x = wfday, y = vaccinated_1_daily + vaccinated_2_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(day >= start_day)) +
+ggplot(aes(x = wfday, y = vaccinated_2_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(day >= start_day)) +
   geom_line() +
   scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) +
   theme_bw() +
-  labs(x = "Savaitės diena", y = "Sunaudota vakcinų", title = "Sunaudotų vakcinų skaičius savaitės dienomis")
+  labs(x = "Savaitės diena", y = "Antra vakcinos dozė", title = "Vakcinuotų antra doze skaičius savaitės dienomis")
 ```
