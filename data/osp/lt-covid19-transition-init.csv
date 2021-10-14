@@ -1,0 +1,961 @@
+"municipality","sex","age_gr","at_risk"
+"Druskininkų sav.","M","60-69",1598
+"Jurbarko r. sav.","M","60-69",1869
+"Kalvarijos sav.","M","50-59",730
+"Kauno r. sav.","V","30-39",7280
+"Klaipėdos m. sav.","M","40-49",7959
+"Klaipėdos r. sav.","V","20-29",3686
+"Mažeikių r. sav.","V","20-29",3096
+"Molėtų r. sav.","M","80+",962
+"Plungės r. sav.","V","0-19",3277
+"Trakų r. sav.","M","60-69",2072
+"Vilkaviškio r. sav.","V","50-59",2560
+"Vilkaviškio r. sav.","V","60-69",2043
+"Visagino sav.","V","80+",219
+"Zarasų r. sav.","M","70-79",971
+"Šiaulių m. sav.","M","40-49",5007
+"Druskininkų sav.","V","60-69",1088
+"Ignalinos r. sav.","M","60-69",1146
+"Pagėgių sav.","M","60-69",541
+"Palangos m. sav.","M","30-39",726
+"Prienų r. sav.","M","40-49",1311
+"Radviliškio r. sav.","V","70-79",1036
+"Vilkaviškio r. sav.","V","20-29",2230
+"Zarasų r. sav.","M","50-59",1196
+"Šilalės r. sav.","M","60-69",1348
+"Šilalės r. sav.","V","0-19",2174
+"Jonavos r. sav.","V","40-49",2361
+"Joniškio r. sav.","V","0-19",1867
+"Kauno m. sav.","M","30-39",21996
+"Kretingos r. sav.","M","30-39",1404
+"Kupiškio r. sav.","V","60-69",1000
+"Kėdainių r. sav.","M","20-29",2134
+"Lazdijų r. sav.","M","50-59",1403
+"Mažeikių r. sav.","M","50-59",3631
+"Pakruojo r. sav.","V","80+",286
+"Prienų r. sav.","M","20-29",1344
+"Švenčionių r. sav.","M","40-49",1218
+"Birštono sav.","M","40-49",199
+"Ignalinos r. sav.","M","0-19",1002
+"Kaišiadorių r. sav.","M","40-49",1503
+"Kėdainių r. sav.","M","30-39",1369
+"Mažeikių r. sav.","V","30-39",2294
+"Radviliškio r. sav.","V","40-49",1771
+"Raseinių r. sav.","M","60-69",2124
+"Skuodo r. sav.","V","50-59",1194
+"Telšių r. sav.","M","80+",1790
+"Šalčininkų r. sav.","M","50-59",2023
+"Jurbarko r. sav.","V","40-49",1309
+"Jurbarko r. sav.","V","60-69",1449
+"Palangos m. sav.","M","40-49",987
+"Panevėžio r. sav.","V","80+",618
+"Pasvalio r. sav.","V","60-69",1277
+"Rietavo sav.","V","40-49",387
+"Rokiškio r. sav.","V","0-19",2277
+"Skuodo r. sav.","M","20-29",772
+"Telšių r. sav.","M","40-49",2091
+"Širvintų r. sav.","V","60-69",877
+"Alytaus r. sav.","V","0-19",2279
+"Anykščių r. sav.","V","50-59",1895
+"Joniškio r. sav.","M","0-19",1804
+"Marijampolės sav.","M","60-69",3735
+"Mažeikių r. sav.","M","80+",1708
+"Rietavo sav.","M","40-49",319
+"Rokiškio r. sav.","M","50-59",2299
+"Trakų r. sav.","M","50-59",2199
+"Vilniaus r. sav.","M","20-29",4665
+"Širvintų r. sav.","V","0-19",1291
+"Klaipėdos m. sav.","V","60-69",7083
+"Kupiškio r. sav.","V","0-19",1354
+"Lazdijų r. sav.","M","40-49",892
+"Rokiškio r. sav.","M","20-29",1450
+"Tauragės r. sav.","M","0-19",3423
+"Ukmergės r. sav.","V","60-69",1864
+"Vilkaviškio r. sav.","M","50-59",2539
+"Vilniaus m. sav.","M","70-79",24953
+"Švenčionių r. sav.","M","20-29",1105
+"Kaišiadorių r. sav.","V","20-29",1829
+"Neringos sav.","V","80+",23
+"Radviliškio r. sav.","M","50-59",2624
+"Radviliškio r. sav.","V","80+",511
+"Skuodo r. sav.","M","80+",693
+"Vilniaus m. sav.","V","0-19",58219
+"Zarasų r. sav.","V","70-79",552
+"Šalčininkų r. sav.","V","30-39",1917
+"Alytaus r. sav.","V","60-69",1725
+"Kaišiadorių r. sav.","V","80+",439
+"Kalvarijos sav.","M","0-19",996
+"Kelmės r. sav.","M","20-29",1219
+"Klaipėdos m. sav.","M","0-19",14003
+"Mažeikių r. sav.","V","70-79",1320
+"Pagėgių sav.","M","0-19",706
+"Prienų r. sav.","V","60-69",1561
+"Tauragės r. sav.","M","20-29",1918
+"Trakų r. sav.","V","40-49",2184
+"Birštono sav.","V","80+",76
+"Elektrėnų sav.","V","20-29",1354
+"Jonavos r. sav.","M","0-19",3960
+"Klaipėdos r. sav.","M","50-59",3842
+"Skuodo r. sav.","M","30-39",97
+"Vilniaus r. sav.","V","0-19",10507
+"Visagino sav.","V","0-19",1763
+"Visagino sav.","V","70-79",522
+"Zarasų r. sav.","V","60-69",908
+"Birštono sav.","M","80+",250
+"Biržų r. sav.","M","0-19",1850
+"Elektrėnų sav.","V","40-49",1831
+"Kaišiadorių r. sav.","M","60-69",1894
+"Kelmės r. sav.","M","70-79",1559
+"Panevėžio m. sav.","M","80+",4285
+"Prienų r. sav.","M","60-69",1783
+"Rietavo sav.","M","70-79",364
+"Šalčininkų r. sav.","M","80+",1121
+"Alytaus m. sav.","M","60-69",3993
+"Druskininkų sav.","V","80+",362
+"Kalvarijos sav.","M","80+",444
+"Plungės r. sav.","M","20-29",1794
+"Prienų r. sav.","V","70-79",826
+"Rietavo sav.","V","50-59",522
+"Telšių r. sav.","M","60-69",2766
+"Vilniaus m. sav.","M","20-29",28062
+"Vilniaus m. sav.","M","50-59",32748
+"Druskininkų sav.","V","30-39",855
+"Elektrėnų sav.","M","80+",886
+"Kaišiadorių r. sav.","M","0-19",2474
+"Kretingos r. sav.","V","80+",618
+"Marijampolės sav.","V","50-59",3730
+"Telšių r. sav.","V","70-79",1240
+"Varėnos r. sav.","V","30-39",841
+"Švenčionių r. sav.","V","40-49",1315
+"Alytaus m. sav.","M","40-49",2768
+"Anykščių r. sav.","M","70-79",1578
+"Birštono sav.","V","40-49",181
+"Druskininkų sav.","M","70-79",1287
+"Kelmės r. sav.","V","70-79",915
+"Radviliškio r. sav.","M","0-19",3132
+"Trakų r. sav.","V","20-29",1999
+"Vilniaus r. sav.","M","80+",2685
+"Šiaulių r. sav.","V","20-29",2563
+"Anykščių r. sav.","V","20-29",1376
+"Klaipėdos m. sav.","M","80+",6183
+"Plungės r. sav.","M","50-59",2236
+"Raseinių r. sav.","M","80+",1524
+"Utenos r. sav.","V","70-79",1275
+"Varėnos r. sav.","M","70-79",1323
+"Šiaulių r. sav.","M","40-49",2400
+"Švenčionių r. sav.","M","80+",1133
+"Ignalinos r. sav.","M","80+",921
+"Kauno m. sav.","V","40-49",15805
+"Kazlų Rūdos sav.","V","30-39",546
+"Klaipėdos m. sav.","M","50-59",9390
+"Panevėžio r. sav.","M","30-39",1055
+"Panevėžio r. sav.","V","20-29",2228
+"Šiaulių m. sav.","V","80+",1428
+"Šiaulių r. sav.","V","60-69",2458
+"Pakruojo r. sav.","M","60-69",1325
+"Panevėžio r. sav.","V","70-79",1143
+"Rokiškio r. sav.","V","40-49",1500
+"Varėnos r. sav.","M","50-59",1545
+"Šakių r. sav.","V","0-19",2496
+"Šakių r. sav.","V","50-59",2044
+"Šiaulių r. sav.","V","80+",608
+"Šilalės r. sav.","V","30-39",826
+"Elektrėnų sav.","V","70-79",721
+"Joniškio r. sav.","M","80+",942
+"Jurbarko r. sav.","M","40-49",1253
+"Jurbarko r. sav.","V","70-79",810
+"Kalvarijos sav.","V","0-19",1145
+"Kretingos r. sav.","V","0-19",3809
+"Utenos r. sav.","V","20-29",2112
+"Vilniaus m. sav.","M","60-69",33707
+"Ignalinos r. sav.","V","70-79",609
+"Kėdainių r. sav.","V","60-69",2435
+"Palangos m. sav.","V","70-79",593
+"Radviliškio r. sav.","M","60-69",2478
+"Rietavo sav.","V","60-69",411
+"Utenos r. sav.","V","40-49",2246
+"Vilkaviškio r. sav.","M","40-49",1896
+"Šilalės r. sav.","M","50-59",1467
+"Klaipėdos r. sav.","M","0-19",6205
+"Klaipėdos r. sav.","M","20-29",3062
+"Molėtų r. sav.","M","40-49",920
+"Radviliškio r. sav.","M","70-79",2024
+"Trakų r. sav.","M","70-79",1491
+"Vilkaviškio r. sav.","M","70-79",2052
+"Šakių r. sav.","M","20-29",1541
+"Šilalės r. sav.","M","80+",838
+"Palangos m. sav.","M","20-29",702
+"Rietavo sav.","M","60-69",471
+"Skuodo r. sav.","V","20-29",1041
+"Ukmergės r. sav.","M","0-19",2720
+"Šalčininkų r. sav.","V","80+",338
+"Šiaulių r. sav.","M","70-79",2133
+"Šiaulių r. sav.","V","40-49",2398
+"Druskininkų sav.","M","0-19",1574
+"Ignalinos r. sav.","M","40-49",734
+"Kelmės r. sav.","V","20-29",1712
+"Pakruojo r. sav.","V","30-39",547
+"Prienų r. sav.","V","30-39",1168
+"Prienų r. sav.","V","50-59",1863
+"Tauragės r. sav.","M","70-79",2146
+"Elektrėnų sav.","V","60-69",1277
+"Lazdijų r. sav.","M","60-69",1221
+"Marijampolės sav.","M","70-79",2608
+"Pasvalio r. sav.","M","60-69",1572
+"Visagino sav.","V","40-49",772
+"Šalčininkų r. sav.","M","70-79",1313
+"Švenčionių r. sav.","M","50-59",1614
+"Birštono sav.","V","30-39",184
+"Elektrėnų sav.","V","50-59",1817
+"Kazlų Rūdos sav.","M","40-49",597
+"Klaipėdos m. sav.","M","60-69",10493
+"Lazdijų r. sav.","V","60-69",1146
+"Panevėžio m. sav.","M","50-59",6838
+"Panevėžio r. sav.","M","20-29",1832
+"Vilniaus m. sav.","M","80+",18418
+"Alytaus r. sav.","M","80+",1346
+"Anykščių r. sav.","M","0-19",1633
+"Joniškio r. sav.","M","30-39",458
+"Kauno m. sav.","M","60-69",19703
+"Kauno m. sav.","V","30-39",21888
+"Molėtų r. sav.","V","0-19",1339
+"Rokiškio r. sav.","M","70-79",1756
+"Šakių r. sav.","M","0-19",2404
+"Klaipėdos r. sav.","M","30-39",3230
+"Klaipėdos r. sav.","M","60-69",3345
+"Marijampolės sav.","V","0-19",5242
+"Pagėgių sav.","V","60-69",438
+"Raseinių r. sav.","V","50-59",2196
+"Skuodo r. sav.","M","50-59",1178
+"Šilutės r. sav.","M","80+",1641
+"Alytaus m. sav.","V","30-39",2414
+"Anykščių r. sav.","V","70-79",895
+"Birštono sav.","M","0-19",341
+"Jurbarko r. sav.","V","30-39",871
+"Kauno r. sav.","M","50-59",6216
+"Kazlų Rūdos sav.","M","30-39",452
+"Raseinių r. sav.","M","30-39",848
+"Vilniaus m. sav.","V","50-59",26822
+"Elektrėnų sav.","M","20-29",1150
+"Klaipėdos m. sav.","V","30-39",10752
+"Marijampolės sav.","V","20-29",3103
+"Neringos sav.","M","40-49",218
+"Utenos r. sav.","M","70-79",2289
+"Šalčininkų r. sav.","V","50-59",1978
+"Šilutės r. sav.","V","50-59",2774
+"Alytaus m. sav.","V","40-49",2890
+"Joniškio r. sav.","V","30-39",681
+"Kėdainių r. sav.","M","70-79",2846
+"Marijampolės sav.","M","20-29",2776
+"Tauragės r. sav.","M","30-39",1163
+"Šalčininkų r. sav.","V","0-19",3215
+"Šiaulių m. sav.","V","50-59",6371
+"Alytaus r. sav.","V","50-59",2025
+"Anykščių r. sav.","M","60-69",1740
+"Kalvarijos sav.","V","50-59",727
+"Kauno r. sav.","M","60-69",5389
+"Molėtų r. sav.","V","40-49",987
+"Šalčininkų r. sav.","M","0-19",2955
+"Šalčininkų r. sav.","V","40-49",1928
+"Anykščių r. sav.","V","60-69",1478
+"Kalvarijos sav.","M","40-49",500
+"Neringos sav.","V","30-39",282
+"Prienų r. sav.","V","80+",530
+"Varėnos r. sav.","M","60-69",1632
+"Vilkaviškio r. sav.","M","80+",1601
+"Šilalės r. sav.","V","50-59",1586
+"Druskininkų sav.","M","30-39",746
+"Kalvarijos sav.","V","40-49",591
+"Kazlų Rūdos sav.","V","40-49",698
+"Pasvalio r. sav.","M","20-29",1200
+"Ukmergės r. sav.","V","30-39",1564
+"Šilutės r. sav.","M","50-59",2760
+"Širvintų r. sav.","V","50-59",1171
+"Akmenės r. sav.","V","40-49",769
+"Alytaus r. sav.","M","0-19",2184
+"Druskininkų sav.","V","70-79",621
+"Joniškio r. sav.","V","50-59",1610
+"Klaipėdos m. sav.","V","20-29",7331
+"Vilniaus m. sav.","M","0-19",55394
+"Šilutės r. sav.","V","70-79",1078
+"Biržų r. sav.","V","70-79",835
+"Jonavos r. sav.","M","20-29",2250
+"Jonavos r. sav.","V","30-39",1930
+"Tauragės r. sav.","M","60-69",2557
+"Tauragės r. sav.","V","40-49",1969
+"Šilutės r. sav.","M","70-79",1948
+"Švenčionių r. sav.","V","80+",384
+"Alytaus m. sav.","M","50-59",3619
+"Ignalinos r. sav.","M","30-39",310
+"Joniškio r. sav.","M","50-59",1724
+"Klaipėdos r. sav.","V","50-59",4471
+"Neringos sav.","V","60-69",188
+"Skuodo r. sav.","V","80+",265
+"Širvintų r. sav.","M","70-79",886
+"Akmenės r. sav.","M","0-19",1653
+"Ignalinos r. sav.","V","20-29",826
+"Kaišiadorių r. sav.","V","70-79",873
+"Kelmės r. sav.","M","30-39",469
+"Ukmergės r. sav.","V","50-59",2466
+"Vilniaus m. sav.","V","20-29",28604
+"Šiaulių m. sav.","M","0-19",8594
+"Ignalinos r. sav.","M","70-79",1076
+"Kelmės r. sav.","V","60-69",1576
+"Kupiškio r. sav.","M","50-59",1417
+"Lazdijų r. sav.","M","70-79",1062
+"Ukmergės r. sav.","M","30-39",1060
+"Vilkaviškio r. sav.","M","20-29",1910
+"Vilniaus m. sav.","V","30-39",52741
+"Molėtų r. sav.","V","80+",360
+"Pagėgių sav.","V","0-19",696
+"Palangos m. sav.","V","80+",275
+"Plungės r. sav.","M","80+",1415
+"Prienų r. sav.","V","40-49",1430
+"Rietavo sav.","V","0-19",733
+"Utenos r. sav.","M","30-39",1348
+"Zarasų r. sav.","M","0-19",1171
+"Akmenės r. sav.","V","60-69",1159
+"Druskininkų sav.","M","40-49",985
+"Kelmės r. sav.","V","80+",508
+"Lazdijų r. sav.","V","30-39",785
+"Panevėžio m. sav.","M","0-19",7020
+"Plungės r. sav.","V","70-79",989
+"Trakų r. sav.","V","60-69",1617
+"Birštono sav.","V","0-19",332
+"Kėdainių r. sav.","V","70-79",1374
+"Molėtų r. sav.","V","70-79",635
+"Raseinių r. sav.","M","20-29",1593
+"Tauragės r. sav.","V","50-59",2566
+"Šiaulių m. sav.","M","50-59",6585
+"Šilutės r. sav.","M","60-69",2636
+"Kretingos r. sav.","M","70-79",1915
+"Marijampolės sav.","M","30-39",2129
+"Marijampolės sav.","M","50-59",3929
+"Radviliškio r. sav.","V","20-29",2150
+"Tauragės r. sav.","V","70-79",1125
+"Utenos r. sav.","M","40-49",2033
+"Alytaus r. sav.","M","50-59",1725
+"Jurbarko r. sav.","M","0-19",2177
+"Kalvarijos sav.","M","70-79",456
+"Kelmės r. sav.","M","60-69",1883
+"Mažeikių r. sav.","V","80+",588
+"Pasvalio r. sav.","V","80+",387
+"Vilniaus m. sav.","M","40-49",36330
+"Neringos sav.","M","60-69",224
+"Pakruojo r. sav.","M","0-19",1666
+"Skuodo r. sav.","V","60-69",1010
+"Vilkaviškio r. sav.","V","70-79",1114
+"Visagino sav.","M","30-39",431
+"Zarasų r. sav.","V","0-19",1226
+"Šiaulių r. sav.","M","60-69",2712
+"Anykščių r. sav.","M","80+",1453
+"Elektrėnų sav.","M","40-49",1276
+"Kazlų Rūdos sav.","M","60-69",779
+"Raseinių r. sav.","M","40-49",1617
+"Varėnos r. sav.","M","0-19",1716
+"Šiaulių r. sav.","V","70-79",1315
+"Alytaus r. sav.","M","70-79",1457
+"Kazlų Rūdos sav.","V","60-69",592
+"Kelmės r. sav.","M","80+",1366
+"Telšių r. sav.","M","70-79",2243
+"Vilkaviškio r. sav.","V","80+",570
+"Vilniaus r. sav.","V","30-39",7354
+"Šakių r. sav.","M","70-79",1521
+"Kauno r. sav.","V","70-79",2396
+"Kazlų Rūdos sav.","M","80+",494
+"Varėnos r. sav.","V","60-69",1304
+"Šakių r. sav.","V","60-69",1543
+"Šiaulių m. sav.","V","40-49",7283
+"Švenčionių r. sav.","V","20-29",1279
+"Kauno r. sav.","V","80+",1279
+"Palangos m. sav.","V","0-19",1418
+"Radviliškio r. sav.","V","50-59",2731
+"Raseinių r. sav.","V","30-39",1267
+"Rokiškio r. sav.","V","30-39",1138
+"Visagino sav.","M","80+",518
+"Šilutės r. sav.","V","20-29",2400
+"Klaipėdos m. sav.","V","70-79",3828
+"Lazdijų r. sav.","M","0-19",1475
+"Marijampolės sav.","V","40-49",3232
+"Plungės r. sav.","M","30-39",870
+"Ukmergės r. sav.","M","40-49",1672
+"Zarasų r. sav.","M","60-69",1159
+"Alytaus m. sav.","M","30-39",1745
+"Birštono sav.","M","30-39",136
+"Ignalinos r. sav.","V","50-59",1139
+"Kaišiadorių r. sav.","V","50-59",2176
+"Neringos sav.","M","0-19",320
+"Vilkaviškio r. sav.","V","0-19",3291
+"Jonavos r. sav.","M","30-39",1611
+"Jurbarko r. sav.","V","0-19",2374
+"Rietavo sav.","M","0-19",684
+"Rokiškio r. sav.","V","50-59",2284
+"Šakių r. sav.","M","80+",1304
+"Šalčininkų r. sav.","V","20-29",1913
+"Ignalinos r. sav.","M","20-29",658
+"Klaipėdos r. sav.","M","70-79",2253
+"Marijampolės sav.","V","70-79",1473
+"Neringos sav.","M","20-29",143
+"Rokiškio r. sav.","M","40-49",1553
+"Širvintų r. sav.","M","30-39",579
+"Biržų r. sav.","M","70-79",1504
+"Kauno r. sav.","M","20-29",5383
+"Klaipėdos r. sav.","V","60-69",3003
+"Prienų r. sav.","M","50-59",1809
+"Širvintų r. sav.","M","60-69",1021
+"Širvintų r. sav.","V","70-79",454
+"Ignalinos r. sav.","V","0-19",1126
+"Mažeikių r. sav.","V","0-19",5191
+"Molėtų r. sav.","M","50-59",1291
+"Panevėžio m. sav.","V","0-19",7534
+"Vilniaus m. sav.","V","60-69",21016
+"Šakių r. sav.","V","70-79",815
+"Elektrėnų sav.","M","60-69",1589
+"Jonavos r. sav.","V","20-29",2490
+"Jurbarko r. sav.","M","80+",1151
+"Lazdijų r. sav.","V","40-49",956
+"Visagino sav.","M","70-79",910
+"Visagino sav.","V","20-29",770
+"Druskininkų sav.","V","0-19",1636
+"Kazlų Rūdos sav.","M","70-79",642
+"Kėdainių r. sav.","M","60-69",3226
+"Šiaulių m. sav.","V","30-39",7758
+"Švenčionių r. sav.","M","60-69",1709
+"Anykščių r. sav.","V","30-39",913
+"Ignalinos r. sav.","V","30-39",590
+"Kupiškio r. sav.","M","30-39",331
+"Palangos m. sav.","M","0-19",1414
+"Prienų r. sav.","M","70-79",1463
+"Varėnos r. sav.","V","80+",434
+"Kazlų Rūdos sav.","V","0-19",1179
+"Klaipėdos m. sav.","M","20-29",7153
+"Palangos m. sav.","V","30-39",772
+"Pasvalio r. sav.","M","0-19",2081
+"Radviliškio r. sav.","M","80+",1620
+"Vilniaus r. sav.","M","30-39",5515
+"Biržų r. sav.","M","60-69",1758
+"Biržų r. sav.","V","20-29",1527
+"Kupiškio r. sav.","M","60-69",1197
+"Šakių r. sav.","M","40-49",1402
+"Šalčininkų r. sav.","V","70-79",692
+"Akmenės r. sav.","M","60-69",1513
+"Joniškio r. sav.","V","40-49",1132
+"Pakruojo r. sav.","M","80+",833
+"Varėnos r. sav.","M","80+",1250
+"Vilniaus r. sav.","V","80+",1027
+"Širvintų r. sav.","M","0-19",1289
+"Akmenės r. sav.","V","20-29",1210
+"Biržų r. sav.","M","80+",1404
+"Kaišiadorių r. sav.","V","60-69",1550
+"Kauno r. sav.","M","80+",2983
+"Panevėžio m. sav.","V","60-69",4270
+"Ukmergės r. sav.","V","80+",650
+"Alytaus m. sav.","M","20-29",2608
+"Kauno r. sav.","V","20-29",5963
+"Kelmės r. sav.","V","30-39",872
+"Pasvalio r. sav.","M","40-49",1166
+"Skuodo r. sav.","M","60-69",1210
+"Vilniaus r. sav.","M","0-19",10062
+"Kauno r. sav.","V","40-49",6617
+"Kelmės r. sav.","M","0-19",2052
+"Kelmės r. sav.","M","50-59",1833
+"Kupiškio r. sav.","M","0-19",1434
+"Kupiškio r. sav.","M","20-29",848
+"Rokiškio r. sav.","V","70-79",930
+"Birštono sav.","V","50-59",270
+"Kauno m. sav.","V","80+",4539
+"Pasvalio r. sav.","V","0-19",2068
+"Plungės r. sav.","M","70-79",1754
+"Tauragės r. sav.","M","40-49",2064
+"Šalčininkų r. sav.","V","60-69",1438
+"Alytaus m. sav.","M","0-19",3976
+"Jurbarko r. sav.","M","50-59",1870
+"Kauno m. sav.","M","70-79",17038
+"Panevėžio r. sav.","M","50-59",2582
+"Šilalės r. sav.","M","0-19",1959
+"Širvintų r. sav.","M","50-59",1134
+"Kaišiadorių r. sav.","M","70-79",1487
+"Pasvalio r. sav.","V","50-59",1790
+"Vilniaus r. sav.","M","50-59",6301
+"Šakių r. sav.","M","30-39",650
+"Šilutės r. sav.","M","40-49",1875
+"Ignalinos r. sav.","V","40-49",799
+"Kalvarijos sav.","V","80+",142
+"Radviliškio r. sav.","V","0-19",3378
+"Ukmergės r. sav.","V","20-29",1942
+"Varėnos r. sav.","V","20-29",1289
+"Vilniaus r. sav.","V","20-29",5724
+"Kalvarijos sav.","M","30-39",353
+"Pagėgių sav.","V","70-79",182
+"Panevėžio m. sav.","M","30-39",3059
+"Pasvalio r. sav.","V","40-49",1159
+"Šalčininkų r. sav.","M","40-49",1657
+"Kelmės r. sav.","V","0-19",2181
+"Kėdainių r. sav.","M","0-19",4023
+"Kėdainių r. sav.","V","30-39",1941
+"Raseinių r. sav.","V","60-69",1710
+"Utenos r. sav.","V","0-19",2900
+"Zarasų r. sav.","V","80+",291
+"Anykščių r. sav.","M","40-49",1074
+"Joniškio r. sav.","V","20-29",1307
+"Kauno m. sav.","V","60-69",12663
+"Plungės r. sav.","M","40-49",1705
+"Tauragės r. sav.","V","0-19",3600
+"Klaipėdos r. sav.","V","30-39",4740
+"Lazdijų r. sav.","V","50-59",1525
+"Molėtų r. sav.","M","60-69",1196
+"Panevėžio m. sav.","M","60-69",6412
+"Raseinių r. sav.","M","50-59",2157
+"Rietavo sav.","V","80+",116
+"Akmenės r. sav.","V","30-39",636
+"Jonavos r. sav.","V","0-19",4158
+"Plungės r. sav.","M","0-19",3053
+"Telšių r. sav.","M","0-19",3553
+"Zarasų r. sav.","V","50-59",1155
+"Šiaulių r. sav.","M","0-19",3796
+"Anykščių r. sav.","V","80+",570
+"Birštono sav.","V","60-69",275
+"Kėdainių r. sav.","V","40-49",2448
+"Marijampolės sav.","M","40-49",2764
+"Varėnos r. sav.","V","70-79",748
+"Kaišiadorių r. sav.","M","30-39",902
+"Kazlų Rūdos sav.","V","50-59",761
+"Šilalės r. sav.","V","60-69",1217
+"Švenčionių r. sav.","V","50-59",1673
+"Akmenės r. sav.","M","30-39",402
+"Elektrėnų sav.","M","70-79",1236
+"Pasvalio r. sav.","M","80+",1110
+"Skuodo r. sav.","V","30-39",432
+"Ukmergės r. sav.","M","80+",1801
+"Šilutės r. sav.","V","80+",555
+"Kauno r. sav.","M","0-19",9385
+"Pagėgių sav.","M","50-59",570
+"Visagino sav.","M","50-59",1644
+"Zarasų r. sav.","V","30-39",619
+"Švenčionių r. sav.","V","70-79",773
+"Biržų r. sav.","V","50-59",1753
+"Kėdainių r. sav.","M","50-59",3246
+"Mažeikių r. sav.","M","20-29",2557
+"Pakruojo r. sav.","M","30-39",390
+"Panevėžio r. sav.","M","40-49",1749
+"Joniškio r. sav.","V","60-69",1305
+"Panevėžio m. sav.","V","50-59",5275
+"Panevėžio r. sav.","M","0-19",3188
+"Skuodo r. sav.","M","70-79",1056
+"Trakų r. sav.","M","40-49",1913
+"Trakų r. sav.","M","80+",1238
+"Druskininkų sav.","V","50-59",1381
+"Kaišiadorių r. sav.","M","50-59",1843
+"Kretingos r. sav.","V","70-79",1094
+"Pakruojo r. sav.","V","50-59",1402
+"Plungės r. sav.","V","20-29",2124
+"Alytaus r. sav.","V","40-49",1385
+"Kauno r. sav.","M","70-79",3940
+"Klaipėdos m. sav.","V","0-19",14902
+"Kupiškio r. sav.","V","50-59",1303
+"Rietavo sav.","M","80+",307
+"Zarasų r. sav.","M","30-39",329
+"Druskininkų sav.","M","20-29",989
+"Kalvarijos sav.","V","30-39",440
+"Neringos sav.","M","30-39",198
+"Raseinių r. sav.","V","80+",557
+"Šilutės r. sav.","V","0-19",3755
+"Alytaus m. sav.","V","70-79",1580
+"Kėdainių r. sav.","V","50-59",3154
+"Trakų r. sav.","M","0-19",2882
+"Vilniaus r. sav.","V","70-79",2402
+"Šilutės r. sav.","V","60-69",2010
+"Akmenės r. sav.","V","50-59",1346
+"Ignalinos r. sav.","V","80+",351
+"Mažeikių r. sav.","M","30-39",1555
+"Pasvalio r. sav.","V","20-29",1525
+"Šilutės r. sav.","V","30-39",1483
+"Kupiškio r. sav.","V","40-49",849
+"Pasvalio r. sav.","M","70-79",1416
+"Ukmergės r. sav.","M","70-79",2235
+"Utenos r. sav.","M","0-19",2743
+"Šiaulių m. sav.","V","20-29",5340
+"Biržų r. sav.","V","80+",480
+"Panevėžio r. sav.","M","70-79",1834
+"Zarasų r. sav.","M","80+",879
+"Šilalės r. sav.","M","30-39",414
+"Šilalės r. sav.","M","70-79",1057
+"Akmenės r. sav.","M","50-59",1412
+"Joniškio r. sav.","M","20-29",1090
+"Rietavo sav.","V","20-29",513
+"Ukmergės r. sav.","M","60-69",2354
+"Vilniaus r. sav.","M","70-79",3851
+"Alytaus m. sav.","M","70-79",3072
+"Kėdainių r. sav.","V","0-19",4217
+"Mažeikių r. sav.","M","70-79",2565
+"Telšių r. sav.","M","30-39",1129
+"Šilalės r. sav.","M","20-29",1181
+"Alytaus r. sav.","V","30-39",1087
+"Biržų r. sav.","M","50-59",1843
+"Rokiškio r. sav.","M","60-69",2184
+"Tauragės r. sav.","V","20-29",2197
+"Šiaulių m. sav.","M","30-39",5025
+"Akmenės r. sav.","M","70-79",1277
+"Biržų r. sav.","V","0-19",2000
+"Kaišiadorių r. sav.","V","40-49",2032
+"Pakruojo r. sav.","M","70-79",1139
+"Šiaulių m. sav.","V","0-19",8764
+"Akmenės r. sav.","M","40-49",948
+"Anykščių r. sav.","V","40-49",1206
+"Kauno m. sav.","V","50-59",14900
+"Marijampolės sav.","V","80+",780
+"Šilalės r. sav.","M","40-49",1054
+"Elektrėnų sav.","V","0-19",2248
+"Jonavos r. sav.","V","50-59",2565
+"Lazdijų r. sav.","V","80+",433
+"Mažeikių r. sav.","V","60-69",2724
+"Pakruojo r. sav.","V","20-29",1241
+"Rietavo sav.","M","30-39",171
+"Alytaus m. sav.","M","80+",1996
+"Druskininkų sav.","V","20-29",1047
+"Kauno m. sav.","M","0-19",26095
+"Pakruojo r. sav.","V","0-19",1693
+"Panevėžio m. sav.","V","80+",1474
+"Alytaus r. sav.","M","60-69",1671
+"Biržų r. sav.","M","20-29",1282
+"Kėdainių r. sav.","V","20-29",2715
+"Tauragės r. sav.","V","30-39",1539
+"Telšių r. sav.","V","0-19",3818
+"Jurbarko r. sav.","M","30-39",642
+"Kalvarijos sav.","V","70-79",233
+"Kauno m. sav.","V","0-19",27419
+"Radviliškio r. sav.","M","30-39",905
+"Visagino sav.","M","40-49",843
+"Jurbarko r. sav.","M","70-79",1618
+"Kupiškio r. sav.","M","70-79",1085
+"Kėdainių r. sav.","M","80+",2146
+"Mažeikių r. sav.","V","50-59",3412
+"Molėtų r. sav.","M","0-19",1267
+"Kauno r. sav.","V","60-69",4687
+"Pagėgių sav.","M","40-49",354
+"Palangos m. sav.","M","60-69",1511
+"Panevėžio r. sav.","V","50-59",2797
+"Tauragės r. sav.","M","80+",1657
+"Alytaus r. sav.","M","40-49",1223
+"Kupiškio r. sav.","V","70-79",559
+"Panevėžio m. sav.","V","20-29",4550
+"Radviliškio r. sav.","M","20-29",1741
+"Ignalinos r. sav.","V","60-69",932
+"Skuodo r. sav.","V","70-79",642
+"Utenos r. sav.","M","60-69",2999
+"Vilniaus m. sav.","V","70-79",11867
+"Vilniaus r. sav.","V","40-49",7624
+"Klaipėdos m. sav.","V","50-59",7985
+"Kretingos r. sav.","M","20-29",1953
+"Ukmergės r. sav.","V","0-19",2922
+"Šiaulių r. sav.","M","80+",1624
+"Šilutės r. sav.","M","30-39",1126
+"Ignalinos r. sav.","M","50-59",1077
+"Jonavos r. sav.","M","40-49",2241
+"Rietavo sav.","V","70-79",190
+"Širvintų r. sav.","M","40-49",760
+"Kupiškio r. sav.","V","20-29",1064
+"Pagėgių sav.","M","20-29",435
+"Rietavo sav.","V","30-39",353
+"Ukmergės r. sav.","V","40-49",1751
+"Alytaus r. sav.","V","80+",553
+"Lazdijų r. sav.","V","20-29",1203
+"Pagėgių sav.","M","80+",314
+"Plungės r. sav.","V","30-39",1323
+"Telšių r. sav.","V","20-29",2488
+"Molėtų r. sav.","V","60-69",1056
+"Palangos m. sav.","M","80+",752
+"Palangos m. sav.","V","50-59",1054
+"Švenčionių r. sav.","V","30-39",1110
+"Anykščių r. sav.","M","50-59",1957
+"Joniškio r. sav.","M","70-79",1367
+"Panevėžio m. sav.","V","30-39",3529
+"Panevėžio r. sav.","M","60-69",2306
+"Visagino sav.","M","0-19",1643
+"Mažeikių r. sav.","M","0-19",4925
+"Telšių r. sav.","M","50-59",2688
+"Telšių r. sav.","V","80+",657
+"Švenčionių r. sav.","V","60-69",1405
+"Elektrėnų sav.","V","30-39",1822
+"Pagėgių sav.","V","50-59",558
+"Telšių r. sav.","V","30-39",1670
+"Šiaulių r. sav.","M","20-29",2068
+"Marijampolės sav.","M","80+",2110
+"Rietavo sav.","M","50-59",560
+"Vilniaus r. sav.","M","60-69",5822
+"Šiaulių m. sav.","M","60-69",6993
+"Molėtų r. sav.","M","70-79",1068
+"Skuodo r. sav.","M","40-49",693
+"Skuodo r. sav.","V","40-49",701
+"Šakių r. sav.","M","60-69",1838
+"Alytaus m. sav.","V","80+",720
+"Kretingos r. sav.","M","50-59",2637
+"Pagėgių sav.","V","80+",97
+"Širvintų r. sav.","M","20-29",736
+"Anykščių r. sav.","M","20-29",1216
+"Kaišiadorių r. sav.","M","80+",1183
+"Pakruojo r. sav.","M","40-49",991
+"Vilniaus r. sav.","M","40-49",6364
+"Marijampolės sav.","V","60-69",2923
+"Radviliškio r. sav.","V","60-69",2037
+"Utenos r. sav.","V","60-69",2146
+"Varėnos r. sav.","V","50-59",1689
+"Marijampolės sav.","M","0-19",4899
+"Palangos m. sav.","V","20-29",767
+"Plungės r. sav.","V","40-49",1744
+"Trakų r. sav.","M","20-29",1647
+"Molėtų r. sav.","V","30-39",820
+"Varėnos r. sav.","M","20-29",1039
+"Šiaulių r. sav.","V","30-39",1949
+"Šilutės r. sav.","M","0-19",3668
+"Lazdijų r. sav.","M","30-39",458
+"Telšių r. sav.","V","50-59",2583
+"Visagino sav.","V","60-69",1728
+"Švenčionių r. sav.","M","70-79",1404
+"Alytaus r. sav.","M","30-39",784
+"Elektrėnų sav.","M","0-19",2063
+"Lazdijų r. sav.","M","80+",1109
+"Molėtų r. sav.","V","50-59",1438
+"Vilniaus r. sav.","V","60-69",4866
+"Kupiškio r. sav.","V","80+",338
+"Pagėgių sav.","M","30-39",160
+"Visagino sav.","V","30-39",654
+"Visagino sav.","V","50-59",1298
+"Elektrėnų sav.","V","80+",320
+"Panevėžio m. sav.","V","40-49",4303
+"Šiaulių m. sav.","M","20-29",4635
+"Šiaulių m. sav.","M","70-79",5476
+"Joniškio r. sav.","V","80+",345
+"Kalvarijos sav.","M","20-29",573
+"Vilniaus r. sav.","V","50-59",6532
+"Švenčionių r. sav.","V","0-19",1927
+"Kazlų Rūdos sav.","V","70-79",388
+"Kazlų Rūdos sav.","V","80+",185
+"Vilkaviškio r. sav.","M","30-39",822
+"Zarasų r. sav.","V","20-29",861
+"Alytaus r. sav.","M","20-29",1177
+"Kretingos r. sav.","V","60-69",1948
+"Tauragės r. sav.","V","80+",570
+"Ukmergės r. sav.","V","70-79",1100
+"Zarasų r. sav.","V","40-49",781
+"Alytaus r. sav.","V","70-79",968
+"Kretingos r. sav.","M","0-19",3642
+"Pagėgių sav.","V","20-29",501
+"Rokiškio r. sav.","V","20-29",1698
+"Kretingos r. sav.","V","40-49",2142
+"Lazdijų r. sav.","V","0-19",1541
+"Vilniaus m. sav.","V","80+",7205
+"Šalčininkų r. sav.","M","30-39",1090
+"Panevėžio r. sav.","V","60-69",2147
+"Raseinių r. sav.","V","70-79",1022
+"Vilkaviškio r. sav.","M","60-69",2524
+"Birštono sav.","M","50-59",311
+"Jonavos r. sav.","V","80+",512
+"Molėtų r. sav.","M","20-29",906
+"Tauragės r. sav.","M","50-59",2583
+"Kauno m. sav.","V","20-29",16268
+"Marijampolės sav.","V","30-39",3248
+"Mažeikių r. sav.","V","40-49",2890
+"Telšių r. sav.","M","20-29",2064
+"Akmenės r. sav.","M","20-29",920
+"Akmenės r. sav.","V","0-19",1739
+"Druskininkų sav.","V","40-49",947
+"Šiaulių r. sav.","M","30-39",1496
+"Elektrėnų sav.","M","30-39",1127
+"Pagėgių sav.","V","30-39",309
+"Plungės r. sav.","V","80+",554
+"Varėnos r. sav.","M","40-49",1006
+"Kazlų Rūdos sav.","M","20-29",566
+"Rokiškio r. sav.","M","0-19",2263
+"Utenos r. sav.","M","50-59",3007
+"Šilalės r. sav.","V","40-49",1075
+"Akmenės r. sav.","M","80+",973
+"Pasvalio r. sav.","V","70-79",755
+"Plungės r. sav.","M","60-69",2081
+"Šilalės r. sav.","V","80+",294
+"Druskininkų sav.","M","80+",1022
+"Palangos m. sav.","V","60-69",996
+"Prienų r. sav.","V","0-19",2346
+"Utenos r. sav.","M","80+",1857
+"Birštono sav.","M","20-29",196
+"Kaišiadorių r. sav.","V","30-39",2636
+"Panevėžio m. sav.","M","20-29",4085
+"Utenos r. sav.","V","80+",656
+"Kelmės r. sav.","V","40-49",1325
+"Palangos m. sav.","V","40-49",905
+"Prienų r. sav.","M","80+",1338
+"Raseinių r. sav.","M","0-19",2709
+"Jonavos r. sav.","V","70-79",1212
+"Neringos sav.","M","50-59",254
+"Raseinių r. sav.","V","0-19",2878
+"Skuodo r. sav.","M","0-19",1420
+"Kauno r. sav.","M","30-39",5944
+"Klaipėdos m. sav.","V","80+",2401
+"Klaipėdos r. sav.","V","40-49",4934
+"Panevėžio r. sav.","V","40-49",1988
+"Biržų r. sav.","V","30-39",783
+"Biržų r. sav.","V","40-49",1228
+"Kalvarijos sav.","V","60-69",565
+"Raseinių r. sav.","V","20-29",1964
+"Kelmės r. sav.","M","40-49",1286
+"Kretingos r. sav.","V","50-59",2595
+"Pakruojo r. sav.","M","50-59",1409
+"Vilniaus m. sav.","V","40-49",36658
+"Kauno m. sav.","M","80+",12949
+"Kretingos r. sav.","V","20-29",2361
+"Palangos m. sav.","M","50-59",1272
+"Vilkaviškio r. sav.","V","40-49",1921
+"Kupiškio r. sav.","M","80+",948
+"Kėdainių r. sav.","V","80+",755
+"Rokiškio r. sav.","M","30-39",495
+"Vilniaus m. sav.","M","30-39",53806
+"Kaišiadorių r. sav.","V","0-19",2575
+"Kupiškio r. sav.","M","40-49",824
+"Šiaulių r. sav.","V","0-19",4030
+"Pakruojo r. sav.","V","60-69",1110
+"Panevėžio m. sav.","V","70-79",2530
+"Skuodo r. sav.","V","0-19",1395
+"Širvintų r. sav.","V","30-39",779
+"Alytaus m. sav.","V","0-19",4211
+"Jonavos r. sav.","V","60-69",2074
+"Kazlų Rūdos sav.","V","20-29",679
+"Molėtų r. sav.","M","30-39",457
+"Akmenės r. sav.","V","70-79",611
+"Klaipėdos r. sav.","V","80+",732
+"Kretingos r. sav.","V","30-39",1796
+"Ukmergės r. sav.","M","50-59",2581
+"Jonavos r. sav.","M","80+",1561
+"Prienų r. sav.","M","30-39",834
+"Rietavo sav.","M","20-29",432
+"Vilkaviškio r. sav.","M","0-19",3080
+"Alytaus m. sav.","V","20-29",2734
+"Klaipėdos r. sav.","V","0-19",6638
+"Molėtų r. sav.","V","20-29",1187
+"Trakų r. sav.","V","0-19",3381
+"Jurbarko r. sav.","V","50-59",1844
+"Klaipėdos m. sav.","M","30-39",9405
+"Šalčininkų r. sav.","M","20-29",1396
+"Joniškio r. sav.","V","70-79",717
+"Panevėžio r. sav.","V","0-19",3370
+"Utenos r. sav.","V","50-59",2915
+"Visagino sav.","M","20-29",636
+"Kalvarijos sav.","V","20-29",712
+"Kauno m. sav.","M","40-49",15429
+"Palangos m. sav.","M","70-79",1059
+"Pasvalio r. sav.","V","30-39",870
+"Joniškio r. sav.","M","60-69",1571
+"Trakų r. sav.","V","50-59",2343
+"Šiaulių r. sav.","V","50-59",3117
+"Birštono sav.","M","70-79",242
+"Klaipėdos m. sav.","V","40-49",8820
+"Raseinių r. sav.","M","70-79",1830
+"Birštono sav.","V","20-29",212
+"Kelmės r. sav.","V","50-59",1975
+"Širvintų r. sav.","V","20-29",951
+"Alytaus r. sav.","V","20-29",1546
+"Kupiškio r. sav.","V","30-39",647
+"Švenčionių r. sav.","M","0-19",1721
+"Kretingos r. sav.","M","40-49",2023
+"Neringos sav.","M","80+",78
+"Šiaulių m. sav.","M","80+",4262
+"Kalvarijos sav.","M","60-69",635
+"Varėnos r. sav.","M","30-39",481
+"Šilutės r. sav.","V","40-49",1901
+"Jurbarko r. sav.","V","20-29",1635
+"Utenos r. sav.","V","30-39",2102
+"Šakių r. sav.","V","30-39",1121
+"Pagėgių sav.","M","70-79",386
+"Radviliškio r. sav.","M","40-49",1797
+"Šiaulių m. sav.","V","60-69",4528
+"Kazlų Rūdos sav.","M","50-59",797
+"Klaipėdos r. sav.","V","70-79",1415
+"Trakų r. sav.","V","30-39",2372
+"Alytaus m. sav.","V","60-69",2709
+"Kauno m. sav.","M","20-29",15767
+"Panevėžio r. sav.","M","80+",1452
+"Biržų r. sav.","V","60-69",1345
+"Kaišiadorių r. sav.","M","20-29",1455
+"Varėnos r. sav.","V","0-19",1689
+"Rokiškio r. sav.","V","60-69",1852
+"Zarasų r. sav.","M","20-29",761
+"Šakių r. sav.","M","50-59",2038
+"Anykščių r. sav.","V","0-19",1790
+"Biržų r. sav.","M","40-49",1216
+"Neringos sav.","V","70-79",75
+"Jonavos r. sav.","M","70-79",2296
+"Pasvalio r. sav.","M","30-39",409
+"Rokiškio r. sav.","V","80+",609
+"Jonavos r. sav.","M","50-59",2775
+"Kauno r. sav.","V","0-19",10027
+"Lazdijų r. sav.","V","70-79",617
+"Birštono sav.","V","70-79",121
+"Panevėžio r. sav.","V","30-39",1669
+"Prienų r. sav.","V","20-29",1578
+"Neringos sav.","V","0-19",315
+"Plungės r. sav.","V","60-69",1671
+"Šiaulių m. sav.","V","70-79",2506
+"Plungės r. sav.","V","50-59",2292
+"Trakų r. sav.","V","70-79",788
+"Trakų r. sav.","V","80+",432
+"Anykščių r. sav.","M","30-39",538
+"Panevėžio m. sav.","M","40-49",4584
+"Druskininkų sav.","M","50-59",1700
+"Šiaulių r. sav.","M","50-59",2934
+"Varėnos r. sav.","V","40-49",1095
+"Širvintų r. sav.","V","40-49",908
+"Rokiškio r. sav.","M","80+",1634
+"Švenčionių r. sav.","M","30-39",663
+"Klaipėdos r. sav.","M","40-49",3664
+"Raseinių r. sav.","V","40-49",1625
+"Pakruojo r. sav.","M","20-29",928
+"Utenos r. sav.","M","20-29",1932
+"Joniškio r. sav.","M","40-49",1157
+"Jurbarko r. sav.","M","20-29",1229
+"Panevėžio m. sav.","M","70-79",5516
+"Prienų r. sav.","M","0-19",2217
+"Pasvalio r. sav.","M","50-59",1766
+"Vilkaviškio r. sav.","V","30-39",1533
+"Pagėgių sav.","V","40-49",410
+"Tauragės r. sav.","V","60-69",2018
+"Šakių r. sav.","V","20-29",1875
+"Šakių r. sav.","V","40-49",1354
+"Birštono sav.","M","60-69",373
+"Radviliškio r. sav.","V","30-39",1560
+"Kretingos r. sav.","M","60-69",2462
+"Neringos sav.","M","70-79",120
+"Elektrėnų sav.","M","50-59",1618
+"Trakų r. sav.","M","30-39",1707
+"Kauno m. sav.","M","50-59",18385
+"Kazlų Rūdos sav.","M","0-19",1053
+"Klaipėdos r. sav.","M","80+",1711
+"Šakių r. sav.","V","80+",533
+"Telšių r. sav.","V","60-69",2196
+"Ukmergės r. sav.","M","20-29",1575
+"Akmenės r. sav.","V","80+",326
+"Kėdainių r. sav.","M","40-49",2433
+"Biržų r. sav.","M","30-39",529
+"Visagino sav.","M","60-69",2205
+"Lazdijų r. sav.","M","20-29",944
+"Neringos sav.","V","20-29",215
+"Alytaus m. sav.","V","50-59",3250
+"Šilutės r. sav.","M","20-29",1999
+"Zarasų r. sav.","M","40-49",698
+"Šilalės r. sav.","V","70-79",597
+"Jurbarko r. sav.","V","80+",377
+"Kauno r. sav.","V","50-59",6127
+"Kretingos r. sav.","M","80+",1572
+"Pakruojo r. sav.","V","40-49",1049
+"Jonavos r. sav.","M","60-69",2912
+"Širvintų r. sav.","V","80+",246
+"Klaipėdos m. sav.","M","70-79",7649
+"Neringos sav.","V","50-59",278
+"Kauno m. sav.","V","70-79",7935
+"Neringos sav.","V","40-49",296
+"Šalčininkų r. sav.","M","60-69",1789
+"Mažeikių r. sav.","M","60-69",3616
+"Mažeikių r. sav.","M","40-49",2823
+"Šilalės r. sav.","V","20-29",1630
+"Pakruojo r. sav.","V","70-79",633
+"Širvintų r. sav.","M","80+",688
+"Telšių r. sav.","V","40-49",2017
+"Kauno r. sav.","M","40-49",5871
