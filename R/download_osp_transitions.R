@@ -28,7 +28,7 @@ osp1 <- osp %>% mutate(day = ymd(ymd_hms(date)))
 osp2 <- osp1 %>% inner_join(adm)
 
 if (nrow(osp1) == nrow(osp2)) {
-  cnames <- c("day", "administrative_level_2", "administrative_level_3", "r0i0", "r0r1", "r0c0", "r0i1", "r0c1", "r1i1", "r1r2", "r1c1", "r1i2", "r1c2", "r2i2", "r2r3", "r2c2", "r2i3", "r2c3", "r3i3", "r3c3", "r1i1_mdsv", "r2i2_mdsv", "r1i1_john", "r2i2_john") # nolint
+  cnames <- c("day", "administrative_level_2", "administrative_level_3", "sex", "age_gr", "r0i0", "r0r1", "r0c0", "r0i1", "r0c1", "r1i1", "r1r2", "r1c1", "r1i2", "r1c2", "r2i2", "r2r3", "r2c2", "r2i3", "r2c3", "r3i3", "r3c3", "r1i1_mdsv", "r2i2_mdsv", "r1i1_john", "r2i2_john") # nolint
   osp3 <- osp2[, cnames]
   write.csv(osp3, "data/osp/lt-covid19-transition.csv", row.names = FALSE)
 }

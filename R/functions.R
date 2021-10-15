@@ -199,3 +199,71 @@ convert_interval <- function(x) {
   x[int] <- paste(left, right - 1, sep = "-")
   x
 }
+
+add_states <- function(tr, init, level = NULL) {
+  if (is.null(level)) {
+    tr0 <- tr
+    init0 <- sum(init[, "at_risk"])
+  } else {
+    if (level %in% init[, "administrative_level_2"]) {
+      tr0 <- tr %>% filter(administrative_level_2 == level)
+      init0 <- sum(init[init$administrative_level_2 == level, "at_risk"])
+    } else {
+      tr0 <- tr %>% filter(administrative_level_3 == level)
+      init0 <- sum(init[init$administrative_level_3 == level, "at_risk"])
+    }
+  }
+  tr1 <- tr0 %>%
+    select(-administrative_level_2, -administrative_level_3) %>%
+    group_by(day) %>%
+    summarise_all(sum) %>%
+    ungroup()
+
+
+  tr2 <- tr1 %>%
+    arrange(day) %>%
+    mutate(
+      i0 = r0i0 + r0i1,
+      i1 = r1i1 + r1i2,
+      i2 = r2i2 + r2i3,
+      i3 = r3i3,
+      r0 = -(r0i0 + r0i1 + r0c0 + r0c1 + r0r1),
+      r1 = r0r1 - (r1i1 + r1i2 + r1c1 + r1c2 + r1r2),
+      r2 = r1r2 - (r2i2 + r2i3 + r2c2 + r2c3 + r2r3),
+      r3 = r2r3 - (r3i3 + r3c3),
+      sr0 = cumsum(r0) + init0,
+      sr1 = cumsum(r1),
+      sr2 = cumsum(r2),
+      sr3 = cumsum(r3),
+      c0 = r0c0,
+      c1 = r0c1 + r1c1,
+      c2 = r1c2 + r2c2,
+      c3 = r2c3 + r3c3
+    )
+
+  tr3 <- tr2 %>%
+    arrange(day) %>%
+    mutate(
+      ai0 = rollsum(i0, 7, fill = NA, align = "right"),
+      ai1 = rollsum(i1, 7, fill = NA, align = "right"),
+      ai2 = rollsum(i2, 7, fill = NA, align = "right"),
+      ai3 = rollsum(i3, 7, fill = NA, align = "right"),
+      bi0 = rollsum(i0, 14, fill = NA, align = "right"),
+      bi1 = rollsum(i1, 14, fill = NA, align = "right"),
+      bi2 = rollsum(i2, 14, fill = NA, align = "right"),
+      bi3 = rollsum(i3, 14, fill = NA, align = "right")
+    ) %>%
+    mutate(
+      pi0 = 100 * ai0 / (ai0 + ai1 + ai2 + ai3),
+      pi1 = 100 * ai1 / (ai0 + ai1 + ai2 + ai3),
+      pi2 = 100 * ai2 / (ai0 + ai1 + ai2 + ai3),
+      pi3 = 100 * ai3 / (ai0 + ai1 + ai2 + ai3)
+    ) %>%
+    mutate(
+      ni0 = bi0 / lag(sr0, 14) * 1e5,
+      ni1 = bi1 / lag(sr1, 14) * 1e5,
+      ni2 = bi2 / lag(sr2, 14) * 1e5,
+      ni3 = bi3 / lag(sr3, 14) * 1e5
+    )
+  tr3
+}
