@@ -214,7 +214,7 @@ add_states <- function(tr, init, level = NULL) {
     }
   }
   tr1 <- tr0 %>%
-    select(-administrative_level_2, -administrative_level_3) %>%
+    select(-administrative_level_2, -administrative_level_3, -age_gr, -sex) %>%
     group_by(day) %>%
     summarise_all(sum) %>%
     ungroup()
