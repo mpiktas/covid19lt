@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>COVID-19 statistika ir modeliai: COVID-19 vakcinacijos efektas amžiaus grupėse</title>
+
+
+
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="COVID-19 statistika ir modeliai: COVID-19 vakcinacijos efektas amžiaus grupėse"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="COVID-19 statistika ir modeliai"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="COVID-19 statistika ir modeliai: COVID-19 vakcinacijos efektas amžiaus grupėse"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["COVID-19 vakcinacijos efektas amžiaus grupėse"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  <meta name="distill:offset" content=""/>
+
+  <script type="application/javascript">
+
+    window.headroom_prevent_pin = false;
+
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        tolerance: 5,
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+
+  /* Theme (user-documented overrideables for nav appearance) */
+
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0F2E3D;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: white;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  .distill-site-header {
+
+  }
+
+  .distill-site-footer {
+
+  }
+
+
+  /* Site Header */
+
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+
+
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+
+  .distill-site-header .title {
+    font-size: 18px;
+    min-width: 150px;
+  }
+
+  .distill-site-header .logo {
+    padding: 0;
+  }
+
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+
+
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-dropdown-active {
+    display: block;
+  }
+
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* Site Footer */
+
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Headroom */
+
+  d-title {
+    padding-top: 6rem;
+  }
+
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+
+  .headroom--unpinned {
+    top: -100px;
+  }
+
+  .headroom--pinned {
+    top: 0;
+  }
+
+  </style>
+
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+  <script type="application/javascript">
+
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+
+  function createFuseIndex() {
+
+    // create fuse index
+    var options = {
+      keys: [
+        { name: 'title', weight: 20 },
+        { name: 'categories', weight: 15 },
+        { name: 'description', weight: 10 },
+        { name: 'contents', weight: 5 },
+      ],
+      ignoreLocation: true,
+      threshold: 0
+    };
+    var fuse = new window.Fuse([], options);
+
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+
+    createFuseIndex()
+      .then(function(fuse) {
+
+        // make search box visible
+        searchEl.classList.remove('hidden');
+
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+              .filter(function(item) { return !!item.description; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description}
+                  </div>
+                  <div class="search-item-preview">
+                    <img src="${suggestion.preview ? offsetURL(suggestion.preview) : ''}"</img>
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+        // remove inline display style on autocompleter (we want to
+        // manage responsive display via css)
+        $('.algolia-autocomplete').css("display", "");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+  });
+
+  </script>
+
+  <style type="text/css">
+
+  /* Algolioa Autocomplete */
+
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #0F2E3D solid;
+    width: 180px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      display: none;
+      visibility: hidden;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      display: inline-block;
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  </style>
+
+
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+  <script src="site_libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+  <script src="site_libs/dygraphs-1.1.1/shapes.js"></script>
+  <script src="site_libs/moment-2.8.4/moment.js"></script>
+  <script src="site_libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+  <script src="site_libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+  <script src="site_libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCGZFSTG6M"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VCGZFSTG6M');
+  </script>
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"COVID-19 vakcinacijos efektas amžiaus grupėse","authors":[]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="index.html" class="title">COVID-19 statistika ir modeliai</a>
+</div>
+<div class="nav-right">
+<a href="index.html">Pradžia</a>
+<a href="about.html">Apie</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>COVID-19 vakcinacijos efektas amžiaus grupėse</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+
+</div>
+
+
+<div class="d-article">
+<p>Atnaujinta: 2021-10-16 18:15:47 EEST.</p>
+<h2 id="metodologija">Metodologija</h2>
+<p>Naudojami Lietuvos statistikos departamento <a href="https://open-data-ls-osp-sdg.hub.arcgis.com/datasets/1fd352a1c4534afe8ff87c564c0724c0_0/explore">duomenys</a>. Lyginami neturintys vakcinacijos apsaugos su turinčiais vakcinacijos apsaugą po 2 dozių. Atvejų skaičiai yra normalizuojami periodo pradžioje atitinkamų grupių populiacijų skaičiais. Jie kinta kiekvieną dieną.</p>
+<p>Visi grafikai prasideda nuo datos kai grupėje su vakcinacijos apsauga po 2 dozių yra virš 10 000 žmonių.</p>
+<p>Skaičiavimo algoritmą galite rasti kartu su visu puslapio <a href="https://github.com/mpiktas/covid19lt">kodu</a>. Visos klaidos yra mano. Grafikus galima naudoti nurodant šaltinį.</p>
+<h2 id="vakcinacijos-efektas-naujiems-atvejams-amžiaus-grupėse">Vakcinacijos efektas naujiems atvejams amžiaus grupėse</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-96e39e84a6d97c4904b0" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-96e39e84a6d97c4904b0">{"x":{"attrs":{"title":"100k 14 dienų rodiklis amžiaus grupėje 0-19","labels":["day","neapsaugoti","apsaugoti2"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"stackedGraph":false,"fillGraph":false,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colors":["#E41A1C","#4DAF4A"],"colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"dateWindow":["2021-06-01T00:00:00.000Z","2021-10-15T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"daily","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2021-06-14T00:00:00.000Z","2021-06-15T00:00:00.000Z","2021-06-16T00:00:00.000Z","2021-06-17T00:00:00.000Z","2021-06-18T00:00:00.000Z","2021-06-19T00:00:00.000Z","2021-06-20T00:00:00.000Z","2021-06-21T00:00:00.000Z","2021-06-22T00:00:00.000Z","2021-06-23T00:00:00.000Z","2021-06-24T00:00:00.000Z","2021-06-25T00:00:00.000Z","2021-06-26T00:00:00.000Z","2021-06-27T00:00:00.000Z","2021-06-28T00:00:00.000Z","2021-06-29T00:00:00.000Z","2021-06-30T00:00:00.000Z","2021-07-01T00:00:00.000Z","2021-07-02T00:00:00.000Z","2021-07-03T00:00:00.000Z","2021-07-04T00:00:00.000Z","2021-07-05T00:00:00.000Z","2021-07-06T00:00:00.000Z","2021-07-07T00:00:00.000Z","2021-07-08T00:00:00.000Z","2021-07-09T00:00:00.000Z","2021-07-10T00:00:00.000Z","2021-07-11T00:00:00.000Z","2021-07-12T00:00:00.000Z","2021-07-13T00:00:00.000Z","2021-07-14T00:00:00.000Z","2021-07-15T00:00:00.000Z","2021-07-16T00:00:00.000Z","2021-07-17T00:00:00.000Z","2021-07-18T00:00:00.000Z","2021-07-19T00:00:00.000Z","2021-07-20T00:00:00.000Z","2021-07-21T00:00:00.000Z","2021-07-22T00:00:00.000Z","2021-07-23T00:00:00.000Z","2021-07-24T00:00:00.000Z","2021-07-25T00:00:00.000Z","2021-07-26T00:00:00.000Z","2021-07-27T00:00:00.000Z","2021-07-28T00:00:00.000Z","2021-07-29T00:00:00.000Z","2021-07-30T00:00:00.000Z","2021-07-31T00:00:00.000Z","2021-08-01T00:00:00.000Z","2021-08-02T00:00:00.000Z","2021-08-03T00:00:00.000Z","2021-08-04T00:00:00.000Z","2021-08-05T00:00:00.000Z","2021-08-06T00:00:00.000Z","2021-08-07T00:00:00.000Z","2021-08-08T00:00:00.000Z","2021-08-09T00:00:00.000Z","2021-08-10T00:00:00.000Z","2021-08-11T00:00:00.000Z","2021-08-12T00:00:00.000Z","2021-08-13T00:00:00.000Z","2021-08-14T00:00:00.000Z","2021-08-15T00:00:00.000Z","2021-08-16T00:00:00.000Z","2021-08-17T00:00:00.000Z","2021-08-18T00:00:00.000Z","2021-08-19T00:00:00.000Z","2021-08-20T00:00:00.000Z","2021-08-21T00:00:00.000Z","2021-08-22T00:00:00.000Z","2021-08-23T00:00:00.000Z","2021-08-24T00:00:00.000Z","2021-08-25T00:00:00.000Z","2021-08-26T00:00:00.000Z","2021-08-27T00:00:00.000Z","2021-08-28T00:00:00.000Z","2021-08-29T00:00:00.000Z","2021-08-30T00:00:00.000Z","2021-08-31T00:00:00.000Z","2021-09-01T00:00:00.000Z","2021-09-02T00:00:00.000Z","2021-09-03T00:00:00.000Z","2021-09-04T00:00:00.000Z","2021-09-05T00:00:00.000Z","2021-09-06T00:00:00.000Z","2021-09-07T00:00:00.000Z","2021-09-08T00:00:00.000Z","2021-09-09T00:00:00.000Z","2021-09-10T00:00:00.000Z","2021-09-11T00:00:00.000Z","2021-09-12T00:00:00.000Z","2021-09-13T00:00:00.000Z","2021-09-14T00:00:00.000Z","2021-09-15T00:00:00.000Z","2021-09-16T00:00:00.000Z","2021-09-17T00:00:00.000Z","2021-09-18T00:00:00.000Z","2021-09-19T00:00:00.000Z","2021-09-20T00:00:00.000Z","2021-09-21T00:00:00.000Z","2021-09-22T00:00:00.000Z","2021-09-23T00:00:00.000Z","2021-09-24T00:00:00.000Z","2021-09-25T00:00:00.000Z","2021-09-26T00:00:00.000Z","2021-09-27T00:00:00.000Z","2021-09-28T00:00:00.000Z","2021-09-29T00:00:00.000Z","2021-09-30T00:00:00.000Z","2021-10-01T00:00:00.000Z","2021-10-02T00:00:00.000Z","2021-10-03T00:00:00.000Z","2021-10-04T00:00:00.000Z","2021-10-05T00:00:00.000Z","2021-10-06T00:00:00.000Z","2021-10-07T00:00:00.000Z","2021-10-08T00:00:00.000Z","2021-10-09T00:00:00.000Z","2021-10-10T00:00:00.000Z","2021-10-11T00:00:00.000Z","2021-10-12T00:00:00.000Z","2021-10-13T00:00:00.000Z","2021-10-14T00:00:00.000Z","2021-10-15T00:00:00.000Z"],[116.613495746326,106.372048326756,97.1404041605114,85.2813983730003,73.4082608493981,69.5860537446373,67.9798682763977,63.3483432592521,56.909912818857,50.2668787700159,40.5923658078991,31.3194584764599,27.4901308408948,26.2829623729067,23.6630383341221,19.257003975051,15.6495476874237,13.4590874330869,11.0471015678701,10.2480226440308,9.2320759245924,7.80194555884515,6.78756764428209,6.17942580775394,8.04254713654389,9.29218341531104,9.710282362615,10.5377343871068,13.2374445940551,16.6030562075714,20.1899520644746,22.1335488222238,25.1184228979543,28.2642603661792,31.4062460742192,34.8101796708551,42.6282522416581,47.5218211371173,51.7635374275626,56.8847388779801,59.4359903890739,60.0856378459404,62.8832608135997,70.9721708823995,80.1665094359577,87.0576423265361,92.8770905297175,95.4761288460967,99.3008625171071,110.213312663913,120.468616544357,130.19337545472,140.78027627863,151.400777048495,162.091146410961,170.629173749555,186.117591313943,200.679188991069,215.649569449644,229.393168324466,241.88049216676,254.613393050577,262.195749939922,270.793784412929,272.216500276302,285.990554558944,293.033021239499,295.759483545136,295.028637677147,299.847480177832,298.456996833365,297.565393796305,291.913919134838,291.897816115292,291.135779515503,288.6795591235,286.766911038775,285.247590962409,292.55447755617,295.753587197685,302.337634722979,316.814513439605,324.004121261213,323.868075511344,331.670884210009,349.151532661009,366.487913983131,387.079912400076,413.46308090998,439.282678290438,450.246719824876,474.509563872887,522.959299629997,577.446968574392,615.766644334741,658.976316748867,685.841469430836,715.390653330457,746.150182568662,776.105633396759,818.648536145414,859.84941617454,902.856292077849,938.603108962717,976.884590658803,1010.80149623839,1060.21953331617,1097.25954796377,1159.10148483438,1216.45155284919,1274.80925032725,1292.17685549848,1352.3572321456,1463.091378127,1532.34179945856,1629.75066857303,1720.32159636705,1775.27763283608,1782.43174616799,1833.44916280369,1891.22240172321,2011.74095088273,2099.39945063792,2169.62429632342],[0,0,0,0,0,0,0,0,0,0,0,10.4865771812081,10.4613453290093,10.4591569919464,9.96710854181202,9.76944118796405,9.57946163425616,9.23105326317733,18.2066454255803,27.2133526850508,27.2108843537415,27.0855904658722,26.8408338552384,26.5957446808511,35.1185250219491,34.8583877995643,34.7433336228611,34.6650489643817,34.4204457447724,42.574931880109,50.4965494024575,49.8711661541019,40.6768630003254,32.1543408360129,31.9208363259117,31.4514860827174,28.9456545336131,26.3730467462254,37.8429517502365,50.4823872560018,59.5786166928451,68.7176234274236,70.7320769969181,81.2425328554361,91.6968502131952,106.942340254879,112.45188356905,115.55251219721,128.364212057678,133.645172068159,140.816737075035,142.396762347298,152.818252896439,146.687589547656,149.62932734816,153.040402666304,162.224797219003,161.49349181228,161.45882799886,146.769509415108,153.346009936821,152.578577967653,154.935139897317,171.006840273611,162.678576710343,162.771770724334,142.673705236125,141.127325072681,132.502607764089,126.857046204155,113.494809688581,112.646646701651,103.053642132668,109.646190463456,100.747653640172,100.656918838737,92.7078642756867,73.0441134270733,74.5980707395498,68.6865603296955,65.3841317741733,64.5962732919255,67.0274564321533,67.0257925179356,73.5510444248308,72.6744186046512,78.7758707120861,91.4655596988672,106.059208706078,126.66098611335,133.545163592825,142.21539989616,164.105293504535,193.528746629556,203.691915977085,208.88601090385,214.807090719499,218.959836509989,221.756806701983,227.176775698116,231.545072799341,224.783312696447,218.932056848121,216.570413149711,214.715409532624,208.866001656523,200.113338528016,194.018632780409,203.404895391768,214.175757981394,238.747161747028,257.082283024222,267.515714496726,273.626604925279,275.868667378929,294.744763577073,308.990065969379,323.969084093118,339.380476366778,366.92498591678,375.112985839108,397.652805909687,408.601202286991,414.480739688705]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-633366309ff780b966b9" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-633366309ff780b966b9">{"x":{"attrs":{"title":"100k 14 dienų rodiklis amžiaus grupėje 20-29","labels":["day","neapsaugoti","apsaugoti2"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"stackedGraph":false,"fillGraph":false,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colors":["#E41A1C","#4DAF4A"],"colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"dateWindow":["2021-06-01T00:00:00.000Z","2021-10-15T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"daily","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2021-05-15T00:00:00.000Z","2021-05-16T00:00:00.000Z","2021-05-17T00:00:00.000Z","2021-05-18T00:00:00.000Z","2021-05-19T00:00:00.000Z","2021-05-20T00:00:00.000Z","2021-05-21T00:00:00.000Z","2021-05-22T00:00:00.000Z","2021-05-23T00:00:00.000Z","2021-05-24T00:00:00.000Z","2021-05-25T00:00:00.000Z","2021-05-26T00:00:00.000Z","2021-05-27T00:00:00.000Z","2021-05-28T00:00:00.000Z","2021-05-29T00:00:00.000Z","2021-05-30T00:00:00.000Z","2021-05-31T00:00:00.000Z","2021-06-01T00:00:00.000Z","2021-06-02T00:00:00.000Z","2021-06-03T00:00:00.000Z","2021-06-04T00:00:00.000Z","2021-06-05T00:00:00.000Z","2021-06-06T00:00:00.000Z","2021-06-07T00:00:00.000Z","2021-06-08T00:00:00.000Z","2021-06-09T00:00:00.000Z","2021-06-10T00:00:00.000Z","2021-06-11T00:00:00.000Z","2021-06-12T00:00:00.000Z","2021-06-13T00:00:00.000Z","2021-06-14T00:00:00.000Z","2021-06-15T00:00:00.000Z","2021-06-16T00:00:00.000Z","2021-06-17T00:00:00.000Z","2021-06-18T00:00:00.000Z","2021-06-19T00:00:00.000Z","2021-06-20T00:00:00.000Z","2021-06-21T00:00:00.000Z","2021-06-22T00:00:00.000Z","2021-06-23T00:00:00.000Z","2021-06-24T00:00:00.000Z","2021-06-25T00:00:00.000Z","2021-06-26T00:00:00.000Z","2021-06-27T00:00:00.000Z","2021-06-28T00:00:00.000Z","2021-06-29T00:00:00.000Z","2021-06-30T00:00:00.000Z","2021-07-01T00:00:00.000Z","2021-07-02T00:00:00.000Z","2021-07-03T00:00:00.000Z","2021-07-04T00:00:00.000Z","2021-07-05T00:00:00.000Z","2021-07-06T00:00:00.000Z","2021-07-07T00:00:00.000Z","2021-07-08T00:00:00.000Z","2021-07-09T00:00:00.000Z","2021-07-10T00:00:00.000Z","2021-07-11T00:00:00.000Z","2021-07-12T00:00:00.000Z","2021-07-13T00:00:00.000Z","2021-07-14T00:00:00.000Z","2021-07-15T00:00:00.000Z","2021-07-16T00:00:00.000Z","2021-07-17T00:00:00.000Z","2021-07-18T00:00:00.000Z","2021-07-19T00:00:00.000Z","2021-07-20T00:00:00.000Z","2021-07-21T00:00:00.000Z","2021-07-22T00:00:00.000Z","2021-07-23T00:00:00.000Z","2021-07-24T00:00:00.000Z","2021-07-25T00:00:00.000Z","2021-07-26T00:00:00.000Z","2021-07-27T00:00:00.000Z","2021-07-28T00:00:00.000Z","2021-07-29T00:00:00.000Z","2021-07-30T00:00:00.000Z","2021-07-31T00:00:00.000Z","2021-08-01T00:00:00.000Z","2021-08-02T00:00:00.000Z","2021-08-03T00:00:00.000Z","2021-08-04T00:00:00.000Z","2021-08-05T00:00:00.000Z","2021-08-06T00:00:00.000Z","2021-08-07T00:00:00.000Z","2021-08-08T00:00:00.000Z","2021-08-09T00:00:00.000Z","2021-08-10T00:00:00.000Z","2021-08-11T00:00:00.000Z","2021-08-12T00:00:00.000Z","2021-08-13T00:00:00.000Z","2021-08-14T00:00:00.000Z","2021-08-15T00:00:00.000Z","2021-08-16T00:00:00.000Z","2021-08-17T00:00:00.000Z","2021-08-18T00:00:00.000Z","2021-08-19T00:00:00.000Z","2021-08-20T00:00:00.000Z","2021-08-21T00:00:00.000Z","2021-08-22T00:00:00.000Z","2021-08-23T00:00:00.000Z","2021-08-24T00:00:00.000Z","2021-08-25T00:00:00.000Z","2021-08-26T00:00:00.000Z","2021-08-27T00:00:00.000Z","2021-08-28T00:00:00.000Z","2021-08-29T00:00:00.000Z","2021-08-30T00:00:00.000Z","2021-08-31T00:00:00.000Z","2021-09-01T00:00:00.000Z","2021-09-02T00:00:00.000Z","2021-09-03T00:00:00.000Z","2021-09-04T00:00:00.000Z","2021-09-05T00:00:00.000Z","2021-09-06T00:00:00.000Z","2021-09-07T00:00:00.000Z","2021-09-08T00:00:00.000Z","2021-09-09T00:00:00.000Z","2021-09-10T00:00:00.000Z","2021-09-11T00:00:00.000Z","2021-09-12T00:00:00.000Z","2021-09-13T00:00:00.000Z","2021-09-14T00:00:00.000Z","2021-09-15T00:00:00.000Z","2021-09-16T00:00:00.000Z","2021-09-17T00:00:00.000Z","2021-09-18T00:00:00.000Z","2021-09-19T00:00:00.000Z","2021-09-20T00:00:00.000Z","2021-09-21T00:00:00.000Z","2021-09-22T00:00:00.000Z","2021-09-23T00:00:00.000Z","2021-09-24T00:00:00.000Z","2021-09-25T00:00:00.000Z","2021-09-26T00:00:00.000Z","2021-09-27T00:00:00.000Z","2021-09-28T00:00:00.000Z","2021-09-29T00:00:00.000Z","2021-09-30T00:00:00.000Z","2021-10-01T00:00:00.000Z","2021-10-02T00:00:00.000Z","2021-10-03T00:00:00.000Z","2021-10-04T00:00:00.000Z","2021-10-05T00:00:00.000Z","2021-10-06T00:00:00.000Z","2021-10-07T00:00:00.000Z","2021-10-08T00:00:00.000Z","2021-10-09T00:00:00.000Z","2021-10-10T00:00:00.000Z","2021-10-11T00:00:00.000Z","2021-10-12T00:00:00.000Z","2021-10-13T00:00:00.000Z","2021-10-14T00:00:00.000Z","2021-10-15T00:00:00.000Z"],[761.435656427579,743.33895955151,715.87336928424,705.244259948035,685.223210890562,670.287008542423,649.35816559212,624.359693039259,592.283677187987,561.791218377435,532.27941749085,506.464758656832,483.900766929648,450.816759961787,433.372022548022,420.416136688738,420.706564136855,399.003091375303,370.610766543263,343.379774810497,320.809201667721,313.074978179002,304.503687832214,284.361371752606,264.075297032396,245.853592709576,221.607118598017,204.359964258383,197.492995638875,188.142319593373,174.75519208006,160.351996403966,147.570313554268,135.279490053236,117.585921397995,108.562778854089,103.961140652787,95.2912810693898,88.6738140434368,83.476200306977,74.1521113005105,63.7824835076721,56.1962024159798,50.7505132202801,44.1659535705413,43.3410279361191,42.0212714574136,40.8822590938098,37.6007623168251,37.5169090294217,36.4263598281533,36.8070929433225,35.8012315623657,34.6665026531057,41.8589917639605,51.666236114699,51.9720505861292,53.983770040749,65.2954619653934,73.5051982876229,86.3808210911199,94.7793845897066,114.475450709628,124.826712916564,137.465708608715,148.468242280858,173.910935786265,206.081532906175,237.021691445284,266.175516747641,291.593410969058,302.85938496248,325.698805565817,364.403528960491,413.174286123193,459.745669946394,494.032017800238,507.172873496595,520.583860639827,559.256517805741,588.201737984015,602.210015166771,627.991772026171,645.95905276513,655.189553115539,670.287164452825,690.936876732199,699.887471623986,688.97509240756,685.05297173746,692.526267098394,700.490608261552,700.70999091795,706.097081687439,703.077304959781,729.946740922977,719.252469228562,729.594163246694,730.341750048505,730.712114693351,729.343450636072,728.466956540243,736.645605973578,741.005202337409,732.136675333476,729.495413861152,731.169427053269,722.950893056986,725.686123796175,720.818300394352,758.21989937205,766.106554113244,763.640447275119,763.751134383257,765.476831676704,774.064292869502,792.692133474256,819.860547084515,850.824911462382,870.968301611812,871.151257219785,896.035242290749,926.479111864104,948.885263730288,939.075089216732,950.960283423457,966.350786270896,978.702680427819,998.63434619324,1030.48354195198,1046.0900083377,1065.05158383477,1085.30216364089,1098.76949791922,1113.86385886396,1110.02351231622,1114.68862080209,1095.89323015816,1142.97589359933,1182.08016767095,1191.13951996972,1185.84145289253,1196.81697612732,1229.82814488445,1236.22971474107,1266.63338181345,1271.13076990453,1283.43067937289,1284.57303605376,1319.91621690512,1341.71954598266,1396.54125531293,1413.90357381392,1429.0924009664],[159.37231825426,159.37231825426,183.48623853211,158.131614158861,167.966406718656,166.172106824926,138.728323699422,150.167494513111,150.167494513111,137.441301110984,136.394635144351,135.99274705349,143.408714837286,101.657009250788,95.1837045497811,94.6700747893591,74.7174745493602,71.3775874375446,58.4502338009352,54.9709439296372,44.8564593301435,44.5070840442104,44.4938820912125,43.7732545414752,42.1614784625114,40.0240144086452,42.6569165143205,46.133440978029,51.2440926948699,56.785917092561,45.10599909788,42.927666881305,40.7767980019369,38.6791084465503,36.9463815637556,31.2989045383412,31.2947067238913,30.6091215182124,25.6882305090551,21.0561778825908,12.3289360128221,7.98403193612774,3.95491398062092,0,0,0,3.56239535463646,3.42618288964265,3.28083989501312,3.24065072266511,3.23792254889263,6.28278830144818,6.10742968821571,5.88200694076819,5.70466927179897,8.30128116439304,10.9875017167971,10.8882053515529,15.819030293443,20.4232723188073,24.3255734753947,35.0025668549027,44.5097253749944,48.2837327714863,50.297410776767,55.3804208911988,56.411453470277,70.6239627105477,82.42081714353,87.5075437537719,99.5541704540536,102.925017733702,101.199942171462,105.546794481765,120.933320686712,126.396102403824,128.588848242989,134.869899889253,139.182658059991,153.033732083199,167.787028032189,178.451461202553,184.953658259369,196.677876286559,192.865988590454,200.962182571098,215.299265979712,219.174278262077,216.678321333951,212.996707344478,225.41697302736,228.793188334443,233.354225929319,228.269070973534,231.384895497478,223.090318633219,228.869292280099,221.962182844831,225.436260912321,227.230569467631,226.709499770537,231.534233339106,229.781074724082,238.940040422187,229.110391983811,228.761936851065,233.279431646476,233.622455650961,231.393212465768,236.255777057322,234.910836762689,244.525858396524,251.189959213563,249.489100817439,243.549737422939,250.428585834818,262.515313393281,259.950320605395,268.07022132139,275.158195550112,273.51180999502,280.044226004568,289.873589561357,297.485184922157,302.053653447927,300.596568574556,298.061445328445,313.448238682747,324.759479774955,337.911901000129,332.176090819793,336.13071255259,336.725091165745,348.959366436721,365.094873245231,356.410293711177,359.241617093251,366.59526445176,383.374264663887,399.047389535461,427.81657718406,427.159706726171,433.990532394545,449.832799317206,458.632592840042,471.368352564147,499.521148691944,507.474402495369,506.240185139268,532.184490623416,544.620676476209,554.800108784335,573.015442969385,580.716959498196]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-2fc65c4e9943b77d7c68" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2fc65c4e9943b77d7c68">{"x":{"attrs":{"title":"100k 14 dienų rodiklis amžiaus grupėje 30-39","labels":["day","neapsaugoti","apsaugoti2"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"stackedGraph":false,"fillGraph":false,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colors":["#E41A1C","#4DAF4A"],"colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"dateWindow":["2021-06-01T00:00:00.000Z","2021-10-15T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"daily","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2021-03-19T00:00:00.000Z","2021-03-20T00:00:00.000Z","2021-03-21T00:00:00.000Z","2021-03-22T00:00:00.000Z","2021-03-23T00:00:00.000Z","2021-03-24T00:00:00.000Z","2021-03-25T00:00:00.000Z","2021-03-26T00:00:00.000Z","2021-03-27T00:00:00.000Z","2021-03-28T00:00:00.000Z","2021-03-29T00:00:00.000Z","2021-03-30T00:00:00.000Z","2021-03-31T00:00:00.000Z","2021-04-01T00:00:00.000Z","2021-04-02T00:00:00.000Z","2021-04-03T00:00:00.000Z","2021-04-04T00:00:00.000Z","2021-04-05T00:00:00.000Z","2021-04-06T00:00:00.000Z","2021-04-07T00:00:00.000Z","2021-04-08T00:00:00.000Z","2021-04-09T00:00:00.000Z","2021-04-10T00:00:00.000Z","2021-04-11T00:00:00.000Z","2021-04-12T00:00:00.000Z","2021-04-13T00:00:00.000Z","2021-04-14T00:00:00.000Z","2021-04-15T00:00:00.000Z","2021-04-16T00:00:00.000Z","2021-04-17T00:00:00.000Z","2021-04-18T00:00:00.000Z","2021-04-19T00:00:00.000Z","2021-04-20T00:00:00.000Z","2021-04-21T00:00:00.000Z","2021-04-22T00:00:00.000Z","2021-04-23T00:00:00.000Z","2021-04-24T00:00:00.000Z","2021-04-25T00:00:00.000Z","2021-04-26T00:00:00.000Z","2021-04-27T00:00:00.000Z","2021-04-28T00:00:00.000Z","2021-04-29T00:00:00.000Z","2021-04-30T00:00:00.000Z","2021-05-01T00:00:00.000Z","2021-05-02T00:00:00.000Z","2021-05-03T00:00:00.000Z","2021-05-04T00:00:00.000Z","2021-05-05T00:00:00.000Z","2021-05-06T00:00:00.000Z","2021-05-07T00:00:00.000Z","2021-05-08T00:00:00.000Z","2021-05-09T00:00:00.000Z","2021-05-10T00:00:00.000Z","2021-05-11T00:00:00.000Z","2021-05-12T00:00:00.000Z","2021-05-13T00:00:00.000Z","2021-05-14T00:00:00.000Z","2021-05-15T00:00:00.000Z","2021-05-16T00:00:00.000Z","2021-05-17T00:00:00.000Z","2021-05-18T00:00:00.000Z","2021-05-19T00:00:00.000Z","2021-05-20T00:00:00.000Z","2021-05-21T00:00:00.000Z","2021-05-22T00:00:00.000Z","2021-05-23T00:00:00.000Z","2021-05-24T00:00:00.000Z","2021-05-25T00:00:00.000Z","2021-05-26T00:00:00.000Z","2021-05-27T00:00:00.000Z","2021-05-28T00:00:00.000Z","2021-05-29T00:00:00.000Z","2021-05-30T00:00:00.000Z","2021-05-31T00:00:00.000Z","2021-06-01T00:00:00.000Z","2021-06-02T00:00:00.000Z","2021-06-03T00:00:00.000Z","2021-06-04T00:00:00.000Z","2021-06-05T00:00:00.000Z","2021-06-06T00:00:00.000Z","2021-06-07T00:00:00.000Z","2021-06-08T00:00:00.000Z","2021-06-09T00:00:00.000Z","2021-06-10T00:00:00.000Z","2021-06-11T00:00:00.000Z","2021-06-12T00:00:00.000Z","2021-06-13T00:00:00.000Z","2021-06-14T00:00:00.000Z","2021-06-15T00:00:00.000Z","2021-06-16T00:00:00.000Z","2021-06-17T00:00:00.000Z","2021-06-18T00:00:00.000Z","2021-06-19T00:00:00.000Z","2021-06-20T00:00:00.000Z","2021-06-21T00:00:00.000Z","2021-06-22T00:00:00.000Z","2021-06-23T00:00:00.000Z","2021-06-24T00:00:00.000Z","2021-06-25T00:00:00.000Z","2021-06-26T00:00:00.000Z","2021-06-27T00:00:00.000Z","2021-06-28T00:00:00.000Z","2021-06-29T00:00:00.000Z","2021-06-30T00:00:00.000Z","2021-07-01T00:00:00.000Z","2021-07-02T00:00:00.000Z","2021-07-03T00:00:00.000Z","2021-07-04T00:00:00.000Z","2021-07-05T00:00:00.000Z","2021-07-06T00:00:00.000Z","2021-07-07T00:00:00.000Z","2021-07-08T00:00:00.000Z","2021-07-09T00:00:00.000Z","2021-07-10T00:00:00.000Z","2021-07-11T00:00:00.000Z","2021-07-12T00:00:00.000Z","2021-07-13T00:00:00.000Z","2021-07-14T00:00:00.000Z","2021-07-15T00:00:00.000Z","2021-07-16T00:00:00.000Z","2021-07-17T00:00:00.000Z","2021-07-18T00:00:00.000Z","2021-07-19T00:00:00.000Z","2021-07-20T00:00:00.000Z","2021-07-21T00:00:00.000Z","2021-07-22T00:00:00.000Z","2021-07-23T00:00:00.000Z","2021-07-24T00:00:00.000Z","2021-07-25T00:00:00.000Z","2021-07-26T00:00:00.000Z","2021-07-27T00:00:00.000Z","2021-07-28T00:00:00.000Z","2021-07-29T00:00:00.000Z","2021-07-30T00:00:00.000Z","2021-07-31T00:00:00.000Z","2021-08-01T00:00:00.000Z","2021-08-02T00:00:00.000Z","2021-08-03T00:00:00.000Z","2021-08-04T00:00:00.000Z","2021-08-05T00:00:00.000Z","2021-08-06T00:00:00.000Z","2021-08-07T00:00:00.000Z","2021-08-08T00:00:00.000Z","2021-08-09T00:00:00.000Z","2021-08-10T00:00:00.000Z","2021-08-11T00:00:00.000Z","2021-08-12T00:00:00.000Z","2021-08-13T00:00:00.000Z","2021-08-14T00:00:00.000Z","2021-08-15T00:00:00.000Z","2021-08-16T00:00:00.000Z","2021-08-17T00:00:00.000Z","2021-08-18T00:00:00.000Z","2021-08-19T00:00:00.000Z","2021-08-20T00:00:00.000Z","2021-08-21T00:00:00.000Z","2021-08-22T00:00:00.000Z","2021-08-23T00:00:00.000Z","2021-08-24T00:00:00.000Z","2021-08-25T00:00:00.000Z","2021-08-26T00:00:00.000Z","2021-08-27T00:00:00.000Z","2021-08-28T00:00:00.000Z","2021-08-29T00:00:00.000Z","2021-08-30T00:00:00.000Z","2021-08-31T00:00:00.000Z","2021-09-01T00:00:00.000Z","2021-09-02T00:00:00.000Z","2021-09-03T00:00:00.000Z","2021-09-04T00:00:00.000Z","2021-09-05T00:00:00.000Z","2021-09-06T00:00:00.000Z","2021-09-07T00:00:00.000Z","2021-09-08T00:00:00.000Z","2021-09-09T00:00:00.000Z","2021-09-10T00:00:00.000Z","2021-09-11T00:00:00.000Z","2021-09-12T00:00:00.000Z","2021-09-13T00:00:00.000Z","2021-09-14T00:00:00.000Z","2021-09-15T00:00:00.000Z","2021-09-16T00:00:00.000Z","2021-09-17T00:00:00.000Z","2021-09-18T00:00:00.000Z","2021-09-19T00:00:00.000Z","2021-09-20T00:00:00.000Z","2021-09-21T00:00:00.000Z","2021-09-22T00:00:00.000Z","2021-09-23T00:00:00.000Z","2021-09-24T00:00:00.000Z","2021-09-25T00:00:00.000Z","2021-09-26T00:00:00.000Z","2021-09-27T00:00:00.000Z","2021-09-28T00:00:00.000Z","2021-09-29T00:00:00.000Z","2021-09-30T00:00:00.000Z","2021-10-01T00:00:00.000Z","2021-10-02T00:00:00.000Z","2021-10-03T00:00:00.000Z","2021-10-04T00:00:00.000Z","2021-10-05T00:00:00.000Z","2021-10-06T00:00:00.000Z","2021-10-07T00:00:00.000Z","2021-10-08T00:00:00.000Z","2021-10-09T00:00:00.000Z","2021-10-10T00:00:00.000Z","2021-10-11T00:00:00.000Z","2021-10-12T00:00:00.000Z","2021-10-13T00:00:00.000Z","2021-10-14T00:00:00.000Z","2021-10-15T00:00:00.000Z"],[388.006823681186,390.720950568723,402.890328666793,434.573144952757,452.513911523693,469.928821535342,509.895853853933,534.499354461443,549.064192208612,552.793050977247,576.816198209042,607.380695427864,634.053199894654,659.509354030024,690.250784525725,721.72528280487,735.427487839063,726.493751691631,753.734818783257,773.848483045413,784.565363357622,795.815677966102,812.658127243585,818.82773812087,826.405187159394,831.03595847806,845.884942384878,853.468523987814,865.821017106948,864.294458934369,866.295032864631,878.247634526422,888.712517340732,905.476293895553,921.381469994881,942.447345657903,938.112761556851,936.067308176734,928.222611879769,957.882816081107,963.625988864616,979.088192392691,982.676630434783,995.254348472269,1008.68254756563,1004.89042089237,1002.17096711745,998.117022533195,984.828413258405,1000.65703253189,1024.06227883935,1051.92670171908,1072.1171289742,1060.47762624691,1047.69474785911,1052.33425554413,1049.83524483384,1047.63751156827,1028.16566314672,1011.76228725826,1008.7863223913,984.893117975967,966.039424852203,926.407317826654,889.317232647353,846.172177314113,796.720502552618,747.68854588523,726.150250443032,676.800607107181,642.549311470811,602.548793140575,575.376697439593,557.614953860715,505.883472358781,469.526607172039,439.078817457196,411.581096494255,397.132415882004,388.236274264767,374.590689595128,355.879506308189,328.853426566164,305.803717699482,272.136492354997,258.00273961672,252.338230794134,238.455952882538,221.493434140664,206.985533808397,189.231746733335,161.599650796157,153.598391405937,149.749484507226,132.273270949131,116.553997802125,106.446290588696,91.4031863347322,84.1788801202555,80.7697355800781,75.2741950965682,65.6719153290468,59.9657934256633,54.00607434658,51.6284945350689,50.74138805886,49.382999615272,49.865479172465,53.8291859505825,49.3636255501368,47.0855266335056,51.8726008922087,53.7860428310005,54.7062955756283,54.9876277837487,58.3925106895967,60.1711393880278,69.5015653792936,79.7971607655379,86.1460337200189,92.1073115043329,97.9832325382199,99.1966377560676,119.939440413693,134.138162307176,150.888197775552,168.868580510579,186.327166633512,193.821604471172,210.444997935508,254.189103314492,281.276916451335,313.418084832731,355.8961028356,373.11651194041,397.112406009907,445.388515828423,471.704590708724,509.601640668697,554.984440986886,591.864828415102,610.969423502705,639.277728320985,672.798800785401,689.450138739453,715.80535217481,750.563281238788,769.815143074196,782.678079210793,791.984247505976,801.720480447091,817.716451095829,844.855791856218,854.999127551911,867.869557509846,870.433900457675,861.741027412681,878.95470547929,895.505680864163,929.846949142899,933.338864230307,948.162619151874,962.515237708249,959.915880163152,971.863939048533,976.98653929657,1005.70518774048,1053.00650252064,1100.28707233282,1130.23888059772,1137.38116557755,1159.37518236816,1189.88695084044,1212.33497934093,1291.08829144951,1370.38286388936,1389.69863362201,1382.85556487844,1426.25081221572,1518.5193336121,1570.43307928717,1634.89929801583,1723.8752622142,1763.6871310925,1818.28908554572,1908.70373702837,2003.33078054532,2106.53693230929,2159.04098412101,2259.69215047583,2350.25465368382,2440.84170499216,2508.81140345173,2619.69048403029,2676.58388984418,2822.59154168356,2916.24511224741,2995.41070103603,3028.63511895752,3111.48202239377,3202.39652335344,3231.44477128362,3344.78940481155,3481.01265822785,3546.40082099399,3558.10195387102,3661.09564984448,3710.01296469382,3916.6082477369,3961.78658517764,4056.01611165753],[83.1551437396056,71.2758374910905,71.2758374910905,92.1340550500979,91.0125142207053,89.9179498707429,88.9580785055043,76.8386388583974,76.8302052464054,76.8386388583974,76.7207365190706,97.5715524718127,84.2992623814542,80.7021083425804,88.9064506569199,88.8187111418139,88.8187111418139,68.7690342862757,78.1555295037124,87.0153727158465,96.6183574879227,104.493207941484,104.463437796771,104.47335929338,104.156803333018,84.8816372724701,93.6066647945334,83.7754817090198,82.538517975055,100.861910874748,100.861910874748,109.509034495346,118.063754427391,108.479479298499,107.62331838565,115.709835336004,142.386758031503,142.399430402278,150.990318856026,167.963224893918,158.144438587243,166.695911563432,183.150183150183,174.3679163034,191.787987097899,217.92189679219,208.822761681023,217.315716272601,224.952413912442,206.504904491482,197.815429603509,206.433855152245,223.425281429922,231.322823851953,247.292572695489,245.866892751166,243.963994279465,243.922953991084,243.984519602894,217.901441501844,232.770803890598,228.273275721507,208.634248114267,229.937916762474,222.001071729312,214.362272240086,196.820590461771,194.96100779844,209.048827833358,202.151469207999,173.067962457565,157.331655129012,150.215935407148,141.112951714829,115.573533660792,107.578936044323,96.0372017792155,76.7054988254471,71.1271278865759,66.3695837678961,55.6276654923048,40.1893364294007,25.6970319928048,20.5516050803568,19.3941274582057,22.9937916762474,19.1292371260234,18.9393939393939,17.9856115107914,13.7145991908386,13.0170197533275,12.3938774245523,12.0496445354862,12.0471041773334,11.7481203007519,11.481715368276,8.43170320404722,8.19761722592633,7.92602377807133,7.86575773466177,7.86410821012897,7.69585962752039,7.42758108442684,9.44041915461047,9.07811719849303,8.59937654520047,10.6509884117246,12.7681307456588,14.3237159811745,15.8947765790467,15.2444834025687,14.6880622773841,12.4637216672899,10.6104548348306,10.550007033338,11.7002072608143,11.1756817165847,15.0330727600722,18.6179735051916,18.9763608761657,18.7453973354757,17.3671413685307,16.927964998177,22.0035450155858,26.4249359482531,28.0096353145482,31.7524158296377,34.2100079823352,37.6617163563816,38.2562975751393,39.5074734970699,43.6836213722118,49.8544428320885,58.171841355838,62.94351466239,67.2292085053568,72.9679280502291,85.257248976491,87.3580431798328,102.444741306539,110.7545049597,119.929169349646,125.540184930349,132.633368013915,140.257980127493,146.451870589802,153.387369289824,158.297491177811,164.918581083685,168.599011501686,179.819114162279,179.501938923897,191.808642671782,189.793020996787,192.320544140906,194.281307468707,201.630837657524,206.672354446765,212.622934050357,213.89211136891,216.138328530259,220.313159419461,220.497755901871,222.778579309174,220.872061426123,220.468947156783,218.156713841905,224.665063552044,235.078655678106,236.203271347041,234.158463155883,237.375038997328,248.100480694681,250.740520336728,268.21014430368,272.374051613242,287.80468616833,295.654340087713,303.214854936312,335.589848888318,355.413390199476,370.762380144171,388.808274733043,389.630501440208,411.899880456125,430.63464858124,445.162667317133,473.391407522202,478.908233260717,494.50745629173,516.809696277662,541.803951422012,554.479533268772,560.9026181335,581.78327694991,593.497683557033,610.414585270355,655.005453569635,671.818816698507,690.961262553802,726.49328379537,751.032028469751,778.823262668632,819.436051797846,838.053502148783,850.813809623348,882.705387934672,925.006033868243,945.102320763696,975.585239456755,1002.66262630764]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-5a42d2e8a825105999f4" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5a42d2e8a825105999f4">{"x":{"attrs":{"title":"100k 14 dienų rodiklis amžiaus grupėje 40-49","labels":["day","neapsaugoti","apsaugoti2"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"stackedGraph":false,"fillGraph":false,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colors":["#E41A1C","#4DAF4A"],"colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"dateWindow":["2021-06-01T00:00:00.000Z","2021-10-15T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"daily","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2021-03-04T00:00:00.000Z","2021-03-05T00:00:00.000Z","2021-03-06T00:00:00.000Z","2021-03-07T00:00:00.000Z","2021-03-08T00:00:00.000Z","2021-03-09T00:00:00.000Z","2021-03-10T00:00:00.000Z","2021-03-11T00:00:00.000Z","2021-03-12T00:00:00.000Z","2021-03-13T00:00:00.000Z","2021-03-14T00:00:00.000Z","2021-03-15T00:00:00.000Z","2021-03-16T00:00:00.000Z","2021-03-17T00:00:00.000Z","2021-03-18T00:00:00.000Z","2021-03-19T00:00:00.000Z","2021-03-20T00:00:00.000Z","2021-03-21T00:00:00.000Z","2021-03-22T00:00:00.000Z","2021-03-23T00:00:00.000Z","2021-03-24T00:00:00.000Z","2021-03-25T00:00:00.000Z","2021-03-26T00:00:00.000Z","2021-03-27T00:00:00.000Z","2021-03-28T00:00:00.000Z","2021-03-29T00:00:00.000Z","2021-03-30T00:00:00.000Z","2021-03-31T00:00:00.000Z","2021-04-01T00:00:00.000Z","2021-04-02T00:00:00.000Z","2021-04-03T00:00:00.000Z","2021-04-04T00:00:00.000Z","2021-04-05T00:00:00.000Z","2021-04-06T00:00:00.000Z","2021-04-07T00:00:00.000Z","2021-04-08T00:00:00.000Z","2021-04-09T00:00:00.000Z","2021-04-10T00:00:00.000Z","2021-04-11T00:00:00.000Z","2021-04-12T00:00:00.000Z","2021-04-13T00:00:00.000Z","2021-04-14T00:00:00.000Z","2021-04-15T00:00:00.000Z","2021-04-16T00:00:00.000Z","2021-04-17T00:00:00.000Z","2021-04-18T00:00:00.000Z","2021-04-19T00:00:00.000Z","2021-04-20T00:00:00.000Z","2021-04-21T00:00:00.000Z","2021-04-22T00:00:00.000Z","2021-04-23T00:00:00.000Z","2021-04-24T00:00:00.000Z","2021-04-25T00:00:00.000Z","2021-04-26T00:00:00.000Z","2021-04-27T00:00:00.000Z","2021-04-28T00:00:00.000Z","2021-04-29T00:00:00.000Z","2021-04-30T00:00:00.000Z","2021-05-01T00:00:00.000Z","2021-05-02T00:00:00.000Z","2021-05-03T00:00:00.000Z","2021-05-04T00:00:00.000Z","2021-05-05T00:00:00.000Z","2021-05-06T00:00:00.000Z","2021-05-07T00:00:00.000Z","2021-05-08T00:00:00.000Z","2021-05-09T00:00:00.000Z","2021-05-10T00:00:00.000Z","2021-05-11T00:00:00.000Z","2021-05-12T00:00:00.000Z","2021-05-13T00:00:00.000Z","2021-05-14T00:00:00.000Z","2021-05-15T00:00:00.000Z","2021-05-16T00:00:00.000Z","2021-05-17T00:00:00.000Z","2021-05-18T00:00:00.000Z","2021-05-19T00:00:00.000Z","2021-05-20T00:00:00.000Z","2021-05-21T00:00:00.000Z","2021-05-22T00:00:00.000Z","2021-05-23T00:00:00.000Z","2021-05-24T00:00:00.000Z","2021-05-25T00:00:00.000Z","2021-05-26T00:00:00.000Z","2021-05-27T00:00:00.000Z","2021-05-28T00:00:00.000Z","2021-05-29T00:00:00.000Z","2021-05-30T00:00:00.000Z","2021-05-31T00:00:00.000Z","2021-06-01T00:00:00.000Z","2021-06-02T00:00:00.000Z","2021-06-03T00:00:00.000Z","2021-06-04T00:00:00.000Z","2021-06-05T00:00:00.000Z","2021-06-06T00:00:00.000Z","2021-06-07T00:00:00.000Z","2021-06-08T00:00:00.000Z","2021-06-09T00:00:00.000Z","2021-06-10T00:00:00.000Z","2021-06-11T00:00:00.000Z","2021-06-12T00:00:00.000Z","2021-06-13T00:00:00.000Z","2021-06-14T00:00:00.000Z","2021-06-15T00:00:00.000Z","2021-06-16T00:00:00.000Z","2021-06-17T00:00:00.000Z","2021-06-18T00:00:00.000Z","2021-06-19T00:00:00.000Z","2021-06-20T00:00:00.000Z","2021-06-21T00:00:00.000Z","2021-06-22T00:00:00.000Z","2021-06-23T00:00:00.000Z","2021-06-24T00:00:00.000Z","2021-06-25T00:00:00.000Z","2021-06-26T00:00:00.000Z","2021-06-27T00:00:00.000Z","2021-06-28T00:00:00.000Z","2021-06-29T00:00:00.000Z","2021-06-30T00:00:00.000Z","2021-07-01T00:00:00.000Z","2021-07-02T00:00:00.000Z","2021-07-03T00:00:00.000Z","2021-07-04T00:00:00.000Z","2021-07-05T00:00:00.000Z","2021-07-06T00:00:00.000Z","2021-07-07T00:00:00.000Z","2021-07-08T00:00:00.000Z","2021-07-09T00:00:00.000Z","2021-07-10T00:00:00.000Z","2021-07-11T00:00:00.000Z","2021-07-12T00:00:00.000Z","2021-07-13T00:00:00.000Z","2021-07-14T00:00:00.000Z","2021-07-15T00:00:00.000Z","2021-07-16T00:00:00.000Z","2021-07-17T00:00:00.000Z","2021-07-18T00:00:00.000Z","2021-07-19T00:00:00.000Z","2021-07-20T00:00:00.000Z","2021-07-21T00:00:00.000Z","2021-07-22T00:00:00.000Z","2021-07-23T00:00:00.000Z","2021-07-24T00:00:00.000Z","2021-07-25T00:00:00.000Z","2021-07-26T00:00:00.000Z","2021-07-27T00:00:00.000Z","2021-07-28T00:00:00.000Z","2021-07-29T00:00:00.000Z","2021-07-30T00:00:00.000Z","2021-07-31T00:00:00.000Z","2021-08-01T00:00:00.000Z","2021-08-02T00:00:00.000Z","2021-08-03T00:00:00.000Z","2021-08-04T00:00:00.000Z","2021-08-05T00:00:00.000Z","2021-08-06T00:00:00.000Z","2021-08-07T00:00:00.000Z","2021-08-08T00:00:00.000Z","2021-08-09T00:00:00.000Z","2021-08-10T00:00:00.000Z","2021-08-11T00:00:00.000Z","2021-08-12T00:00:00.000Z","2021-08-13T00:00:00.000Z","2021-08-14T00:00:00.000Z","2021-08-15T00:00:00.000Z","2021-08-16T00:00:00.000Z","2021-08-17T00:00:00.000Z","2021-08-18T00:00:00.000Z","2021-08-19T00:00:00.000Z","2021-08-20T00:00:00.000Z","2021-08-21T00:00:00.000Z","2021-08-22T00:00:00.000Z","2021-08-23T00:00:00.000Z","2021-08-24T00:00:00.000Z","2021-08-25T00:00:00.000Z","2021-08-26T00:00:00.000Z","2021-08-27T00:00:00.000Z","2021-08-28T00:00:00.000Z","2021-08-29T00:00:00.000Z","2021-08-30T00:00:00.000Z","2021-08-31T00:00:00.000Z","2021-09-01T00:00:00.000Z","2021-09-02T00:00:00.000Z","2021-09-03T00:00:00.000Z","2021-09-04T00:00:00.000Z","2021-09-05T00:00:00.000Z","2021-09-06T00:00:00.000Z","2021-09-07T00:00:00.000Z","2021-09-08T00:00:00.000Z","2021-09-09T00:00:00.000Z","2021-09-10T00:00:00.000Z","2021-09-11T00:00:00.000Z","2021-09-12T00:00:00.000Z","2021-09-13T00:00:00.000Z","2021-09-14T00:00:00.000Z","2021-09-15T00:00:00.000Z","2021-09-16T00:00:00.000Z","2021-09-17T00:00:00.000Z","2021-09-18T00:00:00.000Z","2021-09-19T00:00:00.000Z","2021-09-20T00:00:00.000Z","2021-09-21T00:00:00.000Z","2021-09-22T00:00:00.000Z","2021-09-23T00:00:00.000Z","2021-09-24T00:00:00.000Z","2021-09-25T00:00:00.000Z","2021-09-26T00:00:00.000Z","2021-09-27T00:00:00.000Z","2021-09-28T00:00:00.000Z","2021-09-29T00:00:00.000Z","2021-09-30T00:00:00.000Z","2021-10-01T00:00:00.000Z","2021-10-02T00:00:00.000Z","2021-10-03T00:00:00.000Z","2021-10-04T00:00:00.000Z","2021-10-05T00:00:00.000Z","2021-10-06T00:00:00.000Z","2021-10-07T00:00:00.000Z","2021-10-08T00:00:00.000Z","2021-10-09T00:00:00.000Z","2021-10-10T00:00:00.000Z","2021-10-11T00:00:00.000Z","2021-10-12T00:00:00.000Z","2021-10-13T00:00:00.000Z","2021-10-14T00:00:00.000Z","2021-10-15T00:00:00.000Z"],[339.887761067822,329.61837663776,330.352773111467,325.772759444103,322.917907386085,315.042535711446,327.607137511849,309.900778262149,315.37168566166,314.214162464836,314.253195411098,330.62191935788,331.064491901886,332.369405817983,342.057142470856,353.825890574688,348.856900931414,356.345628160789,381.662570968562,396.286846533847,407.931741912694,440.109432615677,452.090023403908,449.802148298611,466.192534113724,478.76053460458,501.839738348324,519.535418065787,535.299395783792,546.002130740022,580.938654790609,595.053066299569,590.423313344866,621.672665562687,639.019211670833,669.135810928876,675.958379346059,702.21780072383,714.437680582531,748.88748489177,773.829977321146,799.804690857951,810.280759702725,834.28882300888,821.290155886659,826.731086674087,850.585337923137,853.002957353307,871.767685692407,871.008168522202,896.812571396729,898.433411255713,882.073693469792,857.641939741027,879.020660142411,899.988394053535,909.65569337861,922.620526177583,941.97518525393,939.593474707517,932.698619964773,937.672764851906,939.310299684715,944.617071833303,951.34647854021,960.660272205716,978.287250527416,987.367994415798,964.460098864719,935.77946695624,945.122185580641,931.493881858177,924.838406073287,918.252208085289,904.037722886675,886.758679165293,863.148497094528,828.516914889803,790.618955512573,768.757936283272,740.213119862723,702.233492636302,665.134890502578,639.436305955834,595.941112867005,563.014473325933,526.942680252697,508.201967124764,477.313805188083,459.311119013852,417.947940577764,401.757910157107,379.742311335085,365.779681119793,357.26686281318,344.787528170814,328.134723819941,308.449800273965,286.161260858581,268.023732193451,261.630931911541,250.853944504762,242.163664374251,205.663902421642,198.859664113599,175.975637384812,160.878760274666,151.702108338809,148.137056190471,140.127731817079,125.527850115342,111.06287737418,105.411710492209,90.5539772727273,82.4648627975906,78.9204637175126,71.4633164984176,65.2482788479715,54.5100905610823,50.2935888247646,46.4914850526691,45.5087363954517,42.3497706054092,38.7224183441003,36.4732930824492,36.193735193472,39.8017871002408,42.2079444731042,45.0414112079165,45.1802151117705,44.0018683870269,44.9677050118551,53.4473543559594,53.9042577452816,56.9717434048259,62.614358168043,64.7370839076139,62.2186180475938,66.6657310072841,75.3192268164604,87.3928732521425,101.906500785529,111.193739155069,122.599390546382,142.856127532853,170.609482746313,189.55032058416,212.249848392965,244.512969345184,253.768350941997,267.700611783192,298.729850342918,338.66071755111,367.822856512304,390.280750346217,408.339667069045,426.702137994425,432.09461227358,457.032217394241,476.003681296299,503.373512243196,541.478971801794,568.637738411209,601.253578890351,615.930519938329,645.372492166674,658.495137992888,678.04424377797,706.222678313146,730.136828791537,737.849013312645,752.694397803125,776.254174988671,790.803500668945,820.126439767905,823.835480673935,815.622585918833,811.15015310685,811.669215386425,811.646718641338,810.087674631757,835.295225539128,866.057542768274,917.495447541673,941.927920279749,929.030950813029,950.067197353458,981.371816852668,995.877282218772,1055.20369923955,1120.69831560383,1169.59064327485,1161.83599329667,1208.1858888469,1294.19008562101,1360.08362435559,1428.51958922502,1508.24919970451,1541.04929873599,1584.96266669969,1645.216429541,1712.04148554869,1794.18436791091,1855.89662433461,1920.52452750053,1943.87040863942,2015.40247987934,2095.47711571675,2120.03053934668,2190.68613943235,2282.84378706482,2350.83414420894,2377.54711904728,2430.93452777502,2479.71725785912,2595.20817988822,2633.68847560887,2762.66713841346,2884.19953769294,2916.02390330842,2927.89752358667,3024.92721979622,3130.54926213949,3254.04435646014,3316.86882580968,3393.36163765211],[74.4490768314473,52.2670848033451,51.5796260477112,51.4469453376206,49.3888134337573,47.7668975400048,58.3090379008746,45.876820736323,33.9750849377123,33.9750849377123,33.9750849377123,56.1987186692143,44.7427293064877,51.8295843267337,47.4788719020036,44.9115242971346,44.9115242971346,44.9115242971346,43.7828371278459,51.6840382461883,42.4520292069961,50.2428403952437,49.5662949194548,57.81779136037,66.0774758404229,49.4600610007419,57.2363041700736,55.7768924302789,45.8400183360073,44.7293872073953,44.6960667461263,44.6960667461263,44.4675016675313,36.7782272894447,36.4272184176016,43.6205016357688,42.6894343649947,42.6803243704652,35.5694671693818,35.3506787330317,49.0952447748632,48.6178635921656,55.1648048545028,74.687669744704,81.4221739720451,101.770812131081,135.180804325786,134.508036855202,147.275405007364,152.854389579318,164.712083278429,171.244154646644,171.244154646644,183.968462549277,176.447523199582,175.472801715734,181.676615624189,186.964090000645,206.092612867907,193.236714975845,167.53656807784,167.191820461707,198.909207571383,204.198838619105,234.860987685667,234.771573604061,241.070862145531,247.132627843609,258.202657598086,274.811067391169,285.306704707561,282.468529321461,269.922090669284,282.191276608797,280.077934729664,283.696505100501,241.788052131863,230.707117314569,205.039658986672,204.752411229053,204.752411229053,207.105305082046,209.8085496984,203.326208226891,184.621525871962,155.18736592268,147.154295607011,133.419410372283,134.391667716602,138.345389145816,128.350874619531,116.890707188778,97.7963228582605,93.8572075862515,90.5679906844352,82.2758773456536,67.3235816145419,59.0127172405653,54.0571298509161,56.7997403440441,56.2369449949119,56.1602438959164,50.3911948017504,43.28343008453,39.1035510912335,32.8908727828028,31.6012821091599,28.7827126599655,28.7814381863266,23.8425524536154,20.9617238921729,18.1910055583628,15.49937033808,11.1511727316656,9.19590965938351,9.19421867529697,9.02364194188775,5.1837644497434,8.23018172241243,7.90026702902558,7.48010292621626,7.39973360959005,7.3943714044869,7.20336541232064,9.76889583565926,9.36367162941263,10.2763041272206,8.7543771885943,7.4690036349151,7.45508312417683,7.12809180982251,7.97475420668284,6.47962159009914,7.22879124283575,6.90423821594484,6.84128225175919,8.7867456822908,15.3474273874842,16.7099888600074,19.7419192734974,22.2249879985065,24.2474626762271,24.9868603579152,25.8022344735054,26.9646257815528,29.6689440328336,36.3627548423068,37.4908267126129,43.0966933082589,46.8424298729789,47.6134722710065,53.2058449319505,60.0166199870733,69.2647282691429,75.1625389905671,86.3217270298629,92.7279066489618,97.9097746591701,107.320587175925,113.947627917169,118.433481072441,126.553901114398,132.825962090752,145.549970961705,152.64549695784,158.681590800737,169.262257349452,174.668798377271,175.175525876929,177.167688519673,181.201084418798,195.10563576565,198.734194745662,205.338809034908,217.184277776636,226.142633335604,226.591722300007,220.998942169698,218.928593014432,219.929170847093,217.798579344221,218.342051623713,230.5403576988,237.28747082933,243.620474570072,234.507175658286,245.141069907471,250.417362270451,255.803789495334,268.735034897346,287.35632183908,305.418657041351,309.191181110312,316.659275868315,349.710946881073,368.320739338003,386.2102363873,398.406374501992,405.812043686236,426.761289394502,441.024175981145,468.453335068346,485.499664969965,499.393260524596,519.191544594845,540.415303078572,567.625645094961,586.964661156073,605.949320602277,632.148103269909,658.945800428684,695.411079047134,722.907922573054,747.353711592752,770.279712398855,806.682658008123,839.004172617548,870.196604110813,910.539748347766,936.272187700282,951.669463508187,992.115381405209,1001.63509560304,1046.98374259197,1083.76733944547,1119.18797925624]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-839a1b07c1096c062fed" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-839a1b07c1096c062fed">{"x":{"attrs":{"title":"100k 14 dienų rodiklis amžiaus grupėje 50-59","labels":["day","neapsaugoti","apsaugoti2"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"stackedGraph":false,"fillGraph":false,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colors":["#E41A1C","#4DAF4A"],"colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"dateWindow":["2021-06-01T00:00:00.000Z","2021-10-15T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"daily","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2021-02-18T00:00:00.000Z","2021-02-19T00:00:00.000Z","2021-02-20T00:00:00.000Z","2021-02-21T00:00:00.000Z","2021-02-22T00:00:00.000Z","2021-02-23T00:00:00.000Z","2021-02-24T00:00:00.000Z","2021-02-25T00:00:00.000Z","2021-02-26T00:00:00.000Z","2021-02-27T00:00:00.000Z","2021-02-28T00:00:00.000Z","2021-03-01T00:00:00.000Z","2021-03-02T00:00:00.000Z","2021-03-03T00:00:00.000Z","2021-03-04T00:00:00.000Z","2021-03-05T00:00:00.000Z","2021-03-06T00:00:00.000Z","2021-03-07T00:00:00.000Z","2021-03-08T00:00:00.000Z","2021-03-09T00:00:00.000Z","2021-03-10T00:00:00.000Z","2021-03-11T00:00:00.000Z","2021-03-12T00:00:00.000Z","2021-03-13T00:00:00.000Z","2021-03-14T00:00:00.000Z","2021-03-15T00:00:00.000Z","2021-03-16T00:00:00.000Z","2021-03-17T00:00:00.000Z","2021-03-18T00:00:00.000Z","2021-03-19T00:00:00.000Z","2021-03-20T00:00:00.000Z","2021-03-21T00:00:00.000Z","2021-03-22T00:00:00.000Z","2021-03-23T00:00:00.000Z","2021-03-24T00:00:00.000Z","2021-03-25T00:00:00.000Z","2021-03-26T00:00:00.000Z","2021-03-27T00:00:00.000Z","2021-03-28T00:00:00.000Z","2021-03-29T00:00:00.000Z","2021-03-30T00:00:00.000Z","2021-03-31T00:00:00.000Z","2021-04-01T00:00:00.000Z","2021-04-02T00:00:00.000Z","2021-04-03T00:00:00.000Z","2021-04-04T00:00:00.000Z","2021-04-05T00:00:00.000Z","2021-04-06T00:00:00.000Z","2021-04-07T00:00:00.000Z","2021-04-08T00:00:00.000Z","2021-04-09T00:00:00.000Z","2021-04-10T00:00:00.000Z","2021-04-11T00:00:00.000Z","2021-04-12T00:00:00.000Z","2021-04-13T00:00:00.000Z","2021-04-14T00:00:00.000Z","2021-04-15T00:00:00.000Z","2021-04-16T00:00:00.000Z","2021-04-17T00:00:00.000Z","2021-04-18T00:00:00.000Z","2021-04-19T00:00:00.000Z","2021-04-20T00:00:00.000Z","2021-04-21T00:00:00.000Z","2021-04-22T00:00:00.000Z","2021-04-23T00:00:00.000Z","2021-04-24T00:00:00.000Z","2021-04-25T00:00:00.000Z","2021-04-26T00:00:00.000Z","2021-04-27T00:00:00.000Z","2021-04-28T00:00:00.000Z","2021-04-29T00:00:00.000Z","2021-04-30T00:00:00.000Z","2021-05-01T00:00:00.000Z","2021-05-02T00:00:00.000Z","2021-05-03T00:00:00.000Z","2021-05-04T00:00:00.000Z","2021-05-05T00:00:00.000Z","2021-05-06T00:00:00.000Z","2021-05-07T00:00:00.000Z","2021-05-08T00:00:00.000Z","2021-05-09T00:00:00.000Z","2021-05-10T00:00:00.000Z","2021-05-11T00:00:00.000Z","2021-05-12T00:00:00.000Z","2021-05-13T00:00:00.000Z","2021-05-14T00:00:00.000Z","2021-05-15T00:00:00.000Z","2021-05-16T00:00:00.000Z","2021-05-17T00:00:00.000Z","2021-05-18T00:00:00.000Z","2021-05-19T00:00:00.000Z","2021-05-20T00:00:00.000Z","2021-05-21T00:00:00.000Z","2021-05-22T00:00:00.000Z","2021-05-23T00:00:00.000Z","2021-05-24T00:00:00.000Z","2021-05-25T00:00:00.000Z","2021-05-26T00:00:00.000Z","2021-05-27T00:00:00.000Z","2021-05-28T00:00:00.000Z","2021-05-29T00:00:00.000Z","2021-05-30T00:00:00.000Z","2021-05-31T00:00:00.000Z","2021-06-01T00:00:00.000Z","2021-06-02T00:00:00.000Z","2021-06-03T00:00:00.000Z","2021-06-04T00:00:00.000Z","2021-06-05T00:00:00.000Z","2021-06-06T00:00:00.000Z","2021-06-07T00:00:00.000Z","2021-06-08T00:00:00.000Z","2021-06-09T00:00:00.000Z","2021-06-10T00:00:00.000Z","2021-06-11T00:00:00.000Z","2021-06-12T00:00:00.000Z","2021-06-13T00:00:00.000Z","2021-06-14T00:00:00.000Z","2021-06-15T00:00:00.000Z","2021-06-16T00:00:00.000Z","2021-06-17T00:00:00.000Z","2021-06-18T00:00:00.000Z","2021-06-19T00:00:00.000Z","2021-06-20T00:00:00.000Z","2021-06-21T00:00:00.000Z","2021-06-22T00:00:00.000Z","2021-06-23T00:00:00.000Z","2021-06-24T00:00:00.000Z","2021-06-25T00:00:00.000Z","2021-06-26T00:00:00.000Z","2021-06-27T00:00:00.000Z","2021-06-28T00:00:00.000Z","2021-06-29T00:00:00.000Z","2021-06-30T00:00:00.000Z","2021-07-01T00:00:00.000Z","2021-07-02T00:00:00.000Z","2021-07-03T00:00:00.000Z","2021-07-04T00:00:00.000Z","2021-07-05T00:00:00.000Z","2021-07-06T00:00:00.000Z","2021-07-07T00:00:00.000Z","2021-07-08T00:00:00.000Z","2021-07-09T00:00:00.000Z","2021-07-10T00:00:00.000Z","2021-07-11T00:00:00.000Z","2021-07-12T00:00:00.000Z","2021-07-13T00:00:00.000Z","2021-07-14T00:00:00.000Z","2021-07-15T00:00:00.000Z","2021-07-16T00:00:00.000Z","2021-07-17T00:00:00.000Z","2021-07-18T00:00:00.000Z","2021-07-19T00:00:00.000Z","2021-07-20T00:00:00.000Z","2021-07-21T00:00:00.000Z","2021-07-22T00:00:00.000Z","2021-07-23T00:00:00.000Z","2021-07-24T00:00:00.000Z","2021-07-25T00:00:00.000Z","2021-07-26T00:00:00.000Z","2021-07-27T00:00:00.000Z","2021-07-28T00:00:00.000Z","2021-07-29T00:00:00.000Z","2021-07-30T00:00:00.000Z","2021-07-31T00:00:00.000Z","2021-08-01T00:00:00.000Z","2021-08-02T00:00:00.000Z","2021-08-03T00:00:00.000Z","2021-08-04T00:00:00.000Z","2021-08-05T00:00:00.000Z","2021-08-06T00:00:00.000Z","2021-08-07T00:00:00.000Z","2021-08-08T00:00:00.000Z","2021-08-09T00:00:00.000Z","2021-08-10T00:00:00.000Z","2021-08-11T00:00:00.000Z","2021-08-12T00:00:00.000Z","2021-08-13T00:00:00.000Z","2021-08-14T00:00:00.000Z","2021-08-15T00:00:00.000Z","2021-08-16T00:00:00.000Z","2021-08-17T00:00:00.000Z","2021-08-18T00:00:00.000Z","2021-08-19T00:00:00.000Z","2021-08-20T00:00:00.000Z","2021-08-21T00:00:00.000Z","2021-08-22T00:00:00.000Z","2021-08-23T00:00:00.000Z","2021-08-24T00:00:00.000Z","2021-08-25T00:00:00.000Z","2021-08-26T00:00:00.000Z","2021-08-27T00:00:00.000Z","2021-08-28T00:00:00.000Z","2021-08-29T00:00:00.000Z","2021-08-30T00:00:00.000Z","2021-08-31T00:00:00.000Z","2021-09-01T00:00:00.000Z","2021-09-02T00:00:00.000Z","2021-09-03T00:00:00.000Z","2021-09-04T00:00:00.000Z","2021-09-05T00:00:00.000Z","2021-09-06T00:00:00.000Z","2021-09-07T00:00:00.000Z","2021-09-08T00:00:00.000Z","2021-09-09T00:00:00.000Z","2021-09-10T00:00:00.000Z","2021-09-11T00:00:00.000Z","2021-09-12T00:00:00.000Z","2021-09-13T00:00:00.000Z","2021-09-14T00:00:00.000Z","2021-09-15T00:00:00.000Z","2021-09-16T00:00:00.000Z","2021-09-17T00:00:00.000Z","2021-09-18T00:00:00.000Z","2021-09-19T00:00:00.000Z","2021-09-20T00:00:00.000Z","2021-09-21T00:00:00.000Z","2021-09-22T00:00:00.000Z","2021-09-23T00:00:00.000Z","2021-09-24T00:00:00.000Z","2021-09-25T00:00:00.000Z","2021-09-26T00:00:00.000Z","2021-09-27T00:00:00.000Z","2021-09-28T00:00:00.000Z","2021-09-29T00:00:00.000Z","2021-09-30T00:00:00.000Z","2021-10-01T00:00:00.000Z","2021-10-02T00:00:00.000Z","2021-10-03T00:00:00.000Z","2021-10-04T00:00:00.000Z","2021-10-05T00:00:00.000Z","2021-10-06T00:00:00.000Z","2021-10-07T00:00:00.000Z","2021-10-08T00:00:00.000Z","2021-10-09T00:00:00.000Z","2021-10-10T00:00:00.000Z","2021-10-11T00:00:00.000Z","2021-10-12T00:00:00.000Z","2021-10-13T00:00:00.000Z","2021-10-14T00:00:00.000Z","2021-10-15T00:00:00.000Z"],[378.019492631972,370.951467183044,370.17697901747,369.075822470153,367.448552824742,372.609406486445,366.676444705192,371.411599334223,372.229279089438,360.873526211978,362.39042039058,358.32878289231,366.572165938942,369.826427340507,352.320481148778,342.0041681758,335.882396614448,332.969967356468,339.648880911911,329.970156892032,338.045849896883,321.888088936264,323.021493353212,327.412621756569,325.941288119971,343.966881772799,358.704522478411,361.920469122228,375.235096274605,386.957683413335,386.222577275241,390.576984536716,400.783727503976,417.605972134964,420.705885255863,446.183203749792,455.851381316279,453.794613856976,463.760762560058,464.472498583359,464.528204826259,480.163776792084,488.191177155634,514.851731406577,532.692319652708,545.232866998016,540.759304515667,559.052664381427,585.269673297227,604.265439824713,618.60308176808,641.296093156696,650.818211656586,676.660681102929,703.57265867176,721.183229434055,742.141797388389,741.724682600244,739.514383460513,738.485131308941,766.0749904044,775.452820315603,780.432273467516,789.543776873026,802.064088679365,791.261965483232,784.83712554201,780.601867422604,799.159725947316,803.136455817822,815.237650689305,837.866607456556,847.727518968806,852.255913511807,841.286324152368,852.638620336196,857.791296523847,855.045411583765,868.035271235249,881.963278697621,894.441955059068,895.014986866818,884.656084656085,883.114101625944,874.721909219612,848.647502321806,842.020409284942,838.019546457663,825.958702064897,804.538383572121,772.050280711486,755.249209490662,731.012694715724,717.573213686359,690.222237663436,661.515931929506,609.221650558322,577.838882579154,550.344621521988,532.471353613286,510.855157537686,487.178114460089,463.057258651148,427.336019284908,408.386914495595,393.939261886812,369.967549834183,354.113406625173,343.14013970059,320.1516941933,313.43423019432,292.5290378089,274.541413253218,255.412551132395,243.699833863768,233.798092568024,221.026330962906,203.918104023915,186.832271985685,161.199018788581,144.401172712554,137.670030715226,135.005350821831,123.179920015908,109.652205696292,101.298567512348,85.4666069757031,77.4140172556435,72.992700729927,70.641591869687,60.7696294839944,56.5747026818816,54.814544125708,52.3740865343143,47.9693992611467,45.6863910880245,45.0865097405647,42.7729448543518,38.6820211038961,35.8494068843665,37.4072879716221,33.1905920941311,31.9924785030132,31.4053912588328,32.8301564685257,32.3701560373644,34.5352026618672,34.2272690666022,33.0542832279869,34.4592266268471,34.4773970241274,34.6055979643766,42.9067629231084,49.8545340308415,56.0572604406647,65.2078414145297,73.50466101986,76.970654937805,90.2813193477692,106.567757025514,121.7848791894,132.889435989257,154.625770493186,159.84902365343,174.000028178142,193.007882922691,219.453490018406,241.330950872422,271.470525034023,288.15122176118,306.148236398426,318.531145267537,331.286653569849,353.990035836028,373.328258021067,399.595234402121,411.905790516484,427.213180871007,428.440044563746,454.309547270006,457.16542249831,480.776603738862,484.642595564975,502.214019217212,492.885410114104,491.537731106518,510.439333759374,517.224393287577,544.281289913266,562.441234293529,571.776155717762,582.264536942324,595.368384187716,608.643265942555,630.238917029002,650.854132103334,692.749224780629,740.676109317589,774.996325870769,785.792865000786,809.424587273602,833.358833909646,845.8373165967,897.715776582717,957.679876792261,971.878711280112,975.801434231638,993.428939306487,1035.40639701083,1083.13211452225,1114.78407652272,1143.64680374544,1149.59028650039,1189.30701607301,1239.22806165797,1289.94285994556,1339.84612898816,1358.25356588854,1426.79980055487,1461.06186743974,1465.18735393071,1525.33139640458,1561.49788615332,1570.97141043612,1607.93659294168,1662.36434160911,1684.73026681678,1682.41811960241,1687.63088378205,1771.12092766427,1808.20238493258,1890.24476065814,1932.03012657147,1946.3538019635,1993.70709382151,2046.38275150448,2075.83725435926,2188.20311466008,2274.44809002776,2321.82152961782],[0,0,0,0,0,0,0,40.0320256204964,30.8832612723904,30.3766707168894,30.3766707168894,28.0583613916947,39.0269285807207,44.2673749446658,35.7238546039118,31.4095013741657,31.0245869851858,30.9741365959424,37.0782350760104,36.0490266762797,35.1567993249895,27.6338514680484,40.8635837362937,40.8635837362937,40.8635837362937,40.5186385737439,40.3931600915578,38.1412497616172,35.5597700468204,39.799863543325,45.480386583286,45.480386583286,61.3189140977758,65.7822607170266,64.8018144508046,69.2225772097977,68.3778666105618,68.3526999316473,68.3526999316473,84.0247873122571,88.4265279583875,90.6390049851453,93.7294966726029,96.7245548472192,92.1416348558642,96.5293317537624,77.9389478242044,76.9230769230769,88.5254194418683,88.2204671483784,77.1761647508022,80.9126952018772,89.0039647220649,88.4386557324329,91.7065390749601,90.715468959533,89.9280575539568,84.3752397023855,88.1732796626414,88.169899562984,106.65041517483,121.382240260972,120.882441825325,123.627917431536,130.01485884101,129.95692856082,129.96658002228,144.530091906315,143.78940382701,142.914727545898,146.348602370847,156.580001456558,160.087320356558,156.454664532091,149.215707682789,148.75553298019,155.667378633747,165.545039047036,182.423006760382,182.318664426411,178.756569303922,167.785234899329,177.443395556817,190.294957183635,202.535181757866,193.457007634643,196.836798121417,200.283158948859,199.045952160335,194.04915912031,186.997028082947,173.27056361972,157.207986165697,160.08537886873,160.095429432446,155.705032386647,142.194744976816,135.077055320194,116.302736021865,98.8643954575818,90.0506856716495,87.1638423872638,80.4626602967061,73.9521458050049,64.0332089469849,56.374493673529,47.7963873897198,43.5574562445553,41.5685187751143,36.9815286996127,39.7719740156436,31.0060553002116,28.020034324542,28.4928935371413,26.6391395557923,26.6253973008504,29.7402683233098,23.7687773340939,19.5559299596847,18.7357680223676,19.3841382365973,18.9771325552709,18.9758464582938,17.3192470124299,12.9533678756477,12.5230110327727,9.63054809856866,10.4569695702186,10.3429254389997,10.342806578025,10.1822624987272,10.9083372421542,10.3939299449122,8.99658129910634,6.70196367535688,6.64319404769813,7.58998880476651,7.4635916668999,7.23157304792725,6.96306096159872,7.53390256152687,6.52597746906279,7.31659729448491,7.31124794878877,5.57644509591486,6.19770684846607,6.00244599674367,8.03429915347703,9.27140982484167,9.93027528141691,9.21698193471541,9.7898674871508,10.2999340804219,12.0792398131744,13.365767596033,17.0586884492996,18.3225688241491,18.9675132282053,21.9216237475661,23.4054262634186,27.991863698285,30.7851443207566,33.9929586014326,36.9220339803768,39.3398173422019,43.721738088821,48.4559888012826,54.5269197031839,59.1622392614678,62.7010206332803,67.7930746766792,68.3701257315024,68.355055689266,76.0221550280367,85.4214123006834,88.5252041470653,97.0276810948333,100.309381181284,103.670148631441,106.94109281479,113.231332169412,114.445080250446,120.103831699663,125.739685761084,126.769956622628,132.278048457858,140.929255707086,142.064081828911,140.389826634888,141.292638166336,139.389699155051,137.384015155174,139.939627578294,147.018872748774,151.424184301828,156.259931775325,166.809193509222,171.954124532648,177.108351420808,179.216178858798,185.818149460604,198.111682854477,217.247029056142,235.075049123998,251.751537063137,266.307508647342,269.875928495633,270.03383008096,288.67055911722,308.6112493778,313.851269917011,324.432974099028,333.365825129155,345.041010170912,350.644381698688,364.181146399857,369.889464378974,385.213508153686,403.669898231699,410.60485071277,424.315448767926,445.830217694945,470.033600607342,488.144397316841,508.999293443903,534.665290270018,552.11032950759,560.502832598956,588.984106192405,623.498771408325,667.548160799221,690.242707107164,708.123290303102,723.166012569641,731.119234658163,751.560229899762,765.070751916102,795.393838665638,828.828828828829,852.218321097989]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-e8bfa232502bec58e258" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e8bfa232502bec58e258">{"x":{"attrs":{"title":"100k 14 dienų rodiklis amžiaus grupėje 60-69","labels":["day","neapsaugoti","apsaugoti2"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"stackedGraph":false,"fillGraph":false,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colors":["#E41A1C","#4DAF4A"],"colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"dateWindow":["2021-06-01T00:00:00.000Z","2021-10-15T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"daily","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2021-02-19T00:00:00.000Z","2021-02-20T00:00:00.000Z","2021-02-21T00:00:00.000Z","2021-02-22T00:00:00.000Z","2021-02-23T00:00:00.000Z","2021-02-24T00:00:00.000Z","2021-02-25T00:00:00.000Z","2021-02-26T00:00:00.000Z","2021-02-27T00:00:00.000Z","2021-02-28T00:00:00.000Z","2021-03-01T00:00:00.000Z","2021-03-02T00:00:00.000Z","2021-03-03T00:00:00.000Z","2021-03-04T00:00:00.000Z","2021-03-05T00:00:00.000Z","2021-03-06T00:00:00.000Z","2021-03-07T00:00:00.000Z","2021-03-08T00:00:00.000Z","2021-03-09T00:00:00.000Z","2021-03-10T00:00:00.000Z","2021-03-11T00:00:00.000Z","2021-03-12T00:00:00.000Z","2021-03-13T00:00:00.000Z","2021-03-14T00:00:00.000Z","2021-03-15T00:00:00.000Z","2021-03-16T00:00:00.000Z","2021-03-17T00:00:00.000Z","2021-03-18T00:00:00.000Z","2021-03-19T00:00:00.000Z","2021-03-20T00:00:00.000Z","2021-03-21T00:00:00.000Z","2021-03-22T00:00:00.000Z","2021-03-23T00:00:00.000Z","2021-03-24T00:00:00.000Z","2021-03-25T00:00:00.000Z","2021-03-26T00:00:00.000Z","2021-03-27T00:00:00.000Z","2021-03-28T00:00:00.000Z","2021-03-29T00:00:00.000Z","2021-03-30T00:00:00.000Z","2021-03-31T00:00:00.000Z","2021-04-01T00:00:00.000Z","2021-04-02T00:00:00.000Z","2021-04-03T00:00:00.000Z","2021-04-04T00:00:00.000Z","2021-04-05T00:00:00.000Z","2021-04-06T00:00:00.000Z","2021-04-07T00:00:00.000Z","2021-04-08T00:00:00.000Z","2021-04-09T00:00:00.000Z","2021-04-10T00:00:00.000Z","2021-04-11T00:00:00.000Z","2021-04-12T00:00:00.000Z","2021-04-13T00:00:00.000Z","2021-04-14T00:00:00.000Z","2021-04-15T00:00:00.000Z","2021-04-16T00:00:00.000Z","2021-04-17T00:00:00.000Z","2021-04-18T00:00:00.000Z","2021-04-19T00:00:00.000Z","2021-04-20T00:00:00.000Z","2021-04-21T00:00:00.000Z","2021-04-22T00:00:00.000Z","2021-04-23T00:00:00.000Z","2021-04-24T00:00:00.000Z","2021-04-25T00:00:00.000Z","2021-04-26T00:00:00.000Z","2021-04-27T00:00:00.000Z","2021-04-28T00:00:00.000Z","2021-04-29T00:00:00.000Z","2021-04-30T00:00:00.000Z","2021-05-01T00:00:00.000Z","2021-05-02T00:00:00.000Z","2021-05-03T00:00:00.000Z","2021-05-04T00:00:00.000Z","2021-05-05T00:00:00.000Z","2021-05-06T00:00:00.000Z","2021-05-07T00:00:00.000Z","2021-05-08T00:00:00.000Z","2021-05-09T00:00:00.000Z","2021-05-10T00:00:00.000Z","2021-05-11T00:00:00.000Z","2021-05-12T00:00:00.000Z","2021-05-13T00:00:00.000Z","2021-05-14T00:00:00.000Z","2021-05-15T00:00:00.000Z","2021-05-16T00:00:00.000Z","2021-05-17T00:00:00.000Z","2021-05-18T00:00:00.000Z","2021-05-19T00:00:00.000Z","2021-05-20T00:00:00.000Z","2021-05-21T00:00:00.000Z","2021-05-22T00:00:00.000Z","2021-05-23T00:00:00.000Z","2021-05-24T00:00:00.000Z","2021-05-25T00:00:00.000Z","2021-05-26T00:00:00.000Z","2021-05-27T00:00:00.000Z","2021-05-28T00:00:00.000Z","2021-05-29T00:00:00.000Z","2021-05-30T00:00:00.000Z","2021-05-31T00:00:00.000Z","2021-06-01T00:00:00.000Z","2021-06-02T00:00:00.000Z","2021-06-03T00:00:00.000Z","2021-06-04T00:00:00.000Z","2021-06-05T00:00:00.000Z","2021-06-06T00:00:00.000Z","2021-06-07T00:00:00.000Z","2021-06-08T00:00:00.000Z","2021-06-09T00:00:00.000Z","2021-06-10T00:00:00.000Z","2021-06-11T00:00:00.000Z","2021-06-12T00:00:00.000Z","2021-06-13T00:00:00.000Z","2021-06-14T00:00:00.000Z","2021-06-15T00:00:00.000Z","2021-06-16T00:00:00.000Z","2021-06-17T00:00:00.000Z","2021-06-18T00:00:00.000Z","2021-06-19T00:00:00.000Z","2021-06-20T00:00:00.000Z","2021-06-21T00:00:00.000Z","2021-06-22T00:00:00.000Z","2021-06-23T00:00:00.000Z","2021-06-24T00:00:00.000Z","2021-06-25T00:00:00.000Z","2021-06-26T00:00:00.000Z","2021-06-27T00:00:00.000Z","2021-06-28T00:00:00.000Z","2021-06-29T00:00:00.000Z","2021-06-30T00:00:00.000Z","2021-07-01T00:00:00.000Z","2021-07-02T00:00:00.000Z","2021-07-03T00:00:00.000Z","2021-07-04T00:00:00.000Z","2021-07-05T00:00:00.000Z","2021-07-06T00:00:00.000Z","2021-07-07T00:00:00.000Z","2021-07-08T00:00:00.000Z","2021-07-09T00:00:00.000Z","2021-07-10T00:00:00.000Z","2021-07-11T00:00:00.000Z","2021-07-12T00:00:00.000Z","2021-07-13T00:00:00.000Z","2021-07-14T00:00:00.000Z","2021-07-15T00:00:00.000Z","2021-07-16T00:00:00.000Z","2021-07-17T00:00:00.000Z","2021-07-18T00:00:00.000Z","2021-07-19T00:00:00.000Z","2021-07-20T00:00:00.000Z","2021-07-21T00:00:00.000Z","2021-07-22T00:00:00.000Z","2021-07-23T00:00:00.000Z","2021-07-24T00:00:00.000Z","2021-07-25T00:00:00.000Z","2021-07-26T00:00:00.000Z","2021-07-27T00:00:00.000Z","2021-07-28T00:00:00.000Z","2021-07-29T00:00:00.000Z","2021-07-30T00:00:00.000Z","2021-07-31T00:00:00.000Z","2021-08-01T00:00:00.000Z","2021-08-02T00:00:00.000Z","2021-08-03T00:00:00.000Z","2021-08-04T00:00:00.000Z","2021-08-05T00:00:00.000Z","2021-08-06T00:00:00.000Z","2021-08-07T00:00:00.000Z","2021-08-08T00:00:00.000Z","2021-08-09T00:00:00.000Z","2021-08-10T00:00:00.000Z","2021-08-11T00:00:00.000Z","2021-08-12T00:00:00.000Z","2021-08-13T00:00:00.000Z","2021-08-14T00:00:00.000Z","2021-08-15T00:00:00.000Z","2021-08-16T00:00:00.000Z","2021-08-17T00:00:00.000Z","2021-08-18T00:00:00.000Z","2021-08-19T00:00:00.000Z","2021-08-20T00:00:00.000Z","2021-08-21T00:00:00.000Z","2021-08-22T00:00:00.000Z","2021-08-23T00:00:00.000Z","2021-08-24T00:00:00.000Z","2021-08-25T00:00:00.000Z","2021-08-26T00:00:00.000Z","2021-08-27T00:00:00.000Z","2021-08-28T00:00:00.000Z","2021-08-29T00:00:00.000Z","2021-08-30T00:00:00.000Z","2021-08-31T00:00:00.000Z","2021-09-01T00:00:00.000Z","2021-09-02T00:00:00.000Z","2021-09-03T00:00:00.000Z","2021-09-04T00:00:00.000Z","2021-09-05T00:00:00.000Z","2021-09-06T00:00:00.000Z","2021-09-07T00:00:00.000Z","2021-09-08T00:00:00.000Z","2021-09-09T00:00:00.000Z","2021-09-10T00:00:00.000Z","2021-09-11T00:00:00.000Z","2021-09-12T00:00:00.000Z","2021-09-13T00:00:00.000Z","2021-09-14T00:00:00.000Z","2021-09-15T00:00:00.000Z","2021-09-16T00:00:00.000Z","2021-09-17T00:00:00.000Z","2021-09-18T00:00:00.000Z","2021-09-19T00:00:00.000Z","2021-09-20T00:00:00.000Z","2021-09-21T00:00:00.000Z","2021-09-22T00:00:00.000Z","2021-09-23T00:00:00.000Z","2021-09-24T00:00:00.000Z","2021-09-25T00:00:00.000Z","2021-09-26T00:00:00.000Z","2021-09-27T00:00:00.000Z","2021-09-28T00:00:00.000Z","2021-09-29T00:00:00.000Z","2021-09-30T00:00:00.000Z","2021-10-01T00:00:00.000Z","2021-10-02T00:00:00.000Z","2021-10-03T00:00:00.000Z","2021-10-04T00:00:00.000Z","2021-10-05T00:00:00.000Z","2021-10-06T00:00:00.000Z","2021-10-07T00:00:00.000Z","2021-10-08T00:00:00.000Z","2021-10-09T00:00:00.000Z","2021-10-10T00:00:00.000Z","2021-10-11T00:00:00.000Z","2021-10-12T00:00:00.000Z","2021-10-13T00:00:00.000Z","2021-10-14T00:00:00.000Z","2021-10-15T00:00:00.000Z"],[311.776868878705,309.910657555207,317.737192435261,317.196733327712,321.053366998443,325.425186410974,335.541991709371,337.453403963116,334.307032550776,333.701932199619,328.465838570339,336.491631984415,330.080697340633,320.395790775628,317.141445743455,317.213527855828,309.373115838652,310.827202489255,307.158339959288,311.19680138633,293.735637925867,292.979880260397,300.482583077062,304.207249993292,312.832173948144,319.415694788038,333.486350012151,341.440281823725,341.759552111537,342.665995839056,349.507697329054,368.538652279354,378.95340580106,379.060259281326,401.527797814095,405.608913057712,391.962189610416,399.651038092709,404.675015896713,411.579662144372,413.161397034551,428.396999825571,451.036121439811,476.066943846537,486.337322444801,474.723605367542,488.216439091204,512.741775957552,532.431891598296,555.66803083108,581.917141947251,591.135501433495,602.19430705709,622.980910425844,639.162420933582,645.302053132951,647.613109619189,632.765676175481,629.636371065701,655.908420051094,663.926771448124,673.639221963932,681.863215519284,683.349790903619,677.433490322097,670.284703131418,663.324826106172,662.020346386389,665.830121353569,674.041291794515,693.248236195345,698.863443019022,699.851766028863,679.998974875917,670.244762497407,656.844609457338,659.904458887408,690.949133477951,697.105330211583,696.555278838882,709.827557667403,725.33487539694,734.467935964704,752.4211440402,743.313425084394,731.933442852263,715.990453460621,710.430031665819,717.061050244301,729.292194356654,725.155992858929,706.619440044141,690.317080876786,666.817764311532,632.112770841095,591.911562169077,573.276403365566,538.044698111393,516.464765989161,500.809355488752,485.789821546596,468.755224180013,437.061154575548,398.221186199624,380.114885469116,354.679374197619,346.74623014273,341.114159538726,330.13093957491,310.349275725223,302.50445549198,292.18407596786,277.549003459068,265.087701912595,261.888238987476,246.927998798729,233.009379686666,218.967994322411,199.876182895551,182.632050134288,170.518285842495,165.210598619055,155.278101273822,144.923548242114,139.84058173682,125.981566907579,108.797165496856,100.498627807197,93.7805149227036,89.2199076767912,77.4024141715002,76.3162067871868,77.1867920367289,76.9744971337128,74.2617063915932,74.3085739879274,64.4211301306829,59.7439251758841,50.9477317861859,51.3304001676095,51.7937551529501,54.0970564836913,55.2721088435374,53.3304890405845,56.8468246221831,58.2631118975432,55.7170013328381,54.9100573260999,56.0932688077431,56.131545928812,57.4204946996466,67.581790585081,72.2174077283737,83.4167500834167,88.2178870141037,93.882021592865,97.2708265784148,104.264765236109,104.671971547232,109.835360192042,127.633873118255,138.575535119164,143.46214320965,153.874420100133,176.334320651861,183.454482519903,203.235509308186,212.945195862779,237.747751989078,247.74083948753,258.461974224614,287.77830412127,316.316459158313,336.921588071542,355.378870015661,382.304751501912,396.511670335819,394.434096636354,403.995886587337,430.80569305403,444.660339287049,476.461295418641,492.433957424981,499.954900975427,506.002323480057,512.418300653595,520.026993767615,559.648910899062,567.323278112036,572.415425968998,585.114573272302,611.003671627568,625.557269626506,655.850385920697,698.131045014908,736.056240705412,782.395333405349,792.95840473594,799.850028119728,825.721709467107,866.075200675961,875.650933695977,931.888650379911,989.032000139056,1012.90581722289,1006.26509397641,1039.68239839063,1067.3264465795,1114.84987427895,1137.75731617578,1164.08407486959,1234.11628802464,1256.67366960276,1295.80768103196,1348.6829114174,1406.10582902074,1470.22888327767,1511.58954054277,1561.98278715657,1617.64705882353,1687.65795684776,1744.07582938389,1798.54585654152,1883.17837465565,1952.35303059917,1993.06570138904,2006.55021834061,2079.20792079208,2127.51782184814,2201.99120997399,2292.01652067354,2366.75534354646,2390.82365948038,2405.49828178694,2455.92818270617,2470.29540224487,2515.35051326427,2641.86224917891,2667.15028412526],[55.2181115405853,110.436223081171,110.436223081171,110.497237569061,153.139356814701,109.529025191676,81.3890396093326,82.4912353062487,80.9388911371914,121.408336705787,129.749768303985,134.2957864697,126.742712294043,111.994624258036,106.733941393363,95.8037938302357,95.6114351276413,81.8405019550787,70.4411376243726,85.7632933104631,83.8222967309304,90.9466721785862,90.9466721785862,74.4232200446539,65.19967400163,81.1688311688312,69.1509796388782,57.81600057816,62.8228395923496,69.8080279232112,69.8080279232112,82.152392688437,80.8080808080808,66.3393923311662,65.3295877703012,51.4006682086867,51.374261494991,57.7960441818649,57.7256109293823,44.546264477536,48.8251449496491,54.9903766840803,39.8227885907711,44.6539320267924,49.6154800297693,39.0491531214917,38.1806901159738,42.0777034924494,51.1961277110677,53.193847245002,61.5980288630764,57.2057205720572,65.4421709349505,64.2480832655159,66.8560922614073,61.3045610593428,83.2012678288431,79.2173327524062,79.1953749901006,98.0007840062721,108.510308479306,110.649013697585,112.262844740486,110.823790173624,110.795139786535,114.492539518393,114.012504597278,122.557854516617,136.578532656277,135.125770909847,116.437672577265,119.047619047619,122.362590118394,109.07648575395,101.033145389955,109.659732301242,101.829851575277,104.815524676569,101.686804641704,101.680722531252,101.235670686318,96.0419091967404,81.0893940664933,75.5287009063444,78.3719532903158,78.2248181272979,75.6252118809816,75.2933845674525,80.2729279550472,69.2201199815413,71.4038428249957,70.9945501242405,72.7680984656327,74.8471869932222,76.7125559794328,74.3080066877206,71.7801476620181,67.9153560194452,54.4764039347528,51.073290171396,50.9431983338578,51.6673801685833,46.5925753360832,39.9955005061931,33.7605792849742,30.118129998773,27.7907467929478,25.567487049512,23.1762498620461,22.471429182896,21.6262975778547,20.885962643964,20.2458423716558,21.1278426551936,21.1256109622716,20.023456048514,16.6776306646036,16.9441645189195,15.5668944045663,15.1883353584447,16.6604190095381,16.6602802259134,18.9517225467819,17.0308014208554,16.6917042230012,13.971358714635,14.4090033519892,12.8417219993806,12.0866917969134,11.1878514850008,10.9654733794858,9.1318427356191,8.23305020788452,8.65881600682048,7.29786570600216,7.29680068457257,5.18806744487678,6.99807870929981,5.62894025818073,5.52934237687998,5.45712518645178,7.26744186046512,7.26590172867912,8.96164416298243,9.42290590639521,9.81654607713496,10.2140409015593,8.94629427716738,8.89145753217596,8.88938274348575,8.77606766348168,7.58832265547931,8.55111966223077,10.1310099550503,9.49868073878628,9.4855161438215,10.0095353995122,8.36046128845159,8.78521190447891,13.2903271976323,15.7604412923562,18.6635863342194,18.6358553857622,20.1463633295895,28.0298517921586,35.0147061765942,37.3260605578007,40.0365766255592,44.7495500457331,45.6905911772942,48.6393271068444,53.2457952918993,57.9933332033763,62.7581476130011,66.5365076589834,71.6599445119619,75.9804870494406,78.3964537702887,78.6004301324152,79.4193244062804,84.0562167977944,83.3704667308715,85.6213527217067,87.9907035908815,88.9513780290096,87.7536031438682,92.3637991039759,96.4324735166976,97.5716038213966,101.492170941139,100.933398106791,102.813214799443,106.270925027273,111.300525507544,120.02325450556,133.350801508502,139.176894767322,147.073242474752,150.818998524495,165.40015188859,167.844522968198,174.790321159829,185.144999469036,192.301499307623,200.034948634704,203.260444689706,207.84405286747,218.573749247084,229.016999059394,238.850986784181,251.867643553313,256.266157131617,260.769088971716,259.041814189038,269.436997319035,280.235593930159,295.469468154957,304.123346771342,313.783030083396,323.081070808233,334.006045597554,349.084642034363,361.873848583209,370.637470224437,388.83536832561,399.724508299623,403.257448274058,419.818934051449,457.85875014118,478.091106290672,485.603018449449,511.425886550928,523.580615824347,530.166196707252,550.573080785346,570.624526463903,600.036365840354,623.847332738781,628.933541822781]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-d2f476aa8328ff2cf089" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d2f476aa8328ff2cf089">{"x":{"attrs":{"title":"100k 14 dienų rodiklis amžiaus grupėje 70-79","labels":["day","neapsaugoti","apsaugoti2"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"stackedGraph":false,"fillGraph":false,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colors":["#E41A1C","#4DAF4A"],"colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"dateWindow":["2021-06-01T00:00:00.000Z","2021-10-15T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"daily","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2021-04-02T00:00:00.000Z","2021-04-03T00:00:00.000Z","2021-04-04T00:00:00.000Z","2021-04-05T00:00:00.000Z","2021-04-06T00:00:00.000Z","2021-04-07T00:00:00.000Z","2021-04-08T00:00:00.000Z","2021-04-09T00:00:00.000Z","2021-04-10T00:00:00.000Z","2021-04-11T00:00:00.000Z","2021-04-12T00:00:00.000Z","2021-04-13T00:00:00.000Z","2021-04-14T00:00:00.000Z","2021-04-15T00:00:00.000Z","2021-04-16T00:00:00.000Z","2021-04-17T00:00:00.000Z","2021-04-18T00:00:00.000Z","2021-04-19T00:00:00.000Z","2021-04-20T00:00:00.000Z","2021-04-21T00:00:00.000Z","2021-04-22T00:00:00.000Z","2021-04-23T00:00:00.000Z","2021-04-24T00:00:00.000Z","2021-04-25T00:00:00.000Z","2021-04-26T00:00:00.000Z","2021-04-27T00:00:00.000Z","2021-04-28T00:00:00.000Z","2021-04-29T00:00:00.000Z","2021-04-30T00:00:00.000Z","2021-05-01T00:00:00.000Z","2021-05-02T00:00:00.000Z","2021-05-03T00:00:00.000Z","2021-05-04T00:00:00.000Z","2021-05-05T00:00:00.000Z","2021-05-06T00:00:00.000Z","2021-05-07T00:00:00.000Z","2021-05-08T00:00:00.000Z","2021-05-09T00:00:00.000Z","2021-05-10T00:00:00.000Z","2021-05-11T00:00:00.000Z","2021-05-12T00:00:00.000Z","2021-05-13T00:00:00.000Z","2021-05-14T00:00:00.000Z","2021-05-15T00:00:00.000Z","2021-05-16T00:00:00.000Z","2021-05-17T00:00:00.000Z","2021-05-18T00:00:00.000Z","2021-05-19T00:00:00.000Z","2021-05-20T00:00:00.000Z","2021-05-21T00:00:00.000Z","2021-05-22T00:00:00.000Z","2021-05-23T00:00:00.000Z","2021-05-24T00:00:00.000Z","2021-05-25T00:00:00.000Z","2021-05-26T00:00:00.000Z","2021-05-27T00:00:00.000Z","2021-05-28T00:00:00.000Z","2021-05-29T00:00:00.000Z","2021-05-30T00:00:00.000Z","2021-05-31T00:00:00.000Z","2021-06-01T00:00:00.000Z","2021-06-02T00:00:00.000Z","2021-06-03T00:00:00.000Z","2021-06-04T00:00:00.000Z","2021-06-05T00:00:00.000Z","2021-06-06T00:00:00.000Z","2021-06-07T00:00:00.000Z","2021-06-08T00:00:00.000Z","2021-06-09T00:00:00.000Z","2021-06-10T00:00:00.000Z","2021-06-11T00:00:00.000Z","2021-06-12T00:00:00.000Z","2021-06-13T00:00:00.000Z","2021-06-14T00:00:00.000Z","2021-06-15T00:00:00.000Z","2021-06-16T00:00:00.000Z","2021-06-17T00:00:00.000Z","2021-06-18T00:00:00.000Z","2021-06-19T00:00:00.000Z","2021-06-20T00:00:00.000Z","2021-06-21T00:00:00.000Z","2021-06-22T00:00:00.000Z","2021-06-23T00:00:00.000Z","2021-06-24T00:00:00.000Z","2021-06-25T00:00:00.000Z","2021-06-26T00:00:00.000Z","2021-06-27T00:00:00.000Z","2021-06-28T00:00:00.000Z","2021-06-29T00:00:00.000Z","2021-06-30T00:00:00.000Z","2021-07-01T00:00:00.000Z","2021-07-02T00:00:00.000Z","2021-07-03T00:00:00.000Z","2021-07-04T00:00:00.000Z","2021-07-05T00:00:00.000Z","2021-07-06T00:00:00.000Z","2021-07-07T00:00:00.000Z","2021-07-08T00:00:00.000Z","2021-07-09T00:00:00.000Z","2021-07-10T00:00:00.000Z","2021-07-11T00:00:00.000Z","2021-07-12T00:00:00.000Z","2021-07-13T00:00:00.000Z","2021-07-14T00:00:00.000Z","2021-07-15T00:00:00.000Z","2021-07-16T00:00:00.000Z","2021-07-17T00:00:00.000Z","2021-07-18T00:00:00.000Z","2021-07-19T00:00:00.000Z","2021-07-20T00:00:00.000Z","2021-07-21T00:00:00.000Z","2021-07-22T00:00:00.000Z","2021-07-23T00:00:00.000Z","2021-07-24T00:00:00.000Z","2021-07-25T00:00:00.000Z","2021-07-26T00:00:00.000Z","2021-07-27T00:00:00.000Z","2021-07-28T00:00:00.000Z","2021-07-29T00:00:00.000Z","2021-07-30T00:00:00.000Z","2021-07-31T00:00:00.000Z","2021-08-01T00:00:00.000Z","2021-08-02T00:00:00.000Z","2021-08-03T00:00:00.000Z","2021-08-04T00:00:00.000Z","2021-08-05T00:00:00.000Z","2021-08-06T00:00:00.000Z","2021-08-07T00:00:00.000Z","2021-08-08T00:00:00.000Z","2021-08-09T00:00:00.000Z","2021-08-10T00:00:00.000Z","2021-08-11T00:00:00.000Z","2021-08-12T00:00:00.000Z","2021-08-13T00:00:00.000Z","2021-08-14T00:00:00.000Z","2021-08-15T00:00:00.000Z","2021-08-16T00:00:00.000Z","2021-08-17T00:00:00.000Z","2021-08-18T00:00:00.000Z","2021-08-19T00:00:00.000Z","2021-08-20T00:00:00.000Z","2021-08-21T00:00:00.000Z","2021-08-22T00:00:00.000Z","2021-08-23T00:00:00.000Z","2021-08-24T00:00:00.000Z","2021-08-25T00:00:00.000Z","2021-08-26T00:00:00.000Z","2021-08-27T00:00:00.000Z","2021-08-28T00:00:00.000Z","2021-08-29T00:00:00.000Z","2021-08-30T00:00:00.000Z","2021-08-31T00:00:00.000Z","2021-09-01T00:00:00.000Z","2021-09-02T00:00:00.000Z","2021-09-03T00:00:00.000Z","2021-09-04T00:00:00.000Z","2021-09-05T00:00:00.000Z","2021-09-06T00:00:00.000Z","2021-09-07T00:00:00.000Z","2021-09-08T00:00:00.000Z","2021-09-09T00:00:00.000Z","2021-09-10T00:00:00.000Z","2021-09-11T00:00:00.000Z","2021-09-12T00:00:00.000Z","2021-09-13T00:00:00.000Z","2021-09-14T00:00:00.000Z","2021-09-15T00:00:00.000Z","2021-09-16T00:00:00.000Z","2021-09-17T00:00:00.000Z","2021-09-18T00:00:00.000Z","2021-09-19T00:00:00.000Z","2021-09-20T00:00:00.000Z","2021-09-21T00:00:00.000Z","2021-09-22T00:00:00.000Z","2021-09-23T00:00:00.000Z","2021-09-24T00:00:00.000Z","2021-09-25T00:00:00.000Z","2021-09-26T00:00:00.000Z","2021-09-27T00:00:00.000Z","2021-09-28T00:00:00.000Z","2021-09-29T00:00:00.000Z","2021-09-30T00:00:00.000Z","2021-10-01T00:00:00.000Z","2021-10-02T00:00:00.000Z","2021-10-03T00:00:00.000Z","2021-10-04T00:00:00.000Z","2021-10-05T00:00:00.000Z","2021-10-06T00:00:00.000Z","2021-10-07T00:00:00.000Z","2021-10-08T00:00:00.000Z","2021-10-09T00:00:00.000Z","2021-10-10T00:00:00.000Z","2021-10-11T00:00:00.000Z","2021-10-12T00:00:00.000Z","2021-10-13T00:00:00.000Z","2021-10-14T00:00:00.000Z","2021-10-15T00:00:00.000Z"],[267.909468925292,275.845862032307,277.586563914866,277.780986151376,297.828983462654,316.650928548946,322.356800403735,339.667256729657,359.080544124971,361.810626220783,379.59348499125,392.237678172763,397.418854547469,402.704271042347,405.476045831508,409.177468338301,405.770007010686,437.067372159606,440.27721157766,456.403112469118,467.44891734077,483.906266464566,467.692608016658,472.861340126476,457.428691309678,465.530570400995,491.637768315702,519.051877529571,519.537053685496,507.234010277414,512.227049382482,487.281293337639,486.995868204347,471.858074392737,495.085247491052,519.034971226206,535.212221808204,525.584076497915,530.258971639698,543.445946749432,563.759728597086,576.160394786136,594.082933977583,600.640330219882,608.892477530544,600.963132968068,622.409458449412,635.160468955483,634.752331962574,622.024939403674,610.872654292955,603.919614195043,600.860891154564,578.215113859326,557.665641767649,527.422944422426,496.72438716821,482.466281310212,445.808780427606,429.503977175818,391.340419203857,382.766038213337,373.780800821355,367.067842583118,348.954766330757,329.569927559877,301.224543251915,289.643986163293,269.835417155499,260.875457379049,249.495881609078,237.814162774384,232.765112617238,220.109022750331,209.444021325209,188.241855925261,173.971110251995,148.323415676372,148.483348653044,144.999292686377,124.087073672268,105.330810154604,98.855078454985,90.4388091017617,85.7038657913931,78.5259044175387,76.7263427109974,69.5410292072323,66.1789036361631,62.8291601219625,66.8834184858337,67.2482394037323,58.040478553107,59.9396856912732,58.2039390923941,56.6005697790691,60.692271218587,62.8427787934187,53.6039054273954,51.7856457861828,48.0021504963422,44.2528956786085,44.4178366582337,40.7126655163723,37.0934364140408,39.1665361115463,39.1972405142678,35.2920416446091,37.3258943480738,35.4393494910516,37.49383325111,43.4516402994213,41.5816882165416,45.5625990491284,51.5300459806564,63.527356467879,63.7412106846204,77.9875219964806,80.287428995805,86.618455774228,96.8229954614221,100.906137111259,115.312253444195,131.576283880893,136.231471503223,155.18755232475,180.327868852459,190.871028651178,199.186824920941,211.990861753144,228.941506476363,254.43187224624,269.871914637437,283.23302163817,287.71578684013,304.52829401581,320.043509182948,340.343284522784,379.987333755541,383.052073801366,385.529782175673,394.705794023639,397.302637230478,414.346756441797,444.975037985674,448.097226168878,468.12551063219,486.688297257656,494.454095950822,492.709680296072,506.136343276897,522.993688007214,532.508021755456,568.353167698982,627.81750808374,640.736609791405,644.486194677638,653.137954304444,669.730152522487,698.244484611385,728.528573949432,742.365876680528,770.096709819373,783.891792191823,816.675740841565,808.519545763776,838.596677458734,871.483135187476,869.730655287691,894.147152632009,944.117005020738,994.189088705902,1003.96594281277,1055.81538633881,1080.62234794908,1135.39111085753,1171.86383513877,1201.95747359986,1226.42867424788,1273.03764140844,1283.13305595158,1325.12459689241,1390.15698171001,1408.20122221238,1439.84862371759,1481.9874669597,1558.81386806821,1553.20555188367,1609.58489652669,1649.77323227711,1663.15725228112,1720.39724980901,1772.38519428659,1813.96786155748,1853.23383084577,1901.33124510572,1895.12187431022],[68.4775165487332,68.4618895481515,68.4775165487332,66.7408231368187,86.1697544161999,83.2292967124428,83.2119825254837,106.100795755968,99.7506234413965,99.767209843698,110.114834041214,98.6749365661122,80.5894542942666,81.358690125089,100.291757840992,109.120669273438,109.051254089422,116.50833482703,101.920815366523,91.3659205116492,77.0373631211137,56.3063063063063,60.8215589033405,60.5975854192887,55.040821942941,46.2748727441,46.6511162945685,41.2593627015361,34.0589787982857,31.0436304114692,33.8667344001355,33.853358535278,29.5969434429317,29.3278587996907,27.594511200863,29.0002175016313,26.5444015444015,38.5811772081696,40.8496732026144,41.9844657476734,38.7956117852447,45.2274736344387,39.3321402584122,39.2834695160277,39.2873278723948,40.987606128623,43.1827569374038,40.7083248524323,44.120196019728,45.7198591828337,47.0931380740426,45.578158946233,43.9573765025086,48.385877372042,49.680090327437,41.1952103702076,40.1279077058123,40.7805143287898,40.7638906045408,40.4228474833715,38.4705059454418,36.5703647062735,29.6487679878016,25.8043206754539,25.7508961311854,21.6314211843718,23.5648494411032,22.0896841175171,18.6770734008985,16.421154310553,16.1394448030988,15.9992470942544,15.9992470942544,14.9041014224102,13.7805583882259,13.5471984393627,13.3110890245634,14.8481990008035,14.8086203592397,14.8091363660122,14.5816357164301,12.702068743596,12.4723529509587,12.2508983992159,11.2461542169062,10.4323821140821,9.63027759275161,9.233539292557,9.12235356722034,7.46530499503557,8.13278621862408,6.51531823709967,5.7827702360816,5.78281203692325,4.23340153813589,3.48507343049718,4.15737032469062,5.51431308891141,6.17427932439664,6.17271249562766,6.17250082300011,5.43260513788631,4.72752568059486,5.35471650122824,4.65014315797865,3.95942905033094,3.94962906400374,4.60787024237397,5.88820265885062,5.86437651903642,6.49456080532554,7.14021433625217,6.46868187669399,7.11311140425752,7.75970771767597,9.03820578703405,10.280199692879,10.8804178080438,13.4169871835827,14.662195759438,14.6584579302257,14.6592987756299,16.5529184068453,21.0049266100595,22.2384598278108,24.7311282467532,27.236737925574,29.1354990720977,31.0372129849565,36.0800597536428,37.9521044441914,40.4584447520972,43.6013446907464,48.6261532923695,50.5190835838238,53.045037763015,56.8092157172163,58.033179839778,59.8794846582457,61.0915869956795,67.979681628491,68.6082594273413,73.0198097708059,76.1145114517742,77.9815359847056,82.9463550732379,82.8703267727658,85.968336042068,89.1058665545523,90.3682506212817,95.9440138460381,99.0477623355212,103.374390717606,105.194610028553,105.158394832216,110.168006209469,105.796257692139,117.612466921494,127.522316405371,136.772420684487,144.02304368699,148.198885394938,154.421883075237,158.166760072234,158.587020740695,163.358095853313,175.519114837877,184.381980064472,188.474040018291,194.659531210412,202.083874077645,198.805929602944,199.778024417314,204.419651378293,207.602680408572,220.662600753931,219.431317384722,220.071231969791,230.083405234397,243.771307078532,248.935313426643,262.353757563214,275.920748754102,283.843989132483,293.615236381542,302.899703170431,328.713952148467,344.129799944261,364.83322341951,380.936256666385,407.563507948698,416.099670386162,432.235716574275,444.350402031316,455.726805681475,465.346773998598,478.77260114978]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-7524b869aeda2c90bdd9" style="width:624px;height:384px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7524b869aeda2c90bdd9">{"x":{"attrs":{"title":"100k 14 dienų rodiklis amžiaus grupėje 80+","labels":["day","neapsaugoti","apsaugoti2"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"stackedGraph":false,"fillGraph":false,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colors":["#E41A1C","#4DAF4A"],"colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"showRangeSelector":true,"dateWindow":["2021-06-01T00:00:00.000Z","2021-10-15T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"daily","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2021-03-26T00:00:00.000Z","2021-03-27T00:00:00.000Z","2021-03-28T00:00:00.000Z","2021-03-29T00:00:00.000Z","2021-03-30T00:00:00.000Z","2021-03-31T00:00:00.000Z","2021-04-01T00:00:00.000Z","2021-04-02T00:00:00.000Z","2021-04-03T00:00:00.000Z","2021-04-04T00:00:00.000Z","2021-04-05T00:00:00.000Z","2021-04-06T00:00:00.000Z","2021-04-07T00:00:00.000Z","2021-04-08T00:00:00.000Z","2021-04-09T00:00:00.000Z","2021-04-10T00:00:00.000Z","2021-04-11T00:00:00.000Z","2021-04-12T00:00:00.000Z","2021-04-13T00:00:00.000Z","2021-04-14T00:00:00.000Z","2021-04-15T00:00:00.000Z","2021-04-16T00:00:00.000Z","2021-04-17T00:00:00.000Z","2021-04-18T00:00:00.000Z","2021-04-19T00:00:00.000Z","2021-04-20T00:00:00.000Z","2021-04-21T00:00:00.000Z","2021-04-22T00:00:00.000Z","2021-04-23T00:00:00.000Z","2021-04-24T00:00:00.000Z","2021-04-25T00:00:00.000Z","2021-04-26T00:00:00.000Z","2021-04-27T00:00:00.000Z","2021-04-28T00:00:00.000Z","2021-04-29T00:00:00.000Z","2021-04-30T00:00:00.000Z","2021-05-01T00:00:00.000Z","2021-05-02T00:00:00.000Z","2021-05-03T00:00:00.000Z","2021-05-04T00:00:00.000Z","2021-05-05T00:00:00.000Z","2021-05-06T00:00:00.000Z","2021-05-07T00:00:00.000Z","2021-05-08T00:00:00.000Z","2021-05-09T00:00:00.000Z","2021-05-10T00:00:00.000Z","2021-05-11T00:00:00.000Z","2021-05-12T00:00:00.000Z","2021-05-13T00:00:00.000Z","2021-05-14T00:00:00.000Z","2021-05-15T00:00:00.000Z","2021-05-16T00:00:00.000Z","2021-05-17T00:00:00.000Z","2021-05-18T00:00:00.000Z","2021-05-19T00:00:00.000Z","2021-05-20T00:00:00.000Z","2021-05-21T00:00:00.000Z","2021-05-22T00:00:00.000Z","2021-05-23T00:00:00.000Z","2021-05-24T00:00:00.000Z","2021-05-25T00:00:00.000Z","2021-05-26T00:00:00.000Z","2021-05-27T00:00:00.000Z","2021-05-28T00:00:00.000Z","2021-05-29T00:00:00.000Z","2021-05-30T00:00:00.000Z","2021-05-31T00:00:00.000Z","2021-06-01T00:00:00.000Z","2021-06-02T00:00:00.000Z","2021-06-03T00:00:00.000Z","2021-06-04T00:00:00.000Z","2021-06-05T00:00:00.000Z","2021-06-06T00:00:00.000Z","2021-06-07T00:00:00.000Z","2021-06-08T00:00:00.000Z","2021-06-09T00:00:00.000Z","2021-06-10T00:00:00.000Z","2021-06-11T00:00:00.000Z","2021-06-12T00:00:00.000Z","2021-06-13T00:00:00.000Z","2021-06-14T00:00:00.000Z","2021-06-15T00:00:00.000Z","2021-06-16T00:00:00.000Z","2021-06-17T00:00:00.000Z","2021-06-18T00:00:00.000Z","2021-06-19T00:00:00.000Z","2021-06-20T00:00:00.000Z","2021-06-21T00:00:00.000Z","2021-06-22T00:00:00.000Z","2021-06-23T00:00:00.000Z","2021-06-24T00:00:00.000Z","2021-06-25T00:00:00.000Z","2021-06-26T00:00:00.000Z","2021-06-27T00:00:00.000Z","2021-06-28T00:00:00.000Z","2021-06-29T00:00:00.000Z","2021-06-30T00:00:00.000Z","2021-07-01T00:00:00.000Z","2021-07-02T00:00:00.000Z","2021-07-03T00:00:00.000Z","2021-07-04T00:00:00.000Z","2021-07-05T00:00:00.000Z","2021-07-06T00:00:00.000Z","2021-07-07T00:00:00.000Z","2021-07-08T00:00:00.000Z","2021-07-09T00:00:00.000Z","2021-07-10T00:00:00.000Z","2021-07-11T00:00:00.000Z","2021-07-12T00:00:00.000Z","2021-07-13T00:00:00.000Z","2021-07-14T00:00:00.000Z","2021-07-15T00:00:00.000Z","2021-07-16T00:00:00.000Z","2021-07-17T00:00:00.000Z","2021-07-18T00:00:00.000Z","2021-07-19T00:00:00.000Z","2021-07-20T00:00:00.000Z","2021-07-21T00:00:00.000Z","2021-07-22T00:00:00.000Z","2021-07-23T00:00:00.000Z","2021-07-24T00:00:00.000Z","2021-07-25T00:00:00.000Z","2021-07-26T00:00:00.000Z","2021-07-27T00:00:00.000Z","2021-07-28T00:00:00.000Z","2021-07-29T00:00:00.000Z","2021-07-30T00:00:00.000Z","2021-07-31T00:00:00.000Z","2021-08-01T00:00:00.000Z","2021-08-02T00:00:00.000Z","2021-08-03T00:00:00.000Z","2021-08-04T00:00:00.000Z","2021-08-05T00:00:00.000Z","2021-08-06T00:00:00.000Z","2021-08-07T00:00:00.000Z","2021-08-08T00:00:00.000Z","2021-08-09T00:00:00.000Z","2021-08-10T00:00:00.000Z","2021-08-11T00:00:00.000Z","2021-08-12T00:00:00.000Z","2021-08-13T00:00:00.000Z","2021-08-14T00:00:00.000Z","2021-08-15T00:00:00.000Z","2021-08-16T00:00:00.000Z","2021-08-17T00:00:00.000Z","2021-08-18T00:00:00.000Z","2021-08-19T00:00:00.000Z","2021-08-20T00:00:00.000Z","2021-08-21T00:00:00.000Z","2021-08-22T00:00:00.000Z","2021-08-23T00:00:00.000Z","2021-08-24T00:00:00.000Z","2021-08-25T00:00:00.000Z","2021-08-26T00:00:00.000Z","2021-08-27T00:00:00.000Z","2021-08-28T00:00:00.000Z","2021-08-29T00:00:00.000Z","2021-08-30T00:00:00.000Z","2021-08-31T00:00:00.000Z","2021-09-01T00:00:00.000Z","2021-09-02T00:00:00.000Z","2021-09-03T00:00:00.000Z","2021-09-04T00:00:00.000Z","2021-09-05T00:00:00.000Z","2021-09-06T00:00:00.000Z","2021-09-07T00:00:00.000Z","2021-09-08T00:00:00.000Z","2021-09-09T00:00:00.000Z","2021-09-10T00:00:00.000Z","2021-09-11T00:00:00.000Z","2021-09-12T00:00:00.000Z","2021-09-13T00:00:00.000Z","2021-09-14T00:00:00.000Z","2021-09-15T00:00:00.000Z","2021-09-16T00:00:00.000Z","2021-09-17T00:00:00.000Z","2021-09-18T00:00:00.000Z","2021-09-19T00:00:00.000Z","2021-09-20T00:00:00.000Z","2021-09-21T00:00:00.000Z","2021-09-22T00:00:00.000Z","2021-09-23T00:00:00.000Z","2021-09-24T00:00:00.000Z","2021-09-25T00:00:00.000Z","2021-09-26T00:00:00.000Z","2021-09-27T00:00:00.000Z","2021-09-28T00:00:00.000Z","2021-09-29T00:00:00.000Z","2021-09-30T00:00:00.000Z","2021-10-01T00:00:00.000Z","2021-10-02T00:00:00.000Z","2021-10-03T00:00:00.000Z","2021-10-04T00:00:00.000Z","2021-10-05T00:00:00.000Z","2021-10-06T00:00:00.000Z","2021-10-07T00:00:00.000Z","2021-10-08T00:00:00.000Z","2021-10-09T00:00:00.000Z","2021-10-10T00:00:00.000Z","2021-10-11T00:00:00.000Z","2021-10-12T00:00:00.000Z","2021-10-13T00:00:00.000Z","2021-10-14T00:00:00.000Z","2021-10-15T00:00:00.000Z"],[304.805925063236,309.965528907257,319.50929231896,330.492424242424,346.759135769539,357.483073330124,356.931028639214,377.735324765544,381.434672520403,394.732549667794,387.853875223762,399.435825105783,397.612009505593,394.75211889005,407.002807729514,415.73885440849,407.781031069595,413.791453890955,410.511996340304,435.197833681895,469.574713341018,472.043325526932,474.606125844016,466.460167240049,507.714788121951,508.75,509.225748282474,512.205191722145,532.095255483972,525.476458131814,536.480686695279,548.265797154803,558.348032519463,552.329123177517,563.142529021903,570.163764481739,573.86594828191,570.200693790992,551.382676456522,559.440559440559,562.284351172136,586.403585355916,591.671659676453,599.263373988649,595.409003672193,586.947265981388,579.33299254922,586.435896216696,588.928150765607,620.519603520632,611.931018685166,620.639963318377,617.32448939384,599.787333023194,605.559678834087,591.210443578703,576.70724337391,576.264147025231,573.527628090725,567.974571413684,573.847930298471,568.723727436504,537.47174713912,483.714930667527,472.21474100009,456.465091203163,436.492190036434,439.23333817337,429.741789188794,435.135334464194,417.726454152201,396.500372300819,376.430248593045,338.513905253511,323.84395240247,309.656338456278,290.903523377543,277.483379901725,266.265339198889,254.895145406094,238.427541288672,212.268743914314,193.84018953263,161.47771804415,146.360759493671,136.636369037011,130.809632345655,129.116840808867,105.790534741212,100.317001725452,94.727507255724,76.9682607198558,73.0134263578469,73.0697410083624,65.0723930372539,63.2511068943707,57.3476702508961,59.6658711217184,57.8452639190166,53.8213132400431,55.9539105566378,49.8535551816539,50.0229271749552,46.0405156537753,42.004452471962,40.0759333473951,38.0300437345503,35.9582883854728,33.9040515341583,27.6155071694105,27.7179591053496,27.8271293105294,23.6041371614952,30.0706660652533,27.9437685396157,25.835898981635,25.8832664682283,25.9341704307233,30.282710735221,32.5175052569967,32.5429023929881,39.0845529161419,41.3250103312526,43.6014824504033,52.4819593264815,57.0175438596491,63.7516762294181,61.6604272186743,72.7417008332231,75.078390672614,86.2068965517241,86.46299827074,95.6001689677405,120.331580354755,140.571658076176,142.892228002411,167.71394709184,186.00273401609,208.923035449522,229.771129933321,248.256561872306,264.281357999593,262.265430703143,287.642688892915,288.498671088799,303.120085694099,313.651869319353,310.273500344748,308.357879234168,315.566407149767,314.247423633255,313.203257313876,326.355541050865,333.216003754547,339.446513601433,344.705465706528,354.492602921019,362.808565127694,383.397232872145,399.990419391152,406.415559910008,436.947712737392,435.964632981459,422.023751104132,447.886766307037,493.950355494574,495.822007449914,508.013919581396,529.614941793527,533.51117039013,547.121830931648,584.538188966195,608.740894901145,637.979469138071,654.755593256283,669.833475661827,697.972936834786,741.375157241121,775.298139822866,784.908111619347,830.904187212248,863.65256491103,921.353893685691,961.697894213232,1001.99291408326,1039.89990268316,1108.35031687093,1177.55908823282,1240.13528748591,1268.79832337364,1302.57108802997,1327.27014352707,1338.27935511485,1401.14613180516,1408.73473150496,1507.9158345634,1535.64261408254,1533.21479581427,1527.54249664116,1531.24083308888,1542.31790032439,1544.39009930339,1606.74894175162,1630.40220583828],[145.620969419596,145.499896071503,145.651269246775,144.628099173554,124.069478908189,143.973673385438,116.754232340922,110.537951363301,110.599078341014,110.619469026549,110.071546505228,88.292424509977,73.1101038163474,82.3045267489712,44.9842555105713,62.595010283466,62.6286123288897,61.1834629840049,48.4161018121455,46.0263884627186,65.459306131355,61.5668770201632,61.143381228982,68.7889326250621,78.3465154454559,66.4407680552787,65.1526433358153,59.8699965788573,61.3267918088737,55.988055881412,58.6572815016264,61.6570327552987,65.0520416333066,54.9201270326417,39.9117246560548,40.8506002768763,40.7156913750594,36.1990950226244,38.467630620234,42.4088210347752,39.9751265879009,43.7139360027977,43.2984780584962,43.2788020427595,47.6128641301995,49.7415601548476,47.1940964475716,52.7637660665668,53.9811066126856,55.4164443167358,55.4084836544973,59.5201444902818,57.3794007951146,56.8920676202861,56.9587932592214,53.5813383852881,49.161419630533,52.905054322154,51.030051030051,45.229255790287,47.059709359235,45.0391277422261,41.8676617821061,38.7398968110021,38.5599607389491,36.8052999631947,36.6581712809412,32.3635620358384,31.4710218143872,29.0313215702719,28.4841675502033,25.2992426039245,22.1413885813696,23.5356879481587,21.6476991588323,22.8442630440742,24.0261885455146,20.5700852189245,20.5101158821547,19.047619047619,15.7891714991101,19.7305372343424,17.9070760499745,14.7214303877089,13.1020386772182,13.0734334758338,13.0759976986244,14.2547980354297,14.1063619692481,10.1017753870243,8.73951258489812,9.87764072551271,11.1097395383286,11.1112482870159,9.74658869395711,6.05414830241682,5.99089384136113,5.96011491101548,8.26036676028416,9.43585388580258,9.43763492868687,9.38504493090261,9.33695918581716,11.614941460695,13.8887281397206,13.8534535505247,12.6992923030744,12.7011985312796,17.2510954445607,17.2081497797357,17.1401147245012,17.0749476368272,14.7492625368732,13.6063677801211,13.6071392123734,11.3132410172866,10.1589308289688,7.88306042928895,6.75614809476624,10.1070221343785,10.1065681463431,11.2293940618964,12.3321150698446,12.3021864340435,12.2773338095451,13.3746461291545,17.8038901499978,18.9147390322329,21.142354813224,24.4645597491271,26.6906882861242,29.9776832802247,31.0376553268376,27.6882524282597,28.7983341271336,27.69500049851,23.2529813643964,26.5639527161642,29.8682478400832,29.8599898254849,27.6374409940635,28.7461165102215,29.8563577455133,29.8471164369176,33.1521018432569,35.3392011131848,38.623673000949,41.9199329281073,46.3371579876434,48.5522598870057,50.7250372167393,52.9135524836299,61.6991505349096,72.6760191159953,83.6414861771439,85.8491915867792,86.9670515967811,96.8448391605313,104.519649694143,106.684850751193,111.040260339937,117.604387632854,123.12427856868,128.6378679098,146.166695973272,161.442660399323,156.915243822148,158.905851023025,171.898437585539,175.221490915861,182.919482567883,187.167531358771,199.059389697036,209.760414276818,214.816914923778,222.205278464605,224.410649701512,224.459553695955,221.000489902564,228.397411496003,247.688781219107,253.746557071288,257.740332030192,270.791360672429,277.377482582644,293.22657433456,298.249405662416,315.042185443325,325.20325203252,328.020477081586,331.346687608925,338.961164735126,364.414249779632,391.027844620144,391.727572254956,407.196665273625,415.568836621468,423.224866335944,417.064253626529,419.235511713933,437.065753159867,457.966028811008,484.058345165871,500.942633988688]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

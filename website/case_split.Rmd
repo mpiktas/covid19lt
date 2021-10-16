@@ -1,0 +1,93 @@
+---
+title: "COVID-19 vakcinacijos efektas amžiaus grupėse"
+output: distill::distill_article
+---
+
+```{r, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+library(zoo)
+library(xts)
+library(dygraphs)
+library(tidyr)
+Sys.setlocale(locale = "lt_LT.UTF-8")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r include = FALSE}
+data <- Sys.time()
+```
+
+Atnaujinta: `r format(data, usetz = TRUE)`. 
+
+```{r echo=FALSE, include=FALSE}
+source("../R/functions.R")
+tr <- read.csv("../data/osp/lt-covid19-transition.csv") %>% mutate(day = ymd(day))
+init <- read.csv("../data/osp/lt-covid19-transition-init.csv")
+
+agve <- add_states(tr, init, group = "age_gr") %>% filter(sr2 > 10000)
+
+agr <- unique(agve$age_gr)
+
+xx <- lapply(agr, function(a) {
+  ss <- agve %>% filter(age_gr == a)
+  xts(ss %>% select(neapsaugoti = bni0, apsaugoti2 = bni2), order.by = ss$day)
+})
+names(xx) <- agr
+view_interval <- c("2021-06-01", as.character(max(tr$day)))
+
+dogr <- function(xx, a) {
+  dygraph(xx[[a]],
+    main = paste("100k 14 dienų rodiklis amžiaus grupėje ", a, sep = "")
+  ) %>%
+    dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1, 3)]) %>%
+    dyRangeSelector(dateWindow = view_interval)
+}
+```
+## Metodologija
+
+Naudojami Lietuvos statistikos departamento [duomenys](https://open-data-ls-osp-sdg.hub.arcgis.com/datasets/1fd352a1c4534afe8ff87c564c0724c0_0/explore). Lyginami neturintys vakcinacijos apsaugos su turinčiais vakcinacijos apsaugą po 2 dozių. Atvejų skaičiai yra normalizuojami periodo pradžioje atitinkamų grupių populiacijų skaičiais. Jie kinta kiekvieną dieną. 
+
+Visi grafikai prasideda nuo datos kai grupėje su vakcinacijos apsauga po 2 dozių yra virš 10 000 žmonių.
+
+Skaičiavimo algoritmą galite rasti kartu su visu puslapio [kodu](https://github.com/mpiktas/covid19lt). Visos klaidos yra mano. 
+Grafikus galima naudoti nurodant šaltinį.
+
+## Vakcinacijos efektas naujiems atvejams amžiaus grupėse
+```{r}
+dogr(xx, "0-19")
+```
+
+
+```{r}
+dogr(xx, "20-29")
+```
+
+```{r}
+dogr(xx, "30-39")
+```
+
+```{r}
+dogr(xx, "40-49")
+```
+
+```{r}
+dogr(xx, "50-59")
+```
+
+```{r}
+dogr(xx, "60-69")
+```
+
+```{r}
+dogr(xx, "70-79")
+```
+
+```{r}
+dogr(xx, "80+")
+```

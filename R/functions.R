@@ -203,11 +203,14 @@ convert_interval <- function(x) {
 add_states <- function(tr, init, level = NULL, group = NULL) {
   if (is.null(level)) {
     tr0 <- tr
+    init0 <- init
   } else {
     if (level %in% init[, "administrative_level_2"]) {
       tr0 <- tr %>% filter(administrative_level_2 == level)
+      init0 <- init %>% filter(administrative_level_2 == level)
     } else {
       tr0 <- tr %>% filter(administrative_level_3 == level)
+      init0 <- init %>% filter(administrative_level_3 == level)
     }
   }
   if (is.null(group)) {
@@ -279,5 +282,7 @@ add_states <- function(tr, init, level = NULL, group = NULL) {
       ani1 = ai1 / lag(sr1, 7) * 1e6,
       ani2 = ai2 / lag(sr2, 7) * 1e6,
       ani3 = ai3 / lag(sr3, 7) * 1e6
-    )
+    ) %>%
+    ungroup()
+  tr2
 }
