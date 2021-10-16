@@ -157,7 +157,7 @@ push_to_github <- function(dirs, commit_message, push = TRUE) {
     }
     cat("\nTrying to commit\n")
     git_commit(commit_message)
-    git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github") # Exclude Linting
+    git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github") # nolint
     if (push) git_push(remote = "github")
   } else {
     cat("\nGithub token not found, relying on local git configuration\n")
@@ -200,26 +200,38 @@ convert_interval <- function(x) {
   x
 }
 
-add_states <- function(tr, init, level = NULL) {
+add_states <- function(tr, init, level = NULL, group = NULL) {
   if (is.null(level)) {
     tr0 <- tr
-    init0 <- sum(init[, "at_risk"])
   } else {
     if (level %in% init[, "administrative_level_2"]) {
       tr0 <- tr %>% filter(administrative_level_2 == level)
-      init0 <- sum(init[init$administrative_level_2 == level, "at_risk"])
     } else {
       tr0 <- tr %>% filter(administrative_level_3 == level)
-      init0 <- sum(init[init$administrative_level_3 == level, "at_risk"])
     }
   }
+  if (is.null(group)) {
+    group1 <- "day"
+  } else {
+    group1 <- c(group, "day")
+  }
+
+  acols <- c("r0i0", "r0r1", "r0c0", "r0i1", "r0c1", "r1i1", "r1r2", "r1c1", "r1i2", "r1c2", "r2i2", "r2r3", "r2c2", "r2i3", "r2c3", "r3i3", "r3c3") # nolint
   tr1 <- tr0 %>%
-    select(-administrative_level_2, -administrative_level_3, -age_gr, -sex) %>%
-    group_by(day) %>%
-    summarise_all(sum) %>%
+    group_by(across(.cols = all_of(group1))) %>%
+    summarise(across(.cols = all_of(acols), .fns = sum)) %>%
     ungroup()
 
+  if (is.null(group)) {
+    tr1 <- tr1 %>% mutate(at_risk = sum(init0[, "at_risk"]))
+  } else {
+    init1 <- init0 %>%
+      group_by(across(.cols = all_of(group))) %>%
+      summarise(at_risk = sum(at_risk))
+    tr1 <- tr1 %>% left_join(init1)
+  }
 
+  if (!is.null(group)) tr1 <- tr1 %>% group_by(across(.cols = all_of(group)))
   tr2 <- tr1 %>%
     arrange(day) %>%
     mutate(
@@ -231,7 +243,7 @@ add_states <- function(tr, init, level = NULL) {
       r1 = r0r1 - (r1i1 + r1i2 + r1c1 + r1c2 + r1r2),
       r2 = r1r2 - (r2i2 + r2i3 + r2c2 + r2c3 + r2r3),
       r3 = r2r3 - (r3i3 + r3c3),
-      sr0 = cumsum(r0) + init0,
+      sr0 = cumsum(r0) + at_risk,
       sr1 = cumsum(r1),
       sr2 = cumsum(r2),
       sr3 = cumsum(r3),
@@ -239,10 +251,7 @@ add_states <- function(tr, init, level = NULL) {
       c1 = r0c1 + r1c1,
       c2 = r1c2 + r2c2,
       c3 = r2c3 + r3c3
-    )
-
-  tr3 <- tr2 %>%
-    arrange(day) %>%
+    ) %>%
     mutate(
       ai0 = rollsum(i0, 7, fill = NA, align = "right"),
       ai1 = rollsum(i1, 7, fill = NA, align = "right"),
@@ -260,10 +269,15 @@ add_states <- function(tr, init, level = NULL) {
       pi3 = 100 * ai3 / (ai0 + ai1 + ai2 + ai3)
     ) %>%
     mutate(
-      ni0 = bi0 / lag(sr0, 14) * 1e5,
-      ni1 = bi1 / lag(sr1, 14) * 1e5,
-      ni2 = bi2 / lag(sr2, 14) * 1e5,
-      ni3 = bi3 / lag(sr3, 14) * 1e5
+      bni0 = bi0 / lag(sr0, 14) * 1e5,
+      bni1 = bi1 / lag(sr1, 14) * 1e5,
+      bni2 = bi2 / lag(sr2, 14) * 1e5,
+      bni3 = bi3 / lag(sr3, 14) * 1e5
+    ) %>%
+    mutate(
+      ani0 = ai0 / lag(sr0, 7) * 1e6,
+      ani1 = ai1 / lag(sr1, 7) * 1e6,
+      ani2 = ai2 / lag(sr2, 7) * 1e6,
+      ani3 = ai3 / lag(sr3, 7) * 1e6
     )
-  tr3
 }

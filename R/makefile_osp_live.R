@@ -21,6 +21,9 @@ cat("\n=======Downloading laboratory data================\n")
 try(source("R/download_osp_laboratory.R"))
 cat("\n=======Downloading hospital data================\n")
 try(source("R/download_osp_hospital.R"))
+cat("\n=======Downloading transition data================\n")
+try(source("R/download_osp_transitions.R"))
+
 
 cat("\n=======Downloading EVRK data================\n")
 try(source("R/download_osp_evrk.R"))
