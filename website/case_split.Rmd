@@ -30,7 +30,12 @@ source("../R/functions.R")
 tr <- read.csv("../data/osp/lt-covid19-transition.csv") %>% mutate(day = ymd(day))
 init <- read.csv("../data/osp/lt-covid19-transition-init.csv")
 
-agve <- add_states(tr, init, group = "age_gr") %>% filter(sr2 > 10000)
+agve <- add_states(tr, init, group = "age_gr") %>%
+  mutate(
+    bni1 = ifelse(sr1 < 10000, NA, bni1),
+    bni2 = ifelse(sr2 < 10000, NA, bni2),
+    bni3 = ifelse(sr3 < 3000, NA, bni3)
+  )
 
 agr <- unique(agve$age_gr)
 
@@ -40,6 +45,7 @@ xx <- lapply(agr, function(a) {
 })
 names(xx) <- agr
 view_interval <- c("2021-06-01", as.character(max(tr$day)))
+
 
 dogr <- function(xx, a) {
   dygraph(xx[[a]],
