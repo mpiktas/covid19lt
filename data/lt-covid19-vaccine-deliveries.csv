@@ -1604,8 +1604,8 @@
 2021-10-17,"Moderna",0,0
 2021-10-17,"Johnson & Johnson",0,0
 2021-10-17,"AstraZeneca",0,0
-2021-10-18,"visos",3510,12048
-2021-10-18,"Pfizer-BioNTech",3510,12048
+2021-10-18,"visos",44460,12048
+2021-10-18,"Pfizer-BioNTech",44460,12048
 2021-10-18,"Moderna",0,0
 2021-10-18,"Johnson & Johnson",0,0
 2021-10-18,"AstraZeneca",0,0
@@ -1624,3 +1624,8 @@
 2021-10-21,"Moderna",0,0
 2021-10-21,"Johnson & Johnson",0,0
 2021-10-21,"AstraZeneca",48000,0
+2021-10-22,"visos",0,3350
+2021-10-22,"Pfizer-BioNTech",0,0
+2021-10-22,"Moderna",0,1300
+2021-10-22,"Johnson & Johnson",0,1950
+2021-10-22,"AstraZeneca",0,100
