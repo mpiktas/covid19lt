@@ -17,16 +17,15 @@ cat("\n=======Downloading vaccine data ================\n")
 try(source("R/download_osp_vaccine.R"))
 cat("\n=======Downloading deaths data ================\n")
 try(source("R/download_osp_deaths.R"))
-cat("\n=======Downloading laboratory data================\n")
-try(source("R/download_osp_laboratory.R"))
-cat("\n=======Downloading hospital data================\n")
+at("\n=======Downloading hospital data================\n")
 try(source("R/download_osp_hospital.R"))
+
 cat("\n=======Downloading transition data================\n")
 try(source("R/download_osp_transitions.R"))
 
-
 cat("\n=======Downloading EVRK data================\n")
 try(source("R/download_osp_evrk.R"))
+
 cat("\n=======Treating OSP data================\n")
 try(source("R/treat_osp.R"))
 cat("\n=======Creating levels data================\n")
