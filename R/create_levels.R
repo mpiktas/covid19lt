@@ -120,7 +120,7 @@ lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3,
   deaths_population_daily,
   recovered_daily = recovered_cases,
   dead_cases_daily = dead_cases,
-  vaccinated_1_daily, vaccinated_2_daily,
+  vaccinated_1_daily, vaccinated_2_daily, vaccinated_3_daily,
   population
 )
 

@@ -51,7 +51,7 @@ aa_stats <- aa %>% select(
   tpr_dgn_diff_weekly,
   deaths_100k,
   tests_100k,
-  vaccinated_1_percent, vaccinated_2_percent
+  vaccinated_1_percent, vaccinated_2_percent, fully_protected_percent
 )
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
@@ -281,17 +281,17 @@ agrd1 <- agrd %>%
 
 vv1 <- vv %>%
   group_by(age, sex) %>%
-  summarise(dose1 = sum(dose1), dose2 = sum(dose2))
+  summarise(dose1 = sum(dose1), full = sum(full_protection))
 
 vv2 <- vv1 %>%
   left_join(agrd1) %>%
   mutate(
     p1 = round(dose1 / population * 100, 0),
-    p2 = round(dose2 / population * 100, 0)
+    fp = round(full / population * 100, 0)
   )
 
 dose1 <- vv2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "p1")
-dose2 <- vv2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "p2")
+fp <- vv2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "fp")
 
 
 pm1 <- ggplot(aes(x = Amžius, y = Atvejai),
@@ -324,11 +324,13 @@ grid.arrange(pm1,
 )
 ```
 
-### Vakcinuotų dviem dozėm procentai amžiaus grupėse, `r ad_last_day`
+### Turinčių pilną vakcinacijos apsaugą procentai, `r ad_last_day`
+
+Turintys pilną vakcinacijos apsaugą laikomi tie kuriems po pilno vakcinacijos kurso praėjo 14 dienų.
 
 ```{r}
 pm2 <- ggplot(aes(x = Amžius, y = Atvejai),
-  data = dose2 %>% rename(Amžius = age, Atvejai = Moteris)
+  data = fp %>% rename(Amžius = age, Atvejai = Moteris)
 ) +
   geom_col(fill = cols[1]) +
   geom_text(aes(label = Atvejai), hjust = 1.1) +
@@ -340,7 +342,7 @@ pm2 <- ggplot(aes(x = Amžius, y = Atvejai),
   labs(title = "Moterys")
 
 pv2 <- ggplot(aes(x = Amžius, y = Atvejai),
-  data = dose2 %>% rename(Amžius = age, Atvejai = Vyras)
+  data = fp %>% rename(Amžius = age, Atvejai = Vyras)
 ) +
   geom_col(fill = cols[2]) +
   geom_text(aes(label = Atvejai), hjust = -0.1) +

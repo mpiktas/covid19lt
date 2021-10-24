@@ -250,7 +250,22 @@ cvv2 <- cvv1 %>% select(day, administrative_level_2, administrative_level_3,
   vaccinated_daily_3 = dose3
 )
 
-cvv2 %>% write.csv("data/lt-covid19-vaccinated.csv", row.names = FALSE)
+ltv <- cvv2 %>%
+  group_by(day) %>%
+  summarise(across(
+    .cols = c(
+      "vaccinated_1", "vaccinated_2", "vaccinated_3",
+      "partial_protection", "full_protection", "booster_protection",
+      "vaccinated_daily_1", "vaccinated_daily_2", "vaccinated_daily_3"
+    ),
+    .fns = sum
+  )) %>%
+  ungroup() %>%
+  mutate(administrative_level_2 = "Lithuania", administrative_level_3 = "Lithuania")
+
+cvv3 <- cvv2 %>% bind_rows(ltv)
+
+cvv3 %>% write.csv("data/lt-covid19-vaccinated.csv", row.names = FALSE)
 #--- Deliveries
 
 ## nolint start
