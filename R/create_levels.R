@@ -68,8 +68,7 @@ lvl3 <- ss %>%
   left_join(adm %>%
     select(-municipality_name, -population2020) %>%
     rename(population = population2021)) %>%
-  left_join(vcn %>%
-    select(-municipality_code)) %>%
+  left_join(vcn) %>%
   mutate(administrative_level_2 = ifelse(is.na(administrative_level_2),
     "Unknown", administrative_level_2
   )) %>%
@@ -80,13 +79,19 @@ lvl3 <- ss %>%
   ) %>%
   rename(
     vaccinated_1_daily = vaccinated_daily_1,
-    vaccinated_2_daily = vaccinated_daily_2
+    vaccinated_2_daily = vaccinated_daily_2,
+    vaccinated_3_daily = vaccinated_daily_3
   ) %>%
   mutate(
     vaccinated_1 = fix_na(vaccinated_1),
     vaccinated_2 = fix_na(vaccinated_2),
+    vaccinated_3 = fix_na(vaccinated_3),
+    partialy_protected = fix_na(partial_protection),
+    fully_protected = fix_na(full_protection),
+    booster_protected = fix_na(booster_protection),
     vaccinated_1_daily = fix_na(vaccinated_1_daily),
-    vaccinated_2_daily = fix_na(vaccinated_2_daily)
+    vaccinated_2_daily = fix_na(vaccinated_2_daily),
+    vaccinated_3_daily = fix_na(vaccinated_3_daily)
   )
 
 
@@ -98,7 +103,8 @@ lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3,
   deaths_2,
   recovered = recovered_cases_cumulative, active = active_cases,
   dead_cases = dead_cases_cumulative,
-  vaccinated_1, vaccinated_2,
+  vaccinated_1, vaccinated_2, vaccinated_3,
+  partialy_protected, fully_protected, booster_protected,
   confirmed_daily = confirmed_cases, tests_daily = tests_total,
   tests_mobile_daily = tests_mobile,
   tests_pcr_daily = tests_pcr,
@@ -150,7 +156,9 @@ add_stats <- function(dt) {
       tests_pcr_positive_daily, tests_ag_positive_daily,
       tests_ab_positive_daily,
       deaths_daily, deaths_1_daily, deaths_2_daily,
-      vaccinated_1, vaccinated_2, population
+      vaccinated_1, vaccinated_2, vaccinated_3,
+      partialy_protected, fully_protected, booster_protected,
+      population
     ) %>%
     arrange(region, day) %>%
     group_by(region) %>%
@@ -205,11 +213,15 @@ add_stats <- function(dt) {
       deaths_2_growth_weekly =
         round(100 * (deaths_2_sum7 / lag(deaths_2_sum7, 7) - 1), 2),
       vaccinated_1_percent = round(vaccinated_1 / population * 100, 2),
-      vaccinated_2_percent = round(vaccinated_2 / population * 100, 2)
+      vaccinated_2_percent = round(vaccinated_2 / population * 100, 2),
+      vaccinated_3_percent = round(vaccinated_3 / population * 100, 2),
+      partialy_protected_percent = round(partialy_protected / population * 100, 2),
+      fully_protected_percent = round(fully_protected / population * 100, 2),
+      booster_protected_percent = round(booster_protected / population * 100, 2)
     )
 
-  dt <- dt %>% select(-(confirmed_daily:dgn_sum14)) # Exclude Linting
-  dt %>% ungroup()
+  dt <- dt %>% select(-(confirmed_daily:dgn_sum14)) # nolint
+  dt %>% ungroup() # nolint
 }
 
 lvl31_stats <- lvl31 %>%

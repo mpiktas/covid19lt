@@ -42,24 +42,6 @@ mobility:
         - data
       expire_in: 1 day
 
-update_site:
-    stage: site
-    only:
-      refs :
-        - master
-        - schedules
-      variables:
-        - $SOURCE == "partial"
-    script:
-      - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
-      - rm README.md
-      - R -e "source('R/makefile_part_site.R')"
-    artifacts:
-      paths:
-        - docs
-      expire_in: 1 day
-
-
 update:
     stage: regions
     only:
@@ -67,7 +49,7 @@ update:
         - master
         - schedules
       variables:
-        - $SOURCE == "datagov" || $SOURCE =="osp"
+        - $SOURCE == "osp"
     script:
       - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
       - rm README.md
@@ -84,7 +66,7 @@ push:
         - master
         - schedules
       variables:
-        - $SOURCE == "datagov" || $SOURCE =="osp"
+        - $SOURCE =="osp"
     script:
       - R -e "install.packages(c('gert'))"
       - git checkout data
