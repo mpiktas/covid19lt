@@ -17,10 +17,9 @@ cat("\n=======Downloading vaccine data ================\n")
 try(source("R/download_osp_vaccine.R"))
 cat("\n=======Downloading deaths data ================\n")
 try(source("R/download_osp_deaths.R"))
-# nolint start
-# cat("\n=======Downloading hospital data================\n")
-# try(source("R/download_osp_hospital.R"))
-# nolint end
+
+cat("\n=======Downloading hospital data================\n")
+try(source("R/download_osp_hospital.R"))
 
 cat("\n=======Downloading transition data================\n")
 try(source("R/download_osp_transitions.R"))
