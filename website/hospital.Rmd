@@ -46,30 +46,30 @@ aa <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
 hh <- read.csv("../data/lt-covid19-hospitals-region.csv") %>%
   mutate(day = ymd(day)) %>%
   left_join(tlkn) %>%
-  mutate(
-    cv19_deaths = ifelse(region == "Kaunas" & day == "2021-03-22", NA, cv19_deaths),
-    cv19_deaths = ifelse(region == "Kaunas" & day == "2021-02-18", NA, cv19_deaths),
-    cv19_deaths = ifelse(region == "Kaunas" & day == "2021-05-10", NA, cv19_deaths),
-    cv19_deaths = ifelse(region == "Kaunas" & day == "2021-06-16", NA, cv19_deaths),
-    cv19_deaths = ifelse(region == "Kaunas" & day == "2021-08-30", NA, cv19_deaths),
-    cv19_deaths = ifelse(region == "Panevėžys" & day == "2021-02-05", NA, cv19_deaths),
-    cv19_deaths = ifelse(region == "Panevėžys" & day == "2021-06-04", NA, cv19_deaths),
-    cv19_deaths = ifelse(region == "Vilnius" & day == "2021-08-01", NA, cv19_deaths)
-  )
+  mutate(cv19_admissions_r7mean = ifelse(cv19_admissions_r7mean < 1000, cv19_admissions_r7mean, 0))
 
+hhr0 <- hh %>%
+  select(-healthcare_region, -hospital_name) %>%
+  group_by(region, day) %>%
+  summarise_all(sum)
+
+hhr <- hhr0
+colnames(hhr) <- gsub("_r7mean", "", colnames(hhr))
 
 hha <- hh %>%
-  select(-healthcare_region, -region) %>%
+  select(-healthcare_region, -region, -hospital_name) %>%
   group_by(day) %>%
   summarise_all(sum)
 
-cvha <- hha %>%
-  select(day, cv19_admissions, cv19_discharges, cv19_deaths) %>%
-  mutate_at(inNA, .vars = c("cv19_admissions", "cv19_discharges", "cv19_deaths"))
+cvha0 <- hha %>%
+  select(day, cv19_admissions = cv19_admissions_r7mean, cv19_discharges = cv19_discharges_r7mean) %>%
+  mutate_at(inNA, .vars = c("cv19_admissions", "cv19_discharges"))
+
+cvha <- cvha0 %>% mutate(cv19_admissions = ifelse(cv19_admissions < 5000, cv19_admissions, NA))
 
 cvhx <- toxts(aa, c("hospitalized", "icu", "ventilated", "oxygen"))
-cvhax <- toxts(cvha, c("cv19_admissions", "cv19_discharges", "cv19_deaths"))
-colnames(cvhax) <- c("nauji", "išrašyti", "mirę")
+cvhax <- toxts(cvha, c("cv19_admissions", "cv19_discharges"))
+colnames(cvhax) <- c("nauji", "išrašyti")
 
 last_day <- as.character(max(aa$day))
 dw <- c("2020-10-01", last_day)
@@ -86,14 +86,14 @@ dygraph(cvhx[, "hospitalized"], main = "Covid-19 ligonių skaičius") %>%
 ```
 
 ```{r}
-dygraph(pivot_one(hh, "cv19_hospital_beds_assigned"), main = "Covid-19 lovų skaičius") %>%
+dygraph(pivot_one(hhr, "cv19_hospital_beds_assigned"), main = "Covid-19 lovų skaičius, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
   dyRangeSelector()
 ```
 
 
 ```{r}
-dygraph(pivot_one(hh, "cv19_hospital_beds_occupied"), main = "Covid-19 ligonių skaičius") %>%
+dygraph(pivot_one(hhr, "cv19_hospital_beds_occupied"), main = "Covid-19 ligonių skaičius, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
   dyRangeSelector()
 ```
@@ -106,32 +106,28 @@ dygraph(cvhx[, "icu"], main = "Covid-19 ligonių reanimacijoje skaičius") %>%
 ```
 
 ```{r}
-dygraph(pivot_one(hh, "cv19_icu_beds_assigned"), main = "Covid-19 RITS lovų skaičius") %>%
+dygraph(pivot_one(hhr, "cv19_icu_beds_assigned"), main = "Covid-19 RITS lovų skaičius, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
   dyRangeSelector()
 ```
 
 ```{r}
-dygraph(pivot_one(hh, "cv19_icu_beds_occupied"), main = "Covid-19 RITS ligonių skaičius") %>%
+dygraph(pivot_one(hhr, "cv19_icu_beds_occupied"), main = "Covid-19 RITS ligonių skaičius, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
   dyRangeSelector()
 ```
 
 ## Priėmimo ir išrašymo dinamika
 
-Panevėžio ir Kauno duomenyse iš mirčių išimtos išskirtys. Kaune 2021-02-18,  2021-03-22 ir 2021-05-10 dienos su atitinkamai 28, 123 ir 31 mirtimis, Panevėžyje 2021-02-05 diena su 48 mirtimis. Dėl sezoniškumo visur imami 7 dienų vidurkiai. Paskutinės dienos duomenys paprastai būna nepilni.
-
 ```{r}
-dygraph(cvhax["2021-01-18/", 1], main = "Covid-19 naujai paguldyti ligoniai") %>%
+dygraph(cvhax["2021-01-18/", 1], main = "Covid-19 naujai paguldyti ligoniai, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
-  dyRangeSelector() %>%
-  dyRoller(rollPeriod = 7)
+  dyRangeSelector()
 ```
 ```{r}
-dygraph(pivot_one(hh, "cv19_admissions")["2021-01-18/"], main = "Covid-19 naujai paguldyti ligoniai") %>%
+dygraph(pivot_one(hhr, "cv19_admissions")["2021-01-18/"], main = "Covid-19 naujai paguldyti ligoniai, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
   dyRangeSelector() %>%
-  dyRoller(rollPeriod = 7) %>%
   dyCSS("left_legend.css")
 ```
 
@@ -139,29 +135,12 @@ dygraph(pivot_one(hh, "cv19_admissions")["2021-01-18/"], main = "Covid-19 naujai
 ```{r}
 dygraph(cvhax["2021-01-18/", 2], main = "Covid-19 išrašyti ligoniai") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
-  dyRangeSelector() %>%
-  dyRoller(rollPeriod = 7)
+  dyRangeSelector()
 ```
 
 ```{r}
-dygraph(pivot_one(hh, "cv19_discharges")["2021-01-18/"], main = "Covid-19 išrašyti ligoniai") %>%
+dygraph(pivot_one(hhr, "cv19_discharges")["2021-01-18/"], main = "Covid-19 išrašyti ligoniai, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
   dyRangeSelector() %>%
-  dyRoller(rollPeriod = 7) %>%
-  dyCSS("left_legend.css")
-```
-
-```{r}
-dygraph(cvhax["2021-01-18/", 3], main = "Covid-19 mirę ligoniai") %>%
-  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
-  dyRangeSelector() %>%
-  dyRoller(rollPeriod = 7)
-```
-
-```{r}
-dygraph(pivot_one(hh, "cv19_deaths")["2021-01-18/"], main = "Covid-19 mirę ligoniai") %>%
-  dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
-  dyRangeSelector() %>%
-  dyRoller(rollPeriod = 7) %>%
   dyCSS("left_legend.css")
 ```
