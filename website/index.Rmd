@@ -446,3 +446,38 @@ agre2 %>% datatable(
   )
 )
 ```
+
+## Ligoninių duomenys pagal ligonines `r ad_last_day` 
+
+Skelbiami 7 dienų vidurkiai
+
+```{r}
+hh <- read.csv("../data/lt-covid19-hospitals-region.csv") %>% mutate(day = ymd(day))
+
+tlkn <- read.csv("../raw_data/tlk_nice.csv")
+hh1 <- hh %>%
+  filter(day == max(day)) %>%
+  left_join(tlkn) %>%
+  arrange(region, healthcare_region) %>%
+  mutate(cv19_admissions_r7mean = ifelse(cv19_admissions_r7mean < 1000, cv19_admissions_r7mean, 0))
+
+
+hh2 <- hh1 %>% select(
+  Regionas = region,
+  Ligoninė = hospital_name,
+  Hospitalizuoti = cv19_hospital_beds_occupied_r7mean,
+  RITS = cv19_icu_beds_occupied_r7mean,
+  `Naujai paguldyti` = cv19_admissions_r7mean,
+  Išrašyti = cv19_discharges_r7mean
+)
+
+hh2 %>% datatable(
+  extensions = c("FixedColumns", "FixedHeader"),
+  escape = FALSE,
+  options = list(
+    scrollX = TRUE,
+    paging = FALSE,
+    fixedHeader = TRUE
+  )
+)
+```
