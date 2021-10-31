@@ -447,7 +447,7 @@ agre2 %>% datatable(
 )
 ```
 
-## Ligoninių duomenys pagal ligonines `r ad_last_day` 
+## Ligoninių COVID19 duomenys pagal ligonines `r ad_last_day` 
 
 Skelbiami 7 dienų vidurkiai
 
