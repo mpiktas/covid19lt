@@ -13,14 +13,14 @@ if (geojson) {
 } else {
   httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
 
-  posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/ArcGIS/rest/services/OV_COVID_grafikai_serga_mirtys/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # Exclude Linting
+  posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/ArcGIS/rest/services/OV_COVID_grafikai_serga_mirtys/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # nolint
 
   posp1 <- fix_esridate(rawToChar(posp$content))
   posp2 <- posp1 %>% mutate(day = ymd(date))
 
   alls <- lapply(unique(posp2$municipality_name), function(x) {
     sav <- URLencode(x)
-    try(tryget(glue::glue("https://services3.arcgis.com/MF53hRPmwfLccHCj/ArcGIS/rest/services/OV_COVID_grafikai_serga_mirtys/FeatureServer/0/query?where=municipality_name%3D%27{sav}%27&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token="))) # Exclude Linting
+    try(tryget(glue::glue("https://services3.arcgis.com/MF53hRPmwfLccHCj/ArcGIS/rest/services/OV_COVID_grafikai_serga_mirtys/FeatureServer/0/query?where=municipality_name%3D%27{sav}%27&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token="))) # nolint
   })
 
   osp1 <- lapply(alls, function(l) fix_esridate(rawToChar(l$content))) %>%
@@ -49,3 +49,16 @@ if (nrow(osp3) == nrow(osp2)) {
     arrange(day, municipality_code)
   osp4 %>% write.csv("data/osp/lt-covid19-deaths.csv", row.names = FALSE)
 }
+
+
+dd <- read.csv("https://open-data-ls-osp-sdg.hub.arcgis.com/datasets/b3b45a4d45744bd3bc4b741bee1e9137_0.csv")
+
+dd1 <- dd %>% mutate(
+  vacc1_date = ymd(ymd_hms(vacc1_date)),
+  death_date = ymd(ymd_hms(death_date))
+)
+
+dd1 %>%
+  select(-object_id) %>%
+  arrange(vacc1_date) %>%
+  write.csv("data/lt-covid19-deaths-vaccine.csv", row.names = FALSE)
