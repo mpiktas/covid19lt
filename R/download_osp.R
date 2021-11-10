@@ -8,7 +8,7 @@ library(tidyr)
 
 source("R/functions.R")
 
-raw <- tryget("https://atlas.jifo.co/api/connectors/86105d38-f8c5-4578-8477-22ced61ff9bd") # Exclude Linting
+raw <- tryget("https://atlas.jifo.co/api/connectors/86105d38-f8c5-4578-8477-22ced61ff9bd") # nolint
 
 
 
@@ -24,10 +24,12 @@ colnames(hdd4) <- c("actual", "description")
 cvh <- data.frame(
   description = "Pacientai, kuriems patvirtinta COVID19 infekcija",
   total = hdd4$actual[4],
-  oxygen = hdd4$actual[5],
-  ventilated = hdd4$actual[7],
+  oxygen = hdd4$actual[6],
+  ventilated = hdd4$actual[9],
   hospitalized_not_intensive = NA,
-  intensive = hdd4$actual[6]
+  intensive = hdd4$actual[7],
+  total_not_vaccinated = hdd4$actual[5],
+  intensive_not_vaccinated = hdd4$actual[8]
 )
 
 write.csv(cvh,

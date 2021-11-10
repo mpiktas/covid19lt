@@ -27,7 +27,9 @@ cvh2 <- cvh1 %>%
     oxygen_mask = oxygen,
     ventilated,
     not_intensive = hospitalized_not_intensive,
-    intensive
+    intensive,
+    hospitalized_not_vaccinated = total_not_vaccinated,
+    intensive_not_vaccinated = intensive_not_vaccinated
   )
 
 cvh <- read.csv("data/lt-covid19-hospitals-country.csv") %>%
