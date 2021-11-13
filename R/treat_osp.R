@@ -32,6 +32,30 @@ cvh2 <- cvh1 %>%
     intensive_not_vaccinated = intensive_not_vaccinated
   )
 
+## Fix various historically accumulated innacuracies in a consistent manner.
+## Intensive should always be part of total. Historically that was the case,
+## but it changed.
+
+cvh3 <- cvh2 %>% mutate(
+  total2 = ifelse(is.na(not_intensive), total + intensive, total),
+  not_intensive2 = ifelse(is.na(not_intensive), total, not_intensive),
+  total_not_vaccinated = intensive_not_vaccinated + hospitalized_not_vaccinated
+)
+
+cvh4 <- cvh3 %>%
+  select(-total, -not_intensive) %>%
+  rename(total = total2, not_intensive = not_intensive2) %>%
+  select(
+    day, total,
+    oxygen_mask,
+    ventilated,
+    intensive,
+    total_not_vaccinated,
+    intensive_not_vaccinated
+  )
+
+
+
 cvh <- read.csv("data/lt-covid19-hospitals-country.csv") %>%
   mutate(day = ymd(day))
 lcvh <- cvh %>% filter(day == max(day))
