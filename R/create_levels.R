@@ -29,7 +29,11 @@ hosp1 <- hosp0 %>%
 
 
 
-fix_na <- function(x, fix = 0) {
+fix_na <- function(x, fix = 0, fill = FALSE) {
+  if (fill) {
+    n <- length(x)
+    if (is.na(x[n])) x[n] <- x[n - 1]
+  }
   x[is.na(x)] <- fix
   x
 }
@@ -72,27 +76,28 @@ lvl3 <- ss %>%
   mutate(administrative_level_2 = ifelse(is.na(administrative_level_2),
     "Unknown", administrative_level_2
   )) %>%
-  mutate(
-    tests_positive = fix_na(tests_positive),
-    tests_total = fix_na(tests_total),
-    population = fix_na(population)
-  ) %>%
   rename(
     vaccinated_1_daily = vaccinated_daily_1,
     vaccinated_2_daily = vaccinated_daily_2,
     vaccinated_3_daily = vaccinated_daily_3
   ) %>%
+  group_by(administrative_level_2, administrative_level_3) %>%
+  arrange(day) %>%
   mutate(
-    vaccinated_1 = fix_na(vaccinated_1),
-    vaccinated_2 = fix_na(vaccinated_2),
-    vaccinated_3 = fix_na(vaccinated_3),
-    partialy_protected = fix_na(partial_protection),
-    fully_protected = fix_na(full_protection),
-    booster_protected = fix_na(booster_protection),
+    tests_positive = fix_na(tests_positive, fill = TRUE),
+    tests_total = fix_na(tests_total, fill = TRUE),
+    population = fix_na(population, fill = TRUE),
+    vaccinated_1 = fix_na(vaccinated_1, fill = TRUE),
+    vaccinated_2 = fix_na(vaccinated_2, fill = TRUE),
+    vaccinated_3 = fix_na(vaccinated_3, fill = TRUE),
+    partialy_protected = fix_na(partial_protection, fill = TRUE),
+    fully_protected = fix_na(full_protection, fill = TRUE),
+    booster_protected = fix_na(booster_protection, fill = TRUE),
     vaccinated_1_daily = fix_na(vaccinated_1_daily),
     vaccinated_2_daily = fix_na(vaccinated_2_daily),
     vaccinated_3_daily = fix_na(vaccinated_3_daily)
-  )
+  ) %>%
+  ungroup()
 
 
 lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3,
