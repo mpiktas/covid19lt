@@ -24,6 +24,25 @@ osp:
       expire_in: 1 day
     retry: 2
 
+vax:
+  stage: download
+    only:
+      refs :
+        - master
+        - schedules
+      variables:
+        - $SOURCE == "vax"
+    script:
+      - R -e "install.packages(c('gert','zoo'))"
+      - R -e "source('R/makefile_osp_vaccines.R')"
+      - git push github master
+    artifacts:
+      paths:
+        - data
+      expire_in: 1 day
+    retry: 2
+
+
 
 mobility:
     stage: download
