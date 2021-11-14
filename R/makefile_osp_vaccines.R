@@ -1,5 +1,7 @@
 library(testthat)
 library(gert)
+library(dplyr)
+library(lubridate)
 
 source("R/functions.R")
 zz <- read.csv("data/lt-covid19-vaccinated.csv") %>% mutate(day = ymd(day))

@@ -42,7 +42,13 @@ pivot_one <- function(d, col) {
 }
 
 tlkn <- read.csv("../raw_data/tlk_nice.csv", stringsAsFactors = FALSE)
-aa <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
+aa <- read.csv("../data/lt-covid19-country.csv") %>%
+  mutate(day = ymd(day)) %>%
+  mutate(
+    total_hospitalized = hospitalized,
+    hospitalized = total_hospitalized - icu
+  )
+
 hh <- read.csv("../data/lt-covid19-hospitals-region.csv") %>%
   mutate(day = ymd(day)) %>%
   left_join(tlkn) %>%
