@@ -25,7 +25,7 @@ osp:
     retry: 2
 
 vax:
-  stage: download
+    stage: download
     only:
       refs :
         - master
