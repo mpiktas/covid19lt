@@ -30,12 +30,9 @@ if (max(zz$day) < max(lv1$day)) {
   if (!("data" %in% modf)) {
     cat("\nNo new data, not pushing anything\n")
   } else {
-    cat("\nSending new data\n")
-    push_to_github(c("data", "raw_data"), "Update OSP data", push = FALSE)
-
     rmarkdown::render_site("website/index.Rmd")
     rmarkdown::render_site("website/weeks.Rmd")
-    cat("\nSending the site downstream\n")
-    push_to_github(c("docs"), "Update index page", push = FALSE)
+    cat("\nSending the data and site downstream\n")
+    push_to_github(c("docs", "data", "raw_data"), "Update vaccine data", push = FALSE)
   }
 }
