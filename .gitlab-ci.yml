@@ -33,7 +33,7 @@ vax:
       variables:
         - $SOURCE == "vax"
     script:
-      - R -e "install.packages(c('gert','zoo'))"
+      - R -e "install.packages(c('gert','zoo','dygraphs','xts', 'gridExtra','distill'))"
       - R -e "source('R/makefile_osp_vaccines.R')"
       - git push github master
     artifacts:
