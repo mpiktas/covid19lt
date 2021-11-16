@@ -40,8 +40,6 @@ vax:
       paths:
         - data
       expire_in: 1 day
-    retry: 2
-
 
 
 mobility:
