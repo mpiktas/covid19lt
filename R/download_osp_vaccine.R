@@ -70,7 +70,7 @@ v1 <- vcfd %>%
   ungroup()
 
 v2 <- vcfd %>%
-  filter(!is.na(day2) & is.na(day3)) %>%
+  filter(!is.na(day2)) %>%
   group_by(
     municipality_name = municip_a, day = day2,
     age_group, sex
