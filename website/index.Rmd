@@ -51,7 +51,10 @@ aa_stats <- aa %>% select(
   tpr_dgn_diff_weekly,
   deaths_100k,
   tests_100k,
-  vaccinated_1_percent, vaccinated_2_percent, fully_protected_percent
+  vaccinated_1_percent,
+  vaccinated_2_percent,
+  fully_protected_percent,
+  vaccinated_3_percent
 )
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
@@ -155,8 +158,8 @@ dygraph(xaa[, "tests_100k"], main = paste("Testų skaičius 100k gyventojų per 
 ```
 
 ```{r}
-dygraph(xaa["2020-12-27/", c("vaccinated_1_percent", "vaccinated_2_percent")], main = paste("Paskiepytų pirma ir antra doze  procentas", aa_last_day)) %>%
-  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1, 3)]) %>%
+dygraph(xaa["2020-12-27/", c("vaccinated_1_percent", "vaccinated_2_percent", "vaccinated_3_percent")], main = paste("Paskiepytų pirma ir antra doze  procentas", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1, 3, 2)]) %>%
   dyRangeSelector()
 ```
 
