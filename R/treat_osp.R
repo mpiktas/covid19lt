@@ -59,12 +59,12 @@ cvh4 <- cvh3 %>%
 cvh <- read.csv("data/lt-covid19-hospitals-country.csv") %>%
   mutate(day = ymd(day))
 lcvh <- cvh %>% filter(day == max(day))
-lcvh2 <- cvh2 %>%
+lcvh4 <- cvh4 %>%
   filter(day == max(day)) %>%
   data.frame()
-ss <- identical(lcvh, lcvh2)
+ss <- identical(lcvh, lcvh4)
 if (ss) {
   cat("\nNo hospitalization data\n")
 } else {
-  write.csv(cvh2, "data/lt-covid19-hospitals-country.csv", row.names = FALSE)
+  write.csv(cvh4, "data/lt-covid19-hospitals-country.csv", row.names = FALSE)
 }
