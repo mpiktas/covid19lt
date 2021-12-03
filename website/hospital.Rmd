@@ -42,11 +42,13 @@ pivot_one <- function(d, col) {
 }
 
 tlkn <- read.csv("../raw_data/tlk_nice.csv", stringsAsFactors = FALSE)
-aa <- read.csv("../data/lt-covid19-country.csv") %>%
+aa <- read.csv("../data/lt-covid19-hospitals-country.csv") %>%
   mutate(day = ymd(day)) %>%
   mutate(
-    total_hospitalized = hospitalized,
-    hospitalized = total_hospitalized - icu
+    hospitalized = total - intensive,
+    icu = intensive,
+    hospitalized_not_vaccinated = total_not_vaccinated - intensive_not_vaccinated,
+    icu_not_vaccinated = intensive_not_vaccinated
   )
 
 hh <- read.csv("../data/lt-covid19-hospitals-region.csv") %>%
@@ -73,7 +75,7 @@ cvha0 <- hha %>%
 
 cvha <- cvha0 %>% mutate(cv19_admissions = ifelse(cv19_admissions < 5000, cv19_admissions, NA))
 
-cvhx <- toxts(aa, c("hospitalized", "icu", "ventilated", "oxygen"))
+cvhx <- toxts(aa, c("hospitalized", "icu", "hospitalized_not_vaccinated", "icu_not_vaccinated"))
 cvhax <- toxts(cvha, c("cv19_admissions", "cv19_discharges"))
 colnames(cvhax) <- c("nauji", "išrašyti")
 
@@ -86,8 +88,11 @@ dw <- c("2020-10-01", last_day)
 Duomenys yra sugrupuoti pagal teritorines ligonių kasas. Vilniaus duomenyse bus ir Alytus, Kauno duomenyse bus Marijampolė ir t.t.
 
 ```{r}
-dygraph(cvhx[, "hospitalized"], main = "Covid-19 ligonių skaičius") %>%
-  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1, 2)]) %>%
+
+bb <- cvhx[, c("hospitalized", "hospitalized_not_vaccinated")]
+colnames(bb) <- c("viso", "nevakcinuoti")
+dygraph(bb, main = "Covid-19 ligonių skaičius") %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(2, 1)]) %>%
   dyRangeSelector(dateWindow = dw)
 ```
 
@@ -106,8 +111,10 @@ dygraph(pivot_one(hhr, "cv19_hospital_beds_occupied"), main = "Covid-19 ligonių
 
 
 ```{r}
-dygraph(cvhx[, "icu"], main = "Covid-19 ligonių reanimacijoje skaičius") %>%
-  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
+bb <- cvhx[, c("icu", "icu_not_vaccinated")]
+colnames(bb) <- c("viso", "nevakcinuoti")
+dygraph(bb, main = "Covid-19 ligonių reanimacijoje skaičius") %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(2, 1)]) %>%
   dyRangeSelector(dateWindow = dw)
 ```
 
