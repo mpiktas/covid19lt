@@ -284,18 +284,22 @@ agrd1 <- agrd %>%
 
 vv1 <- vv %>%
   group_by(age, sex) %>%
-  summarise(dose1 = sum(dose1), full = sum(full_protection))
+  summarise(
+    dose1 = sum(dose1), full = sum(full_protection),
+    boost = sum(booster_protection)
+  )
 
 vv2 <- vv1 %>%
   left_join(agrd1) %>%
   mutate(
     p1 = round(dose1 / population * 100, 0),
-    fp = round(full / population * 100, 0)
+    fp = round(full / population * 100, 0),
+    bp = round(boost / population * 100, 0)
   )
 
 dose1 <- vv2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "p1")
 fp <- vv2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "fp")
-
+bp <- vv2 %>% pivot_wider(id_cols = "age", names_from = sex, values_from = "bp")
 
 pm1 <- ggplot(aes(x = Amžius, y = Atvejai),
   data = dose1 %>% rename(Amžius = age, Atvejai = Moteris)
@@ -361,6 +365,43 @@ grid.arrange(pm2,
   ncol = 2
 )
 ```
+
+
+### Turinčių pastiprintą vakcinacijos apsaugą procentai, `r ad_last_day`
+
+Turintys pastiprintą vakcinacijos apsaugą laikomi tie kuriems po pastiprinančiosios dozės praėjo 14 dienų.
+
+```{r}
+pm2 <- ggplot(aes(x = Amžius, y = Atvejai),
+  data = bp %>% rename(Amžius = age, Atvejai = Moteris)
+) +
+  geom_col(fill = cols[1]) +
+  geom_text(aes(label = Atvejai), hjust = 1.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(trans = "reverse", expand = expansion(mult = c(0.1, 0))) +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = unit(c(0.02, 0.01, 0.02, 0.02), "npc")) +
+  labs(title = "Moterys")
+
+pv2 <- ggplot(aes(x = Amžius, y = Atvejai),
+  data = bp %>% rename(Amžius = age, Atvejai = Vyras)
+) +
+  geom_col(fill = cols[2]) +
+  geom_text(aes(label = Atvejai), hjust = -0.1) +
+  coord_flip() +
+  labs(y = "", x = "") +
+  theme_bw() +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
+  theme(plot.margin = unit(c(0.02, 0.02, 0.02, -0.03), "npc"), plot.title = element_text(hjust = 1)) +
+  labs(title = "Vyrai")
+
+grid.arrange(pm2,
+  pv2,
+  ncol = 2
+)
+```
+
 
 ```{r}
 
