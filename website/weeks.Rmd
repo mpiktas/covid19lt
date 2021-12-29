@@ -65,14 +65,6 @@ ggplot(aes(x = wfday, y = tpr, group = week, colour = as.character(week)), data 
 
 
 ```{r}
-ggplot(aes(x = wfday, y = tests_mobile_daily, group = week, colour = as.character(week)), data = lv12 %>% filter(day >= start_day)) +
-  geom_line() +
-  scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) +
-  theme_bw() +
-  labs(x = "Savaitės diena", y = "Testai mobiliuose punktuose", title = "Testavimo apimtys mobiliuose punktuose savaitės dienomis")
-```
-
-```{r}
 ggplot(aes(x = wfday, y = hospitalized, group = week, colour = as.character(week)), data = lv12 %>% filter(day >= start_day)) +
   geom_line() +
   scale_colour_manual(name = "Savaitė", values = RColorBrewer::brewer.pal(5, "Set1")) +
