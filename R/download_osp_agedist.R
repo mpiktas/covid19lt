@@ -11,7 +11,7 @@ source("R/functions.R")
 
 httr::set_config(config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
 
-posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/Agreguoti_COVID19_atvejai_ir_mirtys/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # Exclude Linting
+posp <- tryget("https://services3.arcgis.com/MF53hRPmwfLccHCj/arcgis/rest/services/Agreguoti_COVID19_atvejai_ir_mirtys/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=date+desc&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token=") # nolint
 
 posp1 <- fix_esridate(rawToChar(posp$content))
 posp2 <- posp1 %>% mutate(day = ymd(date))
@@ -19,7 +19,7 @@ posp2 <- posp1 %>% mutate(day = ymd(date))
 posp3 <- posp2 %>% filter(day == max(day))
 
 
-osp0 <- read.csv("https://opendata.arcgis.com/datasets/ba35de03e111430f88a86f7d1f351de6_0.csv") # Exclude Linting
+osp0 <- read.csv("https://opendata.arcgis.com/datasets/ba35de03e111430f88a86f7d1f351de6_0.csv") # nolint
 
 dd <- ymd(unique(osp0$date))
 ld <- ymd(posp3$date %>% unique())
@@ -37,7 +37,15 @@ osp1 %>%
 
 osp2 <- osp1 %>% mutate(day = ymd(date))
 
-adm <- read.csv("raw_data/administrative_levels.csv")
+adm <- read.csv("raw_data/administrative_levels.csv") %>%
+  rbind(data.frame(
+    administrative_level_2 = "Unknown",
+    administrative_level_3 = "Unknown",
+    municipality_name = "Cenzūruota",
+    population2020 = NA,
+    population2021 = NA
+  ))
+
 
 
 osp3 <- osp2 %>% inner_join(adm)
