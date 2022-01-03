@@ -10,7 +10,15 @@ library(readr)
 
 source("R/functions.R")
 
-adm <- read.csv("raw_data/administrative_levels.csv")
+adm <- read.csv("raw_data/administrative_levels.csv") %>%
+  rbind(data.frame(
+    administrative_level_2 = "Unknown",
+    administrative_level_3 = "Unknown",
+    municipality_name = "Cenzūruota",
+    population2020 = NA,
+    population2021 = NA
+  ))
+
 
 #-------- Individual data
 #
@@ -158,9 +166,30 @@ vv <- vv0 %>%
     booster_protection = fix_na(booster_jj) + fix_na(booster_o)
   )
 
-vv <- vv %>%
-  mutate(sex = ifelse(sex == "M", "Moteris", "Vyras")) %>%
+bad_join <- vv %>% filter(is.na(age_group) | is.na(sex))
+bjs <- bad_join %>% summarise(dose1 = sum(dose1), dose2 = sum(dose2), dose3 = sum(dose3))
+
+if (sum(unlist(bjs)) != 0) {
+  warning("Missing age and sex information after join with non zero vaccination numbers")
+}
+
+sextb <- data.frame(
+  sex = c("M", "V", "Cenzūruota"),
+  sex1 = c("Moteris", "Vyras", "Cenzūruota")
+)
+
+vvv <- vv %>%
+  ungroup() %>%
+  filter(!(is.na(age_group) | is.na(sex))) %>%
   filter(day <= max(vv0$day))
+
+vvv1 <- vvv %>% inner_join(sextb)
+
+if (nrow(vvv1) != nrow(vvv)) warning("After joining sex information disappeared")
+
+vvv2 <- vvv1 %>%
+  select(-sex) %>%
+  rename(sex = sex1)
 
 agd <- data.frame(age_group = sort(unique(vv$age_group))) %>%
   mutate(
@@ -176,8 +205,7 @@ agd <- data.frame(age_group = sort(unique(vv$age_group))) %>%
   mutate(age10 = convert_interval(age10)) %>%
   mutate(age10 = ifelse(age_group == -1, "Nenustatyta", age10))
 
-vv1 <- vv %>%
-  ungroup() %>%
+vv1 <- vvv2 %>%
   inner_join(agd) %>%
   group_by(municipality_name, day, age = age10, sex) %>%
   summarise(across(
