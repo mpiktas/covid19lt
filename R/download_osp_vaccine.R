@@ -12,8 +12,8 @@ source("R/functions.R")
 
 adm <- read.csv("raw_data/administrative_levels.csv") %>%
   rbind(data.frame(
-    administrative_level_2 = "Unknown",
-    administrative_level_3 = "Unknown",
+    administrative_level_2 = "Censored",
+    administrative_level_3 = "Censored",
     municipality_name = "Cenzūruota",
     population2020 = NA,
     population2021 = NA
