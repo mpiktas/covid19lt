@@ -9,7 +9,15 @@ curl_download("https://ls-osp-sdg.maps.arcgis.com/sharing/rest/content/items/128
 init0 <- readxl::read_xlsx("init0.xlsx")
 file.remove("init0.xlsx")
 
-adm <- read.csv("raw_data/administrative_levels.csv") %>% rename(municipality = municipality_name)
+adm <- read.csv("raw_data/administrative_levels.csv") %>%
+  rbind(data.frame(
+    administrative_level_2 = "Censored",
+    administrative_level_3 = "Censored",
+    municipality_name = "Cenzūruota",
+    population2020 = NA,
+    population2021 = NA
+  )) %>%
+  rename(municipality = municipality_name)
 
 init01 <- init0 %>% inner_join(adm)
 

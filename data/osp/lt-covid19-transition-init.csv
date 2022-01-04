@@ -1,961 +1,842 @@
 "administrative_level_2","administrative_level_3","age_gr","at_risk"
-"Alytaus apskr.","Druskininkų","60-69",1598
-"Tauragės apskr.","Jurbarko r.","60-69",1869
-"Marijampolės apskr.","Kalvarijos","50-59",730
-"Kauno apskr.","Kauno r.","30-39",7280
-"Klaipėdos apskr.","Klaipėdos m.","40-49",7959
-"Klaipėdos apskr.","Klaipėdos r.","20-29",3686
-"Telšių apskr.","Mažeikių r.","20-29",3096
-"Utenos apskr.","Molėtų r.","80+",962
-"Telšių apskr.","Plungės r.","0-19",3277
-"Vilniaus apskr.","Trakų r.","60-69",2072
-"Marijampolės apskr.","Vilkaviškio r.","50-59",2560
-"Marijampolės apskr.","Vilkaviškio r.","60-69",2043
-"Utenos apskr.","Visagino m.","80+",219
-"Utenos apskr.","Zarasų r.","70-79",971
-"Šiaulių apskr.","Šiaulių m.","40-49",5007
-"Alytaus apskr.","Druskininkų","60-69",1088
-"Utenos apskr.","Ignalinos r.","60-69",1146
-"Tauragės apskr.","Pagėgių","60-69",541
-"Klaipėdos apskr.","Palangos m.","30-39",726
-"Kauno apskr.","Prienų r.","40-49",1311
-"Šiaulių apskr.","Radviliškio r.","70-79",1036
-"Marijampolės apskr.","Vilkaviškio r.","20-29",2230
-"Utenos apskr.","Zarasų r.","50-59",1196
-"Tauragės apskr.","Šilalės r.","60-69",1348
-"Tauragės apskr.","Šilalės r.","0-19",2174
-"Kauno apskr.","Jonavos r.","40-49",2361
-"Šiaulių apskr.","Joniškio r.","0-19",1867
-"Kauno apskr.","Kauno m.","30-39",21996
-"Klaipėdos apskr.","Kretingos r.","30-39",1404
-"Panevėžio apskr.","Kupiškio r.","60-69",1000
-"Kauno apskr.","Kėdainių r.","20-29",2134
-"Alytaus apskr.","Lazdijų r.","50-59",1403
-"Telšių apskr.","Mažeikių r.","50-59",3631
-"Šiaulių apskr.","Pakruojo r.","80+",286
-"Kauno apskr.","Prienų r.","20-29",1344
-"Vilniaus apskr.","Švenčionių r.","40-49",1218
-"Kauno apskr.","Birštono","40-49",199
-"Utenos apskr.","Ignalinos r.","0-19",1002
-"Kauno apskr.","Kaišiadorių r.","40-49",1503
-"Kauno apskr.","Kėdainių r.","30-39",1369
-"Telšių apskr.","Mažeikių r.","30-39",2294
-"Šiaulių apskr.","Radviliškio r.","40-49",1771
-"Kauno apskr.","Raseinių r.","60-69",2124
-"Klaipėdos apskr.","Skuodo r.","50-59",1194
-"Telšių apskr.","Telšių r.","80+",1790
-"Vilniaus apskr.","Šalčininkų r.","50-59",2023
-"Tauragės apskr.","Jurbarko r.","40-49",1309
-"Tauragės apskr.","Jurbarko r.","60-69",1449
-"Klaipėdos apskr.","Palangos m.","40-49",987
-"Panevėžio apskr.","Panevėžio r.","80+",618
-"Panevėžio apskr.","Pasvalio r.","60-69",1277
-"Telšių apskr.","Rietavo","40-49",387
-"Panevėžio apskr.","Rokiškio r.","0-19",2277
-"Klaipėdos apskr.","Skuodo r.","20-29",772
-"Telšių apskr.","Telšių r.","40-49",2091
-"Vilniaus apskr.","Širvintų r.","60-69",877
-"Alytaus apskr.","Alytaus r.","0-19",2279
-"Utenos apskr.","Anykščių r.","50-59",1895
-"Šiaulių apskr.","Joniškio r.","0-19",1804
-"Marijampolės apskr.","Marijampolės","60-69",3735
-"Telšių apskr.","Mažeikių r.","80+",1708
-"Telšių apskr.","Rietavo","40-49",319
-"Panevėžio apskr.","Rokiškio r.","50-59",2299
-"Vilniaus apskr.","Trakų r.","50-59",2199
-"Vilniaus apskr.","Vilniaus r.","20-29",4665
-"Vilniaus apskr.","Širvintų r.","0-19",1291
-"Klaipėdos apskr.","Klaipėdos m.","60-69",7083
-"Panevėžio apskr.","Kupiškio r.","0-19",1354
-"Alytaus apskr.","Lazdijų r.","40-49",892
-"Panevėžio apskr.","Rokiškio r.","20-29",1450
-"Tauragės apskr.","Tauragės r.","0-19",3423
-"Vilniaus apskr.","Ukmergės r.","60-69",1864
-"Marijampolės apskr.","Vilkaviškio r.","50-59",2539
-"Vilniaus apskr.","Vilniaus m.","70-79",24953
-"Vilniaus apskr.","Švenčionių r.","20-29",1105
-"Kauno apskr.","Kaišiadorių r.","20-29",1829
+"Alytaus apskr.","Druskininkų","60-69",1579
+"Tauragės apskr.","Jurbarko r.","60-69",1850
+"Marijampolės apskr.","Kalvarijos","50-59",714
+"Kauno apskr.","Kauno r.","30-39",7087
+"Klaipėdos apskr.","Klaipėdos m.","40-49",7658
+"Klaipėdos apskr.","Klaipėdos r.","20-29",3518
+"Telšių apskr.","Mažeikių r.","20-29",2967
+"Utenos apskr.","Molėtų r.","80+",961
+"Vilniaus apskr.","Trakų r.","60-69",2045
+"Marijampolės apskr.","Vilkaviškio r.","50-59",2520
+"Marijampolės apskr.","Vilkaviškio r.","60-69",2024
+"Utenos apskr.","Visagino m.","80+",216
+"Utenos apskr.","Zarasų r.","70-79",966
+"Šiaulių apskr.","Šiaulių m.","40-49",4899
+"Censored","Censored","0-19",512572
+"Utenos apskr.","Anykščių r.","20-29",1356
+"Klaipėdos apskr.","Klaipėdos m.","80+",6149
+"Telšių apskr.","Plungės r.","50-59",2160
+"Kauno apskr.","Raseinių r.","80+",1518
+"Utenos apskr.","Utenos r.","70-79",1267
+"Alytaus apskr.","Varėnos r.","70-79",1319
+"Šiaulių apskr.","Šiaulių r.","40-49",2348
+"Vilniaus apskr.","Švenčionių r.","80+",1132
+"Kauno apskr.","Jonavos r.","40-49",2290
+"Kauno apskr.","Kauno m.","30-39",21495
+"Klaipėdos apskr.","Kretingos r.","30-39",1278
+"Panevėžio apskr.","Kupiškio r.","60-69",996
+"Kauno apskr.","Kėdainių r.","20-29",2067
+"Alytaus apskr.","Lazdijų r.","50-59",1383
+"Telšių apskr.","Mažeikių r.","50-59",3530
+"Šiaulių apskr.","Pakruojo r.","80+",285
+"Kauno apskr.","Prienų r.","20-29",1307
+"Vilniaus apskr.","Švenčionių r.","40-49",1205
+"Alytaus apskr.","Druskininkų","60-69",1080
+"Utenos apskr.","Ignalinos r.","60-69",1141
+"Tauragės apskr.","Pagėgių","60-69",531
+"Klaipėdos apskr.","Palangos m.","30-39",679
+"Kauno apskr.","Prienų r.","40-49",1292
+"Šiaulių apskr.","Radviliškio r.","70-79",1034
+"Marijampolės apskr.","Vilkaviškio r.","20-29",2173
+"Utenos apskr.","Zarasų r.","50-59",1186
+"Tauragės apskr.","Šilalės r.","60-69",1324
+"Alytaus apskr.","Alytaus m.","60-69",3966
+"Alytaus apskr.","Druskininkų","80+",361
+"Marijampolės apskr.","Kalvarijos","80+",443
+"Telšių apskr.","Plungės r.","20-29",1696
+"Kauno apskr.","Prienų r.","70-79",821
+"Telšių apskr.","Rietavo","50-59",506
+"Telšių apskr.","Telšių r.","60-69",2699
+"Vilniaus apskr.","Vilniaus m.","20-29",27589
+"Vilniaus apskr.","Vilniaus m.","50-59",32275
+"Tauragės apskr.","Jurbarko r.","40-49",1268
+"Tauragės apskr.","Jurbarko r.","60-69",1432
+"Klaipėdos apskr.","Palangos m.","40-49",951
+"Panevėžio apskr.","Panevėžio r.","80+",619
+"Panevėžio apskr.","Pasvalio r.","60-69",1267
+"Telšių apskr.","Rietavo","40-49",372
+"Klaipėdos apskr.","Skuodo r.","20-29",732
+"Telšių apskr.","Telšių r.","40-49",2016
+"Vilniaus apskr.","Širvintų r.","60-69",872
+"Kauno apskr.","Birštono","40-49",196
+"Kauno apskr.","Kaišiadorių r.","40-49",1477
+"Kauno apskr.","Kėdainių r.","30-39",1309
+"Telšių apskr.","Mažeikių r.","30-39",2108
+"Šiaulių apskr.","Radviliškio r.","40-49",1728
+"Kauno apskr.","Raseinių r.","60-69",2101
+"Klaipėdos apskr.","Skuodo r.","50-59",1153
+"Telšių apskr.","Telšių r.","80+",1782
+"Vilniaus apskr.","Šalčininkų r.","50-59",1959
+"Kauno apskr.","Kaišiadorių r.","20-29",1787
 "Klaipėdos apskr.","Neringos","80+",23
-"Šiaulių apskr.","Radviliškio r.","50-59",2624
-"Šiaulių apskr.","Radviliškio r.","80+",511
-"Klaipėdos apskr.","Skuodo r.","80+",693
-"Vilniaus apskr.","Vilniaus m.","0-19",58219
-"Utenos apskr.","Zarasų r.","70-79",552
-"Vilniaus apskr.","Šalčininkų r.","30-39",1917
-"Alytaus apskr.","Alytaus r.","60-69",1725
-"Kauno apskr.","Kaišiadorių r.","80+",439
-"Marijampolės apskr.","Kalvarijos","0-19",996
-"Šiaulių apskr.","Kelmės r.","20-29",1219
-"Klaipėdos apskr.","Klaipėdos m.","0-19",14003
-"Telšių apskr.","Mažeikių r.","70-79",1320
-"Tauragės apskr.","Pagėgių","0-19",706
-"Kauno apskr.","Prienų r.","60-69",1561
-"Tauragės apskr.","Tauragės r.","20-29",1918
-"Vilniaus apskr.","Trakų r.","40-49",2184
-"Kauno apskr.","Birštono","80+",76
-"Vilniaus apskr.","Elektrėnų","20-29",1354
-"Kauno apskr.","Jonavos r.","0-19",3960
-"Klaipėdos apskr.","Klaipėdos r.","50-59",3842
-"Klaipėdos apskr.","Skuodo r.","30-39",97
-"Vilniaus apskr.","Vilniaus r.","0-19",10507
-"Utenos apskr.","Visagino m.","0-19",1763
-"Utenos apskr.","Visagino m.","70-79",522
-"Utenos apskr.","Zarasų r.","60-69",908
+"Šiaulių apskr.","Radviliškio r.","50-59",2585
+"Šiaulių apskr.","Radviliškio r.","80+",505
+"Klaipėdos apskr.","Skuodo r.","80+",688
+"Utenos apskr.","Zarasų r.","70-79",549
+"Vilniaus apskr.","Šalčininkų r.","30-39",1780
+"Utenos apskr.","Ignalinos r.","80+",920
+"Kauno apskr.","Kauno m.","40-49",15440
+"Marijampolės apskr.","Kazlų Rūdos","30-39",526
+"Klaipėdos apskr.","Klaipėdos m.","50-59",9172
+"Panevėžio apskr.","Panevėžio r.","30-39",1006
+"Panevėžio apskr.","Panevėžio r.","20-29",2181
+"Šiaulių apskr.","Šiaulių m.","80+",1422
+"Šiaulių apskr.","Šiaulių r.","60-69",2437
 "Kauno apskr.","Birštono","80+",250
-"Panevėžio apskr.","Biržų r.","0-19",1850
-"Vilniaus apskr.","Elektrėnų","40-49",1831
-"Kauno apskr.","Kaišiadorių r.","60-69",1894
-"Šiaulių apskr.","Kelmės r.","70-79",1559
-"Panevėžio apskr.","Panevėžio m.","80+",4285
-"Kauno apskr.","Prienų r.","60-69",1783
-"Telšių apskr.","Rietavo","70-79",364
-"Vilniaus apskr.","Šalčininkų r.","80+",1121
-"Alytaus apskr.","Alytaus m.","60-69",3993
-"Alytaus apskr.","Druskininkų","80+",362
-"Marijampolės apskr.","Kalvarijos","80+",444
-"Telšių apskr.","Plungės r.","20-29",1794
-"Kauno apskr.","Prienų r.","70-79",826
-"Telšių apskr.","Rietavo","50-59",522
-"Telšių apskr.","Telšių r.","60-69",2766
-"Vilniaus apskr.","Vilniaus m.","20-29",28062
-"Vilniaus apskr.","Vilniaus m.","50-59",32748
-"Alytaus apskr.","Druskininkų","30-39",855
-"Vilniaus apskr.","Elektrėnų","80+",886
-"Kauno apskr.","Kaišiadorių r.","0-19",2474
-"Klaipėdos apskr.","Kretingos r.","80+",618
-"Marijampolės apskr.","Marijampolės","50-59",3730
-"Telšių apskr.","Telšių r.","70-79",1240
-"Alytaus apskr.","Varėnos r.","30-39",841
-"Vilniaus apskr.","Švenčionių r.","40-49",1315
-"Alytaus apskr.","Alytaus m.","40-49",2768
-"Utenos apskr.","Anykščių r.","70-79",1578
-"Kauno apskr.","Birštono","40-49",181
-"Alytaus apskr.","Druskininkų","70-79",1287
-"Šiaulių apskr.","Kelmės r.","70-79",915
-"Šiaulių apskr.","Radviliškio r.","0-19",3132
-"Vilniaus apskr.","Trakų r.","20-29",1999
-"Vilniaus apskr.","Vilniaus r.","80+",2685
-"Šiaulių apskr.","Šiaulių r.","20-29",2563
-"Utenos apskr.","Anykščių r.","20-29",1376
-"Klaipėdos apskr.","Klaipėdos m.","80+",6183
-"Telšių apskr.","Plungės r.","50-59",2236
-"Kauno apskr.","Raseinių r.","80+",1524
-"Utenos apskr.","Utenos r.","70-79",1275
-"Alytaus apskr.","Varėnos r.","70-79",1323
-"Šiaulių apskr.","Šiaulių r.","40-49",2400
-"Vilniaus apskr.","Švenčionių r.","80+",1133
-"Utenos apskr.","Ignalinos r.","80+",921
-"Kauno apskr.","Kauno m.","40-49",15805
-"Marijampolės apskr.","Kazlų Rūdos","30-39",546
-"Klaipėdos apskr.","Klaipėdos m.","50-59",9390
-"Panevėžio apskr.","Panevėžio r.","30-39",1055
-"Panevėžio apskr.","Panevėžio r.","20-29",2228
-"Šiaulių apskr.","Šiaulių m.","80+",1428
-"Šiaulių apskr.","Šiaulių r.","60-69",2458
-"Šiaulių apskr.","Pakruojo r.","60-69",1325
-"Panevėžio apskr.","Panevėžio r.","70-79",1143
-"Panevėžio apskr.","Rokiškio r.","40-49",1500
-"Alytaus apskr.","Varėnos r.","50-59",1545
-"Marijampolės apskr.","Šakių r.","0-19",2496
-"Marijampolės apskr.","Šakių r.","50-59",2044
+"Vilniaus apskr.","Elektrėnų","40-49",1802
+"Kauno apskr.","Kaišiadorių r.","60-69",1879
+"Šiaulių apskr.","Kelmės r.","70-79",1555
+"Panevėžio apskr.","Panevėžio m.","80+",4271
+"Kauno apskr.","Prienų r.","60-69",1772
+"Telšių apskr.","Rietavo","70-79",358
+"Vilniaus apskr.","Šalčininkų r.","80+",1114
+"Utenos apskr.","Ignalinos r.","70-79",610
+"Kauno apskr.","Kėdainių r.","60-69",2408
+"Klaipėdos apskr.","Palangos m.","70-79",590
+"Šiaulių apskr.","Radviliškio r.","60-69",2442
+"Telšių apskr.","Rietavo","60-69",406
+"Utenos apskr.","Utenos r.","40-49",2206
+"Marijampolės apskr.","Vilkaviškio r.","40-49",1863
+"Tauragės apskr.","Šilalės r.","50-59",1435
+"Klaipėdos apskr.","Klaipėdos m.","60-69",6973
+"Alytaus apskr.","Lazdijų r.","40-49",876
+"Panevėžio apskr.","Rokiškio r.","20-29",1431
+"Vilniaus apskr.","Ukmergės r.","60-69",1851
+"Marijampolės apskr.","Vilkaviškio r.","50-59",2501
+"Vilniaus apskr.","Vilniaus m.","70-79",24752
+"Vilniaus apskr.","Švenčionių r.","20-29",1091
+"Alytaus apskr.","Druskininkų","30-39",822
+"Vilniaus apskr.","Elektrėnų","80+",885
+"Klaipėdos apskr.","Kretingos r.","80+",617
+"Marijampolės apskr.","Marijampolės","50-59",3641
+"Telšių apskr.","Telšių r.","70-79",1228
+"Alytaus apskr.","Varėnos r.","30-39",809
+"Vilniaus apskr.","Švenčionių r.","40-49",1289
+"Vilniaus apskr.","Elektrėnų","60-69",1266
+"Alytaus apskr.","Lazdijų r.","60-69",1213
+"Marijampolės apskr.","Marijampolės","70-79",2591
+"Panevėžio apskr.","Pasvalio r.","60-69",1556
+"Utenos apskr.","Visagino m.","40-49",752
+"Vilniaus apskr.","Šalčininkų r.","70-79",1293
+"Vilniaus apskr.","Švenčionių r.","50-59",1599
+"Kauno apskr.","Birštono","30-39",174
+"Vilniaus apskr.","Elektrėnų","50-59",1791
+"Marijampolės apskr.","Kazlų Rūdos","40-49",592
+"Klaipėdos apskr.","Klaipėdos m.","60-69",10311
+"Alytaus apskr.","Lazdijų r.","60-69",1134
+"Panevėžio apskr.","Panevėžio m.","50-59",6767
+"Panevėžio apskr.","Panevėžio r.","20-29",1793
+"Vilniaus apskr.","Vilniaus m.","80+",18343
+"Vilniaus apskr.","Elektrėnų","20-29",1130
+"Klaipėdos apskr.","Klaipėdos m.","30-39",10305
+"Marijampolės apskr.","Marijampolės","20-29",2989
+"Klaipėdos apskr.","Neringos","40-49",212
+"Utenos apskr.","Utenos r.","70-79",2281
+"Vilniaus apskr.","Šalčininkų r.","50-59",1925
+"Klaipėdos apskr.","Šilutės r.","50-59",2708
+"Alytaus apskr.","Alytaus m.","40-49",2729
+"Utenos apskr.","Anykščių r.","70-79",1574
+"Kauno apskr.","Birštono","40-49",174
+"Alytaus apskr.","Druskininkų","70-79",1278
+"Šiaulių apskr.","Kelmės r.","70-79",909
+"Vilniaus apskr.","Trakų r.","20-29",1955
+"Vilniaus apskr.","Vilniaus r.","80+",2651
+"Šiaulių apskr.","Šiaulių r.","20-29",2510
+"Utenos apskr.","Anykščių r.","60-69",1476
+"Marijampolės apskr.","Kalvarijos","40-49",479
+"Klaipėdos apskr.","Neringos","30-39",270
+"Kauno apskr.","Prienų r.","80+",528
+"Alytaus apskr.","Varėnos r.","60-69",1627
+"Marijampolės apskr.","Vilkaviškio r.","80+",1593
+"Tauragės apskr.","Šilalės r.","50-59",1560
+"Alytaus apskr.","Druskininkų","30-39",722
+"Marijampolės apskr.","Kalvarijos","40-49",569
+"Marijampolės apskr.","Kazlų Rūdos","40-49",686
+"Panevėžio apskr.","Pasvalio r.","20-29",1166
+"Vilniaus apskr.","Ukmergės r.","30-39",1504
+"Klaipėdos apskr.","Šilutės r.","50-59",2704
+"Vilniaus apskr.","Širvintų r.","50-59",1154
+"Panevėžio apskr.","Biržų r.","70-79",830
+"Kauno apskr.","Jonavos r.","20-29",2190
+"Kauno apskr.","Jonavos r.","30-39",1845
+"Tauragės apskr.","Tauragės r.","60-69",2489
+"Tauragės apskr.","Tauragės r.","40-49",1865
+"Klaipėdos apskr.","Šilutės r.","70-79",1922
+"Vilniaus apskr.","Švenčionių r.","80+",383
+"Utenos apskr.","Anykščių r.","50-59",1890
+"Marijampolės apskr.","Marijampolės","60-69",3681
+"Telšių apskr.","Mažeikių r.","80+",1695
+"Telšių apskr.","Rietavo","40-49",307
+"Panevėžio apskr.","Rokiškio r.","50-59",2277
+"Vilniaus apskr.","Trakų r.","50-59",2166
+"Vilniaus apskr.","Vilniaus r.","20-29",4520
+"Alytaus apskr.","Alytaus m.","50-59",3578
+"Utenos apskr.","Ignalinos r.","30-39",304
+"Šiaulių apskr.","Joniškio r.","50-59",1698
+"Klaipėdos apskr.","Klaipėdos r.","50-59",4367
+"Klaipėdos apskr.","Neringos","60-69",187
+"Klaipėdos apskr.","Skuodo r.","80+",262
+"Vilniaus apskr.","Širvintų r.","70-79",873
+"Utenos apskr.","Ignalinos r.","70-79",1075
+"Šiaulių apskr.","Kelmės r.","60-69",1558
+"Panevėžio apskr.","Kupiškio r.","50-59",1411
+"Alytaus apskr.","Lazdijų r.","70-79",1056
+"Vilniaus apskr.","Ukmergės r.","30-39",1021
+"Marijampolės apskr.","Vilkaviškio r.","20-29",1857
+"Vilniaus apskr.","Vilniaus m.","30-39",51853
+"Šiaulių apskr.","Pakruojo r.","60-69",1317
+"Panevėžio apskr.","Panevėžio r.","70-79",1138
+"Panevėžio apskr.","Rokiškio r.","40-49",1485
+"Alytaus apskr.","Varėnos r.","50-59",1536
+"Marijampolės apskr.","Šakių r.","50-59",2003
 "Šiaulių apskr.","Šiaulių r.","80+",608
-"Tauragės apskr.","Šilalės r.","30-39",826
-"Vilniaus apskr.","Elektrėnų","70-79",721
-"Šiaulių apskr.","Joniškio r.","80+",942
-"Tauragės apskr.","Jurbarko r.","40-49",1253
-"Tauragės apskr.","Jurbarko r.","70-79",810
-"Marijampolės apskr.","Kalvarijos","0-19",1145
-"Klaipėdos apskr.","Kretingos r.","0-19",3809
-"Utenos apskr.","Utenos r.","20-29",2112
-"Vilniaus apskr.","Vilniaus m.","60-69",33707
-"Utenos apskr.","Ignalinos r.","70-79",609
-"Kauno apskr.","Kėdainių r.","60-69",2435
-"Klaipėdos apskr.","Palangos m.","70-79",593
-"Šiaulių apskr.","Radviliškio r.","60-69",2478
-"Telšių apskr.","Rietavo","60-69",411
-"Utenos apskr.","Utenos r.","40-49",2246
-"Marijampolės apskr.","Vilkaviškio r.","40-49",1896
-"Tauragės apskr.","Šilalės r.","50-59",1467
-"Klaipėdos apskr.","Klaipėdos r.","0-19",6205
-"Klaipėdos apskr.","Klaipėdos r.","20-29",3062
-"Utenos apskr.","Molėtų r.","40-49",920
-"Šiaulių apskr.","Radviliškio r.","70-79",2024
-"Vilniaus apskr.","Trakų r.","70-79",1491
-"Marijampolės apskr.","Vilkaviškio r.","70-79",2052
-"Marijampolės apskr.","Šakių r.","20-29",1541
-"Tauragės apskr.","Šilalės r.","80+",838
-"Klaipėdos apskr.","Palangos m.","20-29",702
-"Telšių apskr.","Rietavo","60-69",471
-"Klaipėdos apskr.","Skuodo r.","20-29",1041
-"Vilniaus apskr.","Ukmergės r.","0-19",2720
-"Vilniaus apskr.","Šalčininkų r.","80+",338
-"Šiaulių apskr.","Šiaulių r.","70-79",2133
-"Šiaulių apskr.","Šiaulių r.","40-49",2398
-"Alytaus apskr.","Druskininkų","0-19",1574
-"Utenos apskr.","Ignalinos r.","40-49",734
-"Šiaulių apskr.","Kelmės r.","20-29",1712
-"Šiaulių apskr.","Pakruojo r.","30-39",547
-"Kauno apskr.","Prienų r.","30-39",1168
-"Kauno apskr.","Prienų r.","50-59",1863
-"Tauragės apskr.","Tauragės r.","70-79",2146
-"Vilniaus apskr.","Elektrėnų","60-69",1277
-"Alytaus apskr.","Lazdijų r.","60-69",1221
-"Marijampolės apskr.","Marijampolės","70-79",2608
-"Panevėžio apskr.","Pasvalio r.","60-69",1572
-"Utenos apskr.","Visagino m.","40-49",772
-"Vilniaus apskr.","Šalčininkų r.","70-79",1313
-"Vilniaus apskr.","Švenčionių r.","50-59",1614
-"Kauno apskr.","Birštono","30-39",184
-"Vilniaus apskr.","Elektrėnų","50-59",1817
-"Marijampolės apskr.","Kazlų Rūdos","40-49",597
-"Klaipėdos apskr.","Klaipėdos m.","60-69",10493
-"Alytaus apskr.","Lazdijų r.","60-69",1146
-"Panevėžio apskr.","Panevėžio m.","50-59",6838
-"Panevėžio apskr.","Panevėžio r.","20-29",1832
-"Vilniaus apskr.","Vilniaus m.","80+",18418
-"Alytaus apskr.","Alytaus r.","80+",1346
-"Utenos apskr.","Anykščių r.","0-19",1633
-"Šiaulių apskr.","Joniškio r.","30-39",458
-"Kauno apskr.","Kauno m.","60-69",19703
-"Kauno apskr.","Kauno m.","30-39",21888
-"Utenos apskr.","Molėtų r.","0-19",1339
-"Panevėžio apskr.","Rokiškio r.","70-79",1756
-"Marijampolės apskr.","Šakių r.","0-19",2404
-"Klaipėdos apskr.","Klaipėdos r.","30-39",3230
-"Klaipėdos apskr.","Klaipėdos r.","60-69",3345
-"Marijampolės apskr.","Marijampolės","0-19",5242
-"Tauragės apskr.","Pagėgių","60-69",438
-"Kauno apskr.","Raseinių r.","50-59",2196
-"Klaipėdos apskr.","Skuodo r.","50-59",1178
-"Klaipėdos apskr.","Šilutės r.","80+",1641
-"Alytaus apskr.","Alytaus m.","30-39",2414
-"Utenos apskr.","Anykščių r.","70-79",895
-"Kauno apskr.","Birštono","0-19",341
-"Tauragės apskr.","Jurbarko r.","30-39",871
-"Kauno apskr.","Kauno r.","50-59",6216
-"Marijampolės apskr.","Kazlų Rūdos","30-39",452
-"Kauno apskr.","Raseinių r.","30-39",848
-"Vilniaus apskr.","Vilniaus m.","50-59",26822
-"Vilniaus apskr.","Elektrėnų","20-29",1150
-"Klaipėdos apskr.","Klaipėdos m.","30-39",10752
-"Marijampolės apskr.","Marijampolės","20-29",3103
-"Klaipėdos apskr.","Neringos","40-49",218
-"Utenos apskr.","Utenos r.","70-79",2289
-"Vilniaus apskr.","Šalčininkų r.","50-59",1978
-"Klaipėdos apskr.","Šilutės r.","50-59",2774
-"Alytaus apskr.","Alytaus m.","40-49",2890
-"Šiaulių apskr.","Joniškio r.","30-39",681
-"Kauno apskr.","Kėdainių r.","70-79",2846
-"Marijampolės apskr.","Marijampolės","20-29",2776
-"Tauragės apskr.","Tauragės r.","30-39",1163
-"Vilniaus apskr.","Šalčininkų r.","0-19",3215
-"Šiaulių apskr.","Šiaulių m.","50-59",6371
-"Alytaus apskr.","Alytaus r.","50-59",2025
-"Utenos apskr.","Anykščių r.","60-69",1740
-"Marijampolės apskr.","Kalvarijos","50-59",727
-"Kauno apskr.","Kauno r.","60-69",5389
-"Utenos apskr.","Molėtų r.","40-49",987
-"Vilniaus apskr.","Šalčininkų r.","0-19",2955
-"Vilniaus apskr.","Šalčininkų r.","40-49",1928
-"Utenos apskr.","Anykščių r.","60-69",1478
-"Marijampolės apskr.","Kalvarijos","40-49",500
-"Klaipėdos apskr.","Neringos","30-39",282
-"Kauno apskr.","Prienų r.","80+",530
-"Alytaus apskr.","Varėnos r.","60-69",1632
-"Marijampolės apskr.","Vilkaviškio r.","80+",1601
-"Tauragės apskr.","Šilalės r.","50-59",1586
-"Alytaus apskr.","Druskininkų","30-39",746
-"Marijampolės apskr.","Kalvarijos","40-49",591
-"Marijampolės apskr.","Kazlų Rūdos","40-49",698
-"Panevėžio apskr.","Pasvalio r.","20-29",1200
-"Vilniaus apskr.","Ukmergės r.","30-39",1564
-"Klaipėdos apskr.","Šilutės r.","50-59",2760
-"Vilniaus apskr.","Širvintų r.","50-59",1171
-"Šiaulių apskr.","Akmenės r.","40-49",769
-"Alytaus apskr.","Alytaus r.","0-19",2184
-"Alytaus apskr.","Druskininkų","70-79",621
-"Šiaulių apskr.","Joniškio r.","50-59",1610
-"Klaipėdos apskr.","Klaipėdos m.","20-29",7331
-"Vilniaus apskr.","Vilniaus m.","0-19",55394
-"Klaipėdos apskr.","Šilutės r.","70-79",1078
-"Panevėžio apskr.","Biržų r.","70-79",835
-"Kauno apskr.","Jonavos r.","20-29",2250
-"Kauno apskr.","Jonavos r.","30-39",1930
-"Tauragės apskr.","Tauragės r.","60-69",2557
-"Tauragės apskr.","Tauragės r.","40-49",1969
-"Klaipėdos apskr.","Šilutės r.","70-79",1948
-"Vilniaus apskr.","Švenčionių r.","80+",384
-"Alytaus apskr.","Alytaus m.","50-59",3619
-"Utenos apskr.","Ignalinos r.","30-39",310
-"Šiaulių apskr.","Joniškio r.","50-59",1724
-"Klaipėdos apskr.","Klaipėdos r.","50-59",4471
-"Klaipėdos apskr.","Neringos","60-69",188
-"Klaipėdos apskr.","Skuodo r.","80+",265
-"Vilniaus apskr.","Širvintų r.","70-79",886
-"Šiaulių apskr.","Akmenės r.","0-19",1653
-"Utenos apskr.","Ignalinos r.","20-29",826
-"Kauno apskr.","Kaišiadorių r.","70-79",873
-"Šiaulių apskr.","Kelmės r.","30-39",469
-"Vilniaus apskr.","Ukmergės r.","50-59",2466
-"Vilniaus apskr.","Vilniaus m.","20-29",28604
-"Šiaulių apskr.","Šiaulių m.","0-19",8594
-"Utenos apskr.","Ignalinos r.","70-79",1076
-"Šiaulių apskr.","Kelmės r.","60-69",1576
-"Panevėžio apskr.","Kupiškio r.","50-59",1417
-"Alytaus apskr.","Lazdijų r.","70-79",1062
-"Vilniaus apskr.","Ukmergės r.","30-39",1060
-"Marijampolės apskr.","Vilkaviškio r.","20-29",1910
-"Vilniaus apskr.","Vilniaus m.","30-39",52741
-"Utenos apskr.","Molėtų r.","80+",360
-"Tauragės apskr.","Pagėgių","0-19",696
-"Klaipėdos apskr.","Palangos m.","80+",275
-"Telšių apskr.","Plungės r.","80+",1415
-"Kauno apskr.","Prienų r.","40-49",1430
-"Telšių apskr.","Rietavo","0-19",733
-"Utenos apskr.","Utenos r.","30-39",1348
-"Utenos apskr.","Zarasų r.","0-19",1171
-"Šiaulių apskr.","Akmenės r.","60-69",1159
-"Alytaus apskr.","Druskininkų","40-49",985
-"Šiaulių apskr.","Kelmės r.","80+",508
-"Alytaus apskr.","Lazdijų r.","30-39",785
-"Panevėžio apskr.","Panevėžio m.","0-19",7020
-"Telšių apskr.","Plungės r.","70-79",989
-"Vilniaus apskr.","Trakų r.","60-69",1617
-"Kauno apskr.","Birštono","0-19",332
-"Kauno apskr.","Kėdainių r.","70-79",1374
+"Tauragės apskr.","Šilalės r.","30-39",761
+"Klaipėdos apskr.","Palangos m.","20-29",686
+"Telšių apskr.","Rietavo","60-69",462
+"Klaipėdos apskr.","Skuodo r.","20-29",986
+"Vilniaus apskr.","Šalčininkų r.","80+",335
+"Šiaulių apskr.","Šiaulių r.","70-79",2114
+"Šiaulių apskr.","Šiaulių r.","40-49",2328
+"Klaipėdos apskr.","Kretingos r.","70-79",1896
+"Marijampolės apskr.","Marijampolės","30-39",2007
+"Marijampolės apskr.","Marijampolės","50-59",3863
+"Šiaulių apskr.","Radviliškio r.","20-29",2106
+"Tauragės apskr.","Tauragės r.","70-79",1119
+"Utenos apskr.","Utenos r.","40-49",2007
+"Utenos apskr.","Ignalinos r.","40-49",731
+"Šiaulių apskr.","Kelmės r.","20-29",1663
+"Šiaulių apskr.","Pakruojo r.","30-39",518
+"Kauno apskr.","Prienų r.","30-39",1113
+"Kauno apskr.","Prienų r.","50-59",1841
+"Tauragės apskr.","Tauragės r.","70-79",2121
+"Klaipėdos apskr.","Klaipėdos r.","20-29",2919
+"Utenos apskr.","Molėtų r.","40-49",911
+"Šiaulių apskr.","Radviliškio r.","70-79",2004
+"Vilniaus apskr.","Trakų r.","70-79",1482
+"Marijampolės apskr.","Vilkaviškio r.","70-79",2035
+"Marijampolės apskr.","Šakių r.","20-29",1498
+"Tauragės apskr.","Šilalės r.","80+",830
+"Alytaus apskr.","Alytaus m.","30-39",2341
+"Utenos apskr.","Anykščių r.","70-79",894
+"Tauragės apskr.","Jurbarko r.","30-39",809
+"Kauno apskr.","Kauno r.","50-59",6096
+"Marijampolės apskr.","Kazlų Rūdos","30-39",441
+"Kauno apskr.","Raseinių r.","30-39",789
+"Vilniaus apskr.","Vilniaus m.","50-59",26455
+"Alytaus apskr.","Alytaus r.","70-79",1451
+"Marijampolės apskr.","Kazlų Rūdos","60-69",585
+"Šiaulių apskr.","Kelmės r.","80+",1357
+"Telšių apskr.","Telšių r.","70-79",2203
+"Marijampolės apskr.","Vilkaviškio r.","80+",569
+"Vilniaus apskr.","Vilniaus r.","30-39",7032
+"Marijampolės apskr.","Šakių r.","70-79",1513
+"Alytaus apskr.","Alytaus m.","40-49",2836
+"Šiaulių apskr.","Joniškio r.","30-39",652
+"Kauno apskr.","Kėdainių r.","70-79",2831
+"Marijampolės apskr.","Marijampolės","20-29",2693
+"Tauragės apskr.","Tauragės r.","30-39",1059
+"Šiaulių apskr.","Šiaulių m.","50-59",6272
+"Kauno apskr.","Kauno r.","70-79",2386
+"Marijampolės apskr.","Kazlų Rūdos","80+",492
+"Alytaus apskr.","Varėnos r.","60-69",1294
+"Marijampolės apskr.","Šakių r.","60-69",1528
+"Šiaulių apskr.","Šiaulių m.","40-49",7148
+"Vilniaus apskr.","Švenčionių r.","20-29",1252
+"Alytaus apskr.","Alytaus r.","60-69",1705
+"Kauno apskr.","Kaišiadorių r.","80+",439
+"Šiaulių apskr.","Kelmės r.","20-29",1191
+"Telšių apskr.","Mažeikių r.","70-79",1314
+"Kauno apskr.","Prienų r.","60-69",1551
+"Tauragės apskr.","Tauragės r.","20-29",1823
+"Vilniaus apskr.","Trakų r.","40-49",2135
+"Vilniaus apskr.","Elektrėnų","70-79",717
+"Šiaulių apskr.","Joniškio r.","80+",939
+"Tauragės apskr.","Jurbarko r.","40-49",1228
+"Tauragės apskr.","Jurbarko r.","70-79",809
+"Utenos apskr.","Utenos r.","20-29",2085
+"Vilniaus apskr.","Vilniaus m.","60-69",33307
+"Klaipėdos apskr.","Klaipėdos r.","30-39",3013
+"Klaipėdos apskr.","Klaipėdos r.","60-69",3286
+"Tauragės apskr.","Pagėgių","60-69",431
+"Kauno apskr.","Raseinių r.","50-59",2147
+"Klaipėdos apskr.","Skuodo r.","50-59",1128
+"Klaipėdos apskr.","Šilutės r.","80+",1632
+"Utenos apskr.","Ignalinos r.","20-29",652
+"Klaipėdos apskr.","Klaipėdos r.","70-79",2236
+"Marijampolės apskr.","Marijampolės","70-79",1456
+"Klaipėdos apskr.","Neringos","20-29",142
+"Panevėžio apskr.","Rokiškio r.","40-49",1535
+"Vilniaus apskr.","Širvintų r.","30-39",559
+"Panevėžio apskr.","Biržų r.","70-79",1499
+"Kauno apskr.","Kauno r.","20-29",5283
+"Klaipėdos apskr.","Klaipėdos r.","60-69",2945
+"Kauno apskr.","Prienų r.","50-59",1790
+"Vilniaus apskr.","Širvintų r.","60-69",1010
+"Vilniaus apskr.","Širvintų r.","70-79",452
+"Alytaus apskr.","Alytaus r.","50-59",1988
+"Utenos apskr.","Anykščių r.","60-69",1736
+"Marijampolės apskr.","Kalvarijos","50-59",710
+"Kauno apskr.","Kauno r.","60-69",5327
+"Utenos apskr.","Molėtų r.","40-49",972
+"Vilniaus apskr.","Šalčininkų r.","40-49",1849
+"Kauno apskr.","Kėdainių r.","70-79",1364
 "Utenos apskr.","Molėtų r.","70-79",635
-"Kauno apskr.","Raseinių r.","20-29",1593
-"Tauragės apskr.","Tauragės r.","50-59",2566
-"Šiaulių apskr.","Šiaulių m.","50-59",6585
-"Klaipėdos apskr.","Šilutės r.","60-69",2636
-"Klaipėdos apskr.","Kretingos r.","70-79",1915
-"Marijampolės apskr.","Marijampolės","30-39",2129
-"Marijampolės apskr.","Marijampolės","50-59",3929
-"Šiaulių apskr.","Radviliškio r.","20-29",2150
-"Tauragės apskr.","Tauragės r.","70-79",1125
-"Utenos apskr.","Utenos r.","40-49",2033
-"Alytaus apskr.","Alytaus r.","50-59",1725
-"Tauragės apskr.","Jurbarko r.","0-19",2177
-"Marijampolės apskr.","Kalvarijos","70-79",456
-"Šiaulių apskr.","Kelmės r.","60-69",1883
-"Telšių apskr.","Mažeikių r.","80+",588
-"Panevėžio apskr.","Pasvalio r.","80+",387
-"Vilniaus apskr.","Vilniaus m.","40-49",36330
-"Klaipėdos apskr.","Neringos","60-69",224
-"Šiaulių apskr.","Pakruojo r.","0-19",1666
-"Klaipėdos apskr.","Skuodo r.","60-69",1010
-"Marijampolės apskr.","Vilkaviškio r.","70-79",1114
-"Utenos apskr.","Visagino m.","30-39",431
-"Utenos apskr.","Zarasų r.","0-19",1226
-"Šiaulių apskr.","Šiaulių r.","60-69",2712
-"Utenos apskr.","Anykščių r.","80+",1453
-"Vilniaus apskr.","Elektrėnų","40-49",1276
-"Marijampolės apskr.","Kazlų Rūdos","60-69",779
-"Kauno apskr.","Raseinių r.","40-49",1617
-"Alytaus apskr.","Varėnos r.","0-19",1716
-"Šiaulių apskr.","Šiaulių r.","70-79",1315
-"Alytaus apskr.","Alytaus r.","70-79",1457
-"Marijampolės apskr.","Kazlų Rūdos","60-69",592
-"Šiaulių apskr.","Kelmės r.","80+",1366
-"Telšių apskr.","Telšių r.","70-79",2243
-"Marijampolės apskr.","Vilkaviškio r.","80+",570
-"Vilniaus apskr.","Vilniaus r.","30-39",7354
-"Marijampolės apskr.","Šakių r.","70-79",1521
-"Kauno apskr.","Kauno r.","70-79",2396
-"Marijampolės apskr.","Kazlų Rūdos","80+",494
-"Alytaus apskr.","Varėnos r.","60-69",1304
-"Marijampolės apskr.","Šakių r.","60-69",1543
-"Šiaulių apskr.","Šiaulių m.","40-49",7283
-"Vilniaus apskr.","Švenčionių r.","20-29",1279
-"Kauno apskr.","Kauno r.","80+",1279
-"Klaipėdos apskr.","Palangos m.","0-19",1418
-"Šiaulių apskr.","Radviliškio r.","50-59",2731
-"Kauno apskr.","Raseinių r.","30-39",1267
-"Panevėžio apskr.","Rokiškio r.","30-39",1138
-"Utenos apskr.","Visagino m.","80+",518
-"Klaipėdos apskr.","Šilutės r.","20-29",2400
-"Klaipėdos apskr.","Klaipėdos m.","70-79",3828
-"Alytaus apskr.","Lazdijų r.","0-19",1475
-"Marijampolės apskr.","Marijampolės","40-49",3232
-"Telšių apskr.","Plungės r.","30-39",870
-"Vilniaus apskr.","Ukmergės r.","40-49",1672
-"Utenos apskr.","Zarasų r.","60-69",1159
-"Alytaus apskr.","Alytaus m.","30-39",1745
-"Kauno apskr.","Birštono","30-39",136
-"Utenos apskr.","Ignalinos r.","50-59",1139
-"Kauno apskr.","Kaišiadorių r.","50-59",2176
-"Klaipėdos apskr.","Neringos","0-19",320
-"Marijampolės apskr.","Vilkaviškio r.","0-19",3291
-"Kauno apskr.","Jonavos r.","30-39",1611
-"Tauragės apskr.","Jurbarko r.","0-19",2374
-"Telšių apskr.","Rietavo","0-19",684
-"Panevėžio apskr.","Rokiškio r.","50-59",2284
-"Marijampolės apskr.","Šakių r.","80+",1304
-"Vilniaus apskr.","Šalčininkų r.","20-29",1913
-"Utenos apskr.","Ignalinos r.","20-29",658
-"Klaipėdos apskr.","Klaipėdos r.","70-79",2253
-"Marijampolės apskr.","Marijampolės","70-79",1473
-"Klaipėdos apskr.","Neringos","20-29",143
-"Panevėžio apskr.","Rokiškio r.","40-49",1553
-"Vilniaus apskr.","Širvintų r.","30-39",579
-"Panevėžio apskr.","Biržų r.","70-79",1504
-"Kauno apskr.","Kauno r.","20-29",5383
-"Klaipėdos apskr.","Klaipėdos r.","60-69",3003
-"Kauno apskr.","Prienų r.","50-59",1809
-"Vilniaus apskr.","Širvintų r.","60-69",1021
-"Vilniaus apskr.","Širvintų r.","70-79",454
-"Utenos apskr.","Ignalinos r.","0-19",1126
-"Telšių apskr.","Mažeikių r.","0-19",5191
-"Utenos apskr.","Molėtų r.","50-59",1291
-"Panevėžio apskr.","Panevėžio m.","0-19",7534
-"Vilniaus apskr.","Vilniaus m.","60-69",21016
-"Marijampolės apskr.","Šakių r.","70-79",815
-"Vilniaus apskr.","Elektrėnų","60-69",1589
-"Kauno apskr.","Jonavos r.","20-29",2490
-"Tauragės apskr.","Jurbarko r.","80+",1151
-"Alytaus apskr.","Lazdijų r.","40-49",956
-"Utenos apskr.","Visagino m.","70-79",910
-"Utenos apskr.","Visagino m.","20-29",770
-"Alytaus apskr.","Druskininkų","0-19",1636
-"Marijampolės apskr.","Kazlų Rūdos","70-79",642
-"Kauno apskr.","Kėdainių r.","60-69",3226
-"Šiaulių apskr.","Šiaulių m.","30-39",7758
-"Vilniaus apskr.","Švenčionių r.","60-69",1709
-"Utenos apskr.","Anykščių r.","30-39",913
-"Utenos apskr.","Ignalinos r.","30-39",590
-"Panevėžio apskr.","Kupiškio r.","30-39",331
-"Klaipėdos apskr.","Palangos m.","0-19",1414
-"Kauno apskr.","Prienų r.","70-79",1463
-"Alytaus apskr.","Varėnos r.","80+",434
-"Marijampolės apskr.","Kazlų Rūdos","0-19",1179
-"Klaipėdos apskr.","Klaipėdos m.","20-29",7153
-"Klaipėdos apskr.","Palangos m.","30-39",772
-"Panevėžio apskr.","Pasvalio r.","0-19",2081
-"Šiaulių apskr.","Radviliškio r.","80+",1620
-"Vilniaus apskr.","Vilniaus r.","30-39",5515
-"Panevėžio apskr.","Biržų r.","60-69",1758
-"Panevėžio apskr.","Biržų r.","20-29",1527
-"Panevėžio apskr.","Kupiškio r.","60-69",1197
-"Marijampolės apskr.","Šakių r.","40-49",1402
-"Vilniaus apskr.","Šalčininkų r.","70-79",692
-"Šiaulių apskr.","Akmenės r.","60-69",1513
-"Šiaulių apskr.","Joniškio r.","40-49",1132
-"Šiaulių apskr.","Pakruojo r.","80+",833
-"Alytaus apskr.","Varėnos r.","80+",1250
-"Vilniaus apskr.","Vilniaus r.","80+",1027
-"Vilniaus apskr.","Širvintų r.","0-19",1289
-"Šiaulių apskr.","Akmenės r.","20-29",1210
+"Kauno apskr.","Raseinių r.","20-29",1559
+"Tauragės apskr.","Tauragės r.","50-59",2466
+"Šiaulių apskr.","Šiaulių m.","50-59",6498
+"Klaipėdos apskr.","Šilutės r.","60-69",2589
+"Vilniaus apskr.","Elektrėnų","60-69",1575
+"Kauno apskr.","Jonavos r.","20-29",2431
+"Tauragės apskr.","Jurbarko r.","80+",1144
+"Alytaus apskr.","Lazdijų r.","40-49",940
+"Utenos apskr.","Visagino m.","70-79",901
+"Utenos apskr.","Visagino m.","20-29",762
+"Panevėžio apskr.","Biržų r.","60-69",1750
+"Panevėžio apskr.","Biržų r.","20-29",1500
+"Panevėžio apskr.","Kupiškio r.","60-69",1188
+"Marijampolės apskr.","Šakių r.","40-49",1362
+"Vilniaus apskr.","Šalčininkų r.","70-79",686
+"Šiaulių apskr.","Akmenės r.","20-29",1166
 "Panevėžio apskr.","Biržų r.","80+",1404
-"Kauno apskr.","Kaišiadorių r.","60-69",1550
-"Kauno apskr.","Kauno r.","80+",2983
-"Panevėžio apskr.","Panevėžio m.","60-69",4270
-"Vilniaus apskr.","Ukmergės r.","80+",650
-"Alytaus apskr.","Alytaus m.","20-29",2608
-"Kauno apskr.","Kauno r.","20-29",5963
-"Šiaulių apskr.","Kelmės r.","30-39",872
-"Panevėžio apskr.","Pasvalio r.","40-49",1166
-"Klaipėdos apskr.","Skuodo r.","60-69",1210
-"Vilniaus apskr.","Vilniaus r.","0-19",10062
-"Kauno apskr.","Kauno r.","40-49",6617
-"Šiaulių apskr.","Kelmės r.","0-19",2052
-"Šiaulių apskr.","Kelmės r.","50-59",1833
-"Panevėžio apskr.","Kupiškio r.","0-19",1434
-"Panevėžio apskr.","Kupiškio r.","20-29",848
-"Panevėžio apskr.","Rokiškio r.","70-79",930
-"Kauno apskr.","Birštono","50-59",270
-"Kauno apskr.","Kauno m.","80+",4539
-"Panevėžio apskr.","Pasvalio r.","0-19",2068
-"Telšių apskr.","Plungės r.","70-79",1754
-"Tauragės apskr.","Tauragės r.","40-49",2064
-"Vilniaus apskr.","Šalčininkų r.","60-69",1438
-"Alytaus apskr.","Alytaus m.","0-19",3976
-"Tauragės apskr.","Jurbarko r.","50-59",1870
-"Kauno apskr.","Kauno m.","70-79",17038
-"Panevėžio apskr.","Panevėžio r.","50-59",2582
-"Tauragės apskr.","Šilalės r.","0-19",1959
-"Vilniaus apskr.","Širvintų r.","50-59",1134
-"Kauno apskr.","Kaišiadorių r.","70-79",1487
-"Panevėžio apskr.","Pasvalio r.","50-59",1790
-"Vilniaus apskr.","Vilniaus r.","50-59",6301
-"Marijampolės apskr.","Šakių r.","30-39",650
-"Klaipėdos apskr.","Šilutės r.","40-49",1875
-"Utenos apskr.","Ignalinos r.","40-49",799
-"Marijampolės apskr.","Kalvarijos","80+",142
-"Šiaulių apskr.","Radviliškio r.","0-19",3378
-"Vilniaus apskr.","Ukmergės r.","20-29",1942
-"Alytaus apskr.","Varėnos r.","20-29",1289
-"Vilniaus apskr.","Vilniaus r.","20-29",5724
-"Marijampolės apskr.","Kalvarijos","30-39",353
+"Kauno apskr.","Kaišiadorių r.","60-69",1538
+"Kauno apskr.","Kauno r.","80+",2968
+"Panevėžio apskr.","Panevėžio m.","60-69",4235
+"Vilniaus apskr.","Ukmergės r.","80+",649
+"Alytaus apskr.","Alytaus r.","50-59",1690
+"Marijampolės apskr.","Kalvarijos","70-79",454
+"Šiaulių apskr.","Kelmės r.","60-69",1859
+"Telšių apskr.","Mažeikių r.","80+",585
+"Panevėžio apskr.","Pasvalio r.","80+",386
+"Vilniaus apskr.","Vilniaus m.","40-49",35777
+"Šiaulių apskr.","Akmenės r.","60-69",1148
+"Alytaus apskr.","Druskininkų","40-49",972
+"Šiaulių apskr.","Kelmės r.","80+",508
+"Alytaus apskr.","Lazdijų r.","30-39",753
+"Telšių apskr.","Plungės r.","70-79",979
+"Vilniaus apskr.","Trakų r.","60-69",1598
+"Utenos apskr.","Anykščių r.","80+",1452
+"Vilniaus apskr.","Elektrėnų","40-49",1263
+"Marijampolės apskr.","Kazlų Rūdos","60-69",768
+"Kauno apskr.","Raseinių r.","40-49",1581
+"Šiaulių apskr.","Šiaulių r.","70-79",1310
+"Kauno apskr.","Kaišiadorių r.","70-79",1476
+"Panevėžio apskr.","Pasvalio r.","50-59",1761
+"Vilniaus apskr.","Vilniaus r.","50-59",6151
+"Marijampolės apskr.","Šakių r.","30-39",611
+"Klaipėdos apskr.","Šilutės r.","40-49",1811
+"Marijampolės apskr.","Kalvarijos","30-39",329
 "Tauragės apskr.","Pagėgių","70-79",182
-"Panevėžio apskr.","Panevėžio m.","30-39",3059
-"Panevėžio apskr.","Pasvalio r.","40-49",1159
-"Vilniaus apskr.","Šalčininkų r.","40-49",1657
-"Šiaulių apskr.","Kelmės r.","0-19",2181
-"Kauno apskr.","Kėdainių r.","0-19",4023
-"Kauno apskr.","Kėdainių r.","30-39",1941
-"Kauno apskr.","Raseinių r.","60-69",1710
-"Utenos apskr.","Utenos r.","0-19",2900
-"Utenos apskr.","Zarasų r.","80+",291
-"Utenos apskr.","Anykščių r.","40-49",1074
-"Šiaulių apskr.","Joniškio r.","20-29",1307
-"Kauno apskr.","Kauno m.","60-69",12663
-"Telšių apskr.","Plungės r.","40-49",1705
-"Tauragės apskr.","Tauragės r.","0-19",3600
-"Klaipėdos apskr.","Klaipėdos r.","30-39",4740
-"Alytaus apskr.","Lazdijų r.","50-59",1525
-"Utenos apskr.","Molėtų r.","60-69",1196
-"Panevėžio apskr.","Panevėžio m.","60-69",6412
-"Kauno apskr.","Raseinių r.","50-59",2157
+"Panevėžio apskr.","Panevėžio m.","30-39",2955
+"Panevėžio apskr.","Pasvalio r.","40-49",1133
+"Vilniaus apskr.","Šalčininkų r.","40-49",1582
+"Klaipėdos apskr.","Klaipėdos r.","30-39",4460
+"Alytaus apskr.","Lazdijų r.","50-59",1511
+"Utenos apskr.","Molėtų r.","60-69",1190
+"Panevėžio apskr.","Panevėžio m.","60-69",6355
+"Kauno apskr.","Raseinių r.","50-59",2114
 "Telšių apskr.","Rietavo","80+",116
-"Šiaulių apskr.","Akmenės r.","30-39",636
-"Kauno apskr.","Jonavos r.","0-19",4158
-"Telšių apskr.","Plungės r.","0-19",3053
-"Telšių apskr.","Telšių r.","0-19",3553
-"Utenos apskr.","Zarasų r.","50-59",1155
-"Šiaulių apskr.","Šiaulių r.","0-19",3796
-"Utenos apskr.","Anykščių r.","80+",570
-"Kauno apskr.","Birštono","60-69",275
-"Kauno apskr.","Kėdainių r.","40-49",2448
-"Marijampolės apskr.","Marijampolės","40-49",2764
-"Alytaus apskr.","Varėnos r.","70-79",748
-"Kauno apskr.","Kaišiadorių r.","30-39",902
-"Marijampolės apskr.","Kazlų Rūdos","50-59",761
-"Tauragės apskr.","Šilalės r.","60-69",1217
-"Vilniaus apskr.","Švenčionių r.","50-59",1673
-"Šiaulių apskr.","Akmenės r.","30-39",402
-"Vilniaus apskr.","Elektrėnų","70-79",1236
-"Panevėžio apskr.","Pasvalio r.","80+",1110
-"Klaipėdos apskr.","Skuodo r.","30-39",432
-"Vilniaus apskr.","Ukmergės r.","80+",1801
-"Klaipėdos apskr.","Šilutės r.","80+",555
-"Kauno apskr.","Kauno r.","0-19",9385
-"Tauragės apskr.","Pagėgių","50-59",570
-"Utenos apskr.","Visagino m.","50-59",1644
-"Utenos apskr.","Zarasų r.","30-39",619
-"Vilniaus apskr.","Švenčionių r.","70-79",773
-"Panevėžio apskr.","Biržų r.","50-59",1753
-"Kauno apskr.","Kėdainių r.","50-59",3246
-"Telšių apskr.","Mažeikių r.","20-29",2557
-"Šiaulių apskr.","Pakruojo r.","30-39",390
-"Panevėžio apskr.","Panevėžio r.","40-49",1749
-"Šiaulių apskr.","Joniškio r.","60-69",1305
-"Panevėžio apskr.","Panevėžio m.","50-59",5275
-"Panevėžio apskr.","Panevėžio r.","0-19",3188
-"Klaipėdos apskr.","Skuodo r.","70-79",1056
-"Vilniaus apskr.","Trakų r.","40-49",1913
-"Vilniaus apskr.","Trakų r.","80+",1238
-"Alytaus apskr.","Druskininkų","50-59",1381
-"Kauno apskr.","Kaišiadorių r.","50-59",1843
-"Klaipėdos apskr.","Kretingos r.","70-79",1094
-"Šiaulių apskr.","Pakruojo r.","50-59",1402
-"Telšių apskr.","Plungės r.","20-29",2124
-"Alytaus apskr.","Alytaus r.","40-49",1385
-"Kauno apskr.","Kauno r.","70-79",3940
-"Klaipėdos apskr.","Klaipėdos m.","0-19",14902
-"Panevėžio apskr.","Kupiškio r.","50-59",1303
-"Telšių apskr.","Rietavo","80+",307
-"Utenos apskr.","Zarasų r.","30-39",329
-"Alytaus apskr.","Druskininkų","20-29",989
-"Marijampolės apskr.","Kalvarijos","30-39",440
-"Klaipėdos apskr.","Neringos","30-39",198
-"Kauno apskr.","Raseinių r.","80+",557
-"Klaipėdos apskr.","Šilutės r.","0-19",3755
-"Alytaus apskr.","Alytaus m.","70-79",1580
-"Kauno apskr.","Kėdainių r.","50-59",3154
-"Vilniaus apskr.","Trakų r.","0-19",2882
-"Vilniaus apskr.","Vilniaus r.","70-79",2402
-"Klaipėdos apskr.","Šilutės r.","60-69",2010
-"Šiaulių apskr.","Akmenės r.","50-59",1346
+"Utenos apskr.","Anykščių r.","80+",571
+"Kauno apskr.","Birštono","60-69",273
+"Kauno apskr.","Kėdainių r.","40-49",2370
+"Marijampolės apskr.","Marijampolės","40-49",2686
+"Alytaus apskr.","Varėnos r.","70-79",744
+"Kauno apskr.","Kaišiadorių r.","30-39",878
+"Marijampolės apskr.","Kazlų Rūdos","50-59",752
+"Tauragės apskr.","Šilalės r.","60-69",1196
+"Vilniaus apskr.","Švenčionių r.","50-59",1652
+"Klaipėdos apskr.","Klaipėdos m.","70-79",3793
+"Marijampolės apskr.","Marijampolės","40-49",3113
+"Telšių apskr.","Plungės r.","30-39",749
+"Vilniaus apskr.","Ukmergės r.","40-49",1654
+"Utenos apskr.","Zarasų r.","60-69",1147
+"Šiaulių apskr.","Akmenės r.","30-39",371
+"Vilniaus apskr.","Elektrėnų","70-79",1231
+"Panevėžio apskr.","Pasvalio r.","80+",1107
+"Klaipėdos apskr.","Skuodo r.","30-39",365
+"Vilniaus apskr.","Ukmergės r.","80+",1797
+"Klaipėdos apskr.","Šilutės r.","80+",553
+"Kauno apskr.","Kauno r.","80+",1271
+"Šiaulių apskr.","Radviliškio r.","50-59",2695
+"Kauno apskr.","Raseinių r.","30-39",1208
+"Panevėžio apskr.","Rokiškio r.","30-39",1111
+"Utenos apskr.","Visagino m.","80+",516
+"Klaipėdos apskr.","Šilutės r.","20-29",2299
+"Panevėžio apskr.","Biržų r.","50-59",1738
+"Kauno apskr.","Kėdainių r.","50-59",3180
+"Telšių apskr.","Mažeikių r.","20-29",2444
+"Šiaulių apskr.","Pakruojo r.","30-39",373
+"Panevėžio apskr.","Panevėžio r.","40-49",1714
+"Utenos apskr.","Ignalinos r.","20-29",817
+"Kauno apskr.","Kaišiadorių r.","70-79",869
+"Šiaulių apskr.","Kelmės r.","30-39",432
+"Vilniaus apskr.","Ukmergės r.","50-59",2448
+"Vilniaus apskr.","Vilniaus m.","20-29",28109
+"Alytaus apskr.","Druskininkų","50-59",1362
+"Kauno apskr.","Kaišiadorių r.","50-59",1824
+"Klaipėdos apskr.","Kretingos r.","70-79",1083
+"Šiaulių apskr.","Pakruojo r.","50-59",1377
+"Telšių apskr.","Plungės r.","20-29",2020
+"Alytaus apskr.","Alytaus r.","80+",1340
+"Šiaulių apskr.","Joniškio r.","30-39",432
+"Kauno apskr.","Kauno m.","60-69",19461
+"Kauno apskr.","Kauno m.","30-39",21313
+"Panevėžio apskr.","Rokiškio r.","70-79",1752
+"Šiaulių apskr.","Akmenės r.","40-49",743
+"Alytaus apskr.","Druskininkų","70-79",616
+"Šiaulių apskr.","Joniškio r.","50-59",1585
+"Klaipėdos apskr.","Klaipėdos m.","20-29",7098
+"Klaipėdos apskr.","Šilutės r.","70-79",1068
+"Kauno apskr.","Birštono","80+",76
+"Vilniaus apskr.","Elektrėnų","20-29",1318
+"Klaipėdos apskr.","Klaipėdos r.","50-59",3760
+"Klaipėdos apskr.","Skuodo r.","30-39",49
+"Utenos apskr.","Visagino m.","70-79",518
+"Utenos apskr.","Zarasų r.","60-69",904
+"Šiaulių apskr.","Akmenės r.","50-59",1322
 "Utenos apskr.","Ignalinos r.","80+",351
-"Telšių apskr.","Mažeikių r.","30-39",1555
-"Panevėžio apskr.","Pasvalio r.","20-29",1525
-"Klaipėdos apskr.","Šilutės r.","30-39",1483
-"Panevėžio apskr.","Kupiškio r.","40-49",849
-"Panevėžio apskr.","Pasvalio r.","70-79",1416
-"Vilniaus apskr.","Ukmergės r.","70-79",2235
-"Utenos apskr.","Utenos r.","0-19",2743
-"Šiaulių apskr.","Šiaulių m.","20-29",5340
+"Telšių apskr.","Mažeikių r.","30-39",1380
+"Panevėžio apskr.","Pasvalio r.","20-29",1493
+"Klaipėdos apskr.","Šilutės r.","30-39",1354
+"Marijampolės apskr.","Kazlų Rūdos","70-79",641
+"Kauno apskr.","Kėdainių r.","60-69",3192
+"Šiaulių apskr.","Šiaulių m.","30-39",7560
+"Vilniaus apskr.","Švenčionių r.","60-69",1694
 "Panevėžio apskr.","Biržų r.","80+",480
-"Panevėžio apskr.","Panevėžio r.","70-79",1834
-"Utenos apskr.","Zarasų r.","80+",879
-"Tauragės apskr.","Šilalės r.","30-39",414
-"Tauragės apskr.","Šilalės r.","70-79",1057
-"Šiaulių apskr.","Akmenės r.","50-59",1412
-"Šiaulių apskr.","Joniškio r.","20-29",1090
-"Telšių apskr.","Rietavo","20-29",513
-"Vilniaus apskr.","Ukmergės r.","60-69",2354
-"Vilniaus apskr.","Vilniaus r.","70-79",3851
-"Alytaus apskr.","Alytaus m.","70-79",3072
-"Kauno apskr.","Kėdainių r.","0-19",4217
-"Telšių apskr.","Mažeikių r.","70-79",2565
-"Telšių apskr.","Telšių r.","30-39",1129
-"Tauragės apskr.","Šilalės r.","20-29",1181
-"Alytaus apskr.","Alytaus r.","30-39",1087
-"Panevėžio apskr.","Biržų r.","50-59",1843
-"Panevėžio apskr.","Rokiškio r.","60-69",2184
-"Tauragės apskr.","Tauragės r.","20-29",2197
-"Šiaulių apskr.","Šiaulių m.","30-39",5025
-"Šiaulių apskr.","Akmenės r.","70-79",1277
-"Panevėžio apskr.","Biržų r.","0-19",2000
-"Kauno apskr.","Kaišiadorių r.","40-49",2032
-"Šiaulių apskr.","Pakruojo r.","70-79",1139
-"Šiaulių apskr.","Šiaulių m.","0-19",8764
-"Šiaulių apskr.","Akmenės r.","40-49",948
-"Utenos apskr.","Anykščių r.","40-49",1206
-"Kauno apskr.","Kauno m.","50-59",14900
+"Panevėžio apskr.","Panevėžio r.","70-79",1825
+"Utenos apskr.","Zarasų r.","80+",876
+"Tauragės apskr.","Šilalės r.","30-39",373
+"Tauragės apskr.","Šilalės r.","70-79",1045
+"Šiaulių apskr.","Akmenės r.","50-59",1393
+"Šiaulių apskr.","Joniškio r.","20-29",1063
+"Telšių apskr.","Rietavo","20-29",484
+"Vilniaus apskr.","Ukmergės r.","60-69",2335
+"Vilniaus apskr.","Vilniaus r.","70-79",3793
+"Alytaus apskr.","Alytaus r.","30-39",1015
+"Panevėžio apskr.","Biržų r.","50-59",1829
+"Panevėžio apskr.","Rokiškio r.","60-69",2166
+"Tauragės apskr.","Tauragės r.","20-29",2096
+"Šiaulių apskr.","Šiaulių m.","30-39",4857
+"Utenos apskr.","Anykščių r.","30-39",893
+"Utenos apskr.","Ignalinos r.","30-39",574
+"Panevėžio apskr.","Kupiškio r.","30-39",321
+"Kauno apskr.","Prienų r.","70-79",1456
+"Alytaus apskr.","Varėnos r.","80+",434
+"Šiaulių apskr.","Akmenės r.","40-49",924
+"Utenos apskr.","Anykščių r.","40-49",1192
+"Kauno apskr.","Kauno m.","50-59",14664
 "Marijampolės apskr.","Marijampolės","80+",780
-"Tauragės apskr.","Šilalės r.","40-49",1054
-"Vilniaus apskr.","Elektrėnų","0-19",2248
-"Kauno apskr.","Jonavos r.","50-59",2565
-"Alytaus apskr.","Lazdijų r.","80+",433
-"Telšių apskr.","Mažeikių r.","60-69",2724
-"Šiaulių apskr.","Pakruojo r.","20-29",1241
-"Telšių apskr.","Rietavo","30-39",171
-"Alytaus apskr.","Alytaus m.","80+",1996
-"Alytaus apskr.","Druskininkų","20-29",1047
-"Kauno apskr.","Kauno m.","0-19",26095
-"Šiaulių apskr.","Pakruojo r.","0-19",1693
-"Panevėžio apskr.","Panevėžio m.","80+",1474
-"Alytaus apskr.","Alytaus r.","60-69",1671
-"Panevėžio apskr.","Biržų r.","20-29",1282
-"Kauno apskr.","Kėdainių r.","20-29",2715
-"Tauragės apskr.","Tauragės r.","30-39",1539
-"Telšių apskr.","Telšių r.","0-19",3818
-"Tauragės apskr.","Jurbarko r.","30-39",642
-"Marijampolės apskr.","Kalvarijos","70-79",233
-"Kauno apskr.","Kauno m.","0-19",27419
-"Šiaulių apskr.","Radviliškio r.","30-39",905
-"Utenos apskr.","Visagino m.","40-49",843
-"Tauragės apskr.","Jurbarko r.","70-79",1618
-"Panevėžio apskr.","Kupiškio r.","70-79",1085
-"Kauno apskr.","Kėdainių r.","80+",2146
-"Telšių apskr.","Mažeikių r.","50-59",3412
-"Utenos apskr.","Molėtų r.","0-19",1267
-"Kauno apskr.","Kauno r.","60-69",4687
-"Tauragės apskr.","Pagėgių","40-49",354
-"Klaipėdos apskr.","Palangos m.","60-69",1511
-"Panevėžio apskr.","Panevėžio r.","50-59",2797
-"Tauragės apskr.","Tauragės r.","80+",1657
-"Alytaus apskr.","Alytaus r.","40-49",1223
+"Tauragės apskr.","Šilalės r.","40-49",1013
+"Kauno apskr.","Birštono","50-59",264
+"Kauno apskr.","Kauno m.","80+",4520
+"Telšių apskr.","Plungės r.","70-79",1727
+"Tauragės apskr.","Tauragės r.","40-49",1975
+"Vilniaus apskr.","Šalčininkų r.","60-69",1408
+"Klaipėdos apskr.","Neringos","60-69",219
+"Klaipėdos apskr.","Skuodo r.","60-69",993
+"Marijampolės apskr.","Vilkaviškio r.","70-79",1108
+"Utenos apskr.","Visagino m.","30-39",415
+"Šiaulių apskr.","Šiaulių r.","60-69",2675
+"Kauno apskr.","Kauno r.","60-69",4633
+"Tauragės apskr.","Pagėgių","40-49",340
+"Klaipėdos apskr.","Palangos m.","60-69",1490
+"Panevėžio apskr.","Panevėžio r.","50-59",2766
+"Tauragės apskr.","Tauragės r.","80+",1648
+"Alytaus apskr.","Alytaus r.","40-49",1188
 "Panevėžio apskr.","Kupiškio r.","70-79",559
-"Panevėžio apskr.","Panevėžio m.","20-29",4550
-"Šiaulių apskr.","Radviliškio r.","20-29",1741
-"Utenos apskr.","Ignalinos r.","60-69",932
-"Klaipėdos apskr.","Skuodo r.","70-79",642
-"Utenos apskr.","Utenos r.","60-69",2999
-"Vilniaus apskr.","Vilniaus m.","70-79",11867
-"Vilniaus apskr.","Vilniaus r.","40-49",7624
-"Klaipėdos apskr.","Klaipėdos m.","50-59",7985
-"Klaipėdos apskr.","Kretingos r.","20-29",1953
-"Vilniaus apskr.","Ukmergės r.","0-19",2922
-"Šiaulių apskr.","Šiaulių r.","80+",1624
-"Klaipėdos apskr.","Šilutės r.","30-39",1126
-"Utenos apskr.","Ignalinos r.","50-59",1077
-"Kauno apskr.","Jonavos r.","40-49",2241
-"Telšių apskr.","Rietavo","70-79",190
-"Vilniaus apskr.","Širvintų r.","40-49",760
-"Panevėžio apskr.","Kupiškio r.","20-29",1064
-"Tauragės apskr.","Pagėgių","20-29",435
-"Telšių apskr.","Rietavo","30-39",353
-"Vilniaus apskr.","Ukmergės r.","40-49",1751
+"Panevėžio apskr.","Panevėžio m.","20-29",4463
+"Šiaulių apskr.","Radviliškio r.","20-29",1709
+"Alytaus apskr.","Alytaus m.","20-29",2565
+"Kauno apskr.","Kauno r.","20-29",5825
+"Šiaulių apskr.","Kelmės r.","30-39",815
+"Panevėžio apskr.","Pasvalio r.","40-49",1136
+"Klaipėdos apskr.","Skuodo r.","60-69",1175
+"Tauragės apskr.","Pagėgių","50-59",555
+"Utenos apskr.","Visagino m.","50-59",1622
+"Utenos apskr.","Zarasų r.","30-39",597
+"Vilniaus apskr.","Švenčionių r.","70-79",773
+"Šiaulių apskr.","Akmenės r.","60-69",1493
+"Šiaulių apskr.","Joniškio r.","40-49",1110
+"Šiaulių apskr.","Pakruojo r.","80+",829
+"Alytaus apskr.","Varėnos r.","80+",1249
+"Vilniaus apskr.","Vilniaus r.","80+",1018
+"Šiaulių apskr.","Joniškio r.","60-69",1297
+"Panevėžio apskr.","Panevėžio m.","50-59",5207
+"Klaipėdos apskr.","Skuodo r.","70-79",1045
+"Vilniaus apskr.","Trakų r.","40-49",1883
+"Vilniaus apskr.","Trakų r.","80+",1231
+"Utenos apskr.","Ignalinos r.","60-69",927
+"Klaipėdos apskr.","Skuodo r.","70-79",637
+"Utenos apskr.","Utenos r.","60-69",2982
+"Vilniaus apskr.","Vilniaus m.","70-79",11786
+"Vilniaus apskr.","Vilniaus r.","40-49",7406
+"Utenos apskr.","Anykščių r.","40-49",1065
+"Šiaulių apskr.","Joniškio r.","20-29",1282
+"Kauno apskr.","Kauno m.","60-69",12521
+"Telšių apskr.","Plungės r.","40-49",1631
+"Utenos apskr.","Ignalinos r.","40-49",788
+"Marijampolės apskr.","Kalvarijos","80+",142
+"Vilniaus apskr.","Ukmergės r.","20-29",1905
+"Alytaus apskr.","Varėnos r.","20-29",1267
+"Vilniaus apskr.","Vilniaus r.","20-29",5511
+"Utenos apskr.","Ignalinos r.","50-59",1075
+"Kauno apskr.","Jonavos r.","40-49",2198
+"Telšių apskr.","Rietavo","70-79",188
+"Vilniaus apskr.","Širvintų r.","40-49",732
+"Panevėžio apskr.","Kupiškio r.","20-29",1049
+"Tauragės apskr.","Pagėgių","20-29",419
+"Telšių apskr.","Rietavo","30-39",324
+"Vilniaus apskr.","Ukmergės r.","40-49",1716
+"Alytaus apskr.","Alytaus m.","30-39",1709
+"Kauno apskr.","Birštono","30-39",134
+"Utenos apskr.","Ignalinos r.","50-59",1128
+"Kauno apskr.","Kaišiadorių r.","50-59",2153
 "Alytaus apskr.","Alytaus r.","80+",553
-"Alytaus apskr.","Lazdijų r.","20-29",1203
-"Tauragės apskr.","Pagėgių","80+",314
-"Telšių apskr.","Plungės r.","30-39",1323
-"Telšių apskr.","Telšių r.","20-29",2488
-"Utenos apskr.","Molėtų r.","60-69",1056
-"Klaipėdos apskr.","Palangos m.","80+",752
-"Klaipėdos apskr.","Palangos m.","50-59",1054
-"Vilniaus apskr.","Švenčionių r.","30-39",1110
-"Utenos apskr.","Anykščių r.","50-59",1957
-"Šiaulių apskr.","Joniškio r.","70-79",1367
-"Panevėžio apskr.","Panevėžio m.","30-39",3529
-"Panevėžio apskr.","Panevėžio r.","60-69",2306
-"Utenos apskr.","Visagino m.","0-19",1643
-"Telšių apskr.","Mažeikių r.","0-19",4925
-"Telšių apskr.","Telšių r.","50-59",2688
-"Telšių apskr.","Telšių r.","80+",657
-"Vilniaus apskr.","Švenčionių r.","60-69",1405
-"Vilniaus apskr.","Elektrėnų","30-39",1822
-"Tauragės apskr.","Pagėgių","50-59",558
-"Telšių apskr.","Telšių r.","30-39",1670
-"Šiaulių apskr.","Šiaulių r.","20-29",2068
-"Marijampolės apskr.","Marijampolės","80+",2110
-"Telšių apskr.","Rietavo","50-59",560
-"Vilniaus apskr.","Vilniaus r.","60-69",5822
-"Šiaulių apskr.","Šiaulių m.","60-69",6993
-"Utenos apskr.","Molėtų r.","70-79",1068
-"Klaipėdos apskr.","Skuodo r.","40-49",693
-"Klaipėdos apskr.","Skuodo r.","40-49",701
-"Marijampolės apskr.","Šakių r.","60-69",1838
+"Alytaus apskr.","Lazdijų r.","20-29",1173
+"Tauragės apskr.","Pagėgių","80+",312
+"Telšių apskr.","Plungės r.","30-39",1170
+"Telšių apskr.","Telšių r.","20-29",2386
+"Utenos apskr.","Molėtų r.","60-69",1052
+"Klaipėdos apskr.","Palangos m.","80+",751
+"Klaipėdos apskr.","Palangos m.","50-59",1030
+"Vilniaus apskr.","Švenčionių r.","30-39",1079
+"Utenos apskr.","Molėtų r.","80+",360
+"Klaipėdos apskr.","Palangos m.","80+",275
+"Telšių apskr.","Plungės r.","80+",1405
+"Kauno apskr.","Prienų r.","40-49",1400
+"Utenos apskr.","Utenos r.","30-39",1304
+"Vilniaus apskr.","Elektrėnų","30-39",1776
+"Tauragės apskr.","Pagėgių","50-59",550
+"Telšių apskr.","Telšių r.","30-39",1534
+"Šiaulių apskr.","Šiaulių r.","20-29",2028
+"Panevėžio apskr.","Kupiškio r.","40-49",844
+"Panevėžio apskr.","Pasvalio r.","70-79",1407
+"Vilniaus apskr.","Ukmergės r.","70-79",2226
+"Šiaulių apskr.","Šiaulių m.","20-29",5254
+"Marijampolės apskr.","Marijampolės","80+",2105
+"Telšių apskr.","Rietavo","50-59",546
+"Vilniaus apskr.","Vilniaus r.","60-69",5712
+"Šiaulių apskr.","Šiaulių m.","60-69",6906
+"Utenos apskr.","Molėtų r.","70-79",1063
+"Klaipėdos apskr.","Skuodo r.","40-49",652
+"Klaipėdos apskr.","Skuodo r.","40-49",652
+"Marijampolės apskr.","Šakių r.","60-69",1817
 "Alytaus apskr.","Alytaus m.","80+",720
-"Klaipėdos apskr.","Kretingos r.","50-59",2637
+"Klaipėdos apskr.","Kretingos r.","50-59",2579
 "Tauragės apskr.","Pagėgių","80+",97
-"Vilniaus apskr.","Širvintų r.","20-29",736
-"Utenos apskr.","Anykščių r.","20-29",1216
-"Kauno apskr.","Kaišiadorių r.","80+",1183
-"Šiaulių apskr.","Pakruojo r.","40-49",991
-"Vilniaus apskr.","Vilniaus r.","40-49",6364
-"Marijampolės apskr.","Marijampolės","60-69",2923
-"Šiaulių apskr.","Radviliškio r.","60-69",2037
-"Utenos apskr.","Utenos r.","60-69",2146
-"Alytaus apskr.","Varėnos r.","50-59",1689
-"Marijampolės apskr.","Marijampolės","0-19",4899
-"Klaipėdos apskr.","Palangos m.","20-29",767
-"Telšių apskr.","Plungės r.","40-49",1744
-"Vilniaus apskr.","Trakų r.","20-29",1647
-"Utenos apskr.","Molėtų r.","30-39",820
-"Alytaus apskr.","Varėnos r.","20-29",1039
-"Šiaulių apskr.","Šiaulių r.","30-39",1949
-"Klaipėdos apskr.","Šilutės r.","0-19",3668
-"Alytaus apskr.","Lazdijų r.","30-39",458
-"Telšių apskr.","Telšių r.","50-59",2583
-"Utenos apskr.","Visagino m.","60-69",1728
-"Vilniaus apskr.","Švenčionių r.","70-79",1404
-"Alytaus apskr.","Alytaus r.","30-39",784
-"Vilniaus apskr.","Elektrėnų","0-19",2063
-"Alytaus apskr.","Lazdijų r.","80+",1109
-"Utenos apskr.","Molėtų r.","50-59",1438
-"Vilniaus apskr.","Vilniaus r.","60-69",4866
-"Panevėžio apskr.","Kupiškio r.","80+",338
-"Tauragės apskr.","Pagėgių","30-39",160
-"Utenos apskr.","Visagino m.","30-39",654
-"Utenos apskr.","Visagino m.","50-59",1298
+"Vilniaus apskr.","Širvintų r.","20-29",718
+"Klaipėdos apskr.","Klaipėdos m.","20-29",6903
+"Klaipėdos apskr.","Palangos m.","30-39",734
+"Šiaulių apskr.","Radviliškio r.","80+",1603
+"Vilniaus apskr.","Vilniaus r.","30-39",5270
+"Alytaus apskr.","Druskininkų","20-29",967
+"Marijampolės apskr.","Kalvarijos","30-39",410
+"Klaipėdos apskr.","Neringos","30-39",193
+"Kauno apskr.","Raseinių r.","80+",556
+"Tauragės apskr.","Jurbarko r.","70-79",1610
+"Panevėžio apskr.","Kupiškio r.","70-79",1083
+"Kauno apskr.","Kėdainių r.","80+",2138
+"Telšių apskr.","Mažeikių r.","50-59",3307
+"Alytaus apskr.","Alytaus r.","40-49",1313
+"Kauno apskr.","Kauno r.","70-79",3911
+"Panevėžio apskr.","Kupiškio r.","50-59",1294
+"Telšių apskr.","Rietavo","80+",305
+"Utenos apskr.","Zarasų r.","30-39",318
+"Alytaus apskr.","Alytaus m.","70-79",1576
+"Kauno apskr.","Kėdainių r.","50-59",3098
+"Vilniaus apskr.","Vilniaus r.","70-79",2386
+"Klaipėdos apskr.","Šilutės r.","60-69",1979
+"Utenos apskr.","Anykščių r.","20-29",1211
+"Kauno apskr.","Kaišiadorių r.","80+",1181
+"Šiaulių apskr.","Pakruojo r.","40-49",974
+"Vilniaus apskr.","Vilniaus r.","40-49",6209
+"Alytaus apskr.","Alytaus r.","60-69",1650
+"Panevėžio apskr.","Biržų r.","20-29",1271
+"Kauno apskr.","Kėdainių r.","20-29",2659
+"Tauragės apskr.","Tauragės r.","30-39",1410
+"Marijampolės apskr.","Marijampolės","60-69",2894
+"Šiaulių apskr.","Radviliškio r.","60-69",2021
+"Utenos apskr.","Utenos r.","60-69",2138
+"Alytaus apskr.","Varėnos r.","50-59",1683
+"Alytaus apskr.","Lazdijų r.","30-39",438
+"Telšių apskr.","Telšių r.","50-59",2512
+"Utenos apskr.","Visagino m.","60-69",1715
+"Vilniaus apskr.","Švenčionių r.","70-79",1395
+"Alytaus apskr.","Alytaus m.","70-79",3052
+"Telšių apskr.","Mažeikių r.","70-79",2526
+"Telšių apskr.","Telšių r.","30-39",1035
+"Tauragės apskr.","Šilalės r.","20-29",1133
+"Panevėžio apskr.","Kupiškio r.","80+",337
+"Tauragės apskr.","Pagėgių","30-39",134
+"Utenos apskr.","Visagino m.","30-39",627
+"Utenos apskr.","Visagino m.","50-59",1282
 "Vilniaus apskr.","Elektrėnų","80+",320
-"Panevėžio apskr.","Panevėžio m.","40-49",4303
-"Šiaulių apskr.","Šiaulių m.","20-29",4635
-"Šiaulių apskr.","Šiaulių m.","70-79",5476
-"Šiaulių apskr.","Joniškio r.","80+",345
-"Marijampolės apskr.","Kalvarijos","20-29",573
-"Vilniaus apskr.","Vilniaus r.","50-59",6532
-"Vilniaus apskr.","Švenčionių r.","0-19",1927
+"Panevėžio apskr.","Panevėžio m.","40-49",4221
+"Šiaulių apskr.","Šiaulių m.","20-29",4528
+"Šiaulių apskr.","Šiaulių m.","70-79",5430
+"Utenos apskr.","Anykščių r.","50-59",1948
+"Šiaulių apskr.","Joniškio r.","70-79",1362
+"Panevėžio apskr.","Panevėžio m.","30-39",3437
+"Panevėžio apskr.","Panevėžio r.","60-69",2284
 "Marijampolės apskr.","Kazlų Rūdos","70-79",388
 "Marijampolės apskr.","Kazlų Rūdos","80+",185
-"Marijampolės apskr.","Vilkaviškio r.","30-39",822
-"Utenos apskr.","Zarasų r.","20-29",861
-"Alytaus apskr.","Alytaus r.","20-29",1177
-"Klaipėdos apskr.","Kretingos r.","60-69",1948
-"Tauragės apskr.","Tauragės r.","80+",570
-"Vilniaus apskr.","Ukmergės r.","70-79",1100
-"Utenos apskr.","Zarasų r.","40-49",781
-"Alytaus apskr.","Alytaus r.","70-79",968
-"Klaipėdos apskr.","Kretingos r.","0-19",3642
-"Tauragės apskr.","Pagėgių","20-29",501
-"Panevėžio apskr.","Rokiškio r.","20-29",1698
-"Klaipėdos apskr.","Kretingos r.","40-49",2142
-"Alytaus apskr.","Lazdijų r.","0-19",1541
-"Vilniaus apskr.","Vilniaus m.","80+",7205
-"Vilniaus apskr.","Šalčininkų r.","30-39",1090
-"Panevėžio apskr.","Panevėžio r.","60-69",2147
-"Kauno apskr.","Raseinių r.","70-79",1022
-"Marijampolės apskr.","Vilkaviškio r.","60-69",2524
-"Kauno apskr.","Birštono","50-59",311
-"Kauno apskr.","Jonavos r.","80+",512
-"Utenos apskr.","Molėtų r.","20-29",906
-"Tauragės apskr.","Tauragės r.","50-59",2583
-"Kauno apskr.","Kauno m.","20-29",16268
-"Marijampolės apskr.","Marijampolės","30-39",3248
-"Telšių apskr.","Mažeikių r.","40-49",2890
-"Telšių apskr.","Telšių r.","20-29",2064
-"Šiaulių apskr.","Akmenės r.","20-29",920
-"Šiaulių apskr.","Akmenės r.","0-19",1739
-"Alytaus apskr.","Druskininkų","40-49",947
-"Šiaulių apskr.","Šiaulių r.","30-39",1496
-"Vilniaus apskr.","Elektrėnų","30-39",1127
-"Tauragės apskr.","Pagėgių","30-39",309
-"Telšių apskr.","Plungės r.","80+",554
-"Alytaus apskr.","Varėnos r.","40-49",1006
-"Marijampolės apskr.","Kazlų Rūdos","20-29",566
-"Panevėžio apskr.","Rokiškio r.","0-19",2263
-"Utenos apskr.","Utenos r.","50-59",3007
-"Tauragės apskr.","Šilalės r.","40-49",1075
-"Šiaulių apskr.","Akmenės r.","80+",973
-"Panevėžio apskr.","Pasvalio r.","70-79",755
-"Telšių apskr.","Plungės r.","60-69",2081
-"Tauragės apskr.","Šilalės r.","80+",294
-"Alytaus apskr.","Druskininkų","80+",1022
-"Klaipėdos apskr.","Palangos m.","60-69",996
-"Kauno apskr.","Prienų r.","0-19",2346
-"Utenos apskr.","Utenos r.","80+",1857
-"Kauno apskr.","Birštono","20-29",196
-"Kauno apskr.","Kaišiadorių r.","30-39",2636
-"Panevėžio apskr.","Panevėžio m.","20-29",4085
-"Utenos apskr.","Utenos r.","80+",656
-"Šiaulių apskr.","Kelmės r.","40-49",1325
-"Klaipėdos apskr.","Palangos m.","40-49",905
-"Kauno apskr.","Prienų r.","80+",1338
-"Kauno apskr.","Raseinių r.","0-19",2709
-"Kauno apskr.","Jonavos r.","70-79",1212
-"Klaipėdos apskr.","Neringos","50-59",254
-"Kauno apskr.","Raseinių r.","0-19",2878
-"Klaipėdos apskr.","Skuodo r.","0-19",1420
-"Kauno apskr.","Kauno r.","30-39",5944
-"Klaipėdos apskr.","Klaipėdos m.","80+",2401
-"Klaipėdos apskr.","Klaipėdos r.","40-49",4934
-"Panevėžio apskr.","Panevėžio r.","40-49",1988
-"Panevėžio apskr.","Biržų r.","30-39",783
-"Panevėžio apskr.","Biržų r.","40-49",1228
-"Marijampolės apskr.","Kalvarijos","60-69",565
-"Kauno apskr.","Raseinių r.","20-29",1964
-"Šiaulių apskr.","Kelmės r.","40-49",1286
-"Klaipėdos apskr.","Kretingos r.","50-59",2595
-"Šiaulių apskr.","Pakruojo r.","50-59",1409
-"Vilniaus apskr.","Vilniaus m.","40-49",36658
-"Kauno apskr.","Kauno m.","80+",12949
-"Klaipėdos apskr.","Kretingos r.","20-29",2361
-"Klaipėdos apskr.","Palangos m.","50-59",1272
-"Marijampolės apskr.","Vilkaviškio r.","40-49",1921
-"Panevėžio apskr.","Kupiškio r.","80+",948
-"Kauno apskr.","Kėdainių r.","80+",755
-"Panevėžio apskr.","Rokiškio r.","30-39",495
-"Vilniaus apskr.","Vilniaus m.","30-39",53806
-"Kauno apskr.","Kaišiadorių r.","0-19",2575
-"Panevėžio apskr.","Kupiškio r.","40-49",824
-"Šiaulių apskr.","Šiaulių r.","0-19",4030
-"Šiaulių apskr.","Pakruojo r.","60-69",1110
-"Panevėžio apskr.","Panevėžio m.","70-79",2530
-"Klaipėdos apskr.","Skuodo r.","0-19",1395
-"Vilniaus apskr.","Širvintų r.","30-39",779
-"Alytaus apskr.","Alytaus m.","0-19",4211
-"Kauno apskr.","Jonavos r.","60-69",2074
-"Marijampolės apskr.","Kazlų Rūdos","20-29",679
-"Utenos apskr.","Molėtų r.","30-39",457
-"Šiaulių apskr.","Akmenės r.","70-79",611
-"Klaipėdos apskr.","Klaipėdos r.","80+",732
-"Klaipėdos apskr.","Kretingos r.","30-39",1796
-"Vilniaus apskr.","Ukmergės r.","50-59",2581
-"Kauno apskr.","Jonavos r.","80+",1561
-"Kauno apskr.","Prienų r.","30-39",834
-"Telšių apskr.","Rietavo","20-29",432
-"Marijampolės apskr.","Vilkaviškio r.","0-19",3080
-"Alytaus apskr.","Alytaus m.","20-29",2734
-"Klaipėdos apskr.","Klaipėdos r.","0-19",6638
-"Utenos apskr.","Molėtų r.","20-29",1187
-"Vilniaus apskr.","Trakų r.","0-19",3381
-"Tauragės apskr.","Jurbarko r.","50-59",1844
-"Klaipėdos apskr.","Klaipėdos m.","30-39",9405
-"Vilniaus apskr.","Šalčininkų r.","20-29",1396
-"Šiaulių apskr.","Joniškio r.","70-79",717
-"Panevėžio apskr.","Panevėžio r.","0-19",3370
-"Utenos apskr.","Utenos r.","50-59",2915
-"Utenos apskr.","Visagino m.","20-29",636
-"Marijampolės apskr.","Kalvarijos","20-29",712
-"Kauno apskr.","Kauno m.","40-49",15429
-"Klaipėdos apskr.","Palangos m.","70-79",1059
-"Panevėžio apskr.","Pasvalio r.","30-39",870
-"Šiaulių apskr.","Joniškio r.","60-69",1571
-"Vilniaus apskr.","Trakų r.","50-59",2343
-"Šiaulių apskr.","Šiaulių r.","50-59",3117
-"Kauno apskr.","Birštono","70-79",242
-"Klaipėdos apskr.","Klaipėdos m.","40-49",8820
-"Kauno apskr.","Raseinių r.","70-79",1830
-"Kauno apskr.","Birštono","20-29",212
-"Šiaulių apskr.","Kelmės r.","50-59",1975
-"Vilniaus apskr.","Širvintų r.","20-29",951
-"Alytaus apskr.","Alytaus r.","20-29",1546
-"Panevėžio apskr.","Kupiškio r.","30-39",647
-"Vilniaus apskr.","Švenčionių r.","0-19",1721
-"Klaipėdos apskr.","Kretingos r.","40-49",2023
-"Klaipėdos apskr.","Neringos","80+",78
-"Šiaulių apskr.","Šiaulių m.","80+",4262
-"Marijampolės apskr.","Kalvarijos","60-69",635
-"Alytaus apskr.","Varėnos r.","30-39",481
-"Klaipėdos apskr.","Šilutės r.","40-49",1901
-"Tauragės apskr.","Jurbarko r.","20-29",1635
-"Utenos apskr.","Utenos r.","30-39",2102
-"Marijampolės apskr.","Šakių r.","30-39",1121
-"Tauragės apskr.","Pagėgių","70-79",386
-"Šiaulių apskr.","Radviliškio r.","40-49",1797
-"Šiaulių apskr.","Šiaulių m.","60-69",4528
-"Marijampolės apskr.","Kazlų Rūdos","50-59",797
-"Klaipėdos apskr.","Klaipėdos r.","70-79",1415
-"Vilniaus apskr.","Trakų r.","30-39",2372
-"Alytaus apskr.","Alytaus m.","60-69",2709
-"Kauno apskr.","Kauno m.","20-29",15767
-"Panevėžio apskr.","Panevėžio r.","80+",1452
-"Panevėžio apskr.","Biržų r.","60-69",1345
-"Kauno apskr.","Kaišiadorių r.","20-29",1455
-"Alytaus apskr.","Varėnos r.","0-19",1689
-"Panevėžio apskr.","Rokiškio r.","60-69",1852
-"Utenos apskr.","Zarasų r.","20-29",761
-"Marijampolės apskr.","Šakių r.","50-59",2038
-"Utenos apskr.","Anykščių r.","0-19",1790
-"Panevėžio apskr.","Biržų r.","40-49",1216
-"Klaipėdos apskr.","Neringos","70-79",75
-"Kauno apskr.","Jonavos r.","70-79",2296
-"Panevėžio apskr.","Pasvalio r.","30-39",409
-"Panevėžio apskr.","Rokiškio r.","80+",609
-"Kauno apskr.","Jonavos r.","50-59",2775
-"Kauno apskr.","Kauno r.","0-19",10027
-"Alytaus apskr.","Lazdijų r.","70-79",617
+"Marijampolės apskr.","Vilkaviškio r.","30-39",776
+"Utenos apskr.","Zarasų r.","20-29",845
+"Alytaus apskr.","Alytaus r.","20-29",1138
+"Klaipėdos apskr.","Kretingos r.","60-69",1923
+"Tauragės apskr.","Tauragės r.","80+",567
+"Vilniaus apskr.","Ukmergės r.","70-79",1097
+"Utenos apskr.","Zarasų r.","40-49",770
+"Tauragės apskr.","Jurbarko r.","30-39",593
+"Marijampolės apskr.","Kalvarijos","70-79",232
+"Šiaulių apskr.","Radviliškio r.","30-39",865
+"Utenos apskr.","Visagino m.","40-49",821
+"Panevėžio apskr.","Panevėžio r.","60-69",2136
+"Kauno apskr.","Raseinių r.","70-79",1019
+"Marijampolės apskr.","Vilkaviškio r.","60-69",2498
+"Kauno apskr.","Birštono","50-59",306
+"Kauno apskr.","Jonavos r.","80+",508
+"Utenos apskr.","Molėtų r.","20-29",900
+"Tauragės apskr.","Tauragės r.","50-59",2509
+"Tauragės apskr.","Jurbarko r.","50-59",1826
+"Kauno apskr.","Kauno m.","70-79",16922
+"Panevėžio apskr.","Panevėžio r.","50-59",2561
+"Vilniaus apskr.","Širvintų r.","50-59",1110
+"Kauno apskr.","Kauno m.","20-29",15959
+"Marijampolės apskr.","Marijampolės","30-39",3122
+"Telšių apskr.","Mažeikių r.","40-49",2755
+"Telšių apskr.","Telšių r.","20-29",1994
+"Vilniaus apskr.","Elektrėnų","30-39",1092
+"Tauragės apskr.","Pagėgių","30-39",285
+"Telšių apskr.","Plungės r.","80+",550
+"Alytaus apskr.","Varėnos r.","40-49",994
+"Kauno apskr.","Jonavos r.","50-59",2523
+"Alytaus apskr.","Lazdijų r.","80+",433
+"Telšių apskr.","Mažeikių r.","60-69",2668
+"Šiaulių apskr.","Pakruojo r.","20-29",1216
+"Telšių apskr.","Rietavo","30-39",158
+"Šiaulių apskr.","Akmenės r.","80+",969
+"Panevėžio apskr.","Pasvalio r.","70-79",753
+"Telšių apskr.","Plungės r.","60-69",2022
+"Tauragės apskr.","Šilalės r.","80+",293
+"Kauno apskr.","Birštono","20-29",193
+"Kauno apskr.","Kaišiadorių r.","30-39",2602
+"Panevėžio apskr.","Panevėžio m.","20-29",4011
+"Utenos apskr.","Utenos r.","80+",654
+"Kauno apskr.","Jonavos r.","30-39",1547
+"Panevėžio apskr.","Rokiškio r.","50-59",2270
+"Marijampolės apskr.","Šakių r.","80+",1302
+"Vilniaus apskr.","Šalčininkų r.","20-29",1821
+"Kauno apskr.","Kauno r.","30-39",5732
+"Klaipėdos apskr.","Klaipėdos m.","80+",2395
+"Klaipėdos apskr.","Klaipėdos r.","40-49",4787
+"Panevėžio apskr.","Panevėžio r.","40-49",1942
+"Panevėžio apskr.","Biržų r.","30-39",758
+"Panevėžio apskr.","Biržų r.","40-49",1197
+"Marijampolės apskr.","Kalvarijos","60-69",563
+"Kauno apskr.","Raseinių r.","20-29",1911
+"Šiaulių apskr.","Kelmės r.","40-49",1247
+"Klaipėdos apskr.","Kretingos r.","50-59",2512
+"Šiaulių apskr.","Pakruojo r.","50-59",1394
+"Vilniaus apskr.","Vilniaus m.","40-49",35934
+"Kauno apskr.","Kauno m.","80+",12888
+"Klaipėdos apskr.","Kretingos r.","20-29",2250
+"Klaipėdos apskr.","Palangos m.","50-59",1247
+"Marijampolės apskr.","Vilkaviškio r.","40-49",1867
+"Panevėžio apskr.","Kupiškio r.","80+",947
+"Kauno apskr.","Kėdainių r.","80+",751
+"Panevėžio apskr.","Rokiškio r.","30-39",476
+"Vilniaus apskr.","Vilniaus m.","30-39",52954
+"Klaipėdos apskr.","Klaipėdos m.","50-59",7798
+"Klaipėdos apskr.","Kretingos r.","20-29",1862
+"Šiaulių apskr.","Šiaulių r.","80+",1613
+"Klaipėdos apskr.","Šilutės r.","30-39",1036
+"Šiaulių apskr.","Akmenės r.","70-79",608
+"Klaipėdos apskr.","Klaipėdos r.","80+",733
+"Klaipėdos apskr.","Kretingos r.","30-39",1633
+"Vilniaus apskr.","Ukmergės r.","50-59",2546
+"Tauragės apskr.","Jurbarko r.","50-59",1811
+"Klaipėdos apskr.","Klaipėdos m.","30-39",8922
+"Vilniaus apskr.","Šalčininkų r.","20-29",1335
+"Utenos apskr.","Molėtų r.","30-39",798
+"Alytaus apskr.","Varėnos r.","20-29",1027
+"Šiaulių apskr.","Šiaulių r.","30-39",1863
+"Marijampolės apskr.","Kalvarijos","20-29",689
+"Kauno apskr.","Kauno m.","40-49",15093
+"Klaipėdos apskr.","Palangos m.","70-79",1055
+"Panevėžio apskr.","Pasvalio r.","30-39",831
+"Kauno apskr.","Kauno r.","40-49",6463
+"Šiaulių apskr.","Kelmės r.","50-59",1793
+"Panevėžio apskr.","Kupiškio r.","20-29",838
+"Panevėžio apskr.","Rokiškio r.","70-79",927
+"Telšių apskr.","Telšių r.","50-59",2602
+"Telšių apskr.","Telšių r.","80+",654
+"Vilniaus apskr.","Švenčionių r.","60-69",1396
+"Alytaus apskr.","Alytaus m.","80+",1993
+"Alytaus apskr.","Druskininkų","20-29",1033
+"Panevėžio apskr.","Panevėžio m.","80+",1474
+"Šiaulių apskr.","Joniškio r.","60-69",1556
+"Vilniaus apskr.","Trakų r.","50-59",2312
+"Šiaulių apskr.","Šiaulių r.","50-59",3063
+"Šiaulių apskr.","Akmenės r.","70-79",1265
+"Kauno apskr.","Kaišiadorių r.","40-49",2000
+"Šiaulių apskr.","Pakruojo r.","70-79",1135
+"Klaipėdos apskr.","Kretingos r.","40-49",2033
+"Vilniaus apskr.","Vilniaus m.","80+",7182
+"Vilniaus apskr.","Šalčininkų r.","30-39",1011
+"Kauno apskr.","Birštono","70-79",239
+"Klaipėdos apskr.","Klaipėdos m.","40-49",8489
+"Kauno apskr.","Raseinių r.","70-79",1820
+"Alytaus apskr.","Alytaus r.","30-39",719
+"Alytaus apskr.","Lazdijų r.","80+",1107
+"Utenos apskr.","Molėtų r.","50-59",1428
+"Vilniaus apskr.","Vilniaus r.","60-69",4798
+"Kauno apskr.","Birštono","20-29",205
+"Šiaulių apskr.","Kelmės r.","50-59",1935
+"Vilniaus apskr.","Širvintų r.","20-29",934
+"Marijampolės apskr.","Kazlų Rūdos","20-29",548
+"Utenos apskr.","Utenos r.","50-59",2979
+"Tauragės apskr.","Šilalės r.","40-49",1029
+"Alytaus apskr.","Alytaus r.","70-79",964
+"Tauragės apskr.","Pagėgių","20-29",484
+"Panevėžio apskr.","Rokiškio r.","20-29",1678
+"Alytaus apskr.","Druskininkų","80+",1019
+"Klaipėdos apskr.","Palangos m.","60-69",985
+"Utenos apskr.","Utenos r.","80+",1848
+"Klaipėdos apskr.","Palangos m.","20-29",755
+"Telšių apskr.","Plungės r.","40-49",1653
+"Vilniaus apskr.","Trakų r.","20-29",1612
+"Klaipėdos apskr.","Kretingos r.","40-49",1927
+"Klaipėdos apskr.","Neringos","80+",77
+"Šiaulių apskr.","Šiaulių m.","80+",4251
+"Šiaulių apskr.","Akmenės r.","20-29",902
+"Alytaus apskr.","Druskininkų","40-49",921
+"Šiaulių apskr.","Šiaulių r.","30-39",1431
+"Šiaulių apskr.","Pakruojo r.","60-69",1102
+"Panevėžio apskr.","Panevėžio m.","70-79",2517
+"Vilniaus apskr.","Širvintų r.","30-39",742
+"Marijampolės apskr.","Kalvarijos","60-69",622
+"Alytaus apskr.","Varėnos r.","30-39",458
+"Klaipėdos apskr.","Šilutės r.","40-49",1823
+"Tauragės apskr.","Jurbarko r.","20-29",1597
+"Utenos apskr.","Utenos r.","30-39",2060
+"Marijampolės apskr.","Šakių r.","30-39",1064
+"Tauragės apskr.","Pagėgių","70-79",383
+"Šiaulių apskr.","Radviliškio r.","40-49",1748
+"Šiaulių apskr.","Šiaulių m.","60-69",4466
+"Kauno apskr.","Jonavos r.","60-69",2055
+"Marijampolės apskr.","Kazlų Rūdos","20-29",663
+"Utenos apskr.","Molėtų r.","30-39",452
+"Marijampolės apskr.","Kazlų Rūdos","50-59",786
+"Klaipėdos apskr.","Klaipėdos r.","70-79",1409
+"Vilniaus apskr.","Trakų r.","30-39",2287
+"Šiaulių apskr.","Kelmės r.","40-49",1275
+"Klaipėdos apskr.","Palangos m.","40-49",882
+"Kauno apskr.","Prienų r.","80+",1330
+"Alytaus apskr.","Alytaus m.","60-69",2688
+"Kauno apskr.","Kauno m.","20-29",15463
+"Panevėžio apskr.","Panevėžio r.","80+",1447
+"Utenos apskr.","Molėtų r.","50-59",1283
+"Vilniaus apskr.","Vilniaus m.","60-69",20777
+"Marijampolės apskr.","Šakių r.","70-79",813
+"Šiaulių apskr.","Joniškio r.","80+",345
+"Marijampolės apskr.","Kalvarijos","20-29",547
+"Vilniaus apskr.","Vilniaus r.","50-59",6381
+"Panevėžio apskr.","Rokiškio r.","60-69",1848
+"Utenos apskr.","Zarasų r.","20-29",749
+"Marijampolės apskr.","Šakių r.","50-59",2004
+"Kauno apskr.","Jonavos r.","70-79",2278
+"Panevėžio apskr.","Pasvalio r.","30-39",381
+"Panevėžio apskr.","Rokiškio r.","80+",606
+"Šiaulių apskr.","Joniškio r.","70-79",716
+"Utenos apskr.","Utenos r.","50-59",2892
+"Utenos apskr.","Visagino m.","20-29",626
 "Kauno apskr.","Birštono","70-79",121
-"Panevėžio apskr.","Panevėžio r.","30-39",1669
-"Kauno apskr.","Prienų r.","20-29",1578
-"Klaipėdos apskr.","Neringos","0-19",315
-"Telšių apskr.","Plungės r.","60-69",1671
-"Šiaulių apskr.","Šiaulių m.","70-79",2506
-"Telšių apskr.","Plungės r.","50-59",2292
-"Vilniaus apskr.","Trakų r.","70-79",788
+"Panevėžio apskr.","Panevėžio r.","30-39",1611
+"Kauno apskr.","Prienų r.","20-29",1534
+"Kauno apskr.","Kėdainių r.","30-39",1842
+"Kauno apskr.","Raseinių r.","60-69",1694
+"Utenos apskr.","Zarasų r.","80+",290
+"Telšių apskr.","Plungės r.","50-59",2210
+"Vilniaus apskr.","Trakų r.","70-79",785
 "Vilniaus apskr.","Trakų r.","80+",432
-"Utenos apskr.","Anykščių r.","30-39",538
-"Panevėžio apskr.","Panevėžio m.","40-49",4584
-"Alytaus apskr.","Druskininkų","50-59",1700
-"Šiaulių apskr.","Šiaulių r.","50-59",2934
-"Alytaus apskr.","Varėnos r.","40-49",1095
-"Vilniaus apskr.","Širvintų r.","40-49",908
-"Panevėžio apskr.","Rokiškio r.","80+",1634
-"Vilniaus apskr.","Švenčionių r.","30-39",663
-"Klaipėdos apskr.","Klaipėdos r.","40-49",3664
-"Kauno apskr.","Raseinių r.","40-49",1625
-"Šiaulių apskr.","Pakruojo r.","20-29",928
-"Utenos apskr.","Utenos r.","20-29",1932
-"Šiaulių apskr.","Joniškio r.","40-49",1157
-"Tauragės apskr.","Jurbarko r.","20-29",1229
-"Panevėžio apskr.","Panevėžio m.","70-79",5516
-"Kauno apskr.","Prienų r.","0-19",2217
-"Panevėžio apskr.","Pasvalio r.","50-59",1766
-"Marijampolės apskr.","Vilkaviškio r.","30-39",1533
-"Tauragės apskr.","Pagėgių","40-49",410
-"Tauragės apskr.","Tauragės r.","60-69",2018
-"Marijampolės apskr.","Šakių r.","20-29",1875
-"Marijampolės apskr.","Šakių r.","40-49",1354
+"Utenos apskr.","Anykščių r.","30-39",524
+"Panevėžio apskr.","Panevėžio m.","40-49",4515
+"Alytaus apskr.","Druskininkų","50-59",1676
+"Šiaulių apskr.","Šiaulių r.","50-59",2898
+"Alytaus apskr.","Varėnos r.","40-49",1071
+"Vilniaus apskr.","Širvintų r.","40-49",887
+"Panevėžio apskr.","Rokiškio r.","80+",1632
+"Vilniaus apskr.","Švenčionių r.","30-39",642
+"Alytaus apskr.","Alytaus m.","20-29",2691
+"Utenos apskr.","Molėtų r.","20-29",1178
+"Klaipėdos apskr.","Klaipėdos r.","40-49",3537
+"Kauno apskr.","Raseinių r.","40-49",1589
+"Kauno apskr.","Jonavos r.","80+",1548
+"Kauno apskr.","Prienų r.","30-39",811
+"Telšių apskr.","Rietavo","20-29",416
+"Šiaulių apskr.","Pakruojo r.","20-29",916
+"Utenos apskr.","Utenos r.","20-29",1909
+"Telšių apskr.","Plungės r.","60-69",1626
+"Šiaulių apskr.","Šiaulių m.","70-79",2489
+"Šiaulių apskr.","Joniškio r.","40-49",1137
+"Tauragės apskr.","Jurbarko r.","20-29",1196
+"Alytaus apskr.","Alytaus r.","20-29",1509
+"Panevėžio apskr.","Kupiškio r.","30-39",627
+"Panevėžio apskr.","Biržų r.","60-69",1335
+"Kauno apskr.","Kaišiadorių r.","20-29",1427
+"Panevėžio apskr.","Pasvalio r.","50-59",1744
+"Marijampolės apskr.","Vilkaviškio r.","30-39",1449
+"Tauragės apskr.","Pagėgių","40-49",396
+"Tauragės apskr.","Tauragės r.","60-69",1969
+"Šiaulių apskr.","Akmenės r.","30-39",570
+"Utenos apskr.","Zarasų r.","50-59",1146
+"Marijampolės apskr.","Šakių r.","20-29",1838
+"Marijampolės apskr.","Šakių r.","40-49",1314
 "Kauno apskr.","Birštono","60-69",373
-"Šiaulių apskr.","Radviliškio r.","30-39",1560
-"Klaipėdos apskr.","Kretingos r.","60-69",2462
-"Klaipėdos apskr.","Neringos","70-79",120
-"Vilniaus apskr.","Elektrėnų","50-59",1618
-"Vilniaus apskr.","Trakų r.","30-39",1707
-"Kauno apskr.","Kauno m.","50-59",18385
-"Marijampolės apskr.","Kazlų Rūdos","0-19",1053
-"Klaipėdos apskr.","Klaipėdos r.","80+",1711
+"Šiaulių apskr.","Radviliškio r.","30-39",1484
+"Klaipėdos apskr.","Kretingos r.","60-69",2410
+"Klaipėdos apskr.","Neringos","70-79",119
+"Vilniaus apskr.","Elektrėnų","50-59",1594
+"Vilniaus apskr.","Trakų r.","30-39",1652
+"Klaipėdos apskr.","Klaipėdos r.","80+",1701
 "Marijampolės apskr.","Šakių r.","80+",533
-"Telšių apskr.","Telšių r.","60-69",2196
-"Vilniaus apskr.","Ukmergės r.","20-29",1575
-"Šiaulių apskr.","Akmenės r.","80+",326
-"Kauno apskr.","Kėdainių r.","40-49",2433
-"Panevėžio apskr.","Biržų r.","30-39",529
-"Utenos apskr.","Visagino m.","60-69",2205
-"Alytaus apskr.","Lazdijų r.","20-29",944
-"Klaipėdos apskr.","Neringos","20-29",215
-"Alytaus apskr.","Alytaus m.","50-59",3250
-"Klaipėdos apskr.","Šilutės r.","20-29",1999
-"Utenos apskr.","Zarasų r.","40-49",698
-"Tauragės apskr.","Šilalės r.","70-79",597
-"Tauragės apskr.","Jurbarko r.","80+",377
-"Kauno apskr.","Kauno r.","50-59",6127
-"Klaipėdos apskr.","Kretingos r.","80+",1572
-"Šiaulių apskr.","Pakruojo r.","40-49",1049
-"Kauno apskr.","Jonavos r.","60-69",2912
-"Vilniaus apskr.","Širvintų r.","80+",246
-"Klaipėdos apskr.","Klaipėdos m.","70-79",7649
-"Klaipėdos apskr.","Neringos","50-59",278
-"Kauno apskr.","Kauno m.","70-79",7935
-"Klaipėdos apskr.","Neringos","40-49",296
-"Vilniaus apskr.","Šalčininkų r.","60-69",1789
-"Telšių apskr.","Mažeikių r.","60-69",3616
-"Telšių apskr.","Mažeikių r.","40-49",2823
-"Tauragės apskr.","Šilalės r.","20-29",1630
+"Telšių apskr.","Telšių r.","60-69",2150
+"Vilniaus apskr.","Ukmergės r.","20-29",1555
+"Šiaulių apskr.","Akmenės r.","80+",325
+"Kauno apskr.","Kėdainių r.","40-49",2376
+"Panevėžio apskr.","Biržų r.","30-39",512
+"Utenos apskr.","Visagino m.","60-69",2171
+"Alytaus apskr.","Lazdijų r.","20-29",923
+"Klaipėdos apskr.","Neringos","20-29",209
+"Alytaus apskr.","Alytaus m.","50-59",3218
+"Klaipėdos apskr.","Šilutės r.","20-29",1941
+"Utenos apskr.","Zarasų r.","40-49",691
+"Tauragės apskr.","Šilalės r.","70-79",591
+"Tauragės apskr.","Jurbarko r.","80+",376
+"Kauno apskr.","Kauno r.","50-59",6022
+"Klaipėdos apskr.","Kretingos r.","80+",1567
+"Šiaulių apskr.","Pakruojo r.","40-49",1027
+"Kauno apskr.","Jonavos r.","60-69",2873
+"Vilniaus apskr.","Širvintų r.","80+",245
+"Klaipėdos apskr.","Klaipėdos m.","70-79",7566
+"Klaipėdos apskr.","Neringos","50-59",267
+"Kauno apskr.","Jonavos r.","50-59",2729
+"Alytaus apskr.","Lazdijų r.","70-79",615
+"Kauno apskr.","Kauno m.","70-79",7894
+"Klaipėdos apskr.","Neringos","40-49",285
+"Vilniaus apskr.","Šalčininkų r.","60-69",1737
+"Kauno apskr.","Jonavos r.","70-79",1208
+"Klaipėdos apskr.","Neringos","50-59",249
+"Panevėžio apskr.","Biržų r.","40-49",1196
+"Klaipėdos apskr.","Neringos","70-79",74
+"Panevėžio apskr.","Panevėžio m.","70-79",5485
+"Telšių apskr.","Mažeikių r.","60-69",3523
+"Telšių apskr.","Mažeikių r.","40-49",2704
+"Tauragės apskr.","Šilalės r.","20-29",1560
+"Panevėžio apskr.","Kupiškio r.","40-49",819
 "Šiaulių apskr.","Pakruojo r.","70-79",633
-"Vilniaus apskr.","Širvintų r.","80+",688
-"Telšių apskr.","Telšių r.","40-49",2017
-"Kauno apskr.","Kauno r.","40-49",5871
+"Vilniaus apskr.","Širvintų r.","80+",684
+"Telšių apskr.","Telšių r.","40-49",1923
+"Kauno apskr.","Kauno m.","50-59",18108
+"Kauno apskr.","Kauno r.","40-49",5751
