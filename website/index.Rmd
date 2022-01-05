@@ -69,27 +69,6 @@ colnames(axtt14) <- paste0(colnames(axtt14), "14")
 a714 <- cbind(xi, axtt7, axtt14)
 ```
 
-```{r}
-ltR <- dget("../raw_data/effectiveR/ltR")
-ag <- function(x) (c(x[1], diff(x)))
-dt <- aa %>%
-  mutate(incidence = ag(confirmed)) %>%
-  select(day, confirmed, incidence) %>%
-  mutate(day = ymd(day), w = ifelse(incidence == 0, 0, 1))
-dtf <- dt
-dt <- dt %>%
-  filter(day >= "2020-03-11") %>%
-  mutate(times = 1:n())
-
-oo <- ltR$R %>%
-  inner_join(dt %>% rename(t_end = times), by = "t_end") %>%
-  select(day, R = `Mean(R)`, lwr = `Quantile.0.025(R)`, upr = `Quantile.0.975(R)`)
-bb <- xts(oo %>% select(-day), order.by = ymd(oo$day))
-dygraph(bb, main = "Efektyvus reprodukcinis skaičius R") %>%
-  dySeries(c("lwr", "R", "upr"), label = "R") %>%
-  dyRangeSelector(dateWindow = view_interval) %>%
-  dyLimit(1)
-```
 
 ```{r}
 dygraph(xaa[, "confirmed_growth_weekly"], main = paste("Savaitinis naujų atvejų augimas:", aa_last_day)) %>%

@@ -19,7 +19,7 @@ options(max.print = 100000)
 data <- Sys.time()
 ```
 
-Atnaujinta: `r data`. 
+Atnaujinamas nereguliariai
 
 # Duomenys modeliavimui
 
