@@ -18,7 +18,7 @@ lv11 <- lv1 %>%
   select(day, tests_daily, confirmed_daily, deaths_daily, tests_mobile_daily, tpr_dgn, tpn = tests_positive_daily, hospitalized, icu, vaccinated_1_daily, vaccinated_2_daily, vaccinated_3_daily) %>%
   mutate(tpr = round(100 * tpn / tests_daily, 2), tpr2 = round(100 * confirmed_daily / tests_daily, 2), hospitalized_daily = hospitalized - lag(hospitalized), icu_daily = icu - lag(icu))
 
-lv12 <- lv11 %>% mutate(week = isoweek(day), weekday = weekdays(day), wday = wday(day, week_start = 1))
+lv12 <- lv11 %>% mutate(week = isoweek(day), weekday = weekdays(day), wday = wday(day, week_start = 1), fday = floor_date(day, unit = "week", week_start = 1))
 
 wf <- lv12 %>%
   filter(wday %in% (1:7)) %>%
@@ -28,13 +28,15 @@ wf <- lv12 %>%
 
 lv12 <- lv12 %>% mutate(wfday = factor(weekday, levels = wf))
 
-std <- lv12 %>%
-  filter(day >= "2021-01-13") %>%
-  select(week, day) %>%
-  group_by(week) %>%
-  summarise(s = min(day))
 
-start_day <- std$s[std$week == (max(std$week) - 4)]
+## Select exactly 5 weeks back
+ff <- lv12 %>%
+  filter(day >= max(lv12$day) - days(35)) %>%
+  .$fday %>%
+  unique() %>%
+  sort()
+
+start_day <- ff[length(ff) - 4]
 ```
 
 

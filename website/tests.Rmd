@@ -21,7 +21,7 @@ Sys.setlocale(locale = "lt_LT.UTF-8")
 
 ```{r}
 vv <- evrk %>%
-  mutate(wday = floor_date(day, unit = "week")) %>%
+  mutate(wday = floor_date(day, unit = "week", start_day = 1)) %>%
   group_by(evrk_group_title, evrk_group_code, wday) %>%
   summarise(tests = sum(tests), r = round(100 * sum(tests_positive) / sum(tests), 2)) %>%
   mutate(levels = cut(r, c(0, 5, 10, 15, 20, 25, 100), include.lowest = TRUE))
