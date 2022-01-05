@@ -20,15 +20,8 @@ Sys.setlocale(locale = "lt_LT.UTF-8")
 ### Teigiamų tyrimų dalis pagal EVRK veiklas
 
 ```{r}
-wk2date <- function(year, week) {
-  week[year == 2020] <- week[year == 2020] - 1
-  year[year == 2021 & week == 53] <- 2020
-  week[week == 53] <- 52
-  ymd(parse_date_time(paste(year, week, 1, sep = "/"), "Y/W/u"))
-}
-
 vv <- evrk %>%
-  mutate(wday = wk2date(year(day), isoweek(day))) %>%
+  mutate(wday = floor_date(day, unit = "week")) %>%
   group_by(evrk_group_title, evrk_group_code, wday) %>%
   summarise(tests = sum(tests), r = round(100 * sum(tests_positive) / sum(tests), 2)) %>%
   mutate(levels = cut(r, c(0, 5, 10, 15, 20, 25, 100), include.lowest = TRUE))
