@@ -48,6 +48,7 @@ modf <- git_status() %>%
   unique()
 if (!("data" %in% modf)) {
   cat("\nNo new data, not pushing anything\n")
+  git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
 } else {
   push_to_github(c("data", "raw_data"), "Update OSP data", push = FALSE)
 }
