@@ -45,17 +45,22 @@ aa_last_day <- as.character(max(aa$day))
 
 view_interval <- c("2020-10-01", aa_last_day)
 
-aa_stats <- aa %>% select(
-  day, confirmed_growth_weekly,
-  confirmed_100k, tpr_dgn,
-  tpr_dgn_diff_weekly,
-  deaths_100k,
-  tests_100k,
-  vaccinated_1_percent,
-  vaccinated_2_percent,
-  fully_protected_percent,
-  vaccinated_3_percent
-)
+aa_stats <- aa %>%
+  select(
+    day, confirmed_growth_weekly,
+    confirmed_100k, tpr_dgn,
+    tpr_dgn_diff_weekly,
+    deaths_100k,
+    tests_100k,
+    vaccinated_1_percent,
+    vaccinated_2_percent,
+    fully_protected_percent,
+    vaccinated_3_percent
+  ) %>%
+  mutate(
+    tpr_dgn_growth = (tpr_dgn / lag(tpr_dgn, 7) - 1) * 100,
+    pandemijos_pagreitis = pmax(confirmed_growth_weekly, tpr_dgn_growth)
+  )
 
 xaa <- xts(aa_stats %>% select(-day), aa_stats$day)
 
@@ -67,6 +72,13 @@ axtt7 <- rollmean(xi, 7, fill = NA, align = "right")
 colnames(axtt7) <- paste0(colnames(axtt7), "7")
 colnames(axtt14) <- paste0(colnames(axtt14), "14")
 a714 <- cbind(xi, axtt7, axtt14)
+```
+
+```{r}
+dygraph(xaa[, "pandemijos_pagreitis"], main = paste("Pandemijos pagreitis:", aa_last_day)) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1)]) %>%
+  dyRangeSelector(dateWindow = view_interval) %>%
+  dyLimit(0)
 ```
 
 
