@@ -1974,8 +1974,8 @@
 2021-12-30,"Moderna",0,0
 2021-12-30,"Johnson & Johnson",0,0
 2021-12-30,"AstraZeneca",0,0
-2021-12-31,"visos",0,110700
-2021-12-31,"Pfizer-BioNTech",0,102000
+2021-12-31,"visos",36000,110700
+2021-12-31,"Pfizer-BioNTech",36000,102000
 2021-12-31,"Moderna",0,6700
 2021-12-31,"Johnson & Johnson",0,2000
 2021-12-31,"AstraZeneca",0,0
@@ -1989,8 +1989,13 @@
 2022-01-02,"Moderna",0,0
 2022-01-02,"Johnson & Johnson",0,0
 2022-01-02,"AstraZeneca",0,0
-2022-01-03,"visos",0,0
-2022-01-03,"Pfizer-BioNTech",0,0
+2022-01-03,"visos",0,870
+2022-01-03,"Pfizer-BioNTech",0,870
 2022-01-03,"Moderna",0,0
 2022-01-03,"Johnson & Johnson",0,0
 2022-01-03,"AstraZeneca",0,0
+2022-01-04,"visos",73710,0
+2022-01-04,"Pfizer-BioNTech",73710,0
+2022-01-04,"Moderna",0,0
+2022-01-04,"Johnson & Johnson",0,0
+2022-01-04,"AstraZeneca",0,0
