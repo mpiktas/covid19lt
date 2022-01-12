@@ -1,5 +1,5 @@
 ---
-title: "COVID-19 vakcinacijos efektas amžiaus grupėse"
+title: "COVID-19 vakcinacijos efektas amžiaus grupėse (7 dienų)"
 output: distill::distill_article
 ---
 
@@ -32,24 +32,24 @@ init <- read.csv("../data/osp/lt-covid19-transition-init.csv")
 
 agve <- add_states(tr, init, group = "age_gr") %>%
   mutate(
-    bni1 = ifelse(sr1 < 10000, NA, bni1),
-    bni2 = ifelse(sr2 < 10000, NA, bni2),
-    bni3 = ifelse(sr3 < 4000, NA, bni3)
+    ani1 = ifelse(sr1 < 10000, NA, ani1),
+    ani2 = ifelse(sr2 < 10000, NA, ani2),
+    ani3 = ifelse(sr3 < 4000, NA, ani3)
   )
 
 agr <- unique(agve$age_gr)
 
 xx <- lapply(agr, function(a) {
   ss <- agve %>% filter(age_gr == a)
-  xts(ss %>% select(neapsaugoti = bni0, apsaugoti2 = bni2, apsaugoti3 = bni3), order.by = ss$day)
+  xts(ss %>% select(neapsaugoti = ani0, apsaugoti2 = ani2, apsaugoti3 = ani3), order.by = ss$day)
 })
 names(xx) <- agr
 view_interval <- c("2021-06-01", as.character(max(tr$day)))
 
 
 dogr <- function(xx, a) {
-  dygraph(xx[[a]],
-    main = paste("100k 14 dienų rodiklis amžiaus grupėje ", a, sep = "")
+  dygraph(xx[[a]] / 10,
+    main = paste("1m 7 dienų rodiklis amžiaus grupėje ", a, sep = "")
   ) %>%
     dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(1, 3, 2)]) %>%
     dyRangeSelector(dateWindow = view_interval)
@@ -64,7 +64,7 @@ Visi grafikai prasideda nuo datos kai grupėje su vakcinacijos apsauga po 2 dozi
 Skaičiavimo algoritmą galite rasti kartu su visu puslapio [kodu](https://github.com/mpiktas/covid19lt). Visos klaidos yra mano. 
 Grafikus galima naudoti nurodant šaltinį.
 
-Šiame puslapyje rodikliai pateikiami 100k gyventojų per 14 dienų.
+Šiame puslapyje rodikliai pateikiami 1 milijonui gyventojų per 7 dienas.
 
 ## Vakcinacijos efektas naujiems atvejams amžiaus grupėse
 ```{r}
