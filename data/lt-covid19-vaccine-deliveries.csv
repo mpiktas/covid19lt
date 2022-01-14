@@ -1,9 +1,4 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
-2020-12-09,"visos",0,0
-2020-12-09,"Pfizer-BioNTech",0,0
-2020-12-09,"Moderna",0,0
-2020-12-09,"Johnson & Johnson",0,0
-2020-12-09,"AstraZeneca",0,0
 2020-12-10,"visos",0,0
 2020-12-10,"Pfizer-BioNTech",0,0
 2020-12-10,"Moderna",0,0
@@ -1999,3 +1994,8 @@
 2022-01-12,"Moderna",0,0
 2022-01-12,"Johnson & Johnson",0,0
 2022-01-12,"AstraZeneca",0,0
+2022-01-13,"visos",0,0
+2022-01-13,"Pfizer-BioNTech",0,0
+2022-01-13,"Moderna",0,0
+2022-01-13,"Johnson & Johnson",0,0
+2022-01-13,"AstraZeneca",0,0
