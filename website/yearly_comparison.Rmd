@@ -55,34 +55,31 @@ dygraph(xdd) %>%
 tr <- read.csv("../data/osp/lt-covid19-transition.csv") %>% mutate(day = ymd(day))
 init0 <- read.csv("../data/osp/lt-covid19-transition-init.csv")
 
-tr11v <- add_states(tr %>% filter(age_gr %in% c("50-59", "60-69", "70-79", "80+")), init0 %>% filter(age_gr %in% c("50-59", "60-69", "70-79", "80+")))
-tr20v <- tr11v %>% mutate(gi0 = ai0 / lag(ai0, 7) - 1, gi1 = ai1 / lag(ai1, 7) - 1, gi2 = ai2 / lag(ai2, 7) - 1)
+tr11v <- add_states(tr %>% filter(age_gr %in% c("60-69", "70-79", "80+")), init0 %>% filter(age_gr %in% c("60-69", "70-79", "80+")), group = "age_gr")
 
-xa1v <- xts(tr20v %>% select(ai0, ai1, ai2, ai3), order.by = tr20v$day) / 7
+tr20v <- tr11v %>%
+  group_by(age_gr) %>%
+  mutate(nevakcinuoti = bi0 / max(bi0, na.rm = TRUE) * 100)
 
-agd <- read.csv("../data/lt-covid19-agedist.csv") %>% mutate(day = ymd(day))
+tr21v <- tr20v %>%
+  select(day, age_gr, nevakcinuoti) %>%
+  pivot_wider(id_cols = day, names_from = "age_gr", values_from = "nevakcinuoti")
 
-agd1 <- agd %>%
-  filter(age %in% c("50-59", "60-69", "70-79", "80+")) %>%
-  group_by(day) %>%
-  summarize(deaths = sum(deaths_3_daily)) %>%
-  ungroup() %>%
-  mutate(deaths7 = rollmean(deaths, 7, align = "right", fill = NA))
 
 ii <- dd %>%
   select(day, rits) %>%
-  left_join(tr20v %>% select(day, ai0)) %>%
-  mutate(nevakcinuoti50 = ai0 / max(ai0, na.rm = TRUE) * 100)
+  left_join(tr21v)
 
-xii <- xts(ii %>% select(rits, nevakcinuoti50), order.by = ii$day)
+xii <- xts(ii %>% select(-day), order.by = ii$day)
 ```
 
-### Rits ir nevakcinuotų 50+ palyginimas
+### Rits ir nevakcinuotų 60+ palyginimas
 
-RITS ta pati laiko eilutė. Nevakcinuoti 50+ tai 50+ amžiaus grupės asmenų neturėjusių skiepo ir teigiamo PGR/antigeno/antikūnų testo naujų atvejų skaičiai.
+RITS ta pati laiko eilutė (neišskirta nei pagal amžių nei pagal vakcinacijos statusą). Nevakcinuoti 60+ tai 60+ amžiaus grupės asmenų neturėjusių skiepo ir teigiamo PGR/antigeno/antikūnų testo naujų atvejų skaičiai, 14 dienų vidurkiai normalizuoti pagal maksimalią atitinkamos laiko eilutės reikšmę.
+
 
 ```{r}
 dygraph(xii) %>%
-  dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3, 1)]) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(4, "Set1")) %>%
   dyRangeSelector(dateWindow = dw)
 ```
