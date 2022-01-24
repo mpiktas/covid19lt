@@ -29,6 +29,7 @@ if (max(zz$day) < max(lv1$day)) {
     unique()
   if (!("data" %in% modf)) {
     cat("\nNo new data, not pushing anything\n")
+    git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
   } else {
     rmarkdown::render_site("website/index.Rmd")
     rmarkdown::render_site("website/weeks.Rmd")
