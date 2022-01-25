@@ -7,6 +7,8 @@ source("R/functions.R")
 zz <- read.csv("data/lt-covid19-vaccinated.csv") %>% mutate(day = ymd(day))
 lv1 <- read.csv("data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
 
+set_github_remote()
+
 if (max(zz$day) < max(lv1$day)) {
   cat("\n=======Downloading vaccine data ================\n")
   try(source("R/download_osp_vaccine.R"))
@@ -29,7 +31,6 @@ if (max(zz$day) < max(lv1$day)) {
     unique()
   if (!("data" %in% modf)) {
     cat("\nNo new data, not pushing anything\n")
-    git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
   } else {
     rmarkdown::render_site("website/index.Rmd")
     rmarkdown::render_site("website/weeks.Rmd")

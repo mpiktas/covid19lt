@@ -42,13 +42,21 @@ find_root <- function(x) {
 ##
 ##
 
+
+## Doing the workaround, as pushing from gert results in error.
+## So set up github remote first.
+## If nothing needs to be pushed, do not commit.
+## CI/CD calls git push and we rely on that not failing.
+## Yes this is a hack.
+
+set_github_remote()
+
 modf <- git_status() %>%
   .$file %>%
   find_root() %>%
   unique()
 if (!("data" %in% modf)) {
   cat("\nNo new data, not pushing anything\n")
-  git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
 } else {
   push_to_github(c("data", "raw_data"), "Update OSP data", push = FALSE)
 }

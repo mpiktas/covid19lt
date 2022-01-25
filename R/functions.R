@@ -141,9 +141,25 @@ tryget <- function(link, times = 10) {
   res
 }
 
+set_github_remote <- function() {
+  ghpt <- Sys.getenv("GITHUB_PA_TOKEN")
+  if (ghpt != "") {
+    cat("\nSetting Github remote for pushing\n")
+    git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
+  } else {
+    cat("\nFailed to set Github remote\n")
+  }
+  ghpt
+}
+
+
 push_to_github <- function(dirs, commit_message, push = TRUE) {
   cat("\nSending the site downstream\n")
-  ghpt <- Sys.getenv("GITHUB_PA_TOKEN")
+  rl <- git_remote_list()
+  ghpt <- ""
+  if (!("github" %in% rl[["name"]])) {
+    ghpt <- set_github_remote()
+  }
   if (ghpt != "") {
     cat("\nTrying to set signature\n")
     git_config_set("user.name", "Gitlab CI bot")
@@ -157,7 +173,6 @@ push_to_github <- function(dirs, commit_message, push = TRUE) {
     }
     cat("\nTrying to commit\n")
     git_commit(commit_message)
-    git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github") # nolint
     if (push) git_push(remote = "github")
   } else {
     cat("\nGithub token not found, relying on local git configuration\n")
