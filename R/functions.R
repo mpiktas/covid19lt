@@ -153,14 +153,16 @@ set_github_remote <- function() {
 }
 
 
-push_to_github <- function(dirs, commit_message, push = TRUE) {
+push_to_github <- function(dirs, commit_message, remote = TRUE) {
   cat("\nSending the site downstream\n")
   rl <- git_remote_list()
+  print(rl)
   ghpt <- ""
   if (!("github" %in% rl[["name"]])) {
     ghpt <- set_github_remote()
   }
-  if (ghpt != "") {
+  if (remote) {
+    if (ghpt == "") cat("\nRemote probably not set\n")
     cat("\nTrying to set signature\n")
     git_config_set("user.name", "Gitlab CI bot")
     git_config_set("user.email", "test@email.com")
