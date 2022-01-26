@@ -153,7 +153,7 @@ set_github_remote <- function() {
 }
 
 
-push_to_github <- function(dirs, commit_message, remote = TRUE) {
+push_to_github <- function(dirs, commit_message, push = FALSE, remote = TRUE) {
   cat("\nSending the site downstream\n")
   rl <- git_remote_list()
   print(rl)
