@@ -141,28 +141,39 @@ tryget <- function(link, times = 10) {
   res
 }
 
-set_github_remote <- function() {
-  ghpt <- Sys.getenv("GITHUB_PA_TOKEN")
+set_github_remote <- function(ghpt = Sys.getenv("GITHUB_PA_TOKEN")) {
   if (ghpt != "") {
-    cat("\nSetting Github remote for pushing\n")
-    git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
+    rl <- git_remote_list()
+    if (!("github" %in% rl[["name"]])) {
+      cat("\nSetting Github remote for pushing\n")
+      git_remote_add(glue::glue("https://covid19-ci:{ghpt}@github.com/mpiktas/covid19lt.git"), "github")
+      cat("\nThe status of remote")
+      print(git_remote_list())
+    } else {
+      cat("\nGithub remote already set")
+      print(rl)
+    }
   } else {
-    cat("\nFailed to set Github remote\n")
+    cat("\nGithub token not found, remote not set\n")
   }
   ghpt
 }
 
 
-push_to_github <- function(dirs, commit_message, push = FALSE, remote = TRUE) {
+push_to_github <- function(dirs, commit_message, push = FALSE) {
   cat("\nSending the site downstream\n")
-  rl <- git_remote_list()
-  print(rl)
-  ghpt <- ""
-  if (!("github" %in% rl[["name"]])) {
-    ghpt <- set_github_remote()
+
+  remote <- TRUE
+  cat("\nChecking Github PA status")
+  ghpt <- Sys.getenv("GITHUB_PA_TOKEN")
+
+  if (ghpt == "") {
+    remote <- FALSE
+  } else {
+    set_github_remote(ghpt)
   }
+
   if (remote) {
-    if (ghpt == "") cat("\nRemote probably not set\n")
     cat("\nTrying to set signature\n")
     git_config_set("user.name", "Gitlab CI bot")
     git_config_set("user.email", "test@email.com")
