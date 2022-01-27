@@ -20,4 +20,5 @@ if (!(any(c("raw_data", "data") %in% modf))) {
   cat("\nNo new data, not pushing anything\n")
 } else {
   push_to_github(c("data", "raw_data"), "Update mobility data", push = FALSE)
+  system("git push github master")
 }

@@ -36,5 +36,6 @@ if (max(zz$day) < max(lv1$day)) {
     rmarkdown::render_site("website/weeks.Rmd")
     cat("\nSending the data and site downstream\n")
     push_to_github(c("docs", "data", "raw_data"), "Update vaccine data", push = FALSE)
+    system("git push github master")
   }
 }
