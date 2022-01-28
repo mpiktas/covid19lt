@@ -1,12 +1,6 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
-2021-02-27,"visos",0,0
-2021-02-27,"Pfizer-BioNTech",0,0
 2021-02-28,"visos",0,0
 2021-02-28,"Pfizer-BioNTech",0,0
-2021-02-28,"Novavax",0,0
-2021-02-28,"Moderna",0,0
-2021-02-28,"Johnson & Johnson",0,0
-2021-02-28,"AstraZeneca",0,0
 2021-03-01,"visos",29250,29250
 2021-03-01,"Pfizer-BioNTech",29250,29250
 2021-03-01,"Novavax",0,0
@@ -1393,8 +1387,8 @@
 2021-10-17,"Moderna",0,0
 2021-10-17,"Johnson & Johnson",0,0
 2021-10-17,"AstraZeneca",0,0
-2021-10-18,"visos",44460,12054
-2021-10-18,"Pfizer-BioNTech",44460,12054
+2021-10-18,"visos",44460,12048
+2021-10-18,"Pfizer-BioNTech",44460,12048
 2021-10-18,"Novavax",0,0
 2021-10-18,"Moderna",0,0
 2021-10-18,"Johnson & Johnson",0,0
@@ -1561,8 +1555,8 @@
 2021-11-14,"Moderna",0,0
 2021-11-14,"Johnson & Johnson",0,0
 2021-11-14,"AstraZeneca",0,0
-2021-11-15,"visos",0,52170
-2021-11-15,"Pfizer-BioNTech",0,52170
+2021-11-15,"visos",0,52152
+2021-11-15,"Pfizer-BioNTech",0,52152
 2021-11-15,"Novavax",0,0
 2021-11-15,"Moderna",0,0
 2021-11-15,"Johnson & Johnson",0,0
@@ -1585,8 +1579,8 @@
 2021-11-18,"Moderna",0,0
 2021-11-18,"Johnson & Johnson",0,0
 2021-11-18,"AstraZeneca",0,0
-2021-11-19,"visos",138060,111506
-2021-11-19,"Pfizer-BioNTech",138060,103206
+2021-11-19,"visos",138060,111494
+2021-11-19,"Pfizer-BioNTech",138060,103194
 2021-11-19,"Novavax",0,0
 2021-11-19,"Moderna",0,1500
 2021-11-19,"Johnson & Johnson",0,6500
@@ -1837,8 +1831,8 @@
 2021-12-30,"Moderna",0,0
 2021-12-30,"Johnson & Johnson",0,0
 2021-12-30,"AstraZeneca",0,0
-2021-12-31,"visos",36000,110670
-2021-12-31,"Pfizer-BioNTech",36000,101970
+2021-12-31,"visos",36000,110610
+2021-12-31,"Pfizer-BioNTech",36000,101910
 2021-12-31,"Novavax",0,0
 2021-12-31,"Moderna",0,6700
 2021-12-31,"Johnson & Johnson",0,2000
@@ -1999,3 +1993,9 @@
 2022-01-26,"Moderna",1200,0
 2022-01-26,"Johnson & Johnson",0,0
 2022-01-26,"AstraZeneca",0,0
+2022-01-27,"visos",0,0
+2022-01-27,"Pfizer-BioNTech",0,0
+2022-01-27,"Novavax",0,0
+2022-01-27,"Moderna",0,0
+2022-01-27,"Johnson & Johnson",0,0
+2022-01-27,"AstraZeneca",0,0
