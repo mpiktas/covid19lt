@@ -1,12 +1,6 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
-2021-02-28,"visos",0,0
-2021-02-28,"Pfizer-BioNTech",0,0
 2021-03-01,"visos",29250,29250
 2021-03-01,"Pfizer-BioNTech",29250,29250
-2021-03-01,"Novavax",0,0
-2021-03-01,"Moderna",0,0
-2021-03-01,"Johnson & Johnson",0,0
-2021-03-01,"AstraZeneca",0,0
 2021-03-02,"visos",19200,7800
 2021-03-02,"Pfizer-BioNTech",0,0
 2021-03-02,"Novavax",0,0
@@ -1999,3 +1993,9 @@
 2022-01-27,"Moderna",0,0
 2022-01-27,"Johnson & Johnson",0,0
 2022-01-27,"AstraZeneca",0,0
+2022-01-28,"visos",0,11816
+2022-01-28,"Pfizer-BioNTech",0,9466
+2022-01-28,"Novavax",0,0
+2022-01-28,"Moderna",0,800
+2022-01-28,"Johnson & Johnson",0,1550
+2022-01-28,"AstraZeneca",0,0
