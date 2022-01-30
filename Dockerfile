@@ -1,4 +1,4 @@
-FROM rocker/verse:4.0.5
+FROM rocker/verse:4.1.2
 LABEL maintainer="Vaidotas Zemlys-Balevičius"
 
 ## Install google cloud SDK so that you can use all google tools

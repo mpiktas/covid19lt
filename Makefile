@@ -52,7 +52,7 @@ push:
 ## with the user rstudio and the password set below. Your code will reside in
 ## /home/rstudio/app.
 run-locally:
-		docker run --rm -p 8787:8787 -e PASSWORD=emids $(IMAGE)
+		docker run --platform linux/amd64 --rm -p 8787:8787 -e PASSWORD=emids $(IMAGE)
 
 ## Remove local docker image
 clean:
