@@ -16,4 +16,4 @@ COPY ./ /home/rstudio/app
 WORKDIR /home/rstudio/app
 
 ##Install additional packages which are necessary to run the code
-RUN install2.r gert COVID19 dygraphs xts gridExtra distill EpiEstim flexdashboard config styler lintr
+RUN install2.r gert COVID19 dygraphs xts gridExtra distill EpiEstim flexdashboard config styler lintr DT
