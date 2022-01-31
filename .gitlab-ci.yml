@@ -33,7 +33,7 @@ vax:
       variables:
         - $SOURCE == "vax"
     script:
-      - R -e "install.packages(c('gert','zoo','dygraphs','xts', 'gridExtra','distill'))"
+      - R -e "install.packages(c('gert','zoo','dygraphs','xts', 'DT', 'gridExtra','distill'))"
       - R -e "source('R/makefile_osp_vaccines.R')"
       #- git push github master
     artifacts:
@@ -68,7 +68,7 @@ update:
       variables:
         - $SOURCE == "osp"
     script:
-      - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'gridExtra','distill','EpiEstim','flexdashboard'))"
+      - R -e "install.packages(c('gert','COVID19','dygraphs','xts', 'DT', 'gridExtra','distill','EpiEstim','flexdashboard'))"
       - rm README.md
       - R -e "source('R/makefile_site.R')"
     artifacts:
