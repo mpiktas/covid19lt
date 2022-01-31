@@ -11,7 +11,6 @@ library(readr)
 library(tidyr)
 library(rmarkdown)
 library(lubridate)
-library(DT)
 library(xts)
 library(dygraphs)
 library(zoo)
@@ -22,6 +21,11 @@ source("../R/functions.R")
 ```{r}
 lv1 <- read.csv("../data/lt-covid19-country.csv") %>% mutate(day = ymd(day))
 
+mx <- lv1 %>%
+  select(day, confirmed_daily, hospitalized, icu, deaths_daily) %>%
+  filter(day <= "2021-12-27") %>%
+  summarise(across(-day, ~ max(.x, na.rm = TRUE)))
+
 dd <- lv1 %>%
   select(day, confirmed_daily, hospitalized, icu, deaths_daily) %>%
   mutate(
@@ -29,10 +33,10 @@ dd <- lv1 %>%
     deaths7 = rollmean(deaths_daily, 7, align = "right", fill = NA)
   ) %>%
   mutate(
-    atvejai = atvejai7 / max(atvejai7, na.rm = TRUE) * 100,
-    hospitalizacijos = hospitalized / max(hospitalized, na.rm = TRUE) * 100,
-    rits = icu / max(icu, na.rm = TRUE) * 100,
-    mirtys = deaths7 / max(deaths7, na.rm = TRUE) * 100
+    atvejai = atvejai7 / mx$confirmed_daily[1] * 100,
+    hospitalizacijos = hospitalized / mx$hospitalized[1] * 100,
+    rits = icu / mx$icu[1] * 100,
+    mirtys = deaths7 / mx$deaths_daily[1] * 100
   )
 
 xdd <- xts(dd %>% select(atvejai, hospitalizacijos, rits, mirtys), dd$day)
