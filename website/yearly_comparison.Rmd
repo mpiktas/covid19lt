@@ -59,7 +59,7 @@ dygraph(xdd) %>%
 tr <- read.csv("../data/osp/lt-covid19-transition.csv") %>% mutate(day = ymd(day))
 init0 <- read.csv("../data/osp/lt-covid19-transition-init.csv")
 
-tr11v <- add_states(tr %>% filter(age_gr %in% c("60-69", "70-79", "80+")), init0 %>% filter(age_gr %in% c("60-69", "70-79", "80+")), group = "age_gr")
+tr11v <- add_states(tr %>% filter(age_gr %in% c("0-19", "60-69", "70-79", "80+")), init0 %>% filter(age_gr %in% c("0-19", "60-69", "70-79", "80+")), group = "age_gr")
 
 tr20v <- tr11v %>%
   group_by(age_gr) %>%
@@ -71,8 +71,9 @@ tr21v <- tr20v %>%
 
 
 ii <- dd %>%
-  select(day, rits) %>%
+  select(day, rits, hospitalizacijos) %>%
   left_join(tr21v)
+
 
 xii <- xts(ii %>% select(-day), order.by = ii$day)
 ```
@@ -83,7 +84,18 @@ RITS ta pati laiko eilutė (neišskirta nei pagal amžių nei pagal vakcinacijos
 
 
 ```{r}
-dygraph(xii) %>%
+dygraph(xii[, -2:-3]) %>%
   dyOptions(colors = RColorBrewer::brewer.pal(4, "Set1")) %>%
+  dyRangeSelector(dateWindow = dw)
+```
+
+### Hospitalizuotų ir nevakcinuotų amžiaus grupių palyginimas
+
+Hospitalizacijos ta pati laiko eilutė (neišskirta nei pagal amžių nei pagal vakcinacijos statusą). Nevakcinuoti tai 0-19 ir 60+ amžiaus grupės asmenų neturėjusių skiepo ir teigiamo PGR/antigeno/antikūnų testo naujų atvejų skaičiai, 14 dienų vidurkiai normalizuoti pagal maksimalią atitinkamos laiko eilutės reikšmę.
+
+
+```{r}
+dygraph(xii[, -1]) %>%
+  dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
   dyRangeSelector(dateWindow = dw)
 ```
