@@ -30,13 +30,19 @@ dd <- lv1 %>%
   select(day, confirmed_daily, hospitalized, icu, deaths_daily) %>%
   mutate(
     atvejai7 = rollmean(confirmed_daily, 7, align = "right", fill = NA),
-    deaths7 = rollmean(deaths_daily, 7, align = "right", fill = NA)
+    deaths7 = rollmean(deaths_daily, 7, align = "right", fill = NA),
+    hosp7 = rollmean(hospitalized, 7, align = "right", fill = NA),
+    icu7 = rollmean(icu, 7, align = "right", fill = NA),
+    hosp14 = rollmean(hospitalized, 14, align = "right", fill = NA),
+    icu14 = rollmean(icu, 14, align = "right", fill = NA),
   ) %>%
   mutate(
     atvejai = atvejai7 / mx$confirmed_daily[1] * 100,
-    hospitalizacijos = hospitalized / mx$hospitalized[1] * 100,
-    rits = icu / mx$icu[1] * 100,
-    mirtys = deaths7 / mx$deaths_daily[1] * 100
+    hospitalizacijos = hosp7 / mx$hospitalized[1] * 100,
+    rits = icu7 / mx$icu[1] * 100,
+    mirtys = deaths7 / mx$deaths_daily[1] * 100,
+    hospitalizacijos14 = hosp14 / mx$hospitalized[1] * 100,
+    rits14 = icu14 / mx$icu[1] * 100
   )
 
 xdd <- xts(dd %>% select(atvejai, hospitalizacijos, rits, mirtys), dd$day)
@@ -47,7 +53,7 @@ dw <- c("2020-10-01", last_day)
 
 ### Pagrindinių rodiklių palyginimas
 
-Visi rodikliai normalizuoti maksimumu. 100 = maksimali reikšmė.
+Visi rodikliai yra 7 dienų slenkantys vidurkiai normalizuoti maksimumu. 100 = maksimali reikšmė.
 
 ```{r}
 dygraph(xdd) %>%
@@ -71,7 +77,7 @@ tr21v <- tr20v %>%
 
 
 ii <- dd %>%
-  select(day, rits, hospitalizacijos) %>%
+  select(day, rits = rits14, hospitalizacijos = hospitalizacijos14) %>%
   left_join(tr21v)
 
 
@@ -80,7 +86,7 @@ xii <- xts(ii %>% select(-day), order.by = ii$day)
 
 ### Rits ir nevakcinuotų 60+ palyginimas
 
-RITS ta pati laiko eilutė (neišskirta nei pagal amžių nei pagal vakcinacijos statusą). Nevakcinuoti 60+ tai 60+ amžiaus grupės asmenų neturėjusių skiepo ir teigiamo PGR/antigeno/antikūnų testo naujų atvejų skaičiai, 14 dienų vidurkiai normalizuoti pagal maksimalią atitinkamos laiko eilutės reikšmę.
+RITS ta pati laiko eilutė (tik 14 dienų slenkantis vidurkis, neišskirta nei pagal amžių nei pagal vakcinacijos statusą). Nevakcinuoti 60+ tai 60+ amžiaus grupės asmenų neturėjusių skiepo ir teigiamo PGR/antigeno/antikūnų testo naujų atvejų skaičiai, 14 dienų vidurkiai normalizuoti pagal maksimalią atitinkamos laiko eilutės reikšmę.
 
 
 ```{r}
@@ -91,7 +97,7 @@ dygraph(xii[, -2:-3]) %>%
 
 ### Hospitalizuotų ir nevakcinuotų amžiaus grupių palyginimas
 
-Hospitalizacijos ta pati laiko eilutė (neišskirta nei pagal amžių nei pagal vakcinacijos statusą). Nevakcinuoti tai 0-19 ir 60+ amžiaus grupės asmenų neturėjusių skiepo ir teigiamo PGR/antigeno/antikūnų testo naujų atvejų skaičiai, 14 dienų vidurkiai normalizuoti pagal maksimalią atitinkamos laiko eilutės reikšmę.
+Hospitalizacijos ta pati laiko eilutė (tik 14 dienų slenkantis vidurkis, neišskirta nei pagal amžių nei pagal vakcinacijos statusą). Nevakcinuoti tai 0-19 ir 60+ amžiaus grupės asmenų neturėjusių skiepo ir teigiamo PGR/antigeno/antikūnų testo naujų atvejų skaičiai, 14 dienų vidurkiai normalizuoti pagal maksimalią atitinkamos laiko eilutės reikšmę.
 
 
 ```{r}

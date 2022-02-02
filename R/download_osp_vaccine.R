@@ -22,21 +22,28 @@ adm <- read.csv("raw_data/administrative_levels.csv") %>%
 
 #-------- Individual data
 #
-vcfd0 <- readr::read_csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv")
+vcfd0 <- readr::read_csv2("https://ls-osp-sdg.maps.arcgis.com/sharing/rest/content/items/118ed72f44494cf6b95967954d2e799c/data") # nolint
 
 if (FALSE) {
+  vcfd0 <- readr::read_csv("https://opendata.arcgis.com/datasets/ffb0a5bfa58847f79bf2bc544980f4b6_0.csv")
   vcfd0 <- read.csv("https://get.data.gov.lt/datasets/gov/lsd/covid19/Vakcinavimas/:format/csv")
+  vcfd0 <- vcfd0 %>%
+    mutate(age_group = year(Sys.Date()) - birth_year_noisy) %>%
+    mutate(age_group = ifelse(is.na(age_group), -1, age_group)) %>%
+    mutate(day = ymd(ymd_hms(vaccination_date))) %>%
+    arrange(pseudo_id, day) %>%
+    group_by(pseudo_id) %>%
+    mutate(dose = 1:n())
 }
-
-
 
 vcfd0 <- vcfd0 %>%
   mutate(age_group = year(Sys.Date()) - birth_year_noisy) %>%
   mutate(age_group = ifelse(is.na(age_group), -1, age_group)) %>%
-  mutate(day = ymd(ymd_hms(vaccination_date))) %>%
+  mutate(day = ymd(vaccination_date)) %>%
   arrange(pseudo_id, day) %>%
   group_by(pseudo_id) %>%
   mutate(dose = 1:n())
+
 
 vcfd <- vcfd0 %>%
   filter(dose == 1) %>%
