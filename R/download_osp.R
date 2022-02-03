@@ -24,12 +24,12 @@ colnames(hdd4) <- c("actual", "description")
 cvh <- data.frame(
   description = "Pacientai, kuriems patvirtinta COVID19 infekcija",
   total = hdd4$actual[4],
-  oxygen = hdd4$actual[6],
-  ventilated = hdd4$actual[9],
+  oxygen = hdd4$actual[2],
+  ventilated = hdd4$actual[7],
   hospitalized_not_intensive = NA,
-  intensive = hdd4$actual[7],
-  total_not_vaccinated = hdd4$actual[5],
-  intensive_not_vaccinated = hdd4$actual[8]
+  intensive = hdd4$actual[5],
+  total_not_vaccinated = NA,
+  intensive_not_vaccinated = hdd4$actual[6]
 )
 
 write.csv(cvh,
