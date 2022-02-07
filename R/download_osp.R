@@ -24,7 +24,7 @@ colnames(hdd4) <- c("actual", "description")
 cvh <- data.frame(
   description = "Pacientai, kuriems patvirtinta COVID19 infekcija",
   total = hdd4$actual[4],
-  oxygen = hdd4$actual[2],
+  oxygen = NA,
   ventilated = hdd4$actual[7],
   hospitalized_not_intensive = NA,
   intensive = hdd4$actual[5],
