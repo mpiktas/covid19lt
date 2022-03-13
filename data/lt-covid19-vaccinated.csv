@@ -464,6 +464,7 @@
 2022-03-08,"Alytaus apskr.","Alytaus m.",36664,31630,16975,1816,33983,17680,2,3,13
 2022-03-09,"Alytaus apskr.","Alytaus m.",36664,31633,16978,1818,33988,17693,0,3,3
 2022-03-10,"Alytaus apskr.","Alytaus m.",36666,31638,16984,1819,33989,17705,2,5,6
+2022-03-11,"Alytaus apskr.","Alytaus m.",36666,31638,16984,1821,33996,17711,0,0,0
 2020-12-01,"Alytaus apskr.","Alytaus r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Alytaus apskr.","Alytaus r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Alytaus apskr.","Alytaus r.",0,0,0,0,0,0,0,0,0
@@ -929,6 +930,7 @@
 2022-03-08,"Alytaus apskr.","Alytaus r.",25658,20797,9836,1213,23599,10586,0,2,5
 2022-03-09,"Alytaus apskr.","Alytaus r.",25658,20799,9840,1215,23607,10595,0,2,4
 2022-03-10,"Alytaus apskr.","Alytaus r.",25659,20803,9845,1215,23607,10604,1,4,5
+2022-03-11,"Alytaus apskr.","Alytaus r.",25659,20803,9845,1215,23610,10611,0,0,0
 2020-12-01,"Alytaus apskr.","Druskininkų",0,0,0,0,0,0,0,0,0
 2020-12-02,"Alytaus apskr.","Druskininkų",0,0,0,0,0,0,0,0,0
 2020-12-03,"Alytaus apskr.","Druskininkų",0,0,0,0,0,0,0,0,0
@@ -1394,6 +1396,7 @@
 2022-03-08,"Alytaus apskr.","Druskininkų",15189,13272,7141,635,14156,7470,0,0,4
 2022-03-09,"Alytaus apskr.","Druskininkų",15189,13272,7144,636,14159,7478,0,0,3
 2022-03-10,"Alytaus apskr.","Druskininkų",15190,13272,7147,637,14160,7481,1,0,3
+2022-03-11,"Alytaus apskr.","Druskininkų",15190,13272,7147,637,14164,7486,0,0,0
 2020-12-01,"Alytaus apskr.","Lazdijų r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Alytaus apskr.","Lazdijų r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Alytaus apskr.","Lazdijų r.",0,0,0,0,0,0,0,0,0
@@ -1859,6 +1862,7 @@
 2022-03-08,"Alytaus apskr.","Lazdijų r.",13029,11138,5722,493,12142,6087,0,0,1
 2022-03-09,"Alytaus apskr.","Lazdijų r.",13029,11138,5724,493,12142,6087,0,0,2
 2022-03-10,"Alytaus apskr.","Lazdijų r.",13029,11138,5724,493,12145,6095,0,0,0
+2022-03-11,"Alytaus apskr.","Lazdijų r.",13029,11138,5724,493,12146,6095,0,0,0
 2020-12-01,"Alytaus apskr.","Varėnos r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Alytaus apskr.","Varėnos r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Alytaus apskr.","Varėnos r.",0,0,0,0,0,0,0,0,0
@@ -2324,6 +2328,7 @@
 2022-03-08,"Alytaus apskr.","Varėnos r.",16004,13630,7340,810,14793,7671,0,1,2
 2022-03-09,"Alytaus apskr.","Varėnos r.",16004,13631,7345,811,14798,7676,0,1,5
 2022-03-10,"Alytaus apskr.","Varėnos r.",16004,13631,7346,812,14799,7685,0,0,1
+2022-03-11,"Alytaus apskr.","Varėnos r.",16004,13631,7346,812,14799,7692,0,0,0
 2020-12-01,"Kauno apskr.","Birštono",0,0,0,0,0,0,0,0,0
 2020-12-02,"Kauno apskr.","Birštono",0,0,0,0,0,0,0,0,0
 2020-12-03,"Kauno apskr.","Birštono",0,0,0,0,0,0,0,0,0
@@ -2789,6 +2794,7 @@
 2022-03-08,"Kauno apskr.","Birštono",3222,2822,1535,102,3068,1574,1,0,0
 2022-03-09,"Kauno apskr.","Birštono",3223,2822,1536,102,3068,1574,1,0,1
 2022-03-10,"Kauno apskr.","Birštono",3223,2822,1536,102,3068,1575,0,0,0
+2022-03-11,"Kauno apskr.","Birštono",3223,2822,1536,102,3068,1575,0,0,0
 2020-12-01,"Kauno apskr.","Jonavos r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Kauno apskr.","Jonavos r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Kauno apskr.","Jonavos r.",0,0,0,0,0,0,0,0,0
@@ -3254,6 +3260,7 @@
 2022-03-08,"Kauno apskr.","Jonavos r.",26993,23183,11110,1108,25117,11768,2,1,4
 2022-03-09,"Kauno apskr.","Jonavos r.",27005,23191,11116,1108,25117,11775,12,8,6
 2022-03-10,"Kauno apskr.","Jonavos r.",27009,23193,11119,1110,25120,11788,4,2,3
+2022-03-11,"Kauno apskr.","Jonavos r.",27009,23193,11119,1110,25122,11800,0,0,0
 2020-12-01,"Kauno apskr.","Kaišiadorių r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Kauno apskr.","Kaišiadorių r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Kauno apskr.","Kaišiadorių r.",0,0,0,0,0,0,0,0,0
@@ -3719,6 +3726,7 @@
 2022-03-08,"Kauno apskr.","Kaišiadorių r.",19572,16769,8532,799,18216,9028,2,1,5
 2022-03-09,"Kauno apskr.","Kaišiadorių r.",19572,16769,8536,799,18217,9029,0,0,4
 2022-03-10,"Kauno apskr.","Kaišiadorių r.",19572,16774,8537,800,18219,9034,0,5,1
+2022-03-11,"Kauno apskr.","Kaišiadorių r.",19572,16774,8537,800,18220,9044,0,0,0
 2020-12-01,"Kauno apskr.","Kauno m.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Kauno apskr.","Kauno m.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Kauno apskr.","Kauno m.",0,0,0,0,0,0,0,0,0
@@ -4183,7 +4191,8 @@
 2022-03-07,"Kauno apskr.","Kauno m.",211492,184801,100608,7484,198967,104598,7,29,50
 2022-03-08,"Kauno apskr.","Kauno m.",211510,184814,100663,7495,198989,104673,18,13,55
 2022-03-09,"Kauno apskr.","Kauno m.",211518,184847,100707,7502,199002,104739,8,33,44
-2022-03-10,"Kauno apskr.","Kauno m.",211541,184875,100772,7518,199034,104805,23,28,65
+2022-03-10,"Kauno apskr.","Kauno m.",211542,184875,100772,7518,199034,104805,24,28,65
+2022-03-11,"Kauno apskr.","Kauno m.",211542,184875,100773,7532,199076,104900,0,0,1
 2020-12-01,"Kauno apskr.","Kauno r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Kauno apskr.","Kauno r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Kauno apskr.","Kauno r.",0,0,0,0,0,0,0,0,0
@@ -4649,6 +4658,7 @@
 2022-03-08,"Kauno apskr.","Kauno r.",69717,59311,30235,2408,65443,31797,3,1,13
 2022-03-09,"Kauno apskr.","Kauno r.",69729,59315,30248,2408,65446,31813,12,4,13
 2022-03-10,"Kauno apskr.","Kauno r.",69740,59322,30280,2409,65456,31837,11,7,32
+2022-03-11,"Kauno apskr.","Kauno r.",69740,59322,30280,2423,65465,31868,0,0,0
 2020-12-01,"Kauno apskr.","Kėdainių r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Kauno apskr.","Kėdainių r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Kauno apskr.","Kėdainių r.",0,0,0,0,0,0,0,0,0
@@ -5114,6 +5124,7 @@
 2022-03-08,"Kauno apskr.","Kėdainių r.",31885,27117,13968,863,30155,14712,7,0,3
 2022-03-09,"Kauno apskr.","Kėdainių r.",31885,27117,13970,864,30158,14727,0,0,2
 2022-03-10,"Kauno apskr.","Kėdainių r.",31887,27122,13977,864,30158,14734,2,5,7
+2022-03-11,"Kauno apskr.","Kėdainių r.",31887,27122,13977,865,30161,14746,0,0,0
 2020-12-01,"Kauno apskr.","Prienų r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Kauno apskr.","Prienų r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Kauno apskr.","Prienų r.",0,0,0,0,0,0,0,0,0
@@ -5579,6 +5590,7 @@
 2022-03-08,"Kauno apskr.","Prienų r.",17636,15375,7482,544,16556,7946,0,0,3
 2022-03-09,"Kauno apskr.","Prienų r.",17637,15376,7488,544,16557,7959,1,1,6
 2022-03-10,"Kauno apskr.","Prienų r.",17642,15378,7492,544,16557,7961,5,2,4
+2022-03-11,"Kauno apskr.","Prienų r.",17642,15378,7492,546,16559,7964,0,0,0
 2020-12-01,"Kauno apskr.","Raseinių r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Kauno apskr.","Raseinių r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Kauno apskr.","Raseinių r.",0,0,0,0,0,0,0,0,0
@@ -6044,6 +6056,7 @@
 2022-03-08,"Kauno apskr.","Raseinių r.",21069,18079,8802,445,20022,9350,0,0,1
 2022-03-09,"Kauno apskr.","Raseinių r.",21071,18079,8802,446,20022,9351,2,0,0
 2022-03-10,"Kauno apskr.","Raseinių r.",21072,18081,8814,447,20022,9355,1,2,12
+2022-03-11,"Kauno apskr.","Raseinių r.",21072,18081,8814,448,20022,9358,0,0,0
 2020-12-01,"Klaipėdos apskr.","Klaipėdos m.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Klaipėdos apskr.","Klaipėdos m.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Klaipėdos apskr.","Klaipėdos m.",0,0,0,0,0,0,0,0,0
@@ -6509,6 +6522,7 @@
 2022-03-08,"Klaipėdos apskr.","Klaipėdos m.",92066,74241,35932,3763,84681,39084,8,12,15
 2022-03-09,"Klaipėdos apskr.","Klaipėdos m.",92074,74253,35947,3773,84696,39126,8,12,15
 2022-03-10,"Klaipėdos apskr.","Klaipėdos m.",92076,74265,35962,3779,84705,39146,2,12,15
+2022-03-11,"Klaipėdos apskr.","Klaipėdos m.",92076,74265,35962,3787,84716,39190,0,0,0
 2020-12-01,"Klaipėdos apskr.","Klaipėdos r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Klaipėdos apskr.","Klaipėdos r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Klaipėdos apskr.","Klaipėdos r.",0,0,0,0,0,0,0,0,0
@@ -6974,6 +6988,7 @@
 2022-03-08,"Klaipėdos apskr.","Klaipėdos r.",37459,30116,14343,1357,34746,15544,0,6,10
 2022-03-09,"Klaipėdos apskr.","Klaipėdos r.",37460,30120,14344,1361,34752,15554,1,4,1
 2022-03-10,"Klaipėdos apskr.","Klaipėdos r.",37460,30121,14349,1363,34753,15564,0,1,5
+2022-03-11,"Klaipėdos apskr.","Klaipėdos r.",37460,30121,14349,1367,34758,15566,0,0,0
 2020-12-01,"Klaipėdos apskr.","Kretingos r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Klaipėdos apskr.","Kretingos r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Klaipėdos apskr.","Kretingos r.",0,0,0,0,0,0,0,0,0
@@ -7439,6 +7454,7 @@
 2022-03-08,"Klaipėdos apskr.","Kretingos r.",21846,17828,8526,822,20408,9075,0,1,4
 2022-03-09,"Klaipėdos apskr.","Kretingos r.",21846,17829,8528,822,20408,9085,0,1,2
 2022-03-10,"Klaipėdos apskr.","Kretingos r.",21846,17834,8531,823,20411,9096,0,5,3
+2022-03-11,"Klaipėdos apskr.","Kretingos r.",21846,17834,8531,823,20411,9096,0,0,0
 2020-12-01,"Klaipėdos apskr.","Neringos",0,0,0,0,0,0,0,0,0
 2020-12-02,"Klaipėdos apskr.","Neringos",0,0,0,0,0,0,0,0,0
 2020-12-03,"Klaipėdos apskr.","Neringos",0,0,0,0,0,0,0,0,0
@@ -7904,6 +7920,7 @@
 2022-03-08,"Klaipėdos apskr.","Neringos",4025,3622,2261,115,3798,2338,0,0,1
 2022-03-09,"Klaipėdos apskr.","Neringos",4025,3622,2262,115,3798,2339,0,0,1
 2022-03-10,"Klaipėdos apskr.","Neringos",4025,3622,2263,116,3799,2346,0,0,1
+2022-03-11,"Klaipėdos apskr.","Neringos",4025,3622,2263,116,3799,2349,0,0,0
 2020-12-01,"Klaipėdos apskr.","Palangos m.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Klaipėdos apskr.","Palangos m.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Klaipėdos apskr.","Palangos m.",0,0,0,0,0,0,0,0,0
@@ -8369,6 +8386,7 @@
 2022-03-08,"Klaipėdos apskr.","Palangos m.",12139,10457,6083,393,11379,6397,2,0,1
 2022-03-09,"Klaipėdos apskr.","Palangos m.",12139,10457,6085,393,11379,6398,0,0,2
 2022-03-10,"Klaipėdos apskr.","Palangos m.",12139,10459,6089,393,11387,6403,0,2,4
+2022-03-11,"Klaipėdos apskr.","Palangos m.",12139,10459,6089,395,11387,6407,0,0,0
 2020-12-01,"Klaipėdos apskr.","Šilutės r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Klaipėdos apskr.","Šilutės r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Klaipėdos apskr.","Šilutės r.",0,0,0,0,0,0,0,0,0
@@ -8834,6 +8852,7 @@
 2022-03-08,"Klaipėdos apskr.","Šilutės r.",23794,19598,9481,926,22075,10167,4,4,10
 2022-03-09,"Klaipėdos apskr.","Šilutės r.",23794,19598,9481,927,22076,10179,0,0,0
 2022-03-10,"Klaipėdos apskr.","Šilutės r.",23797,19602,9492,928,22080,10184,3,4,11
+2022-03-11,"Klaipėdos apskr.","Šilutės r.",23797,19602,9492,928,22082,10190,0,0,0
 2020-12-01,"Klaipėdos apskr.","Skuodo r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Klaipėdos apskr.","Skuodo r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Klaipėdos apskr.","Skuodo r.",0,0,0,0,0,0,0,0,0
@@ -9299,6 +9318,7 @@
 2022-03-08,"Klaipėdos apskr.","Skuodo r.",8946,7327,3296,324,8340,3543,0,0,1
 2022-03-09,"Klaipėdos apskr.","Skuodo r.",8946,7327,3297,324,8341,3543,0,0,1
 2022-03-10,"Klaipėdos apskr.","Skuodo r.",8946,7327,3299,325,8347,3552,0,0,2
+2022-03-11,"Klaipėdos apskr.","Skuodo r.",8946,7327,3299,325,8347,3555,0,0,0
 2020-12-01,"Marijampolės apskr.","Kalvarijos",0,0,0,0,0,0,0,0,0
 2020-12-02,"Marijampolės apskr.","Kalvarijos",0,0,0,0,0,0,0,0,0
 2020-12-03,"Marijampolės apskr.","Kalvarijos",0,0,0,0,0,0,0,0,0
@@ -9764,6 +9784,7 @@
 2022-03-08,"Marijampolės apskr.","Kalvarijos",6068,4805,2364,133,5792,2489,0,0,0
 2022-03-09,"Marijampolės apskr.","Kalvarijos",6068,4805,2369,134,5792,2491,0,0,5
 2022-03-10,"Marijampolės apskr.","Kalvarijos",6068,4805,2369,134,5793,2492,0,0,0
+2022-03-11,"Marijampolės apskr.","Kalvarijos",6068,4805,2369,134,5794,2497,0,0,0
 2020-12-01,"Marijampolės apskr.","Kazlų Rūdos",0,0,0,0,0,0,0,0,0
 2020-12-02,"Marijampolės apskr.","Kazlų Rūdos",0,0,0,0,0,0,0,0,0
 2020-12-03,"Marijampolės apskr.","Kazlų Rūdos",0,0,0,0,0,0,0,0,0
@@ -10229,6 +10250,7 @@
 2022-03-08,"Marijampolės apskr.","Kazlų Rūdos",7505,6206,3097,296,6912,3369,0,1,1
 2022-03-09,"Marijampolės apskr.","Kazlų Rūdos",7505,6207,3098,297,6912,3372,0,1,1
 2022-03-10,"Marijampolės apskr.","Kazlų Rūdos",7505,6207,3101,297,6912,3373,0,0,3
+2022-03-11,"Marijampolės apskr.","Kazlų Rūdos",7505,6207,3101,297,6912,3377,0,0,0
 2020-12-01,"Marijampolės apskr.","Marijampolės",0,0,0,0,0,0,0,0,0
 2020-12-02,"Marijampolės apskr.","Marijampolės",0,0,0,0,0,0,0,0,0
 2020-12-03,"Marijampolės apskr.","Marijampolės",0,0,0,0,0,0,0,0,0
@@ -10480,220 +10502,221 @@
 2021-08-06,"Marijampolės apskr.","Marijampolės",28174,22556,8,278,22375,6,308,72,1
 2021-08-07,"Marijampolės apskr.","Marijampolės",28264,22559,8,278,22381,6,90,3,0
 2021-08-08,"Marijampolės apskr.","Marijampolės",28266,22559,8,278,22387,6,2,0,0
-2021-08-09,"Marijampolės apskr.","Marijampolės",28467,22623,8,291,22496,6,201,64,0
-2021-08-10,"Marijampolės apskr.","Marijampolės",28630,22709,8,307,22568,6,163,86,0
-2021-08-11,"Marijampolės apskr.","Marijampolės",28802,22822,9,314,22602,6,172,113,1
-2021-08-12,"Marijampolės apskr.","Marijampolės",29106,22953,9,331,22720,6,304,131,0
-2021-08-13,"Marijampolės apskr.","Marijampolės",29254,23073,9,343,22828,6,148,120,0
-2021-08-14,"Marijampolės apskr.","Marijampolės",29333,23077,9,344,22843,6,79,4,0
-2021-08-15,"Marijampolės apskr.","Marijampolės",29335,23078,9,344,22854,6,2,1,0
-2021-08-16,"Marijampolės apskr.","Marijampolės",29506,23192,9,360,22920,6,171,114,0
-2021-08-17,"Marijampolės apskr.","Marijampolės",29615,23385,9,369,22981,7,109,193,0
-2021-08-18,"Marijampolės apskr.","Marijampolės",29823,23522,12,374,23049,7,208,137,3
-2021-08-19,"Marijampolės apskr.","Marijampolės",30004,23836,13,383,23847,7,181,314,1
-2021-08-20,"Marijampolės apskr.","Marijampolės",30219,24050,15,403,24030,8,215,214,2
-2021-08-21,"Marijampolės apskr.","Marijampolės",30224,24052,15,404,24115,8,5,2,0
-2021-08-22,"Marijampolės apskr.","Marijampolės",30225,24053,15,404,24117,8,1,1,0
-2021-08-23,"Marijampolės apskr.","Marijampolės",30360,24215,15,412,24276,8,135,162,0
-2021-08-24,"Marijampolės apskr.","Marijampolės",30466,24348,15,419,24433,8,106,133,0
-2021-08-25,"Marijampolės apskr.","Marijampolės",30602,24499,17,426,24621,9,136,151,2
-2021-08-26,"Marijampolės apskr.","Marijampolės",30754,24692,17,438,24876,9,152,193,0
-2021-08-27,"Marijampolės apskr.","Marijampolės",30886,24870,17,441,25063,9,132,178,0
-2021-08-28,"Marijampolės apskr.","Marijampolės",30913,24876,17,448,25099,9,27,6,0
-2021-08-29,"Marijampolės apskr.","Marijampolės",30914,24876,17,448,25102,9,1,0,0
-2021-08-30,"Marijampolės apskr.","Marijampolės",31034,24993,17,456,25292,9,120,117,0
-2021-08-31,"Marijampolės apskr.","Marijampolės",31135,25080,22,459,25518,9,101,87,5
-2021-09-01,"Marijampolės apskr.","Marijampolės",31209,25159,26,475,25751,12,74,79,4
-2021-09-02,"Marijampolės apskr.","Marijampolės",31294,25307,26,485,26116,13,85,148,0
-2021-09-03,"Marijampolės apskr.","Marijampolės",31357,25403,26,504,26413,15,63,96,0
-2021-09-04,"Marijampolės apskr.","Marijampolės",31395,25423,26,504,26416,15,38,20,0
-2021-09-05,"Marijampolės apskr.","Marijampolės",31395,25423,26,504,26418,15,0,0,0
-2021-09-06,"Marijampolės apskr.","Marijampolės",31453,25535,26,511,26639,15,58,112,0
-2021-09-07,"Marijampolės apskr.","Marijampolės",31509,25600,26,518,26816,15,56,65,0
-2021-09-08,"Marijampolės apskr.","Marijampolės",31564,25695,28,529,27012,17,55,95,2
-2021-09-09,"Marijampolės apskr.","Marijampolės",31668,25819,34,535,27253,31,104,124,6
-2021-09-10,"Marijampolės apskr.","Marijampolės",31752,25923,41,544,27478,33,84,104,7
-2021-09-11,"Marijampolės apskr.","Marijampolės",31777,25927,42,545,27499,33,25,4,1
-2021-09-12,"Marijampolės apskr.","Marijampolės",31777,25927,42,545,27499,33,0,0,0
-2021-09-13,"Marijampolės apskr.","Marijampolės",31878,26015,77,552,27662,33,101,88,35
-2021-09-14,"Marijampolės apskr.","Marijampolės",31944,26077,113,563,27788,38,66,62,36
-2021-09-15,"Marijampolės apskr.","Marijampolės",31977,26164,169,565,27896,42,33,87,56
-2021-09-16,"Marijampolės apskr.","Marijampolės",32043,26237,194,569,28085,42,66,73,25
-2021-09-17,"Marijampolės apskr.","Marijampolės",32096,26321,312,574,28208,42,53,84,118
-2021-09-18,"Marijampolės apskr.","Marijampolės",32120,26334,312,577,28248,42,24,13,0
-2021-09-19,"Marijampolės apskr.","Marijampolės",32120,26335,312,577,28248,42,0,1,0
-2021-09-20,"Marijampolės apskr.","Marijampolės",32151,26402,321,581,28392,42,31,67,9
-2021-09-21,"Marijampolės apskr.","Marijampolės",32199,26445,354,586,28492,42,48,43,33
-2021-09-22,"Marijampolės apskr.","Marijampolės",32261,26497,386,597,28614,44,62,52,32
-2021-09-23,"Marijampolės apskr.","Marijampolės",32350,26539,405,603,28797,50,89,42,19
-2021-09-24,"Marijampolės apskr.","Marijampolės",32412,26573,444,607,28937,57,62,34,39
-2021-09-25,"Marijampolės apskr.","Marijampolės",32414,26574,445,607,28962,58,2,1,1
-2021-09-26,"Marijampolės apskr.","Marijampolės",32414,26575,445,607,28962,58,0,1,0
-2021-09-27,"Marijampolės apskr.","Marijampolės",32437,26619,456,617,29102,94,23,44,11
-2021-09-28,"Marijampolės apskr.","Marijampolės",32506,26641,506,622,29200,130,69,22,50
-2021-09-29,"Marijampolės apskr.","Marijampolės",32544,26666,541,628,29294,186,38,25,35
-2021-09-30,"Marijampolės apskr.","Marijampolės",32621,26705,565,635,29379,211,77,39,24
-2021-10-01,"Marijampolės apskr.","Marijampolės",32667,26759,590,643,29471,329,46,54,25
-2021-10-02,"Marijampolės apskr.","Marijampolės",32683,26760,590,643,29484,329,16,1,0
-2021-10-03,"Marijampolės apskr.","Marijampolės",32685,26760,590,643,29485,329,2,0,0
-2021-10-04,"Marijampolės apskr.","Marijampolės",32716,26797,599,650,29553,338,31,37,9
-2021-10-05,"Marijampolės apskr.","Marijampolės",32747,26826,626,654,29619,371,31,29,27
-2021-10-06,"Marijampolės apskr.","Marijampolės",32778,26851,639,660,29694,403,31,25,13
-2021-10-07,"Marijampolės apskr.","Marijampolės",32834,26889,665,671,29781,422,56,38,26
-2021-10-08,"Marijampolės apskr.","Marijampolės",32898,26940,704,676,29826,462,64,51,39
-2021-10-09,"Marijampolės apskr.","Marijampolės",32898,26940,704,677,29827,463,0,0,0
-2021-10-10,"Marijampolės apskr.","Marijampolės",32899,26940,704,677,29828,463,1,0,0
-2021-10-11,"Marijampolės apskr.","Marijampolės",32927,26975,714,681,29875,474,28,35,10
-2021-10-12,"Marijampolės apskr.","Marijampolės",32969,26997,731,685,29941,524,42,22,17
-2021-10-13,"Marijampolės apskr.","Marijampolės",32993,27022,749,691,29982,559,24,25,18
-2021-10-14,"Marijampolės apskr.","Marijampolės",33036,27062,788,695,30052,583,43,40,39
-2021-10-15,"Marijampolės apskr.","Marijampolės",33096,27103,833,696,30132,608,60,41,45
-2021-10-16,"Marijampolės apskr.","Marijampolės",33097,27103,833,696,30148,608,1,0,0
-2021-10-17,"Marijampolės apskr.","Marijampolės",33097,27103,833,696,30148,608,0,0,0
-2021-10-18,"Marijampolės apskr.","Marijampolės",33131,27122,873,698,30204,617,34,19,40
-2021-10-19,"Marijampolės apskr.","Marijampolės",33152,27144,904,701,30251,644,21,22,31
-2021-10-20,"Marijampolės apskr.","Marijampolės",33193,27173,961,706,30296,657,41,29,57
-2021-10-21,"Marijampolės apskr.","Marijampolės",33247,27218,1017,711,30356,683,54,45,56
-2021-10-22,"Marijampolės apskr.","Marijampolės",33302,27237,1089,718,30437,722,55,19,72
-2021-10-23,"Marijampolės apskr.","Marijampolės",33305,27238,1091,718,30437,722,3,1,2
-2021-10-24,"Marijampolės apskr.","Marijampolės",33306,27238,1091,719,30437,722,1,0,0
-2021-10-25,"Marijampolės apskr.","Marijampolės",33363,27261,1152,726,30486,732,57,23,61
-2021-10-26,"Marijampolės apskr.","Marijampolės",33406,27272,1223,730,30526,749,43,11,71
-2021-10-27,"Marijampolės apskr.","Marijampolės",33459,27291,1315,730,30563,767,53,19,92
-2021-10-28,"Marijampolės apskr.","Marijampolės",33526,27328,1424,735,30621,806,67,37,109
-2021-10-29,"Marijampolės apskr.","Marijampolės",33576,27352,1540,741,30684,851,50,24,116
-2021-10-30,"Marijampolės apskr.","Marijampolės",33581,27364,1557,741,30685,851,5,12,17
-2021-10-31,"Marijampolės apskr.","Marijampolės",33583,27364,1557,741,30685,851,2,0,0
-2021-11-01,"Marijampolės apskr.","Marijampolės",33584,27364,1557,746,30722,891,1,0,0
-2021-11-02,"Marijampolės apskr.","Marijampolės",33584,27367,1557,750,30754,922,0,3,0
-2021-11-03,"Marijampolės apskr.","Marijampolės",33650,27395,1636,756,30806,979,66,28,79
-2021-11-04,"Marijampolės apskr.","Marijampolės",33701,27433,1786,760,30874,1035,51,38,150
-2021-11-05,"Marijampolės apskr.","Marijampolės",33737,27454,1889,767,30916,1107,36,21,103
-2021-11-06,"Marijampolės apskr.","Marijampolės",33774,27468,1922,767,30919,1109,37,14,33
-2021-11-07,"Marijampolės apskr.","Marijampolės",33776,27469,1923,767,30920,1109,2,1,1
-2021-11-08,"Marijampolės apskr.","Marijampolės",33827,27487,1982,777,30978,1170,51,18,59
-2021-11-09,"Marijampolės apskr.","Marijampolės",33883,27502,2142,783,31011,1241,56,15,160
-2021-11-10,"Marijampolės apskr.","Marijampolės",33947,27520,2338,796,31044,1333,64,18,196
-2021-11-11,"Marijampolės apskr.","Marijampolės",34005,27555,2560,804,31108,1442,58,35,222
-2021-11-12,"Marijampolės apskr.","Marijampolės",34067,27580,2751,813,31151,1558,62,25,191
-2021-11-13,"Marijampolės apskr.","Marijampolės",34068,27582,2761,813,31164,1575,1,2,10
-2021-11-14,"Marijampolės apskr.","Marijampolės",34068,27583,2761,813,31166,1575,0,1,0
-2021-11-15,"Marijampolės apskr.","Marijampolės",34113,27601,2827,813,31166,1575,45,18,66
-2021-11-16,"Marijampolės apskr.","Marijampolės",34172,27619,2953,813,31169,1575,59,18,126
-2021-11-17,"Marijampolės apskr.","Marijampolės",34216,27648,3166,821,31233,1656,44,29,213
-2021-11-18,"Marijampolės apskr.","Marijampolės",34280,27717,3437,826,31288,1807,64,69,271
-2021-11-19,"Marijampolės apskr.","Marijampolės",34335,27745,3757,830,31324,1910,55,28,320
-2021-11-20,"Marijampolės apskr.","Marijampolės",34337,27746,3757,832,31355,1945,2,1,0
-2021-11-21,"Marijampolės apskr.","Marijampolės",34338,27746,3761,832,31358,1946,1,0,4
-2021-11-22,"Marijampolės apskr.","Marijampolės",34379,27762,3911,836,31396,2006,41,16,150
-2021-11-23,"Marijampolės apskr.","Marijampolės",34427,27779,4092,842,31430,2168,48,17,181
-2021-11-24,"Marijampolės apskr.","Marijampolės",34481,27801,4378,851,31463,2365,54,22,286
-2021-11-25,"Marijampolės apskr.","Marijampolės",34523,27834,4646,857,31515,2590,42,33,268
-2021-11-26,"Marijampolės apskr.","Marijampolės",34589,27868,4952,866,31569,2784,66,34,306
-2021-11-27,"Marijampolės apskr.","Marijampolės",34614,27885,5034,867,31571,2794,25,17,82
-2021-11-28,"Marijampolės apskr.","Marijampolės",34614,27886,5042,867,31572,2794,0,1,8
-2021-11-29,"Marijampolės apskr.","Marijampolės",34671,27925,5139,873,31607,2863,57,39,97
-2021-11-30,"Marijampolės apskr.","Marijampolės",34719,27956,5363,878,31657,2990,48,31,224
-2021-12-01,"Marijampolės apskr.","Marijampolės",34761,28006,5648,881,31697,3207,42,50,285
-2021-12-02,"Marijampolės apskr.","Marijampolės",34817,28064,5939,890,31781,3487,56,58,291
-2021-12-03,"Marijampolės apskr.","Marijampolės",34875,28111,6206,895,31821,3810,58,47,267
-2021-12-04,"Marijampolės apskr.","Marijampolės",34916,28112,6212,895,31823,3811,41,1,6
-2021-12-05,"Marijampolės apskr.","Marijampolės",34916,28112,6216,895,31824,3815,0,0,4
-2021-12-06,"Marijampolės apskr.","Marijampolės",34970,28146,6427,900,31844,3974,54,34,211
-2021-12-07,"Marijampolės apskr.","Marijampolės",35016,28190,6762,909,31865,4163,46,44,335
-2021-12-08,"Marijampolės apskr.","Marijampolės",35052,28246,7070,922,31895,4455,36,56,308
-2021-12-09,"Marijampolės apskr.","Marijampolės",35092,28295,7396,932,31932,4730,40,49,326
-2021-12-10,"Marijampolės apskr.","Marijampolės",35132,28340,7690,940,31999,5045,40,45,294
-2021-12-11,"Marijampolės apskr.","Marijampolės",35148,28353,7749,947,32021,5134,16,13,59
-2021-12-12,"Marijampolės apskr.","Marijampolės",35148,28353,7762,947,32021,5143,0,0,13
-2021-12-13,"Marijampolės apskr.","Marijampolės",35199,28392,7977,955,32092,5245,51,39,215
-2021-12-14,"Marijampolės apskr.","Marijampolės",35235,28431,8287,962,32146,5473,36,39,310
-2021-12-15,"Marijampolės apskr.","Marijampolės",35265,28465,8574,974,32202,5769,30,34,287
-2021-12-16,"Marijampolės apskr.","Marijampolės",35301,28515,8971,980,32273,6068,36,50,397
-2021-12-17,"Marijampolės apskr.","Marijampolės",35330,28566,9292,994,32328,6351,29,51,321
-2021-12-18,"Marijampolės apskr.","Marijampolės",35332,28567,9305,995,32369,6357,2,1,13
-2021-12-19,"Marijampolės apskr.","Marijampolės",35332,28568,9316,995,32369,6361,0,1,11
-2021-12-20,"Marijampolės apskr.","Marijampolės",35367,28608,9530,1005,32420,6584,35,40,214
-2021-12-21,"Marijampolės apskr.","Marijampolės",35415,28644,9781,1012,32466,6938,48,36,251
-2021-12-22,"Marijampolės apskr.","Marijampolės",35437,28670,9956,1017,32524,7268,22,26,175
-2021-12-23,"Marijampolės apskr.","Marijampolės",35463,28722,10111,1025,32578,7610,26,52,155
-2021-12-24,"Marijampolės apskr.","Marijampolės",35463,28722,10111,1031,32637,7915,0,0,0
-2021-12-25,"Marijampolės apskr.","Marijampolės",35463,28722,10111,1031,32654,7982,0,0,0
-2021-12-26,"Marijampolės apskr.","Marijampolės",35463,28723,10112,1031,32654,7995,0,1,1
-2021-12-27,"Marijampolės apskr.","Marijampolės",35500,28794,10435,1042,32708,8222,37,71,323
-2021-12-28,"Marijampolės apskr.","Marijampolės",35530,28856,10816,1049,32751,8542,30,62,381
-2021-12-29,"Marijampolės apskr.","Marijampolės",35565,28908,11065,1055,32788,8844,35,52,249
-2021-12-30,"Marijampolės apskr.","Marijampolės",35600,28945,11313,1056,32832,9258,35,37,248
-2021-12-31,"Marijampolės apskr.","Marijampolės",35610,28958,11385,1058,32869,9600,10,13,72
-2022-01-01,"Marijampolės apskr.","Marijampolės",35610,28958,11385,1058,32872,9613,0,0,0
-2022-01-02,"Marijampolės apskr.","Marijampolės",35610,28958,11385,1058,32873,9624,0,0,0
-2022-01-03,"Marijampolės apskr.","Marijampolės",35638,29004,11634,1063,32920,9852,28,46,249
-2022-01-04,"Marijampolės apskr.","Marijampolės",35681,29060,12010,1069,32961,10121,43,56,376
-2022-01-05,"Marijampolės apskr.","Marijampolės",35733,29111,12354,1074,32987,10309,52,51,344
-2022-01-06,"Marijampolės apskr.","Marijampolės",35767,29175,12759,1078,33037,10484,34,64,405
-2022-01-07,"Marijampolės apskr.","Marijampolės",35806,29237,13071,1078,33037,10484,39,62,312
-2022-01-08,"Marijampolės apskr.","Marijampolės",35807,29240,13085,1078,33037,10484,1,3,14
-2022-01-09,"Marijampolės apskr.","Marijampolės",35807,29241,13096,1078,33038,10485,0,1,11
-2022-01-10,"Marijampolės apskr.","Marijampolės",35846,29277,13347,1080,33089,10849,39,36,251
-2022-01-11,"Marijampolės apskr.","Marijampolės",35868,29306,13593,1087,33128,11267,22,29,246
-2022-01-12,"Marijampolės apskr.","Marijampolės",35887,29341,13809,1096,33160,11548,19,35,216
-2022-01-13,"Marijampolės apskr.","Marijampolės",35909,29375,14047,1103,33184,11816,22,34,238
-2022-01-14,"Marijampolės apskr.","Marijampolės",35925,29399,14237,1107,33190,11899,16,24,190
-2022-01-15,"Marijampolės apskr.","Marijampolės",35930,29406,14286,1107,33190,11899,5,7,49
-2022-01-16,"Marijampolės apskr.","Marijampolės",35930,29406,14290,1107,33190,11899,0,0,4
-2022-01-17,"Marijampolės apskr.","Marijampolės",35946,29423,14406,1112,33215,12177,16,17,116
-2022-01-18,"Marijampolės apskr.","Marijampolės",35961,29444,14537,1121,33257,12586,15,21,131
-2022-01-19,"Marijampolės apskr.","Marijampolės",35980,29477,14648,1134,33287,12960,19,33,111
-2022-01-20,"Marijampolės apskr.","Marijampolės",35995,29513,14799,1140,33326,13401,15,36,151
-2022-01-21,"Marijampolės apskr.","Marijampolės",36005,29544,14915,1150,33378,13737,10,31,116
-2022-01-22,"Marijampolės apskr.","Marijampolės",36007,29544,14919,1150,33380,13753,2,0,4
-2022-01-23,"Marijampolės apskr.","Marijampolės",36007,29544,14921,1150,33381,13764,0,0,2
-2022-01-24,"Marijampolės apskr.","Marijampolės",36018,29564,14988,1162,33403,14043,11,20,67
-2022-01-25,"Marijampolės apskr.","Marijampolės",36031,29586,15070,1170,33422,14303,13,22,82
-2022-01-26,"Marijampolės apskr.","Marijampolės",36037,29629,15144,1178,33439,14540,6,43,74
-2022-01-27,"Marijampolės apskr.","Marijampolės",36046,29665,15236,1188,33462,14794,9,36,92
-2022-01-28,"Marijampolės apskr.","Marijampolės",36054,29714,15339,1192,33476,14999,8,49,103
-2022-01-29,"Marijampolės apskr.","Marijampolės",36054,29714,15343,1195,33478,15055,0,0,4
-2022-01-30,"Marijampolės apskr.","Marijampolės",36054,29714,15344,1195,33478,15059,0,0,1
-2022-01-31,"Marijampolės apskr.","Marijampolės",36058,29734,15385,1203,33487,15183,4,20,41
-2022-02-01,"Marijampolės apskr.","Marijampolės",36059,29754,15420,1210,33501,15324,1,20,35
-2022-02-02,"Marijampolės apskr.","Marijampolės",36064,29774,15454,1221,33522,15447,5,20,34
-2022-02-03,"Marijampolės apskr.","Marijampolės",36067,29790,15486,1228,33542,15614,3,16,32
-2022-02-04,"Marijampolės apskr.","Marijampolės",36071,29802,15510,1233,33558,15746,4,12,24
-2022-02-05,"Marijampolės apskr.","Marijampolės",36071,29803,15510,1235,33558,15750,0,1,0
-2022-02-06,"Marijampolės apskr.","Marijampolės",36071,29803,15510,1235,33558,15752,0,0,0
-2022-02-07,"Marijampolės apskr.","Marijampolės",36077,29815,15527,1240,33569,15828,6,12,17
-2022-02-08,"Marijampolės apskr.","Marijampolės",36078,29824,15556,1246,33578,15923,1,9,29
-2022-02-09,"Marijampolės apskr.","Marijampolės",36080,29838,15572,1249,33605,16013,2,14,16
-2022-02-10,"Marijampolės apskr.","Marijampolės",36081,29847,15582,1251,33624,16122,1,9,10
-2022-02-11,"Marijampolės apskr.","Marijampolės",36084,29856,15605,1254,33659,16239,3,9,23
-2022-02-12,"Marijampolės apskr.","Marijampolės",36084,29856,15605,1254,33659,16243,0,0,0
-2022-02-13,"Marijampolės apskr.","Marijampolės",36084,29856,15605,1254,33659,16244,0,0,0
-2022-02-14,"Marijampolės apskr.","Marijampolės",36088,29868,15611,1254,33672,16292,4,12,6
-2022-02-15,"Marijampolės apskr.","Marijampolės",36088,29879,15631,1254,33684,16335,0,11,20
-2022-02-16,"Marijampolės apskr.","Marijampolės",36088,29879,15631,1257,33699,16374,0,0,0
-2022-02-17,"Marijampolės apskr.","Marijampolės",36090,29893,15638,1258,33707,16414,2,14,7
-2022-02-18,"Marijampolės apskr.","Marijampolės",36092,29906,15658,1262,33712,16445,2,13,20
-2022-02-19,"Marijampolės apskr.","Marijampolės",36092,29906,15658,1262,33712,16446,0,0,0
-2022-02-20,"Marijampolės apskr.","Marijampolės",36092,29907,15658,1262,33712,16446,0,1,0
-2022-02-21,"Marijampolės apskr.","Marijampolės",36093,29915,15671,1266,33718,16468,1,8,13
-2022-02-22,"Marijampolės apskr.","Marijampolės",36095,29919,15685,1266,33725,16499,2,4,14
-2022-02-23,"Marijampolės apskr.","Marijampolės",36095,29923,15689,1266,33732,16522,0,4,4
-2022-02-24,"Marijampolės apskr.","Marijampolės",36099,29932,15698,1266,33737,16536,4,9,9
-2022-02-25,"Marijampolės apskr.","Marijampolės",36100,29937,15707,1268,33744,16561,1,5,9
-2022-02-26,"Marijampolės apskr.","Marijampolės",36100,29937,15707,1268,33744,16561,0,0,0
-2022-02-27,"Marijampolės apskr.","Marijampolės",36100,29937,15707,1268,33744,16561,0,0,0
-2022-02-28,"Marijampolės apskr.","Marijampolės",36102,29940,15713,1271,33752,16571,2,3,6
-2022-03-01,"Marijampolės apskr.","Marijampolės",36102,29945,15718,1271,33762,16592,0,5,5
-2022-03-02,"Marijampolės apskr.","Marijampolės",36102,29948,15725,1271,33762,16592,0,3,7
-2022-03-03,"Marijampolės apskr.","Marijampolės",36102,29949,15729,1273,33769,16606,0,1,4
-2022-03-04,"Marijampolės apskr.","Marijampolės",36105,29957,15736,1275,33781,16627,3,8,7
-2022-03-05,"Marijampolės apskr.","Marijampolės",36105,29957,15736,1275,33781,16627,0,0,0
-2022-03-06,"Marijampolės apskr.","Marijampolės",36105,29957,15736,1275,33782,16627,0,0,0
-2022-03-07,"Marijampolės apskr.","Marijampolės",36108,29960,15742,1276,33786,16644,3,3,6
-2022-03-08,"Marijampolės apskr.","Marijampolės",36108,29963,15750,1278,33787,16661,0,3,8
-2022-03-09,"Marijampolės apskr.","Marijampolės",36110,29969,15755,1278,33789,16667,2,6,5
-2022-03-10,"Marijampolės apskr.","Marijampolės",36112,29972,15767,1282,33794,16680,2,3,12
+2021-08-09,"Marijampolės apskr.","Marijampolės",28467,22623,8,290,22496,6,201,64,0
+2021-08-10,"Marijampolės apskr.","Marijampolės",28630,22709,8,306,22568,6,163,86,0
+2021-08-11,"Marijampolės apskr.","Marijampolės",28802,22822,9,313,22602,6,172,113,1
+2021-08-12,"Marijampolės apskr.","Marijampolės",29106,22953,9,330,22720,6,304,131,0
+2021-08-13,"Marijampolės apskr.","Marijampolės",29254,23073,9,342,22828,6,148,120,0
+2021-08-14,"Marijampolės apskr.","Marijampolės",29333,23077,9,343,22843,6,79,4,0
+2021-08-15,"Marijampolės apskr.","Marijampolės",29335,23078,9,343,22854,6,2,1,0
+2021-08-16,"Marijampolės apskr.","Marijampolės",29506,23192,9,359,22920,6,171,114,0
+2021-08-17,"Marijampolės apskr.","Marijampolės",29615,23385,9,368,22981,7,109,193,0
+2021-08-18,"Marijampolės apskr.","Marijampolės",29823,23522,12,373,23049,7,208,137,3
+2021-08-19,"Marijampolės apskr.","Marijampolės",30004,23836,13,382,23847,7,181,314,1
+2021-08-20,"Marijampolės apskr.","Marijampolės",30219,24050,15,402,24030,8,215,214,2
+2021-08-21,"Marijampolės apskr.","Marijampolės",30224,24052,15,403,24115,8,5,2,0
+2021-08-22,"Marijampolės apskr.","Marijampolės",30225,24053,15,403,24117,8,1,1,0
+2021-08-23,"Marijampolės apskr.","Marijampolės",30360,24215,15,411,24276,8,135,162,0
+2021-08-24,"Marijampolės apskr.","Marijampolės",30466,24348,15,418,24433,8,106,133,0
+2021-08-25,"Marijampolės apskr.","Marijampolės",30602,24499,17,425,24621,9,136,151,2
+2021-08-26,"Marijampolės apskr.","Marijampolės",30754,24692,17,437,24876,9,152,193,0
+2021-08-27,"Marijampolės apskr.","Marijampolės",30886,24870,17,440,25063,9,132,178,0
+2021-08-28,"Marijampolės apskr.","Marijampolės",30913,24876,17,447,25099,9,27,6,0
+2021-08-29,"Marijampolės apskr.","Marijampolės",30914,24876,17,447,25102,9,1,0,0
+2021-08-30,"Marijampolės apskr.","Marijampolės",31034,24993,17,455,25292,9,120,117,0
+2021-08-31,"Marijampolės apskr.","Marijampolės",31135,25080,22,458,25518,9,101,87,5
+2021-09-01,"Marijampolės apskr.","Marijampolės",31209,25159,26,474,25751,12,74,79,4
+2021-09-02,"Marijampolės apskr.","Marijampolės",31294,25307,26,484,26116,13,85,148,0
+2021-09-03,"Marijampolės apskr.","Marijampolės",31357,25403,26,503,26413,15,63,96,0
+2021-09-04,"Marijampolės apskr.","Marijampolės",31395,25423,26,503,26416,15,38,20,0
+2021-09-05,"Marijampolės apskr.","Marijampolės",31395,25423,26,503,26418,15,0,0,0
+2021-09-06,"Marijampolės apskr.","Marijampolės",31453,25535,26,510,26639,15,58,112,0
+2021-09-07,"Marijampolės apskr.","Marijampolės",31509,25600,26,517,26816,15,56,65,0
+2021-09-08,"Marijampolės apskr.","Marijampolės",31564,25695,28,528,27012,17,55,95,2
+2021-09-09,"Marijampolės apskr.","Marijampolės",31668,25819,34,534,27253,31,104,124,6
+2021-09-10,"Marijampolės apskr.","Marijampolės",31752,25923,41,543,27478,33,84,104,7
+2021-09-11,"Marijampolės apskr.","Marijampolės",31777,25927,42,544,27499,33,25,4,1
+2021-09-12,"Marijampolės apskr.","Marijampolės",31777,25927,42,544,27499,33,0,0,0
+2021-09-13,"Marijampolės apskr.","Marijampolės",31878,26015,77,551,27662,33,101,88,35
+2021-09-14,"Marijampolės apskr.","Marijampolės",31944,26077,113,562,27788,38,66,62,36
+2021-09-15,"Marijampolės apskr.","Marijampolės",31977,26164,169,564,27896,42,33,87,56
+2021-09-16,"Marijampolės apskr.","Marijampolės",32043,26237,194,568,28085,42,66,73,25
+2021-09-17,"Marijampolės apskr.","Marijampolės",32096,26321,312,573,28208,42,53,84,118
+2021-09-18,"Marijampolės apskr.","Marijampolės",32120,26334,312,576,28248,42,24,13,0
+2021-09-19,"Marijampolės apskr.","Marijampolės",32120,26335,312,576,28248,42,0,1,0
+2021-09-20,"Marijampolės apskr.","Marijampolės",32151,26402,321,580,28392,42,31,67,9
+2021-09-21,"Marijampolės apskr.","Marijampolės",32199,26445,354,585,28492,42,48,43,33
+2021-09-22,"Marijampolės apskr.","Marijampolės",32261,26497,386,596,28614,44,62,52,32
+2021-09-23,"Marijampolės apskr.","Marijampolės",32350,26539,405,602,28797,50,89,42,19
+2021-09-24,"Marijampolės apskr.","Marijampolės",32412,26573,444,606,28937,57,62,34,39
+2021-09-25,"Marijampolės apskr.","Marijampolės",32414,26574,445,606,28962,58,2,1,1
+2021-09-26,"Marijampolės apskr.","Marijampolės",32414,26575,445,606,28962,58,0,1,0
+2021-09-27,"Marijampolės apskr.","Marijampolės",32437,26619,456,616,29102,94,23,44,11
+2021-09-28,"Marijampolės apskr.","Marijampolės",32506,26641,506,621,29200,130,69,22,50
+2021-09-29,"Marijampolės apskr.","Marijampolės",32544,26666,541,627,29294,186,38,25,35
+2021-09-30,"Marijampolės apskr.","Marijampolės",32621,26705,565,634,29379,211,77,39,24
+2021-10-01,"Marijampolės apskr.","Marijampolės",32667,26759,590,642,29471,329,46,54,25
+2021-10-02,"Marijampolės apskr.","Marijampolės",32683,26760,590,642,29484,329,16,1,0
+2021-10-03,"Marijampolės apskr.","Marijampolės",32685,26760,590,642,29485,329,2,0,0
+2021-10-04,"Marijampolės apskr.","Marijampolės",32716,26797,599,649,29553,338,31,37,9
+2021-10-05,"Marijampolės apskr.","Marijampolės",32747,26826,626,653,29619,371,31,29,27
+2021-10-06,"Marijampolės apskr.","Marijampolės",32778,26851,639,659,29694,403,31,25,13
+2021-10-07,"Marijampolės apskr.","Marijampolės",32834,26889,665,670,29781,422,56,38,26
+2021-10-08,"Marijampolės apskr.","Marijampolės",32898,26940,704,675,29826,462,64,51,39
+2021-10-09,"Marijampolės apskr.","Marijampolės",32898,26940,704,676,29827,463,0,0,0
+2021-10-10,"Marijampolės apskr.","Marijampolės",32899,26940,704,676,29828,463,1,0,0
+2021-10-11,"Marijampolės apskr.","Marijampolės",32927,26975,714,680,29875,474,28,35,10
+2021-10-12,"Marijampolės apskr.","Marijampolės",32969,26997,731,684,29941,524,42,22,17
+2021-10-13,"Marijampolės apskr.","Marijampolės",32993,27022,749,690,29982,559,24,25,18
+2021-10-14,"Marijampolės apskr.","Marijampolės",33036,27062,788,694,30052,583,43,40,39
+2021-10-15,"Marijampolės apskr.","Marijampolės",33096,27103,833,695,30132,608,60,41,45
+2021-10-16,"Marijampolės apskr.","Marijampolės",33097,27103,833,695,30148,608,1,0,0
+2021-10-17,"Marijampolės apskr.","Marijampolės",33097,27103,833,695,30148,608,0,0,0
+2021-10-18,"Marijampolės apskr.","Marijampolės",33131,27122,873,697,30204,617,34,19,40
+2021-10-19,"Marijampolės apskr.","Marijampolės",33152,27144,904,700,30251,644,21,22,31
+2021-10-20,"Marijampolės apskr.","Marijampolės",33193,27173,961,705,30296,657,41,29,57
+2021-10-21,"Marijampolės apskr.","Marijampolės",33247,27218,1017,710,30356,683,54,45,56
+2021-10-22,"Marijampolės apskr.","Marijampolės",33302,27237,1089,717,30437,722,55,19,72
+2021-10-23,"Marijampolės apskr.","Marijampolės",33305,27238,1091,717,30437,722,3,1,2
+2021-10-24,"Marijampolės apskr.","Marijampolės",33306,27238,1091,718,30437,722,1,0,0
+2021-10-25,"Marijampolės apskr.","Marijampolės",33363,27261,1152,725,30486,732,57,23,61
+2021-10-26,"Marijampolės apskr.","Marijampolės",33406,27272,1223,729,30526,749,43,11,71
+2021-10-27,"Marijampolės apskr.","Marijampolės",33459,27291,1315,729,30563,767,53,19,92
+2021-10-28,"Marijampolės apskr.","Marijampolės",33526,27328,1424,734,30621,806,67,37,109
+2021-10-29,"Marijampolės apskr.","Marijampolės",33576,27352,1540,740,30684,851,50,24,116
+2021-10-30,"Marijampolės apskr.","Marijampolės",33581,27364,1557,740,30685,851,5,12,17
+2021-10-31,"Marijampolės apskr.","Marijampolės",33583,27364,1557,740,30685,851,2,0,0
+2021-11-01,"Marijampolės apskr.","Marijampolės",33584,27364,1557,745,30722,891,1,0,0
+2021-11-02,"Marijampolės apskr.","Marijampolės",33584,27367,1557,749,30754,922,0,3,0
+2021-11-03,"Marijampolės apskr.","Marijampolės",33650,27395,1636,755,30806,979,66,28,79
+2021-11-04,"Marijampolės apskr.","Marijampolės",33701,27433,1786,759,30874,1035,51,38,150
+2021-11-05,"Marijampolės apskr.","Marijampolės",33737,27454,1889,766,30916,1107,36,21,103
+2021-11-06,"Marijampolės apskr.","Marijampolės",33774,27468,1922,766,30919,1109,37,14,33
+2021-11-07,"Marijampolės apskr.","Marijampolės",33776,27469,1923,766,30920,1109,2,1,1
+2021-11-08,"Marijampolės apskr.","Marijampolės",33827,27487,1982,776,30978,1170,51,18,59
+2021-11-09,"Marijampolės apskr.","Marijampolės",33883,27502,2142,782,31011,1241,56,15,160
+2021-11-10,"Marijampolės apskr.","Marijampolės",33947,27520,2338,795,31044,1333,64,18,196
+2021-11-11,"Marijampolės apskr.","Marijampolės",34005,27555,2560,803,31108,1442,58,35,222
+2021-11-12,"Marijampolės apskr.","Marijampolės",34067,27580,2751,812,31151,1558,62,25,191
+2021-11-13,"Marijampolės apskr.","Marijampolės",34068,27582,2761,812,31164,1575,1,2,10
+2021-11-14,"Marijampolės apskr.","Marijampolės",34068,27583,2761,812,31166,1575,0,1,0
+2021-11-15,"Marijampolės apskr.","Marijampolės",34113,27601,2827,812,31166,1575,45,18,66
+2021-11-16,"Marijampolės apskr.","Marijampolės",34172,27619,2953,812,31169,1575,59,18,126
+2021-11-17,"Marijampolės apskr.","Marijampolės",34216,27648,3166,820,31233,1656,44,29,213
+2021-11-18,"Marijampolės apskr.","Marijampolės",34280,27717,3437,825,31288,1807,64,69,271
+2021-11-19,"Marijampolės apskr.","Marijampolės",34335,27745,3757,829,31324,1910,55,28,320
+2021-11-20,"Marijampolės apskr.","Marijampolės",34337,27746,3757,831,31355,1945,2,1,0
+2021-11-21,"Marijampolės apskr.","Marijampolės",34338,27746,3761,831,31358,1946,1,0,4
+2021-11-22,"Marijampolės apskr.","Marijampolės",34379,27762,3911,835,31396,2006,41,16,150
+2021-11-23,"Marijampolės apskr.","Marijampolės",34427,27779,4092,841,31430,2168,48,17,181
+2021-11-24,"Marijampolės apskr.","Marijampolės",34481,27801,4378,850,31463,2365,54,22,286
+2021-11-25,"Marijampolės apskr.","Marijampolės",34523,27834,4646,856,31515,2590,42,33,268
+2021-11-26,"Marijampolės apskr.","Marijampolės",34589,27868,4952,865,31569,2784,66,34,306
+2021-11-27,"Marijampolės apskr.","Marijampolės",34614,27885,5034,866,31571,2794,25,17,82
+2021-11-28,"Marijampolės apskr.","Marijampolės",34614,27886,5042,866,31572,2794,0,1,8
+2021-11-29,"Marijampolės apskr.","Marijampolės",34671,27925,5139,872,31607,2863,57,39,97
+2021-11-30,"Marijampolės apskr.","Marijampolės",34719,27956,5363,877,31657,2990,48,31,224
+2021-12-01,"Marijampolės apskr.","Marijampolės",34761,28006,5648,880,31697,3207,42,50,285
+2021-12-02,"Marijampolės apskr.","Marijampolės",34817,28064,5939,889,31781,3487,56,58,291
+2021-12-03,"Marijampolės apskr.","Marijampolės",34875,28111,6206,894,31821,3810,58,47,267
+2021-12-04,"Marijampolės apskr.","Marijampolės",34916,28112,6212,894,31823,3811,41,1,6
+2021-12-05,"Marijampolės apskr.","Marijampolės",34916,28112,6216,894,31824,3815,0,0,4
+2021-12-06,"Marijampolės apskr.","Marijampolės",34970,28146,6427,899,31844,3974,54,34,211
+2021-12-07,"Marijampolės apskr.","Marijampolės",35016,28190,6762,908,31865,4163,46,44,335
+2021-12-08,"Marijampolės apskr.","Marijampolės",35052,28246,7070,921,31895,4455,36,56,308
+2021-12-09,"Marijampolės apskr.","Marijampolės",35092,28295,7396,931,31932,4730,40,49,326
+2021-12-10,"Marijampolės apskr.","Marijampolės",35132,28340,7690,939,31999,5045,40,45,294
+2021-12-11,"Marijampolės apskr.","Marijampolės",35148,28353,7749,946,32021,5134,16,13,59
+2021-12-12,"Marijampolės apskr.","Marijampolės",35148,28353,7762,946,32021,5143,0,0,13
+2021-12-13,"Marijampolės apskr.","Marijampolės",35199,28392,7977,954,32092,5245,51,39,215
+2021-12-14,"Marijampolės apskr.","Marijampolės",35235,28431,8287,961,32146,5473,36,39,310
+2021-12-15,"Marijampolės apskr.","Marijampolės",35265,28465,8574,973,32202,5769,30,34,287
+2021-12-16,"Marijampolės apskr.","Marijampolės",35301,28515,8971,979,32273,6068,36,50,397
+2021-12-17,"Marijampolės apskr.","Marijampolės",35330,28566,9292,993,32328,6351,29,51,321
+2021-12-18,"Marijampolės apskr.","Marijampolės",35332,28567,9305,994,32369,6357,2,1,13
+2021-12-19,"Marijampolės apskr.","Marijampolės",35332,28568,9316,994,32369,6361,0,1,11
+2021-12-20,"Marijampolės apskr.","Marijampolės",35367,28608,9530,1004,32420,6584,35,40,214
+2021-12-21,"Marijampolės apskr.","Marijampolės",35415,28644,9781,1011,32466,6938,48,36,251
+2021-12-22,"Marijampolės apskr.","Marijampolės",35437,28670,9956,1016,32524,7268,22,26,175
+2021-12-23,"Marijampolės apskr.","Marijampolės",35463,28722,10111,1024,32578,7610,26,52,155
+2021-12-24,"Marijampolės apskr.","Marijampolės",35463,28722,10111,1030,32637,7915,0,0,0
+2021-12-25,"Marijampolės apskr.","Marijampolės",35463,28722,10111,1030,32654,7982,0,0,0
+2021-12-26,"Marijampolės apskr.","Marijampolės",35463,28723,10112,1030,32654,7995,0,1,1
+2021-12-27,"Marijampolės apskr.","Marijampolės",35500,28794,10435,1041,32708,8222,37,71,323
+2021-12-28,"Marijampolės apskr.","Marijampolės",35530,28856,10816,1048,32751,8542,30,62,381
+2021-12-29,"Marijampolės apskr.","Marijampolės",35565,28908,11065,1054,32788,8844,35,52,249
+2021-12-30,"Marijampolės apskr.","Marijampolės",35600,28945,11313,1055,32832,9258,35,37,248
+2021-12-31,"Marijampolės apskr.","Marijampolės",35610,28958,11385,1057,32869,9600,10,13,72
+2022-01-01,"Marijampolės apskr.","Marijampolės",35610,28958,11385,1057,32872,9613,0,0,0
+2022-01-02,"Marijampolės apskr.","Marijampolės",35610,28958,11385,1057,32873,9624,0,0,0
+2022-01-03,"Marijampolės apskr.","Marijampolės",35638,29004,11634,1062,32920,9852,28,46,249
+2022-01-04,"Marijampolės apskr.","Marijampolės",35681,29060,12010,1068,32961,10121,43,56,376
+2022-01-05,"Marijampolės apskr.","Marijampolės",35733,29111,12354,1073,32987,10309,52,51,344
+2022-01-06,"Marijampolės apskr.","Marijampolės",35767,29175,12759,1077,33037,10484,34,64,405
+2022-01-07,"Marijampolės apskr.","Marijampolės",35806,29237,13071,1077,33037,10484,39,62,312
+2022-01-08,"Marijampolės apskr.","Marijampolės",35807,29240,13085,1077,33037,10484,1,3,14
+2022-01-09,"Marijampolės apskr.","Marijampolės",35807,29241,13096,1077,33038,10485,0,1,11
+2022-01-10,"Marijampolės apskr.","Marijampolės",35846,29277,13347,1079,33089,10849,39,36,251
+2022-01-11,"Marijampolės apskr.","Marijampolės",35868,29306,13593,1086,33128,11267,22,29,246
+2022-01-12,"Marijampolės apskr.","Marijampolės",35887,29341,13809,1095,33160,11548,19,35,216
+2022-01-13,"Marijampolės apskr.","Marijampolės",35909,29375,14047,1102,33184,11816,22,34,238
+2022-01-14,"Marijampolės apskr.","Marijampolės",35925,29399,14237,1106,33190,11899,16,24,190
+2022-01-15,"Marijampolės apskr.","Marijampolės",35930,29406,14286,1106,33190,11899,5,7,49
+2022-01-16,"Marijampolės apskr.","Marijampolės",35930,29406,14290,1106,33190,11899,0,0,4
+2022-01-17,"Marijampolės apskr.","Marijampolės",35946,29423,14406,1111,33215,12177,16,17,116
+2022-01-18,"Marijampolės apskr.","Marijampolės",35961,29444,14537,1120,33257,12586,15,21,131
+2022-01-19,"Marijampolės apskr.","Marijampolės",35980,29477,14648,1133,33287,12960,19,33,111
+2022-01-20,"Marijampolės apskr.","Marijampolės",35995,29513,14799,1139,33326,13401,15,36,151
+2022-01-21,"Marijampolės apskr.","Marijampolės",36005,29544,14915,1149,33378,13737,10,31,116
+2022-01-22,"Marijampolės apskr.","Marijampolės",36007,29544,14919,1149,33380,13753,2,0,4
+2022-01-23,"Marijampolės apskr.","Marijampolės",36007,29544,14921,1149,33381,13764,0,0,2
+2022-01-24,"Marijampolės apskr.","Marijampolės",36018,29564,14988,1161,33403,14043,11,20,67
+2022-01-25,"Marijampolės apskr.","Marijampolės",36031,29586,15070,1169,33422,14303,13,22,82
+2022-01-26,"Marijampolės apskr.","Marijampolės",36037,29629,15144,1177,33439,14540,6,43,74
+2022-01-27,"Marijampolės apskr.","Marijampolės",36046,29665,15236,1187,33462,14794,9,36,92
+2022-01-28,"Marijampolės apskr.","Marijampolės",36054,29714,15339,1191,33476,14999,8,49,103
+2022-01-29,"Marijampolės apskr.","Marijampolės",36054,29714,15343,1194,33478,15055,0,0,4
+2022-01-30,"Marijampolės apskr.","Marijampolės",36054,29714,15344,1194,33478,15059,0,0,1
+2022-01-31,"Marijampolės apskr.","Marijampolės",36058,29734,15385,1202,33487,15183,4,20,41
+2022-02-01,"Marijampolės apskr.","Marijampolės",36059,29754,15420,1209,33501,15324,1,20,35
+2022-02-02,"Marijampolės apskr.","Marijampolės",36064,29774,15454,1220,33522,15447,5,20,34
+2022-02-03,"Marijampolės apskr.","Marijampolės",36067,29790,15486,1227,33542,15614,3,16,32
+2022-02-04,"Marijampolės apskr.","Marijampolės",36071,29802,15510,1232,33558,15746,4,12,24
+2022-02-05,"Marijampolės apskr.","Marijampolės",36071,29803,15510,1234,33558,15750,0,1,0
+2022-02-06,"Marijampolės apskr.","Marijampolės",36071,29803,15510,1234,33558,15752,0,0,0
+2022-02-07,"Marijampolės apskr.","Marijampolės",36077,29815,15527,1239,33569,15828,6,12,17
+2022-02-08,"Marijampolės apskr.","Marijampolės",36078,29824,15556,1245,33578,15923,1,9,29
+2022-02-09,"Marijampolės apskr.","Marijampolės",36080,29838,15572,1248,33605,16013,2,14,16
+2022-02-10,"Marijampolės apskr.","Marijampolės",36081,29847,15582,1250,33624,16122,1,9,10
+2022-02-11,"Marijampolės apskr.","Marijampolės",36084,29856,15605,1253,33659,16239,3,9,23
+2022-02-12,"Marijampolės apskr.","Marijampolės",36084,29856,15605,1253,33659,16243,0,0,0
+2022-02-13,"Marijampolės apskr.","Marijampolės",36084,29856,15605,1253,33659,16244,0,0,0
+2022-02-14,"Marijampolės apskr.","Marijampolės",36088,29868,15611,1253,33672,16292,4,12,6
+2022-02-15,"Marijampolės apskr.","Marijampolės",36088,29879,15631,1253,33684,16335,0,11,20
+2022-02-16,"Marijampolės apskr.","Marijampolės",36088,29879,15631,1256,33699,16374,0,0,0
+2022-02-17,"Marijampolės apskr.","Marijampolės",36090,29893,15638,1257,33707,16414,2,14,7
+2022-02-18,"Marijampolės apskr.","Marijampolės",36092,29906,15658,1261,33712,16445,2,13,20
+2022-02-19,"Marijampolės apskr.","Marijampolės",36092,29906,15658,1261,33712,16446,0,0,0
+2022-02-20,"Marijampolės apskr.","Marijampolės",36092,29907,15658,1261,33712,16446,0,1,0
+2022-02-21,"Marijampolės apskr.","Marijampolės",36093,29915,15671,1265,33718,16468,1,8,13
+2022-02-22,"Marijampolės apskr.","Marijampolės",36095,29919,15685,1265,33725,16499,2,4,14
+2022-02-23,"Marijampolės apskr.","Marijampolės",36095,29923,15689,1265,33732,16522,0,4,4
+2022-02-24,"Marijampolės apskr.","Marijampolės",36099,29932,15698,1265,33737,16536,4,9,9
+2022-02-25,"Marijampolės apskr.","Marijampolės",36100,29937,15707,1267,33744,16561,1,5,9
+2022-02-26,"Marijampolės apskr.","Marijampolės",36100,29937,15707,1267,33744,16561,0,0,0
+2022-02-27,"Marijampolės apskr.","Marijampolės",36100,29937,15707,1267,33744,16561,0,0,0
+2022-02-28,"Marijampolės apskr.","Marijampolės",36102,29940,15713,1270,33752,16571,2,3,6
+2022-03-01,"Marijampolės apskr.","Marijampolės",36102,29945,15718,1270,33762,16592,0,5,5
+2022-03-02,"Marijampolės apskr.","Marijampolės",36102,29948,15725,1270,33762,16592,0,3,7
+2022-03-03,"Marijampolės apskr.","Marijampolės",36102,29949,15729,1272,33769,16606,0,1,4
+2022-03-04,"Marijampolės apskr.","Marijampolės",36105,29957,15736,1274,33781,16627,3,8,7
+2022-03-05,"Marijampolės apskr.","Marijampolės",36105,29957,15736,1274,33781,16627,0,0,0
+2022-03-06,"Marijampolės apskr.","Marijampolės",36105,29957,15736,1274,33782,16627,0,0,0
+2022-03-07,"Marijampolės apskr.","Marijampolės",36108,29960,15742,1275,33786,16644,3,3,6
+2022-03-08,"Marijampolės apskr.","Marijampolės",36108,29963,15750,1277,33787,16661,0,3,8
+2022-03-09,"Marijampolės apskr.","Marijampolės",36110,29969,15755,1277,33789,16667,2,6,5
+2022-03-10,"Marijampolės apskr.","Marijampolės",36112,29972,15767,1281,33794,16680,2,3,12
+2022-03-11,"Marijampolės apskr.","Marijampolės",36112,29973,15768,1282,33798,16690,0,1,1
 2020-12-01,"Marijampolės apskr.","Šakių r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Marijampolės apskr.","Šakių r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Marijampolės apskr.","Šakių r.",0,0,0,0,0,0,0,0,0
@@ -11159,6 +11182,7 @@
 2022-03-08,"Marijampolės apskr.","Šakių r.",18600,16214,8313,459,17600,8795,0,0,4
 2022-03-09,"Marijampolės apskr.","Šakių r.",18602,16217,8332,459,17600,8803,2,3,19
 2022-03-10,"Marijampolės apskr.","Šakių r.",18602,16219,8336,461,17602,8809,0,2,4
+2022-03-11,"Marijampolės apskr.","Šakių r.",18602,16219,8336,463,17603,8816,0,0,0
 2020-12-01,"Marijampolės apskr.","Vilkaviškio r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Marijampolės apskr.","Vilkaviškio r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Marijampolės apskr.","Vilkaviškio r.",0,0,0,0,0,0,0,0,0
@@ -11624,6 +11648,7 @@
 2022-03-08,"Marijampolės apskr.","Vilkaviškio r.",23047,19182,9726,721,21516,10461,0,0,5
 2022-03-09,"Marijampolės apskr.","Vilkaviškio r.",23047,19183,9732,721,21518,10468,0,1,6
 2022-03-10,"Marijampolės apskr.","Vilkaviškio r.",23050,19186,9736,723,21528,10478,3,3,4
+2022-03-11,"Marijampolės apskr.","Vilkaviškio r.",23050,19186,9736,724,21528,10483,0,0,0
 2020-12-01,"Panevėžio apskr.","Biržų r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Panevėžio apskr.","Biržų r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Panevėžio apskr.","Biržų r.",0,0,0,0,0,0,0,0,0
@@ -12089,6 +12114,7 @@
 2022-03-08,"Panevėžio apskr.","Biržų r.",16539,14540,7778,550,15437,8262,0,1,2
 2022-03-09,"Panevėžio apskr.","Biržų r.",16539,14540,7778,550,15437,8265,0,0,0
 2022-03-10,"Panevėžio apskr.","Biržų r.",16540,14543,7786,552,15446,8278,1,3,8
+2022-03-11,"Panevėžio apskr.","Biržų r.",16540,14543,7786,553,15446,8282,0,0,0
 2020-12-01,"Panevėžio apskr.","Kupiškio r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Panevėžio apskr.","Kupiškio r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Panevėžio apskr.","Kupiškio r.",0,0,0,0,0,0,0,0,0
@@ -12554,6 +12580,7 @@
 2022-03-08,"Panevėžio apskr.","Kupiškio r.",12261,10701,5753,409,11526,6038,0,2,1
 2022-03-09,"Panevėžio apskr.","Kupiškio r.",12261,10701,5759,409,11528,6038,0,0,6
 2022-03-10,"Panevėžio apskr.","Kupiškio r.",12261,10705,5761,409,11529,6043,0,4,2
+2022-03-11,"Panevėžio apskr.","Kupiškio r.",12261,10705,5761,409,11530,6046,0,0,0
 2020-12-01,"Panevėžio apskr.","Panevėžio m.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Panevėžio apskr.","Panevėžio m.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Panevėžio apskr.","Panevėžio m.",0,0,0,0,0,0,0,0,0
@@ -13019,6 +13046,7 @@
 2022-03-08,"Panevėžio apskr.","Panevėžio m.",61320,53267,28306,2013,57594,29781,4,4,5
 2022-03-09,"Panevėžio apskr.","Panevėžio m.",61321,53275,28325,2015,57597,29812,1,8,19
 2022-03-10,"Panevėžio apskr.","Panevėžio m.",61323,53278,28338,2020,57603,29842,2,3,13
+2022-03-11,"Panevėžio apskr.","Panevėžio m.",61323,53278,28338,2022,57612,29870,0,0,0
 2020-12-01,"Panevėžio apskr.","Panevėžio r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Panevėžio apskr.","Panevėžio r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Panevėžio apskr.","Panevėžio r.",0,0,0,0,0,0,0,0,0
@@ -13484,6 +13512,7 @@
 2022-03-08,"Panevėžio apskr.","Panevėžio r.",25646,22447,11998,731,24317,12502,0,2,5
 2022-03-09,"Panevėžio apskr.","Panevėžio r.",25648,22447,12006,732,24323,12511,2,0,8
 2022-03-10,"Panevėžio apskr.","Panevėžio r.",25649,22448,12012,732,24325,12521,1,1,6
+2022-03-11,"Panevėžio apskr.","Panevėžio r.",25649,22448,12012,732,24327,12531,0,0,0
 2020-12-01,"Panevėžio apskr.","Pasvalio r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Panevėžio apskr.","Pasvalio r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Panevėžio apskr.","Pasvalio r.",0,0,0,0,0,0,0,0,0
@@ -13949,6 +13978,7 @@
 2022-03-08,"Panevėžio apskr.","Pasvalio r.",15815,13670,6693,402,14926,7129,1,1,0
 2022-03-09,"Panevėžio apskr.","Pasvalio r.",15815,13673,6703,402,14926,7133,0,3,10
 2022-03-10,"Panevėžio apskr.","Pasvalio r.",15815,13676,6704,403,14927,7142,0,3,1
+2022-03-11,"Panevėžio apskr.","Pasvalio r.",15815,13676,6704,403,14928,7146,0,0,0
 2020-12-01,"Panevėžio apskr.","Rokiškio r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Panevėžio apskr.","Rokiškio r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Panevėžio apskr.","Rokiškio r.",0,0,0,0,0,0,0,0,0
@@ -14414,6 +14444,7 @@
 2022-03-08,"Panevėžio apskr.","Rokiškio r.",20899,18561,10132,547,19773,10633,0,2,4
 2022-03-09,"Panevėžio apskr.","Rokiškio r.",20901,18562,10139,547,19777,10637,2,1,7
 2022-03-10,"Panevėžio apskr.","Rokiškio r.",20902,18563,10140,548,19777,10639,1,1,1
+2022-03-11,"Panevėžio apskr.","Rokiškio r.",20902,18563,10140,550,19781,10653,0,0,0
 2020-12-01,"Šiaulių apskr.","Akmenės r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Šiaulių apskr.","Akmenės r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Šiaulių apskr.","Akmenės r.",0,0,0,0,0,0,0,0,0
@@ -14879,6 +14910,7 @@
 2022-03-08,"Šiaulių apskr.","Akmenės r.",18396,15071,7186,706,16961,7845,1,1,0
 2022-03-09,"Šiaulių apskr.","Akmenės r.",18397,15074,7192,706,16965,7849,1,3,6
 2022-03-10,"Šiaulių apskr.","Akmenės r.",18397,15078,7194,707,16965,7854,0,4,2
+2022-03-11,"Šiaulių apskr.","Akmenės r.",18397,15078,7194,707,16968,7858,0,0,0
 2020-12-01,"Šiaulių apskr.","Joniškio r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Šiaulių apskr.","Joniškio r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Šiaulių apskr.","Joniškio r.",0,0,0,0,0,0,0,0,0
@@ -15343,7 +15375,8 @@
 2022-03-07,"Šiaulių apskr.","Joniškio r.",14772,12998,6882,372,14052,7187,1,0,6
 2022-03-08,"Šiaulių apskr.","Joniškio r.",14772,12998,6882,372,14052,7187,0,0,0
 2022-03-09,"Šiaulių apskr.","Joniškio r.",14772,12999,6886,372,14052,7195,0,1,4
-2022-03-10,"Šiaulių apskr.","Joniškio r.",14772,12999,6888,372,14052,7195,0,0,2
+2022-03-10,"Šiaulių apskr.","Joniškio r.",14772,12999,6889,372,14052,7195,0,0,3
+2022-03-11,"Šiaulių apskr.","Joniškio r.",14772,12999,6889,372,14055,7203,0,0,0
 2020-12-01,"Šiaulių apskr.","Kelmės r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Šiaulių apskr.","Kelmės r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Šiaulių apskr.","Kelmės r.",0,0,0,0,0,0,0,0,0
@@ -15809,6 +15842,7 @@
 2022-03-08,"Šiaulių apskr.","Kelmės r.",17434,14895,7140,499,16263,7751,0,2,2
 2022-03-09,"Šiaulių apskr.","Kelmės r.",17436,14899,7140,499,16265,7760,2,4,0
 2022-03-10,"Šiaulių apskr.","Kelmės r.",17436,14899,7142,499,16265,7760,0,0,2
+2022-03-11,"Šiaulių apskr.","Kelmės r.",17436,14899,7142,500,16268,7772,0,0,0
 2020-12-01,"Šiaulių apskr.","Pakruojo r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Šiaulių apskr.","Pakruojo r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Šiaulių apskr.","Pakruojo r.",0,0,0,0,0,0,0,0,0
@@ -16274,6 +16308,7 @@
 2022-03-08,"Šiaulių apskr.","Pakruojo r.",13350,11285,5845,267,12519,6387,0,1,2
 2022-03-09,"Šiaulių apskr.","Pakruojo r.",13350,11285,5846,267,12519,6390,0,0,1
 2022-03-10,"Šiaulių apskr.","Pakruojo r.",13350,11287,5847,267,12519,6390,0,2,1
+2022-03-11,"Šiaulių apskr.","Pakruojo r.",13350,11287,5847,267,12519,6393,0,0,0
 2020-12-01,"Šiaulių apskr.","Radviliškio r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Šiaulių apskr.","Radviliškio r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Šiaulių apskr.","Radviliškio r.",0,0,0,0,0,0,0,0,0
@@ -16739,6 +16774,7 @@
 2022-03-08,"Šiaulių apskr.","Radviliškio r.",23864,19507,9256,767,22397,9866,1,4,3
 2022-03-09,"Šiaulių apskr.","Radviliškio r.",23865,19507,9258,769,22400,9870,1,0,2
 2022-03-10,"Šiaulių apskr.","Radviliškio r.",23871,19510,9267,770,22403,9876,6,3,9
+2022-03-11,"Šiaulių apskr.","Radviliškio r.",23871,19510,9267,772,22407,9886,0,0,0
 2020-12-01,"Šiaulių apskr.","Šiaulių m.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Šiaulių apskr.","Šiaulių m.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Šiaulių apskr.","Šiaulių m.",0,0,0,0,0,0,0,0,0
@@ -17005,205 +17041,206 @@
 2021-08-21,"Šiaulių apskr.","Šiaulių m.",57475,45235,27,764,44066,12,121,287,0
 2021-08-22,"Šiaulių apskr.","Šiaulių m.",57480,45236,27,764,44073,12,5,1,0
 2021-08-23,"Šiaulių apskr.","Šiaulių m.",57687,45500,27,775,44421,12,207,264,0
-2021-08-24,"Šiaulių apskr.","Šiaulių m.",57904,45723,27,794,44815,12,217,223,0
-2021-08-25,"Šiaulių apskr.","Šiaulių m.",58189,45964,28,854,45233,12,285,241,1
-2021-08-26,"Šiaulių apskr.","Šiaulių m.",58379,46297,28,884,45748,12,190,333,0
-2021-08-27,"Šiaulių apskr.","Šiaulių m.",58803,46709,31,901,46402,13,424,412,3
-2021-08-28,"Šiaulių apskr.","Šiaulių m.",58920,46865,31,912,46779,13,117,156,0
-2021-08-29,"Šiaulių apskr.","Šiaulių m.",58923,46865,31,912,46785,13,3,0,0
-2021-08-30,"Šiaulių apskr.","Šiaulių m.",59058,47064,31,924,47193,13,135,199,0
-2021-08-31,"Šiaulių apskr.","Šiaulių m.",59183,47253,32,944,47569,13,125,189,1
-2021-09-01,"Šiaulių apskr.","Šiaulių m.",59375,47495,38,965,48091,17,192,242,6
-2021-09-02,"Šiaulių apskr.","Šiaulių m.",59517,47732,39,978,48694,17,142,237,1
-2021-09-03,"Šiaulių apskr.","Šiaulių m.",59724,47971,42,997,49211,28,207,239,3
-2021-09-04,"Šiaulių apskr.","Šiaulių m.",59809,48109,42,1005,49503,28,85,138,0
-2021-09-05,"Šiaulių apskr.","Šiaulių m.",59809,48111,42,1005,49508,28,0,2,0
-2021-09-06,"Šiaulių apskr.","Šiaulių m.",59945,48246,43,1022,49830,28,136,135,1
-2021-09-07,"Šiaulių apskr.","Šiaulių m.",60069,48432,48,1032,50107,28,124,186,5
-2021-09-08,"Šiaulių apskr.","Šiaulių m.",60204,48698,73,1045,50398,29,135,266,25
-2021-09-09,"Šiaulių apskr.","Šiaulių m.",60346,48911,145,1055,50746,29,142,213,72
-2021-09-10,"Šiaulių apskr.","Šiaulių m.",60542,49136,204,1074,51394,32,196,225,59
-2021-09-11,"Šiaulių apskr.","Šiaulių m.",60606,49219,209,1088,51550,32,64,83,5
-2021-09-12,"Šiaulių apskr.","Šiaulių m.",60608,49219,210,1088,51552,32,2,0,1
-2021-09-13,"Šiaulių apskr.","Šiaulių m.",60774,49384,217,1092,51793,32,166,165,7
-2021-09-14,"Šiaulių apskr.","Šiaulių m.",61002,49548,421,1097,52024,33,228,164,204
-2021-09-15,"Šiaulių apskr.","Šiaulių m.",61168,49756,438,1110,52276,39,166,208,17
-2021-09-16,"Šiaulių apskr.","Šiaulių m.",61306,49922,501,1122,52521,40,138,166,63
-2021-09-17,"Šiaulių apskr.","Šiaulių m.",61433,50117,581,1136,52771,43,127,195,80
-2021-09-18,"Šiaulių apskr.","Šiaulių m.",61501,50238,586,1144,52922,43,68,121,5
-2021-09-19,"Šiaulių apskr.","Šiaulių m.",61503,50239,586,1144,52924,43,2,1,0
-2021-09-20,"Šiaulių apskr.","Šiaulių m.",61593,50332,595,1148,53112,44,90,93,9
-2021-09-21,"Šiaulių apskr.","Šiaulių m.",61700,50419,627,1153,53354,49,107,87,32
-2021-09-22,"Šiaulių apskr.","Šiaulių m.",61824,50604,654,1158,53636,74,124,185,27
-2021-09-23,"Šiaulių apskr.","Šiaulių m.",61928,50722,673,1169,53858,146,104,118,19
-2021-09-24,"Šiaulių apskr.","Šiaulių m.",62013,50903,699,1182,54106,205,85,181,26
-2021-09-25,"Šiaulių apskr.","Šiaulių m.",62086,50947,700,1191,54190,210,73,44,1
-2021-09-26,"Šiaulių apskr.","Šiaulių m.",62086,50947,701,1192,54190,211,0,0,1
-2021-09-27,"Šiaulių apskr.","Šiaulių m.",62285,51051,720,1200,54413,218,199,104,19
-2021-09-28,"Šiaulių apskr.","Šiaulių m.",62376,51116,744,1217,54645,422,91,65,24
-2021-09-29,"Šiaulių apskr.","Šiaulių m.",62508,51234,780,1230,54877,439,132,118,36
-2021-09-30,"Šiaulių apskr.","Šiaulių m.",62598,51357,810,1237,55075,502,90,123,30
-2021-10-01,"Šiaulių apskr.","Šiaulių m.",62747,51510,840,1259,55270,582,149,153,30
-2021-10-02,"Šiaulių apskr.","Šiaulių m.",62813,51561,842,1268,55393,587,66,51,2
-2021-10-03,"Šiaulių apskr.","Šiaulių m.",62815,51562,842,1268,55394,587,2,1,0
-2021-10-04,"Šiaulių apskr.","Šiaulių m.",62988,51667,861,1278,55494,597,173,105,19
-2021-10-05,"Šiaulių apskr.","Šiaulių m.",63112,51809,889,1285,55610,629,124,142,28
-2021-10-06,"Šiaulių apskr.","Šiaulių m.",63201,51939,914,1294,55825,656,89,130,25
-2021-10-07,"Šiaulių apskr.","Šiaulių m.",63258,52027,947,1299,55968,675,57,88,33
-2021-10-08,"Šiaulių apskr.","Šiaulių m.",63437,52139,991,1305,56159,701,179,112,44
-2021-10-09,"Šiaulių apskr.","Šiaulių m.",63518,52193,993,1308,56253,702,81,54,2
-2021-10-10,"Šiaulių apskr.","Šiaulių m.",63519,52195,993,1308,56253,703,1,2,0
-2021-10-11,"Šiaulių apskr.","Šiaulių m.",63631,52268,1029,1314,56486,722,112,73,36
-2021-10-12,"Šiaulių apskr.","Šiaulių m.",63780,52343,1068,1322,56586,746,149,75,39
-2021-10-13,"Šiaulių apskr.","Šiaulių m.",63922,52434,1118,1327,56778,782,142,91,50
-2021-10-14,"Šiaulių apskr.","Šiaulių m.",64044,52482,1165,1332,56948,812,122,48,47
-2021-10-15,"Šiaulių apskr.","Šiaulių m.",64251,52594,1291,1337,57193,842,207,112,126
-2021-10-16,"Šiaulių apskr.","Šiaulių m.",64276,52605,1296,1337,57300,844,25,11,5
-2021-10-17,"Šiaulių apskr.","Šiaulių m.",64276,52605,1296,1337,57303,844,0,0,0
-2021-10-18,"Šiaulių apskr.","Šiaulių m.",64521,52677,1355,1349,57514,863,245,72,59
-2021-10-19,"Šiaulių apskr.","Šiaulių m.",64648,52720,1426,1353,57731,891,127,43,71
-2021-10-20,"Šiaulių apskr.","Šiaulių m.",64795,52798,1547,1361,57900,916,147,78,121
-2021-10-21,"Šiaulių apskr.","Šiaulių m.",64955,52831,1658,1367,58006,949,160,33,111
-2021-10-22,"Šiaulių apskr.","Šiaulių m.",65131,52921,1800,1381,58215,993,176,90,142
-2021-10-23,"Šiaulių apskr.","Šiaulių m.",65140,52921,1801,1383,58339,995,9,0,1
-2021-10-24,"Šiaulių apskr.","Šiaulių m.",65141,52922,1802,1383,58342,995,1,1,1
-2021-10-25,"Šiaulių apskr.","Šiaulių m.",65260,52993,1903,1390,58484,1031,119,71,101
-2021-10-26,"Šiaulių apskr.","Šiaulių m.",65502,53023,1997,1393,58688,1070,242,30,94
-2021-10-27,"Šiaulių apskr.","Šiaulių m.",65651,53080,2107,1400,58881,1120,149,57,110
-2021-10-28,"Šiaulių apskr.","Šiaulių m.",65763,53109,2231,1405,59019,1167,112,29,124
-2021-10-29,"Šiaulių apskr.","Šiaulių m.",65972,53202,2345,1410,59282,1293,209,93,114
-2021-10-30,"Šiaulių apskr.","Šiaulių m.",65976,53204,2348,1410,59315,1298,4,2,3
-2021-10-31,"Šiaulių apskr.","Šiaulių m.",65980,53204,2349,1410,59315,1298,4,0,1
-2021-11-01,"Šiaulių apskr.","Šiaulių m.",65980,53204,2349,1415,59593,1357,0,0,0
-2021-11-02,"Šiaulių apskr.","Šiaulių m.",65984,53206,2349,1418,59728,1428,4,2,0
-2021-11-03,"Šiaulių apskr.","Šiaulių m.",66138,53266,2482,1424,59911,1549,154,60,133
-2021-11-04,"Šiaulių apskr.","Šiaulių m.",66295,53313,2718,1428,60058,1660,157,47,236
-2021-11-05,"Šiaulių apskr.","Šiaulių m.",66464,53370,2887,1433,60246,1803,169,57,169
-2021-11-06,"Šiaulių apskr.","Šiaulių m.",66493,53374,2906,1433,60251,1804,29,4,19
-2021-11-07,"Šiaulių apskr.","Šiaulių m.",66496,53374,2909,1434,60252,1805,3,0,3
-2021-11-08,"Šiaulių apskr.","Šiaulių m.",66638,53413,3028,1437,60379,1906,142,39,119
-2021-11-09,"Šiaulių apskr.","Šiaulių m.",66823,53449,3204,1447,60597,2000,185,36,176
-2021-11-10,"Šiaulių apskr.","Šiaulių m.",66933,53491,3448,1452,60758,2110,110,42,244
-2021-11-11,"Šiaulių apskr.","Šiaulių m.",67076,53537,3798,1457,60861,2234,143,46,350
-2021-11-12,"Šiaulių apskr.","Šiaulių m.",67213,53625,4122,1463,61083,2348,137,88,324
-2021-11-13,"Šiaulių apskr.","Šiaulių m.",67243,53632,4193,1463,61088,2351,30,7,71
-2021-11-14,"Šiaulių apskr.","Šiaulių m.",67243,53633,4195,1463,61091,2352,0,1,2
-2021-11-15,"Šiaulių apskr.","Šiaulių m.",67384,53695,4423,1463,61091,2352,141,62,228
-2021-11-16,"Šiaulių apskr.","Šiaulių m.",67525,53753,4691,1463,61095,2352,141,58,268
-2021-11-17,"Šiaulių apskr.","Šiaulių m.",67631,53816,5037,1468,61262,2485,106,63,346
-2021-11-18,"Šiaulių apskr.","Šiaulių m.",67752,53879,5473,1480,61383,2721,121,63,436
-2021-11-19,"Šiaulių apskr.","Šiaulių m.",67875,53962,5849,1489,61545,2891,123,83,376
-2021-11-20,"Šiaulių apskr.","Šiaulių m.",67904,53981,6011,1492,61559,2910,29,19,162
-2021-11-21,"Šiaulių apskr.","Šiaulių m.",67904,53981,6016,1493,61560,2913,0,0,5
-2021-11-22,"Šiaulių apskr.","Šiaulių m.",68051,54015,6351,1498,61697,3032,147,34,335
-2021-11-23,"Šiaulių apskr.","Šiaulių m.",68196,54045,6743,1502,61855,3208,145,30,392
-2021-11-24,"Šiaulių apskr.","Šiaulių m.",68289,54116,7236,1510,61964,3452,93,71,493
-2021-11-25,"Šiaulių apskr.","Šiaulių m.",68417,54204,7779,1515,62093,3805,128,88,543
-2021-11-26,"Šiaulių apskr.","Šiaulių m.",68533,54280,8342,1526,62254,4130,116,76,563
-2021-11-27,"Šiaulių apskr.","Šiaulių m.",68579,54315,8554,1526,62267,4201,46,35,212
-2021-11-28,"Šiaulių apskr.","Šiaulių m.",68580,54317,8569,1526,62267,4204,1,2,15
-2021-11-29,"Šiaulių apskr.","Šiaulių m.",68733,54377,8851,1530,62417,4438,153,60,282
-2021-11-30,"Šiaulių apskr.","Šiaulių m.",68870,54463,9283,1532,62570,4711,137,86,432
-2021-12-01,"Šiaulių apskr.","Šiaulių m.",68972,54525,9757,1539,62670,5066,102,62,474
-2021-12-02,"Šiaulių apskr.","Šiaulių m.",69086,54614,10289,1550,62783,5511,114,89,532
-2021-12-03,"Šiaulių apskr.","Šiaulių m.",69220,54712,10828,1560,62913,5903,134,98,539
-2021-12-04,"Šiaulių apskr.","Šiaulių m.",69258,54745,11058,1562,62930,6075,38,33,230
-2021-12-05,"Šiaulių apskr.","Šiaulių m.",69260,54746,11066,1562,62930,6080,2,1,8
-2021-12-06,"Šiaulių apskr.","Šiaulių m.",69412,54828,11387,1566,63061,6435,152,82,321
-2021-12-07,"Šiaulių apskr.","Šiaulių m.",69535,54902,11806,1569,63178,6841,123,74,419
-2021-12-08,"Šiaulių apskr.","Šiaulių m.",69603,54987,12399,1574,63273,7350,68,85,593
-2021-12-09,"Šiaulių apskr.","Šiaulių m.",69686,55070,12982,1582,63420,7917,83,83,583
-2021-12-10,"Šiaulių apskr.","Šiaulių m.",69770,55162,13562,1588,63551,8492,84,92,580
-2021-12-11,"Šiaulių apskr.","Šiaulių m.",69801,55186,13752,1595,63580,8716,31,24,190
-2021-12-12,"Šiaulių apskr.","Šiaulių m.",69801,55187,13764,1595,63582,8732,0,1,12
-2021-12-13,"Šiaulių apskr.","Šiaulių m.",69948,55261,14088,1607,63756,9019,147,74,324
-2021-12-14,"Šiaulių apskr.","Šiaulių m.",70045,55333,14538,1613,63911,9465,97,72,450
-2021-12-15,"Šiaulių apskr.","Šiaulių m.",70117,55423,14976,1621,64001,9960,72,90,438
-2021-12-16,"Šiaulių apskr.","Šiaulių m.",70207,55499,15517,1628,64136,10523,90,76,541
-2021-12-17,"Šiaulių apskr.","Šiaulių m.",70307,55600,16135,1640,64282,11090,100,101,618
-2021-12-18,"Šiaulių apskr.","Šiaulių m.",70334,55627,16357,1644,64312,11335,27,27,222
-2021-12-19,"Šiaulių apskr.","Šiaulių m.",70336,55629,16370,1645,64313,11344,2,2,13
-2021-12-20,"Šiaulių apskr.","Šiaulių m.",70459,55728,16704,1657,64489,11683,123,99,334
-2021-12-21,"Šiaulių apskr.","Šiaulių m.",70567,55824,17136,1669,64624,12133,108,96,432
-2021-12-22,"Šiaulių apskr.","Šiaulių m.",70618,55905,17608,1675,64712,12761,51,81,472
-2021-12-23,"Šiaulių apskr.","Šiaulių m.",70670,55989,17973,1686,64809,13375,52,84,365
-2021-12-24,"Šiaulių apskr.","Šiaulių m.",70671,55989,17973,1696,64914,13985,1,0,0
-2021-12-25,"Šiaulių apskr.","Šiaulių m.",70671,55989,17973,1700,64943,14185,0,0,0
-2021-12-26,"Šiaulių apskr.","Šiaulių m.",70671,55989,17975,1700,64943,14198,0,0,2
-2021-12-27,"Šiaulių apskr.","Šiaulių m.",70728,56112,18455,1706,65116,14549,57,123,480
-2021-12-28,"Šiaulių apskr.","Šiaulių m.",70800,56216,19181,1715,65229,15021,72,104,726
-2021-12-29,"Šiaulių apskr.","Šiaulių m.",70869,56317,19872,1723,65318,15494,69,101,691
-2021-12-30,"Šiaulių apskr.","Šiaulių m.",70933,56380,20474,1729,65416,16057,64,63,602
-2021-12-31,"Šiaulių apskr.","Šiaulių m.",70958,56426,20714,1744,65523,16721,25,46,240
-2022-01-01,"Šiaulių apskr.","Šiaulių m.",70958,56426,20714,1748,65542,16960,0,0,0
-2022-01-02,"Šiaulių apskr.","Šiaulių m.",70958,56427,20715,1748,65545,16974,0,1,1
-2022-01-03,"Šiaulių apskr.","Šiaulių m.",71004,56512,21112,1752,65697,17346,46,85,397
-2022-01-04,"Šiaulių apskr.","Šiaulių m.",71054,56595,21741,1763,65820,17812,50,83,629
-2022-01-05,"Šiaulių apskr.","Šiaulių m.",71118,56692,22392,1769,65898,18310,64,97,651
-2022-01-06,"Šiaulių apskr.","Šiaulių m.",71199,56803,23060,1776,65953,18729,81,111,668
-2022-01-07,"Šiaulių apskr.","Šiaulių m.",71276,56916,23817,1777,65953,18729,77,113,757
-2022-01-08,"Šiaulių apskr.","Šiaulių m.",71309,57020,24114,1777,65953,18729,33,104,297
-2022-01-09,"Šiaulių apskr.","Šiaulių m.",71310,57022,24133,1777,65953,18731,1,2,19
-2022-01-10,"Šiaulių apskr.","Šiaulių m.",71392,57089,24567,1781,66059,19256,82,67,434
-2022-01-11,"Šiaulių apskr.","Šiaulių m.",71459,57173,25025,1794,66124,20050,67,84,458
-2022-01-12,"Šiaulių apskr.","Šiaulių m.",71506,57236,25467,1810,66191,20799,47,63,442
-2022-01-13,"Šiaulių apskr.","Šiaulių m.",71568,57295,25822,1822,66237,21435,62,59,355
-2022-01-14,"Šiaulių apskr.","Šiaulių m.",71626,57375,26269,1832,66262,21700,58,80,447
-2022-01-15,"Šiaulių apskr.","Šiaulių m.",71637,57400,26414,1832,66262,21700,11,25,145
-2022-01-16,"Šiaulių apskr.","Šiaulių m.",71637,57402,26422,1832,66262,21702,0,2,8
-2022-01-17,"Šiaulių apskr.","Šiaulių m.",71704,57464,26695,1838,66321,22154,67,62,273
-2022-01-18,"Šiaulių apskr.","Šiaulių m.",71730,57529,26938,1848,66371,22826,26,65,243
-2022-01-19,"Šiaulių apskr.","Šiaulių m.",71754,57578,27196,1869,66438,23524,24,49,258
-2022-01-20,"Šiaulių apskr.","Šiaulių m.",71797,57661,27429,1891,66523,24242,43,83,233
-2022-01-21,"Šiaulių apskr.","Šiaulių m.",71833,57720,27675,1915,66600,25055,36,59,246
-2022-01-22,"Šiaulių apskr.","Šiaulių m.",71834,57722,27737,1919,66636,25439,1,2,62
-2022-01-23,"Šiaulių apskr.","Šiaulių m.",71835,57722,27745,1920,66637,25459,1,0,8
-2022-01-24,"Šiaulių apskr.","Šiaulių m.",71863,57761,27909,1935,66724,25923,28,39,164
-2022-01-25,"Šiaulių apskr.","Šiaulių m.",71894,57811,28054,1953,66779,26422,31,50,145
-2022-01-26,"Šiaulių apskr.","Šiaulių m.",71909,57871,28196,1968,66834,26889,15,60,142
-2022-01-27,"Šiaulių apskr.","Šiaulių m.",71926,57946,28348,1987,66887,27275,17,75,152
-2022-01-28,"Šiaulių apskr.","Šiaulių m.",71944,58017,28562,2004,66936,27773,18,71,214
-2022-01-29,"Šiaulių apskr.","Šiaulių m.",71946,58028,28582,2010,66939,27940,2,11,20
-2022-01-30,"Šiaulių apskr.","Šiaulių m.",71946,58030,28589,2010,66939,27950,0,2,7
-2022-01-31,"Šiaulių apskr.","Šiaulių m.",71962,58072,28660,2030,66993,28259,16,42,71
-2022-02-01,"Šiaulių apskr.","Šiaulių m.",71979,58118,28714,2040,67039,28526,17,46,54
-2022-02-02,"Šiaulių apskr.","Šiaulių m.",71986,58157,28778,2053,67070,28804,7,39,64
-2022-02-03,"Šiaulių apskr.","Šiaulių m.",71997,58200,28869,2074,67120,29075,11,43,91
-2022-02-04,"Šiaulių apskr.","Šiaulių m.",72009,58243,28963,2092,67148,29352,12,43,94
-2022-02-05,"Šiaulių apskr.","Šiaulių m.",72010,58254,28975,2092,67148,29416,1,11,12
-2022-02-06,"Šiaulių apskr.","Šiaulių m.",72011,58254,28975,2092,67148,29424,1,0,0
-2022-02-07,"Šiaulių apskr.","Šiaulių m.",72021,58279,29004,2108,67168,29607,10,25,29
-2022-02-08,"Šiaulių apskr.","Šiaulių m.",72035,58308,29040,2126,67197,29775,14,29,36
-2022-02-09,"Šiaulių apskr.","Šiaulių m.",72045,58338,29067,2135,67226,29949,10,30,27
-2022-02-10,"Šiaulių apskr.","Šiaulių m.",72056,58369,29110,2140,67270,30132,11,31,43
-2022-02-11,"Šiaulių apskr.","Šiaulių m.",72061,58396,29140,2145,67314,30373,5,27,30
-2022-02-12,"Šiaulių apskr.","Šiaulių m.",72061,58402,29148,2145,67322,30396,0,6,8
-2022-02-13,"Šiaulių apskr.","Šiaulių m.",72061,58402,29148,2145,67322,30405,0,0,0
-2022-02-14,"Šiaulių apskr.","Šiaulių m.",72076,58424,29157,2153,67350,30491,15,22,9
-2022-02-15,"Šiaulių apskr.","Šiaulių m.",72080,58444,29180,2167,67384,30556,4,20,23
-2022-02-16,"Šiaulių apskr.","Šiaulių m.",72080,58444,29180,2170,67407,30636,0,0,0
-2022-02-17,"Šiaulių apskr.","Šiaulių m.",72086,58484,29210,2177,67436,30742,6,40,30
-2022-02-18,"Šiaulių apskr.","Šiaulių m.",72092,58510,29237,2184,67462,30853,6,26,27
-2022-02-19,"Šiaulių apskr.","Šiaulių m.",72092,58515,29242,2184,67470,30868,0,5,5
-2022-02-20,"Šiaulių apskr.","Šiaulių m.",72092,58515,29242,2185,67470,30868,0,0,0
-2022-02-21,"Šiaulių apskr.","Šiaulių m.",72108,58539,29259,2194,67488,30904,16,24,17
-2022-02-22,"Šiaulių apskr.","Šiaulių m.",72116,58552,29276,2206,67497,30960,8,13,17
-2022-02-23,"Šiaulių apskr.","Šiaulių m.",72118,58561,29283,2212,67509,31005,2,9,7
-2022-02-24,"Šiaulių apskr.","Šiaulių m.",72128,58580,29303,2217,67532,31056,10,19,20
-2022-02-25,"Šiaulių apskr.","Šiaulių m.",72135,58601,29318,2220,67547,31098,7,21,15
-2022-02-26,"Šiaulių apskr.","Šiaulių m.",72136,58602,29324,2220,67552,31107,1,1,6
-2022-02-27,"Šiaulių apskr.","Šiaulių m.",72136,58603,29324,2220,67552,31107,0,1,0
-2022-02-28,"Šiaulių apskr.","Šiaulių m.",72143,58618,29336,2234,67562,31128,7,15,12
-2022-03-01,"Šiaulių apskr.","Šiaulių m.",72145,58635,29356,2236,67580,31155,2,17,20
-2022-03-02,"Šiaulių apskr.","Šiaulių m.",72147,58657,29366,2236,67580,31155,2,22,10
-2022-03-03,"Šiaulių apskr.","Šiaulių m.",72154,58673,29386,2242,67600,31205,7,16,20
-2022-03-04,"Šiaulių apskr.","Šiaulių m.",72166,58682,29404,2248,67617,31241,12,9,18
-2022-03-05,"Šiaulių apskr.","Šiaulių m.",72166,58682,29404,2248,67619,31249,0,0,0
-2022-03-06,"Šiaulių apskr.","Šiaulių m.",72166,58682,29404,2248,67619,31249,0,0,0
-2022-03-07,"Šiaulių apskr.","Šiaulių m.",72174,58695,29422,2264,67632,31277,8,13,18
-2022-03-08,"Šiaulių apskr.","Šiaulių m.",72175,58705,29428,2272,67639,31300,1,10,6
-2022-03-09,"Šiaulių apskr.","Šiaulių m.",72178,58710,29444,2273,67646,31310,3,5,16
-2022-03-10,"Šiaulių apskr.","Šiaulių m.",72184,58731,29466,2283,67656,31339,6,21,22
+2021-08-24,"Šiaulių apskr.","Šiaulių m.",57904,45723,27,794,44814,12,217,223,0
+2021-08-25,"Šiaulių apskr.","Šiaulių m.",58189,45964,28,854,45232,12,285,241,1
+2021-08-26,"Šiaulių apskr.","Šiaulių m.",58379,46297,28,884,45747,12,190,333,0
+2021-08-27,"Šiaulių apskr.","Šiaulių m.",58803,46709,31,901,46401,13,424,412,3
+2021-08-28,"Šiaulių apskr.","Šiaulių m.",58920,46865,31,912,46778,13,117,156,0
+2021-08-29,"Šiaulių apskr.","Šiaulių m.",58923,46865,31,912,46784,13,3,0,0
+2021-08-30,"Šiaulių apskr.","Šiaulių m.",59058,47064,31,924,47192,13,135,199,0
+2021-08-31,"Šiaulių apskr.","Šiaulių m.",59183,47253,32,944,47568,13,125,189,1
+2021-09-01,"Šiaulių apskr.","Šiaulių m.",59375,47495,38,965,48090,17,192,242,6
+2021-09-02,"Šiaulių apskr.","Šiaulių m.",59517,47732,39,978,48693,17,142,237,1
+2021-09-03,"Šiaulių apskr.","Šiaulių m.",59724,47971,42,997,49210,28,207,239,3
+2021-09-04,"Šiaulių apskr.","Šiaulių m.",59809,48109,42,1005,49502,28,85,138,0
+2021-09-05,"Šiaulių apskr.","Šiaulių m.",59809,48111,42,1005,49507,28,0,2,0
+2021-09-06,"Šiaulių apskr.","Šiaulių m.",59945,48246,43,1022,49829,28,136,135,1
+2021-09-07,"Šiaulių apskr.","Šiaulių m.",60069,48432,48,1032,50106,28,124,186,5
+2021-09-08,"Šiaulių apskr.","Šiaulių m.",60204,48698,73,1045,50397,29,135,266,25
+2021-09-09,"Šiaulių apskr.","Šiaulių m.",60346,48911,145,1055,50745,29,142,213,72
+2021-09-10,"Šiaulių apskr.","Šiaulių m.",60542,49136,204,1074,51393,32,196,225,59
+2021-09-11,"Šiaulių apskr.","Šiaulių m.",60606,49219,209,1088,51549,32,64,83,5
+2021-09-12,"Šiaulių apskr.","Šiaulių m.",60608,49219,210,1088,51551,32,2,0,1
+2021-09-13,"Šiaulių apskr.","Šiaulių m.",60774,49384,217,1092,51792,32,166,165,7
+2021-09-14,"Šiaulių apskr.","Šiaulių m.",61002,49548,421,1097,52023,33,228,164,204
+2021-09-15,"Šiaulių apskr.","Šiaulių m.",61168,49756,438,1110,52275,39,166,208,17
+2021-09-16,"Šiaulių apskr.","Šiaulių m.",61306,49922,501,1122,52520,40,138,166,63
+2021-09-17,"Šiaulių apskr.","Šiaulių m.",61433,50117,581,1136,52770,43,127,195,80
+2021-09-18,"Šiaulių apskr.","Šiaulių m.",61501,50238,586,1144,52921,43,68,121,5
+2021-09-19,"Šiaulių apskr.","Šiaulių m.",61503,50239,586,1144,52923,43,2,1,0
+2021-09-20,"Šiaulių apskr.","Šiaulių m.",61593,50332,595,1148,53111,44,90,93,9
+2021-09-21,"Šiaulių apskr.","Šiaulių m.",61700,50419,627,1153,53353,49,107,87,32
+2021-09-22,"Šiaulių apskr.","Šiaulių m.",61824,50604,654,1158,53635,74,124,185,27
+2021-09-23,"Šiaulių apskr.","Šiaulių m.",61928,50722,673,1169,53857,146,104,118,19
+2021-09-24,"Šiaulių apskr.","Šiaulių m.",62013,50903,699,1182,54105,205,85,181,26
+2021-09-25,"Šiaulių apskr.","Šiaulių m.",62086,50947,700,1191,54189,210,73,44,1
+2021-09-26,"Šiaulių apskr.","Šiaulių m.",62086,50947,701,1192,54189,211,0,0,1
+2021-09-27,"Šiaulių apskr.","Šiaulių m.",62285,51051,720,1200,54412,218,199,104,19
+2021-09-28,"Šiaulių apskr.","Šiaulių m.",62376,51116,744,1217,54644,422,91,65,24
+2021-09-29,"Šiaulių apskr.","Šiaulių m.",62508,51234,780,1230,54876,439,132,118,36
+2021-09-30,"Šiaulių apskr.","Šiaulių m.",62598,51357,810,1237,55074,502,90,123,30
+2021-10-01,"Šiaulių apskr.","Šiaulių m.",62747,51510,840,1259,55269,582,149,153,30
+2021-10-02,"Šiaulių apskr.","Šiaulių m.",62813,51561,842,1268,55392,587,66,51,2
+2021-10-03,"Šiaulių apskr.","Šiaulių m.",62815,51562,842,1268,55393,587,2,1,0
+2021-10-04,"Šiaulių apskr.","Šiaulių m.",62988,51667,861,1278,55493,597,173,105,19
+2021-10-05,"Šiaulių apskr.","Šiaulių m.",63112,51809,889,1285,55609,629,124,142,28
+2021-10-06,"Šiaulių apskr.","Šiaulių m.",63201,51939,914,1294,55824,656,89,130,25
+2021-10-07,"Šiaulių apskr.","Šiaulių m.",63258,52027,947,1299,55967,675,57,88,33
+2021-10-08,"Šiaulių apskr.","Šiaulių m.",63437,52139,991,1305,56158,701,179,112,44
+2021-10-09,"Šiaulių apskr.","Šiaulių m.",63518,52193,993,1308,56252,702,81,54,2
+2021-10-10,"Šiaulių apskr.","Šiaulių m.",63519,52195,993,1308,56252,703,1,2,0
+2021-10-11,"Šiaulių apskr.","Šiaulių m.",63631,52268,1029,1314,56485,722,112,73,36
+2021-10-12,"Šiaulių apskr.","Šiaulių m.",63780,52343,1068,1322,56585,746,149,75,39
+2021-10-13,"Šiaulių apskr.","Šiaulių m.",63922,52434,1118,1327,56777,782,142,91,50
+2021-10-14,"Šiaulių apskr.","Šiaulių m.",64044,52482,1165,1332,56947,812,122,48,47
+2021-10-15,"Šiaulių apskr.","Šiaulių m.",64251,52594,1291,1337,57192,842,207,112,126
+2021-10-16,"Šiaulių apskr.","Šiaulių m.",64276,52605,1296,1337,57299,844,25,11,5
+2021-10-17,"Šiaulių apskr.","Šiaulių m.",64276,52605,1296,1337,57302,844,0,0,0
+2021-10-18,"Šiaulių apskr.","Šiaulių m.",64521,52677,1355,1349,57513,863,245,72,59
+2021-10-19,"Šiaulių apskr.","Šiaulių m.",64648,52720,1426,1353,57730,891,127,43,71
+2021-10-20,"Šiaulių apskr.","Šiaulių m.",64795,52798,1547,1361,57899,916,147,78,121
+2021-10-21,"Šiaulių apskr.","Šiaulių m.",64955,52831,1658,1367,58005,949,160,33,111
+2021-10-22,"Šiaulių apskr.","Šiaulių m.",65131,52921,1800,1381,58214,993,176,90,142
+2021-10-23,"Šiaulių apskr.","Šiaulių m.",65140,52921,1801,1383,58338,995,9,0,1
+2021-10-24,"Šiaulių apskr.","Šiaulių m.",65141,52922,1802,1383,58341,995,1,1,1
+2021-10-25,"Šiaulių apskr.","Šiaulių m.",65260,52993,1903,1390,58483,1031,119,71,101
+2021-10-26,"Šiaulių apskr.","Šiaulių m.",65502,53023,1997,1393,58687,1070,242,30,94
+2021-10-27,"Šiaulių apskr.","Šiaulių m.",65651,53080,2107,1400,58880,1120,149,57,110
+2021-10-28,"Šiaulių apskr.","Šiaulių m.",65763,53109,2231,1405,59018,1167,112,29,124
+2021-10-29,"Šiaulių apskr.","Šiaulių m.",65972,53202,2345,1410,59281,1293,209,93,114
+2021-10-30,"Šiaulių apskr.","Šiaulių m.",65976,53204,2348,1410,59314,1298,4,2,3
+2021-10-31,"Šiaulių apskr.","Šiaulių m.",65980,53204,2349,1410,59314,1298,4,0,1
+2021-11-01,"Šiaulių apskr.","Šiaulių m.",65980,53204,2349,1415,59592,1357,0,0,0
+2021-11-02,"Šiaulių apskr.","Šiaulių m.",65984,53206,2349,1418,59727,1428,4,2,0
+2021-11-03,"Šiaulių apskr.","Šiaulių m.",66138,53266,2482,1424,59910,1549,154,60,133
+2021-11-04,"Šiaulių apskr.","Šiaulių m.",66295,53313,2718,1428,60057,1660,157,47,236
+2021-11-05,"Šiaulių apskr.","Šiaulių m.",66464,53370,2887,1433,60245,1803,169,57,169
+2021-11-06,"Šiaulių apskr.","Šiaulių m.",66493,53374,2906,1433,60250,1804,29,4,19
+2021-11-07,"Šiaulių apskr.","Šiaulių m.",66496,53374,2909,1434,60251,1805,3,0,3
+2021-11-08,"Šiaulių apskr.","Šiaulių m.",66638,53413,3028,1437,60378,1906,142,39,119
+2021-11-09,"Šiaulių apskr.","Šiaulių m.",66823,53449,3204,1447,60596,2000,185,36,176
+2021-11-10,"Šiaulių apskr.","Šiaulių m.",66933,53491,3448,1452,60757,2110,110,42,244
+2021-11-11,"Šiaulių apskr.","Šiaulių m.",67076,53537,3798,1457,60860,2234,143,46,350
+2021-11-12,"Šiaulių apskr.","Šiaulių m.",67213,53625,4122,1463,61082,2348,137,88,324
+2021-11-13,"Šiaulių apskr.","Šiaulių m.",67243,53632,4193,1463,61087,2351,30,7,71
+2021-11-14,"Šiaulių apskr.","Šiaulių m.",67243,53633,4195,1463,61090,2352,0,1,2
+2021-11-15,"Šiaulių apskr.","Šiaulių m.",67384,53695,4423,1463,61090,2352,141,62,228
+2021-11-16,"Šiaulių apskr.","Šiaulių m.",67525,53753,4691,1463,61094,2352,141,58,268
+2021-11-17,"Šiaulių apskr.","Šiaulių m.",67631,53816,5037,1468,61261,2485,106,63,346
+2021-11-18,"Šiaulių apskr.","Šiaulių m.",67752,53879,5473,1480,61382,2721,121,63,436
+2021-11-19,"Šiaulių apskr.","Šiaulių m.",67875,53962,5849,1489,61544,2891,123,83,376
+2021-11-20,"Šiaulių apskr.","Šiaulių m.",67904,53981,6011,1492,61558,2910,29,19,162
+2021-11-21,"Šiaulių apskr.","Šiaulių m.",67904,53981,6016,1493,61559,2913,0,0,5
+2021-11-22,"Šiaulių apskr.","Šiaulių m.",68051,54015,6351,1498,61696,3032,147,34,335
+2021-11-23,"Šiaulių apskr.","Šiaulių m.",68196,54045,6743,1502,61854,3208,145,30,392
+2021-11-24,"Šiaulių apskr.","Šiaulių m.",68289,54116,7236,1510,61963,3452,93,71,493
+2021-11-25,"Šiaulių apskr.","Šiaulių m.",68417,54204,7779,1515,62092,3805,128,88,543
+2021-11-26,"Šiaulių apskr.","Šiaulių m.",68533,54280,8342,1526,62253,4130,116,76,563
+2021-11-27,"Šiaulių apskr.","Šiaulių m.",68579,54315,8554,1526,62266,4201,46,35,212
+2021-11-28,"Šiaulių apskr.","Šiaulių m.",68580,54317,8569,1526,62266,4204,1,2,15
+2021-11-29,"Šiaulių apskr.","Šiaulių m.",68733,54377,8851,1530,62416,4438,153,60,282
+2021-11-30,"Šiaulių apskr.","Šiaulių m.",68870,54463,9283,1532,62569,4711,137,86,432
+2021-12-01,"Šiaulių apskr.","Šiaulių m.",68972,54525,9757,1539,62669,5066,102,62,474
+2021-12-02,"Šiaulių apskr.","Šiaulių m.",69086,54614,10289,1550,62782,5511,114,89,532
+2021-12-03,"Šiaulių apskr.","Šiaulių m.",69220,54712,10828,1560,62912,5903,134,98,539
+2021-12-04,"Šiaulių apskr.","Šiaulių m.",69258,54745,11058,1562,62929,6075,38,33,230
+2021-12-05,"Šiaulių apskr.","Šiaulių m.",69260,54746,11066,1562,62929,6080,2,1,8
+2021-12-06,"Šiaulių apskr.","Šiaulių m.",69412,54828,11387,1566,63060,6435,152,82,321
+2021-12-07,"Šiaulių apskr.","Šiaulių m.",69535,54902,11806,1569,63177,6841,123,74,419
+2021-12-08,"Šiaulių apskr.","Šiaulių m.",69603,54987,12399,1574,63272,7350,68,85,593
+2021-12-09,"Šiaulių apskr.","Šiaulių m.",69686,55070,12982,1582,63419,7917,83,83,583
+2021-12-10,"Šiaulių apskr.","Šiaulių m.",69770,55162,13562,1588,63550,8492,84,92,580
+2021-12-11,"Šiaulių apskr.","Šiaulių m.",69801,55186,13752,1595,63579,8716,31,24,190
+2021-12-12,"Šiaulių apskr.","Šiaulių m.",69801,55187,13764,1595,63581,8732,0,1,12
+2021-12-13,"Šiaulių apskr.","Šiaulių m.",69948,55261,14088,1607,63755,9019,147,74,324
+2021-12-14,"Šiaulių apskr.","Šiaulių m.",70045,55333,14538,1613,63910,9465,97,72,450
+2021-12-15,"Šiaulių apskr.","Šiaulių m.",70117,55423,14976,1621,64000,9960,72,90,438
+2021-12-16,"Šiaulių apskr.","Šiaulių m.",70207,55499,15517,1628,64135,10523,90,76,541
+2021-12-17,"Šiaulių apskr.","Šiaulių m.",70307,55600,16135,1640,64281,11090,100,101,618
+2021-12-18,"Šiaulių apskr.","Šiaulių m.",70334,55627,16357,1644,64311,11335,27,27,222
+2021-12-19,"Šiaulių apskr.","Šiaulių m.",70336,55629,16370,1645,64312,11344,2,2,13
+2021-12-20,"Šiaulių apskr.","Šiaulių m.",70459,55728,16704,1657,64488,11683,123,99,334
+2021-12-21,"Šiaulių apskr.","Šiaulių m.",70567,55824,17136,1669,64623,12133,108,96,432
+2021-12-22,"Šiaulių apskr.","Šiaulių m.",70618,55905,17608,1675,64711,12761,51,81,472
+2021-12-23,"Šiaulių apskr.","Šiaulių m.",70670,55989,17973,1686,64808,13375,52,84,365
+2021-12-24,"Šiaulių apskr.","Šiaulių m.",70671,55989,17973,1696,64913,13985,1,0,0
+2021-12-25,"Šiaulių apskr.","Šiaulių m.",70671,55989,17973,1700,64942,14185,0,0,0
+2021-12-26,"Šiaulių apskr.","Šiaulių m.",70671,55989,17975,1700,64942,14198,0,0,2
+2021-12-27,"Šiaulių apskr.","Šiaulių m.",70728,56112,18455,1706,65115,14549,57,123,480
+2021-12-28,"Šiaulių apskr.","Šiaulių m.",70800,56216,19181,1715,65228,15021,72,104,726
+2021-12-29,"Šiaulių apskr.","Šiaulių m.",70869,56317,19872,1723,65317,15494,69,101,691
+2021-12-30,"Šiaulių apskr.","Šiaulių m.",70933,56380,20474,1729,65415,16057,64,63,602
+2021-12-31,"Šiaulių apskr.","Šiaulių m.",70958,56426,20714,1744,65522,16721,25,46,240
+2022-01-01,"Šiaulių apskr.","Šiaulių m.",70958,56426,20714,1748,65541,16960,0,0,0
+2022-01-02,"Šiaulių apskr.","Šiaulių m.",70958,56427,20715,1748,65544,16974,0,1,1
+2022-01-03,"Šiaulių apskr.","Šiaulių m.",71004,56512,21112,1752,65696,17346,46,85,397
+2022-01-04,"Šiaulių apskr.","Šiaulių m.",71054,56595,21741,1763,65819,17812,50,83,629
+2022-01-05,"Šiaulių apskr.","Šiaulių m.",71118,56692,22392,1769,65897,18310,64,97,651
+2022-01-06,"Šiaulių apskr.","Šiaulių m.",71199,56803,23060,1776,65952,18729,81,111,668
+2022-01-07,"Šiaulių apskr.","Šiaulių m.",71276,56916,23817,1777,65952,18729,77,113,757
+2022-01-08,"Šiaulių apskr.","Šiaulių m.",71309,57020,24114,1777,65952,18729,33,104,297
+2022-01-09,"Šiaulių apskr.","Šiaulių m.",71310,57022,24133,1777,65952,18731,1,2,19
+2022-01-10,"Šiaulių apskr.","Šiaulių m.",71392,57089,24567,1781,66058,19256,82,67,434
+2022-01-11,"Šiaulių apskr.","Šiaulių m.",71459,57173,25025,1794,66123,20050,67,84,458
+2022-01-12,"Šiaulių apskr.","Šiaulių m.",71506,57236,25467,1810,66190,20799,47,63,442
+2022-01-13,"Šiaulių apskr.","Šiaulių m.",71568,57295,25822,1822,66236,21435,62,59,355
+2022-01-14,"Šiaulių apskr.","Šiaulių m.",71626,57375,26269,1832,66261,21700,58,80,447
+2022-01-15,"Šiaulių apskr.","Šiaulių m.",71637,57400,26414,1832,66261,21700,11,25,145
+2022-01-16,"Šiaulių apskr.","Šiaulių m.",71637,57402,26422,1832,66261,21702,0,2,8
+2022-01-17,"Šiaulių apskr.","Šiaulių m.",71704,57464,26695,1838,66320,22154,67,62,273
+2022-01-18,"Šiaulių apskr.","Šiaulių m.",71730,57529,26938,1848,66370,22826,26,65,243
+2022-01-19,"Šiaulių apskr.","Šiaulių m.",71754,57578,27196,1869,66437,23524,24,49,258
+2022-01-20,"Šiaulių apskr.","Šiaulių m.",71797,57661,27429,1891,66522,24242,43,83,233
+2022-01-21,"Šiaulių apskr.","Šiaulių m.",71833,57720,27675,1915,66599,25055,36,59,246
+2022-01-22,"Šiaulių apskr.","Šiaulių m.",71834,57722,27737,1919,66635,25439,1,2,62
+2022-01-23,"Šiaulių apskr.","Šiaulių m.",71835,57722,27745,1920,66636,25459,1,0,8
+2022-01-24,"Šiaulių apskr.","Šiaulių m.",71863,57761,27909,1935,66723,25923,28,39,164
+2022-01-25,"Šiaulių apskr.","Šiaulių m.",71894,57811,28054,1953,66778,26422,31,50,145
+2022-01-26,"Šiaulių apskr.","Šiaulių m.",71909,57871,28196,1968,66833,26889,15,60,142
+2022-01-27,"Šiaulių apskr.","Šiaulių m.",71926,57946,28348,1987,66886,27275,17,75,152
+2022-01-28,"Šiaulių apskr.","Šiaulių m.",71944,58017,28562,2004,66935,27773,18,71,214
+2022-01-29,"Šiaulių apskr.","Šiaulių m.",71946,58028,28582,2010,66938,27940,2,11,20
+2022-01-30,"Šiaulių apskr.","Šiaulių m.",71946,58030,28589,2010,66938,27950,0,2,7
+2022-01-31,"Šiaulių apskr.","Šiaulių m.",71962,58072,28660,2030,66992,28259,16,42,71
+2022-02-01,"Šiaulių apskr.","Šiaulių m.",71979,58118,28714,2040,67038,28526,17,46,54
+2022-02-02,"Šiaulių apskr.","Šiaulių m.",71986,58157,28778,2053,67069,28804,7,39,64
+2022-02-03,"Šiaulių apskr.","Šiaulių m.",71997,58200,28869,2074,67119,29075,11,43,91
+2022-02-04,"Šiaulių apskr.","Šiaulių m.",72009,58243,28963,2092,67147,29352,12,43,94
+2022-02-05,"Šiaulių apskr.","Šiaulių m.",72010,58254,28975,2092,67147,29416,1,11,12
+2022-02-06,"Šiaulių apskr.","Šiaulių m.",72011,58254,28975,2092,67147,29424,1,0,0
+2022-02-07,"Šiaulių apskr.","Šiaulių m.",72021,58279,29004,2108,67167,29607,10,25,29
+2022-02-08,"Šiaulių apskr.","Šiaulių m.",72035,58308,29040,2126,67196,29775,14,29,36
+2022-02-09,"Šiaulių apskr.","Šiaulių m.",72045,58338,29067,2135,67225,29949,10,30,27
+2022-02-10,"Šiaulių apskr.","Šiaulių m.",72056,58369,29110,2140,67269,30132,11,31,43
+2022-02-11,"Šiaulių apskr.","Šiaulių m.",72061,58396,29140,2145,67313,30373,5,27,30
+2022-02-12,"Šiaulių apskr.","Šiaulių m.",72061,58402,29148,2145,67321,30396,0,6,8
+2022-02-13,"Šiaulių apskr.","Šiaulių m.",72061,58402,29148,2145,67321,30405,0,0,0
+2022-02-14,"Šiaulių apskr.","Šiaulių m.",72076,58424,29157,2153,67349,30491,15,22,9
+2022-02-15,"Šiaulių apskr.","Šiaulių m.",72080,58444,29180,2167,67383,30556,4,20,23
+2022-02-16,"Šiaulių apskr.","Šiaulių m.",72080,58444,29180,2170,67406,30636,0,0,0
+2022-02-17,"Šiaulių apskr.","Šiaulių m.",72086,58484,29210,2177,67435,30742,6,40,30
+2022-02-18,"Šiaulių apskr.","Šiaulių m.",72092,58510,29237,2184,67461,30853,6,26,27
+2022-02-19,"Šiaulių apskr.","Šiaulių m.",72092,58515,29242,2184,67469,30868,0,5,5
+2022-02-20,"Šiaulių apskr.","Šiaulių m.",72092,58515,29242,2185,67469,30868,0,0,0
+2022-02-21,"Šiaulių apskr.","Šiaulių m.",72108,58539,29259,2194,67487,30904,16,24,17
+2022-02-22,"Šiaulių apskr.","Šiaulių m.",72116,58552,29276,2206,67496,30960,8,13,17
+2022-02-23,"Šiaulių apskr.","Šiaulių m.",72118,58561,29283,2212,67508,31005,2,9,7
+2022-02-24,"Šiaulių apskr.","Šiaulių m.",72128,58580,29303,2217,67531,31056,10,19,20
+2022-02-25,"Šiaulių apskr.","Šiaulių m.",72135,58601,29318,2220,67546,31098,7,21,15
+2022-02-26,"Šiaulių apskr.","Šiaulių m.",72136,58602,29324,2220,67551,31107,1,1,6
+2022-02-27,"Šiaulių apskr.","Šiaulių m.",72136,58603,29324,2220,67551,31107,0,1,0
+2022-02-28,"Šiaulių apskr.","Šiaulių m.",72143,58618,29336,2234,67561,31128,7,15,12
+2022-03-01,"Šiaulių apskr.","Šiaulių m.",72145,58635,29356,2236,67579,31155,2,17,20
+2022-03-02,"Šiaulių apskr.","Šiaulių m.",72147,58657,29366,2236,67579,31155,2,22,10
+2022-03-03,"Šiaulių apskr.","Šiaulių m.",72154,58673,29386,2242,67599,31205,7,16,20
+2022-03-04,"Šiaulių apskr.","Šiaulių m.",72166,58682,29404,2248,67616,31241,12,9,18
+2022-03-05,"Šiaulių apskr.","Šiaulių m.",72166,58682,29404,2248,67618,31249,0,0,0
+2022-03-06,"Šiaulių apskr.","Šiaulių m.",72166,58682,29404,2248,67618,31249,0,0,0
+2022-03-07,"Šiaulių apskr.","Šiaulių m.",72174,58695,29422,2264,67631,31277,8,13,18
+2022-03-08,"Šiaulių apskr.","Šiaulių m.",72175,58705,29428,2272,67638,31300,1,10,6
+2022-03-09,"Šiaulių apskr.","Šiaulių m.",72178,58710,29444,2273,67645,31310,3,5,16
+2022-03-10,"Šiaulių apskr.","Šiaulių m.",72184,58732,29466,2283,67655,31339,6,22,22
+2022-03-11,"Šiaulių apskr.","Šiaulių m.",72184,58732,29466,2290,67659,31370,0,0,0
 2020-12-01,"Šiaulių apskr.","Šiaulių r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Šiaulių apskr.","Šiaulių r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Šiaulių apskr.","Šiaulių r.",0,0,0,0,0,0,0,0,0
@@ -17669,6 +17706,7 @@
 2022-03-08,"Šiaulių apskr.","Šiaulių r.",28350,24412,12018,720,26816,12725,0,2,4
 2022-03-09,"Šiaulių apskr.","Šiaulių r.",28350,24415,12023,721,26818,12739,0,3,5
 2022-03-10,"Šiaulių apskr.","Šiaulių r.",28351,24420,12034,721,26818,12750,1,5,11
+2022-03-11,"Šiaulių apskr.","Šiaulių r.",28351,24420,12034,722,26823,12755,0,0,0
 2020-12-01,"Tauragės apskr.","Jurbarko r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Tauragės apskr.","Jurbarko r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Tauragės apskr.","Jurbarko r.",0,0,0,0,0,0,0,0,0
@@ -18134,6 +18172,7 @@
 2022-03-08,"Tauragės apskr.","Jurbarko r.",19383,16500,8480,488,18204,9084,0,0,3
 2022-03-09,"Tauragės apskr.","Jurbarko r.",19383,16501,8490,489,18206,9093,0,1,10
 2022-03-10,"Tauragės apskr.","Jurbarko r.",19388,16508,8505,489,18208,9100,5,7,15
+2022-03-11,"Tauragės apskr.","Jurbarko r.",19388,16508,8505,492,18214,9113,0,0,0
 2020-12-01,"Tauragės apskr.","Pagėgių",0,0,0,0,0,0,0,0,0
 2020-12-02,"Tauragės apskr.","Pagėgių",0,0,0,0,0,0,0,0,0
 2020-12-03,"Tauragės apskr.","Pagėgių",0,0,0,0,0,0,0,0,0
@@ -18599,6 +18638,7 @@
 2022-03-08,"Tauragės apskr.","Pagėgių",4776,3866,1864,113,4474,2032,0,0,2
 2022-03-09,"Tauragės apskr.","Pagėgių",4776,3866,1865,113,4476,2032,0,0,1
 2022-03-10,"Tauragės apskr.","Pagėgių",4777,3866,1865,114,4476,2032,1,0,0
+2022-03-11,"Tauragės apskr.","Pagėgių",4777,3866,1865,114,4477,2033,0,0,0
 2020-12-01,"Tauragės apskr.","Šilalės r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Tauragės apskr.","Šilalės r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Tauragės apskr.","Šilalės r.",0,0,0,0,0,0,0,0,0
@@ -19064,6 +19104,7 @@
 2022-03-08,"Tauragės apskr.","Šilalės r.",13651,11281,5237,526,12658,5657,0,2,3
 2022-03-09,"Tauragės apskr.","Šilalės r.",13651,11284,5238,526,12659,5662,0,3,1
 2022-03-10,"Tauragės apskr.","Šilalės r.",13653,11285,5240,526,12661,5670,2,1,2
+2022-03-11,"Tauragės apskr.","Šilalės r.",13653,11285,5240,526,12661,5671,0,0,0
 2020-12-01,"Tauragės apskr.","Tauragės r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Tauragės apskr.","Tauragės r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Tauragės apskr.","Tauragės r.",0,0,0,0,0,0,0,0,0
@@ -19529,6 +19570,7 @@
 2022-03-08,"Tauragės apskr.","Tauragės r.",23918,19354,9088,740,22362,9818,0,1,7
 2022-03-09,"Tauragės apskr.","Tauragės r.",23918,19356,9090,740,22363,9827,0,2,2
 2022-03-10,"Tauragės apskr.","Tauragės r.",23923,19363,9092,741,22363,9836,5,7,2
+2022-03-11,"Tauragės apskr.","Tauragės r.",23923,19363,9092,742,22365,9847,0,0,0
 2020-12-01,"Telšių apskr.","Mažeikių r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Telšių apskr.","Mažeikių r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Telšių apskr.","Mažeikių r.",0,0,0,0,0,0,0,0,0
@@ -19994,6 +20036,7 @@
 2022-03-08,"Telšių apskr.","Mažeikių r.",32077,26511,13185,873,30190,14074,0,4,5
 2022-03-09,"Telšių apskr.","Mažeikių r.",32078,26514,13191,877,30194,14077,1,3,6
 2022-03-10,"Telšių apskr.","Mažeikių r.",32079,26519,13200,878,30196,14082,1,5,9
+2022-03-11,"Telšių apskr.","Mažeikių r.",32079,26519,13200,880,30199,14098,0,0,0
 2020-12-01,"Telšių apskr.","Plungės r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Telšių apskr.","Plungės r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Telšių apskr.","Plungės r.",0,0,0,0,0,0,0,0,0
@@ -20459,6 +20502,7 @@
 2022-03-08,"Telšių apskr.","Plungės r.",19160,15803,7332,582,17932,7906,0,1,1
 2022-03-09,"Telšių apskr.","Plungės r.",19160,15808,7332,582,17932,7912,0,5,0
 2022-03-10,"Telšių apskr.","Plungės r.",19160,15811,7335,583,17933,7916,0,3,3
+2022-03-11,"Telšių apskr.","Plungės r.",19160,15811,7335,585,17937,7924,0,0,0
 2020-12-01,"Telšių apskr.","Rietavo",0,0,0,0,0,0,0,0,0
 2020-12-02,"Telšių apskr.","Rietavo",0,0,0,0,0,0,0,0,0
 2020-12-03,"Telšių apskr.","Rietavo",0,0,0,0,0,0,0,0,0
@@ -20924,6 +20968,7 @@
 2022-03-08,"Telšių apskr.","Rietavo",4418,3694,1695,101,4168,1839,0,0,0
 2022-03-09,"Telšių apskr.","Rietavo",4419,3694,1695,101,4168,1839,1,0,0
 2022-03-10,"Telšių apskr.","Rietavo",4419,3694,1701,101,4169,1840,0,0,6
+2022-03-11,"Telšių apskr.","Rietavo",4419,3694,1701,101,4169,1840,0,0,0
 2020-12-01,"Telšių apskr.","Telšių r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Telšių apskr.","Telšių r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Telšių apskr.","Telšių r.",0,0,0,0,0,0,0,0,0
@@ -21389,6 +21434,7 @@
 2022-03-08,"Telšių apskr.","Telšių r.",23979,20228,9471,764,22379,10220,0,2,5
 2022-03-09,"Telšių apskr.","Telšių r.",23979,20229,9473,765,22379,10228,0,1,2
 2022-03-10,"Telšių apskr.","Telšių r.",23979,20231,9476,765,22381,10237,0,2,3
+2022-03-11,"Telšių apskr.","Telšių r.",23979,20231,9476,765,22384,10243,0,0,0
 2020-12-01,"Utenos apskr.","Anykščių r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Utenos apskr.","Anykščių r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Utenos apskr.","Anykščių r.",0,0,0,0,0,0,0,0,0
@@ -21854,6 +21900,7 @@
 2022-03-08,"Utenos apskr.","Anykščių r.",18325,15847,8793,663,17217,9149,0,3,4
 2022-03-09,"Utenos apskr.","Anykščių r.",18326,15853,8794,664,17217,9157,1,6,1
 2022-03-10,"Utenos apskr.","Anykščių r.",18326,15863,8800,664,17218,9164,0,10,6
+2022-03-11,"Utenos apskr.","Anykščių r.",18326,15863,8800,665,17223,9176,0,0,0
 2020-12-01,"Utenos apskr.","Ignalinos r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Utenos apskr.","Ignalinos r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Utenos apskr.","Ignalinos r.",0,0,0,0,0,0,0,0,0
@@ -22319,6 +22366,7 @@
 2022-03-08,"Utenos apskr.","Ignalinos r.",11605,10017,5517,445,10779,5833,1,1,3
 2022-03-09,"Utenos apskr.","Ignalinos r.",11605,10018,5521,445,10781,5845,0,1,4
 2022-03-10,"Utenos apskr.","Ignalinos r.",11605,10019,5523,445,10781,5855,0,1,2
+2022-03-11,"Utenos apskr.","Ignalinos r.",11605,10019,5523,446,10781,5859,0,0,0
 2020-12-01,"Utenos apskr.","Molėtų r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Utenos apskr.","Molėtų r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Utenos apskr.","Molėtų r.",0,0,0,0,0,0,0,0,0
@@ -22784,6 +22832,7 @@
 2022-03-08,"Utenos apskr.","Molėtų r.",13193,11545,6219,539,12230,6596,0,0,1
 2022-03-09,"Utenos apskr.","Molėtų r.",13193,11545,6224,539,12231,6602,0,0,5
 2022-03-10,"Utenos apskr.","Molėtų r.",13193,11547,6224,539,12231,6606,0,2,0
+2022-03-11,"Utenos apskr.","Molėtų r.",13193,11547,6224,539,12232,6609,0,0,0
 2020-12-01,"Utenos apskr.","Utenos r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Utenos apskr.","Utenos r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Utenos apskr.","Utenos r.",0,0,0,0,0,0,0,0,0
@@ -23249,6 +23298,7 @@
 2022-03-08,"Utenos apskr.","Utenos r.",28601,24480,13010,1212,26679,13623,4,4,5
 2022-03-09,"Utenos apskr.","Utenos r.",28605,24482,13012,1214,26679,13627,4,2,2
 2022-03-10,"Utenos apskr.","Utenos r.",28605,24486,13020,1216,26679,13628,0,4,8
+2022-03-11,"Utenos apskr.","Utenos r.",28605,24486,13020,1217,26684,13640,0,0,0
 2020-12-01,"Utenos apskr.","Visagino m.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Utenos apskr.","Visagino m.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Utenos apskr.","Visagino m.",0,0,0,0,0,0,0,0,0
@@ -23714,6 +23764,7 @@
 2022-03-08,"Utenos apskr.","Visagino m.",12845,10652,4854,484,11614,5480,1,7,5
 2022-03-09,"Utenos apskr.","Visagino m.",12845,10652,4855,485,11618,5487,0,0,1
 2022-03-10,"Utenos apskr.","Visagino m.",12847,10658,4872,485,11625,5505,2,6,17
+2022-03-11,"Utenos apskr.","Visagino m.",12847,10658,4872,486,11625,5510,0,0,0
 2020-12-01,"Utenos apskr.","Zarasų r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Utenos apskr.","Zarasų r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Utenos apskr.","Zarasų r.",0,0,0,0,0,0,0,0,0
@@ -24179,6 +24230,7 @@
 2022-03-08,"Utenos apskr.","Zarasų r.",10694,8999,4787,379,9839,5230,0,1,3
 2022-03-09,"Utenos apskr.","Zarasų r.",10694,8999,4789,379,9839,5231,0,0,2
 2022-03-10,"Utenos apskr.","Zarasų r.",10694,9004,4792,379,9841,5233,0,5,3
+2022-03-11,"Utenos apskr.","Zarasų r.",10694,9004,4792,379,9841,5234,0,0,0
 2020-12-01,"Vilniaus apskr.","Elektrėnų",0,0,0,0,0,0,0,0,0
 2020-12-02,"Vilniaus apskr.","Elektrėnų",0,0,0,0,0,0,0,0,0
 2020-12-03,"Vilniaus apskr.","Elektrėnų",0,0,0,0,0,0,0,0,0
@@ -24644,6 +24696,7 @@
 2022-03-08,"Vilniaus apskr.","Elektrėnų",16722,13428,6909,864,15395,7306,0,1,4
 2022-03-09,"Vilniaus apskr.","Elektrėnų",16723,13430,6909,864,15395,7306,1,2,0
 2022-03-10,"Vilniaus apskr.","Elektrėnų",16725,13433,6911,868,15398,7312,2,3,2
+2022-03-11,"Vilniaus apskr.","Elektrėnų",16725,13433,6911,869,15401,7317,0,0,0
 2020-12-01,"Vilniaus apskr.","Šalčininkų r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Vilniaus apskr.","Šalčininkų r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Vilniaus apskr.","Šalčininkų r.",0,0,0,0,0,0,0,0,0
@@ -25109,6 +25162,7 @@
 2022-03-08,"Vilniaus apskr.","Šalčininkų r.",14314,10699,3654,739,13211,3953,1,1,0
 2022-03-09,"Vilniaus apskr.","Šalčininkų r.",14315,10699,3656,739,13216,3953,1,0,2
 2022-03-10,"Vilniaus apskr.","Šalčininkų r.",14315,10706,3660,740,13221,3961,0,7,4
+2022-03-11,"Vilniaus apskr.","Šalčininkų r.",14315,10706,3660,740,13222,3965,0,0,0
 2020-12-01,"Vilniaus apskr.","Širvintų r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Vilniaus apskr.","Širvintų r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Vilniaus apskr.","Širvintų r.",0,0,0,0,0,0,0,0,0
@@ -25574,6 +25628,7 @@
 2022-03-08,"Vilniaus apskr.","Širvintų r.",9777,8124,4060,414,9055,4338,0,3,0
 2022-03-09,"Vilniaus apskr.","Širvintų r.",9778,8124,4060,414,9055,4339,1,0,0
 2022-03-10,"Vilniaus apskr.","Širvintų r.",9779,8127,4062,414,9058,4344,1,3,2
+2022-03-11,"Vilniaus apskr.","Širvintų r.",9779,8127,4062,414,9059,4348,0,0,0
 2020-12-01,"Vilniaus apskr.","Švenčionių r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Vilniaus apskr.","Švenčionių r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Vilniaus apskr.","Švenčionių r.",0,0,0,0,0,0,0,0,0
@@ -26039,6 +26094,7 @@
 2022-03-08,"Vilniaus apskr.","Švenčionių r.",14780,12069,5570,936,13492,5838,0,0,1
 2022-03-09,"Vilniaus apskr.","Švenčionių r.",14781,12073,5583,937,13492,5849,1,4,13
 2022-03-10,"Vilniaus apskr.","Švenčionių r.",14781,12075,5584,937,13492,5856,0,2,1
+2022-03-11,"Vilniaus apskr.","Švenčionių r.",14781,12075,5584,937,13495,5879,0,0,0
 2020-12-01,"Vilniaus apskr.","Trakų r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Vilniaus apskr.","Trakų r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Vilniaus apskr.","Trakų r.",0,0,0,0,0,0,0,0,0
@@ -26504,6 +26560,7 @@
 2022-03-08,"Vilniaus apskr.","Trakų r.",21251,17473,8328,819,19831,8834,0,1,2
 2022-03-09,"Vilniaus apskr.","Trakų r.",21252,17475,8336,820,19838,8840,1,2,8
 2022-03-10,"Vilniaus apskr.","Trakų r.",21252,17478,8338,820,19838,8844,0,3,2
+2022-03-11,"Vilniaus apskr.","Trakų r.",21252,17478,8338,821,19842,8852,0,0,0
 2020-12-01,"Vilniaus apskr.","Ukmergės r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Vilniaus apskr.","Ukmergės r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Vilniaus apskr.","Ukmergės r.",0,0,0,0,0,0,0,0,0
@@ -26969,6 +27026,7 @@
 2022-03-08,"Vilniaus apskr.","Ukmergės r.",23264,19647,10163,1092,21306,10968,0,0,3
 2022-03-09,"Vilniaus apskr.","Ukmergės r.",23264,19648,10167,1092,21310,10976,0,1,4
 2022-03-10,"Vilniaus apskr.","Ukmergės r.",23265,19653,10179,1092,21310,10976,1,5,12
+2022-03-11,"Vilniaus apskr.","Ukmergės r.",23265,19653,10179,1092,21312,10985,0,0,0
 2020-12-01,"Vilniaus apskr.","Vilniaus m.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Vilniaus apskr.","Vilniaus m.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Vilniaus apskr.","Vilniaus m.",0,0,0,0,0,0,0,0,0
@@ -27434,6 +27492,7 @@
 2022-03-08,"Vilniaus apskr.","Vilniaus m.",408715,350963,201137,19134,379874,208206,22,52,104
 2022-03-09,"Vilniaus apskr.","Vilniaus m.",408750,350992,201241,19163,379945,208354,35,29,104
 2022-03-10,"Vilniaus apskr.","Vilniaus m.",408782,351057,201397,19199,380031,208483,32,65,156
+2022-03-11,"Vilniaus apskr.","Vilniaus m.",408782,351057,201397,19249,380159,208703,0,0,0
 2020-12-01,"Vilniaus apskr.","Vilniaus r.",0,0,0,0,0,0,0,0,0
 2020-12-02,"Vilniaus apskr.","Vilniaus r.",0,0,0,0,0,0,0,0,0
 2020-12-03,"Vilniaus apskr.","Vilniaus r.",0,0,0,0,0,0,0,0,0
@@ -27899,6 +27958,7 @@
 2022-03-08,"Vilniaus apskr.","Vilniaus r.",60880,49736,23734,3074,56320,24858,6,9,8
 2022-03-09,"Vilniaus apskr.","Vilniaus r.",60884,49741,23748,3080,56335,24886,4,5,14
 2022-03-10,"Vilniaus apskr.","Vilniaus r.",60893,49750,23762,3083,56340,24904,9,9,14
+2022-03-11,"Vilniaus apskr.","Vilniaus r.",60893,49750,23762,3094,56351,24961,0,0,0
 2020-12-01,"Lithuania","Lithuania",0,0,0,0,0,0,0,0,0
 2020-12-02,"Lithuania","Lithuania",0,0,0,0,0,0,0,0,0
 2020-12-03,"Lithuania","Lithuania",0,0,0,0,0,0,0,0,0
@@ -28150,217 +28210,218 @@
 2021-08-06,"Lithuania","Lithuania",1483850,1195224,420,14229,1173146,330,18507,4593,49
 2021-08-07,"Lithuania","Lithuania",1489627,1195973,421,14408,1174404,330,5777,749,1
 2021-08-08,"Lithuania","Lithuania",1490774,1196039,421,14456,1175081,330,1147,66,0
-2021-08-09,"Lithuania","Lithuania",1503852,1200989,432,15186,1182234,333,13078,4950,11
-2021-08-10,"Lithuania","Lithuania",1515399,1205951,442,16067,1187255,338,11547,4962,10
-2021-08-11,"Lithuania","Lithuania",1526732,1212716,523,16949,1192700,340,11333,6765,81
-2021-08-12,"Lithuania","Lithuania",1540973,1221408,538,18024,1198590,347,14241,8692,15
-2021-08-13,"Lithuania","Lithuania",1552435,1229562,641,18847,1205145,350,11462,8154,103
-2021-08-14,"Lithuania","Lithuania",1555137,1230558,641,19035,1208878,350,2702,996,0
-2021-08-15,"Lithuania","Lithuania",1555880,1230682,641,19066,1211248,350,743,124,0
-2021-08-16,"Lithuania","Lithuania",1566397,1240344,660,19622,1220754,353,10517,9662,19
-2021-08-17,"Lithuania","Lithuania",1574938,1248877,696,20376,1225354,360,8541,8533,36
-2021-08-18,"Lithuania","Lithuania",1587096,1258834,836,21155,1232284,371,12158,9957,140
-2021-08-19,"Lithuania","Lithuania",1597852,1271703,930,22026,1245568,377,10756,12869,94
-2021-08-20,"Lithuania","Lithuania",1607290,1280920,1053,22950,1257712,427,9438,9217,123
-2021-08-21,"Lithuania","Lithuania",1609388,1282047,1054,23079,1262119,428,2098,1127,1
-2021-08-22,"Lithuania","Lithuania",1609807,1282192,1054,23106,1262948,428,419,145,0
-2021-08-23,"Lithuania","Lithuania",1617766,1289980,1080,23706,1273185,440,7959,7788,26
-2021-08-24,"Lithuania","Lithuania",1623933,1297532,1119,24357,1282863,450,6167,7552,39
-2021-08-25,"Lithuania","Lithuania",1631685,1305405,1246,25095,1293806,531,7752,7873,127
-2021-08-26,"Lithuania","Lithuania",1639769,1315513,1350,25868,1307718,546,8084,10108,104
-2021-08-27,"Lithuania","Lithuania",1647461,1324491,1410,26491,1319998,649,7692,8978,60
-2021-08-28,"Lithuania","Lithuania",1649038,1325347,1411,26604,1322314,649,1577,856,1
-2021-08-29,"Lithuania","Lithuania",1649383,1325462,1411,26623,1322877,649,345,115,0
-2021-08-30,"Lithuania","Lithuania",1654872,1333464,1425,27262,1336501,668,5489,8002,14
-2021-08-31,"Lithuania","Lithuania",1659941,1339281,1444,27888,1347462,705,5069,5817,19
-2021-09-01,"Lithuania","Lithuania",1664782,1344812,1516,28620,1362267,845,4841,5531,72
-2021-09-02,"Lithuania","Lithuania",1670556,1352714,1578,29303,1378349,940,5774,7902,62
-2021-09-03,"Lithuania","Lithuania",1675447,1359906,1632,29987,1390486,1063,4891,7192,54
-2021-09-04,"Lithuania","Lithuania",1676961,1360696,1638,30086,1392375,1064,1514,790,6
-2021-09-05,"Lithuania","Lithuania",1677074,1360826,1638,30097,1392747,1064,113,130,0
-2021-09-06,"Lithuania","Lithuania",1680974,1367027,1666,30591,1403374,1090,3900,6201,28
-2021-09-07,"Lithuania","Lithuania",1684930,1372181,1990,31064,1412542,1129,3956,5154,324
-2021-09-08,"Lithuania","Lithuania",1688734,1377932,2917,31599,1422821,1257,3804,5751,927
-2021-09-09,"Lithuania","Lithuania",1693293,1384740,4483,32263,1434949,1375,4559,6808,1566
-2021-09-10,"Lithuania","Lithuania",1698074,1390444,6162,32758,1446209,1437,4781,5704,1679
-2021-09-11,"Lithuania","Lithuania",1699322,1391117,6258,32874,1447573,1438,1248,673,96
-2021-09-12,"Lithuania","Lithuania",1699453,1391174,6306,32899,1447797,1438,131,57,48
-2021-09-13,"Lithuania","Lithuania",1703718,1396472,7491,33312,1457189,1453,4265,5298,1185
-2021-09-14,"Lithuania","Lithuania",1707763,1400680,9237,33729,1464296,1472,4045,4208,1746
-2021-09-15,"Lithuania","Lithuania",1711463,1405266,10898,34119,1470913,1545,3700,4586,1661
-2021-09-16,"Lithuania","Lithuania",1715445,1410293,12791,34702,1480045,1607,3982,5027,1893
-2021-09-17,"Lithuania","Lithuania",1719105,1415412,15000,35166,1487807,1661,3660,5119,2209
-2021-09-18,"Lithuania","Lithuania",1719909,1416077,15102,35264,1489049,1667,804,665,102
-2021-09-19,"Lithuania","Lithuania",1720015,1416132,15165,35275,1489182,1667,106,55,63
-2021-09-20,"Lithuania","Lithuania",1722845,1420262,16395,35601,1496127,1695,2830,4130,1230
-2021-09-21,"Lithuania","Lithuania",1725838,1423709,17947,35939,1502160,2020,2993,3447,1552
-2021-09-22,"Lithuania","Lithuania",1729416,1427036,19191,36321,1508230,2947,3578,3327,1244
-2021-09-23,"Lithuania","Lithuania",1733020,1431307,20790,36754,1515487,4513,3604,4271,1599
-2021-09-24,"Lithuania","Lithuania",1736429,1435375,22492,37203,1521780,6193,3409,4068,1702
-2021-09-25,"Lithuania","Lithuania",1737191,1435871,22588,37311,1522770,6290,762,496,96
-2021-09-26,"Lithuania","Lithuania",1737312,1435947,22634,37329,1522827,6338,121,76,46
-2021-09-27,"Lithuania","Lithuania",1740212,1439600,23444,37706,1528767,7526,2900,3653,810
-2021-09-28,"Lithuania","Lithuania",1743118,1442588,24787,38100,1533620,9273,2906,2988,1343
-2021-09-29,"Lithuania","Lithuania",1745829,1445721,26417,38487,1538711,10936,2711,3133,1630
-2021-09-30,"Lithuania","Lithuania",1749239,1449571,28241,38886,1544188,12832,3410,3850,1824
-2021-10-01,"Lithuania","Lithuania",1752229,1453484,30127,39364,1549685,15041,2990,3913,1886
-2021-10-02,"Lithuania","Lithuania",1752910,1453857,30220,39442,1550396,15143,681,373,93
-2021-10-03,"Lithuania","Lithuania",1753166,1453975,30283,39467,1550451,15206,256,118,63
-2021-10-04,"Lithuania","Lithuania",1755594,1457422,31636,39808,1555015,16440,2428,3447,1353
-2021-10-05,"Lithuania","Lithuania",1757801,1460268,33125,40074,1559390,17994,2207,2846,1489
-2021-10-06,"Lithuania","Lithuania",1760047,1463274,34700,40339,1564270,19238,2246,3006,1575
-2021-10-07,"Lithuania","Lithuania",1762729,1466452,36738,40677,1569502,20838,2682,3178,2038
-2021-10-08,"Lithuania","Lithuania",1765974,1469566,38813,40983,1574454,22541,3245,3114,2075
-2021-10-09,"Lithuania","Lithuania",1766606,1469978,38961,41035,1575206,22637,632,412,148
-2021-10-10,"Lithuania","Lithuania",1766858,1470097,39050,41058,1575282,22683,252,119,89
-2021-10-11,"Lithuania","Lithuania",1769270,1472672,40321,41292,1580027,23493,2412,2575,1271
-2021-10-12,"Lithuania","Lithuania",1771475,1474615,41956,41509,1584495,24836,2205,1943,1635
-2021-10-13,"Lithuania","Lithuania",1773676,1476645,43733,41698,1588984,26466,2201,2030,1777
-2021-10-14,"Lithuania","Lithuania",1776369,1478993,45987,41896,1594612,28290,2693,2348,2254
-2021-10-15,"Lithuania","Lithuania",1779601,1481635,48346,42112,1599953,30178,3232,2642,2359
-2021-10-16,"Lithuania","Lithuania",1780193,1481959,48645,42150,1600736,30271,592,324,299
-2021-10-17,"Lithuania","Lithuania",1780421,1482066,48763,42170,1600969,30334,228,107,118
-2021-10-18,"Lithuania","Lithuania",1783074,1484103,50710,42337,1605616,31688,2653,2037,1947
-2021-10-19,"Lithuania","Lithuania",1785163,1485550,52977,42490,1609561,33176,2089,1447,2267
-2021-10-20,"Lithuania","Lithuania",1787598,1487028,56230,42705,1613547,34750,2435,1478,3253
-2021-10-21,"Lithuania","Lithuania",1790794,1488749,60431,42944,1617987,36789,3196,1721,4201
-2021-10-22,"Lithuania","Lithuania",1794569,1490632,64654,43213,1622706,38864,3775,1883,4223
-2021-10-23,"Lithuania","Lithuania",1795219,1490870,65027,43257,1623494,39012,650,238,373
-2021-10-24,"Lithuania","Lithuania",1795639,1490959,65229,43294,1623706,39101,420,89,202
-2021-10-25,"Lithuania","Lithuania",1798866,1492665,68371,43501,1627593,40373,3227,1706,3142
-2021-10-26,"Lithuania","Lithuania",1801979,1493863,71908,43762,1630647,42008,3113,1198,3537
-2021-10-27,"Lithuania","Lithuania",1804714,1495227,75885,43964,1633736,43785,2735,1364,3977
-2021-10-28,"Lithuania","Lithuania",1807798,1496801,80394,44238,1637286,46040,3084,1574,4509
-2021-10-29,"Lithuania","Lithuania",1811526,1498602,84885,44567,1641482,48401,3728,1801,4491
-2021-10-30,"Lithuania","Lithuania",1811977,1498768,85252,44632,1642081,48700,451,166,367
-2021-10-31,"Lithuania","Lithuania",1812233,1498854,85499,44678,1642271,48819,256,86,247
-2021-11-01,"Lithuania","Lithuania",1812313,1498883,85578,44944,1645715,50766,80,29,79
-2021-11-02,"Lithuania","Lithuania",1812393,1498949,85639,45142,1648165,53036,80,66,61
-2021-11-03,"Lithuania","Lithuania",1815734,1501491,90778,45420,1650658,56291,3341,2542,5139
-2021-11-04,"Lithuania","Lithuania",1819396,1503191,98450,45747,1653822,60492,3662,1700,7672
-2021-11-05,"Lithuania","Lithuania",1823009,1504913,105385,46151,1657386,64717,3613,1722,6935
-2021-11-06,"Lithuania","Lithuania",1823602,1505153,106210,46230,1657905,65090,593,240,825
-2021-11-07,"Lithuania","Lithuania",1823980,1505253,106807,46274,1658213,65292,378,100,597
-2021-11-08,"Lithuania","Lithuania",1826805,1506547,112025,46569,1661416,68439,2825,1294,5218
-2021-11-09,"Lithuania","Lithuania",1829746,1507708,119447,46828,1664140,71979,2941,1161,7422
-2021-11-10,"Lithuania","Lithuania",1831982,1508980,126443,47137,1666670,75961,2236,1272,6996
-2021-11-11,"Lithuania","Lithuania",1834772,1510746,136283,47491,1669516,80476,2790,1766,9840
-2021-11-12,"Lithuania","Lithuania",1838019,1512710,145677,47886,1672938,84981,3247,1964,9394
-2021-11-13,"Lithuania","Lithuania",1838653,1512925,146795,47940,1673301,85349,634,215,1118
-2021-11-14,"Lithuania","Lithuania",1838949,1513048,147349,47977,1673497,85599,296,123,554
-2021-11-15,"Lithuania","Lithuania",1841398,1514903,153133,47985,1673524,85681,2449,1855,5784
-2021-11-16,"Lithuania","Lithuania",1843915,1516387,160411,47991,1673617,85742,2517,1484,7278
-2021-11-17,"Lithuania","Lithuania",1846278,1518046,170958,48325,1677626,90912,2363,1659,10547
-2021-11-18,"Lithuania","Lithuania",1849067,1520199,185654,48742,1680741,98597,2789,2153,14696
-2021-11-19,"Lithuania","Lithuania",1852125,1522524,200071,49167,1683853,105574,3058,2325,14417
-2021-11-20,"Lithuania","Lithuania",1852715,1522820,202278,49258,1684306,106410,590,296,2207
-2021-11-21,"Lithuania","Lithuania",1852893,1522930,203219,49315,1684563,107011,178,110,941
-2021-11-22,"Lithuania","Lithuania",1855156,1523936,214429,49597,1686945,112260,2263,1006,11210
-2021-11-23,"Lithuania","Lithuania",1857351,1524716,227129,49878,1689152,119715,2195,780,12700
-2021-11-24,"Lithuania","Lithuania",1859507,1526772,240992,50160,1691269,126753,2156,2056,13863
-2021-11-25,"Lithuania","Lithuania",1862064,1529109,256371,50438,1694101,136680,2557,2337,15379
-2021-11-26,"Lithuania","Lithuania",1864921,1531523,271826,50800,1697257,146139,2857,2414,15455
-2021-11-27,"Lithuania","Lithuania",1865768,1531989,275300,50889,1697705,147271,847,466,3474
-2021-11-28,"Lithuania","Lithuania",1866070,1532183,276997,50943,1697941,147832,302,194,1697
-2021-11-29,"Lithuania","Lithuania",1868385,1534129,287153,51237,1700868,153669,2315,1946,10156
-2021-11-30,"Lithuania","Lithuania",1870602,1536284,298138,51505,1703390,161038,2217,2155,10985
-2021-12-01,"Lithuania","Lithuania",1873087,1538142,312450,51783,1705762,171790,2485,1858,14312
-2021-12-02,"Lithuania","Lithuania",1875660,1540298,329002,52135,1708590,186903,2573,2156,16552
-2021-12-03,"Lithuania","Lithuania",1878411,1542767,345476,52532,1711787,201711,2751,2469,16474
-2021-12-04,"Lithuania","Lithuania",1879028,1543239,349062,52587,1712261,204032,617,472,3586
-2021-12-05,"Lithuania","Lithuania",1879263,1543418,350969,52613,1712421,205035,235,179,1907
-2021-12-06,"Lithuania","Lithuania",1881576,1545458,362367,52878,1714125,216633,2313,2040,11398
-2021-12-07,"Lithuania","Lithuania",1883599,1547368,376299,53143,1715545,229698,2023,1910,13932
-2021-12-08,"Lithuania","Lithuania",1885685,1549356,391407,53431,1717983,244062,2086,1988,15108
-2021-12-09,"Lithuania","Lithuania",1887693,1551597,407465,53798,1720925,259872,2008,2241,16058
-2021-12-10,"Lithuania","Lithuania",1889904,1554059,424924,54155,1724154,275790,2211,2462,17459
-2021-12-11,"Lithuania","Lithuania",1890365,1554497,428489,54282,1724828,279465,461,438,3565
-2021-12-12,"Lithuania","Lithuania",1890558,1554626,430490,54337,1725079,281255,193,129,2001
-2021-12-13,"Lithuania","Lithuania",1892417,1556460,442405,54668,1727890,291676,1859,1834,11915
-2021-12-14,"Lithuania","Lithuania",1894001,1558218,455428,54974,1730693,303005,1584,1758,13023
-2021-12-15,"Lithuania","Lithuania",1895818,1560057,469632,55407,1733098,317756,1817,1839,14204
-2021-12-16,"Lithuania","Lithuania",1897999,1562257,485622,55782,1735852,334849,2181,2200,15990
-2021-12-17,"Lithuania","Lithuania",1900810,1564564,501770,56229,1739001,351921,2811,2307,16148
-2021-12-18,"Lithuania","Lithuania",1901695,1564960,505215,56330,1739535,355732,885,396,3445
-2021-12-19,"Lithuania","Lithuania",1902076,1565135,507199,56378,1739732,357731,381,175,1984
-2021-12-20,"Lithuania","Lithuania",1904271,1567242,519166,56712,1742381,369704,2195,2107,11967
-2021-12-21,"Lithuania","Lithuania",1906247,1569370,531644,56986,1744716,384210,1976,2128,12478
-2021-12-22,"Lithuania","Lithuania",1908026,1571679,544751,57344,1746930,399938,1779,2309,13107
-2021-12-23,"Lithuania","Lithuania",1909636,1574107,557294,57681,1749346,416710,1610,2428,12543
-2021-12-24,"Lithuania","Lithuania",1909671,1574148,557508,58059,1752045,434960,35,41,214
-2021-12-25,"Lithuania","Lithuania",1909671,1574148,557508,58164,1752445,438757,0,0,0
-2021-12-26,"Lithuania","Lithuania",1909710,1574209,557747,58212,1752583,440833,39,61,239
-2021-12-27,"Lithuania","Lithuania",1911575,1577545,573722,58489,1754787,453340,1865,3336,15975
-2021-12-28,"Lithuania","Lithuania",1913423,1580464,591469,58781,1756633,467023,1848,2919,17747
-2021-12-29,"Lithuania","Lithuania",1915365,1583249,608263,59094,1758505,481830,1942,2785,16794
-2021-12-30,"Lithuania","Lithuania",1917043,1585503,622096,59424,1760765,498504,1678,2254,13833
-2021-12-31,"Lithuania","Lithuania",1917767,1586540,627286,59819,1763260,515450,724,1037,5190
-2022-01-01,"Lithuania","Lithuania",1917767,1586540,627286,59949,1763652,519070,0,0,0
-2022-01-02,"Lithuania","Lithuania",1917771,1586550,627390,60009,1763804,521150,4,10,104
-2022-01-03,"Lithuania","Lithuania",1919409,1589164,640694,60332,1766115,533918,1638,2614,13304
-2022-01-04,"Lithuania","Lithuania",1921148,1591598,656596,60672,1768064,547301,1739,2434,15902
-2022-01-05,"Lithuania","Lithuania",1923004,1594358,673969,61004,1769957,561434,1856,2760,17373
-2022-01-06,"Lithuania","Lithuania",1925058,1597522,691304,61283,1771744,575219,2054,3164,17335
-2022-01-07,"Lithuania","Lithuania",1927179,1600891,709136,61297,1771756,575463,2121,3369,17832
-2022-01-08,"Lithuania","Lithuania",1927648,1601855,712359,61297,1771756,575463,469,964,3223
-2022-01-09,"Lithuania","Lithuania",1927855,1602305,714104,61307,1771794,575725,207,450,1745
-2022-01-10,"Lithuania","Lithuania",1929381,1604803,726649,61681,1774277,593128,1526,2498,12545
-2022-01-11,"Lithuania","Lithuania",1930510,1607091,738166,62081,1775834,612690,1129,2288,11517
-2022-01-12,"Lithuania","Lithuania",1931679,1609289,749343,62535,1777547,631018,1169,2198,11177
-2022-01-13,"Lithuania","Lithuania",1932991,1611445,759972,62946,1778956,646145,1312,2156,10629
-2022-01-14,"Lithuania","Lithuania",1934413,1613236,771772,63103,1779690,651876,1422,1791,11800
-2022-01-15,"Lithuania","Lithuania",1934803,1613659,774126,63103,1779690,651876,390,423,2354
-2022-01-16,"Lithuania","Lithuania",1934882,1613763,774831,63105,1779694,651986,79,104,705
-2022-01-17,"Lithuania","Lithuania",1935692,1615599,781782,63544,1781329,666732,810,1836,6951
-2022-01-18,"Lithuania","Lithuania",1936423,1617542,788750,64065,1782761,684056,731,1943,6968
-2022-01-19,"Lithuania","Lithuania",1937124,1619451,795522,64575,1784512,702867,701,1909,6772
-2022-01-20,"Lithuania","Lithuania",1937891,1621387,802383,65189,1786584,721765,767,1936,6861
-2022-01-21,"Lithuania","Lithuania",1938799,1623193,810238,65809,1789008,741083,908,1806,7855
-2022-01-22,"Lithuania","Lithuania",1938927,1623414,811168,65961,1789722,744671,128,221,930
-2022-01-23,"Lithuania","Lithuania",1938931,1623450,811280,66044,1790047,746564,4,36,112
-2022-01-24,"Lithuania","Lithuania",1939525,1624925,815993,66569,1791758,760353,594,1475,4713
-2022-01-25,"Lithuania","Lithuania",1940065,1626487,820598,66969,1793125,772998,540,1562,4605
-2022-01-26,"Lithuania","Lithuania",1940629,1628169,825424,67387,1794485,785231,564,1682,4826
-2022-01-27,"Lithuania","Lithuania",1941204,1629997,830404,67862,1795804,797011,575,1828,4980
-2022-01-28,"Lithuania","Lithuania",1941889,1632231,835967,68465,1796733,809895,685,2234,5563
-2022-01-29,"Lithuania","Lithuania",1942008,1632554,836560,68656,1796922,812523,119,323,593
-2022-01-30,"Lithuania","Lithuania",1942016,1632588,836661,68690,1796977,813293,8,34,101
-2022-01-31,"Lithuania","Lithuania",1942362,1633660,838788,69015,1798089,821129,346,1072,2127
-2022-02-01,"Lithuania","Lithuania",1942729,1634734,840562,69344,1799284,828935,367,1074,1774
-2022-02-02,"Lithuania","Lithuania",1943104,1635808,842429,69703,1800435,836478,375,1074,1867
-2022-02-03,"Lithuania","Lithuania",1943392,1636960,844205,70060,1801497,844275,288,1152,1776
-2022-02-04,"Lithuania","Lithuania",1943777,1638336,846196,70532,1802495,852975,385,1376,1991
-2022-02-05,"Lithuania","Lithuania",1943832,1638513,846416,70594,1802624,854002,55,177,220
-2022-02-06,"Lithuania","Lithuania",1943840,1638530,846494,70596,1802637,854137,8,17,78
-2022-02-07,"Lithuania","Lithuania",1944026,1639148,847402,70867,1803497,859491,186,618,908
-2022-02-08,"Lithuania","Lithuania",1944173,1639799,848290,71132,1804393,864797,147,651,888
-2022-02-09,"Lithuania","Lithuania",1944345,1640470,849280,71433,1805475,870238,172,671,990
-2022-02-10,"Lithuania","Lithuania",1944516,1641165,850167,71700,1806568,875975,171,695,887
-2022-02-11,"Lithuania","Lithuania",1944774,1642051,851366,72076,1807969,882393,258,886,1199
-2022-02-12,"Lithuania","Lithuania",1944795,1642135,851470,72138,1808195,883083,21,84,104
-2022-02-13,"Lithuania","Lithuania",1944803,1642158,851514,72142,1808210,883203,8,23,44
-2022-02-14,"Lithuania","Lithuania",1944961,1642665,852060,72318,1808934,885685,158,507,546
-2022-02-15,"Lithuania","Lithuania",1945100,1643191,852823,72531,1809614,887866,139,526,763
-2022-02-16,"Lithuania","Lithuania",1945100,1643191,852823,72742,1810329,890109,0,0,0
-2022-02-17,"Lithuania","Lithuania",1945282,1643908,853559,72894,1811071,892305,182,717,736
-2022-02-18,"Lithuania","Lithuania",1945489,1644683,854378,73124,1811942,894807,207,775,819
-2022-02-19,"Lithuania","Lithuania",1945509,1644747,854447,73152,1812085,895062,20,64,69
-2022-02-20,"Lithuania","Lithuania",1945513,1644763,854482,73157,1812096,895146,4,16,35
-2022-02-21,"Lithuania","Lithuania",1945655,1645161,854978,73274,1812504,896267,142,398,496
-2022-02-22,"Lithuania","Lithuania",1945784,1645482,855473,73366,1812884,897435,129,321,495
-2022-02-23,"Lithuania","Lithuania",1945881,1645810,855995,73457,1813313,898667,97,328,522
-2022-02-24,"Lithuania","Lithuania",1945998,1646205,856500,73561,1813753,899810,117,395,505
-2022-02-25,"Lithuania","Lithuania",1946144,1646724,857142,73727,1814352,901298,146,519,642
-2022-02-26,"Lithuania","Lithuania",1946154,1646764,857181,73740,1814414,901424,10,40,39
-2022-02-27,"Lithuania","Lithuania",1946161,1646782,857232,73745,1814428,901477,7,18,51
-2022-02-28,"Lithuania","Lithuania",1946248,1647033,857577,73846,1814775,902186,87,251,345
-2022-03-01,"Lithuania","Lithuania",1946329,1647253,857900,73943,1815133,903127,81,220,323
-2022-03-02,"Lithuania","Lithuania",1946410,1647457,858230,73943,1815133,903127,81,204,330
-2022-03-03,"Lithuania","Lithuania",1946501,1647674,858614,74070,1815643,904073,91,217,384
-2022-03-04,"Lithuania","Lithuania",1946710,1648036,859179,74265,1816188,905127,209,362,565
-2022-03-05,"Lithuania","Lithuania",1946723,1648060,859227,74284,1816240,905209,13,24,48
-2022-03-06,"Lithuania","Lithuania",1946731,1648075,859283,74288,1816251,905249,8,15,56
-2022-03-07,"Lithuania","Lithuania",1946808,1648297,859643,74427,1816493,905904,77,222,360
-2022-03-08,"Lithuania","Lithuania",1946900,1648471,860015,74554,1816702,906513,92,174,372
-2022-03-09,"Lithuania","Lithuania",1947012,1648646,860432,74640,1816923,907152,112,175,417
-2022-03-10,"Lithuania","Lithuania",1947151,1648938,860984,74755,1817180,907795,139,292,552
+2021-08-09,"Lithuania","Lithuania",1503852,1200989,432,15185,1182234,333,13078,4950,11
+2021-08-10,"Lithuania","Lithuania",1515399,1205951,442,16066,1187255,338,11547,4962,10
+2021-08-11,"Lithuania","Lithuania",1526732,1212716,523,16948,1192700,340,11333,6765,81
+2021-08-12,"Lithuania","Lithuania",1540973,1221408,538,18023,1198590,347,14241,8692,15
+2021-08-13,"Lithuania","Lithuania",1552435,1229562,641,18846,1205145,350,11462,8154,103
+2021-08-14,"Lithuania","Lithuania",1555137,1230558,641,19034,1208878,350,2702,996,0
+2021-08-15,"Lithuania","Lithuania",1555880,1230682,641,19065,1211248,350,743,124,0
+2021-08-16,"Lithuania","Lithuania",1566397,1240344,660,19621,1220754,353,10517,9662,19
+2021-08-17,"Lithuania","Lithuania",1574938,1248877,696,20375,1225354,360,8541,8533,36
+2021-08-18,"Lithuania","Lithuania",1587096,1258834,836,21154,1232284,371,12158,9957,140
+2021-08-19,"Lithuania","Lithuania",1597852,1271703,930,22025,1245568,377,10756,12869,94
+2021-08-20,"Lithuania","Lithuania",1607290,1280920,1053,22949,1257712,427,9438,9217,123
+2021-08-21,"Lithuania","Lithuania",1609388,1282047,1054,23078,1262119,428,2098,1127,1
+2021-08-22,"Lithuania","Lithuania",1609807,1282192,1054,23105,1262948,428,419,145,0
+2021-08-23,"Lithuania","Lithuania",1617766,1289980,1080,23705,1273185,440,7959,7788,26
+2021-08-24,"Lithuania","Lithuania",1623933,1297532,1119,24356,1282862,450,6167,7552,39
+2021-08-25,"Lithuania","Lithuania",1631685,1305405,1246,25094,1293805,531,7752,7873,127
+2021-08-26,"Lithuania","Lithuania",1639769,1315513,1350,25867,1307717,546,8084,10108,104
+2021-08-27,"Lithuania","Lithuania",1647461,1324491,1410,26490,1319997,649,7692,8978,60
+2021-08-28,"Lithuania","Lithuania",1649038,1325347,1411,26603,1322313,649,1577,856,1
+2021-08-29,"Lithuania","Lithuania",1649383,1325462,1411,26622,1322876,649,345,115,0
+2021-08-30,"Lithuania","Lithuania",1654872,1333464,1425,27261,1336500,668,5489,8002,14
+2021-08-31,"Lithuania","Lithuania",1659941,1339281,1444,27887,1347461,705,5069,5817,19
+2021-09-01,"Lithuania","Lithuania",1664782,1344812,1516,28619,1362266,845,4841,5531,72
+2021-09-02,"Lithuania","Lithuania",1670556,1352714,1578,29302,1378348,940,5774,7902,62
+2021-09-03,"Lithuania","Lithuania",1675447,1359906,1632,29986,1390485,1063,4891,7192,54
+2021-09-04,"Lithuania","Lithuania",1676961,1360696,1638,30085,1392374,1064,1514,790,6
+2021-09-05,"Lithuania","Lithuania",1677074,1360826,1638,30096,1392746,1064,113,130,0
+2021-09-06,"Lithuania","Lithuania",1680974,1367027,1666,30590,1403373,1090,3900,6201,28
+2021-09-07,"Lithuania","Lithuania",1684930,1372181,1990,31063,1412541,1129,3956,5154,324
+2021-09-08,"Lithuania","Lithuania",1688734,1377932,2917,31598,1422820,1257,3804,5751,927
+2021-09-09,"Lithuania","Lithuania",1693293,1384740,4483,32262,1434948,1375,4559,6808,1566
+2021-09-10,"Lithuania","Lithuania",1698074,1390444,6162,32757,1446208,1437,4781,5704,1679
+2021-09-11,"Lithuania","Lithuania",1699322,1391117,6258,32873,1447572,1438,1248,673,96
+2021-09-12,"Lithuania","Lithuania",1699453,1391174,6306,32898,1447796,1438,131,57,48
+2021-09-13,"Lithuania","Lithuania",1703718,1396472,7491,33311,1457188,1453,4265,5298,1185
+2021-09-14,"Lithuania","Lithuania",1707763,1400680,9237,33728,1464295,1472,4045,4208,1746
+2021-09-15,"Lithuania","Lithuania",1711463,1405266,10898,34118,1470912,1545,3700,4586,1661
+2021-09-16,"Lithuania","Lithuania",1715445,1410293,12791,34701,1480044,1607,3982,5027,1893
+2021-09-17,"Lithuania","Lithuania",1719105,1415412,15000,35165,1487806,1661,3660,5119,2209
+2021-09-18,"Lithuania","Lithuania",1719909,1416077,15102,35263,1489048,1667,804,665,102
+2021-09-19,"Lithuania","Lithuania",1720015,1416132,15165,35274,1489181,1667,106,55,63
+2021-09-20,"Lithuania","Lithuania",1722845,1420262,16395,35600,1496126,1695,2830,4130,1230
+2021-09-21,"Lithuania","Lithuania",1725838,1423709,17947,35938,1502159,2020,2993,3447,1552
+2021-09-22,"Lithuania","Lithuania",1729416,1427036,19191,36320,1508229,2947,3578,3327,1244
+2021-09-23,"Lithuania","Lithuania",1733020,1431307,20790,36753,1515486,4513,3604,4271,1599
+2021-09-24,"Lithuania","Lithuania",1736429,1435375,22492,37202,1521779,6193,3409,4068,1702
+2021-09-25,"Lithuania","Lithuania",1737191,1435871,22588,37310,1522769,6290,762,496,96
+2021-09-26,"Lithuania","Lithuania",1737312,1435947,22634,37328,1522826,6338,121,76,46
+2021-09-27,"Lithuania","Lithuania",1740212,1439600,23444,37705,1528766,7526,2900,3653,810
+2021-09-28,"Lithuania","Lithuania",1743118,1442588,24787,38099,1533619,9273,2906,2988,1343
+2021-09-29,"Lithuania","Lithuania",1745829,1445721,26417,38486,1538710,10936,2711,3133,1630
+2021-09-30,"Lithuania","Lithuania",1749239,1449571,28241,38885,1544187,12832,3410,3850,1824
+2021-10-01,"Lithuania","Lithuania",1752229,1453484,30127,39363,1549684,15041,2990,3913,1886
+2021-10-02,"Lithuania","Lithuania",1752910,1453857,30220,39441,1550395,15143,681,373,93
+2021-10-03,"Lithuania","Lithuania",1753166,1453975,30283,39466,1550450,15206,256,118,63
+2021-10-04,"Lithuania","Lithuania",1755594,1457422,31636,39807,1555014,16440,2428,3447,1353
+2021-10-05,"Lithuania","Lithuania",1757801,1460268,33125,40073,1559389,17994,2207,2846,1489
+2021-10-06,"Lithuania","Lithuania",1760047,1463274,34700,40338,1564269,19238,2246,3006,1575
+2021-10-07,"Lithuania","Lithuania",1762729,1466452,36738,40676,1569501,20838,2682,3178,2038
+2021-10-08,"Lithuania","Lithuania",1765974,1469566,38813,40982,1574453,22541,3245,3114,2075
+2021-10-09,"Lithuania","Lithuania",1766606,1469978,38961,41034,1575205,22637,632,412,148
+2021-10-10,"Lithuania","Lithuania",1766858,1470097,39050,41057,1575281,22683,252,119,89
+2021-10-11,"Lithuania","Lithuania",1769270,1472672,40321,41291,1580026,23493,2412,2575,1271
+2021-10-12,"Lithuania","Lithuania",1771475,1474615,41956,41508,1584494,24836,2205,1943,1635
+2021-10-13,"Lithuania","Lithuania",1773676,1476645,43733,41697,1588983,26466,2201,2030,1777
+2021-10-14,"Lithuania","Lithuania",1776369,1478993,45987,41895,1594611,28290,2693,2348,2254
+2021-10-15,"Lithuania","Lithuania",1779601,1481635,48346,42111,1599952,30178,3232,2642,2359
+2021-10-16,"Lithuania","Lithuania",1780193,1481959,48645,42149,1600735,30271,592,324,299
+2021-10-17,"Lithuania","Lithuania",1780421,1482066,48763,42169,1600968,30334,228,107,118
+2021-10-18,"Lithuania","Lithuania",1783074,1484103,50710,42336,1605615,31688,2653,2037,1947
+2021-10-19,"Lithuania","Lithuania",1785163,1485550,52977,42489,1609560,33176,2089,1447,2267
+2021-10-20,"Lithuania","Lithuania",1787598,1487028,56230,42704,1613546,34750,2435,1478,3253
+2021-10-21,"Lithuania","Lithuania",1790794,1488749,60431,42943,1617986,36789,3196,1721,4201
+2021-10-22,"Lithuania","Lithuania",1794569,1490632,64654,43212,1622705,38864,3775,1883,4223
+2021-10-23,"Lithuania","Lithuania",1795219,1490870,65027,43256,1623493,39012,650,238,373
+2021-10-24,"Lithuania","Lithuania",1795639,1490959,65229,43293,1623705,39101,420,89,202
+2021-10-25,"Lithuania","Lithuania",1798866,1492665,68371,43500,1627592,40373,3227,1706,3142
+2021-10-26,"Lithuania","Lithuania",1801979,1493863,71908,43761,1630646,42008,3113,1198,3537
+2021-10-27,"Lithuania","Lithuania",1804714,1495227,75885,43963,1633735,43785,2735,1364,3977
+2021-10-28,"Lithuania","Lithuania",1807798,1496801,80394,44237,1637285,46040,3084,1574,4509
+2021-10-29,"Lithuania","Lithuania",1811526,1498602,84885,44566,1641481,48401,3728,1801,4491
+2021-10-30,"Lithuania","Lithuania",1811977,1498768,85252,44631,1642080,48700,451,166,367
+2021-10-31,"Lithuania","Lithuania",1812233,1498854,85499,44677,1642270,48819,256,86,247
+2021-11-01,"Lithuania","Lithuania",1812313,1498883,85578,44943,1645714,50766,80,29,79
+2021-11-02,"Lithuania","Lithuania",1812393,1498949,85639,45141,1648164,53036,80,66,61
+2021-11-03,"Lithuania","Lithuania",1815734,1501491,90778,45419,1650657,56291,3341,2542,5139
+2021-11-04,"Lithuania","Lithuania",1819396,1503191,98450,45746,1653821,60492,3662,1700,7672
+2021-11-05,"Lithuania","Lithuania",1823009,1504913,105385,46150,1657385,64717,3613,1722,6935
+2021-11-06,"Lithuania","Lithuania",1823602,1505153,106210,46229,1657904,65090,593,240,825
+2021-11-07,"Lithuania","Lithuania",1823980,1505253,106807,46273,1658212,65292,378,100,597
+2021-11-08,"Lithuania","Lithuania",1826805,1506547,112025,46568,1661415,68439,2825,1294,5218
+2021-11-09,"Lithuania","Lithuania",1829746,1507708,119447,46827,1664139,71979,2941,1161,7422
+2021-11-10,"Lithuania","Lithuania",1831982,1508980,126443,47136,1666669,75961,2236,1272,6996
+2021-11-11,"Lithuania","Lithuania",1834772,1510746,136283,47490,1669515,80476,2790,1766,9840
+2021-11-12,"Lithuania","Lithuania",1838019,1512710,145677,47885,1672937,84981,3247,1964,9394
+2021-11-13,"Lithuania","Lithuania",1838653,1512925,146795,47939,1673300,85349,634,215,1118
+2021-11-14,"Lithuania","Lithuania",1838949,1513048,147349,47976,1673496,85599,296,123,554
+2021-11-15,"Lithuania","Lithuania",1841398,1514903,153133,47984,1673523,85681,2449,1855,5784
+2021-11-16,"Lithuania","Lithuania",1843915,1516387,160411,47990,1673616,85742,2517,1484,7278
+2021-11-17,"Lithuania","Lithuania",1846278,1518046,170958,48324,1677625,90912,2363,1659,10547
+2021-11-18,"Lithuania","Lithuania",1849067,1520199,185654,48741,1680740,98597,2789,2153,14696
+2021-11-19,"Lithuania","Lithuania",1852125,1522524,200071,49166,1683852,105574,3058,2325,14417
+2021-11-20,"Lithuania","Lithuania",1852715,1522820,202278,49257,1684305,106410,590,296,2207
+2021-11-21,"Lithuania","Lithuania",1852893,1522930,203219,49314,1684562,107011,178,110,941
+2021-11-22,"Lithuania","Lithuania",1855156,1523936,214429,49596,1686944,112260,2263,1006,11210
+2021-11-23,"Lithuania","Lithuania",1857351,1524716,227129,49877,1689151,119715,2195,780,12700
+2021-11-24,"Lithuania","Lithuania",1859507,1526772,240992,50159,1691268,126753,2156,2056,13863
+2021-11-25,"Lithuania","Lithuania",1862064,1529109,256371,50437,1694100,136680,2557,2337,15379
+2021-11-26,"Lithuania","Lithuania",1864921,1531523,271826,50799,1697256,146139,2857,2414,15455
+2021-11-27,"Lithuania","Lithuania",1865768,1531989,275300,50888,1697704,147271,847,466,3474
+2021-11-28,"Lithuania","Lithuania",1866070,1532183,276997,50942,1697940,147832,302,194,1697
+2021-11-29,"Lithuania","Lithuania",1868385,1534129,287153,51236,1700867,153669,2315,1946,10156
+2021-11-30,"Lithuania","Lithuania",1870602,1536284,298138,51504,1703389,161038,2217,2155,10985
+2021-12-01,"Lithuania","Lithuania",1873087,1538142,312450,51782,1705761,171790,2485,1858,14312
+2021-12-02,"Lithuania","Lithuania",1875660,1540298,329002,52134,1708589,186903,2573,2156,16552
+2021-12-03,"Lithuania","Lithuania",1878411,1542767,345476,52531,1711786,201711,2751,2469,16474
+2021-12-04,"Lithuania","Lithuania",1879028,1543239,349062,52586,1712260,204032,617,472,3586
+2021-12-05,"Lithuania","Lithuania",1879263,1543418,350969,52612,1712420,205035,235,179,1907
+2021-12-06,"Lithuania","Lithuania",1881576,1545458,362367,52877,1714124,216633,2313,2040,11398
+2021-12-07,"Lithuania","Lithuania",1883599,1547368,376299,53142,1715544,229698,2023,1910,13932
+2021-12-08,"Lithuania","Lithuania",1885685,1549356,391407,53430,1717982,244062,2086,1988,15108
+2021-12-09,"Lithuania","Lithuania",1887693,1551597,407465,53797,1720924,259872,2008,2241,16058
+2021-12-10,"Lithuania","Lithuania",1889904,1554059,424924,54154,1724153,275790,2211,2462,17459
+2021-12-11,"Lithuania","Lithuania",1890365,1554497,428489,54281,1724827,279465,461,438,3565
+2021-12-12,"Lithuania","Lithuania",1890558,1554626,430490,54336,1725078,281255,193,129,2001
+2021-12-13,"Lithuania","Lithuania",1892417,1556460,442405,54667,1727889,291676,1859,1834,11915
+2021-12-14,"Lithuania","Lithuania",1894001,1558218,455428,54973,1730692,303005,1584,1758,13023
+2021-12-15,"Lithuania","Lithuania",1895818,1560057,469632,55406,1733097,317756,1817,1839,14204
+2021-12-16,"Lithuania","Lithuania",1897999,1562257,485622,55781,1735851,334849,2181,2200,15990
+2021-12-17,"Lithuania","Lithuania",1900810,1564564,501770,56228,1739000,351921,2811,2307,16148
+2021-12-18,"Lithuania","Lithuania",1901695,1564960,505215,56329,1739534,355732,885,396,3445
+2021-12-19,"Lithuania","Lithuania",1902076,1565135,507199,56377,1739731,357731,381,175,1984
+2021-12-20,"Lithuania","Lithuania",1904271,1567242,519166,56711,1742380,369704,2195,2107,11967
+2021-12-21,"Lithuania","Lithuania",1906247,1569370,531644,56985,1744715,384210,1976,2128,12478
+2021-12-22,"Lithuania","Lithuania",1908026,1571679,544751,57343,1746929,399938,1779,2309,13107
+2021-12-23,"Lithuania","Lithuania",1909636,1574107,557294,57680,1749345,416710,1610,2428,12543
+2021-12-24,"Lithuania","Lithuania",1909671,1574148,557508,58058,1752044,434960,35,41,214
+2021-12-25,"Lithuania","Lithuania",1909671,1574148,557508,58163,1752444,438757,0,0,0
+2021-12-26,"Lithuania","Lithuania",1909710,1574209,557747,58211,1752582,440833,39,61,239
+2021-12-27,"Lithuania","Lithuania",1911575,1577545,573722,58488,1754786,453340,1865,3336,15975
+2021-12-28,"Lithuania","Lithuania",1913423,1580464,591469,58780,1756632,467023,1848,2919,17747
+2021-12-29,"Lithuania","Lithuania",1915365,1583249,608263,59093,1758504,481830,1942,2785,16794
+2021-12-30,"Lithuania","Lithuania",1917043,1585503,622096,59423,1760764,498504,1678,2254,13833
+2021-12-31,"Lithuania","Lithuania",1917767,1586540,627286,59818,1763259,515450,724,1037,5190
+2022-01-01,"Lithuania","Lithuania",1917767,1586540,627286,59948,1763651,519070,0,0,0
+2022-01-02,"Lithuania","Lithuania",1917771,1586550,627390,60008,1763803,521150,4,10,104
+2022-01-03,"Lithuania","Lithuania",1919409,1589164,640694,60331,1766114,533918,1638,2614,13304
+2022-01-04,"Lithuania","Lithuania",1921148,1591598,656596,60671,1768063,547301,1739,2434,15902
+2022-01-05,"Lithuania","Lithuania",1923004,1594358,673969,61003,1769956,561434,1856,2760,17373
+2022-01-06,"Lithuania","Lithuania",1925058,1597522,691304,61282,1771743,575219,2054,3164,17335
+2022-01-07,"Lithuania","Lithuania",1927179,1600891,709136,61296,1771755,575463,2121,3369,17832
+2022-01-08,"Lithuania","Lithuania",1927648,1601855,712359,61296,1771755,575463,469,964,3223
+2022-01-09,"Lithuania","Lithuania",1927855,1602305,714104,61306,1771793,575725,207,450,1745
+2022-01-10,"Lithuania","Lithuania",1929381,1604803,726649,61680,1774276,593128,1526,2498,12545
+2022-01-11,"Lithuania","Lithuania",1930510,1607091,738166,62080,1775833,612690,1129,2288,11517
+2022-01-12,"Lithuania","Lithuania",1931679,1609289,749343,62534,1777546,631018,1169,2198,11177
+2022-01-13,"Lithuania","Lithuania",1932991,1611445,759972,62945,1778955,646145,1312,2156,10629
+2022-01-14,"Lithuania","Lithuania",1934413,1613236,771772,63102,1779689,651876,1422,1791,11800
+2022-01-15,"Lithuania","Lithuania",1934803,1613659,774126,63102,1779689,651876,390,423,2354
+2022-01-16,"Lithuania","Lithuania",1934882,1613763,774831,63104,1779693,651986,79,104,705
+2022-01-17,"Lithuania","Lithuania",1935692,1615599,781782,63543,1781328,666732,810,1836,6951
+2022-01-18,"Lithuania","Lithuania",1936423,1617542,788750,64064,1782760,684056,731,1943,6968
+2022-01-19,"Lithuania","Lithuania",1937124,1619451,795522,64574,1784511,702867,701,1909,6772
+2022-01-20,"Lithuania","Lithuania",1937891,1621387,802383,65188,1786583,721765,767,1936,6861
+2022-01-21,"Lithuania","Lithuania",1938799,1623193,810238,65808,1789007,741083,908,1806,7855
+2022-01-22,"Lithuania","Lithuania",1938927,1623414,811168,65960,1789721,744671,128,221,930
+2022-01-23,"Lithuania","Lithuania",1938931,1623450,811280,66043,1790046,746564,4,36,112
+2022-01-24,"Lithuania","Lithuania",1939525,1624925,815993,66568,1791757,760353,594,1475,4713
+2022-01-25,"Lithuania","Lithuania",1940065,1626487,820598,66968,1793124,772998,540,1562,4605
+2022-01-26,"Lithuania","Lithuania",1940629,1628169,825424,67386,1794484,785231,564,1682,4826
+2022-01-27,"Lithuania","Lithuania",1941204,1629997,830404,67861,1795803,797011,575,1828,4980
+2022-01-28,"Lithuania","Lithuania",1941889,1632231,835967,68464,1796732,809895,685,2234,5563
+2022-01-29,"Lithuania","Lithuania",1942008,1632554,836560,68655,1796921,812523,119,323,593
+2022-01-30,"Lithuania","Lithuania",1942016,1632588,836661,68689,1796976,813293,8,34,101
+2022-01-31,"Lithuania","Lithuania",1942362,1633660,838788,69014,1798088,821129,346,1072,2127
+2022-02-01,"Lithuania","Lithuania",1942729,1634734,840562,69343,1799283,828935,367,1074,1774
+2022-02-02,"Lithuania","Lithuania",1943104,1635808,842429,69702,1800434,836478,375,1074,1867
+2022-02-03,"Lithuania","Lithuania",1943392,1636960,844205,70059,1801496,844275,288,1152,1776
+2022-02-04,"Lithuania","Lithuania",1943777,1638336,846196,70531,1802494,852975,385,1376,1991
+2022-02-05,"Lithuania","Lithuania",1943832,1638513,846416,70593,1802623,854002,55,177,220
+2022-02-06,"Lithuania","Lithuania",1943840,1638530,846494,70595,1802636,854137,8,17,78
+2022-02-07,"Lithuania","Lithuania",1944026,1639148,847402,70866,1803496,859491,186,618,908
+2022-02-08,"Lithuania","Lithuania",1944173,1639799,848290,71131,1804392,864797,147,651,888
+2022-02-09,"Lithuania","Lithuania",1944345,1640470,849280,71432,1805474,870238,172,671,990
+2022-02-10,"Lithuania","Lithuania",1944516,1641165,850167,71699,1806567,875975,171,695,887
+2022-02-11,"Lithuania","Lithuania",1944774,1642051,851366,72075,1807968,882393,258,886,1199
+2022-02-12,"Lithuania","Lithuania",1944795,1642135,851470,72137,1808194,883083,21,84,104
+2022-02-13,"Lithuania","Lithuania",1944803,1642158,851514,72141,1808209,883203,8,23,44
+2022-02-14,"Lithuania","Lithuania",1944961,1642665,852060,72317,1808933,885685,158,507,546
+2022-02-15,"Lithuania","Lithuania",1945100,1643191,852823,72530,1809613,887866,139,526,763
+2022-02-16,"Lithuania","Lithuania",1945100,1643191,852823,72741,1810328,890109,0,0,0
+2022-02-17,"Lithuania","Lithuania",1945282,1643908,853559,72893,1811070,892305,182,717,736
+2022-02-18,"Lithuania","Lithuania",1945489,1644683,854378,73123,1811941,894807,207,775,819
+2022-02-19,"Lithuania","Lithuania",1945509,1644747,854447,73151,1812084,895062,20,64,69
+2022-02-20,"Lithuania","Lithuania",1945513,1644763,854482,73156,1812095,895146,4,16,35
+2022-02-21,"Lithuania","Lithuania",1945655,1645161,854978,73273,1812503,896267,142,398,496
+2022-02-22,"Lithuania","Lithuania",1945784,1645482,855473,73365,1812883,897435,129,321,495
+2022-02-23,"Lithuania","Lithuania",1945881,1645810,855995,73456,1813312,898667,97,328,522
+2022-02-24,"Lithuania","Lithuania",1945998,1646205,856500,73560,1813752,899810,117,395,505
+2022-02-25,"Lithuania","Lithuania",1946144,1646724,857142,73726,1814351,901298,146,519,642
+2022-02-26,"Lithuania","Lithuania",1946154,1646764,857181,73739,1814413,901424,10,40,39
+2022-02-27,"Lithuania","Lithuania",1946161,1646782,857232,73744,1814427,901477,7,18,51
+2022-02-28,"Lithuania","Lithuania",1946248,1647033,857577,73845,1814774,902186,87,251,345
+2022-03-01,"Lithuania","Lithuania",1946329,1647253,857900,73942,1815132,903127,81,220,323
+2022-03-02,"Lithuania","Lithuania",1946410,1647457,858230,73942,1815132,903127,81,204,330
+2022-03-03,"Lithuania","Lithuania",1946501,1647674,858614,74069,1815642,904073,91,217,384
+2022-03-04,"Lithuania","Lithuania",1946710,1648036,859179,74264,1816187,905127,209,362,565
+2022-03-05,"Lithuania","Lithuania",1946723,1648060,859227,74283,1816239,905209,13,24,48
+2022-03-06,"Lithuania","Lithuania",1946731,1648075,859283,74287,1816250,905249,8,15,56
+2022-03-07,"Lithuania","Lithuania",1946808,1648297,859643,74426,1816492,905904,77,222,360
+2022-03-08,"Lithuania","Lithuania",1946900,1648471,860015,74553,1816701,906513,92,174,372
+2022-03-09,"Lithuania","Lithuania",1947012,1648646,860432,74639,1816922,907152,112,175,417
+2022-03-10,"Lithuania","Lithuania",1947152,1648939,860985,74754,1817179,907795,140,293,553
+2022-03-11,"Lithuania","Lithuania",1947152,1648940,860987,74897,1817499,908638,0,1,2
