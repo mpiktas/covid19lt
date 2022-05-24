@@ -28951,3 +28951,34 @@
 "2022-05-22","VšĮ Vilniaus gimdymo namai","Vilniaus regionas",108,33,28,0,2,0,9,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
 "2022-05-22","VšĮ Vilniaus miesto klinikinė ligoninė","Vilniaus regionas",510,270,430,14,38,2,23,8,0,0,20,11,20,11,0,0,2,2,2,0,20,1,0,0,1,0,0,2,2,2,0,NA
 "2022-05-22","VšĮ Vilniaus universiteto ligoninės Santaros klinikos","Vilniaus regionas",894,760,396,322,88,25,88,51,7,1,23,9,23,9,0,0,5,2,5,0,5,0,0,0,2,1,0,2,1,1,0,NA
+"2022-05-23","Lietuvos sveikatos mokslų universiteto ligoninė Kauno klinikos","Kauno regionas",1582,1219,1179,94,105,17,106,56,4,0,19,2,19,2,0,0,6,0,6,0,6,0,2,0,1,0,0,1,0,0,0,NA
+"2022-05-23","Marijampolės ligoninė","Kauno regionas",200,120,137,21,14,5,9,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","Šakių ligoninė","Kauno regionas",55,34,18,4,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Jurbarko ligoninė","Kauno regionas",75,40,40,2,6,1,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Kaišiadorių ligoninė","Kauno regionas",49,35,29,5,4,0,4,2,0,0,15,0,15,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Kėdainių ligoninė","Kauno regionas",236,131,78,12,6,0,6,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Lietuvos sveikatos mokslų universiteto Kauno ligoninė","Kauno regionas",818,619,364,104,31,6,34,8,0,0,93,24,46,19,0,0,6,4,6,3,6,0,0,0,3,1,0,5,4,4,0,NA
+"2022-05-23","VšĮ Raseinių ligoninė","Kauno regionas",79,61,45,9,3,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","Klaipėdos rajono savivaldybės Gargždų ligoninė","Klaipėdos regionas",43,17,27,15,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","Kretingos rajono savivaldybės VšĮ Kretingos ligoninė","Klaipėdos regionas",90,45,49,8,4,0,4,1,0,0,5,2,5,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Klaipėdos Jūrininkų ligoninė","Klaipėdos regionas",328,211,305,197,21,5,23,14,0,0,10,1,10,1,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Klaipėdos universitetinė ligoninė","Klaipėdos regionas",775,437,412,47,40,10,40,16,0,0,23,4,23,4,0,0,6,1,6,1,0,0,0,0,0,0,0,1,0,0,0,NA
+"2022-05-23","VšĮ Klaipėdos vaikų ligoninė","Klaipėdos regionas",152,93,58,0,6,0,6,1,0,0,10,0,10,0,4,0,2,0,2,0,1,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Respublikinė Klaipėdos ligoninė","Klaipėdos regionas",375,336,90,0,14,0,17,3,0,0,50,0,50,0,8,0,10,0,10,0,1,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Šilutės ligoninė","Klaipėdos regionas",90,58,90,58,6,4,6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Tauragės ligoninė","Klaipėdos regionas",197,93,80,1,12,1,12,3,0,0,7,0,7,0,2,0,2,0,2,0,5,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Biržų ligoninė","Panevėžio regionas",77,28,40,10,6,0,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Kupiškio ligoninė","Panevėžio regionas",41,11,10,4,1,0,3,1,0,0,10,0,10,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Respublikinė Panevėžio ligoninė","Panevėžio regionas",633,421,329,183,33,15,33,15,0,0,30,9,30,9,0,0,3,1,3,1,3,0,0,0,0,0,0,1,0,0,0,NA
+"2022-05-23","VšĮ Utenos ligoninė","Panevėžio regionas",195,97,183,97,12,0,6,3,0,0,10,3,10,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,NA
+"2022-05-23","VšĮ Mažeikių ligoninė","Šiaulių regionas",150,75,52,1,6,0,6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Radviliškio ligoninė","Šiaulių regionas",69,47,39,4,3,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Respublikinė Šiaulių ligoninė","Šiaulių regionas",701,347,591,263,42,6,42,16,0,0,34,5,34,5,0,0,6,2,6,2,2,0,0,0,2,1,0,2,1,1,0,NA
+"2022-05-23","Nacionalinis vėžio institutas","Vilniaus regionas",307,172,137,88,12,0,12,0,0,0,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Lazdijų ligoninė","Vilniaus regionas",62,28,5,2,3,1,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Mykolo Marcinkevičiaus ligoninė","Vilniaus regionas",135,124,35,9,8,1,8,4,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Respublikinė Vilniaus psichiatrinė ligoninė","Vilniaus regionas",401,254,12,1,3,0,6,3,0,0,6,3,4,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Varėnos ligoninė","Vilniaus regionas",101,62,16,4,3,1,3,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Vilniaus gimdymo namai","Vilniaus regionas",108,33,28,0,2,0,9,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NA
+"2022-05-23","VšĮ Vilniaus miesto klinikinė ligoninė","Vilniaus regionas",510,273,430,13,38,2,23,7,0,0,20,11,20,11,0,0,2,1,2,0,20,1,0,0,0,0,0,2,2,2,0,NA
+"2022-05-23","VšĮ Vilniaus universiteto ligoninės Santaros klinikos","Vilniaus regionas",895,761,396,322,88,26,88,50,7,1,22,9,22,9,0,0,5,2,5,0,5,0,0,0,2,1,0,1,1,1,0,NA
