@@ -5,8 +5,6 @@ source("R/functions.R")
 
 cat("\n=======Downloading tests================\n")
 try(source("R/download_osp_tests.R"))
-cat("\n=======Downloading cases================\n")
-try(source("R/download_osp_cases.R"))
 cat("\n=======Downloading stats================\n")
 try(source("R/download_osp_stats.R"))
 cat("\n=======Downloading main OSP site================\n")

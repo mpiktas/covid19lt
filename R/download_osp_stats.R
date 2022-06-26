@@ -52,11 +52,9 @@ if (nrow(osp3) == nrow(osp2)) {
   osp4 <- osp3 %>%
     select(day, municipality_code, administrative_level_3,
       confirmed_cases = incidence, active_cases = active_sttstcl,
-      active_cases_de_jure = active_de_jure,
-      confirmed_cases_cumulative = cumulative_totals,
-      recovered_cases_cumulative = recovered_sttstcl,
-      dead_cases_cumulative = dead_cases,
-      recovered_cases_de_jure_cumulative = recovered_de_jure,
+      infection_1_daily = infection1,
+      infection_2_daily = infection2,
+      infection_3_daily = infection3,
       deaths_1_daily = daily_deaths_def1,
       deaths_2_daily = daily_deaths_def2,
       deaths_3_daily = daily_deaths_def3,
@@ -69,7 +67,8 @@ if (nrow(osp3) == nrow(osp2)) {
       tests_ab = ab_tot_day,
       tests_pcr_positive = pcr_pos_day,
       tests_ag_positive = ag_pos_day,
-      tests_ab_positive = ab_pos_day
+      tests_ab_positive = ab_pos_day,
+      population = population
     ) %>%
     arrange(day, municipality_code)
 

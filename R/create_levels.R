@@ -2,12 +2,6 @@ library(dplyr)
 library(lubridate)
 library(zoo)
 
-cs <- read.csv("data/osp/lt-covid19-cases.csv") %>%
-  mutate(day = ymd(day)) %>%
-  select(
-    day, municipality_code, administrative_level_3, recovered_cases,
-    dead_cases, recovered_cases_de_jure
-  )
 ss <- read.csv("data/osp/lt-covid19-stats.csv") %>% mutate(day = ymd(day))
 
 
@@ -47,7 +41,11 @@ ss <- ss %>%
     cumulative_tests = cumsum(tests_total),
     deaths_1 = cumsum(deaths_1_daily),
     deaths_2 = cumsum(deaths_2_daily),
-    deaths_3 = cumsum(deaths_3_daily)
+    deaths_3 = cumsum(deaths_3_daily),
+    confirmed_cases_cumulative = cumsum(confirmed_cases),
+    infection_1 = cumsum(infection_1_daily),
+    infection_2 = cumsum(infection_2_daily),
+    infection_3 = cumsum(infection_2_daily)
   ) %>%
   ungroup()
 
@@ -57,7 +55,7 @@ oo <- ss %>%
   group_by(day) %>%
   summarise_all(sum)
 
-if ("Lithuania" %in% cs$administrative_level_3) {
+if ("Lithuania" %in% ss$administrative_level_3) {
   zz <- ss %>%
     filter(administrative_level_3 == "Lithuania") %>%
     select(-administrative_level_3, -municipality_code, -day) - oo %>%
@@ -67,11 +65,8 @@ if ("Lithuania" %in% cs$administrative_level_3) {
 }
 
 lvl3 <- ss %>%
-  left_join(cs %>%
-    select(-municipality_code)) %>%
   left_join(adm %>%
-    select(-municipality_name, -population2020) %>%
-    rename(population = population2021)) %>%
+    select(-municipality_name, -population2020, -population2021)) %>%
   left_join(vcn) %>%
   mutate(administrative_level_2 = ifelse(is.na(administrative_level_2),
     "Unknown", administrative_level_2
@@ -102,15 +97,19 @@ lvl3 <- ss %>%
 
 lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3,
   municipality_code,
-  confirmed = confirmed_cases_cumulative, tests = cumulative_tests,
+  confirmed = confirmed_cases_cumulative,
+  tests = cumulative_tests,
   deaths = deaths_3,
   deaths_1,
   deaths_2,
-  recovered = recovered_cases_cumulative, active = active_cases,
-  dead_cases = dead_cases_cumulative,
+  active = active_cases,
   vaccinated_1, vaccinated_2, vaccinated_3,
   partialy_protected, fully_protected, booster_protected,
-  confirmed_daily = confirmed_cases, tests_daily = tests_total,
+  infection_1,
+  infection_2,
+  infection_3,
+  confirmed_daily = confirmed_cases,
+  tests_daily = tests_total,
   tests_mobile_daily = tests_mobile,
   tests_pcr_daily = tests_pcr,
   tests_ag_daily = tests_ag,
@@ -123,9 +122,10 @@ lvl31 <- lvl3 %>% select(day, administrative_level_2, administrative_level_3,
   deaths_1_daily,
   deaths_2_daily,
   deaths_population_daily,
-  recovered_daily = recovered_cases,
-  dead_cases_daily = dead_cases,
   vaccinated_1_daily, vaccinated_2_daily, vaccinated_3_daily,
+  infection_1_daily,
+  infection_2_daily,
+  infection_3_daily,
   population
 )
 
