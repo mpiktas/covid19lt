@@ -170,7 +170,6 @@ push_to_github <- function(dirs, commit_message, push = FALSE) {
   if (ghpt == "") {
     remote <- FALSE
   } else {
-    git_pull()
     set_github_remote(ghpt)
   }
 
