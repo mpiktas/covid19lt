@@ -47,14 +47,16 @@ find_root <- function(x) {
 ## CI/CD calls git push and we rely on that not failing.
 ## Yes this is a hack.
 
-set_github_remote()
+if (FALSE) {
+  set_github_remote()
 
-modf <- git_status() %>%
-  .$file %>%
-  find_root() %>%
-  unique()
-if (!("data" %in% modf)) {
-  cat("\nNo new data, not pushing anything\n")
-} else {
-  push_to_github(c("data", "raw_data"), "Update OSP data", push = FALSE)
+  modf <- git_status() %>%
+    .$file %>%
+    find_root() %>%
+    unique()
+  if (!("data" %in% modf)) {
+    cat("\nNo new data, not pushing anything\n")
+  } else {
+    push_to_github(c("data", "raw_data"), "Update OSP data", push = FALSE)
+  }
 }
