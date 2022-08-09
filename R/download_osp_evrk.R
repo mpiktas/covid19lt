@@ -12,13 +12,6 @@ source("R/functions.R")
 osp <- tryget("https://opendata.arcgis.com/datasets/44e6fa7b27434eedbbf75e3f15068e91_0.geojson") # Exclude Linting
 osp1 <- fromJSON(rawToChar(osp$content))$features$properties
 
-
-
-osp1 %>%
-  arrange(test_date, evrk_group_code) %>%
-  select(-object_id) %>%
-  write.csv("raw_data/osp/osp_covid19_evrk.csv", row.names = FALSE)
-
 osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(test_date)))
 
 

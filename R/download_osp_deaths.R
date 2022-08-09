@@ -27,10 +27,6 @@ if (geojson) {
     bind_rows()
 }
 
-osp1 %>%
-  arrange(date, municipality_code) %>%
-  select(-municipality_order, -object_id) %>%
-  write.csv("raw_data/osp/osp_covid19_deaths.csv", row.names = FALSE)
 
 osp2 <- osp1 %>% mutate(day = ymd(date))
 

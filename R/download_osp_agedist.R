@@ -34,11 +34,6 @@ if (FALSE) {
   }
 }
 
-osp1 %>%
-  arrange(date, municipality_name) %>%
-  select(-object_id) %>%
-  write.csv("raw_data/osp/osp_covid19_agedist.csv", row.names = FALSE)
-
 osp2 <- osp1 %>% mutate(day = ymd(ymd_hms(date)))
 
 adm <- read.csv("raw_data/administrative_levels.csv") %>%

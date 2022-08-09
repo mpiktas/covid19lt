@@ -28,9 +28,6 @@ if (nrow(init01) == nrow(init0)) {
 
 osp <- read.csv("https://open-data-ls-osp-sdg.hub.arcgis.com/datasets/1fd352a1c4534afe8ff87c564c0724c0_0.csv")
 
-write.csv(osp, "raw_data/osp/lt-covid19-transition.csv", row.names = FALSE)
-
-
 osp1 <- osp %>% mutate(day = ymd(ymd_hms(date)))
 
 osp2 <- osp1 %>% inner_join(adm)

@@ -16,11 +16,6 @@ osp1 <- osp0 %>%
   slice(1) %>%
   ungroup()
 
-osp1 %>%
-  arrange(date, healthcare_region, hospital_name) %>%
-  select(-X_type, -X_id, -X_revision, geometry) %>%
-  write.csv("raw_data/osp/osp_covid19_hospital.csv", row.names = FALSE)
-
 osp2 <- osp1 %>%
   mutate(day = ymd(date)) %>%
   select(-date, -X_type, -X_id, -X_revision, -geometry)

@@ -314,10 +314,6 @@ alls <- lapply(unique(muni_name), function(x) {
 osp1 <- lapply(alls, function(l) fix_esridate(rawToChar(l$content))) %>%
   bind_rows()
 
-osp1 %>%
-  arrange(date, municipality_code) %>%
-  write.csv("raw_data/osp/osp_covid19_vaccine_supply.csv", row.names = FALSE)
-
 osp2 <- osp1 %>%
   mutate(day = ymd(date)) %>%
   filter(municipality_name == "Lietuva") %>%

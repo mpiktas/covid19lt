@@ -24,9 +24,6 @@ if (TRUE) {
 
   osp1 <- lapply(alls, function(l) fix_esridate(rawToChar(l$content))) %>%
     bind_rows()
-  osp1 %>%
-    arrange(date, municipality_code) %>%
-    write.csv("raw_data/osp/osp_covid19_stats.csv", row.names = FALSE)
 } else {
   osp0 <- read.csv("https://get.data.gov.lt/datasets/gov/lsd/covid-19/svieslenciu_statistika/SvieslenciuStatistika/:format/csv") # nolint: line_length_linter
   osp1 <- osp0 %>%
@@ -35,11 +32,6 @@ if (TRUE) {
       municipality_code =
         ifelse(municipality_code == "0", "00", municipality_code)
     )
-
-  osp1 %>%
-    select(-X_type, -X_id, -X_revision) %>%
-    arrange(date, municipality_code) %>%
-    write.csv("raw_data/osp/osp_covid19_stats.csv", row.names = FALSE)
 }
 
 osp2 <- osp1 %>% mutate(day = ymd(date))
