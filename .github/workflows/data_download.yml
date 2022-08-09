@@ -9,7 +9,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 50
 
       - uses: r-lib/actions/setup-pandoc@v2
 
@@ -30,4 +30,4 @@ jobs:
           git commit -m 'Add the data' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
 
-      - uses: ./github/workflows/build_website
+      - uses: ./github/workflows/build_website.yml
