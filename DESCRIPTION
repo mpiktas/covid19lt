@@ -1,0 +1,38 @@
+Package: covid19lt
+Title: COVID-19 data for Lithuania
+Version: 0.0.1
+Authors: Vaidotas Zemlys-Balevičius <zemlys@gmail.com>
+Description: A collection of code for downloading COVID-19 data for Lithuania and building the website with various analyses
+License: TRUE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Depends: 
+    bit64,
+    COVID19,
+    curl,
+    DiagrammeR,
+    distill,
+    dplyr,
+    DT,
+    dygraphs,
+    EpiEstim,
+    gert,
+    ggplot2,
+    glue,
+    gridExtra,
+    htmltools,
+    httr,
+    jsonlite,
+    knitr,
+    lubridate,
+    RColorBrewer,
+    readr,
+    readxl,
+    rmarkdown,
+    rvest,
+    stringr,
+    testthat,
+    tidyr,
+    xts,
+    zoo
