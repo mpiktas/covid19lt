@@ -1,10 +1,10 @@
 on:
     workflow_dispatch:
-name: data_download
+    workflow_call:
+name: build_website
 
 jobs:
-  data_download:
-    runs-on: ubuntu-latest
+  build_website:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -17,17 +17,13 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
 
-      - name: Download the data
+      - name: Build the website
         run: |
-           R -e "source('R/makefile_osp_live.R')"
-
-      - name: Commit Result
+           R -e "source('R/makefile_site.R')"
+      - name: Commit the website
         run: |
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git add data
-          git add raw_data
-          git commit -m 'Add the data' || echo "No changes to commit"
+          git add docs
+          git commit -m 'Update website' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
-
-      - uses: ./github/workflows/build_website
