@@ -5,7 +5,8 @@ name: build_website
 
 jobs:
   build_website:
-    steps:
+   runs-on: ubuntu-latest
+   steps:
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
