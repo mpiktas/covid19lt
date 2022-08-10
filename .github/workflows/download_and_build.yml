@@ -13,6 +13,6 @@ jobs:
         with:
           fetch-depth: 50
 
-      - uses: mpiktas/covid19lt/.github/workflows/data_download.yml
+      - uses: ./.github/workflows/data_download.yml
 
-      - uses: mpiktas/covid19lt/.github/workflows/build_website.yml
+      - uses: ./.github/workflows/build_website.yml
