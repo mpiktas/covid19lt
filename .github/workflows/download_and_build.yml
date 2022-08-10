@@ -5,14 +5,8 @@ on:
 name: download_and_build
 
 jobs:
-  download_build:
-   runs-on: ubuntu-latest
-   steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 50
-
-      - uses: ./.github/workflows/data_download.yml
-
-      - uses: ./.github/workflows/build_website.yml
+  download:
+    uses: ./.github/workflows/data_download.yml
+  build:
+    needs: download
+    uses: ./.github/workflows/build_website.yml
