@@ -30,5 +30,3 @@ jobs:
           git add raw_data
           git commit -m 'Add the data' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
-
-      - uses: ./github/workflows/build_website.yml
