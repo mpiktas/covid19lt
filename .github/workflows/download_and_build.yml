@@ -1,7 +1,7 @@
 on:
     workflow_dispatch:
     schedule:
-        - cron: '45 10 * * *'
+        - cron: '45 7 * * *'
 name: download_and_build
 
 jobs:
