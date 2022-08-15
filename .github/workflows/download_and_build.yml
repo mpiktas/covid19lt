@@ -7,13 +7,6 @@ name: download_and_build
 jobs:
   download:
     uses: ./.github/workflows/data_download.yml
-  wait:
-    needs: download
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait for 2 minutes
-        run: |
-            sleep 120
   build:
-    needs: wait
+    needs: download
     uses: ./.github/workflows/build_website.yml

@@ -11,6 +11,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 1
+          ref: main
 
       - uses: r-lib/actions/setup-pandoc@v2
 
