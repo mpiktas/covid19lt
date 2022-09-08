@@ -785,6 +785,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1857,15 +1858,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2140,14 +2147,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ol type="1">
 <li>Laikoma, kad dabar imunizuoti yra tie, kurie yra pasiskiepije viena doze.</li>
 <li>Laikoma, kad visi kurie nėra pasiskiepije viena doze neturi imuniteto.</li>
-<li>Laikoma, kad vakcinacijos ir naujų atvejų tempai išliks tie patys kaip per pastarąsias 7 dienas. 4.Laikoma, kad kiekvienas naujas atvejis nuo šios dienos bus imunizuotas.</li>
+<li>Laikoma, kad vakcinacijos ir naujų atvejų tempai išliks tie patys kaip per pastarąsias 7 dienas.
+4.Laikoma, kad kiekvienas naujas atvejis nuo šios dienos bus imunizuotas.</li>
 <li>Vakcinacijos tempu laikomas vakcinavimo 1 doze tempas.</li>
 <li>Laikoma, kad COVID19 epidemija baigsis, kai amžiaus grupės iki 60 pasieks 90% imunizacijos lygį, o amžiaus grupės virš 60 pasieks 95% imunizacijos lygį.</li>
 </ol>
-<p>Atnaujinta: 2022-09-07 08:10:26 UTC.</p>
+<p>Atnaujinta: 2022-09-08 08:21:22 UTC.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-0c38d6a590e10a6816e1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0c38d6a590e10a6816e1">{"x":{"filter":"none","vertical":false,"extensions":["FixedColumns","FixedHeader"],"data":[["1","2","3","4","5","6","7","8","9"],["0-9","10-19","20-29","30-39","40-49","50-59","60-69","70-79","80+"],[0,97307,244004,316010,297696,334779,318572,204416,136169],[286443,263203,334275,372574,365190,412962,360053,235840,165140],[0,36.9703232865887,72.9949891556353,84.8180495686763,81.5181138585394,81.0677495750214,88.4791961183493,86.6757123473541,82.4567034031731],[0,null,0.01,null,null,null,0,null,null],[0.12,0.09,0.15,0.23,0.17,0.17,0.21,0.12,0.12],[90,90,90,90,90,90,95,95,95],[750,null,106.281317777279,null,null,null,31.0514470554798,null,null],[286443,165896,90271,56564,67494,78183,41481,31424,28971]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Amžiaus grupė<\/th>\n      <th>Vakcinuoti 1 doze<\/th>\n      <th>Populiacija<\/th>\n      <th>Procentas vakcinuotų 1 doze<\/th>\n      <th>Vakcinavimo tempas, proc<\/th>\n      <th>Naujų atvejų tempas, proc<\/th>\n      <th>Tikslas<\/th>\n      <th>Kiek liko savaičių<\/th>\n      <th>Liko imunizuoti<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"paging":false,"fixedHeader":true,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[2,3,4,5,6,7,8,9]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render"],"jsHooks":[]}</script>
+<div id="htmlwidget-7c550bf51bf27608f182" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7c550bf51bf27608f182">{"x":{"filter":"none","vertical":false,"extensions":["FixedColumns","FixedHeader"],"data":[["1","2","3","4","5","6","7","8","9"],["0-9","10-19","20-29","30-39","40-49","50-59","60-69","70-79","80+"],[0,97312,244010,316025,297700,334786,318577,204417,136170],[286443,263203,334275,372574,365190,412962,360053,235840,165140],[0,36.9722229609845,72.99678408496,84.8220756145088,81.5192091787836,81.0694446462386,88.4805848027929,86.6761363636364,82.4573089499818],[0,null,null,null,null,0,0,null,null],[0.12,0.12,0.12,0.23,0.21,0.21,0.21,0.16,0.14],[90,90,90,90,90,90,95,95,95],[750,null,null,null,null,42.5264540655303,31.0448342724146,null,null],[286443,165891,90265,56549,67490,78176,41476,31423,28970]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Amžiaus grupė<\/th>\n      <th>Vakcinuoti 1 doze<\/th>\n      <th>Populiacija<\/th>\n      <th>Procentas vakcinuotų 1 doze<\/th>\n      <th>Vakcinavimo tempas, proc<\/th>\n      <th>Naujų atvejų tempas, proc<\/th>\n      <th>Tikslas<\/th>\n      <th>Kiek liko savaičių<\/th>\n      <th>Liko imunizuoti<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"paging":false,"fixedHeader":true,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[2,3,4,5,6,7,8,9]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render"],"jsHooks":[]}</script>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
