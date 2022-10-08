@@ -1,15 +1,6 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
-2022-02-26,"visos",0,0
-2022-02-26,"Pfizer-BioNTech BA.4-5",0,0
 2022-02-27,"visos",0,0
 2022-02-27,"Pfizer-BioNTech BA.4-5",0,0
-2022-02-27,"Pfizer-BioNTech BA.1",0,0
-2022-02-27,"Pfizer-BioNTech",0,0
-2022-02-27,"Novavax",0,0
-2022-02-27,"Moderna BA.1",0,0
-2022-02-27,"Moderna",0,0
-2022-02-27,"Johnson & Johnson",0,0
-2022-02-27,"AstraZeneca",0,0
 2022-02-28,"visos",256770,0
 2022-02-28,"Pfizer-BioNTech BA.4-5",0,0
 2022-02-28,"Pfizer-BioNTech BA.1",0,0
@@ -1999,3 +1990,12 @@
 2022-10-06,"Moderna",0,0
 2022-10-06,"Johnson & Johnson",0,0
 2022-10-06,"AstraZeneca",0,0
+2022-10-07,"visos",0,5496
+2022-10-07,"Pfizer-BioNTech BA.4-5",0,0
+2022-10-07,"Pfizer-BioNTech BA.1",0,0
+2022-10-07,"Pfizer-BioNTech",0,5046
+2022-10-07,"Novavax",0,0
+2022-10-07,"Moderna BA.1",0,0
+2022-10-07,"Moderna",0,350
+2022-10-07,"Johnson & Johnson",0,100
+2022-10-07,"AstraZeneca",0,0
