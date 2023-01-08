@@ -21,7 +21,7 @@ library(gridExtra)
 ```{r include=FALSE}
 data <- Sys.time()
 ```
-  - [Savivaldybių statistika](https://covid19.myliuduomenis.lt/savivaldybes.html)    
+  - [Savivaldybių statistika](http://c19s.myliuduomenis.lt/savivaldybes.html)    
   - [Europos šalių 14 dienų atvejai 100 tūkst. gyventojų](countries.html)
   - [Testų statistika](tests.html)
   - [Duomenys pagal savaitės dienas](weeks.html)
