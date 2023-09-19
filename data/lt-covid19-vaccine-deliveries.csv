@@ -1,30 +1,6 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
-2022-10-16,"visos",0,0
-2022-10-16,"Pfizer-BioNTech",0,0
-2022-10-17,"visos",141120,0
-2022-10-17,"Pfizer-BioNTech",141120,0
-2022-10-17,"Novavax",0,0
-2022-10-17,"Moderna",0,0
-2022-10-17,"Johnson & Johnson",0,0
-2022-10-17,"AstraZeneca",0,0
-2022-10-18,"visos",0,0
-2022-10-18,"Pfizer-BioNTech",0,0
-2022-10-18,"Novavax",0,0
-2022-10-18,"Moderna",0,0
-2022-10-18,"Johnson & Johnson",0,0
-2022-10-18,"AstraZeneca",0,0
-2022-10-19,"visos",0,0
-2022-10-19,"Pfizer-BioNTech",0,0
-2022-10-19,"Novavax",0,0
-2022-10-19,"Moderna",0,0
-2022-10-19,"Johnson & Johnson",0,0
-2022-10-19,"AstraZeneca",0,0
 2022-10-20,"visos",3600,0
 2022-10-20,"Pfizer-BioNTech",0,0
-2022-10-20,"Novavax",0,0
-2022-10-20,"Moderna",3600,0
-2022-10-20,"Johnson & Johnson",0,0
-2022-10-20,"AstraZeneca",0,0
 2022-10-21,"visos",0,5866
 2022-10-21,"Pfizer-BioNTech",0,5616
 2022-10-21,"Novavax",0,0
@@ -1999,3 +1975,27 @@
 2023-09-14,"Moderna",0,0
 2023-09-14,"Johnson & Johnson",0,0
 2023-09-14,"AstraZeneca",0,0
+2023-09-15,"visos",0,240
+2023-09-15,"Pfizer-BioNTech",0,240
+2023-09-15,"Novavax",0,0
+2023-09-15,"Moderna",0,0
+2023-09-15,"Johnson & Johnson",0,0
+2023-09-15,"AstraZeneca",0,0
+2023-09-16,"visos",0,0
+2023-09-16,"Pfizer-BioNTech",0,0
+2023-09-16,"Novavax",0,0
+2023-09-16,"Moderna",0,0
+2023-09-16,"Johnson & Johnson",0,0
+2023-09-16,"AstraZeneca",0,0
+2023-09-17,"visos",0,0
+2023-09-17,"Pfizer-BioNTech",0,0
+2023-09-17,"Novavax",0,0
+2023-09-17,"Moderna",0,0
+2023-09-17,"Johnson & Johnson",0,0
+2023-09-17,"AstraZeneca",0,0
+2023-09-18,"visos",0,0
+2023-09-18,"Pfizer-BioNTech",0,0
+2023-09-18,"Novavax",0,0
+2023-09-18,"Moderna",0,0
+2023-09-18,"Johnson & Johnson",0,0
+2023-09-18,"AstraZeneca",0,0
