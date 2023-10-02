@@ -24,7 +24,6 @@ data <- Sys.time()
 Atnaujinta: `r format(data, usetz = TRUE)`. 
 
 ```{r}
-
 toxts <- function(d, cols) {
   out <- xts(d[, cols], order.by = d$day)
   colnames(out) <- cols
@@ -79,7 +78,7 @@ cvhax <- toxts(cvha, c("cv19_admissions", "cv19_discharges"))
 colnames(cvhax) <- c("nauji", "išrašyti")
 
 last_day <- as.character(max(aa$day))
-dw <- c("2020-10-01", last_day)
+dw <- c("2022-09-01", last_day)
 ```
 
 ## Pagrindinių rodiklių tendencijos
@@ -87,7 +86,6 @@ dw <- c("2020-10-01", last_day)
 Duomenys yra sugrupuoti pagal teritorines ligonių kasas. Vilniaus duomenyse bus ir Alytus, Kauno duomenyse bus Marijampolė ir t.t.
 
 ```{r}
-
 bb <- cvhx[, c("hospitalized", "hospitalized_not_vaccinated")]
 colnames(bb) <- c("viso", "nevakcinuoti")
 dygraph(bb, main = "Covid-19 ligonių skaičius") %>%
@@ -98,14 +96,14 @@ dygraph(bb, main = "Covid-19 ligonių skaičius") %>%
 ```{r}
 dygraph(pivot_one(hhr, "cv19_hospital_beds_occupied"), main = "Covid-19 ligonių skaičius, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
-  dyRangeSelector()
+  dyRangeSelector(dateWindow = dw)
 ```
 
 
 ```{r}
 dygraph(pivot_one(hhr, "cv19_hospital_beds_assigned"), main = "Covid-19 lovų skaičius, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
-  dyRangeSelector()
+  dyRangeSelector(dateWindow = dw)
 ```
 
 
@@ -119,14 +117,14 @@ dygraph(bb, main = "Covid-19 ligonių reanimacijoje skaičius") %>%
 ```{r}
 dygraph(pivot_one(hhr, "cv19_icu_beds_occupied"), main = "Covid-19 RITS ligonių skaičius, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
-  dyRangeSelector()
+  dyRangeSelector(dateWindow = dw)
 ```
 
 
 ```{r}
 dygraph(pivot_one(hhr, "cv19_icu_beds_assigned"), main = "Covid-19 RITS lovų skaičius, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
-  dyRangeSelector()
+  dyRangeSelector(dateWindow = dw)
 ```
 
 
@@ -135,12 +133,12 @@ dygraph(pivot_one(hhr, "cv19_icu_beds_assigned"), main = "Covid-19 RITS lovų sk
 ```{r}
 dygraph(cvhax["2021-01-18/", 1], main = "Covid-19 naujai paguldyti ligoniai, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
-  dyRangeSelector()
+  dyRangeSelector(dateWindow = dw)
 ```
 ```{r}
 dygraph(pivot_one(hhr, "cv19_admissions")["2021-01-18/"], main = "Covid-19 naujai paguldyti ligoniai, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
-  dyRangeSelector() %>%
+  dyRangeSelector(dateWindow = dw) %>%
   dyCSS("left_legend.css")
 ```
 
@@ -148,12 +146,12 @@ dygraph(pivot_one(hhr, "cv19_admissions")["2021-01-18/"], main = "Covid-19 nauja
 ```{r}
 dygraph(cvhax["2021-01-18/", 2], main = "Covid-19 išrašyti ligoniai") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[1]) %>%
-  dyRangeSelector()
+  dyRangeSelector(dateWindow = dw)
 ```
 
 ```{r}
 dygraph(pivot_one(hhr, "cv19_discharges")["2021-01-18/"], main = "Covid-19 išrašyti ligoniai, 7 dienų vidurkis") %>%
   dyOptions(colors = RColorBrewer::brewer.pal(5, "Set1")) %>%
-  dyRangeSelector() %>%
+  dyRangeSelector(dateWindow = dw) %>%
   dyCSS("left_legend.css")
 ```

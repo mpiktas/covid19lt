@@ -44,7 +44,7 @@ fixNA <- function(x) {
 }
 aa_last_day <- as.character(max(aa$day))
 
-view_interval <- c("2020-10-01", aa_last_day)
+view_interval <- c("2022-09-01", aa_last_day)
 
 aa_stats <- aa %>%
   select(
@@ -91,7 +91,6 @@ dygraph(xaa[, "confirmed_growth_weekly"], main = paste("Savaitinis naujų atvej�
 ```
 
 ```{r, echo = FALSE}
-
 dygraph(a714[, c("confirmed", "confirmed7", "confirmed14")], main = paste("Nauji atvejai ir slenkantys vidurkiai:", max(aa$day))) %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3, 1, 2)]) %>%
   dyRangeSelector(dateWindow = view_interval)
@@ -99,7 +98,6 @@ dygraph(a714[, c("confirmed", "confirmed7", "confirmed14")], main = paste("Nauji
 
 
 ```{r, echo = FALSE}
-
 dygraph(a714["2020-03-20/", c("deaths", "deaths7", "deaths14")], main = paste("Mirtys per dieną ir slenkantys vidurkiai", max(aa$day))) %>%
   dyOptions(colors = RColorBrewer::brewer.pal(3, "Set1")[c(3, 1, 2)]) %>%
   dyRangeSelector(dateWindow = view_interval)
@@ -114,7 +112,6 @@ dygraph(bb, main = paste("Mirčių 7 dienų slenkantys vidurkiai", max(aa$day)))
 ```
 
 ```{r, echo =FALSE}
-
 ttn1 <- 100 * a714[, "confirmed"] / a714[, "tests"]
 
 ttn7 <- 100 * a714[, "confirmed7"] / a714[, "tests7"]
@@ -127,7 +124,6 @@ colnames(ttn) <- c("Atvejų proc.", "AP7", "AP14")
 
 
 ```{r, echo = FALSE}
-
 tpntpr1 <- 100 * a714[, "tpnew"] / a714[, "tests"]
 
 tpntpr7 <- 100 * a714[, "tpnew7"] / a714[, "tests7"]
@@ -219,7 +215,6 @@ grid.arrange(pm,
 ### Mirčių pasiskirstymas pagal amžių per pastarąsias 14 dienų, `r ad_last_day`
 
 ```{r}
-
 agr <- read.csv("../raw_data/agegroups2.csv")
 as_all <- expand_grid(age = unique(agr$age1), sex = c("Vyras", "Moteris")) %>% mutate(n1 = 0)
 
@@ -396,7 +391,6 @@ grid.arrange(pm2,
 
 
 ```{r}
-
 lv2 <- read.csv("../data/lt-covid19-level2.csv") %>% mutate(day = ymd(day))
 
 ll <- lv2 %>%
@@ -427,7 +421,6 @@ dygraph(xgm, main = "Google mobilumo duomenys") %>%
 ### Apple `r max(am$day)`
 
 ```{r}
-
 xam <- xts(am %>% select(-day), am$day)
 
 dygraph(xam, main = "Apple mobilumo duomenys") %>%
