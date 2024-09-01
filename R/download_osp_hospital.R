@@ -18,7 +18,7 @@ osp1 <- osp0 %>%
 
 osp2 <- osp1 %>%
   mutate(day = ymd(date)) %>%
-  select(-date, -X_type, -X_id, -X_revision, -koord)
+  select(-date, -X_type, -X_id, -X_revision, -koord, -X_page.next)
 
 
 osp3 <- osp2 %>% arrange(day, healthcare_region, hospital_name)
