@@ -4,85 +4,85 @@
       "path": "about.html",
       "title": "Apie",
       "author": [],
-      "contents": "\nAtnaujinama kas dieną. Paskutinis atnaujinimas 2024-12-21 07:53:56.104541.\nPuslapio turinys\nElementarioji statistika\nEfektyvusis R\nEuropos šalių 14 dienų atvejai 100 tūkst. gyventojų\nSavivaldybių statistika\nEpidemijos bangų models (nebeatnaujinamas)\nApibendrinto logistinio augimo modelis (nebeatnaujinamas)\nSEIR epidemiologinis modelis (nebeatnaujinamas)\nModelių prognozių palyginimas (nebeatnaujinamas)\nApibendrinto augimo modelis (nebeatnaujinamas)\nPapildoma informacija\nModeliai yra edukacinio pobūdžio, juos galima laisvai naudoti, bet jiems nesuteikiama jokia garantija.\nModeliai yra atnaujinami kas dieną su naujais duomenimis. Duomenys yra čia, o visas prognozes galite rasti čia.\nModelių kodas yra .Rmd failuose. Puslapis su modeliais yra pergneruojamas kiekvieną dieną. Norint tai padaryti pačiam reikia:\nParsisiųsti šitą repozitoriją.\nAtsidaryti Rstudio projektą (covid19lt.Proj).\nĮsidiegti reikiamus R paketus (dplyr, lubridate, tidyr, ggplot2, EpiEstim,deSolve, rmarkdown, distill).\nPaleisti komandą rmarkdown::render_site().\nRezultatai, t.y. puslapis bus sudėtas į docs katalogą.\n\n\n\n",
-      "last_modified": "2024-12-21T07:53:56+00:00"
+      "contents": "\nAtnaujinama kas dieną. Paskutinis atnaujinimas 2024-12-22 07:55:20.771024.\nPuslapio turinys\nElementarioji statistika\nEfektyvusis R\nEuropos šalių 14 dienų atvejai 100 tūkst. gyventojų\nSavivaldybių statistika\nEpidemijos bangų models (nebeatnaujinamas)\nApibendrinto logistinio augimo modelis (nebeatnaujinamas)\nSEIR epidemiologinis modelis (nebeatnaujinamas)\nModelių prognozių palyginimas (nebeatnaujinamas)\nApibendrinto augimo modelis (nebeatnaujinamas)\nPapildoma informacija\nModeliai yra edukacinio pobūdžio, juos galima laisvai naudoti, bet jiems nesuteikiama jokia garantija.\nModeliai yra atnaujinami kas dieną su naujais duomenimis. Duomenys yra čia, o visas prognozes galite rasti čia.\nModelių kodas yra .Rmd failuose. Puslapis su modeliais yra pergneruojamas kiekvieną dieną. Norint tai padaryti pačiam reikia:\nParsisiųsti šitą repozitoriją.\nAtsidaryti Rstudio projektą (covid19lt.Proj).\nĮsidiegti reikiamus R paketus (dplyr, lubridate, tidyr, ggplot2, EpiEstim,deSolve, rmarkdown, distill).\nPaleisti komandą rmarkdown::render_site().\nRezultatai, t.y. puslapis bus sudėtas į docs katalogą.\n\n\n\n",
+      "last_modified": "2024-12-22T07:55:21+00:00"
     },
     {
       "path": "agegroups.html",
       "title": "COVID-19 amžiaus grupių dinamika",
       "author": [],
       "contents": "\nGyventojų amžiaus pasiskirstymas Lietuvoje\n\n\n\nAtvejų skaičiai amžiaus grupėms\n\n\n\n\n\n\n\n\n\n\n\n\nMirčių skaičiai amžiaus grupėms\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:53:59+00:00"
+      "last_modified": "2024-12-22T07:55:24+00:00"
     },
     {
       "path": "case_split.html",
       "title": "COVID-19 vakcinacijos efektas amžiaus grupėse",
       "author": [],
-      "contents": "\nAtnaujinta: 2024-12-21 07:53:59 UTC.\nMetodologija\nNaudojami Lietuvos statistikos departamento duomenys. Lyginami neturintys vakcinacijos apsaugos su turinčiais vakcinacijos apsaugą po 2 dozių. Atvejų skaičiai yra normalizuojami periodo pradžioje atitinkamų grupių populiacijų skaičiais. Jie kinta kiekvieną dieną.\nVisi grafikai prasideda nuo datos kai grupėje su vakcinacijos apsauga po 2 dozių yra virš 10 000 žmonių, o grupėje su apsauga po 3 dozių daugiau nei 4000.\nSkaičiavimo algoritmą galite rasti kartu su visu puslapio kodu. Visos klaidos yra mano.\nGrafikus galima naudoti nurodant šaltinį.\nŠiame puslapyje rodikliai pateikiami 100k gyventojų per 14 dienų.\nVakcinacijos efektas naujiems atvejams amžiaus grupėse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:04+00:00"
+      "contents": "\nAtnaujinta: 2024-12-22 07:55:24 UTC.\nMetodologija\nNaudojami Lietuvos statistikos departamento duomenys. Lyginami neturintys vakcinacijos apsaugos su turinčiais vakcinacijos apsaugą po 2 dozių. Atvejų skaičiai yra normalizuojami periodo pradžioje atitinkamų grupių populiacijų skaičiais. Jie kinta kiekvieną dieną.\nVisi grafikai prasideda nuo datos kai grupėje su vakcinacijos apsauga po 2 dozių yra virš 10 000 žmonių, o grupėje su apsauga po 3 dozių daugiau nei 4000.\nSkaičiavimo algoritmą galite rasti kartu su visu puslapio kodu. Visos klaidos yra mano.\nGrafikus galima naudoti nurodant šaltinį.\nŠiame puslapyje rodikliai pateikiami 100k gyventojų per 14 dienų.\nVakcinacijos efektas naujiems atvejams amžiaus grupėse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2024-12-22T07:55:29+00:00"
     },
     {
       "path": "case_split7.html",
       "title": "COVID-19 vakcinacijos efektas amžiaus grupėse (7 dienų)",
       "author": [],
-      "contents": "\nAtnaujinta: 2024-12-21 07:54:04 UTC.\nMetodologija\nNaudojami Lietuvos statistikos departamento duomenys. Lyginami neturintys vakcinacijos apsaugos su turinčiais vakcinacijos apsaugą po 2 dozių. Atvejų skaičiai yra normalizuojami periodo pradžioje atitinkamų grupių populiacijų skaičiais. Jie kinta kiekvieną dieną.\nVisi grafikai prasideda nuo datos kai grupėje su vakcinacijos apsauga po 2 dozių yra virš 10 000 žmonių, o grupėje su apsauga po 3 dozių daugiau nei 4000.\nSkaičiavimo algoritmą galite rasti kartu su visu puslapio kodu. Visos klaidos yra mano.\nGrafikus galima naudoti nurodant šaltinį.\nŠiame puslapyje rodikliai pateikiami 1 milijonui gyventojų per 7 dienas.\nVakcinacijos efektas naujiems atvejams amžiaus grupėse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:07+00:00"
+      "contents": "\nAtnaujinta: 2024-12-22 07:55:29 UTC.\nMetodologija\nNaudojami Lietuvos statistikos departamento duomenys. Lyginami neturintys vakcinacijos apsaugos su turinčiais vakcinacijos apsaugą po 2 dozių. Atvejų skaičiai yra normalizuojami periodo pradžioje atitinkamų grupių populiacijų skaičiais. Jie kinta kiekvieną dieną.\nVisi grafikai prasideda nuo datos kai grupėje su vakcinacijos apsauga po 2 dozių yra virš 10 000 žmonių, o grupėje su apsauga po 3 dozių daugiau nei 4000.\nSkaičiavimo algoritmą galite rasti kartu su visu puslapio kodu. Visos klaidos yra mano.\nGrafikus galima naudoti nurodant šaltinį.\nŠiame puslapyje rodikliai pateikiami 1 milijonui gyventojų per 7 dienas.\nVakcinacijos efektas naujiems atvejams amžiaus grupėse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2024-12-22T07:55:33+00:00"
     },
     {
       "path": "countdown.html",
       "title": "COVID-19 pabaiga",
       "author": [],
-      "contents": "\nKada baigsis COVID19 epidemija?\nŠitie skaičiavimai yra iliustracija ir nėra prognozė.\nPrielaidos:\nLaikoma, kad dabar imunizuoti yra tie, kurie yra pasiskiepije viena doze.\nLaikoma, kad visi kurie nėra pasiskiepije viena doze neturi imuniteto.\nLaikoma, kad vakcinacijos ir naujų atvejų tempai išliks tie patys kaip per pastarąsias 7 dienas.\n4.Laikoma, kad kiekvienas naujas atvejis nuo šios dienos bus imunizuotas.\nVakcinacijos tempu laikomas vakcinavimo 1 doze tempas.\nLaikoma, kad COVID19 epidemija baigsis, kai amžiaus grupės iki 60 pasieks 90% imunizacijos lygį, o amžiaus grupės virš 60 pasieks 95% imunizacijos lygį.\nAtnaujinta: 2024-12-21 07:54:07 UTC.\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:10+00:00"
+      "contents": "\nKada baigsis COVID19 epidemija?\nŠitie skaičiavimai yra iliustracija ir nėra prognozė.\nPrielaidos:\nLaikoma, kad dabar imunizuoti yra tie, kurie yra pasiskiepije viena doze.\nLaikoma, kad visi kurie nėra pasiskiepije viena doze neturi imuniteto.\nLaikoma, kad vakcinacijos ir naujų atvejų tempai išliks tie patys kaip per pastarąsias 7 dienas.\n4.Laikoma, kad kiekvienas naujas atvejis nuo šios dienos bus imunizuotas.\nVakcinacijos tempu laikomas vakcinavimo 1 doze tempas.\nLaikoma, kad COVID19 epidemija baigsis, kai amžiaus grupės iki 60 pasieks 90% imunizacijos lygį, o amžiaus grupės virš 60 pasieks 95% imunizacijos lygį.\nAtnaujinta: 2024-12-22 07:55:33 UTC.\n\n\n\n\n\n\n",
+      "last_modified": "2024-12-22T07:55:35+00:00"
     },
     {
       "path": "countries.html",
       "title": "COVID-19 Europos šalių statistika",
       "author": [],
-      "contents": "\n\n\n\nAtnaujinta: 2024-12-21 07:54:10.162587.\nPagal 2020-05-27 Lietuvos vyriausybės nutarimą į Lietuvą be karantino galima atvykti Europos ekonominės erdvės valstybių, Šveicarijos, Didžiosios Britanijos ir Airijos piliečiams ir jose teisėtai gyvenantiems žmonėms, jeigu toje valstybėje, sergamumas koronaviruso infekcija (COVID-19) per pastarąsias 14 kalendorinių dienų neviršijo 25 nustatytų koronaviruso atvejų 100 tūkst. gyventojų.\n\n\n\nČia pateikiamas sąrašas Europos šalių ir atvejų skaičius 100 tūkst gyventojų nuo 2024-10-05 iki 2024-10-18.\n\n\n\n\n\n\nKaimyninių šalių palyginimas\nŠiame grafike pavaizduotas atvejų skaičius per paskutines 14 dienų, 100 tūkst. žmonių. Paskutinės dienos duomenys gali būti netikslūs. Duomenys imami iš Covid-19 Data Hub. Lietuvos duomenys ten atsilieka diena ir ateina su vėlavimais.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:14+00:00"
+      "contents": "\n\n\n\nAtnaujinta: 2024-12-22 07:55:35.403163.\nPagal 2020-05-27 Lietuvos vyriausybės nutarimą į Lietuvą be karantino galima atvykti Europos ekonominės erdvės valstybių, Šveicarijos, Didžiosios Britanijos ir Airijos piliečiams ir jose teisėtai gyvenantiems žmonėms, jeigu toje valstybėje, sergamumas koronaviruso infekcija (COVID-19) per pastarąsias 14 kalendorinių dienų neviršijo 25 nustatytų koronaviruso atvejų 100 tūkst. gyventojų.\n\n\n\nČia pateikiamas sąrašas Europos šalių ir atvejų skaičius 100 tūkst gyventojų nuo 2024-10-05 iki 2024-10-18.\n\n\n\n\n\n\nKaimyninių šalių palyginimas\nŠiame grafike pavaizduotas atvejų skaičius per paskutines 14 dienų, 100 tūkst. žmonių. Paskutinės dienos duomenys gali būti netikslūs. Duomenys imami iš Covid-19 Data Hub. Lietuvos duomenys ten atsilieka diena ir ateina su vėlavimais.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2024-12-22T07:55:39+00:00"
     },
     {
       "path": "hospital.html",
       "title": "COVID-19 ligoninių statistika",
       "author": [],
-      "contents": "\nAtnaujinta: 2024-12-21 07:54:14 UTC.\n\n\n\nPagrindinių rodiklių tendencijos\nDuomenys yra sugrupuoti pagal teritorines ligonių kasas. Vilniaus duomenyse bus ir Alytus, Kauno duomenyse bus Marijampolė ir t.t.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPriėmimo ir išrašymo dinamika\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:15+00:00"
+      "contents": "\nAtnaujinta: 2024-12-22 07:55:39 UTC.\n\n\n\nPagrindinių rodiklių tendencijos\nDuomenys yra sugrupuoti pagal teritorines ligonių kasas. Vilniaus duomenyse bus ir Alytus, Kauno duomenyse bus Marijampolė ir t.t.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPriėmimo ir išrašymo dinamika\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2024-12-22T07:55:41+00:00"
     },
     {
       "path": "index.html",
       "title": "COVID-19 Lietuvoje",
       "author": [],
-      "contents": "\nSavivaldybių statistika\nEuropos šalių 14 dienų atvejai 100 tūkst. gyventojų\nTestų statistika\nDuomenys pagal savaitės dienas\nDuomenys pagal amžiaus grupes\nVakcinacijos efektas naujiems atvejams amžiaus grupėse (14 dienų)\nVakcinacijos efektas naujiems atvejams amžiaus grupėse (7 dienų)\n2021 ir 2020 metų palyginimas\nLigoninių duomenys\nEfektyvusis R\nEpidemijos pabaiga\nAtnaujinta: 2024-12-21 07:54:16 UTC.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAtvejų amžiaus pasiskirstymas per pastarąsias 14 dienų, 2024-02-26\nLietuvoje 100k gyventojų per pastarąsias 14 dienų tenka 45.68 atvejų. Testų pozityvumo norma (test positivity rate) 5.37.\n\n\n\nMirčių pasiskirstymas pagal amžių per pastarąsias 14 dienų, 2024-02-26\n\n\n\nVakcinuotų pirma doze procentai amžiaus grupėse, 2024-02-26\n\n\n\nTurinčių pilną vakcinacijos apsaugą procentai, 2024-02-26\nTurintys pilną vakcinacijos apsaugą laikomi tie kuriems po pilno vakcinacijos kurso praėjo 14 dienų.\n\n\n\nTurinčių pastiprintą vakcinacijos apsaugą procentai, 2024-02-26\nTurintys pastiprintą vakcinacijos apsaugą laikomi tie kuriems po pastiprinančiosios dozės praėjo 14 dienų.\n\n\n\n\n\n\nMobilumo duomenys\n\n\n\nGoogle 2022-07-22\n\n\n\nApple 2022-01-24\n\n\n\nSituacija apskrityse 2024-12-20\n\n\n\nAtvejų pasiskirstymas pagal amžių ir savivaldybes 2024-02-26\n\n\n\nLigoninių COVID19 duomenys pagal ligonines 2024-02-26\nSkelbiami 7 dienų vidurkiai\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:21+00:00"
+      "contents": "\nSavivaldybių statistika\nEuropos šalių 14 dienų atvejai 100 tūkst. gyventojų\nTestų statistika\nDuomenys pagal savaitės dienas\nDuomenys pagal amžiaus grupes\nVakcinacijos efektas naujiems atvejams amžiaus grupėse (14 dienų)\nVakcinacijos efektas naujiems atvejams amžiaus grupėse (7 dienų)\n2021 ir 2020 metų palyginimas\nLigoninių duomenys\nEfektyvusis R\nEpidemijos pabaiga\nAtnaujinta: 2024-12-22 07:55:41 UTC.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAtvejų amžiaus pasiskirstymas per pastarąsias 14 dienų, 2024-02-26\nLietuvoje 100k gyventojų per pastarąsias 14 dienų tenka 45.61 atvejų. Testų pozityvumo norma (test positivity rate) 5.32.\n\n\n\nMirčių pasiskirstymas pagal amžių per pastarąsias 14 dienų, 2024-02-26\n\n\n\nVakcinuotų pirma doze procentai amžiaus grupėse, 2024-02-26\n\n\n\nTurinčių pilną vakcinacijos apsaugą procentai, 2024-02-26\nTurintys pilną vakcinacijos apsaugą laikomi tie kuriems po pilno vakcinacijos kurso praėjo 14 dienų.\n\n\n\nTurinčių pastiprintą vakcinacijos apsaugą procentai, 2024-02-26\nTurintys pastiprintą vakcinacijos apsaugą laikomi tie kuriems po pastiprinančiosios dozės praėjo 14 dienų.\n\n\n\n\n\n\nMobilumo duomenys\n\n\n\nGoogle 2022-07-22\n\n\n\nApple 2022-01-24\n\n\n\nSituacija apskrityse 2024-12-21\n\n\n\nAtvejų pasiskirstymas pagal amžių ir savivaldybes 2024-02-26\n\n\n\nLigoninių COVID19 duomenys pagal ligonines 2024-02-26\nSkelbiami 7 dienų vidurkiai\n\n\n\n\n\n\n",
+      "last_modified": "2024-12-22T07:55:47+00:00"
     },
     {
       "path": "Re.html",
       "title": "Efektyvus R",
       "author": [],
       "contents": "\n\n\n\nAtnaujinamas nereguliariai\nDuomenys modeliavimui\n\n\n\n\n\n\nSavaitinis R įvertis.\n\\(R < 1\\) reiškia kad epidemija perėjo į kritimą. Daryta pagal šitą straipsnį su R paketu EpiEstim. Daryta pagal pavyzdį iš šio blogo.\n\n\n\n\\(x\\)-ašyje yra dienos nuo epidemijos pradžios. Epidemijos pradžia pasirinkta 2020-03-11, tai pirma diena.\nTa pati informacija lentelėje\n\n\n\nSerijiniai intervalai (intervalai tarp užsikrėtimų)\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:24+00:00"
+      "last_modified": "2024-12-22T07:55:50+00:00"
     },
     {
       "path": "tests.html",
       "title": "COVID-19 įvairūs testų pjūviai",
       "author": [],
       "contents": "\nTeigiamų tyrimų dalis pagal EVRK veiklas\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:27+00:00"
+      "last_modified": "2024-12-22T07:55:52+00:00"
     },
     {
       "path": "weeks.html",
       "title": "COVID-19 savaitinė statistika",
       "author": [],
       "contents": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:29+00:00"
+      "last_modified": "2024-12-22T07:55:55+00:00"
     },
     {
       "path": "yearly_comparison.html",
       "title": "COVID-19 situacijos 2020 ir 2021 metais palyginimas",
       "author": [],
       "contents": "\n\n\n\nPagrindinių rodiklių palyginimas\nVisi rodikliai yra 7 dienų slenkantys vidurkiai normalizuoti maksimumu. 100 = maksimali reikšmė.\n\n\n\n\n\n\nRits ir nevakcinuotų 60+ palyginimas\nRITS ta pati laiko eilutė (tik 14 dienų slenkantis vidurkis, neišskirta nei pagal amžių nei pagal vakcinacijos statusą). Nevakcinuoti 60+ tai 60+ amžiaus grupės asmenų neturėjusių skiepo ir teigiamo PGR/antigeno/antikūnų testo naujų atvejų skaičiai, 14 dienų vidurkiai normalizuoti pagal maksimalią atitinkamos laiko eilutės reikšmę.\n\n\n\nHospitalizuotų ir nevakcinuotų amžiaus grupių palyginimas\nHospitalizacijos ta pati laiko eilutė (tik 14 dienų slenkantis vidurkis, neišskirta nei pagal amžių nei pagal vakcinacijos statusą). Nevakcinuoti tai 0-19 ir 60+ amžiaus grupės asmenų neturėjusių skiepo ir teigiamo PGR/antigeno/antikūnų testo naujų atvejų skaičiai, 14 dienų vidurkiai normalizuoti pagal maksimalią atitinkamos laiko eilutės reikšmę.\n\n\n\n\n\n\n",
-      "last_modified": "2024-12-21T07:54:33+00:00"
+      "last_modified": "2024-12-22T07:55:59+00:00"
     }
   ],
   "collections": []
