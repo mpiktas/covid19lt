@@ -1,18 +1,6 @@
 "day","vaccine_name","vaccines_arrived","vaccines_allocated"
-2024-02-09,"visos",0,120
-2024-02-09,"Pfizer-BioNTech",0,120
-2024-02-10,"visos",0,0
-2024-02-10,"Pfizer-BioNTech",0,0
-2024-02-10,"Novavax",0,0
-2024-02-10,"Moderna",0,0
-2024-02-10,"Johnson & Johnson",0,0
-2024-02-10,"AstraZeneca",0,0
 2024-02-11,"visos",0,0
 2024-02-11,"Pfizer-BioNTech",0,0
-2024-02-11,"Novavax",0,0
-2024-02-11,"Moderna",0,0
-2024-02-11,"Johnson & Johnson",0,0
-2024-02-11,"AstraZeneca",0,0
 2024-02-12,"visos",0,0
 2024-02-12,"Pfizer-BioNTech",0,0
 2024-02-12,"Novavax",0,0
@@ -139,10 +127,10 @@
 2024-03-03,"Moderna",0,0
 2024-03-03,"Johnson & Johnson",0,0
 2024-03-03,"AstraZeneca",0,0
-2024-03-04,"Novavax",0,0
 2024-03-04,"visos",0,0
-2024-03-04,"Moderna",0,0
 2024-03-04,"Pfizer-BioNTech",0,0
+2024-03-04,"Novavax",0,0
+2024-03-04,"Moderna",0,0
 2024-03-04,"Johnson & Johnson",0,0
 2024-03-04,"AstraZeneca",0,0
 2024-03-05,"visos",0,0
@@ -565,10 +553,10 @@
 2024-05-13,"Moderna",0,0
 2024-05-13,"Johnson & Johnson",0,0
 2024-05-13,"AstraZeneca",0,0
-2024-05-14,"visos",0,0
-2024-05-14,"Pfizer-BioNTech",0,0
 2024-05-14,"Novavax",0,0
+2024-05-14,"visos",0,0
 2024-05-14,"Moderna",0,0
+2024-05-14,"Pfizer-BioNTech",0,0
 2024-05-14,"Johnson & Johnson",0,0
 2024-05-14,"AstraZeneca",0,0
 2024-05-15,"visos",0,0
@@ -1903,12 +1891,12 @@
 2024-12-22,"Moderna",0,0
 2024-12-22,"Johnson & Johnson",0,0
 2024-12-22,"AstraZeneca",0,0
-2024-12-23,"Johnson & Johnson",0,0
 2024-12-23,"visos",0,0
-2024-12-23,"AstraZeneca",0,0
 2024-12-23,"Pfizer-BioNTech",0,0
 2024-12-23,"Novavax",0,0
 2024-12-23,"Moderna",0,0
+2024-12-23,"Johnson & Johnson",0,0
+2024-12-23,"AstraZeneca",0,0
 2024-12-24,"visos",0,0
 2024-12-24,"Pfizer-BioNTech",0,0
 2024-12-24,"Novavax",0,0
@@ -1999,3 +1987,15 @@
 2025-01-07,"Moderna",0,0
 2025-01-07,"Johnson & Johnson",0,0
 2025-01-07,"AstraZeneca",0,0
+2025-01-08,"visos",0,0
+2025-01-08,"Pfizer-BioNTech",0,0
+2025-01-08,"Novavax",0,0
+2025-01-08,"Moderna",0,0
+2025-01-08,"Johnson & Johnson",0,0
+2025-01-08,"AstraZeneca",0,0
+2025-01-09,"visos",0,0
+2025-01-09,"Pfizer-BioNTech",0,0
+2025-01-09,"Novavax",0,0
+2025-01-09,"Moderna",0,0
+2025-01-09,"Johnson & Johnson",0,0
+2025-01-09,"AstraZeneca",0,0
